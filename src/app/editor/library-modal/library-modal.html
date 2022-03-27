@@ -1,0 +1,58 @@
+<div class="modal-header">
+  <div class="modal-title"
+       id="modal-title-my-books"><i class="fa fa-book"></i>&nbsp; Library
+  </div>
+</div>
+
+<div class="modal-body"
+     id="modal-body-library">
+  <table class="table col-md-12">
+    <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Last Modified</th>
+      <th>Date Created</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tr class="book-select"
+        ng-repeat="book in vm.books"
+        ng-class="{'table-primary': hover }"
+        ng-init="hover = false"
+        ng-mouseenter="hover = true"
+        ng-mouseleave="hover = false">
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.topic }}
+      </td>
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.lastModified * 1000 | date:'short' }}
+      </td>
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.dateCreated * 1000 | date:'short' }}
+      </td>
+      <td>
+        <button class="btn btn-danger"
+                style="z-index: 15"
+                ng-click="deleteBook(book.uid)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div ng-if="vm.books.length === 0">
+    <div class="col-md-12">
+      <div class="text-center text-muted">
+        There doesn't seem to be anything here yet.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button"
+          class="btn btn-secondary"
+          ng-click="vm.dismiss()">
+    Close
+  </button>
+</div>
+

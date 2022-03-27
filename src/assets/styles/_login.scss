@@ -1,0 +1,101 @@
+body{
+  overflow-x: hidden;
+}
+
+.login-wrapper {
+  margin: auto;
+  padding: 10px;
+  padding-top: 0px;
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+
+
+.jumbotron > h3 {
+
+  font-family: "Open-Sans";
+  font-size: 22pt;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 767px) {
+  .jumbotron > h1 {
+    margin-left: 40px;
+    overflow-x: hidden;
+  }
+  .overviewimage {
+    width: 840px;
+    height: auto;
+    margin-top: 15px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .jumbotron > h1 {
+    margin-left: 40px;
+    overflow-x: hidden;
+  }
+  .overviewimage {
+    width: 575px;
+    height: auto;
+  }
+
+  .form-inline .form-group{
+    display: none;
+  }
+
+  h2{
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .jumbotron > h1 {
+    margin-left: 0;
+    overflow-x: hidden;
+  }
+
+  .overviewimage{
+    width: 325px;
+    height: auto;
+  }
+
+  .form-group{
+    display: none;
+  }
+
+  h2 {
+    min-width: 340px;
+
+  }
+}
+
+.overviewimage{
+
+}
+
+.jumbotron {
+  padding-top: 0px;
+  padding-bottom:0px;
+  margin-bottom: 0px;
+  overflow-x: hidden;
+}
+
+.contact-email{
+  text-align: center;
+}
+
+.donate-image{
+  text-align: center;
+}
+
+.navbar{
+  display: inline-block;
+  overflow-x: hidden;
+}

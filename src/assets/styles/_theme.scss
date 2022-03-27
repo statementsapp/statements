@@ -1,0 +1,101 @@
+html, body, body.ng-scope {
+  background-color: #FFFFFF;
+  color: #212121;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+.form-control {
+  color: #212121;
+}
+
+form input::-webkit-input-placeholder {
+  color: #212121 !important;
+}
+
+.speech-bubble {
+  position: relative;
+  padding: 15px;
+  padding-left:25px;
+  cursor: pointer;
+  overflow: hidden;
+  background: #fff;
+
+  .message-timestamp {
+    font-size: 0.75em;
+
+    &.received {
+      text-align: right;
+    }
+
+    &.sent {
+      text-align: left;
+    }
+  }
+
+  &.sent {
+    //  margin-right: 20px;
+    // margin-left: auto;
+    border-radius: 4em 4em 0 4em;
+  }
+
+  &.received {
+    
+    margin-right: auto;
+    border-radius: 4em 4em 4em 0;
+  }
+
+  p {
+    margin: 0 0 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &::after {
+    top: 0;
+    content: "";
+    position: absolute;
+  }
+}
+
+// border-left: 1px solid #aaaaaa !important;
+// border-right: 1px solid #aaaaaa !important;
+
+nav.nav > a.nav-link:hover {
+  background-color: #735b56;
+  color: #f2eeeb
+}
+
+nav.nav > a.nav-link {
+  font-family: "Times New Roman", serif;
+  font-size: 20pt;
+  color: #212121;
+}
+
+nav.nav {
+  background-color: #d9cec1;
+}
+
+h2.typewriter {
+  font-family: "Times New Roman", serif;
+  text-align: center;
+}
+
+.cursor {
+  color: #212121;
+}
+
+.notowned {
+  color: #AAA;
+}
+
+.owned {
+  //background-color: #212121;
+  //color: white;
+}
+
+

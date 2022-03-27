@@ -1,0 +1,1015 @@
+#fulleditor{
+  zoom: 75%;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #212121;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #212121;
+  }
+}
+
+@-webkit-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #212121;
+  }
+}
+
+@-ms-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #212121;
+  }
+}
+
+@-o-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #212121;
+  }
+}
+
+.dialoguedropdeny {
+  pointer-events: none;
+}
+
+.topnodedropzone {
+  min-height: 5px;
+}
+
+.bottomnodedropzone {
+  min-height: 5px;
+}
+
+.nodeblackline {
+  background-color: #a9a9a9;
+  width: 100%;
+}
+
+.outgoingmessage {
+  width: 300px;
+  margin-left: 60px;
+}
+
+html, body, body.ng-scope {
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0 auto;
+  outline: 0;
+  height: 100vh;
+  width: 100vw;
+  font-size: 110%;
+  vertical-align: baseline;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 10px;
+  }
+
+}
+
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.nomessages{
+  display: none;
+}
+
+.dragelement {
+  width: 150px;
+  position: absolute;
+
+}
+
+.blurrerborderbottom{
+  border-bottom: 1px solid black;
+}
+
+.header {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 1px solid #e5e5e5;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.remarktopspacer {
+  height: 10px;
+}
+
+#dialoguepane {
+  padding-right: 0;
+  padding-left: 0;
+  overflow-y: auto;
+}
+
+.dialogueblurrer {
+  filter: blur(6px);
+}
+
+.textblurrer{
+  filter: blur(6px)
+}
+
+.dialogueblurrermouseover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.maininput {
+  padding-left: 0.5px;
+}
+
+.topicgreyed {
+  color: grey;
+}
+
+.paragraphgreyed {
+  color: grey;
+}
+
+.smallersubject {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.textremark {
+  text-decoration: underline;
+}
+
+code {
+  background-color: #282828;
+  color: white;
+}
+
+.dialogue {
+  min-height: 60rem;
+}
+
+.send {
+  font-size: 18px;
+  padding: 6px;
+  vertical-align: text-top;
+}
+
+.col-md-12 {
+  padding-top: 10px;
+}
+
+.container {
+  scroll-behavior: smooth;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 1280px;
+}
+
+.thread {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  &.sent {
+
+    align-items: flex-end;
+  }
+
+  &.received {
+    align-items: flex-start;
+  }
+}
+
+.thread.sent {
+  width: 350px;
+}
+
+
+
+.subject {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+input {
+  color: white;
+  width: 400px;
+  background: grey;
+}
+
+select {
+  color: white;
+}
+
+textarea {
+  color: white;
+}
+
+.app-title {
+  padding-left: 10px;
+  font-size: 2.1em;
+  color: #212121;
+  margin-bottom: 0;
+  float: left !important;
+  margin-top: 22px;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  cursor: text;
+}
+
+.subject-list {
+  width: 180px;
+  height: 300px;
+  overflow: scroll;
+}
+
+.navigate-box {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  font-size: 22px;
+  text-indent: 20px;
+  clear: left;
+  display: block;
+  list-style-type: none;
+  cursor: text;
+  line-height: 26px;
+}
+
+.x {
+  cursor: pointer;
+  position: absolute;
+  left: 4px;
+  bottom: 10px;
+  z-index: 999
+}
+
+.addparagraph {
+  background-color: white !important;
+  min-height: 20px;
+  padding-bottom: 8px;
+  text-indent: 40px;
+}
+
+.col-md-9 {
+  padding-left: 15px;
+}
+
+.zeekyboogydoog {
+  color: black !important;
+  animation-duration: 1s;
+  animation-name: zeekyboogydoog;
+}
+
+.blankcorrector {
+  top: 5px;
+  margin-left: 9px;
+}
+
+@keyframes zeekyboogydoog {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.reviewerprop {
+  border-bottom: 1px solid #212121;
+  // outline: 1px dashed #212121;
+  cursor: pointer;
+}
+
+.statementsentencehighlit{
+  text-shadow: 1px 1px 2px;
+}
+
+.statementmessagehighlit{
+  font-weight: 600;
+}
+
+.authorprop{
+  font-weight: 600;
+}
+
+.nocursor {
+  cursor: none !important;
+}
+
+.angular-tree-nodes {
+  padding-left: 0px !important;
+}
+
+.proposition {
+  list-style-type: none;
+  display: inline;
+  margin-bottom: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  min-width: 1px !important;
+  min-height: 1px !important;
+}
+
+.incoming {
+  animation-duration: 1s;
+  animation-name: incoming;
+  bottom: 0px;
+}
+
+@keyframes incoming {
+  from {
+    opacity: 0;
+    bottom: 30px;
+  }
+
+  to {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+
+.mouseoverborder {
+  // border: 1px solid grey;
+}
+
+.rejoinanimate {
+  animation-duration: 1s;
+  animation-name: rejoinanimate;
+  right: 0px;
+}
+
+@keyframes rejoinanimate {
+  from {
+    right: 1000px;
+  }
+
+  to {
+
+    right: 0px;
+  }
+}
+
+.ghostspan {
+  color: #d0d0d0;
+  padding: 2px;
+}
+
+.textcursor {
+  cursor: text;
+}
+
+.propositions {
+  cursor: text;
+}
+
+.cursorpointer {
+  cursor: pointer;
+}
+
+.proposition-text {
+  font-size: 22px;
+  cursor: pointer;
+  min-width: 3px !important;
+  min-height: 1px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.right-textarea {
+  color: black;
+  border-image-width: 0;
+  font-size: 22px;
+}
+
+.right-text {
+  margin: 0;
+  font-size: 22px;
+  cursor: text;
+}
+
+.remarkupdated {
+  font-style: italic;
+}
+
+.cursor.blinking-cursor {
+  color: #212121 !important;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+.cursor.solid-cursor {
+  color: black !important;
+  padding-bottom: 10px;
+}
+
+.cursor {
+  color: black !important;
+  font-size: 22px;
+  padding-bottom: 10px;
+
+  &::after {
+    content: "|";
+    font-weight: bold;
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+}
+
+.cursor.visible-cursor {
+  opacity: 1;
+  padding-bottom: 10px;
+}
+
+.cursor.invisible-cursor {
+  opacity: 0;
+}
+
+.booklist {
+  padding-top: 10px;
+  list-style-type: none !important;
+  padding-left: 0;
+  font-size: 18px;
+}
+
+.chat-input-field {
+  background-color: white;
+  font-size: 18px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.highlight {
+  background-color: #545454;
+}
+
+.mark {
+  color: white;
+}
+
+.nodetitle {
+  cursor: text;
+}
+
+.titlestyling {
+  display: none;
+  height: 0;
+}
+
+.owned-cursor {
+  cursor: pointer;
+}
+
+.greyedout{
+  color: grey;
+  // display: none;
+}
+
+.defrejoined{
+  color: grey;
+  display: none;
+}
+
+.recycleremarks{
+  position: absolute;
+  left: 25px;
+  top: 85px;
+  z-index: 100;
+}
+
+.dot{
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  z-index: 100;
+}
+
+.fullscreentext{
+  position: absolute;
+  left: 25px;
+  top: 55px;
+  z-index: 100;
+}
+
+.fullscreenmessages{
+  position: absolute;
+  left: 25px;
+  top: 85px;
+  z-index: 100;
+}
+
+.notext{
+  display: none;
+}
+
+.topicselected {
+  font-weight: bold;
+}
+
+.dialoguelist {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  margin-bottom: 10px;
+  min-height: 104vh;
+  max-height: 104vh;
+
+  cursor: default;
+}
+
+.mainview {
+  min-height: 84vh;
+  max-height: 84vh;
+}
+
+.textlist {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 30px;
+  border-top: 1px solid white;
+  // border-bottom: 1px solid #212121;
+  font-family: "Times New Roman", Times, serif;
+  // overflow-y: hidden;
+  overflow-x: hidden;
+  min-height: 104vh;
+  max-height: 104vh;
+  border-right: 1px solid #c9c9c9;
+  cursor: text;
+  padding-right: 5px;
+}
+
+.remarkselected {
+  font-weight: bold;
+}
+
+.remarkmouseover {
+  border-bottom: 1px solid black;
+}
+
+.updatecursor {
+  cursor: text;
+}
+
+.left-text {
+  padding-left: 0.5px;
+}
+
+.texttopic {
+  font-size: 22px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-style: italic;
+}
+
+div#tree-root.textlist {
+  border-right: none;
+}
+
+div#thetext.col-md-12 {
+  padding-top: 0px;
+}
+
+.paragraphplaceholder {
+  color: #dbdbdb;
+  cursor: text;
+  height: 26px;
+}
+
+.tree-node.tree-node-content.remark.remarkselected {
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.dialoguetopic {
+  font-size: 22px;
+  margin: 0 auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.menubutton {
+  background-color: white;
+
+  &:hover {
+    border: 1px solid transparent;
+  }
+}
+
+.titled {
+
+}
+
+.remark {
+
+}
+
+.dialogueinput {
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+textarea.expanding {
+  margin: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+.chatinput {
+  display: block;
+  background: transparent;
+  border: none;
+  outline: none !important;
+  resize: none;
+}
+
+.deleted {
+  text-decoration: line-through;
+}
+
+.paragraphhandle {
+
+}
+
+.nodehandle {
+
+}
+
+.topiclist {
+  min-height: 50rem;
+  max-height: 50rem;
+}
+
+#firstrow {
+  padding-bottom: 5px;
+  cursor: default;
+}
+
+.dragdimmed {
+  text-shadow: 1.5px 1.5px grey;
+}
+
+.alignright {
+  margin-left: 40px !important;
+  display: inline-flex;
+  width: 303px !important;
+
+}
+
+textarea.alignright {
+  padding-right: 45px;
+  padding-left: 5px;
+  display: inline-flex;
+}
+
+.tooltip.top {
+  padding: 5px 0;
+  margin-top: 0;
+}
+
+.node {
+  circle {
+    fill: #fff;
+    stroke: #1f89c3;
+    stroke-width: 3px;
+  }
+
+  text {
+    font: 12px sans-serif;
+    width: 40px;
+  }
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 8px;
+}
+
+.ownmessage{
+  margin-left: auto;
+}
+
+.othersmessage{
+  margin-right: auto
+}
+
+.nodeynode {
+  &:nth-child(0) {
+    font-weight: bold;
+  }
+}
+
+.login-wrapper {
+  > .jumbotron {
+    background: none;
+  }
+}
+
+.tree-node.tree-node-content.dialoguetopic {
+  margin: 0 auto;
+}
+
+tr.book-select {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+nav.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 250px;
+  width: 250px;
+  height: 100vh;
+  max-width: 250px;
+  box-sizing: border-box;
+  moz-box-sizing: border-box;
+  webkit-box-sizing: border-box;
+}
+
+.body-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 10px 10px 10px 260px;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+
+  a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+
+    &:hover {
+      color: #f1f1f1;
+    }
+
+    &:focus {
+      color: #f1f1f1;
+    }
+  }
+}
+
+.overlay-content {
+  width: 100%;
+  color: white;
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.topspacer {
+  padding-top: 1px;
+}
+
+.rejoining {
+  color: grey;
+  border-bottom: 1px solid grey;
+}
+
+.addbelownotowned {
+  padding-bottom: 6px;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.topparagraphadder {
+  height: 6.5px;
+  width: 50%;
+  cursor: pointer;
+}
+
+.slideinleft {
+  animation-duration: 1s;
+  animation-name: slideinleft;
+  left: 0px;
+}
+
+@keyframes slideinleft {
+  from {
+    left: calc(700px * 2.3);
+  }
+
+  to {
+
+    left: 0px;
+  }
+}
+
+.bottomparagraphadder {
+  height: 6.5px;
+  width: 50%;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.blackline {
+  background-color: #a9a9a9;
+}
+
+.ispresentlybeingdragged{
+  color: grey;
+}
+
+.chatinputminimized {
+  height:1px;
+}
+
+.leftpropositionadder {
+  cursor: text;
+  margin-left: 3px;
+  float: left;
+  background-color: red;
+}
+
+#image{
+position:absolute;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {
+    overflow-y: auto;
+
+    a {
+      font-size: 20px;
+    }
+
+  }
+}
+
+.menu-right-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menu-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.slideAnimate.ng-enter {
+  transition: 0.5s linear all;
+  margin-top: 100%;
+}
+
+.slideAnimate.ng-enter.ng-enter-active {
+  margin-top: 0%;
+}
+
+.slideAnimate.ng-leave {
+  transition: 0.5s linear all;
+  opacity: 1;
+}
+
+.slideAnimate.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+pre.expanding-clone {
+  padding-left: 55px !important;
+}
+
+.remark {
+  border-radius: 6px;
+  display: inline-block;
+  cursor: default;
+  padding: 15px;
+
+}
+
+.firstthread {
+  margin-top: 0px;
+}
+
+@keyframes slideinleft {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+.grow-wrap {
+  /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+  display: grid;
+}
+.grow-wrap::after {
+  /* Note the weird space! Needed to preventy jumpy behavior */
+  content: attr(data-replicated-value) " ";
+
+  /* This is how textarea text behaves */
+  white-space: pre-wrap;
+
+  /* Hidden from view, clicks, and screen readers */
+  visibility: hidden;
+}
+.grow-wrap > textarea {
+  /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+  resize: none;
+
+  /* Firefox shows scrollbar on growth, you can hide like this. */
+  overflow: hidden;
+}
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  border: 1px solid black;
+  font: inherit;
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
+}

@@ -1,0 +1,123 @@
+<div class="modal-header">
+  <div class="modal-title"
+       id="modal-title-register">Register
+  </div>
+</div>
+<div class="modal-body"
+     id="modal-body-register">
+  <form name="form"
+        ng-submit="vm.register(form.$valid)"
+        novalidate>
+    <div class="form-row">
+      <div class="form-group col-md-12"
+           ng-class="{ 'has-error': form.email.$invalid && !form.email.$pristine }">
+        <label for="email">Email</label>
+        <input type="email"
+               class="form-control"
+               name="email"
+               id="email"
+               ng-model="vm.user.email"
+               required
+               ng-keyup="$event.keyCode === 13 ? vm.register(form.$valid) : form.nothing"
+               placeholder="Email">
+        <p ng-show="form.email.$invalid && !form.email.$pristine"
+           class="help-block">
+          Enter a valid email
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12"
+           ng-class="{ 'has-error': form.password.$invalid && !form.password.$pristine }">
+        <label for="password">Password</label>
+        <input type="password"
+               class="form-control"
+               name="password"
+               id="password"
+               ng-model="vm.user.password"
+               ng-minlength="6"
+               ng-keyup="$event.keyCode === 13 ? vm.register(form.$valid) : form.nothing"
+               required
+               placeholder="Password">
+        <p ng-show="form.password.$invalid && form.password.$error.minlength"
+           class="help-block">
+          Password must be at least 6 characters.
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12"
+           ng-class="{ 'has-error': form.passwordVerify.$invalid && !form.passwordVerify.$pristine }">
+        <label for="password-verify">Verify Password</label>
+        <input type="password"
+               class="form-control"
+               name="passwordVerify"
+               id="password-verify"
+               ng-model="vm.passwordVerify"
+               placeholder="Verify Password"
+               ng-keyup="$event.keyCode === 13 ? vm.register(form.$valid) : form.nothing"
+               required
+               equal="{{ vm.user.password }}">
+        <p ng-show="form.passwordVerify.$error.equal"
+           class="help-block">
+          Passwords must match
+        </p>
+      </div>
+    </div>
+
+<!--     <div class="form-row">
+      <div class="form-group col-md-12"
+           ng-class="{ 'has-error': form.firstName.$invalid && !form.firstName.$pristine }">
+        <label for="first-name">First Name</label>
+        <input type="text"
+               class="form-control"
+               name="firstName"
+               id="first-name"
+               ng-model="vm.user.firstName"
+               placeholder="First Name">
+        <p ng-show="form.firstName.$invalid && !form.firstName.$pristine"
+           class="help-block">
+          Please provide a first name.
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12"
+           ng-class="{ 'has-error': form.lastName.$invalid && !form.lastName.$pristine }">
+        <label for="last-name">Last Name</label>
+        <input type="text"
+               class="form-control"
+               name="lastName"
+               id="last-name"
+               ng-model="vm.user.lastName"
+               placeholder="Last Name">
+        <p ng-show="form.lastName.$invalid && !form.lastName.$pristine"
+           class="help-block">
+          Please provide a last name.
+        </p>
+      </div>
+    </div> -->
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button"
+          class="btn btn-secondary"
+          ng-click="vm.cancel()">
+    Cancel
+  </button>
+  <button type="submit"
+          ng-disabled="form.$invalid || vm.processing"
+          ng-click="vm.register(form.$valid)"
+          class="btn btn-primary">
+    <span>
+      <span ng-if="vm.processing">
+        <i ng-if="vm.processing"
+           class="fa fa-spinner fa-spin"></i>&nbsp;
+        </span> Submit
+    </span>
+  </button>
+</div>

@@ -1,0 +1,64 @@
+.navboi {
+  width: 100%;
+  height: 64px;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 12px;
+}
+
+.logoboi {
+  display: block;
+  background: url('/assets/images/logo.svg') no-repeat center;
+  background-size: contain;
+  padding: 4px;
+  height: 100%;
+  width: 32px;
+}
+
+.titleboi {
+  font-size: 2.3em;
+  color: black !important;
+  height: 100%;
+  display: inline-block;
+}
+
+.spacerboi {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.flexyboi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.wrappyboi {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.rightytightyboi {
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+
+  .flexyboi {
+    flex-direction: row;
+  }
+
+}
+

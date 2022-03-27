@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h3 class="modal-title"
+      id="modal-title-editor-options">Settings
+  </h3>
+</div>
+<div class="modal-body"
+     id="modal-body-editor-options">
+  <div class="col-md-12">
+    <button type="button"
+            class="btn col-md-3"
+            ng-click="vm.options.highlightOwned = !vm.options.highlightOwned"
+            ng-class="{ 'btn-success': vm.options.highlightOwned, 'btn-light': !vm.options.highlightOwned}">
+      <i class="fa fa-2x fa-check-circle-o"
+         ng-if="vm.options.highlightOwned"></i>
+      <i class="fa fa-2x fa-circle-o"
+         ng-if="!vm.options.highlightOwned"></i>
+    </button>
+    <span>Highlight authored propositions</span><br />
+  </div>
+
+  <div class="col-md-12">
+    <button type="button"
+            class="btn col-md-3"
+            ng-click="vm.options.dimNotOwned = !vm.options.dimNotOwned"
+            ng-class="{ 'btn-success': vm.options.dimNotOwned, 'btn-light': !vm.options.dimNotOwned}">
+      <i class="fa fa-2x fa-check-circle-o"
+         ng-if="vm.options.dimNotOwned"></i>
+      <i class="fa fa-2x fa-circle-o"
+         ng-if="!vm.options.dimNotOwned"></i>
+    </button>
+    <span class="col-md-9">Dim other propositions</span><br />
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button"
+          ng-click="vm.close()"
+          class="btn btn-primary">Close
+  </button>
+</div>

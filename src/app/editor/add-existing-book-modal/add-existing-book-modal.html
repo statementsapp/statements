@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <div class="modal-title"
+       id="modal-title-add-existing-book"><i class="fa fa-book"></i>&nbsp; Add Existing Book
+  </div>
+</div>
+<div class="modal-body"
+     id="modal-body-add-existing-book">
+  <form name="form"
+        novalidate>
+    <div class="form-row">
+      <div class="form-group col-md-12"
+           ng-class="{ 'has-error': form.title.$invalid && !form.title.$pristine }">
+        <label for="title">Enter a book id</label>
+        <input type="text"
+               class="form-control"
+               id="title"
+               name="bookId"
+               ng-model="vm.bookId"
+               required
+               placeholder="Book id"
+               ng-keyup="$event.keyCode === 13 ? vm.openBook() : form.nothing">
+        <p ng-show="vm.errors.noBookFound" class="help-block">
+          No book with that id found
+        </p>
+        <p ng-show="vm.errors.misc" class="help-block">
+          {{ vm.errors.misc }}
+
+       <!--    There has been an error that ng shows due to third user adding a book -->
+        </p>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button"
+          class="btn btn-secondary"
+          ng-click="vm.cancel()">
+    Cancel
+  </button>
+  <button type="submit"
+          ng-disabled="form.$invalid || vm.processing"
+          ng-click="vm.openBook()"
+          class="btn btn-primary">
+    <span>
+    <span ng-if="vm.processing">
+      <i class="fas fa-spinner fa-spin"></i>&nbsp;
+    </span>
+    Submit
+    </span>
+  </button>
+</div>

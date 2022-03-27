@@ -1,0 +1,363 @@
+<nd-readonly-shield ng-if="!loggedIn()"></nd-readonly-shield>
+
+<div class="container " 
+     ng-init="initialize"
+     ng-click="blurEdit()"
+     style=""
+     ng-mouseover="containerMouseover = true"
+     ng-mouseleave="containerMouseover = false"
+     ng-keyup="($event.keyCode === 8 || $event.keyCode === 27) && (draggingProposition || draggingParagraph || draggingNode) ? [clearDragDetector(), clearDrag()] : ($event.keyCode === 8 && thereIsAHighlightedParagraph) ? markParagraph() : ($event.keyCode === 8 && thereIsAMarkedParagraph) ? deleteProposition(highlightedParagraphNode, highlightedParagraph, null, null, 'paragraph') : ($event.keyCode === 8 && thereIsAHighlightedNode) ? markNode() : ($event.keyCode === 8 && thereIsAMarkedNode) ? deleteProposition(highlightedNode, null, null, null, 'node'): inputs.nothing;"
+     spellcheck="false"
+     id="fulleditor"
+     ng-keyup="$event.keyCode === 8 || $event.keyCode === 46 ? [clearDragDetector(), clearDrag()] : inputs.nothing">
+  <div class="row"
+       id="firstrow"
+       ng-class="{titled: title}"
+       ng-click="[clearDragDetector(), draggingNode || draggingParagraph || draggingProposition ? clearDrag() : inputs.nothing]"
+       ng-mousemove="assessDragScrollUpper()"
+       style="line-height: normal;">
+    <!--     <span class="app-title"
+              ng-click="clearWithAdder()"> {{ title ? title : ''}} </span> -->
+    <div id="myNav"
+         class="overlay"
+         ng-click="closeNav()" 
+    >
+      <div class="overlay-content">
+        <a href="javascript:void(0)"
+           ng-click="closeNav()">Some text</a>
+        <a href="javascript:void(0)"
+           ng-click="closeNav()">More text</a>
+        <a href="javascript:void(0)"
+           ng-click="closeNav()">Last paragraph of text.</a>
+      </div>
+    </div>
+<!--     <div ng-if="!loggedIn() || isGuest()">
+      <div style="text-align: right">
+        <button class="btn btn-primary"
+                ng-click="openLoginModal()">
+          Login
+        </button>
+        <button class="btn btn-default"
+                ng-click="openRegisterModal()">
+          Register
+        </button>
+      </div>
+    </div> -->
+    <div ng-if="canSeeTitle()">
+      <div>
+
+        <span 
+              
+              id="apptitle"
+              class="app-title"
+              ng-mousedown="data[0].documentClaimedBy === userId ? [setNodeEditability(null, 'title'), $event.stopPropagation()] : inputs.nothing"
+              ng-mouseover="node.bottomDropzoneMouseover = true"
+              ng-mouseleave="node.bottomDropzoneMouseover = false"
+              ng-enter="updateNode(null)"
+              >
+          {{title}}
+<!--           <div class="titlesectiondropzone"
+               ng-class="{'titleblackline': node.bottomDropzoneMouseover === true && draggedNode.nodeId}"
+               ng-mouseover="node.bottomDropzoneMouseover = true;"
+               ng-mouseleave="node.bottomDropzoneMouseover = false"
+               ng-if="title"
+               ng-click="(draggedNode.nodeId) ? [selectedNode = node, dropNode(node, 'bottom')] : inputs.nothing"
+               id="bottom{{node.nodeId}}">
+          </div> -->
+        </span>
+        <!-- <input type="text" id="copy-input" value="lkjlkjkljkjlj;jkj"/>
+        <input type="button" id="copy-button" value="Copy"> -->
+        <div class="pull-right" style="margin-top: 40px">
+          <div>Share link to co-write:</div>
+          <div class="menu-right-wrapper">
+
+            <div class="link-box">
+              <input id="directLinkInput" type="text" style="font-size: 0.75em" readonly ng-value="currentLocation"/>
+              <button class="btn menubutton"
+                      type="button"
+                      uib-tooltip="Minimal Styling"
+                      ng-click="toggleMinimalStyling()">
+                <i class="fa fa-feather-alt"></i>
+              </button>
+              <button class="btn menubutton"
+                      type="button"
+                      uib-tooltip="Copy Link"
+                      ng-click="copyLink()">
+                <i class="fa fa-book-medical "></i>
+              </button>
+<!--               <a download="export.txt" style="" id="downloadlink">
+                <button class="btn menubutton btn-primary help downloadbutton"
+                      type="button"
+                      uib-tooltip="Export to .txt"
+                      ng-mousedown="makeTextFile()">
+                  <i class="fa fa-clipboard"></i>
+                </button>
+              </a> -->
+<!--               old export code: -->
+<!--         <a download="export.txt" style=""
+           id="downloadlink">
+          <button class="btn btn-primary help downloadbutton">
+            <i class="fa fa-file-text-o"></i>
+          </button>
+        </a> -->
+            </div>
+<!--             <span class="dragelement" ng-if="draggingNode">{{draggedNode.topic}}</span>
+            <span class="dragelement" ng-if="draggingParagraph">{{draggedParagraph.text}}</span> -->
+            <span id="dragelement" class="dragelement" ng-if="draggingProposition || draggingParagraph || draggingNode">
+              <span ng-repeat="string in dragStrings">{{string.text}}</span>
+            </span>
+
+
+<!--             <div class="menu-button-wrapper">
+              <span ng-if="menuExpanded">
+                                          <span ng-repeat="b in menuButtons">
+
+                                          
+                                          <span ng-if="b.key === 'users'">
+                                          <button uib-popover-template="'connectedUsers.html'"
+                                                  popover-trigger="mouseenter"
+                                                  popover-placement="bottom"
+                                                  uib-tooltip="{{ b.tooltip }}"
+                                                  class="btn menubutton">
+                                          <i ng-class="b.icon"></i>
+                                          <span>{{ roomUsers.length }}</span>
+                                          </button>
+                                          </span>
+
+
+                                          <span ng-if="b.key !== 'users'">
+
+                                          <button class="btn menubutton"
+                                                  type="button"
+                                                  ng-mouseenter="changeMenuButtonColor($index, true)"
+                                                  ng-mouseleave="changeMenuButtonColor($index, false)"
+                                                  uib-tooltip="{{ b.tooltip }}"
+                                                  ng-style="{ 'background-color': b.bgColor }"
+                                                  ng-click="onMenuClicked(b.key)">
+                                          <i ng-class="b.icon"></i>
+                                          <span ng-if="b.key === 'profile'">{{ profile.emailAddress }}</span>
+                                          </button>
+                                          </span>
+                                          </span>
+                                          </span>
+              <button class="btn menubutton"
+                      type="button"
+                      uib-tooltip="Menu"
+                      ng-click="menuExpanded = !menuExpanded">
+                <i class="fa fa-angle-double-left"
+                   ng-if='!menuExpanded'></i>
+                <i class="fa fa-angle-double-right"
+                   ng-if='menuExpanded'></i>
+              </button>
+            </div> -->
+
+          </div>
+
+          <!-- <div>Export</div> -->
+          <div class="menu-right-wrapper">
+
+            <div class="link-box">
+           <!--    <input id="directLinkInput" type="text" style="font-size: 0.75em" readonly ng-value="currentLocation"/> -->
+              
+<!--               <button class="btn menubutton"
+                      type="button"
+                      uib-tooltip="Copy Link"
+                      ng-click="copyLink()">
+                <i class="fa fa-clipboard"></i>
+              </button> -->
+              <a download="export.txt" style="" id="downloadlink">
+
+                <button class="btn menubutton btn-primary help downloadbutton"
+                      type="button"
+                      uib-tooltip="Export to .txt"
+                      ng-mouseover="makeTextFile()"
+                      ng-click="clickDownloadLink()">
+                  <span style="color: blue">Export</span>
+                </button>
+              </a>
+
+            </div>
+
+
+
+
+
+          </div>
+        </div>
+        <div class="text-center">
+          <a id="treeicon"
+             data-toggle="modal"
+             data-target="#treemodal"
+             href="#treemodal"
+             style="display: none;">
+          </a>
+          <div id="treemodal"
+               class="modal fade"
+               role="dialog"
+               style="color:white">
+            <div class="modal-dialog-lg">
+              <div class="modal-content">
+                <div class="modal-body"
+                     style="background-color: rgb(9,13,14)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="upperdragscroller" style="height: 1px; padding-bottom: 1px; background-color: black" ng-mouseover="upperDragScrollerMouseOver = !upperDragScrollerMouseOver;" ng-mousemove="assessDragScrollUpper()"></div>
+  <div class="row mainview"
+       id="mainview">
+
+    <!--       <div class="col-md-2 topiclist" stylfe="padding: 7px">
+            <form role="form">
+              <div class="form-group">
+                <input ng-model="keyword" placeholder="Navigate" onfocus="this.placeholder = ''" class= "form-control navigate-box"  />
+              </div>
+            </form>
+            <div class="library" style=" padding: 5px" ng-click="selectedProposition.dialogueSide = true;">
+              <div style="text-align: center; border-bottom: 1px solid white;">
+                <strong style="">Library</strong> <span class="glyphicon glyphicon-menu-down pull-right"></span>
+              </div>
+              <div ng-repeat="book in library" ng-click="selectBook(book)">
+                <ul class="booklist">
+                  <li style="" class="">{{book.title}}</li>
+                </ul>
+              </div>
+            </div>
+            <br>
+          </div> -->
+    <div class=""
+         ng-click=""
+         id="thetext"
+         style="padding-left: 30px;"
+         ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages}">
+               <!--
+                <span class='dot'
+                    ng-click="!othersAreHidden && (loggedIn() || isGuest()) ? hideOthersParagraphs() : othersAreHidden && (loggedIn() || isGuest()) ? showOthersParagraphs() : inputs.nothing">|||</span>
+                    -->
+      <!--
+         <span class='fullscreentext'
+              ng-click="!fullScreenText && (data[0]) ? goFullScreenText() : fullScreenText && (loggedIn() || isGuest()) ? goSplitScreen() : inputs.nothing">O</span>
+              -->
+      <!--          <span class='fullscreenmessages'
+                    ng-click="!fullScreenMessages && (loggedIn() || isGuest()) ? goFullScreenMessages() : fullScreenMessages && (loggedIn() || isGuest()) ? goSplitScreen() : inputs.nothing">-</span> -->
+      <!--
+         <span class='recycleremarks'
+                       ng-click="!recycleRemarks && (loggedIn() || isGuest()) ? goRecycleRemarks() : recycleRemarks && (loggedIn() || isGuest()) ? dontRecycleRemarks() : inputs.nothing">&</span>
+                       -->
+      <div ui-tree="treeOptions"
+           data-drag-enabled="false"
+           id="tree-root"
+           class="angular-ui-tree textlist"
+           ng-mouseover="[lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
+           ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
+           ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(), $event.stopPropagation()] : inputs.nothing"
+
+      >
+        <!-- hideExpandingTextarea(), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, selectedProposition.dialogueSide = false, selectedThread = {}, -->
+        <!-- getLastVisiblePropositionInBook(data[0], $event),
+        ng-mouseover="lightUpLastVisiblePropositionInBook(data[0], $event)"
+        ng-mouseleave="blurLightUpLastVisiblePropositionInBook(data[0], $event)" -->
+        <ol ui-tree-nodes
+            ng-model='data[0].nodes'
+            style=""
+            id="bookdata"
+            class="angular-ui-tree-nodes"
+        >
+          <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
+              ui-tree-node
+              ng-class="{ mousedovernode: node.mouseOver === true }"
+              class="angular-ui-tree-node node"
+              id="{{node.nodeId}}"
+              ng-if="!node.hiddenForAll">
+            <nd-editor-text-renderer></nd-editor-text-renderer>
+          </li>
+        </ol>
+      </div>
+      <div style="height: 10px;"
+           ng-mouseover="mouseOverTextBlurrer()"
+           ng-mouseleave="mouseLeaveTextBlurrer()"
+           ng-mousemove="assessDragScrollLower()"
+           ng-click="blurText()"
+           id="textblurrer"
+           ></div>
+    </div>
+    <div
+      ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id}"
+      ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
+      id="dialoguepane"
+      ng-mouseover="dialogueMouseOver = true" 
+      ng-mouseleave="dialogueMouseOver = false"
+    >
+      <!-- ng-click="[clearDrag(), $event.stopPropagation()]" -->
+      <!--       <span style=""
+                  ng-if="dialogueMouseOver"
+                  ng-mouseover="xMouseOver = true"
+                  ng-mouseleave="xMouseOver = false"
+                  ng-click="[blurDialogue(), $event.stopPropagation()]"
+                  class="x glyphicon glyphicon-remove"
+
+            ></span> -->
+      <div ui-tree
+           id="dialoguelist"
+           data-drop-enabled="false"
+           data-drag-enabled="false"
+           data-empty-placeholder-enabled="false"
+           class="angular-ui-tree dialoguelist"
+           style="padding-left: 15px; padding-top: 15px;">
+
+        <ol ui-tree-nodes
+            ng-model='data[0].dialogue'
+            style="list-style-type: none; padding-left: 0"
+            class="angular-ui-tree-nodes">
+           <!--  ng-if="message.hidden !== true && message[userId] !== 'hidden'" -->
+          <li ng-repeat="message in data[0].dialogue | orderBy: 'messageNumber'"
+              
+              ui-tree-node
+              class="angular-ui-tree-node">
+            <nd-editor-dialogue-renderer></nd-editor-dialogue-renderer>
+          </li>
+        </ol> 
+      </div>
+    </div>
+  </div><!-- Row -->
+  <div class="row"
+       ng-click="clearDrag()"
+       style="">
+    <div class="col-md-8">
+      <span style="width: 500px;"></span>
+<!--       {{data[0].authorTable}}
+      op:{{otherPastels}}
+      uc: {{userColor}}
+      uid: {{userId}}
+      title: {{title}} -->
+<!--       {{draggingNode}}
+      {{draggingParagraph}}
+      {{draggingProposition}}
+      LF {{hasLeftFocus}}
+      CLFDC: {{cancelListenForDoubleClick}}
+      TSE: {{tempStopEditable}}
+      WHBC: {{whatHasBeenClicked}} --> 
+
+    </div>
+    <div class="col-md-4"
+         id="dialogueblurrer"
+         style="height: 10px; cursor: pointer"
+         ng-if="!fullScreenText"
+         ng-class="{'blurrerborderbottom': !fullScreenMessages}"
+         ng-mouseover="mouseOverDialogueBlurrer()"
+         ng-mouseleave='mouseLeaveDialogueBlurrer()'
+         ng-click="selectedProposition.dialogueSide = true; blurDialogue();">
+    </div>
+  </div><!-- Row -->
+
+  <script type="text/ng-template" id="connectedUsers.html">
+    <span>{{ roomUsers.length }} users connected.</span>
+    <div ng-repeat="u in roomUsers">{{ u }}</div>
+  </script>
+</div><!-- Controller -->
+

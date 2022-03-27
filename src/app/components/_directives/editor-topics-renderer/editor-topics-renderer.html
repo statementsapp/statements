@@ -1,0 +1,18 @@
+<div class="tree-node tree-node-content nodeynode"
+     ng-class="{topicselected: selectedNode.class == node.class}"
+     style="cursor: pointer">
+  {{node.topic}}
+</div>
+
+<ol ui-tree-nodes
+    ng-model="node.children"
+    style="list-style: none; padding-left: 20px"
+    ng-class="{hidden: collapsed}"
+    class="angular-ui-tree-nodes">
+  <li ng-repeat="node in node.children | filter : keyword"
+      style=""
+      ui-tree-node
+      ng-click="selectNode(node); $event.stopPropagation();">
+    <nd-editor-topics-renderer></nd-editor-topics-renderer>
+  </li>
+</ol>

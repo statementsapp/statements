@@ -1,0 +1,45 @@
+.choice:nth-child(1){
+	
+}
+
+.choice:nth-child(2){
+	
+}
+
+label {
+	font-size: 32px;
+}
+
+.margin {
+	margin-bottom: 45px;
+}
+
+.nomargin {
+	margin-bottom: 0px;
+}
+
+.instruction {
+	font-size: 32px;
+    padding-right: 30px;
+}
+
+.addbookinput{
+	height: 55px;
+	font-size: 32px;
+
+
+}
+
+.modal-body-new-book {
+	margin-top: 150px;
+}
+
+.titular.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.titular.ng-enter.ng-enter-active {
+  opacity:1;
+}

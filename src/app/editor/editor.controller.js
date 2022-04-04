@@ -1614,6 +1614,11 @@
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.id){
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = payload.text;
                 }
+                if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks){
+                  for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
+                    $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll = true;
+                  }
+                }
               }
             }
           }

@@ -37,7 +37,7 @@ It's like building a document a block at a time, rather than by grains of sand, 
 
 ### Overview
 
-Notional Documents is a propositional-logic approach to collaboration and document crafting.
+Statements is a propositional-logic approach to collaboration and document crafting.
 Discuss a topic by trading sentences to build documents made up of sentences. 
 
 ### Features 

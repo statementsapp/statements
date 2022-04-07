@@ -4655,8 +4655,7 @@
             for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
               for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id === id &&
-                  !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll &&
-                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] !== 'hidden'){
+                  !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].droppedElsewhere){
                   $scope.selectedNode = angular.copy($scope.data[0].nodes[i]);
                   $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 

@@ -603,7 +603,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
   </li>
 </ol>
 <div class="bottomnodedropzone"
-     ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'bottomnode') || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver)}"
+     ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'bottomnode') || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingParagraph && !draggingProposition)}"
      ng-if="!node.bottomNodeAdd"
      ng-mouseover="node.bottomDropzoneMouseOver = true"
      ng-mouseleave="node.bottomDropzoneMouseOver = false"

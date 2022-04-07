@@ -1445,6 +1445,7 @@
 
       // Marks all of another's propositions in a paragraph, second backspace
       $scope.markAllPropositions = function () {
+        console.log("Mark all props")
         $scope.selectedParagraph.markAll = true;
         $scope.selectedParagraph.highlightAll = false;
       };

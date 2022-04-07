@@ -512,7 +512,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                     $event.keyCode === 13 && data[0].documentClaimedBy === userId && selectedProposition.dialogueSide != true && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
                     $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition == '' && remark.author === userId ? resetFromEnter() : inputs.nothing;
                     (($event.keyCode === 8 && mark.id === remark.id && mark.marked === true && selectedProposition.author === userId) || ($event.keyCode === 8 && inputs.proposition === '' && selectedProposition.type === 'blank') || ($event.keyCode === 8 && inputs.proposition === '' && selectedProposition.type === 'negation' && selectedProposition.of.author === userId && mark.id === remark.id && mark.marked === true)) ? deleteProposition(node, paragraph, false, false) : inputs.nothing;
-                    ($event.keyCode === 8 && highlight.id === proposition.id && highlight.highlit === true) ? markProposition(remark) : inputs.nothing;
+                    ($event.keyCode === 8 && highlight.id === remark.id && highlight.highlit === true) ? markProposition(remark) : inputs.nothing;
                     (inputs.proposition === '' && $event.keyCode === 8 && proposition.type !== 'blank') ? highlightProposition(node, paragraph, remark) : inputs.nothing;"
                 spellcheck="false"
                 contenteditable="true"

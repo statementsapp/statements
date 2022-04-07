@@ -2552,7 +2552,7 @@
                       }
                       setTimeout(function () {
                           document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]).click();
-                      }, 20);
+                      }, 20); 
                    
 
                   }

@@ -1454,10 +1454,12 @@
       // Defines what's been highlighted
       $scope.highlightProposition = function (node, paragraph, proposition) {
         console.log("Highlight proposition")
+        console.log("The proposition: ", proposition)
         if ($scope.highlight.id !== proposition.id) {
           $scope.highlight.id = proposition.id;
           $scope.highlight.highlit = true;
         }
+        console.log("Highlight id: ", $scope.highlight.id)
       };
 
       // Defines what's been marked for deletion with additional backspace

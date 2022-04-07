@@ -2546,7 +2546,7 @@
                           $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[n].id !== $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id){
                           setTimeout(function () {
                             console.log("first click")
-                              document.getElementById('remark' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n]).click();
+                              document.getElementById('remark' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n].id).click();
                           }, 20);
                           break;
                         }
@@ -2554,7 +2554,7 @@
                       setTimeout(function () {
                         console.log("second click")
                         console.log("The element: ", document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]))
-                          document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]).click();
+                          document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].id).click();
                           
                       }, 20); 
                       break;

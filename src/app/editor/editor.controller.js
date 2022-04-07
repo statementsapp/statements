@@ -2391,6 +2391,13 @@
             }
           }
 
+          if ($scope.userId !== payload.author &&
+            $scope.selectedNode.nodeId === payload.nodeId){
+            $scope.selectedNode = {};
+            $scope.selectedParagraph = {};
+            $scope.selectedProposition = {};
+            $scope.selectedRemark = {};
+          }
 
 
         } else if (payload.modifier === 'paragraph'){
@@ -2443,6 +2450,13 @@
             }, 20);
           }
 
+          if ($scope.userId !== payload.author &&
+            $scope.selectedParagraph.paragraphId === payload.paragraphId){
+            $scope.selectedNode = {};
+            $scope.selectedParagraph = {};
+            $scope.selectedProposition = {};
+            $scope.selectedRemark = {};
+          }
 
         } else if (payload.modifier === 'proposition'){
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
@@ -2561,6 +2575,15 @@
               }
             }
           }
+
+          if ($scope.userId !== payload.author &&
+            $scope.selectedProposition.id === payload.id){
+            $scope.selectedNode = {};
+            $scope.selectedParagraph = {};
+            $scope.selectedProposition = {};
+            $scope.selectedRemark = {};
+          }
+
         } else if (payload.modifier === 'remark'){
 
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
@@ -2603,6 +2626,15 @@
               }
             }
           }
+
+          if ($scope.userId !== payload.author &&
+            $scope.selectedRemark.id === payload.remarkId){
+            $scope.selectedNode = {};
+            $scope.selectedParagraph = {};
+            $scope.selectedProposition = {};
+            $scope.selectedRemark = {};
+          }
+
         }
 
         // assigns firsts to propositions DELETION

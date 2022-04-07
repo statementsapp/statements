@@ -2368,13 +2368,25 @@
 
 
           $scope.data[0].nodes[payload.sectionNumber].hiddenForAll = true;
+          if (payload.dropflag){
+            $scope.data[0].nodes[payload.sectionNumber].droppedElsewhere = true;
+          }
 
           for (var i = 0; i < $scope.data[0].nodes[payload.sectionNumber].paragraphs.length; i++){
             $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].hiddenForAll = true;
+            if (payload.dropflag){
+              $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].droppedElsewhere = true;
+            }
             for (var j = 0; j < $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions.length; j++){
               $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].hiddenForAll = true;
+              if (payload.dropflag){
+                $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].droppedElsewhere = true;
+              }
               for (var k = 0; k < $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].remarks.length; k++){
                 $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].remarks[k].hiddenForAll = true;
+                if (payload.dropflag){
+                  scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].remarks[k].droppedElsewhere = true;
+                }
               }
             }
           }
@@ -2388,10 +2400,16 @@
                 if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.paragraphId){
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                     $scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll = true;
+                    if (payload.dropflag){
+                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].droppedElsewhere = true;
+                    }
                     $scope.data[0].nodes[i].paragraphs[j].propositions[k].highlighted = false;
                     $scope.data[0].nodes[i].paragraphs[j].propositions[k].marked = false;
                   }
                   $scope.data[0].nodes[i].paragraphs[j].hiddenForAll = true;
+                  if (payload.dropflag){
+                    $scope.data[0].nodes[i].paragraphs[j].droppedElsewhere = true;
+                  }
                   break;
                 }
               }
@@ -2404,10 +2422,16 @@
                   apply.i = angular.copy(i);
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                     $scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll = true;
+                    if (payload.dropflag){
+                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].droppedElsewhere = true;
+                    }
                     $scope.data[0].nodes[i].paragraphs[j].propositions[k].highlighted = false;
                     $scope.data[0].nodes[i].paragraphs[j].propositions[k].marked = false;
                   }
                   $scope.data[0].nodes[i].paragraphs[j].hiddenForAll = true;
+                  if (payload.dropflag){
+                    $scope.data[0].nodes[i].paragraphs[j].droppedElsewhere = true;
+                  }
                   $scope.data[0].nodes[apply.i].paragraphs[0].propositions[0].hiddenForAll = false;
                   break;
 
@@ -2433,9 +2457,15 @@
                   if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks){
                     for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
                       $scope.data[0].nodes[apply.i].paragraphs[j].propositions[k].remarks[m].hiddenForAll = true;
+                      if (payload.dropflag){
+                        $scope.data[0].nodes[apply.i].paragraphs[j].propositions[k].remarks[m].droppedElsewhere = true;
+                      }
                     }
                   }
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll = true;
+                  if (payload.dropflag){
+                    $scope.data[0].nodes[i].paragraphs[j].propositions[k].droppedElsewhere = true;
+                  }
                   break;
                 }
               }
@@ -2462,6 +2492,9 @@
           if (apply.blankNode !== false){
             // you blank the node. first blank the prop's paragraph, then resurrect the blank paragraph, and click the blank prop
             $scope.data[0].nodes[apply.i].paragraphs[apply.j].hiddenForAll = true;
+            if (payload.dropflag){
+              $scope.data[0].nodes[apply.i].paragraphs[apply.j].droppedElsewhere = true;
+            }
             $scope.data[0].nodes[apply.i].paragraphs[0].hiddenForAll = false;
             $scope.data[0].nodes[apply.i].paragraphs[0].propositions[0].hiddenForAll = false;
             apply.sorted = true;
@@ -2504,6 +2537,9 @@
             if (apply.blankParagraph !== false){
               console.log("Blanking paragraph")
               $scope.data[0].nodes[apply.i].paragraphs[apply.j].hiddenForAll = true;
+              if (payload.dropflag){
+                $scope.data[0].nodes[apply.i].paragraphs[apply.j].droppedElsewhere = true;
+              }
               for (var j = (apply.j-1); j > -1; j--){
                 console.log("Considering j of ", j)
                 if (!$scope.data[0].nodes[apply.i].paragraphs[j].hiddenForAll && !apply.sorted){
@@ -2540,6 +2576,9 @@
                       apply.k = angular.copy(k)
                       apply.m = angular.copy(m)
                       $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[apply.m].hiddenForAll = true;
+                      if (payload.dropflag){
+                        $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[apply.m].droppedElsewhere = true;
+                      }
                       for (var n = m; n > -1; n--){
                         if (!$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n].hiddenForAll &&
                           $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[n][$scope.userId] !== 'hidden' &&

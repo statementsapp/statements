@@ -2534,32 +2534,27 @@
                   if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id === payload.remarkId){
                     apply.path = '$scope.data[0].nodes[' + i.toString() +
                     '].paragraphs[' + j.toString() + '].propositions[' + k.toString() + ']';
-                    if (payload.deletesOwnRemark){
+                   
                       apply.i = angular.copy(i)
                       apply.j = angular.copy(j)
                       apply.k = angular.copy(k)
                       apply.m = angular.copy(m)
                       $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[apply.m].hiddenForAll = true;
                       for (var n = m; n > -1; n--){
-                        if (!$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n].hiddenForAll){
+                        if (!$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n].hiddenForAll &&
+                          $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] !== 'hidden' &&
+                          $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[n].id !== $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m]){
                           setTimeout(function () {
                               document.getElementById('remark' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n]).click();
                           }, 20);
+                          break;
                         }
                       }
                       setTimeout(function () {
                           document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]).click();
                       }, 20);
-                    } else {
-                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] = 'hidden';
-                      for (var n = (m-1); n > -1; n--){
-                        if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] !== 'hidden' &&
-                          !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll){
-                          // click, check for timing
-                        }
-                      }
-                    }
-                    break;
+                   
+
                   }
                 }
               }

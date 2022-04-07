@@ -445,8 +445,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                                 'reviewerprop': remark.type === 'negation',
 
                                 'ispresentlybeingdragged': proposition.isPresentlyBeingDragged,
-                                'highlight': highlight.id === proposition.id || (selectedParagraph.highlightAll == true && selectedParagraph.paragraphId === paragraph.paragraphId),
-                                'mark': mark.id === proposition.id || (selectedParagraph.markAll == true && selectedParagraph.paragraphId === paragraph.paragraphId),
+                                'highlight': highlight.id === remark.id,
+                                'mark': mark.id === remark.id,
                                 'owned-cursor': proposition.author === userId || (proposition.type === 'negation' && proposition.of.author === userId),
                                 'textcursor': whatHasBeenClicked == proposition.id,
                                 'rejoining': hasRightFocus === proposition.id && !selectedProposition.dialogueSide && proposition.type === 'negation' && proposition.of.author === userId,

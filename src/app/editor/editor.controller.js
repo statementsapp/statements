@@ -2555,8 +2555,9 @@
                         console.log("second click")
                         console.log("The element: ", document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]))
                           document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]).click();
+                          break;
                       }, 20); 
-                   
+                      break;
 
                   }
                 }

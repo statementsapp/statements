@@ -2540,8 +2540,15 @@
                       apply.k = angular.copy(k)
                       apply.m = angular.copy(m)
                       $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[apply.m].hiddenForAll = true;
+                      for (var n = m; n > -1; n--){
+                        if (!$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n].hiddenForAll){
+                          setTimeout(function () {
+                              document.getElementById('remark' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n]).click();
+                          }, 20);
+                        }
+                      }
                       setTimeout(function () {
-                          document.getElementById('proposition' + apply.path).click();
+                          document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]).click();
                       }, 20);
                     } else {
                       $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] = 'hidden';

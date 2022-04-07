@@ -2488,18 +2488,17 @@
 
           // does it blank the paragraph, the node, and what is to be clicked?
           for (var j = 0; j < $scope.data[0].nodes[apply.i].paragraphs.length; j++){
-            console.log("Considering for blanking node paragraph: ", $scope.data[0].nodes[apply.i].paragraphs[j])
             if ($scope.data[0].nodes[apply.i].paragraphs[j].paragraphId !== payload.paragraphId &&
               !$scope.data[0].nodes[apply.i].paragraphs[j].hiddenForAll){
-              console.log("First blank node false")
+           
               apply.blankNode = false;
             }
           }
           for (var k = 0; k < $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions.length; k++){
-            console.log("Considering for second blank node false: ", $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[k])
+           
             if ($scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[k].id !== payload.id &&
               !$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[k].hiddenForAll){
-              console.log("Second blank node false")
+              
               apply.blankNode = false;
             }
           }
@@ -2520,12 +2519,8 @@
           if (!apply.sorted){
 
             for (var k = 0; k < $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions.length; k++){
-              // console.log("before this if")
-              // console.log($scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[k].id !== payload.id, " for k of ", k)
-              // console.log(!$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[k].hiddenForAll, " for k of ", k)
               if($scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[k].id !== payload.id &&
                 !$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[k].hiddenForAll){
-                // console.log("Not blank paragraph")
                 apply.blankParagraph = false;
                 break;
               }
@@ -2536,7 +2531,6 @@
                 if (!$scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[m].hiddenForAll){
                   apply.thisM = angular.copy(m)
                   apply.sorted = true;
-                  console.log("Not blank paragraph if")
                   setTimeout(function () {
 
                     document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.thisM].id).click();
@@ -2549,15 +2543,12 @@
 
 
             if (apply.blankParagraph !== false){
-              console.log("Blanking paragraph")
               $scope.data[0].nodes[apply.i].paragraphs[apply.j].hiddenForAll = true;
               if (payload.dropflag){
                 $scope.data[0].nodes[apply.i].paragraphs[apply.j].droppedElsewhere = true;
               }
               for (var j = (apply.j-1); j > -1; j--){
-                console.log("Considering j of ", j)
                 if (!$scope.data[0].nodes[apply.i].paragraphs[j].hiddenForAll && !apply.sorted){
-                  console.log("Gets a hit at j of ", j)
                   for (var k = $scope.data[0].nodes[apply.i].paragraphs[j].propositions.length-1; k > -1; k--){
                     if (!$scope.data[0].nodes[apply.i].paragraphs[j].propositions[k].hiddenForAll && !apply.sorted){
 
@@ -2607,15 +2598,12 @@
                           $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[n][$scope.userId] !== 'hidden' &&
                           $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[n].id !== $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id){
                           setTimeout(function () {
-                            console.log("first click")
                               document.getElementById('remark' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].remarks[n].id).click();
                           }, 20);
                           break;
                         }
                       }
                       setTimeout(function () {
-                        console.log("second click")
-                        console.log("The element: ", document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k]))
                           document.getElementById('proposition' + $scope.data[0].nodes[apply.i].paragraphs[apply.j].propositions[apply.k].id).click();
                           
                       }, 20); 
@@ -2670,7 +2658,6 @@
 
       $scope.updateNode = function (node) {
 
-        console.log("Update node");
         // In case an edit out of bounds occurs
         if ($scope.data[0].documentClaimedBy !== $scope.userId) {
           return;
@@ -2772,26 +2759,13 @@
           $scope.inputs.proposition = '';
           return;
         }
-        console.log("Paragraph prep: ", angular.copy(paragraph))
 
         $scope.data[0].isFresh = false;
 
-        //   // $scope.documentAuthor = $scope.userId;
         console.log("Prepping prop: ", input)
-        if (node){
-          // console.log("Node: ", node)
-        }
-
-        if (paragraph){
-          // console.log("Paragraph bottom ADD: ", angular.copy(paragraph.bottomAdd));
-        }
-        // }
 
         $scope.theseInputs.push(angular.copy(input));
 
-        if (event) {
-          // event.preventDefault();
-        }
 
         if ($scope.selectedParagraph) {
           $scope.selectedParagraph.highlightAll = false;
@@ -2807,7 +2781,6 @@
           paragraph.disableRightCursor = false;
         } else {
           var paragraph = $scope.selectedParagraph;
-          // console.log("Paragraph due to dialogue side: ", paragraph)
         }
 
         //blur active element
@@ -2819,9 +2792,7 @@
         } else if (!$scope.draggingNode && !$scope.draggingParagraph && $scope.draggingProposition) {
 
           var input = $scope.draggedProposition.text;
-          console.log("the input proposition text adjustment: ", input)
         }
-
 
         if (prep.lastChar !== '.' && prep.lastChar !== '?' && prep.lastChar !== '!' && prep.lastChar !== ':') {
           input = input + '.';
@@ -2838,8 +2809,6 @@
             empty: 'data'
           }
         }
-
-
 
         //   Topics
 
@@ -2922,7 +2891,6 @@
 
           } else {
 
-
             console.log("2a")
             prep.code = '2A';
             prep.topic = $scope.selectedProposition.topic;
@@ -2961,8 +2929,6 @@
           !$scope.draggingProposition &&
           !$scope.draggingParagraph){
           console.log("Prepping rejoinder")
-
-
 
           prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
           prep.id = IdFactory.next();
@@ -3077,9 +3043,6 @@
         } else if (paragraph.bottomAdd){
 
           console.log("3e")
-          console.log("Selected paragraph id: ", angular.copy($scope.selectedParagraph.paragraphId))
-          console.log("Paragraph paragraphid: ", angular.copy(paragraph.paragraphId))
-          console.log("Dragging prop: ", angular.copy($scope.draggingProposition))
           prep.code = '3E';
           prep.topic = $scope.selectedProposition.topic;
           prep.type = 'assertion';
@@ -3088,10 +3051,8 @@
           if (!$scope.draggingParagraph && !$scope.draggingProposition){
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           } else {
-            console.log('The paragraph id now: ', angular.copy(paragraph.paragraphId))
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           }
-          console.log('The paragraph id NOWWW: ', angular.copy(paragraph.paragraphId))
           prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           prep.targetNodeId = $scope.selectedNode.nodeId;
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
@@ -3124,7 +3085,6 @@
           prep.messagesSoFar = [prep.id]
         } else if ($scope.selectedProposition.type === 'assertion' &&
           $scope.userId === $scope.data[0].documentClaimedBy){
-          console.log("Proposition 3g ", angular.copy(proposition))
           console.log("3g")
           prep.code = '3G';
           prep.topic = $scope.selectedProposition.topic;

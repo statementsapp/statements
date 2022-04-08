@@ -293,7 +293,7 @@
            ></div>
     </div>
     <div
-      ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id, 'justmessages' : fullScreenMessages}"
+      ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id}"
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
       id="dialoguepane"
       ng-mouseover="dialogueMouseOver = true" 
@@ -313,6 +313,7 @@
            data-drop-enabled="false"
            data-drag-enabled="false"
            data-empty-placeholder-enabled="false"
+           ng-class="{'justmessages' : fullScreenMessages}"
            class="angular-ui-tree dialoguelist"
            style="padding-left: 15px; padding-top: 15px;">
 

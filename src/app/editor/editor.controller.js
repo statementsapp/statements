@@ -675,7 +675,7 @@
       $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1'];
 
       // these are the current pastels
-      $scope.otherPastels = ['#e7f8f2','#c7ceea','ffb7b2'];
+      $scope.otherPastels = ['#e7f8f2','#c7ceea','#ffb7b2'];
       // used to have #edeff8 #DDE1D6 #a7e99c
       if (typeof document.hidden !== 'undefined') { // Opera 12.10 and Firefox 18 and later support
         hidden = 'hidden';

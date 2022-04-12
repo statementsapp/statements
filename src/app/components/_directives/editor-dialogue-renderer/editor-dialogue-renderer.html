@@ -1,7 +1,7 @@
 <div>
 
   <div class="thread-wrapper"
-    ng-class="'authorpadding': message.author === data[0].documentClaimedBy">
+    ng-class="{'authorpadding': message.author === data[0].documentClaimedBy}">
     <p
       ng-if="threadAdding !== message.messageId"
       class="thread"

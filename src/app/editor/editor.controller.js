@@ -4976,8 +4976,7 @@
                       $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
                       setTimeout(function () {
                         // $scope.$apply(function () {
-                         console.log("to click bottom else: ", document.getElementById('proposition' +
-                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id))
+                      
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
                         // });

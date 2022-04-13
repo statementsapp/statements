@@ -4934,11 +4934,12 @@
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
+                      var remarkIndex = null;
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
 
                           var remarkIndex = angular.copy(m);
-                          console.log("Hit. Remark index; ", remarkIndex)
+                          console.log("Hit. Remark index: ", remarkIndex)
                           break;
                         }
                       }
@@ -4946,7 +4947,9 @@
                         setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("top timeout")
-                         console.log("i: ", angular.copy(i))
+                         console.log("i: ", angular.copy(nodeIndex))
+                         console.log("j: ", angular.copy(paragraphIndex))
+                         console.log("k: ", angular.copy(index))
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
                         // });

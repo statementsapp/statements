@@ -3698,7 +3698,8 @@
                 for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
 
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
-                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id){
+                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id &&
+                      !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                       apply.nodeTarget = i;
                       apply.paragraphTarget = j;
                       apply.propTarget = k;

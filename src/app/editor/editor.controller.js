@@ -4936,7 +4936,9 @@
                       var index = angular.copy(k)
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
+
                           var remarkIndex = angular.copy(m);
+                          console.log("Hit. Remark index; ", remarkIndex)
                           break;
                         }
                       }
@@ -4946,8 +4948,7 @@
                          console.log("top timeout")
                          console.log("i: ", angular.copy(i))
                           document.getElementById('proposition' +
-                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[$scope.data[0].
-                            nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1].id).click();
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
                         // });
 
                         }, 20);

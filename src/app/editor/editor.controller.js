@@ -2759,7 +2759,7 @@
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
         console.log("Flag: ", flag)
-        if (!input || input == '<br><br>'){
+        if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");
           $scope.inputs.proposition = '';
           return;

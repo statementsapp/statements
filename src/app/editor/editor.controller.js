@@ -4209,9 +4209,10 @@
                   }
                 }
 
-                if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
+                if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide &&
+                  !payload.draggedProps){
                   setTimeout(function () {
-
+                      console.log("Hayo")
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);
                 }

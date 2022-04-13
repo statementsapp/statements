@@ -4942,7 +4942,7 @@
                           break;
                         }
                       }
-                      if (remarkIndex !== undefined){
+                      if (remarkIndex || remarkIndex == 0){
                         setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("top timeout")
@@ -4950,7 +4950,10 @@
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
                         // });
-
+                        var nodeIndex;
+                        var paragraphIndex;
+                        var index;
+                        var remarkIndex;
                         }, 20);
                       } else {
                         setTimeout(function () {
@@ -4959,7 +4962,9 @@
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
                         // });
-
+                        var nodeIndex;
+                        var paragraphIndex;
+                        var index;
                         }, 20);
                       }
                       return;

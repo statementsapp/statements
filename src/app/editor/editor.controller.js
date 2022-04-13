@@ -4558,7 +4558,7 @@
                   $scope.hideExpandingTextarea();
                   $scope.selectPropositionById(payload.id);
                   $scope.selectedProposition.textSide = false;
-
+                  console.log("Precedes a bad click eh?")
                   document.getElementById('input' + payload.id).click();
 
                   focusFactory('input' + payload.id);

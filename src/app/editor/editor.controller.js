@@ -4942,7 +4942,7 @@
                           break;
                         }
                       }
-                      if (remarkIndex){
+                      if (remarkIndex !== undefined){
                         setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("top timeout")

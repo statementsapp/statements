@@ -44,7 +44,7 @@
       'chatinputminimized' : hasChatFocusId !== message.id
     }">
       <textarea onInput="this.parentNode.dataset.replicatedValue = this.value"
-                title="{{ message.id }}"
+               
                 ng-show="(message.id === hasChatFocusId)"
                 ng-hide="(message.id != hasChatFocusId || (!containerMouseover && inputs.chatProposition == '' || selectedProposition.textSide))"
                 ng-model="inputs.chatProposition"

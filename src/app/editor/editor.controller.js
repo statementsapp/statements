@@ -4275,9 +4275,9 @@
                     console.log("Placed: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1])
 
 
-                  if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
+                  if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide && !payload.draggedProps){
                     setTimeout(function () {
-
+                      console.log("Going to click")
                       document.getElementById('proposition' + payload.id).click();
                     }, 20);
                   }

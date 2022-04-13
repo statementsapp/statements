@@ -4930,13 +4930,18 @@
                 console.log('through if on j with value for paragraph: ', j)
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
-                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && 
-                      !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0].hiddenForAll
-                     && !index){
+                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
-                      setTimeout(function () {
+                      for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length; m > -1; m--){
+                        if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
+                          var remarkIndex = angular.copy(m);
+                          break;
+                        }
+                      }
+                      if (remarkIndex){
+                        setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("top timeout")
                          console.log("i: ", angular.copy(i))
@@ -4945,7 +4950,17 @@
                             nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1].id).click();
                         // });
 
-                      }, 20);
+                        }, 20);
+                      } else {
+                        setTimeout(function () {
+                        // $scope.$apply(function () {
+                         console.log("this other timeout")
+                          document.getElementById('proposition' +
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                        // });
+
+                        }, 20);
+                      }
                       return;
                       // console.log('ran through')
 

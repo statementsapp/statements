@@ -4490,7 +4490,7 @@
             }
 
             // goes split screen on the first message
-            if ($scope.isMessageFresh){
+            if ($scope.isMessageFresh && !$scope.fullScreenMessages){
               console.log("Message defreshening")
               $scope.goSplitScreen();
               $scope.isMessageFresh = false;

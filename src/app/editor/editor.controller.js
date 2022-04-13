@@ -675,7 +675,11 @@
       $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1'];
 
       // these are the current pastels
-      $scope.otherPastels = ['#e7f8f2','#c7ceea','#ffb7b2'];
+      $scope.otherPastels = ['#e7f8f2'];
+      // Other suitable pastels below
+      // ,'#c7ceea','#ffb7b2'
+
+
       // used to have #edeff8 #DDE1D6 #a7e99c
       if (typeof document.hidden !== 'undefined') { // Opera 12.10 and Firefox 18 and later support
         hidden = 'hidden';
@@ -4926,7 +4930,9 @@
                 console.log('through if on j with value for paragraph: ', j)
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
-                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
+                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && 
+                      !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0].hiddenForAll
+                     && !index){
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)

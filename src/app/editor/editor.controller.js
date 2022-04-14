@@ -3453,20 +3453,14 @@
                     }
                 }
 
-
                 if (!payload.draggedNode.nodeId && payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
-                  //   $scope.$apply(function () {
-                      console.log("1 click")
                       document.getElementById('proposition' + payload.id).click();
-                  //   });
                   }, 20);
                 }
 
 
               } else {
-                // top node add
-                console.log("yes before node id")
                 for (var i = 0; i < $scope.data[0].nodes.length; i++){
                   if ($scope.data[0].nodes[i].nodeId === payload.ofNodeId){
                     apply.parentNode = $scope.data[0].nodes[i];
@@ -3474,16 +3468,11 @@
                     break;
                   }
                 }
-                console.log("After first for")
 
                 if ($scope.data[0].nodes[apply.parentNodeIndex - 1]){
-                  // if there's not one before
-                  console.log("Into this if")
                   for (var i = $scope.data[0].nodes.length-1; i > apply.parentNodeIndex-1; i--){
-
                     $scope.data[0].nodes[i + 1] =  angular.copy($scope.data[0].nodes[i]);
                     $scope.data[0].nodes[i + 1].sectionNumber++;
-                    console.log("Node: ", angular.copy($scope.data[0].nodes[i + 1].topic))
                   }
                   if (!payload.draggedNode){
                     $scope.data[0].nodes[apply.parentNodeIndex] = {
@@ -3559,10 +3548,7 @@
 
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                   setTimeout(function () {
-                  //   $scope.$apply(function () {
-                      console.log("1 click")
                       document.getElementById('proposition' + payload.id).click();
-                  //   });
                   }, 20);
                 }
 
@@ -3576,15 +3562,13 @@
 
 
             } else if (payload.code === '2B'){
-              console.log("to 2b")
+              console.log("2b")
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
 
                 for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
 
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
-                      console.log("Into this m of ", m)
                       if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id){
-                        console.log("the if")
                         apply.nodeTarget = angular.copy(i);
                         apply.paragraphTarget = angular.copy(j);
                         apply.propTarget = angular.copy(k);
@@ -3594,7 +3578,6 @@
                   }
                 }
               }
-              console.log("before that for")
 
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarksExpanded = true;
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.unshift(
@@ -3658,9 +3641,6 @@
                 }, 20);
               }
 
-              console.log("Paragraph target: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget])
-
-
             } else if (payload.code === '3B'){
 
               // rejoinder
@@ -3670,20 +3650,12 @@
                   // console.log("Node index of i: ", i)
                   apply.nodeIndex = i;
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
-                    // console.log("j: ", j)
-                    // console.log("first: ", $scope.data[0].nodes[i].paragraphs[j].paragraphId)
-                    // console.log("A j: ", payload.afterParagraphId)
                     if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
-                      // console.log("After paragraph index of j: ", j)
-
                       apply.afterParagraphIndex = j;
-
-
                     }
                   }
                 }
               }
-
 
               if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1]){
                 for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex-1); i--){
@@ -3793,14 +3765,9 @@
 
              // isn't finding the remark to rejoin somewhere in here
 
-             console.log("payload rejoins: ", payload.rejoins)
-              console.log("before that last for")
               for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length; i++){
-                console.log("That outer for ", i)
                 for (var j = 0; j < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[i].remarks.length; j++){
-                  console.log("Inner for ", j)
                   if (payload.rejoins === $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[i].remarks[j].id){
-                    console.log("That last if: ", j)
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[i].remarks[j].rejoined = true;
                     break;
                   }
@@ -3818,8 +3785,6 @@
             } else if (payload.code === '3F'){
 
               console.log("3f leftadd received")
-              console.log("Inputs at leftadd: ", angular.copy($scope.inputs.proposition))
-
 
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
 
@@ -3837,9 +3802,7 @@
                 }
               }
 
-              console.log("I: ", apply.nodeTarget, " J: ", apply.paragraphTarget, " K: ", apply.beforePropTarget)
               if (!payload.draggedProps){
-                console.log("draggedprops if")
                   for (var n = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1); n > apply.beforePropTarget-1; n--){
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+1] =
                     angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n]);
@@ -3854,19 +3817,13 @@
                     first: true,
                     messagesSoFar: payload.messagesSoFar
                   }
-                console.log("About to click")
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                   setTimeout(function () {
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);
                 }
-                // console.log("About to return")
-                // return;
-                // console.log("It returned")
 
               } else {
-                console.log("draggedprops else")
-                // var thisLength = angular.copy()
                   for (var n = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1); n > apply.beforePropTarget-1; n--){
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+payload.draggedProps.length] =
                     angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n]);
@@ -3876,8 +3833,6 @@
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.beforePropTarget].isPresentlyBeingDragged = false;
                     console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.beforePropTarget].text)
                   }
-                  console.log("The paragraph after drop: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget])
-
               }
 
 
@@ -3895,14 +3850,11 @@
                 }
               }
 
-              console.log("Before paragraph target: ", apply.beforeParagraphTarget)
-
               for (var k = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs.length-1); k > (apply.beforeParagraphTarget-1); k--){
                 console.log("Moving up at k of: ", k, " and j of: ", apply.beforeParagraphTarget)
                 $scope.data[0].nodes[apply.nodeTarget].paragraphs[k+1] = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[k]);
               }
 
-              console.log("About to place at node ", apply.nodeTarget, " and paragraph ", apply.beforeParagraphTarget)
               if (!payload.draggedProps){
                 $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.beforeParagraphTarget] = {};
 
@@ -3925,7 +3877,6 @@
 
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                   setTimeout(function () {
-                      console.log("3d click")
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);
                 }
@@ -3955,14 +3906,8 @@
                 }
               }
 
-
-
             } else if (payload.code === '3E'){
-
-
               console.log("3e bottomadd received")
-
-
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
                   apply.nodeIndex = angular.copy(i);
@@ -3975,12 +3920,7 @@
                   }
                 }
               }
-
-
               if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1]){
-                // has to shift from the location where the drag is coming from?
-
-
                 if (!payload.draggedProps){
                   for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex-1); i--){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[i + 1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[i]);
@@ -4003,9 +3943,7 @@
                   }
                   if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
-                    //   $scope.$apply(function () {
                         document.getElementById('proposition' + payload.id).click();
-                    //   });
                     }, 20);
                   }
                 } else {
@@ -4048,9 +3986,7 @@
                   }
                   if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
-                    //   $scope.$apply(function () {
                         document.getElementById('proposition' + payload.id).click();
-                    //   });
                     }, 20);
                   }
                 } else {

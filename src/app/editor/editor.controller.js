@@ -1672,7 +1672,6 @@
       });
 
       $scope.dragNode = function (node, e) {
-        console.log("Node being dragged: ", $scope.draggedNode)
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Dragging node: ", node)
@@ -1752,8 +1751,6 @@
               }
             }
 
-
-            console.log('Drag paragraph: ', document.getElementById('dragelement'));
             setTimeout(function () {
               $scope.$apply(function () {
 
@@ -1768,15 +1765,12 @@
       }
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
-
-        console.log("Dragging proposition? ", angular.copy($scope.draggingProposition))
         if ($scope.draggingProposition){
           console.log("returning dragging prop")
           return;
         }
         // rewrite for reorderings
         $scope.draggingProposition = true;
-        // console.log('1: ', document.getElementById('dragelement'));
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Dragging proposition")
@@ -1797,8 +1791,6 @@
               }
             )
 
-
-            // console.log('2: ', document.getElementById('dragelement'));
             setTimeout(function () {
               $scope.$apply(function () {
 
@@ -1810,7 +1802,6 @@
             }, 5);
           });
         }, 20);
-        // console.log('3: ', document.getElementById('dragelement'));
       };
 
       $scope.selectNodeById = function (id) {
@@ -1890,7 +1881,6 @@
 
           return false;
         }
-        // console.log("checking if drop valid")
         var check = {};
 
         // if the blank paragraph is there, only allow rights
@@ -1907,13 +1897,6 @@
               return true;
             }
           } else if ($scope.draggingProposition) {
-            // if ($scope.draggedParagraph.paragraphId === paragraph.paragraphId){
-            //   console.log("Returning false")
-            //   return false;
-            // } else {
-            //   console.log("Returning true")
-            //   return true;
-            // }
             var thisCounter = 0;
             for (var i = 0; i < $scope.draggedParagraph.propositions.length; i++){
               if (!$scope.draggedParagraph.propositions[i].hiddenForAll){
@@ -1945,7 +1928,6 @@
               return true;
             }
           } else if ($scope.draggingProposition){
-            // console.log("secondelse")
             if ($scope.draggedParagraph.paragraphId === paragraph.paragraphId){
               var validityCounter = 0;
               for (var i = 0; i < $scope.draggedParagraph.propositions.length; i++){
@@ -1954,14 +1936,12 @@
                 }
               }
               if (validityCounter > 1){
-                // console.log("thistrue")
                 return true;
               } else {
                 return false;
               }
 
             } else {
-              // console.log("thatfalse")
               return true;
             }
           } else {
@@ -1980,12 +1960,9 @@
               return true;
             }
           } else if ($scope.draggingProposition){
-            console.log("Dragging proposition")
             if ($scope.draggedProposition.id === proposition.id){
-              console.log("To return false proposition left")
               return false;
             } else {
-              console.log("To return true proposition left")
               return false;
             }
           } else {
@@ -2013,9 +1990,7 @@
 
 
         } else if (flag === 'topnode' && node.topDropzoneMouseOver){
-          console.log("top node")
           if ($scope.draggingNode && node.nodeId !== $scope.draggedNode.nodeId){
-            console.log("if dragging node")
             return true;
           } else if ($scope.draggingParagraph){
             return false;
@@ -2054,8 +2029,7 @@
       }
 
       $scope.dropItem = function (node, paragraph, proposition, flag) {
-        console.log("Node ", node)
-        console.log("Dragged Node ", $scope.draggedNode)
+        console.log("Dragged Node ", $scope.draggedNode.topic)
         setTimeout(function () {
           $scope.$apply(function () {
             $scope.dragStrings = [];
@@ -2099,7 +2073,6 @@
                 $scope.cancelListenForDoubleClick = false;
               }, 20);
             } else if ($scope.draggingProposition){
-              console.log("The dragged proposition: ", angular.copy($scope.draggedProposition));
               if (flag === 'left'){
                 console.log("Flag is left")
                 if (proposition.id === $scope.draggedProposition.id){
@@ -2110,13 +2083,11 @@
                   return;
                 }
               }
-              // under construction
+
               $scope.deleteProposition($scope.draggedNode, $scope.draggedParagraph, $scope.draggedProposition, null, 'proposition', true);
               setTimeout(function () {
                 // prepProposition = function (input, thread, proposition, paragraph, event, draggedProps, propositionToSetLaterPosition)
                 $scope.prepProposition($scope.draggedProposition.text, node, paragraph, proposition, null, flag);
-                console.log("About to clear")
-                // $scope.prepProposition = function (input, thread, proposition, paragraph, event, draggedProps)
                 $scope.draggedNode = {};
                 $scope.draggedParagraph = {};
                 $scope.draggedProposition = {};
@@ -2125,7 +2096,6 @@
                 $scope.draggingProposition = null;
 
                 $scope.cancelListenForDoubleClick = false;
-                console.log("Dragging node: ", $scope.draggingNode)
               }, 20);
             }
 
@@ -2168,7 +2138,6 @@
       }
 
       $scope.highlightParagraph = function (node, paragraph){
-        // console.log("highlighting paragraph")
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
 
@@ -2186,11 +2155,9 @@
         $scope.thereIsAHighlightedParagraph = true;
         $scope.highlightedParagraph = paragraph;
         $scope.highlightedParagraphNode = node;
-        console.log("Highlighted paragraph node: ", $scope.highlightedParagraphNode)
       }
 
       $scope.highlightNode = function (node){
-        // console.log("highlighting paragraph")
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           if (node.nodeId === $scope.data[0].nodes[i].nodeId){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){

@@ -21,44 +21,46 @@
         }"
         style="background-color: {{ message.color }}"
         ng-click="[
-            (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), hideExpandingTextarea(), selectPropositionById(message.id), selectedProposition.textSide = false] : inputs.nothing]
+          (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), hideExpandingTextarea(), selectPropositionById(message.id), selectedProposition.textSide = false] : inputs.nothing]
         "
-            ng-mouseover="[message.mouseOver = true, statementHighlight(message.id), message.updated && !message.deleted ? slideInUpdate() : inputs.nothing]"
-            ng-mouseleave="[message.mouseOver = false, statementUnHighlight(message.id)]">
-          <!-- D:{{message.deleted}} R:{{message[userId]}} H:{{message.hiddenForAll}} -->
-        <!-- border-right: 1px solid #aaa; border-left: 1px solid #aaa; -->
-		    <span ng-class="{
-          'statementmessagehighlit': statementHighlightIs === message.id && !message.mouseOver && !minimalStyle,
-          'underline': message.mouseOver === true,
-          'messageupdated': message.text !== message.dialogueText || message.updated,
-          'messagedeleted': message.deleted,
-          'negation': (selectedProposition.id === message.id && selectedProposition.type === 'assertion' && selectedProposition.author != userId && (inputs.proposition.charAt(inputs.proposition.length-1) === '!'|| inputs.chatProposition.charAt(inputs.chatProposition.length-1) === '!'))
-        }">
+        ng-mouseover="[message.mouseOver = true, statementHighlight(message.id), message.updated && !message.deleted ? slideInUpdate() : inputs.nothing]"
+        ng-mouseleave="[message.mouseOver = false, statementUnHighlight(message.id)]">
+		    <span 
+          ng-class="{
+            'statementmessagehighlit': statementHighlightIs === message.id && !message.mouseOver && !minimalStyle,
+            'underline': message.mouseOver === true,
+            'messageupdated': message.text !== message.dialogueText || message.updated,
+            'messagedeleted': message.deleted,
+            'negation': (selectedProposition.id === message.id && selectedProposition.type === 'assertion' && selectedProposition.author != userId && (inputs.proposition.charAt(inputs.proposition.length-1) === '!'|| inputs.chatProposition.charAt(inputs.chatProposition.length-1) === '!'))
+          }"
+        >
           {{message.text ? message.text : message.dialogueText}}
         </span>
-		    </span>
-      <span class="message-timestamp received">{{ message.dateCreated }}</span>
+		  </span>
+      <span class="message-timestamp received">{{ message.dateCreated }}
+      </span>
     </p>
-    <div class="grow-wrap" ng-class="{
-      'chatinputminimized' : hasChatFocusId !== message.id
-    }">
-      <textarea onInput="this.parentNode.dataset.replicatedValue = this.value"
-               
-                ng-show="(message.id === hasChatFocusId)"
-                ng-hide="(message.id != hasChatFocusId || (!containerMouseover && inputs.chatProposition == '' || selectedProposition.textSide))"
-                ng-model="inputs.chatProposition"
-                class="chatinput dialogueinput thread speech-bubble sent"
-                id="input{{message.id}}"
-                ng-keyup="$event.keyCode === 13 && inputs.chatProposition !== '' ? [prepProposition(inputs.chatProposition, null, null, null, null), inputs.chatProposition = '', hideExpandingTextarea(), inputs.messageselected = false] : inputs.nothing"
-                ng-style="{ 'background': userColor ? userColor : otherPastels[data[0].authorTable.length-1] }"
-                ng-class="{
-                  'alignright': (message.type === 'assertion' || message.type === 'rejoinder') && message.author !== userId && cowsComeHome,
-                  'outgoingmessage': message.author !== userId
-              }"
-                rows="4"
-                spellcheck="false"
-                style="font-size: 18px;  color: black; width: 350px; border: none;"></textarea>
-    </div>
+      <div class="grow-wrap" ng-class="{
+        'chatinputminimized' : hasChatFocusId !== message.id
+        }"
+      >
+        <textarea onInput="this.parentNode.dataset.replicatedValue = this.value"
+          ng-show="(message.id === hasChatFocusId)"
+          ng-hide="(message.id != hasChatFocusId || (!containerMouseover && inputs.chatProposition == '' || selectedProposition.textSide))"
+          ng-model="inputs.chatProposition"
+          class="chatinput dialogueinput thread speech-bubble sent"
+          id="input{{message.id}}"
+          ng-keyup="$event.keyCode === 13 && inputs.chatProposition !== '' ? [prepProposition(inputs.chatProposition, null, null, null, null), inputs.chatProposition = '', hideExpandingTextarea(), inputs.messageselected = false] : inputs.nothing"
+          ng-style="{ 'background': userColor ? userColor : otherPastels[data[0].authorTable.length-1] }"
+          ng-class="{
+            'alignright': (message.type === 'assertion' || message.type === 'rejoinder') && message.author !== userId && cowsComeHome,
+            'outgoingmessage': message.author !== userId
+          }"
+          rows="4"
+          spellcheck="false"
+          style="font-size: 18px;  color: black; width: 350px; border: none;">
+        </textarea>
+      </div>
   </div>
 </div>
 <br>

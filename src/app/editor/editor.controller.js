@@ -2210,14 +2210,10 @@
         console.log('The highlighted paragraph: ' ,$scope.highlightedParagraph)
         $scope.thereIsAHighlightedParagraph = false;
         $scope.thereIsAMarkedParagraph = true;
-        console.log("Highlighted paragraph node: ", $scope.highlightedParagraphNode)
       }
 
       $scope.deleteProposition = function (node, paragraph, proposition, remark, modifier, dropflag) {
-        // if (!$scope.draggedProposition.id && !$scope.draggedParagraph.paragraphId && !$scope.draggedNode.nodeId){
-
-          console.log('The highlighted paragraph: ' ,$scope.highlightedParagraph)
-
+        console.log("Deletion")
         console.log('Node: ', node)
         console.log('Paragraph: ', paragraph)
         console.log('Proposition: ', proposition)
@@ -2330,7 +2326,7 @@
       };
 
       $scope.$on('socket:broadcastDeletion', function (event, payload) {
-        console.log("received deletion: ", payload)
+        console.log("Received deletion: ", payload)
 
         apply = {};
 
@@ -2339,13 +2335,10 @@
         }
 
         if (payload.modifier === 'node'){
-
-
           $scope.data[0].nodes[payload.sectionNumber].hiddenForAll = true;
           if (payload.dropflag){
             $scope.data[0].nodes[payload.sectionNumber].droppedElsewhere = true;
           }
-
           for (var i = 0; i < $scope.data[0].nodes[payload.sectionNumber].paragraphs.length; i++){
             $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].hiddenForAll = true;
             if (payload.dropflag){
@@ -2372,8 +2365,6 @@
             $scope.selectedProposition = {};
             $scope.selectedRemark = {};
           }
-
-
         } else if (payload.modifier === 'paragraph'){
           if (!payload.blankNode){
             for (var i = 0; i < $scope.data[0].nodes.length; i++){
@@ -2723,24 +2714,19 @@
           document.getElementById('nodetitle' + node.nodeId).contentEditable = true;
         } else {
           document.getElementById('apptitle').contentEditable = true;
-          console.log('CE: ', document.getElementById('apptitle').contentEditable);
         }
       }
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
-        console.log("Flag: ", flag)
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");
           $scope.inputs.proposition = '';
           return;
         }
-
         $scope.data[0].isFresh = false;
-
         console.log("Prepping prop: ", input)
 
         $scope.theseInputs.push(angular.copy(input));
-
 
         if ($scope.selectedParagraph) {
           $scope.selectedParagraph.highlightAll = false;
@@ -2817,7 +2803,6 @@
             prep.sectionLevel = ($scope.selectedNode.sectionLevel);
           }
 
-          console.log("Node for section number: ", angular.copy(node))
           if ($scope.draggingNode && flag === 'top'){
             prep.sectionNumber = node.sectionNumber;
           } else if ($scope.draggingNode) {
@@ -3014,7 +2999,6 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
-          console.log("Before paragraph outgoing: ", angular.copy(prep.beforeParagraphId))
         } else if (paragraph.bottomAdd){
 
           console.log("3e")
@@ -3122,16 +3106,9 @@
         prep.adjustedText = prep.adjustedText.replace(/&nbsp;/g, ' ');
         prep.adjustedText = angular.copy(prep.adjustedText).replace(/(&lt;br&gt;&lt;br&gt;\.|<br><br>\.)/g, '');
 
-        // }
-
-        // while(prep.adjustedText.search('&lt;br&gt;&lt;br&gt;.') > 0){
-        //   prep.adjustedText.replace("&lt;br&gt;&lt;br&gt;.", "");
-        // }
-
         if (!$scope.data[0].documentClaimedBy){
           prep.documentClaimedBy = $scope.userId;
         }
-
 
         prep.payload = {
           author: $scope.userId,
@@ -3166,10 +3143,8 @@
           targetParagraphId: prep.targetParagraphId ? prep.targetParagraphId : undefined,
           beforePropositionId: prep.beforePropositionId ? prep.beforePropositionId : undefined,
           afterPropositionId: prep.afterPropositionId ? prep.afterPropositionId : undefined,
-          // targetPropositionId: prep.targetPropositionId ? prep.targetPropositionId : undefined,
           beforeRemarkId: prep.beforeRemarkId ? prep.beforeRemarkId : undefined,
           afterRemarkId: prep.afterRemarkId ? prep.afterRemarkId : undefined,
-          // question: (prep.question ? prep.question : undefined),
           answeredQuestion: (prep.answeredQuestion ? prep.answeredQuestion : undefined),
           replacesBlankAndMoves:
             (prep.replacesBlankAndMoves === true ? prep.replacesBlankAndMoves : undefined),
@@ -3190,7 +3165,6 @@
           // getsOwnNode: (prep.getsOwnNode === true ? prep.getsOwnNode : undefined),
           // getsOwnParagraph: (prep.getsOwnParagraph === true ? prep.getsOwnParagraph : undefined),
           // newProp: (prep.newProp === true ? prep.newProp : undefined),
-          // getsOwnProposition: (prep.getsOwnProposition === true ? prep.getsOwnProposition : undefined),
           // insertsAbove: (prep.insertsAbove === true ? prep.insertsAbove : undefined),
           // insertsBelow: (prep.insertsBelow === true ? prep.insertsBelow : undefined),
           // insertsLeft: (prep.insertsLeft === true ? prep.insertsLeft : undefined),
@@ -3208,9 +3182,6 @@
         $scope.tempStopEditable = false;
 
         console.log("Payload: ", prep.payload)
-
-
-
 
         //      CLEARS THINGS AND EMITS THE PAYLOAD
         chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId);
@@ -3367,9 +3338,6 @@
           $scope.data[0].moveCounter = 0;
         }
         $scope.data[0].moveCounter++;
-        console.log("Move counter is now: ", $scope.data[0].moveCounter)
-
-
 
         if (payload.bookId !== $scope.bookId) {
           console.log("Returning for book mismatch")
@@ -3397,22 +3365,15 @@
 
             apply = {};
             if (payload.author === $scope.userId) {
-              console.log("If the author but does it active for non authors")
               $scope.inputs.proposition = '';
               $scope.inputs.leftProposition = '';
               $scope.inputs.chatProposition = '';
               $scope.inputs.newSectionTitle = '';
             }
 
-
-
-            console.log("Before receive sieve")
-
             if (payload.code === '1') {
 
               if (!payload.beforeNodeId){
-                //bottom node add
-                console.log("no before node id")
                 for (var i = 0; i < $scope.data[0].nodes.length; i++){
                   if ($scope.data[0].nodes[i].nodeId === payload.ofNodeId){
                     apply.parentNode = $scope.data[0].nodes[i];
@@ -3424,12 +3385,10 @@
                 if ($scope.data[0].nodes[apply.parentNodeIndex + 1]){
                   // if theres one after
                   for (var i = $scope.data[0].nodes.length-1; i > apply.parentNodeIndex; i--){
-                    console.log("Node i ", $scope.data[0].nodes[i])
                     $scope.data[0].nodes[i + 1] =  angular.copy($scope.data[0].nodes[i]);
                     $scope.data[0].nodes[i + 1].sectionNumber++;
                   }
                   if (!payload.draggedNode.nodeId){
-                    console.log("Not node id")
                     $scope.data[0].nodes[apply.parentNodeIndex+1] = {
                       topic: payload.topic,
                       dateCreated: Date(),
@@ -3459,15 +3418,11 @@
                       ],
                     }
                   } else {
-                    console.log("Else thing")
                     $scope.data[0].nodes[apply.parentNodeIndex+1] = angular.copy(payload.draggedNode);
                     $scope.data[0].nodes[apply.parentNodeIndex+1].sectionNumber = (apply.parentNodeIndex+1);
                   }
 
                 } else {
-                  // if there's not one after
-                  console.log("Not one after")
-
                     $scope.data[0].nodes[apply.parentNodeIndex + 1] = {
                       topic: payload.topic,
                       dateCreated: Date(),

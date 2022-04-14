@@ -3088,8 +3088,8 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
-        } else if ($scope.selectedProposition.type === 'assertion' &&
-          $scope.userId === $scope.data[0].documentClaimedBy){
+        } else if (($scope.selectedProposition.type === 'assertion' &&
+          $scope.userId === $scope.data[0].documentClaimedBy) || $scope.draggingParagraph){
           console.log("3g")
           prep.code = '3G';
           prep.topic = $scope.selectedProposition.topic;

@@ -1,6 +1,6 @@
 <div>
-
-  <div class="thread-wrapper"
+  <div 
+    class="thread-wrapper"
     ng-class="{'authorpadding': message.author === data[0].documentClaimedBy}">
     <p
       ng-if="threadAdding !== message.messageId"
@@ -11,19 +11,18 @@
       }"
       id="{{message.id}}"
     >
-
       <span 
-            id="message{{message.messageId}}"
-            class="tree-node tree-node-content remark remarkparagraph speech-bubble"
-            ng-class="{
-                     'deleted': message.deleted === true,
-                     'sent': message.author === userId,
-                     'received': message.author !== userId,
-                     }"
-            style="background-color: {{ message.color }}"
-            ng-click="[
-            (!message.deleted) ?
-            [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), hideExpandingTextarea(), selectPropositionById(message.id), selectedProposition.textSide = false] : inputs.nothing]"
+        id="message{{message.messageId}}"
+        class="tree-node tree-node-content remark remarkparagraph speech-bubble"
+        ng-class="{
+          'deleted': message.deleted === true,
+          'sent': message.author === userId,
+          'received': message.author !== userId,
+        }"
+        style="background-color: {{ message.color }}"
+        ng-click="[
+            (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), hideExpandingTextarea(), selectPropositionById(message.id), selectedProposition.textSide = false] : inputs.nothing]
+        "
             ng-mouseover="[message.mouseOver = true, statementHighlight(message.id), message.updated && !message.deleted ? slideInUpdate() : inputs.nothing]"
             ng-mouseleave="[message.mouseOver = false, statementUnHighlight(message.id)]">
           <!-- D:{{message.deleted}} R:{{message[userId]}} H:{{message.hiddenForAll}} -->

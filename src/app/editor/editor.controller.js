@@ -3852,7 +3852,6 @@
               }
 
               for (var k = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs.length-1); k > (apply.beforeParagraphTarget-1); k--){
-                console.log("Moving up at k of: ", k, " and j of: ", apply.beforeParagraphTarget)
                 $scope.data[0].nodes[apply.nodeTarget].paragraphs[k+1] = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[k]);
               }
 
@@ -3951,7 +3950,6 @@
                   for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex -1); i--){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[i + 1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[i]);
                   }
-                  console.log("The else for dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                     first: false,
                     paragraphId: payload.paragraphId,
@@ -3961,14 +3959,11 @@
                   }
                   for (var n = 0; n < payload.draggedProps.length; n++){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n] = payload.draggedProps[n];
-                    console.log("Just put in a ", $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].text)
                   }
                 }
 
               } else {
-                console.log("There is not")
                 if (!payload.draggedProps){
-                  console.log("There are not dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                     first: true,
                     paragraphId: payload.paragraphId,
@@ -3991,7 +3986,6 @@
                     }, 20);
                   }
                 } else {
-                  console.log("There are dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                     first: true,
                     paragraphId: payload.paragraphId,
@@ -3999,7 +3993,6 @@
                     ]
                   }
                   for (var n = 0; n < payload.draggedProps.length; n++){
-                    console.log("Placing n of ", n)
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n] = payload.draggedProps[n];
                     console.log($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].text, " was just placed");
                     // console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphIndex + 1].propositions[n].text)
@@ -4012,14 +4005,6 @@
 
             } else if (payload.code === '3G'){
               console.log("It's a 3g pretty normal proposition")
-              console.log("Inputs at pretty normal ", angular.copy($scope.inputs.proposition))
-
-
-              // 3gs will break after dropping a lower paragraph of two props into a left add
-              // new one simply disappears with an ad
-              // seems to be an issue in the props where they are dropped
-
-
 
               if (!payload.draggedProps){
                 for (var i = 0; i < $scope.data[0].nodes.length; i++){
@@ -4041,10 +4026,7 @@
                 }
 
                 if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1]){
-                  console.log("The length: ", angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length))
-                  console.log("Before the for: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1])
                   for (var n = $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1; n > apply.afterPropTarget; n--){
-                    console.log("On the end there maybe: ", angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n]));
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+1] =
                     angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n]);
 
@@ -4059,7 +4041,6 @@
                     first: true,
                     messagesSoFar: payload.messagesSoFar
                   }
-                  console.log("Placed: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1])
                 } else {
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1] = {
                     id: payload.id,
@@ -4121,15 +4102,10 @@
                     }, 20);
                   }
                 } else {
-                  console.log("else else")
                     for (var n = 0; n < payload.draggedProps.length; n++){
-
                       $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.afterPropTarget+1] = payload.draggedProps[n];
-                      console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n].text)
                       $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.afterPropTarget+1].isPresentlyBeingDragged = false;
-
                     }
-
 
                   if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide && !payload.draggedProps){
                     setTimeout(function () {
@@ -4143,7 +4119,6 @@
 
             } else if (payload.code === '4') {
               console.log("replaces blank")
-
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
                   apply.nodeIndex = i;
@@ -4202,12 +4177,7 @@
             }
 
 
-
             //       DIALOGUE PRINTER
-
-
-
-            console.log("Inputs at dialogue printer: ", angular.copy($scope.inputs.proposition))
 
             payload.color = $scope.calcColors(angular.copy(payload));
 
@@ -4224,7 +4194,6 @@
                 messagesSoFar: payload.messagesSoFar,
                 color: payload.color
               }
-              console.log("About to push assertion to dialogue: ", goingToPushThis)
               $scope.data[0].dialogue.push(
               {
                 isMessage: true,
@@ -4239,8 +4208,6 @@
                 color: payload.color
               })
             } else if (payload.type === 'negation'){
-              console.log("Length id one: ", $scope.data[0].dialogue[$scope.data[0].dialogue.length-1])
-              console.log("Payload one: ", payload)
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id &&
                 $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type === 'negation'){
                 $scope.data[0].dialogue.push(
@@ -4306,11 +4273,9 @@
             }
             $scope.messageToCopy = {};
 
-
             if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
               $scope.hasChatFocusId = '';
             }
-
 
             if (apply.muteIncomingThread) {
               $scope.data[0].dialogue[$scope.data[0].dialogue.length - 1][$scope.userId] = 'hidden';
@@ -4323,8 +4288,6 @@
               $scope.isMessageFresh = false;
             }
 
-
-            console.log("User color table: ", angular.copy($scope.userColorTable))
             for (var i = 0; i < $scope.userColorTable.length; i++) {
               if ($scope.userColorTable[i].author === payload.author &&
                 payload.author !== $scope.userId) {
@@ -4341,9 +4304,6 @@
                     color: $scope.generateNewColor()
                   }
                 );
-                if (payload.type !== 'negation') {
-                  //
-                }
               }
             } else if (payload.author !== $scope.userId &&
               payload.type !== 'topic') {
@@ -4355,7 +4315,6 @@
             temp = {};
             apply = {};
             $scope.scroll = {};
-
 
             if (payload.author === $scope.data[0].documentClaimedBy &&
               $scope.userId !== $scope.data[0].documentClaimedBy &&

@@ -4396,6 +4396,7 @@
           if ($scope.saveThisForASec){
             $scope.inputs.proposition = $scope.saveThisForASec;
             $scope.inputs.leftProposition = $scope.saveThisForASec;
+            $scope.saveThisForASec = '';
           }
           console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT

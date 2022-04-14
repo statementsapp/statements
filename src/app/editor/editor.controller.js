@@ -4099,9 +4099,6 @@
                 }
 
                 if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1]){
-                  console.log("else if")
-                  console.log("The length: ", angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length))
-                  console.log("Before the for: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1])
 
                     for (var n = $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1; n > apply.afterPropTarget; n--){
 
@@ -4113,12 +4110,8 @@
 
                       $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.afterPropTarget+1] = payload.draggedProps[n];
                       $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.afterPropTarget+1].isPresentlyBeingDragged = false;
-                      console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n].text)
-                      // $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n].isPresentlyBeingDragged = false;
 
                     }
-                    console.log("Placed: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1])
-
 
                   if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide && !payload.draggedProps){
                     setTimeout(function () {
@@ -4135,12 +4128,10 @@
                       $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.afterPropTarget+1].isPresentlyBeingDragged = false;
 
                     }
-                    console.log("Placed: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1])
 
 
                   if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide && !payload.draggedProps){
                     setTimeout(function () {
-                      console.log("Going to click")
                       document.getElementById('proposition' + payload.id).click();
                     }, 20);
                   }
@@ -4152,15 +4143,11 @@
             } else if (payload.code === '4') {
               console.log("replaces blank")
 
-
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
-
                   apply.nodeIndex = i;
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
-
                     if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
-
                       apply.afterParagraphIndex = j;
                       $scope.data[0].nodes[i].paragraphs[j].first = false;
                       $scope.data[0].nodes[i].paragraphs[j].hiddenForAll = true;
@@ -4170,19 +4157,15 @@
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].first = false;
                         if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks){
                           for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
-
                             $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll = true;
                           }
                         }
-
                       }
-
                       break;
                     }
                   }
                 }
               }
-
 
               $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                 first: true,
@@ -4202,26 +4185,17 @@
               }
 
               setTimeout(function () {
-              //   $scope.$apply(function () {
-
                   document.getElementById('proposition' + payload.id).click();
-              //   });
               }, 20);
-
             }
 
             console.log("Outside receive sieve")
 
-
-
             $scope.scroll.threadId = IdFactory.next();
-
-            // Check to see if paragraph is muted, set muted flag
 
             if (payload.author === $scope.userId &&
               payload.textSide &&
               $scope.cowsComeHome == true){
-
 
               apply.muteIncomingThread = true;
             }
@@ -4231,8 +4205,6 @@
             //       DIALOGUE PRINTER
 
 
-            // console.log('Second: ')
-            // console.log('Third: ')
 
             console.log("Inputs at dialogue printer: ", angular.copy($scope.inputs.proposition))
 
@@ -4266,7 +4238,6 @@
                 color: payload.color
               })
             } else if (payload.type === 'negation'){
-              // the deletion of the statement pulled down
               console.log("Length id one: ", $scope.data[0].dialogue[$scope.data[0].dialogue.length-1])
               console.log("Payload one: ", payload)
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id &&
@@ -4292,9 +4263,7 @@
                   }
                 }
 
-                // step one of pushes
                 $scope.data[0].dialogue.push($scope.messageToCopy);
-                // step two of pushes
                 $scope.data[0].dialogue.push(
                 {
                   isMessage: true,
@@ -4313,16 +4282,13 @@
 
 
             } else if (payload.isRejoinder && !payload.draggedProps){
-              // the deletion of the statement pulled down
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if ($scope.data[0].dialogue[i].id === payload.of.id){
                   $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
                   $scope.data[0].dialogue.splice(i, 1);
                 }
               }
-              // step one of pushes
               $scope.data[0].dialogue.push($scope.messageToCopy);
-              // step two of pushes
               $scope.data[0].dialogue.push(
               {
                 isMessage: true,
@@ -4344,10 +4310,6 @@
               $scope.hasChatFocusId = '';
             }
 
-            console.log(payload.author !== $scope.userId)
-            console.log("Chat focus id: ", $scope.hasChatFocusId)
-            console.log(!$scope.containerMouseover)
-
 
             if (apply.muteIncomingThread) {
               $scope.data[0].dialogue[$scope.data[0].dialogue.length - 1][$scope.userId] = 'hidden';
@@ -4361,12 +4323,10 @@
             }
 
 
-            // for every incoming proposition, when assigning an owner to the paragraph
             console.log("User color table: ", angular.copy($scope.userColorTable))
             for (var i = 0; i < $scope.userColorTable.length; i++) {
               if ($scope.userColorTable[i].author === payload.author &&
                 payload.author !== $scope.userId) {
-                console.log("already there remarks function")
                 var alreadyThere = true;
                 var place = i;
                 break;
@@ -4374,7 +4334,6 @@
             }
             if (!alreadyThere && payload.type !== 'topic') {
               if (payload.author !== $scope.userId) {
-                console.log("If not the author")
                 $scope.userColorTable.push(
                   {
                     author: payload.author,
@@ -4396,9 +4355,7 @@
             apply = {};
             $scope.scroll = {};
             if (document[hidden]) {
-              // $scope.clearBlankOnBlur(null, true);
             } else {
-              // $scope.clearBlankOnBlur();
             }
 
             if (payload.author === $scope.data[0].documentClaimedBy &&
@@ -4406,7 +4363,6 @@
               (payload.type === 'assertion' || payload.type === 'rejoinder') &&
               $scope.inputs.proposition != "" &&
               payload.ofParagraphId === $scope.selectedParagraph.paragraphId){
-              //thwarts stale negation on the text side
               $scope.inputs.proposition = '';
             }
 
@@ -4414,8 +4370,6 @@
               $scope.hasChatFocusId = payload.id;
 
               setTimeout(function () {
-                // $scope.$apply(function () {
-
                   $scope.selectedProposition.dialogueSide = true;
                   $scope.didItRun(message.id);
                   $scope.clearTopAndBottomHasFocus();
@@ -4424,9 +4378,7 @@
                   $scope.selectedProposition.textSide = false;
                   console.log("Precedes a bad click eh?")
                   document.getElementById('input' + payload.id).click();
-
                   focusFactory('input' + payload.id);
-                // });
               }, 20);
             }
             $scope.scrollMessagesToBottom();
@@ -4434,7 +4386,6 @@
             if (payload.author === $scope.userId){
               $scope.makePristine();
             }
-            // $scope.propositions.push(payload);  // PUSHES THE PROPOSITION TO THE PROPOSITIONS ARRAY
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
             apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
             profileService.setSelectedBook($scope.data[0]);
@@ -4443,28 +4394,18 @@
               $scope.saveThisForASec = angular.copy($scope.inputs.proposition)
             }
 
-            console.log("Inputs at end of apply: ", angular.copy($scope.inputs.proposition))
-
           });
           if ($scope.saveThisForASec){
             $scope.inputs.proposition = $scope.saveThisForASec;
             $scope.inputs.leftProposition = $scope.saveThisForASec;
           }
-          console.log("Inputs AFTER apply: ", angular.copy($scope.inputs.proposition))
           console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT
 
 
-        // $scope.initialize();
         if (payload.author === $scope.userId) {
           $scope.draggedProposition = {};
         }
-
-        // $scope.makePristine();
-        setTimeout(function () {
-          // apply.x = document.activeElement.id;
-
-        });
 
         $scope.clearAnimationClass();
       });
@@ -4522,20 +4463,7 @@
                   $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m];
                   $scope.hasChatFocusId = id;
                   setTimeout(function () {
-                    // $scope.$apply(function () {
-                     // $('#input' + id)
-                     //       .expanding();
-                    console.log("The element to show: ", document.getElementById('#input'+id))
-                    // $('#input' + id).parent().show();
-                    // $('#input' + id).expanding();
-                    // $('#input' + id).focus();
-                           // document.getElementById('input' + id).style.width = '303px'
                      focusFactory('input'+ id)
-                     console.log("to be clicked el: ", document.getElementById('input' + id))
-
-
-                    // });
-
                   }, 20);
                   break;
                 }
@@ -4549,30 +4477,17 @@
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
                 $scope.hasChatFocusId = id;
                 setTimeout(function () {
-                  // $scope.$apply(function () {
-                   // $('#input' + id)
-                   //       .expanding();
                   console.log("The element to show: ", document.getElementById('#input'+id))
-                  // $('#input' + id).parent().show();
-                  // $('#input' + id).expanding();
-                  // $('#input' + id).focus();
-                         // document.getElementById('input' + id).style.width = '303px'
                    focusFactory('input'+ id)
                    console.log("to be clicked el: ", document.getElementById('input' + id))
-
-
-                  // });
-
                 }, 20);
                 break;
 
-                // $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = payload.text;
               }
             }
           }
         }
 
-        // traverse($scope.data[0]);
         $scope.foundIt = undefined;
 
         function traverseArray(arr) {
@@ -4602,7 +4517,6 @@
                     $scope.selectedParagraph = angular.copy(obj);
                     $scope.selectedProposition = angular.copy(obj.propositions[i]);
                     $scope.selectedNode = eval(obj.propositions[i].nodePath);
-                    console.log("The selected prop right now: ", $scope.selectedProposition)
                     $scope.foundIt = true;
                     break;
                 }
@@ -4691,13 +4605,6 @@
         $scope.selectPropositionById($scope.toSetLater.remarkId);
       };
 
-
-
-      // *** These lightups arent always working because paragraph.disableRightCursor
-      // is often inappropriately on ***
-
-
-
       $scope.blurLightUpLastVisiblePropositionInBook = function (book, event) {
         // console.log("blur light up book")
         var apply = {};
@@ -4776,9 +4683,7 @@
         console.log("Runs scroll fcn")
         $timeout(function () {
           var pane = document.getElementById('dialoguelist');
-          console.log("The scrolltop: ", document.getElementById('dialoguelist').scrollTop)
           pane.scrollTop = pane.scrollHeight + 300;
-          console.log("The scrolltop after adj: ", document.getElementById('dialoguelist').scrollTop)
         }, 20);
       };
 
@@ -4963,8 +4868,6 @@
               // var paragraphIndex = angular.copy(j)
               var index = angular.copy(i)
               setTimeout(function () {
-                // $scope.$apply(function () {
-                 console.log("top timeout paragraph")
                  console.log("i: ", angular.copy(i))
                   document.getElementById('proposition' +
                     paragraph.propositions[index].remarks[paragraph.propositions[index].remarks.length-1].id).click();

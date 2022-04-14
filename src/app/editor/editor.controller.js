@@ -4354,9 +4354,7 @@
             temp = {};
             apply = {};
             $scope.scroll = {};
-            if (document[hidden]) {
-            } else {
-            }
+
 
             if (payload.author === $scope.data[0].documentClaimedBy &&
               $scope.userId !== $scope.data[0].documentClaimedBy &&

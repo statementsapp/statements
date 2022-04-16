@@ -221,7 +221,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   $event.stopPropagation()
                   ] : inputs.notting"
 
-                ng-if="proposition.first">
+                ng-if="proposition.first && proposition.type !== 'blank'">
           </span>
           <span editable-span-ng-model
                 contenteditable="true"

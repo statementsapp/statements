@@ -199,7 +199,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             ng-class="{'incoming': propToAddAnimate.id === proposition.id, 'rejoinanimate': propToRejoinAnimate.id === proposition.id, blankcorrector: proposition.type === 'blank'}"
             class="proposition">
 
-            <!-- {{proposition.first}} -->
+            {{proposition.type}}
 
           <span class="leftpropositionadder"
                 ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true]"

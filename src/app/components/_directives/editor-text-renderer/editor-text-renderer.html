@@ -265,7 +265,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
             ng-class="{'visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left')),
                              'invisible-cursor': !paragraph.leftMouseOver || !proposition.preSelected|| !proposition.first}"
-            ng-if="proposition.first && data[0].documentClaimedBy === userId && proposition.type !== 'blank"
+            ng-if="proposition.first && data[0].documentClaimedBy === userId && proposition.type !== 'blank'"
             class="cursor left-cursor">
             </span>
           <!-- 'dragdimmed': draggedProposition.id === proposition.id -->

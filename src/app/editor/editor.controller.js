@@ -2980,7 +2980,7 @@
           prep.id = IdFactory.next();
           prep.messagesSoFar = [prep.id]
 
-        } else if (paragraph.topAdd){
+        } else if (paragraph.topAdd || paragraph.topMouseOver){
           console.log("3d")
           prep.code = '3D';
           prep.topic = $scope.selectedProposition.topic;

@@ -4650,8 +4650,8 @@
         console.log('light up book')
          console.log("Target name: ", event.target.localName)
 
-        if (event.target.localName === 'li'){
-          console.log("not those lis")
+        if (event.target.localName === 'li' || event.target.hasClass('bottomparagraphadder')){
+          console.log("not those lis or bottom adders")
           return;
         }
         console.log("The target: ", event.target)

@@ -4677,7 +4677,7 @@
                          console.log("i: ", angular.copy(nodeIndex))
                          console.log("j: ", angular.copy(paragraphIndex))
                          console.log("k: ", angular.copy(index))
-                          document.getElementById('proposition' +
+                          
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].preSelected = true;
                         // });
                         
@@ -4686,7 +4686,7 @@
                         setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("this other timeout")
-                          document.getElementById('proposition' +
+                          
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].preSelected = true;
                         // });
                    

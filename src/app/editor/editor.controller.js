@@ -1076,7 +1076,7 @@
           $scope.$apply(function () {
             $scope.statementHighlightIs = id;
           });
-        }, 5);
+        }, 0);
       }
 
       $scope.statementUnHighlight = function(id){

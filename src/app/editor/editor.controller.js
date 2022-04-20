@@ -4700,15 +4700,15 @@
                       // console.log('ran through')
 
                     } else if (!index) {
+                      console.log("This else here")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
-                      $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
                       setTimeout(function () {
                         // $scope.$apply(function () {
                       
-                          document.getElementById('proposition' +
-                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                            console.log("timeoutt")
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].preSelected = true;
                         // });
 
                       }, 20);

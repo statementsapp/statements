@@ -115,8 +115,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition
                 }">
       
-    {{!paragraph.disableRightCursor}}
-    {{!paragraph.leftMouseOver}}
+   <!--  {{!paragraph.disableRightCursor}}
+    {{!paragraph.leftMouseOver}} -->
 
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
@@ -347,7 +347,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
           >
             {{proposition.text}}
-            {{hasRightFocus.id !== proposition.id}}
+            <!-- {{hasRightFocus.id !== proposition.id}} -->
             
 
           </span>

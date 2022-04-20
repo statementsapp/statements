@@ -589,7 +589,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          ng-mouseleave="paragraph.bottomMouseOver = false"
          ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), selectParagraph(paragraph),
                     selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
-
+         title="bottomparagraphadder"
          ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph"
          id="{{paragraph.paragraphId}}"
 

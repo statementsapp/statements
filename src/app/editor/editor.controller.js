@@ -1092,7 +1092,7 @@
         // if ($scope.draggedProposition.id && $scope.upperDragScrollerMouseOver){
 
           document.getElementById('tree-root').scrollTop--;
-          console.log("triggers scroll upper")
+          // console.log("triggers scroll upper")
         // }
       }
 
@@ -3101,7 +3101,6 @@
           prep.savedParagraphId = angular.copy(paragraph.paragraphId);
         }
 
-        console.log('The paragraph id AHORA: ', angular.copy(paragraph.paragraphId))
 
         prep.adjustedText = prep.adjustedText.replace(/&nbsp;/g, ' ');
         prep.adjustedText = angular.copy(prep.adjustedText).replace(/(&lt;br&gt;&lt;br&gt;\.|<br><br>\.)/g, '');
@@ -4358,7 +4357,7 @@
             $scope.inputs.leftProposition = $scope.saveThisForASec;
             $scope.saveThisForASec = '';
           }
-          console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
+          // console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT
 
 
@@ -4564,8 +4563,24 @@
         $scope.selectPropositionById($scope.toSetLater.remarkId);
       };
 
+      $scope.confirmIfVisibleParagraph = function(paragraphId){
+        if (document.getElementById('paragraph' + paragraphId)){
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      $scope.scrollMessagesToBottom = function () {
+        console.log("Runs scroll fcn")
+        $timeout(function () {
+          var pane = document.getElementById('dialoguelist');
+          pane.scrollTop = pane.scrollHeight + 300;
+        }, 20);
+      };
+
       $scope.blurLightUpLastVisiblePropositionInBook = function (book, event) {
-        // console.log("blur light up book")
+        console.log("blur light up book")
         var apply = {};
         apply.path = '$scope.data[0]';
         apply.destination = eval(apply.path);
@@ -4596,8 +4611,10 @@
         apply = {};
       };
 
+
+
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {
-        // console.log('light up book')
+        console.log('light up book')
         var apply = {};
         apply.path = '$scope.data[0]';
         apply.bookDestination = eval(apply.path);
@@ -4630,26 +4647,11 @@
         apply = {};
       };
 
-      $scope.confirmIfVisibleParagraph = function(paragraphId){
-        if (document.getElementById('paragraph' + paragraphId)){
-          return true;
-        } else {
-          return false;
-        }
-      }
-
-      $scope.scrollMessagesToBottom = function () {
-        console.log("Runs scroll fcn")
-        $timeout(function () {
-          var pane = document.getElementById('dialoguelist');
-          pane.scrollTop = pane.scrollHeight + 300;
-        }, 20);
-      };
 
       $scope.getLastVisiblePropositionInBook = function (book, event) {
         console.log('get book')
         $scope.whatHasBeenClicked = '';
-        console.log("Length: ", angular.copy($scope.data[0].nodes.length))
+        // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           if (!$scope.data[0].nodes[i].minimized){
             for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
@@ -4667,7 +4669,7 @@
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
 
                           var remarkIndex = angular.copy(m);
-                          console.log("Hit. Remark index: ", remarkIndex)
+                          // console.log("Hit. Remark index: ", remarkIndex)
                           break;
                         }
                       }
@@ -4722,6 +4724,7 @@
       };
 
       $scope.blurLightUpLastVisiblePropositionInNode = function (node, event) {
+        console.log("blur node")
         for (var i = node.paragraphs.length - 1; i > -1; i--) {
           if (node.paragraphs[i][$scope.userId] !== 'hidden' && !node.paragraphs[i].hiddenForAll) {
             for (var j = node.paragraphs[i].propositions.length - 1; j > -1; j--) {
@@ -4785,6 +4788,7 @@
       };
 
       $scope.blurLightUpLastVisiblePropositionInParagraph = function (node, paragraph, event) {
+        console.log("blur paragraph")
         for (var i = paragraph.propositions.length - 1; i > -1; i--) {
           if (paragraph.propositions[i][$scope.userId] !== 'hidden' && paragraph.propositions[i].hiddenForAll !== true &&
             paragraph.propositions[i].preSelected === true) {
@@ -4795,6 +4799,7 @@
       };
 
       $scope.lightUpLastVisiblePropositionInParagraph = function (node, paragraph, event) {
+        console.log("light up paragraph")
         if (event.target.localName !== 'ol') {
           return;
         }
@@ -4807,7 +4812,6 @@
       };
 
       $scope.getLastVisiblePropositionInParagraph = function (node, paragraph, event) {
-        console.log("The event: ", angular.copy(event));
         if ($scope.draggingProposition){
           console.log("Returning last in paragraph")
           return;

@@ -4656,8 +4656,11 @@
               if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
                 console.log('through if on j with value for paragraph: ', j)
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
+
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                    console.log("first if")
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
+                      console.log("second if")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)

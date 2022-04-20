@@ -4664,13 +4664,14 @@
                       var remarkIndex = null;
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
-
+                          console.log("m of: ", angular.copy(m))
                           var remarkIndex = angular.copy(m);
                           // console.log("Hit. Remark index: ", remarkIndex)
                           break;
                         }
                       }
                       if (remarkIndex || remarkIndex == 0){
+                        console.log("assigning if with remarkIndex ", remarkIndex)
                         setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("top timeout")

@@ -347,8 +347,10 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             ng-blur="[focusouteditable(this), paragraph.disableRightCursor = false]"
 
           >
-
+            {{proposition.text}}
             {{hasRightFocus.id !== proposition.id}}
+            }
+          }
 
           </span>
           <span

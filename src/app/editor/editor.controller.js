@@ -4614,37 +4614,114 @@
 
 
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {
+        // console.log('light up book')
+        // var apply = {};
+        // apply.path = '$scope.data[0]';
+        // apply.bookDestination = eval(apply.path);
+        // apply.id = '';
+        // apply.flagged;
+
+        // //Find the rightmost child, if any
+
+        // for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
+        //   if (!$scope.data[0].nodes[i].minimized){
+        //     for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
+        //       for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
+        //         if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length > 0){
+        //           for (var m = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length-1; m > -1; m--){
+        //             if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] !== 'hidden' &&
+        //               !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll){
+        //               $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].preSelected = true;
+        //               return;
+        //             }
+        //           }
+        //         } else {
+        //           $scope.data[0].nodes[i].paragraphs[j].propositions[k].preSelected = true;
+        //           return;
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
+
+        // apply = {};
+
+
         console.log('light up book')
-        var apply = {};
-        apply.path = '$scope.data[0]';
-        apply.bookDestination = eval(apply.path);
-        apply.id = '';
-        apply.flagged;
-
-        //Find the rightmost child, if any
-
+        // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           if (!$scope.data[0].nodes[i].minimized){
             for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
-              for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
-                if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length > 0){
-                  for (var m = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length-1; m > -1; m--){
-                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] !== 'hidden' &&
-                      !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll){
-                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].preSelected = true;
+              console.log('j of: ', j)
+              if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
+                console.log('through if on j with value for paragraph: ', j)
+                for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
+                  if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
+                      var nodeIndex = angular.copy(i)
+                      var paragraphIndex = angular.copy(j)
+                      var index = angular.copy(k)
+                      var remarkIndex = null;
+                      for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
+                        if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
+
+                          var remarkIndex = angular.copy(m);
+                          // console.log("Hit. Remark index: ", remarkIndex)
+                          break;
+                        }
+                      }
+                      if (remarkIndex || remarkIndex == 0){
+                        setTimeout(function () {
+                        // $scope.$apply(function () {
+                         console.log("top timeout")
+                         console.log("i: ", angular.copy(nodeIndex))
+                         console.log("j: ", angular.copy(paragraphIndex))
+                         console.log("k: ", angular.copy(index))
+                          document.getElementById('proposition' +
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].preSelected = true;
+                        // });
+                        
+                        }, 20);
+                      } else {
+                        setTimeout(function () {
+                        // $scope.$apply(function () {
+                         console.log("this other timeout")
+                          document.getElementById('proposition' +
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].preSelected = true;
+                        // });
+                   
+                        }, 20);
+                      }
                       return;
+                      // console.log('ran through')
+
+                    } else if (!index) {
+                      var nodeIndex = angular.copy(i)
+                      var paragraphIndex = angular.copy(j)
+                      var index = angular.copy(k)
+                      $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                      setTimeout(function () {
+                        // $scope.$apply(function () {
+                      
+                          document.getElementById('proposition' +
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                        // });
+
+                      }, 20);
+                      return;
+                      // console.log("break didnt work")
                     }
                   }
-                } else {
-                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].preSelected = true;
-                  return;
                 }
               }
             }
           }
         }
 
-        apply = {};
+
+
+
+
       };
 
 

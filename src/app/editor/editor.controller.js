@@ -4648,6 +4648,7 @@
 
 
         console.log('light up book')
+         console.log("Target name: ", event.target.localName)
         // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           if (!$scope.data[0].nodes[i].minimized){
@@ -4732,7 +4733,7 @@
       $scope.getLastVisiblePropositionInBook = function (book, event) {
 
        
-        console.log("Target name: ", event.target.localName)
+       
 
         console.log('get book')
         $scope.whatHasBeenClicked = '';

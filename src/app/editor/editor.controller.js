@@ -4730,6 +4730,10 @@
 
 
       $scope.getLastVisiblePropositionInBook = function (book, event) {
+
+       
+        console.log("Target name: ", event.target.localName)
+
         console.log('get book')
         $scope.whatHasBeenClicked = '';
         // console.log("Length: ", angular.copy($scope.data[0].nodes.length))

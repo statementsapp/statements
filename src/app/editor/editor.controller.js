@@ -4895,6 +4895,7 @@
         if (event.target.localName !== 'ol') {
           return;
         }
+        console.log(event.target)
         for (var i = paragraph.propositions.length - 1; i > -1; i--) {
           if (paragraph.propositions[i][$scope.userId] !== 'hidden' && paragraph.propositions[i].hiddenForAll !== true) {
             paragraph.propositions[i].preSelected = true;

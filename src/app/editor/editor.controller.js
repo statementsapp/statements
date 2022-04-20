@@ -4649,6 +4649,10 @@
 
         console.log('light up book')
          console.log("Target name: ", event.target.localName)
+        if (event.target.localName === 'li'){
+          console.log("not those lis")
+          return;
+        }
         // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           if (!$scope.data[0].nodes[i].minimized){

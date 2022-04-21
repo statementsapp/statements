@@ -361,7 +361,8 @@
               ng-class="{ mousedovernode: node.mouseOver === true }"
               class="angular-ui-tree-node node"
               id="{{node.nodeId}}"
-              ng-if="!node.hiddenForAll">
+              ng-if="!node.hiddenForAll"
+              style="overflow-wrap: break-word;">
             {{node}}
           </li>
         </ol>

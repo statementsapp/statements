@@ -3916,6 +3916,7 @@
                       !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
 
                       apply.afterParagraphIndex = angular.copy(j);
+                      console.log("After paragraph index: ", angular.copy(apply.afterParagraphIndex));
                       break;
                     }
                   }

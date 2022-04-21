@@ -3012,7 +3012,6 @@
           } else {
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           }
-          prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           prep.targetNodeId = $scope.selectedNode.nodeId;
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
           prep.id = IdFactory.next();

@@ -114,7 +114,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition
                 }">
       
-    {{!paragraph.paragraphId}}
+    {{paragraph.paragraphId}}
 
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"

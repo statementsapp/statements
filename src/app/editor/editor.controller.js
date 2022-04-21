@@ -3842,7 +3842,8 @@
 
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
-                  if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.beforeParagraphId){
+                  if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.beforeParagraphId &&
+                    !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
                     apply.nodeTarget = angular.copy(i);
                     apply.beforeParagraphTarget = angular.copy(j);
                     break;
@@ -3911,7 +3912,8 @@
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
                   apply.nodeIndex = angular.copy(i);
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
-                    if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
+                    if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId &&
+                      !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
 
                       apply.afterParagraphIndex = angular.copy(j);
                       break;

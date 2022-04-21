@@ -3998,7 +3998,7 @@
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n] = payload.draggedProps[n];
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].hiddenForAll = null;
                     console.log($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].text, " was just placed");
-                    console.log($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] " is the paragraph");
+                    console.log($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1], " is the paragraph");
                     console.log($scope.data[0].nodes[apply.nodeIndex] " is the node");
                     // console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphIndex + 1].propositions[n].text)
                   }

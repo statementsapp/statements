@@ -337,7 +337,36 @@
        style="">
     <div class="col-md-8">
       <span style="width: 500px;"></span>
-      {{data[0].nodes}}
+      <div ui-tree="treeOptions"
+           data-drag-enabled="false"
+           id="tree-root"
+           class="angular-ui-tree textlist"
+           ng-mouseover="[lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
+           ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
+           ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
+
+      >
+        <!-- hideExpandingTextarea(), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, selectedProposition.dialogueSide = false, selectedThread = {}, -->
+        <!-- getLastVisiblePropositionInBook(data[0], $event),
+        ng-mouseover="lightUpLastVisiblePropositionInBook(data[0], $event)"
+        ng-mouseleave="blurLightUpLastVisiblePropositionInBook(data[0], $event)" -->
+        <ol ui-tree-nodes
+            ng-model='data[0].nodes'
+            style=""
+            id="bookdata"
+            class="angular-ui-tree-nodes"
+        >
+          <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
+              ui-tree-node
+              ng-class="{ mousedovernode: node.mouseOver === true }"
+              class="angular-ui-tree-node node"
+              id="{{node.nodeId}}"
+              ng-if="!node.hiddenForAll">
+            {{node}}
+          </li>
+        </ol>
+      </div>
+
       <!-- {{data[0].documentClaimedBy === userId}} -->
 <!--       {{data[0].authorTable}}
       op:{{otherPastels}}

@@ -3987,6 +3987,7 @@
                     }, 20);
                   }
                 } else {
+                  console.log("THE ELSEee")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                     first: true,
                     paragraphId: payload.paragraphId,

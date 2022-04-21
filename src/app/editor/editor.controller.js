@@ -4670,6 +4670,7 @@
         console.log("The target: ", event.target)
         // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
+          console.log("I: ", angular.copy(i))
           if (!$scope.data[0].nodes[i].minimized){
             for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
               console.log('j of: ', j)

@@ -90,7 +90,7 @@ var socketService = function (io) {
      */
     socket.on('disconnect', () => {
       if (users.hasOwnProperty(socket.id)) {
-        delete users[socket.id];
+        // delete users[socket.id];
       }
       debug('disconnect', socket);
     });

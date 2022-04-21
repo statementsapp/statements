@@ -79,8 +79,10 @@
 
 <!-- ng-keydown="$event.keyCode === 13 ? $event.preventDefault : inputs.nothing" -->
   <span ng-if="node.minimized && data[0].documentClaimedBy === userId"
+        ng-click="toggleNode()"
         style="padding-right: 10px">+</span>
   <span ng-if="node.mouseOver && !node.minimized && data[0].documentClaimedBy === userId"
+        ng-click="toggleNode()"
         style="padding-right: 10px">-</span>
 </div>
 

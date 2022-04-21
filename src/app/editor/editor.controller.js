@@ -3013,7 +3013,11 @@
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           }
           console.log(prep.afterParagraphId, "is the after paragraph id")
-          prep.targetNodeId = $scope.selectedNode.nodeId;
+          if (!$scope.draggingParagraph && !$scope.draggingProposition){
+            prep.targetNodeId = $scope.selectedNode.nodeId;
+          } else {
+            prep.targetNodeId = angular.copy(node.nodeId);
+          }
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
           prep.id = IdFactory.next();
           prep.of = {

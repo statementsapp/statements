@@ -4411,6 +4411,8 @@
         $scope.hasBottomFocus = {};
         $scope.hasTopNodeFocus = {};
         $scope.hasBottomNodeFocus = '';
+        $scope.hasChatFocusId = '';
+
       };
 
       $scope.clearThreadAdding = function () {

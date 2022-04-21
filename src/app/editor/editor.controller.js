@@ -4410,7 +4410,7 @@
         $scope.hasTopFocus = '';
         $scope.hasBottomFocus = {};
         $scope.hasTopNodeFocus = {};
-        $scope.hasBottomNodeFocus = {};
+        $scope.hasBottomNodeFocus = '';
       };
 
       $scope.clearThreadAdding = function () {

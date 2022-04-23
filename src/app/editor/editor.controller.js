@@ -3083,6 +3083,11 @@
           prep.author = $scope.userId;
           prep.targetNodeId = $scope.selectedNode.nodeId;
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
+          if ($scope.draggingProposition || $scope.draggingParagraph){
+            prep.afterParagraphId = paragraph.paragraphId;
+          } else {
+            prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
+          }
           prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           prep.id = IdFactory.next();
           prep.of = {
@@ -3149,8 +3154,6 @@
           beforeRemarkId: prep.beforeRemarkId ? prep.beforeRemarkId : undefined,
           afterRemarkId: prep.afterRemarkId ? prep.afterRemarkId : undefined,
           answeredQuestion: (prep.answeredQuestion ? prep.answeredQuestion : undefined),
-          replacesBlankAndMoves:
-            (prep.replacesBlankAndMoves === true ? prep.replacesBlankAndMoves : undefined),
           isAntecedent: (prep.isAntecedent ? prep.isAntecedent : undefined),
           isConsequent: (prep.isConsequent ? prep.isConsequent : undefined),
           sectionLevel: (prep.sectionLevel ? prep.sectionLevel : undefined),
@@ -3252,9 +3255,6 @@
                       getsOwnNode: (prep.getsOwnNode === true ? prep.getsOwnNode : undefined),
                       getsOwnParagraph: (prep.getsOwnParagraph === true ? prep.getsOwnParagraph : undefined),
                       newProp: true,
-                      // getsOwnProposition: (prep.getsOwnProposition === true ? prep.getsOwnProposition : undefined),
-                      replacesBlankAndMoves:
-                        (prep.replacesBlankAndMoves === true ? prep.replacesBlankAndMoves : undefined),
                       insertsAbove: (prep.insertsAbove === true ? prep.insertsAbove : undefined),
                       insertsBelow: (prep.remarkPayload.insertsBelow === true ? prep.remarkPayload.insertsBelow : undefined),
                       insertsLeft: (prep.insertsLeft === true ? prep.insertsLeft : undefined),

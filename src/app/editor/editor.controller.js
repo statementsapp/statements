@@ -2033,8 +2033,8 @@
         console.log("Event: ", event ? event : '')
 
         if (element && event){
-          var relX = event.pageX - $(this).offset().left;
-          var relY = event.pageY - $(this).offset().top;
+          var relX = event.pageX - $(element).offset().left;
+          var relY = event.pageY - $(element).offset().top;
           console.log(relX, ", ", relY)
         }
 

@@ -2028,8 +2028,16 @@
         console.log("It ran okay")
       }
 
-      $scope.dropItem = function (node, paragraph, proposition, flag) {
-        console.log("Dragged Node ", $scope.draggedNode.topic)
+      $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {
+        console.log("Element: ", element ? element : '')
+        console.log("Event: ", event ? event : '')
+
+        if (element && event){
+          var relX = event.pageX - $(this).offset().left;
+          var relY = event.pageY - $(this).offset().top;
+          console.log(relX, ", ", relY)
+        }
+
         setTimeout(function () {
           $scope.$apply(function () {
             $scope.dragStrings = [];

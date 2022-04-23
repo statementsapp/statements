@@ -3094,7 +3094,6 @@
           } else {
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           }
-          prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           prep.id = IdFactory.next();
           prep.of = {
             type: 'itsown',

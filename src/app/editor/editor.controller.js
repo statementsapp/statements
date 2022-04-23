@@ -2030,11 +2030,12 @@
 
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {
         console.log("Element: ", element ? element : '')
+        console.log("Element id: ", element ? element.id : '')
         console.log("Event: ", event ? event : '')
 
         if (element && event){
-          var relX = event.pageX - $(element).offset().left;
-          var relY = event.pageY - $(element).offset().top;
+          var relX = event.pageX - $(element.id).offset().left;
+          var relY = event.pageY - $(element.id).offset().top;
           console.log(relX, ", ", relY)
         }
 

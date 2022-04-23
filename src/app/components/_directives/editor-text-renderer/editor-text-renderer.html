@@ -59,14 +59,14 @@
      ng-mouseover="node.titleMouseOver= true"
      ng-mouseleave="node.titleMouseOver= false">
   <span class="nodehandle"
-        ng-hold="dragNode(node, $event)"
+        ng-hold="[dragNode(node, $event), clearTopAndBottomHasFocus()]"
         ng-click="draggingNode && !cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : inputs.notting;"    
         style="margin-right: 10px; display: inline-block;">
     <span ng-click="!draggingNode && !draggingParagraph && !draggingProposition && !node.highlighted && data[0].documentClaimedBy === userId ? highlightNode(node) : inputs.nothing" ng-style="{ 'opacity': node.titleMouseOver && !draggingNode && !draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId && !minimalStyle ? .5 : 0 }"><i class="fa fa-circle" style="font-size: 15px;"></i>
     </span>
   </span>
   <span
-    ng-hold="[dragNode(node)]"
+    ng-hold="[dragNode(node),clearTopAndBottomHasFocus()]"
     ng-enter="[$event.preventDefault(), updateNode(node)]"
     class="nodetitle"
     ng-click="draggingNode && cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : data[0].documentClaimedBy === userId ? [setNodeEditability(node), $event.stopPropagation()] :$event.stopPropagation() "
@@ -180,7 +180,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           ng-click="threadAdding ? hideThreadAdd() : !paragraph.leftMouseOver && !draggingProposition && !draggingParagraph && $event.keyCode !== 32 && $event.keyCode !== 13 ? [didItRunOk(null), getLastVisiblePropositionInParagraph(node, paragraph, $event), $event.stopPropagation()] : inputs.nothing">
           <!-- ng-if="(!proposition.hiddenForAll && !proposition.rejoined && proposition[userId] !== 'hidden') || (proposition.privateFor && proposition.privateFor === userId)" -->
         <span class="paragraphhandle"
-              ng-hold="[dragParagraph(node, paragraph, $event)]"
+              ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
               ng-click="!paragraph.highlighted && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
                         paragraph.highlighted ? markParagraph(node, paragraph) :
                         paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : inputs.nothing"
@@ -273,7 +273,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           <!-- 'dragdimmed': draggedProposition.id === proposition.id -->
           <span
 
-            ng-hold="(proposition.type !== 'blank' && proposition.type !== 'negation' && proposition.author === userId) ? [dragProposition(node, paragraph, proposition, $event)] : inputs.nothing"
+            ng-hold="(proposition.type !== 'blank' && proposition.type !== 'negation' && proposition.author === userId) ? [dragProposition(node, paragraph, proposition, $event), clearTopAndBottomHasFocus()] : inputs.nothing"
             id="proposition{{proposition.id}}"
             style=""
             ng-class="{ 

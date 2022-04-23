@@ -3088,8 +3088,9 @@
             prep.targetNodeId = $scope.selectedNode.nodeId;
           }
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
+          console.log("The paragraph: ", paragraph)
           if ($scope.draggingProposition || $scope.draggingParagraph){
-            prep.afterParagraphId = paragraph.paragraphId;
+            prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           } else {
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           }

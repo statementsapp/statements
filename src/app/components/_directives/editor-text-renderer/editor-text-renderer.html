@@ -74,7 +74,7 @@
     id="nodetitle{{node.nodeId}}"
     ng-enter="updateNode(node)">
         {{node.topic}}
-        <!-- {{node.nodeId}} -->
+        {{node.nodeId}}
 </span>
 
 <!-- ng-keydown="$event.keyCode === 13 ? $event.preventDefault : inputs.nothing" -->
@@ -117,7 +117,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition
                 }">
       
-    <!-- {{paragraph.paragraphId}} -->
+    {{paragraph.paragraphId}}
 
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
@@ -200,8 +200,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             ng-if="(!proposition.hiddenForAll && proposition[userId] !== 'hidden')"
             ng-class="{'incoming': propToAddAnimate.id === proposition.id, 'rejoinanimate': propToRejoinAnimate.id === proposition.id, blankcorrector: proposition.type === 'blank'}"
             class="proposition">
-<!-- 
-            {{proposition.type}} -->
+
+            {{proposition.id}}
 
           <span class="leftpropositionadder"
                 ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true]"

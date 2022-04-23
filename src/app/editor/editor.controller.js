@@ -4924,7 +4924,7 @@
       };
 
       $scope.getLastVisiblePropositionInParagraph = function (node, paragraph, event) {
-        if ($scope.draggingProposition){
+        if ($scope.draggingProposition || paragraph.leftAdd){
           console.log("Returning last in paragraph")
           return;
         }

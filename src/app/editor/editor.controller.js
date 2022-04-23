@@ -3081,7 +3081,12 @@
           prep.type = 'assertion';
           prep.adjustedText = input;
           prep.author = $scope.userId;
-          prep.targetNodeId = $scope.selectedNode.nodeId;
+          
+          if ($scope.draggingProposition || $scope.draggingParagraph){
+            prep.targetNodeId = node.nodeId;
+          } else {
+            prep.targetNodeId = $scope.selectedNode.nodeId;
+          }
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
           if ($scope.draggingProposition || $scope.draggingParagraph){
             prep.afterParagraphId = paragraph.paragraphId;

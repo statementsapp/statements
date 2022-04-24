@@ -2045,6 +2045,8 @@
         if (element && event && flag === 'ol'){
           var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;
           var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top;
+          console.log(event.pageX ", ", event.pageY)
+          console.log($('#propositionsol' + paragraph.paragraphId).offset().left ", ", $('#propositionsol' + paragraph.paragraphId).offset().top)
           console.log(relX, ", ", relY)
           if (relX < 30 && relY < 22){
             console.log("returning left ol")

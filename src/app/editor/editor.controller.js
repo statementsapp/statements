@@ -2029,6 +2029,10 @@
       }
 
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {
+        if (flag === 'ol'){
+
+        }
+        console.log("Flag: ", flag)
         console.log("Element: ", element ? element : '')
         console.log("Event: ", event ? event : '')
         console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))

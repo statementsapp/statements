@@ -2042,10 +2042,21 @@
         console.log("Element: ", element ? element : '')
         console.log("Event: ", event ? event : '')
         console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
-        if (element && event){
+        if (element && event && flag === 'ol'){
           var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;
           var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top;
           console.log(relX, ", ", relY)
+          if (relX < 30 && relY < 22){
+            console.log("returning left ol")
+            return;
+          } else {
+            for (var i = paragraph.propositions.length-1; i > -1; i--){
+              if (!paragraph.propositions[i].hiddenForAll){
+                proposition = paragraph.propositions[i];
+                flag = 'right';
+              }
+            }
+          }
         }
 
         setTimeout(function () {

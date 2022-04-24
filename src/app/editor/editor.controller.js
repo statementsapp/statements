@@ -2049,10 +2049,17 @@
           console.log(event.pageX, ", ", event.pageY)
           console.log($('#propositionsol' + paragraph.paragraphId).offset().left, ", ", $('#propositionsol' + paragraph.paragraphId).offset().top)
           console.log(relX, ", ", relY)
-          if (relX < 30 && relY < 22){
-            console.log("returning left ol")
-            return;
+          if (relY > -24){
+            console.log("left ol")
+            flag = 'left';
+            for (var i = 0; i < paragraph.propositions.length; i++){
+              if (!paragraph.propositions[i].hiddenForAll){
+                proposition = paragraph.propositions[i];
+                flag = 'right';
+              }
+            }
           } else {
+            console.log("right ol")
             for (var i = paragraph.propositions.length-1; i > -1; i--){
               if (!paragraph.propositions[i].hiddenForAll){
                 proposition = paragraph.propositions[i];

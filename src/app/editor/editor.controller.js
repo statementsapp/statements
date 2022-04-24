@@ -1170,6 +1170,7 @@
         // console.log("select right")
         focusFactory(proposition.id);
         $scope.whatHasBeenClicked = proposition.id;
+        $scope.unHighlightParagraph();
 
 
       };
@@ -1183,6 +1184,7 @@
       $scope.selectLeft = function (proposition, paragraph) {
         console.log("select left")
         $scope.selectedProposition = proposition;
+        $scope.unHighlightParagraph();
       };
 
       // Selects node
@@ -4818,7 +4820,7 @@
       $scope.getLastVisiblePropositionInBook = function (book, event) {
 
        
-       
+       $scope.unHighlightParagraph();
 
         console.log('get book')
         $scope.whatHasBeenClicked = '';
@@ -4927,6 +4929,7 @@
       };
 
       $scope.getLastVisiblePropositionInNode = function (node, event, element) {
+        $scope.unHighlightParagraph();
         console.log("get node")
         if (event.target.localName !== 'ol') {
           console.log("Returning node for having clicked other")
@@ -4984,6 +4987,7 @@
       };
 
       $scope.getLastVisiblePropositionInParagraph = function (node, paragraph, event) {
+        $scope.unHighlightParagraph();
         if ($scope.draggingProposition || paragraph.leftAdd){
           console.log("Returning last in paragraph")
           return;

@@ -2028,6 +2028,12 @@
         console.log("It ran okay")
       }
 
+      $scope.getReading = function (event, id) {
+        var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;
+          var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top;
+          console.log(relX, ", ", relY)
+      }
+
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {
         if (flag === 'ol'){
 

@@ -174,7 +174,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           style="padding-left: 0px !important;"
           ng-model="paragraph.propositions" 
           class="propositions"
-          ng-mouseover="[lightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = true, $event.stopPropagation()]"
+          ng-mouseover="[lightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = true, $event.stopPropagation(), getReading($event,paragraph.paragraphId)]"
           ng-mouseleave="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = false, $event.stopPropagation()]"
           ng-class="{'addbelownotowned': hasBottomFocus.id == paragraph.paragraphId, 'bottomadd': paragraph.bottomAdd}"
           ng-click="threadAdding ? hideThreadAdd() : !paragraph.leftMouseOver && !draggingProposition && !draggingParagraph && $event.keyCode !== 32 && $event.keyCode !== 13 ? [didItRunOk(null), getLastVisiblePropositionInParagraph(node, paragraph, $event), $event.stopPropagation()] : (draggingProposition || draggingParagraph) ? dropItem(node, paragraph, null,'ol', this, $event): inputs.nothing"

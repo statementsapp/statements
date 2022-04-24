@@ -188,7 +188,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
                         
               style="margin-right: 10px; display: inline-block;">
-          <span ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle ? .5 : 0 }"><i class="fa fa-circle" style="font-size: 15px;"></i></span>
+          <span ><i ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle ? .5 : 0 }"class="fa fa-circle" style="font-size: 15px;"></i></span>
         </span>
 
         <li ng-repeat="proposition in paragraph.propositions track by $index"

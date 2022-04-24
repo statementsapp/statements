@@ -2196,6 +2196,27 @@
         $scope.highlightedParagraphNode = node;
       }
 
+      $scope.unHighlightParagraph = function (){
+        for (var i = 0; i < $scope.data[0].nodes.length; i++){
+          for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
+
+
+              for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
+                $scope.data[0].nodes[i].paragraphs[j].propositions[k].highlighted = false;
+                $scope.data[0].nodes[i].paragraphs[j].propositions[k].marked = false;
+                for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
+                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].highlighted = false;
+                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].marked = false;
+                }
+              
+            }
+          }
+        }
+        $scope.thereIsAHighlightedParagraph = false;
+        $scope.highlightedParagraph = {};
+        $scope.highlightedParagraphNode = {};
+      }
+
       $scope.highlightNode = function (node){
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           if (node.nodeId === $scope.data[0].nodes[i].nodeId){

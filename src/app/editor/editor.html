@@ -9,7 +9,7 @@
      ng-keyup="($event.keyCode === 8 || $event.keyCode === 27) && (draggingProposition || draggingParagraph || draggingNode) ? [clearDragDetector(), clearDrag()] : ($event.keyCode === 8 && thereIsAHighlightedParagraph) ? markParagraph() : ($event.keyCode === 8 && thereIsAMarkedParagraph) ? deleteProposition(highlightedParagraphNode, highlightedParagraph, null, null, 'paragraph') : ($event.keyCode === 8 && thereIsAHighlightedNode) ? markNode() : ($event.keyCode === 8 && thereIsAMarkedNode) ? deleteProposition(highlightedNode, null, null, null, 'node'): inputs.nothing;"
      spellcheck="false"
      id="fulleditor"
-     ng-keyup="$event.keyCode === 8 || $event.keyCode === 46 ? [clearDragDetector(), clearDrag()] : inputs.nothing">
+     ng-keyup="$event.keyCode === 8 || $event.keyCode === 46 ? [clearDragDetector(), clearDrag(), unHighlightParagraph()] : inputs.nothing">
   <div class="row"
        id="firstrow"
        ng-class="{titled: title}"

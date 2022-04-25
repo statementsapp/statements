@@ -2037,6 +2037,13 @@
           console.log('height: ', $('#propositionsol' + id).height)
       }
 
+      $scope.getPropReading = function (event, id) {
+        var relX = event.pageX - $('wholeprop' + id).offset().left;
+          var relY = event.pageY - $('#wholeprop' + id).offset().top;
+          console.log(relX, ", ", relY)
+          console.log('height: ', $('#propositionsol' + id).height)
+      }
+
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {
         if (flag === 'ol'){
 

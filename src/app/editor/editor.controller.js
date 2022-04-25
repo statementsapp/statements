@@ -4753,7 +4753,7 @@
           console.log("not those lis or bottom adders")
           return;
         }
-        console.log("The target: ", event.target)
+        // console.log("The target: ", event.target)
         // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           console.log("I: ", angular.copy(i))

@@ -4223,6 +4223,7 @@
 
 
               if (!payload.draggedProps){
+                console.log("If dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
                   paragraphId: payload.paragraphId,
@@ -4244,6 +4245,7 @@
                     document.getElementById('proposition' + payload.id).click();
                 }, 20);
               } else {
+                console.log("else dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
                   paragraphId: payload.paragraphId,

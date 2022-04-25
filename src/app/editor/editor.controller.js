@@ -2256,6 +2256,12 @@
           }
           
         }
+        $scope.thereIsAMarkeddNode = true;
+        $scope.markedNode = angular.copy($scope.highlightedNode)
+        $scope.highlightedNode = {};
+        
+        $scope.thereIsAHighlightedNode = false;
+        console.log("Marked node: ", $scope.markedNode)
 
       }
 
@@ -2313,7 +2319,8 @@
             prep.blankDocument = true;
           }
 
-
+          $scope.thereIsAMarkeddNode = false;
+          $scope.markedNode = {};
         } else if (modifier === 'paragraph'){
           console.log("paragraph deletion")
 

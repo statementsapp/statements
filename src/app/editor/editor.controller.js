@@ -4251,7 +4251,7 @@
                 }
               }
               for (var n = 0; n < payload.draggedProps.length; n++){
-                $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget+1].propositions[n] = payload.draggedProps[n];
+                $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex+1].propositions[n] = payload.draggedProps[n];
               }
             }
 

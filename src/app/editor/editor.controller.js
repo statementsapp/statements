@@ -2298,10 +2298,12 @@
         if (modifier === 'node'){
           console.log("node deletion")
           if ($scope.draggingNode){
+            console.log("if dragging node")
             prep.sectionNumber = $scope.draggedNode.sectionNumber;
             prep.sectionLevel = $scope.draggedNode.sectionLevel;
             prep.nodeId = $scope.draggedNode.nodeId;
           } else {
+            console.log("else dragging node")
             prep.sectionNumber = node.sectionNumber;
             prep.sectionLevel = node.sectionLevel;
             prep.nodeId = node.nodeId;
@@ -2319,7 +2321,7 @@
             prep.blankDocument = true;
           }
 
-          $scope.thereIsAMarkeddNode = false;
+          $scope.thereIsAMarkedNode = false;
           $scope.markedNode = {};
         } else if (modifier === 'paragraph'){
           console.log("paragraph deletion")
@@ -2410,11 +2412,13 @@
         }
 
         if (payload.modifier === 'node'){
+
           $scope.data[0].nodes[payload.sectionNumber].hiddenForAll = true;
           if (payload.dropflag){
             $scope.data[0].nodes[payload.sectionNumber].droppedElsewhere = true;
           }
           for (var i = 0; i < $scope.data[0].nodes[payload.sectionNumber].paragraphs.length; i++){
+
             $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].hiddenForAll = true;
             if (payload.dropflag){
               $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].droppedElsewhere = true;

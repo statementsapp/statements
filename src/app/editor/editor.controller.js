@@ -2239,6 +2239,7 @@
       }
 
       $scope.markNode = function (){
+        console.log("Mark node")
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           if ($scope.highlightedNode.nodeId === $scope.data[0].nodes[i]){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){

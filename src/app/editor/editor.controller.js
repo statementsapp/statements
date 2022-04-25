@@ -2256,7 +2256,7 @@
           }
           
         }
-        $scope.thereIsAMarkeddNode = true;
+        $scope.thereIsAMarkedNode = true;
         $scope.markedNode = angular.copy($scope.highlightedNode)
         $scope.highlightedNode = {};
         

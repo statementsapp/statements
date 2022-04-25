@@ -2238,9 +2238,9 @@
         console.log("Highlighted node: ", $scope.highlightedNode)
       }
 
-      $scope.markNode = function (node){
+      $scope.markNode = function (){
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
-          if (node.nodeId === $scope.data[0].nodes[i]){
+          if ($scope.highlightedNode.nodeId === $scope.data[0].nodes[i]){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                 $scope.data[0].nodes[i].paragraphs[j].propositions[k].highlighted = false;

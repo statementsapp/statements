@@ -4198,9 +4198,11 @@
               console.log("replaces blank")
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
+                  console.log("FIRST IF")
                   apply.nodeIndex = i;
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
                     if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
+                      console.log("SECOND IF")
                       apply.afterParagraphIndex = j;
                       $scope.data[0].nodes[i].paragraphs[j].first = false;
                       $scope.data[0].nodes[i].paragraphs[j].hiddenForAll = true;
@@ -4209,6 +4211,7 @@
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll = true;
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].first = false;
                         if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks){
+                          console.log("In if remarks")
                           for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
                             $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll = true;
                           }
@@ -4223,7 +4226,7 @@
 
 
               if (!payload.draggedProps){
-                console.log("If dragged props")
+                console.log("If not dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
                   paragraphId: payload.paragraphId,

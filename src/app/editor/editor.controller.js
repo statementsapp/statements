@@ -4220,26 +4220,39 @@
                 }
               }
 
-              $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
-                first: true,
-                paragraphId: payload.paragraphId,
-                propositions: [
-                  {
-                    id: payload.id,
-                    type: 'assertion',
-                    author: payload.author,
-                    text: payload.text,
-                    remarks: [],
-                    dialogueSide: false,
-                    first: true,
-                    messagesSoFar: payload.messagesSoFar
-                  }
-                ]
-              }
 
-              setTimeout(function () {
-                  document.getElementById('proposition' + payload.id).click();
-              }, 20);
+
+              if (!payload.draggedProps){
+                  $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
+                  first: true,
+                  paragraphId: payload.paragraphId,
+                  propositions: [
+                    {
+                      id: payload.id,
+                      type: 'assertion',
+                      author: payload.author,
+                      text: payload.text,
+                      remarks: [],
+                      dialogueSide: false,
+                      first: true,
+                      messagesSoFar: payload.messagesSoFar
+                    }
+                  ]
+                }
+
+                setTimeout(function () {
+                    document.getElementById('proposition' + payload.id).click();
+                }, 20);
+              } else {
+                  $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
+                  first: true,
+                  paragraphId: payload.paragraphId,
+                  propositions: []
+                }
+              }
+              for (var n = 0; n < payload.draggedProps.length; n++){
+                $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphTarget+1].propositions[n] = payload.draggedProps[n];
+              }
             }
 
             console.log("Outside receive sieve")

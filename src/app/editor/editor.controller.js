@@ -4758,7 +4758,8 @@
                 console.log('through if on j with value for paragraph: ', j)
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
 
-                  if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                  if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
+                    ($scope.data[0].documentClaimedBy === $scope.userId || $scope.data[0].nodes[i].paragraphs[j].propositions[k].type !== 'blank')){
                     console.log("first if")
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
                       console.log("second if")

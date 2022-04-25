@@ -4994,6 +4994,8 @@
         }
         console.log("get paragraph")
 
+        //regular clicks on lefts failing to get left
+
 
         $scope.selectedNode = node;
         $scope.selectedParagraph = paragraph;

@@ -1542,7 +1542,8 @@
       };
 
       // Backstops something about proposition editability
-      $scope.focusouteditable = function (element) {
+      $scope.focusouteditable = function (element, proposition) {
+        console.log("Focu sou editable")
         if ($scope.dontrunfocusout) {
           return;
         }

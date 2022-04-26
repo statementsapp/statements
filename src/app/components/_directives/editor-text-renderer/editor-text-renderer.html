@@ -74,7 +74,7 @@
     id="nodetitle{{node.nodeId}}"
     ng-enter="updateNode(node)">
         {{node.topic}}
-        <!-- {{node.nodeId}} -->
+        {{node.nodeId}}
 </span>
 
 <!-- ng-keydown="$event.keyCode === 13 ? $event.preventDefault : inputs.nothing" -->
@@ -117,7 +117,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition
                 }">
       
-    <!-- {{paragraph.paragraphId}} -->
+    {{paragraph.paragraphId}}
 
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
@@ -353,7 +353,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
           >
             {{proposition.text}}
-            
+            {{proposition.id}}
 
           </span>
           <span

@@ -1537,6 +1537,7 @@
           $scope.whatHasBeenClicked = proposition.id;
           $scope.dontrunfocusout = true;
           $scope.tempStopEditable = false;
+          console.log("Entered editing")
         }
 
       };

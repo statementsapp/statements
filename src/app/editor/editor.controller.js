@@ -2038,10 +2038,10 @@
       }
 
       $scope.getPropReading = function (event, id) {
-        var relX = event.pageX - $('wholeprop' + id).offset().left;
+        var relX = event.pageX - $('#wholeprop' + id).offset().left;
           var relY = event.pageY - $('#wholeprop' + id).offset().top;
           console.log(relX, ", ", relY)
-          console.log('height: ', $('#propositionsol' + id).height)
+          console.log('height: ', $('#wholeprop' + id).height)
       }
 
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {

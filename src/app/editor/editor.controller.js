@@ -2037,11 +2037,18 @@
           console.log('height: ', $('#propositionsol' + id).height)
       }
 
-      $scope.getPropReading = function (event, id) {
-        var relX = event.pageX - $('#wholeprop' + id).offset().left;
-          var relY = event.pageY - $('#wholeprop' + id).offset().top;
+      $scope.getPropReading = function (event, proposition) {
+        if ($scope.userId !== $scope.data[0].documentClaimedBy){
+          console.log("Not author li click");
+          return;
+        }
+        var relX = event.pageX - $('#wholeprop' + proposition.id).offset().left;
+          var relY = event.pageY - $('#wholeprop' + proposition.id).offset().top;
+          if (relX < -60 && proposition.first){
+            document.getElementById('leftadder'+ proposition.id).click();
+          }
           console.log(relX, ", ", relY)
-          console.log('height: ', $('#wholeprop' + id).height)
+          console.log('height: ', $('#wholeprop' + proposition.id).height)
       }
 
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {

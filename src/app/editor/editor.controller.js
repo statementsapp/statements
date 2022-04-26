@@ -2045,7 +2045,10 @@
         var relX = event.pageX - $('#wholeprop' + proposition.id).offset().left;
           var relY = event.pageY - $('#wholeprop' + proposition.id).offset().top;
           if (relX < -60 && proposition.first){
-            document.getElementById('leftadder'+ proposition.id).click();
+            setTimeout(function () {
+              document.getElementById('leftadder'+ proposition.id).click();
+            }, 20);
+            
           }
           console.log(relX, ", ", relY)
           console.log('height: ', $('#wholeprop' + proposition.id).height)

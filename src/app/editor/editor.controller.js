@@ -1552,9 +1552,9 @@
 
       };
 
-      $scope.clearEditing = function () {
+      $scope.clearEditing = function (flag) {
         console.log("Clearing editing")
-        if ($scope.editing){
+        if (!flag){
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
@@ -1626,7 +1626,7 @@
           console.log('Payload of update: ', prep.payload);
           prep = {};
           
-          $scope.clearEditing();
+          $scope.clearEditing('dontreset');
           
         }
       };

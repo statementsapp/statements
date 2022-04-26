@@ -1548,6 +1548,8 @@
         }
         element.contentEditable = false;
         $scope.whatHasBeenClicked = '';
+        document.getElementById('proposition' + proposition.id).innerText = proposition.text;
+        console.log('El: ', document.getElementById('proposition' + proposition.id));
       };
 
       // Processes an edit to one's own proposition

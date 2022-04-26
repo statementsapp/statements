@@ -351,6 +351,10 @@ textarea {
   font-weight: 600;
 }
 
+.editing {
+  font-weight: 600;
+}
+
 .nocursor {
   cursor: none !important;
 }
@@ -998,6 +1002,8 @@ pre.expanding-clone {
     margin-top: 0%;
   }
 }
+
+
 
 .grow-wrap {
   /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */

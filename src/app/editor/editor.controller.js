@@ -1280,6 +1280,9 @@
           $scope.$apply(function () {
             $scope.hasLeftFocus.id = id;
             focusFactory('left'+id);
+            if ($scope.editing){
+              $scope.clearEditing();
+            }
           });
         }, 5);
       };
@@ -1520,6 +1523,9 @@
         $scope.selectedParagraph.markAll = false;
         if (!$scope.dontrunfocusout){
           focusFactory(id);
+          if ($scope.editing){
+            $scope.clearEditing();
+          }
         }
 
 
@@ -1531,16 +1537,36 @@
           $scope.dontrunfocusout = true;
           $scope.tempStopEditable = false;
           focusFactory(id);
+          if ($scope.editing){
+            $scope.clearEditing();
+          }
         } else if (!$scope.tempStopEditable){
 
           document.getElementById(string).contentEditable = true;
           $scope.whatHasBeenClicked = proposition.id;
           $scope.dontrunfocusout = true;
           $scope.tempStopEditable = false;
+          $scope.editing = angular.copy(proposition.id);
           console.log("Entered editing")
         }
 
       };
+
+      $scope.clearEditing = function () {
+        console.log("Clearing editing")
+        if ($scope.editing){
+          for (var i = 0; i < $scope.data[0].nodes.length; i++){
+            for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
+              for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
+                if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === $scope.editing){
+                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.data[0].nodes[i].paragraphs[j].propositions[k].dialogueText;
+                }
+              }
+            }
+          }
+        }
+        $scope.editing = '';
+      }
 
       // Backstops something about proposition editability
       $scope.focusouteditable = function (element, proposition) {
@@ -1550,7 +1576,7 @@
         }
         element.contentEditable = false;
         $scope.whatHasBeenClicked = '';
-        document.getElementById('proposition' + proposition.id).innerText = proposition.text;
+        document.getElementById('proposition' + proposition.id).innerText = proposition.dialogueText;
         console.log('El: ', document.getElementById('proposition' + proposition.id));
       };
 
@@ -1596,6 +1622,9 @@
           chatSocket.emit('update', $scope.userId, prep.payload, $scope.bookId);
           console.log('Payload of update: ', prep.payload);
           prep = {};
+          
+          $scope.clearEditing();
+          
         }
       };
 
@@ -4540,6 +4569,9 @@
         $scope.hasTopNodeFocus = {};
         $scope.hasBottomNodeFocus = '';
         $scope.hasChatFocusId = '';
+        if ($scope.editing){
+          $scope.clearEditing();
+        }
 
       };
 

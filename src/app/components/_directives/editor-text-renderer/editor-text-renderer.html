@@ -291,7 +291,9 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                             'updatecursor': this.contentEditable,
                             'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
                             'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden'),
-                            'mouseoverborder' : proposition.mouseOver && mouseIsOver === proposition.id && proposition.type !== 'blank && !minimalStyle'
+                            'mouseoverborder' : proposition.mouseOver && mouseIsOver === proposition.id && proposition.type !== 'blank && !minimalStyle',
+                            'editing': editing === proposition.id;
+
                           }"
 
             ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, proposition)]"

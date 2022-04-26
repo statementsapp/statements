@@ -181,14 +181,14 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           id="propositionsol{{paragraph.paragraphId}}">
           <!-- ng-if="(!proposition.hiddenForAll && !proposition.rejoined && proposition[userId] !== 'hidden') || (proposition.privateFor && proposition.privateFor === userId)" -->
         <span class="paragraphhandle"
-              ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
-              ng-click="!paragraph.highlighted && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
-                        paragraph.highlighted ? markParagraph(node, paragraph) :
-                        paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"
+              
 
                         
               style="margin-right: 10px; display: inline-block;">
-          <span ><i ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle ? .5 : 0 }" class="fa fa-circle" style="font-size: 15px;"></i></span>
+          <span ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
+              ng-click="!paragraph.highlighted && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
+                        paragraph.highlighted ? markParagraph(node, paragraph) :
+                        paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"><i ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle ? .5 : 0 }" class="fa fa-circle" style="font-size: 15px;"></i></span>
         </span>
 
         <li ng-repeat="proposition in paragraph.propositions track by $index"

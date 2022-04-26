@@ -1563,6 +1563,7 @@
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                   document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = 
                   angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k].text);
+                  $scope.editing = '';
                   return;
                 }
               }

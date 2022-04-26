@@ -185,10 +185,11 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
                         
               style="margin-right: 10px; display: inline-block;">
-          <span ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
+          <span ><i ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
               ng-click="!paragraph.highlighted && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
                         paragraph.highlighted ? markParagraph(node, paragraph) :
-                        paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"><i ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle ? .5 : 0 }" class="fa fa-circle" style="font-size: 15px;"></i></span>
+                        paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"
+                        ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle ? .5 : 0 }" class="fa fa-circle" style="font-size: 15px;"></i></span>
         </span>
 
         <li ng-repeat="proposition in paragraph.propositions track by $index"

@@ -3970,6 +3970,8 @@
                 }
               }
 
+              $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.beforePropTarget].preSelected = false;
+
               if (!payload.draggedProps){
                   for (var n = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1); n > apply.beforePropTarget-1; n--){
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+1] =
@@ -4204,6 +4206,8 @@
                     }
                   }
                 }
+
+                $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget].preSelected = false;
 
                 if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1]){
                   for (var n = $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1; n > apply.afterPropTarget; n--){

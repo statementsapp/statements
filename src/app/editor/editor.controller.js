@@ -1560,6 +1560,7 @@
         console.log("Flag: ", flag)
         console.log("Editing: ", $scope.editing)
         if (!flag){
+          console.log("If not")
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
@@ -1567,7 +1568,7 @@
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                   setTimeout(function () {
                     $scope.$apply(function () {
-
+                      console.log("Resetting")
                       $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
                       $scope.editing = '';
                       $scope.editingCopy = '';
@@ -1582,6 +1583,7 @@
             }
           }
         } else {
+          console.log("Editing else")
           $scope.editing = '';
           $scope.editingCopy = '';
         }

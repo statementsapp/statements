@@ -1575,15 +1575,17 @@
                     });
                   }, 5);
                   // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = $scope.editingCopy;
-                  $
+                  
                   return;
                 }
               }
             }
           }
+        } else {
+          $scope.editing = '';
+          $scope.editingCopy = '';
         }
-        $scope.editing = '';
-        $scope.editingCopy = '';
+        
       }
 
       // Backstops something about proposition editability

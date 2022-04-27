@@ -2101,7 +2101,7 @@
         }
         var relX = event.pageX - $('#wholeprop' + proposition.id).offset().left;
           var relY = event.pageY - $('#wholeprop' + proposition.id).offset().top;
-          if (relX < -60 && proposition.first){
+          if (relX < -14 && proposition.first){
             setTimeout(function () {
               document.getElementById('leftadder'+ proposition.id).click();
             }, 20);

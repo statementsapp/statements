@@ -4214,7 +4214,8 @@
                     remarks: [],
                     dialogueSide: false,
                     first: true,
-                    messagesSoFar: payload.messagesSoFar
+                    messagesSoFar: payload.messagesSoFar,
+                    preSelected: false
                   }
                 } else {
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1] = {
@@ -4225,7 +4226,8 @@
                     remarks: [],
                     dialogueSide: false,
                     first: true,
-                    messagesSoFar: payload.messagesSoFar
+                    messagesSoFar: payload.messagesSoFar,
+                    preSelected: false
                   }
                 }
 

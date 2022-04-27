@@ -2074,7 +2074,7 @@
         var relX = event.pageX - $('#propositionsol' + id).offset().left;
           var relY = event.pageY - $('#propositionsol' + id).offset().top;
           console.log(relX, ", ", relY)
-          console.log('height: ', $('#propositionsol' + id).height)
+          // console.log('height: ', $('#propositionsol' + id).height)
       }
 
       $scope.getPropReading = function (event, proposition) {
@@ -2091,7 +2091,7 @@
             
           }
           console.log(relX, ", ", relY)
-          console.log('height: ', $('#wholeprop' + proposition.id).height)
+          // console.log('height: ', $('#wholeprop' + proposition.id).height)
       }
 
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {

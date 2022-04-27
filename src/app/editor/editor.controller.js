@@ -1565,8 +1565,16 @@
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === $scope.editing &&
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                  setTimeout(function () {
+                    $scope.$apply(function () {
+
+                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
+
+
+                    });
+                  }, 5);
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
-                  document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = $scope.editingCopy;
+                  // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = $scope.editingCopy;
                   $scope.editing = '';
                   $scope.editingCopy = '';
                   return;
@@ -3959,7 +3967,6 @@
                   for (var n = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1); n > apply.beforePropTarget-1; n--){
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+1] =
                     angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n]);
-                    console.log("Moved up: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+1])
                   }
 
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.beforePropTarget] = {

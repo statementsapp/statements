@@ -4862,7 +4862,7 @@
         console.log('light up book')
          console.log("Event: ", event)
 
-        if (event.target.localName === 'li' || event.target.title === 'bottomparagraphadder'){
+        if (event.target.localName === 'li' || event.target.classList[0] === 'bottomparagraphadder'){
           console.log("not those lis or bottom adders")
           return;
         }

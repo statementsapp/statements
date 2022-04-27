@@ -2118,7 +2118,7 @@
         console.log("Flag: ", flag)
         console.log("Element: ", element ? element : '')
         console.log("Event: ", event ? event : '')
-        console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
+        // console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
         if (element && event && flag === 'ol'){
           var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;
           var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top;

@@ -1555,6 +1555,7 @@
       $scope.clearEditing = function (flag) {
         console.log("Clearing editing")
         console.log("Flag: ", flag)
+        console.log("Editing: ", $scope.editing)
         if (!flag){
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){

@@ -3984,7 +3984,8 @@
                     remarks: [],
                     dialogueSide: false,
                     first: true,
-                    messagesSoFar: payload.messagesSoFar
+                    messagesSoFar: payload.messagesSoFar,
+                    preSelected: false
                   }
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                   setTimeout(function () {
@@ -4039,7 +4040,8 @@
                       remarks: [],
                       dialogueSide: false,
                       first: true,
-                      messagesSoFar: payload.messagesSoFar
+                      messagesSoFar: payload.messagesSoFar,
+                      preSelected: false
                     }
                   ]
                 })
@@ -4064,7 +4066,8 @@
                       remarks: [],
                       dialogueSide: false,
                       first: true,
-                      messagesSoFar: payload.messagesSoFar
+                      messagesSoFar: payload.messagesSoFar,
+                      preSelected: false
                     }
                   ]
                 })
@@ -4108,7 +4111,8 @@
                         remarks: [],
                         dialogueSide: false,
                         first: true,
-                        messagesSoFar: payload.messagesSoFar
+                        messagesSoFar: payload.messagesSoFar,
+                        preSelected: false
                       }
                     ]
                   }
@@ -4147,7 +4151,8 @@
                         remarks: [],
                         dialogueSide: false,
                         first: true,
-                        messagesSoFar: payload.messagesSoFar
+                        messagesSoFar: payload.messagesSoFar,
+                        preSelected: false
                       }
                     ]
                   }
@@ -4339,7 +4344,8 @@
                       remarks: [],
                       dialogueSide: false,
                       first: true,
-                      messagesSoFar: payload.messagesSoFar
+                      messagesSoFar: payload.messagesSoFar,
+                      preSelected: false
                     }
                   ]
                 }

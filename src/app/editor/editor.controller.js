@@ -2561,7 +2561,9 @@
                   if (payload.dropflag){
                     $scope.data[0].nodes[i].paragraphs[j].droppedElsewhere = true;
                   }
+                  $scope.data[0].nodes[apply.i].paragraphs[0].hiddenForAll = false;
                   $scope.data[0].nodes[apply.i].paragraphs[0].propositions[0].hiddenForAll = false;
+                  
                   break;
 
                 }

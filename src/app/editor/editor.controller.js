@@ -1569,7 +1569,9 @@
                   setTimeout(function () {
                     $scope.$apply(function () {
                       console.log("Resetting")
-                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
+                      if ($scope.editingCopy){
+                        $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
+                      }
                       $scope.editing = '';
                       $scope.editingCopy = '';
 

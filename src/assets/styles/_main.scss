@@ -615,8 +615,11 @@ textarea {
   min-height: 104vh;
   max-height: 104vh;
   border-right: 1px solid #c9c9c9;
-  cursor: text;
   padding-right: 5px;
+}
+
+.textcursor {
+  cursor: text;
 }
 
 .remarkselected {

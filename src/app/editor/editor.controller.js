@@ -1562,7 +1562,7 @@
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === $scope.editing &&
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
-                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.data[0].nodes[i].paragraphs[j].propositions[k].text;
+                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k].text);
                   $scope.editing = '';
                   return;
                 }

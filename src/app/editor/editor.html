@@ -337,7 +337,7 @@
   <div class="row"
        ng-click="clearDrag()"
        style="">
-    <div class="col-md-8">
+    <div class="col-md-8" ng-if="cowsComeHome">
       <span style="width: 500px;"></span>
       <div ui-tree="treeOptions"
            data-drag-enabled="false"
@@ -348,10 +348,6 @@
            ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
 
       >
-        <!-- hideExpandingTextarea(), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, selectedProposition.dialogueSide = false, selectedThread = {}, -->
-        <!-- getLastVisiblePropositionInBook(data[0], $event),
-        ng-mouseover="lightUpLastVisiblePropositionInBook(data[0], $event)"
-        ng-mouseleave="blurLightUpLastVisiblePropositionInBook(data[0], $event)" -->
         <ol ui-tree-nodes
             ng-model='data[0].nodes'
             style=""

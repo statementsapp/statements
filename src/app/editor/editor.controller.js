@@ -1485,7 +1485,9 @@
       $scope.clearEditable = function () {
         if ($scope.whatHasBeenClicked) {
           for (var i = 0; i < $scope.propositions.length; i++) {
+            console.log("Going into props array")
             if ($scope.whatHasBeenClicked === $scope.propositions[i].id) {
+              console.log("If props array")
               // is either clearing what has been clicked or somehow made the proposition inaccessible
               document.getElementById('proposition' + $scope.whatHasBeenClicked).innerText = $scope.propositions[i].text;
             }

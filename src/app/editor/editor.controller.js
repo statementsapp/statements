@@ -1569,14 +1569,13 @@
                     $scope.$apply(function () {
 
                       $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
-
+                      scope.editing = '';
+                      $scope.editingCopy = '';
 
                     });
                   }, 5);
-                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
                   // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = $scope.editingCopy;
-                  $scope.editing = '';
-                  $scope.editingCopy = '';
+                  $
                   return;
                 }
               }

@@ -5135,23 +5135,23 @@
         // }
 
 
-        for (var i = node.paragraphs.length - 1; i > -1; i--){
-          for (var j = node.paragraphs[i].propositions.length - 1; j > -1; j--) {
-            if (node.paragraphs[i].propositions[j].remarks){
-              for (var k = node.paragraphs[i].propositions[j].remarks.length-1; k > -1; k--){
-                if (!node.paragraphs[i].propositions[j].remarks[k].hiddenForAll &&
-                  node.paragraphs[i].propositions[j].remarks[k][$scope.userId] !== 'hidden'){
-                  node.paragraphs[i].propositions[j].remarks[k].preSelected = false;
+        // for (var i = node.paragraphs.length - 1; i > -1; i--){
+          for (var j = paragraph.propositions.length - 1; j > -1; j--) {
+            if (paragraph.propositions[j].remarks){
+              for (var k = paragraph.propositions[j].remarks.length-1; k > -1; k--){
+                if (!paragraph.propositions[j].remarks[k].hiddenForAll &&
+                  paragraph.propositions[j].remarks[k][$scope.userId] !== 'hidden'){
+                  paragraph.propositions[j].remarks[k].preSelected = false;
                   return;
                 }
               }
             }
-            if (node.paragraphs[i].propositions[j][$scope.userId] !== 'hidden' && node.paragraphs[i].propositions[j].hiddenForAll !== true) {
-              node.paragraphs[i].propositions[j].preSelected = false;
+            if (paragraph.propositions[j][$scope.userId] !== 'hidden' && paragraph.propositions[j].hiddenForAll !== true) {
+              paragraph.propositions[j].preSelected = false;
               return;
             }
           }
-        }
+        // }
 
 
       };

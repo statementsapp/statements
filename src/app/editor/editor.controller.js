@@ -4852,7 +4852,7 @@
       };
 
       $scope.diagnostics = function () {
-        $scope.diagnostics = !$scope.diagnostics.
+        $scope.diagnostics = !$scope.diagnostics;
       }
 
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {

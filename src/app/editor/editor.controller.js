@@ -5128,7 +5128,7 @@
             if (node.paragraphs[i].propositions[j][$scope.userId] !== 'hidden' && node.paragraphs[i].propositions[j].hiddenForAll !== true &&
               ($scope.data[0].documentClaimedBy === $scope.userId || node.paragraphs[i].propositions[j].type !== 'blank')) {
               node.paragraphs[i].propositions[j].preSelected = true;
-              break;
+              return;
             }
           }
         }

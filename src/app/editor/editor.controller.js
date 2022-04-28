@@ -3230,7 +3230,8 @@
           }
           prep.messagesSoFar = [prep.id]
         } else if (($scope.selectedProposition.type === 'assertion' &&
-          $scope.userId === $scope.data[0].documentClaimedBy) || ($scope.draggingParagraph && proposition.type !== 'blank')){
+          $scope.userId === $scope.data[0].documentClaimedBy) && (!$scope.draggingParagraph || proposition.type !== 'blank') && 
+        (!$scope.draggingProposition || proposition.type !== 'blank')){
           console.log("3g")
           prep.code = '3G';
           prep.topic = $scope.selectedProposition.topic;

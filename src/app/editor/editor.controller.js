@@ -1274,7 +1274,7 @@
       }
 
       $scope.clearWithLeftAdder = function (id) {
-
+        $scope.unHighlightNode();
 
         setTimeout(function () {
           $scope.$apply(function () {
@@ -1297,6 +1297,7 @@
 
       // Manages top adder selection
       $scope.clearWithTopAdder = function (paragraph) {
+        $scope.unHighlightNode();
         $timeout(function () {
           $scope.$apply(function () {
             $scope.selectedProposition = {};
@@ -1323,6 +1324,7 @@
       };
 
       $scope.clearWithBottomNodeAdder = function (node) {
+         $scope.unHighlightNode();
         $timeout(function () {
           $scope.$apply(function () {
             node.bottomNodeAdd = true;
@@ -1338,6 +1340,7 @@
 
       // Manages bottom adder selection
       $scope.clearWithBottomAdder = function (paragraph) {
+        $scope.unHighlightNode();
         $timeout(function () {
           $scope.$apply(function () {
             paragraph.bottomAdd = true;
@@ -2309,6 +2312,27 @@
         }
         $scope.thereIsAHighlightedNode = true;
         $scope.highlightedNode = node;
+        console.log("Highlighted node: ", $scope.highlightedNode)
+      }
+
+      $scope.unHighlightNode = function (){
+        if ($scope.thereIsAHighlightedNode){
+          for (var i = 0; i < $scope.data[0].nodes.length; i++){
+            if (node.nodeId === $scope.highlightedNode.nodeId){
+              for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
+                for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
+                  $scope.data[0].nodes[i].paragraphs[j].propositions[k].highlighted = false;
+                  for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
+                    $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].highlighted = false;
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        $scope.thereIsAHighlightedNode = false;
+        $scope.highlightedNode = {};
         console.log("Highlighted node: ", $scope.highlightedNode)
       }
 
@@ -4611,6 +4635,7 @@
         if ($scope.editing){
           $scope.clearEditing();
         }
+        $scope.unHighlightNode();
 
       };
 
@@ -5144,7 +5169,8 @@
       };
 
       $scope.getLastVisiblePropositionInParagraph = function (node, paragraph, event) {
-        $scope.unHighlightParagraph();
+        $scope.unHighlightParagraph();  
+        $scope.unHighlightNode();  
         if ($scope.draggingProposition || paragraph.leftAdd){
           console.log("Returning last in paragraph")
           return;

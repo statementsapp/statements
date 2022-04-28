@@ -622,6 +622,7 @@
       $scope.lowerDragScroller = false;
       $scope.tempStopEditable = false;
       $scope.minimalStyle = false;
+      $scope.diagnostics = false;
       var hidden = '';
       var visibilityChange = '';
       $scope.theseInputs = [];
@@ -4850,7 +4851,9 @@
         apply = {};
       };
 
-
+      $scope.diagnostics = function () {
+        $scope.diagnostics = !$scope.diagnostics.
+      }
 
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {
         // console.log('light up book')

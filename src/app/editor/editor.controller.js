@@ -5123,15 +5123,15 @@
           return;
         }
         // console.log(event.target)
-        for (var i = node.paragraphs.length - 1; i > -1; i--){
-          for (var j = node.paragraphs[i].propositions.length - 1; j > -1; j--) {
-            if (node.paragraphs[i].propositions[j][$scope.userId] !== 'hidden' && node.paragraphs[i].propositions[j].hiddenForAll !== true &&
-              ($scope.data[0].documentClaimedBy === $scope.userId || node.paragraphs[i].propositions[j].type !== 'blank')) {
-              node.paragraphs[i].propositions[j].preSelected = true;
+       
+          for (var j = paragraph.propositions.length - 1; j > -1; j--) {
+            if (paragraph.propositions[j][$scope.userId] !== 'hidden' && paragraph.propositions[j].hiddenForAll !== true &&
+              ($scope.data[0].documentClaimedBy === $scope.userId || paragraph.propositions[j].type !== 'blank')) {
+              paragraph.propositions[j].preSelected = true;
               return;
             }
           }
-        }
+        
         
       };
 

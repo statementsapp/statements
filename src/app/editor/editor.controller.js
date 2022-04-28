@@ -5111,13 +5111,16 @@
           return;
         }
         // console.log(event.target)
-        for (var i = paragraph.propositions.length - 1; i > -1; i--) {
-          if (paragraph.propositions[i][$scope.userId] !== 'hidden' && paragraph.propositions[i].hiddenForAll !== true &&
-            ($scope.data[0].documentClaimedBy === $scope.userId || $scope.data[0].nodes[i].paragraphs[j].propositions[k].type !== 'blank')) {
-            paragraph.propositions[i].preSelected = true;
-            break;
+        for (var i = node.paragraphs.length - 1; i > -1; i--){
+          for (var j = node.paragraphs[i].propositions.length - 1; j > -1; j--) {
+            if (node.paragraphs[i].propositions[j][$scope.userId] !== 'hidden' && node.paragraphs[i].propositions[j].hiddenForAll !== true &&
+              ($scope.data[0].documentClaimedBy === $scope.userId || node.paragraphs[i].propositions[j].type !== 'blank')) {
+              node.paragraphs[i].propositions[j].preSelected = true;
+              break;
+            }
           }
         }
+        
       };
 
       $scope.getLastVisiblePropositionInParagraph = function (node, paragraph, event) {

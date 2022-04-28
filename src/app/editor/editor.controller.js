@@ -4019,6 +4019,7 @@
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);
                 }
+                console.log("Just placed left: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.beforePropTarget])
 
               } else {
                   for (var n = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1); n > apply.beforePropTarget-1; n--){

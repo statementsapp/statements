@@ -4980,6 +4980,10 @@
 
        
        $scope.unHighlightParagraph();
+       console.log("The event in book: ", event)
+       if (event.target.classList[0] == 'sectiontitle'){
+        console.log("Returning sectio newSectionTitle")
+       }
 
         console.log('get book')
         $scope.whatHasBeenClicked = '';

@@ -5096,13 +5096,25 @@
 
       $scope.blurLightUpLastVisiblePropositionInParagraph = function (node, paragraph, event) {
         console.log("blur paragraph")
-        for (var i = paragraph.propositions.length - 1; i > -1; i--) {
-          if (paragraph.propositions[i][$scope.userId] !== 'hidden' && paragraph.propositions[i].hiddenForAll !== true &&
-            paragraph.propositions[i].preSelected === true) {
-            paragraph.propositions[i].preSelected = false;
-            break;
+        // for (var i = paragraph.propositions.length - 1; i > -1; i--) {
+        //   if (paragraph.propositions[i][$scope.userId] !== 'hidden' && paragraph.propositions[i].hiddenForAll !== true &&
+        //     paragraph.propositions[i].preSelected === true) {
+        //     paragraph.propositions[i].preSelected = false;
+        //     break;
+        //   }
+        // }
+
+
+        for (var i = node.paragraphs.length - 1; i > -1; i--){
+          for (var j = node.paragraphs[i].propositions.length - 1; j > -1; j--) {
+            if (node.paragraphs[i].propositions[j][$scope.userId] !== 'hidden' && node.paragraphs[i].propositions[j].hiddenForAll !== true) {
+              node.paragraphs[i].propositions[j].preSelected = false;
+              break;
+            }
           }
         }
+
+
       };
 
       $scope.lightUpLastVisiblePropositionInParagraph = function (node, paragraph, event) {

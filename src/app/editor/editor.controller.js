@@ -5125,6 +5125,14 @@
         // console.log(event.target)
        
           for (var j = paragraph.propositions.length - 1; j > -1; j--) {
+            if (paragraph.propositions[j].remarks){
+              for (var k = paragraph.propositions[j].remarks.length - 1; k > -1; k--) {
+                if (paragraph.propositions[j].remarks[k][$scope.userId] !== 'hidden' && paragraph.propositions[j].remarks[k].hiddenForAll !== true){
+                  paragraph.propositions[j].remarks[k].preSelected = true;
+                  return;
+                }        
+              }
+            }
             if (paragraph.propositions[j][$scope.userId] !== 'hidden' && paragraph.propositions[j].hiddenForAll !== true &&
               ($scope.data[0].documentClaimedBy === $scope.userId || paragraph.propositions[j].type !== 'blank')) {
               paragraph.propositions[j].preSelected = true;

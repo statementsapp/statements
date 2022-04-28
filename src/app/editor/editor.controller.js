@@ -5132,9 +5132,18 @@
 
         for (var i = node.paragraphs.length - 1; i > -1; i--){
           for (var j = node.paragraphs[i].propositions.length - 1; j > -1; j--) {
+            if (node.paragraphs[i].propositions[j].remarks){
+              for (var k = node.paragraphs[i].propositions[j].remarks.length-1; k > -1; k--){
+                if (!node.paragraphs[i].propositions[j].remarks[k].hiddenForAll &&
+                  node.paragraphs[i].propositions[j].remarks[k][$scope.userId] !== 'hidden'){
+                  node.paragraphs[i].propositions[j].remarks[k].preSelected = false;
+                  return;
+                }
+              }
+            }
             if (node.paragraphs[i].propositions[j][$scope.userId] !== 'hidden' && node.paragraphs[i].propositions[j].hiddenForAll !== true) {
               node.paragraphs[i].propositions[j].preSelected = false;
-              break;
+              return;
             }
           }
         }

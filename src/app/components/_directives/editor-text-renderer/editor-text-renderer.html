@@ -118,7 +118,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 }">
       
     <!-- {{paragraph.paragraphId}} -->
-    <div ng-if="hasTopFocus == paragraph.paragraphId || (data[0].documentClaimedBy === userId && paragraph.topMouseOver)"
+    <div ng-if="hasTopFocus == paragraph.paragraphId"
          class="paragraph addparagraph"
          ng-class=""
          style="height: 26px; padding-top: 16px; padding-bottom: 35px; position: relative; left: -10px; padding-left: 70px;"
@@ -553,7 +553,19 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
       </ol>
     </div>
-    <div ng-if="paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId"
+    <div class="bottomparagraphadder"
+         ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'bottom')}"
+         ng-mouseover="paragraph.bottomMouseOver = true; paragraph.topMouseOver = false"
+         ng-mouseleave="paragraph.bottomMouseOver = false"
+         ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), selectParagraph(paragraph),
+                    selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
+         
+         ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph"
+         id="{{paragraph.paragraphId}}"
+
+    >
+    </div>
+    <div ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver)"
          class="paragraph addparagraph"
          ng-class=""
          style="height: 26px; margin-left: 70px; margin-bottom: 10px;">
@@ -587,18 +599,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           style="color: black; text-indent: 25px; background-color: white; margin-left: -10px; padding-bottom: 30px;"></span>
       </div>
     </div>
-    <div class="bottomparagraphadder"
-         ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'bottom')}"
-         ng-mouseover="paragraph.bottomMouseOver = true; paragraph.topMouseOver = false"
-         ng-mouseleave="paragraph.bottomMouseOver = false"
-         ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), selectParagraph(paragraph),
-                    selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
-         
-         ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph"
-         id="{{paragraph.paragraphId}}"
-
-    >
-    </div>
+   
     <div
       editable-span-ng-model
       ng-if="node.bottomAdd"

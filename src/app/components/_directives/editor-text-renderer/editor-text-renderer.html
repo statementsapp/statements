@@ -565,7 +565,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
     >
     </div>
-    <div ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver)"
+    <div ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver && !draggingNode)"
          class="paragraph addparagraph"
          ng-class=""
          style="height: 26px; margin-left: 70px; margin-bottom: 10px;">
@@ -597,6 +597,9 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           class="texttopic"
           spellcheck="false"
           style="color: black; text-indent: 25px; background-color: white; margin-left: -10px; padding-bottom: 30px;"></span>
+          <span class="cursor visible-cursor"
+                ng-if="paragraph.bottomMouseOver && !paragraph.bottomAdd">
+          </span>
       </div>
     </div>
    

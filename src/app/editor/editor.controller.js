@@ -1855,7 +1855,7 @@
             )
             if (proposition.remarks){
               for (var i = 0; i < proposition.remarks.length; i++){
-                if (!proposition.remarks.hiddenForAll){
+                if (!proposition.remarks[i].hiddenForAll){
                   $scope.dragStrings.push({
                     text: angular.copy(proposition.remarks[i].text)
                   })

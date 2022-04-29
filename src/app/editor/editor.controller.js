@@ -1857,7 +1857,8 @@
               for (var i = 0; i < proposition.remarks.length; i++){
                 if (!proposition.remarks[i].hiddenForAll){
                   $scope.dragStrings.push({
-                    text: angular.copy(proposition.remarks[i].text)
+                    text: angular.copy(proposition.remarks[i].text + '  '),
+                    type: 'remark'
                   })
                 }
               }

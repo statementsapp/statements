@@ -117,7 +117,7 @@
 <!--             <span class="dragelement" ng-if="draggingNode">{{draggedNode.topic}}</span>
             <span class="dragelement" ng-if="draggingParagraph">{{draggedParagraph.text}}</span> -->
             <span id="dragelement" class="dragelement" ng-if="draggingProposition || draggingParagraph || draggingNode">
-              <span ng-repeat="string in dragStrings">{{string.text}}</span>
+              <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
             </span>
 
 

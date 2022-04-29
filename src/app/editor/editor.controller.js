@@ -5030,7 +5030,7 @@
                           break;
                         }
                       }
-                      if (remarkIndex || remarkIndex == 0){
+                      if (remarkIndex || remarkIndex === 0){
                         setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("top timeout")

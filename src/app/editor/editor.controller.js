@@ -2902,6 +2902,7 @@
       }
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
+        console.log("Selected proposition: ", angular.copy($scope.selectedProposition))
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");
           $scope.inputs.proposition = '';

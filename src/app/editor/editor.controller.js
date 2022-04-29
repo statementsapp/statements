@@ -4852,7 +4852,12 @@
       };
 
       $scope.diagnostics = function () {
-        $scope.diagnostics = !$scope.diagnostics;
+        if ($scope.diagnostics){
+          $scope.diagnostics = false;
+        } else {
+          $scope.diagnostics = true;
+        }
+       
       }
 
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {

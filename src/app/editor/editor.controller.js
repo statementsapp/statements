@@ -1853,6 +1853,15 @@
                 text: proposition.text
               }
             )
+            if (proposition.remarks){
+              for (var i = 0; i < proposition.remarks.length; i++){
+                if (!proposition.remarks.hiddenForAll){
+                  $scope.dragStrings.push({
+                    text: angular.copy(proposition.remarks[i].text)
+                  })
+                }
+              }
+            }
 
             setTimeout(function () {
               $scope.$apply(function () {

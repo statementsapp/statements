@@ -1529,7 +1529,7 @@
         $scope.selectedParagraph.markAll = false;
         if (!$scope.dontrunfocusout){
           focusFactory(id);
-          if ($scope.editing){
+          if ($scope.editing !== proposition.id){
             $scope.clearEditing();
           }
         }

@@ -1281,7 +1281,7 @@
           $scope.$apply(function () {
             $scope.hasLeftFocus.id = id;
             focusFactory('left'+id);
-            if ($scope.editing !== proposition.id && $scope.editing){
+            if ($scope.editing){
               $scope.clearEditing();
             }
           });
@@ -1529,7 +1529,7 @@
         $scope.selectedParagraph.markAll = false;
         if (!$scope.dontrunfocusout){
           focusFactory(id);
-          if ($scope.editing !== proposition.id && $scope.editing){
+          if ($scope.editing){
             $scope.clearEditing();
           }
         }
@@ -1543,7 +1543,7 @@
           $scope.dontrunfocusout = true;
           $scope.tempStopEditable = false;
           focusFactory(id);
-          if ($scope.editing !== proposition.id && $scope.editing){
+          if ($scope.editing){
             $scope.clearEditing();
           }
         } else if (!$scope.tempStopEditable){
@@ -4647,7 +4647,7 @@
         $scope.hasTopNodeFocus = {};
         $scope.hasBottomNodeFocus = '';
         $scope.hasChatFocusId = '';
-        if ($scope.editing !== proposition.id && $scope.editing){
+        if ($scope.editing){
           $scope.clearEditing();
         }
         $scope.unHighlightNode();

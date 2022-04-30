@@ -1552,8 +1552,12 @@
           $scope.whatHasBeenClicked = proposition.id;
           $scope.dontrunfocusout = true;
           $scope.tempStopEditable = false;
-          $scope.editingCopy = angular.copy(proposition.text);
-          $scope.editing = angular.copy(proposition.id);
+          if ($scope.editing !== proposition.id){
+            $scope.editingCopy = angular.copy(proposition.text);
+            $scope.editing = angular.copy(proposition.id);
+            console.log("Changed editing to ", $scope.editingCopy)
+          }
+          
           console.log("Entered editing")
         }
 

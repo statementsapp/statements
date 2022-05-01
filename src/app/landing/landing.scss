@@ -505,6 +505,12 @@ div.slider {
   bottom: 30px;
 }
 
+@media only screen and (max-width: 500px) {
+  .guest-button-wrapper {
+    display: none;
+  }
+}
+
 .guest-button-wrapper {
   position: relative;
   // bottom: 25%;

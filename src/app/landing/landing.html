@@ -159,9 +159,10 @@
                       type="button">
                 <span style="">
 <!--                <span ng-if="!loggingIn && (theWidth.value < 700)">Please visit Statements using a wider screen</span>-->
-                  <span ng-if="!loggingIn">Start Writing</span>
-                  <span ng-if="loggingIn"><i class="fa fa-spinner fa-spin"></i>&nbsp;</span>
-                  <span ng-if="loggingIn">(Loading)</span>
+                  <span ng-if="!loggingIn" class="validscreensize">Start Writing</span>
+                  <span ng-if="loggingIn" class="validscreensize"><i class="fa fa-spinner fa-spin"></i>&nbsp;</span>
+                  <span ng-if="loggingIn" class="validscreensize">(Loading)</span>
+                  <span class="screensizetoosmall"></span>
                 </span>
               </button>
 

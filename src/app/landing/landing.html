@@ -71,59 +71,59 @@
               </div>
             </div>
           </div>
-          <!--     <button ng-click="[assignLastNumber(), selectedOption.number = 0]">Option 0</button>
+              <button ng-click="[assignLastNumber(), selectedOption.number = 0]">Option 0</button>
             <button ng-click="[assignLastNumber(), selectedOption.number = 1]">Option 1</button>
                   <button ng-click="[assignLastNumber(), selectedOption.number = 2]">Option 2</button>
               <br/>
                 QWERTYUIOP ASDFGHJKL   Option: {{selectedOption.number}} LO: {{lastOption.number}}
-              <span id="status"> 0, 0 </span> -->
-          <!--                <div class="sliderContainer">-->
+              <span id="status"> 0, 0 </span>
+                          <div class="sliderContainer" ng-if="screenWidth < 500">
 
-          <!--                  <div style="position:absolute" ng-class="{'byezero': selectedOption.number > 10, 'zeroexitleft': selectedOption.number == 2, 'zeroenterleft': selectedOption.number == 1 && lastOption.number == 2}">-->
-          <!--                    <div  class="slider zero">-->
-          <!--                      <div class="innerbox">-->
-          <!--                        <div class='infotext' ng-if="selectedOption.number != 2">-->
-          <!--                        Write documents-->
-          <!--                        <br>-->
-          <!--                        </div>-->
-          <!--                        <div class='editortext' ng-class="{'preload': preload }" ng-if="selectedOption.number != 2">-->
-          <!--                        </div>-->
-          <!--                      </div>-->
-          <!--                    </div>-->
-          <!--                  </div>-->
+                            <div style="position:absolute" ng-class="{'byezero': selectedOption.number > 10, 'zeroexitleft': selectedOption.number == 2, 'zeroenterleft': selectedOption.number == 1 && lastOption.number == 2}">
+                              <div  class="slider zero">
+                                <div class="innerbox">
+                                  <div class='infotext' ng-if="selectedOption.number != 2">
+                                  Write documents
+                                  <br>
+                                  </div>
+                                  <div class='editortext' ng-class="{'preload': preload }" ng-if="selectedOption.number != 2">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
 
-          <!--                  <div style="position: absolute;">-->
-          <!--                    <div ng-class="{'oneright': selectedOption.number === 1, 'oneleft': selectedOption.number == 2,'twotoone': selectedOption.number == 1 && lastOption.number == 2, 'oneexitright': selectedOption.number === 0 && lastOption.number === 1 }" class="slider one">-->
-          <!--                      <div class="innerbox">-->
-          <!--                        <div class="innerbox">-->
-          <!--                          <div class='messenger' ng-class="{'preload': preload}" ng-if="selectedOption.number == 1">-->
-          <!--                          </div>-->
-          <!--                          <div class='infotext' ng-if="selectedOption.number == 1" style="padding-left: 20px;">-->
-          <!--                          Entirely by conversation-->
-          <!--                          </div>-->
-          <!--                          <div class='messenger' ng-class="{'preload': preload}" ng-if='selectedOption.number == 2' style="position: absolute; right: 0px;">-->
-          <!--                          </div>-->
-          <!--                          <div class='infotext' ng-if='selectedOption.number == 2' style="padding-left: 20px;">-->
-          <!--                          Write it entirely by message-->
-          <!--                          </div>-->
-          <!--                        </div>-->
-          <!--                      </div>-->
-          <!--                    </div>-->
-          <!--                  </div>-->
+                            <div style="position: absolute;">
+                              <div ng-class="{'oneright': selectedOption.number === 1, 'oneleft': selectedOption.number == 2,'twotoone': selectedOption.number == 1 && lastOption.number == 2, 'oneexitright': selectedOption.number === 0 && lastOption.number === 1 }" class="slider one">
+                                <div class="innerbox">
+                                  <div class="innerbox">
+                                    <div class='messenger' ng-class="{'preload': preload}" ng-if="selectedOption.number == 1">
+                                    </div>
+                                    <div class='infotext' ng-if="selectedOption.number == 1" style="padding-left: 20px;">
+                                    Entirely by conversation
+                                    </div>
+                                    <div class='messenger' ng-class="{'preload': preload}" ng-if='selectedOption.number == 2' style="position: absolute; right: 0px;">
+                                    </div>
+                                    <div class='infotext' ng-if='selectedOption.number == 2' style="padding-left: 20px;">
+                                    Write it entirely by message
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
 
-          <!--                  <div style="position: absolute; top: 0px;" >-->
-          <!--                    <div ng-class="{'byezero': selectedOption.number < 2, 'hideright': selectedOption.number < 2, 'twoexitright': selectedOption.number === 1 && lastOption.number == 2}"class="slider two">-->
-          <!--                      <div class="innerbox">-->
-          <!--                        <div class='messenger2' ng-class="{'preload': preload}">-->
-          <!--                        </div>-->
-          <!--                        <div class='infotext'style="padding-left: 20px;">-->
-          <!--                        Without the need to view what you're writing-->
-          <!--                        </div>-->
-          <!--                      </div>-->
-          <!--                    </div>-->
-          <!--                  </div>-->
-          <!--                </div>-->
-          <!--              </div>-->
+                            <div style="position: absolute; top: 0px;" >
+                              <div ng-class="{'byezero': selectedOption.number < 2, 'hideright': selectedOption.number < 2, 'twoexitright': selectedOption.number === 1 && lastOption.number == 2}"class="slider two">
+                                <div class="innerbox">
+                                  <div class='messenger2' ng-class="{'preload': preload}">
+                                  </div>
+                                  <div class='infotext'style="padding-left: 20px;">
+                                  Without the need to view what you're writing
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
           <!--               <div class="col">
                           <div class="big-text">
                             <br>
@@ -162,7 +162,7 @@
                   <span ng-if="!loggingIn && screenWidth > 500">Start Writing</span>
                   <span ng-if="loggingIn && screenWidth > 500"><i class="fa fa-spinner fa-spin"></i>&nbsp;</span>
                   <span ng-if="loggingIn && screenWidth > 500">(Loading)</span>
-                  <span ng-if="screenWidth < 500 || screenWidth === 500">Available on Desktop</span>
+                  <span ng-if="screenWidth < 500 || screenWidth === 500">Available on Desktop Only</span>
                 </span>
               </button>
 

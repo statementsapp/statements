@@ -511,13 +511,18 @@ div.slider {
   }
 }
 
+@media only screen and (min-width: 501px) {
+  .guest-button-wrapper {
+    display: block;
+  }
+}
+
 .guest-button-wrapper {
   position: relative;
   // bottom: 25%;
   // width: 33%;
   // left: 33%;
   // margin: 0 auto;
-  display: block;
   cursor: pointer;
   bottom: 110px;
 }

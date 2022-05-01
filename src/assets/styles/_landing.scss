@@ -34,6 +34,549 @@
     opacity: 1;
   }
 
+  .slider {
+    height: calc(200px * 2.3);
+  }
+
+  div.carouselcontainer {
+    position: absolute;
+    right: 850px;
+    font-size: 8pt;
+    height: 200px;
+    transition: left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940), opacity 0.5s ease;
+    /*(    float: left;*/
+  }
+
+  /*div {
+      font-size: 8pt;
+      height: 200px;
+      transition: left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940), opacity 0.5s ease;
+  }*/
+
+  div.sliderContainer {
+    position: relative;
+  }
+
+  #directLinkInput {
+    width: 350px;
+  }
+
+  .zero {
+    width: calc(295.66px * 2.3);
+    display: flex;
+    align-items: flex-start;
+    justify-content: row;
+  }
+
+  .infotext {
+    display: flex;
+    width: 200px;
+    min-width: 229px;
+    font-size: 30pt;
+  }
+
+  .preload {
+    visibility: hidden;
+  }
+
+  .editortext {
+    background: url('/assets/images/infection_1.gif') center center no-repeat;
+    background-size: contain;
+    font-size: 60pt;
+    min-width: 449.5px;
+    height: 460px;
+  }
+
+  .messenger {
+    background: url('/assets/images/infection_2.gif') center center no-repeat;
+    background-size: contain;
+    display: flex;
+    font-size: 20pt;
+    min-width: calc(120px * 2.3);
+    max-width: calc(120px * 2.3);
+    min-height: 458px;
+  }
+
+  .messenger2 {
+    background: url('/assets/images/infection_3.gif') center center no-repeat;
+    background-size: contain;
+    display: flex;
+    font-size: 20pt;
+    min-width: calc(120px * 2.3);
+    max-width: calc(120px * 2.3);
+    min-height: 458px;
+  }
+
+  video {
+    pointer-events: none;
+    width: 90%;
+    height: 100%;
+    padding-left: 10%;
+  }
+
+  .nologin {
+    cursor: not-allowed;
+  }
+
+
+  .browser-wrapper {
+    background: white;
+    overflow: hidden;
+    display: block;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 0;
+    max-height: calc(100vh - 150px);
+    font-size: 1em;
+  }
+
+  .browser-button-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .windows {
+    .browser-wrapper {
+      border-radius: 0;
+    }
+
+    .fa {
+      font-size: 10pt !important;
+    }
+
+    .browser-button-wrapper {
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      padding: 0 12px 0 0;
+      margin: 0;
+    }
+
+    .browser-button {
+      margin-left: 12px;
+      color: white;
+      display: inline-block;
+    }
+
+    .browser-button.left {
+      background: transparent;
+    }
+
+    .browser-button.middle {
+      background: transparent;
+    }
+
+    .browser-button.right {
+      background: transparent;
+    }
+
+    .browser-bar {
+      background: #3376D0;
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      justify-content: center;
+      height: 36px;
+    }
+  }
+
+  .mac {
+    .browser-wrapper {
+      border-radius: 10px;
+    }
+
+    .browser-button {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    .browser-button.left {
+      background: rgb(244, 8, 8);
+      background: linear-gradient(45deg, rgba(244, 8, 8, 1) 82%, rgba(236, 105, 105, 1) 100%);
+    }
+
+    .browser-button.middle {
+      background: rgb(244, 221, 40);
+      background: linear-gradient(45deg, rgba(244, 221, 40, 1) 82%, rgba(236, 234, 105, 1) 100%);
+    }
+
+    .browser-button.right {
+      background: rgb(22, 191, 64);
+      background: linear-gradient(45deg, rgba(22, 191, 64, 1) 82%, rgba(105, 222, 129, 1) 100%);
+    }
+
+    .browser-bar {
+      background: rgb(51, 51, 51);
+      background: linear-gradient(0deg, rgba(51, 51, 51, 1) 0%, rgba(57, 52, 52, 1) 4%, rgba(57, 52, 52, 1) 94%, rgba(204, 204, 204, 1) 100%);
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      height: 36px;
+    }
+  }
+
+  .video-container {
+    background-color: white;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+  }
+
+  .video-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .innerbox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: row;
+  }
+
+  .flushright {
+    right: 0px;
+    position: absolute;
+  }
+
+  .one, .two {
+    width: calc(225px * 2.3);
+  }
+
+  .one {
+    position: absolute;
+
+  }
+
+  .hideright {
+    left: calc(1000px * 2.3);
+  }
+
+  .two {
+    position: absolute;
+  }
+
+  div.slider {
+    display: block;
+    /*border: 1px solid black;*/
+    /* position: relative; */
+    top: 0;
+    //background-color: #ccf;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .oneright {
+    animation-duration: 1s;
+    animation-name: oneright;
+    animation-direction: left;
+    position: absolute;
+    left: calc(296px * 2.3);
+  }
+
+
+  .byezero {
+
+  }
+
+  .byetwo {
+    display: none;
+  }
+
+  .slideright {
+    animation-duration: 1s;
+    animation-name: slideright;
+    animation-direction: right;
+  }
+
+  .oneleft {
+    animation-duration: 1s;
+    animation-name: oneleft;
+    left: 0px;
+  }
+
+  .two {
+    animation-duration: 1s;
+    animation-name: two;
+    animation-direction: right;
+    left: calc(236px * 2.3);
+  }
+
+  .byezero {
+    animation-duration: 1s;
+    animation-name: byezero;
+    animation-direction: right;
+    left: calc(1000px * 2.3);
+    display: none;
+  }
+
+  .zeroexitleft {
+    animation-duration: 1s;
+    animation-name: zeroexitleft;
+    animation-direction: left;
+    right: calc(500px * 2.3);
+  }
+
+  .byetwo {
+    display: none;
+  }
+
+  .wide {
+    right: 440px;
+  }
+
+  .narrow {
+    right: 400px;
+  }
+
+  .twotoone {
+    animation-duration: 1s;
+    animation-name: twotoone;
+    animation-direction: right;
+    left: calc(297.33px * 2.3);
+  }
+
+  .zeroenterleft {
+    animation-duration: 1s;
+    animation-name: zeroenterleft;
+    left: 0px;
+  }
+
+  .twoexitright {
+    animation-duration: 1s;
+    animation-name: twoexitright;
+    animation-direction: right;
+    left: calc(1000px * 2.3);
+  }
+
+  .oneexitright {
+    animation-duration: 1s;
+    animation-name: oneexitright;
+    animation-direction: right;
+    left: calc(1000px * 2.3);
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      margin-bottom: 0.5em;
+    }
+
+    to {
+      opacity: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  @keyframes twoexitright {
+    from {
+      left: calc(297.33px * 2.3);
+    }
+
+    to {
+
+      left: calc(1000px * 2.3);
+    }
+  }
+
+  @keyframes oneexitright {
+    from {
+      left: calc(297.33px * 2.3);
+    }
+
+    to {
+
+      left: calc(1000px * 2.3);
+    }
+  }
+
+  @keyframes zeroenterleft {
+    from {
+      right: calc(1000px * 2.3);
+
+    }
+
+    to {
+
+      left: 0px;
+    }
+  }
+
+  @keyframes twoexitleft {
+    from {
+      left: calc(230px * 2.3);
+    }
+
+    to {
+
+      left: calc(2000px * 2.3);
+    }
+  }
+
+  @keyframes zeroenterleft {
+    from {
+      right: calc(1000px * 2.3);
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+      left: 0px;
+    }
+  }
+
+  @keyframes twotoone {
+    from {
+      left: 0px;
+    }
+
+    to {
+
+      left: calc(297.33px * 2.3);
+    }
+  }
+
+  @keyframes zeroexitleft {
+    from {
+      left: 0px;
+      opacity: .5;
+    }
+
+    to {
+      opacity: 0;
+      right: calc(1000px * 2.3);
+    }
+  }
+
+  @keyframes byetwo {
+    from {
+      left: calc(1000px * 2.3);
+    }
+
+    to {
+
+      left: calc(265px * 2.3);
+    }
+  }
+
+  @keyframes byezero {
+    from {
+      left: 0%;
+      opacity: 0;
+    }
+
+    to {
+      opacity: 0;
+      right: calc(1000px * 2.3);
+    }
+  }
+
+  @keyframes oneleft {
+    from {
+      left: calc(297.33px * 2.3);
+    }
+
+    to {
+      left: 0px;
+    }
+  }
+
+  @keyframes oneright {
+    from {
+      left: calc(1000px * 2.3);
+    }
+
+    to {
+      left: calc(297.33px * 2.3);
+    }
+  }
+
+  @keyframes two {
+    from {
+      left: calc(2000px * 2.3);
+    }
+
+    to {
+      left: calc(236px * 2.3);
+    }
+  }
+
+
+  @media screen and (max-width: 100em) {
+    zoom: 50%;
+  }
+
+  .regularcursor {
+    position: relative;
+
+    background-color: white;
+    color: white !important;
+    bottom: 30px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .guest-button-wrapper {
+      display: none;
+    }
+  }
+
+  .guest-button-wrapper {
+    position: relative;
+    // bottom: 25%;
+    // width: 33%;
+    // left: 33%;
+    // margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    bottom: 110px;
+  }
+
+
+  .dark-button {
+    background-color: white;
+    color: black;
+    font-size: 28pt;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    //border: 1px solid rgb(33,33,33);
+
+    &:hover {
+      background-color: #454545;
+      color: white;
+    }
+
+    &:active {
+      color: white;
+    }
+  }
+
 
 
   .parallax {
@@ -43,7 +586,7 @@
     overflow-y: auto;
     -webkit-perspective: 302px;
     perspective: 302px;
-
+    text-align:center;
     background: rgb(161, 178, 253);
     background: -moz-linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);
     background: -webkit-linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);

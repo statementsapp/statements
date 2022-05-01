@@ -8,6 +8,8 @@
     $scope.active = 0;
     $scope.processing = false;
     $scope.enter = '<enter>';
+    $scope.screenWidth = window.innerWidth;
+    console.log("Screen width: ", $scope.screenWidth)
 
     $scope.osClass = deviceDetector.os.windows ? 'windows' : 'mac';
 

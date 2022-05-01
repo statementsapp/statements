@@ -623,8 +623,7 @@
       $scope.tempStopEditable = false;
       $scope.minimalStyle = false;
       $scope.diagnostics = false;
-      $scope.screenWidth = window.innerWidth;
-      console.log("Screen width: ", $scope.screenWidth)
+      
 
 
       var hidden = '';

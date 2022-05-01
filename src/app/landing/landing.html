@@ -16,64 +16,14 @@
     <div class="parallax" du-scroll-container>
       <div class="parallax-group" id="group1">
         <div class="parallax-layer parallax-layer--fore">
-          <!--          <div class="container" id="widthtograb">-->
-          <!--            <div class="row" style="margin-bottom: 20%; position:absolute;" ng-class="{'wide': selectedOption.number < 2, 'narrow': selectedOption.number == 2}">-->
 
-          <!--              <div class='carouselcontainer'>-->
-          <div class="col" style="color: black;">
-            <div class="row" style="padding-top: 35px;">
-              <span style="font-size: 1.35em" id="title">Write <span style="">directly</span> by chat</span>
-            </div>
-            <div class="row" style="margin-bottom: 10px">
-              <span style="font-size: 0.95em" id="subtitle">Introducing
-                <!-- <span style="text-decoration: line-through; opacity: 0.5">word</span>  -->
-                <span style="font-weight: bold">sentence</span> processing</span>
-            </div>
-            <div class="row" ng-if="screenWidth > 500" ng-class="osClass">
-              <div class="browser-wrapper">
-                <div class="browser-bar">
-                  <div class="browser-button-wrapper">
-                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
-                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
-                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
-                  </div>
-                </div>
-                <div class="video-container">
-                  <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="authorVideoSources">
-                  </video>
-                </div>
-              </div>
-              <div class="browser-wrapper">
-                <div class="browser-bar">
-                  <div class="browser-button-wrapper">
-                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
-                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
-                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
-                  </div>
-                </div>
-                <div class="video-container">
-                  <video id="exampleCritic" style="width: 100%; padding-left: 0px; padding-right: 0px;" autoplay="autoplay" muted="muted" loop video-src="criticVideoSources">
-                  </video>
-                </div>
-              </div>
-              <div class="browser-wrapper">
-                <div class="browser-bar">
-                  <div class="browser-button-wrapper">
-                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
-                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
-                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
-                  </div>
-                </div>
-                <div class="video-container">
-                  <video id="other"  autoplay="autoplay" muted="muted" loop video-src="otherVideoSources">
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
 
-              <span id="status"> 0, 0 </span>
-                          <div class="sliderContainer" ng-if="screenWidth < 500">
+
+                    <div class="container" id="widthtograb" ng-if="screenWidth < 500">
+                      <div class="row" style="margin-bottom: 20%; position:absolute;" ng-class="{'wide': selectedOption.number < 2, 'narrow': selectedOption.number == 2}">
+
+                        <div class='carouselcontainer'>
+                          <div class="sliderContainer">
 
                             <div style="position:absolute" ng-class="{'byezero': selectedOption.number > 10, 'zeroexitleft': selectedOption.number == 2, 'zeroenterleft': selectedOption.number == 1 && lastOption.number == 2}">
                               <div  class="slider zero">
@@ -120,6 +70,69 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                    </div>
+
+
+          <div class="col" ng-if="screenWidth > 500" style="color: black;">
+            <div class="row" style="padding-top: 35px;">
+              <span style="font-size: 1.35em" id="title">Write <span style="">directly</span> by chat</span>
+            </div>
+            <div class="row" style="margin-bottom: 10px">
+              <span style="font-size: 0.95em" id="subtitle">Introducing
+                <!-- <span style="text-decoration: line-through; opacity: 0.5">word</span>  -->
+                <span style="font-weight: bold">sentence</span> processing</span>
+            </div>
+            <div class="row" ng-class="osClass">
+              <div class="browser-wrapper">
+                <div class="browser-bar">
+                  <div class="browser-button-wrapper">
+                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
+                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
+                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
+                  </div>
+                </div>
+                <div class="video-container">
+                  <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="authorVideoSources">
+                  </video>
+                </div>
+              </div>
+              <div class="browser-wrapper">
+                <div class="browser-bar">
+                  <div class="browser-button-wrapper">
+                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
+                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
+                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
+                  </div>
+                </div>
+                <div class="video-container">
+                  <video id="exampleCritic" style="width: 100%; padding-left: 0px; padding-right: 0px;" autoplay="autoplay" muted="muted" loop video-src="criticVideoSources">
+                  </video>
+                </div>
+              </div>
+              <div class="browser-wrapper">
+                <div class="browser-bar">
+                  <div class="browser-button-wrapper">
+                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
+                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
+                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
+                  </div>
+                </div>
+                <div class="video-container">
+                  <video id="other"  autoplay="autoplay" muted="muted" loop video-src="otherVideoSources">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--     <button ng-click="[assignLastNumber(), selectedOption.number = 0]">Option 0</button>
+            <button ng-click="[assignLastNumber(), selectedOption.number = 1]">Option 1</button>
+                  <button ng-click="[assignLastNumber(), selectedOption.number = 2]">Option 2</button>
+              <br/>
+                QWERTYUIOP ASDFGHJKL   Option: {{selectedOption.number}} LO: {{lastOption.number}}
+              <span id="status"> 0, 0 </span> -->
+                          
+                       
           <!--               <div class="col">
                           <div class="big-text">
                             <br>

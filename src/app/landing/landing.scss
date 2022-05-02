@@ -77,11 +77,14 @@ div.sliderContainer {
   min-height: 458px;
 }
 
+// tweaked for mobile
+
 video {
   pointer-events: none;
   width: 90%;
-  height: 100%;
-  padding-left: 10%;
+  // height: 100%;
+  // padding-left: 10%;
+  padding-top: 20px;
 }
 
 .nologin {

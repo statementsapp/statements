@@ -11,6 +11,27 @@
     $scope.screenWidth = window.innerWidth;
     console.log("Screen width: ", $scope.screenWidth)
 
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
 
     $scope.osClass = deviceDetector.os.windows ? 'windows' : 'mac';
 
@@ -32,6 +53,8 @@
         { src: '/assets/movies/crops/2_messenger_crop_4x.mp4', type: 'video/mp4' }
       ]
     };
+
+
 
     $scope.onPlayerReady = function (API) {
       if (API.currentState !== 'play') {

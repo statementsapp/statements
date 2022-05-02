@@ -68,6 +68,23 @@
     bottom: 0;
   }
 
+  .swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  }
+
+  .swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  }
+
+  .swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative;
+  }
+
   .parallax-layer--fore {
     -webkit-transform: translateZ(90px) scale(.7);
     transform: translateZ(90px) scale(.7);

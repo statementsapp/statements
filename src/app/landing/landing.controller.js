@@ -37,7 +37,7 @@
 
     $scope.authorVideoSources = {
       videoSources: [
-        { src: '/assets/movies/my_movie.mp4', type: 'video/mp4' }
+        { src: '/assets/movies/endcroppefd.mp4', type: 'video/mp4' }
       ]
     };
 

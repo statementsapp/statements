@@ -11,7 +11,7 @@
     $scope.screenWidth = window.innerWidth;
     console.log("Screen width: ", $scope.screenWidth)
 
-    const swiper = new Swiper('.swiper', {
+    var swiper = new Swiper('.swiper', {
       // Optional parameters
       direction: 'vertical',
       loop: true,

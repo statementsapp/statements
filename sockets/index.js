@@ -35,6 +35,10 @@ var socketService = function (io) {
     return connected;
   };
 
+  // 'reconnection': true,
+  // 'reconnectionDelay': 500,
+  // 'reconnectionAttempts': 10
+
   io.on('connection', function (socket) {
 
     /**

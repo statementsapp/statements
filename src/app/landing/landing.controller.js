@@ -11,7 +11,6 @@
     $scope.screenWidth = window.innerWidth;
     console.log("Screen width: ", $scope.screenWidth)
 
-    
 
     var element = document.getElementById('mySwipe');
     window.mySwipe = new Swipe(element, {

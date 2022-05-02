@@ -16,31 +16,63 @@
     <div class="parallax" du-scroll-container>
       <div class="parallax-group" id="group1">
         <div class="parallax-layer parallax-layer--fore">
-          <!--          <div class="container" id="widthtograb">-->
-          <!--            <div class="row" style="margin-bottom: 20%; position:absolute;" ng-class="{'wide': selectedOption.number < 2, 'narrow': selectedOption.number == 2}">-->
-
-          <!--              <div class='carouselcontainer'>-->
 
 
-          <div class="col" ng-if="screenWidth < 500 || screenWidth === 500" style="color: black;">
+
+<!--           <div class="col" ng-if="screenWidth < 500 || screenWidth === 500" style="color: black;">
             <div class="row" style="padding-top: 35px;">
               <span style="font-size: 1.35em" id="title">Write <span style="">directly</span> by chat</span>
             </div>
             <div class="row" style="margin-bottom: 10px">
               <span style="font-size: 0.95em" id="subtitle">Introducing
-                <!-- <span style="text-decoration: line-through; opacity: 0.5">word</span>  -->
                 <span style="font-weight: bold">sentence</span> processing</span>
             </div>
+          </div> -->
 
 
+          <div class="col" ng-if="screenWidth < 500 || screenWidth === 500" style="color: black;">
+            <div class="container">
+              <h2>Carousel Example</h2>  
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
 
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+                  </div>
+
+                  <div class="item">
+                    <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+                  </div>
+                
+                  <div class="item">
+                    <img src="ny.jpg" alt="New york" style="width:100%;">
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
             
           </div>
 
 
 
 
-          
 
 
 

@@ -305,7 +305,7 @@
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
       id="dialoguepane"
       ng-mouseover="dialogueMouseOver = true" 
-      ng-mouseleave="dialogueMouseOver = false"
+      ng-mouseleave="[dialogueMouseOver = false, !inputs.chatProposition ? hasChatFocusId = '' : inputs.nothing]"
     >
       <!-- ng-click="[clearDrag(), $event.stopPropagation()]" -->
       <!--       <span style=""

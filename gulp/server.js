@@ -6,8 +6,6 @@ const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const browserSync = require('browser-sync');
 
-// where else to put this?
-const Swipe = require('swipejs');
 
 gulp.task('browser-sync', ['nodemon'], function () {
   browserSync.init({

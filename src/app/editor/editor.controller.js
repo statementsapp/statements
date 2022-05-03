@@ -1541,6 +1541,7 @@
 
 
         if ($scope.whatHasBeenClicked !== proposition.id && !$scope.tempStopEditable) {
+          console.log("That top if")
           document.getElementById(string).contentEditable = true;
           $scope.whatHasBeenClicked = proposition.id;
           $scope.dontrunfocusout = true;
@@ -1550,7 +1551,7 @@
             $scope.clearEditing();
           }
         } else if (!$scope.tempStopEditable){
-
+          console.log("That else if")
           document.getElementById(string).contentEditable = true;
           $scope.whatHasBeenClicked = proposition.id;
           $scope.dontrunfocusout = true;

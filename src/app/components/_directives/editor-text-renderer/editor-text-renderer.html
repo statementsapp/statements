@@ -318,7 +318,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                          paragraph.topAdd = false,
                          paragraph.bottomAdd = false,
                          paragraph.leftAdd = false,
-                         clearTopAndBottomHasFocus(),
+                         clearTopAndBottomHasFocus(proposition),
                          hasRightFocus.id = proposition.id,
                          hasLeftFocus = {},
                          listenForDoubleClick(this, paragraph, proposition),

@@ -622,7 +622,7 @@
       $scope.lowerDragScroller = false;
       $scope.tempStopEditable = false;
       $scope.minimalStyle = false;
-      $scope.diagnostics = true;
+      $scope.diagnostics = false;
       
 
 

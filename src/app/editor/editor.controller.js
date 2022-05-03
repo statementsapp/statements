@@ -4877,7 +4877,7 @@
         apply = {};
       };
 
-      $scope.diagnostics = function () {
+      $scope.toggleDiagnostics = function () {
         if ($scope.diagnostics){
           $scope.diagnostics = false;
         } else {

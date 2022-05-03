@@ -123,17 +123,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     <div ng-if="hasTopFocus == paragraph.paragraphId"
          class="paragraph addparagraph"
          ng-class=""
-         style="height: 26px; padding-top: 16px; padding-bottom: 35px; position: relative; left: -10px;"
+         style="height: 26px; padding-top: 16px; padding-bottom: 35px; position: relative; left: -10px; padding-left: 70px;"
     >
-    <span class="paragraphhandle"
-          
-
-                    
-          style="margin-right: 10px; display: inline-block;">
-      <span ><i 
-          
-                    ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle  && cowsComeHome ? .5 : 0 }" class="fa fa-circle" style="font-size: 15px;"></i></span>
-    </span>
       <div class="proposition">
         <span
           editable-span-ng-model

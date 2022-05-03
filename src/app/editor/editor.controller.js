@@ -4650,7 +4650,7 @@
       };
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {
-
+        console.log('clear top and bottom focus')
         $scope.hasTopFocus = '';
         $scope.hasBottomFocus = {};
         $scope.hasTopNodeFocus = {};

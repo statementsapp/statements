@@ -4651,6 +4651,8 @@
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {
         console.log('clear top and bottom focus')
+        console.log('proposition: ', proposition)
+        console.log('$scope.editing', $scope.editing)
         $scope.hasTopFocus = '';
         $scope.hasBottomFocus = {};
         $scope.hasTopNodeFocus = {};

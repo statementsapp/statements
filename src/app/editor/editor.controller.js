@@ -4647,7 +4647,7 @@
         }, 0);
       };
 
-      $scope.clearTopAndBottomHasFocus = function () {
+      $scope.clearTopAndBottomHasFocus = function (proposition) {
 
         $scope.hasTopFocus = '';
         $scope.hasBottomFocus = {};
@@ -4655,7 +4655,14 @@
         $scope.hasBottomNodeFocus = '';
         $scope.hasChatFocusId = '';
         if ($scope.editing){
-          $scope.clearEditing();
+          if (proposition){
+            if (proposition.id !== $scope.editing){
+              $scope.clearEditing();
+            }
+          } else {
+            $scope.clearEditing();
+          }
+          
         }
         $scope.unHighlightNode();
 

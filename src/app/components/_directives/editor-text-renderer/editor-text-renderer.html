@@ -637,7 +637,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     class="right-textarea texttopic"
     id="{{bottomNodeAdderId}}"></span>
     <span class="cursor visible-cursor"
-          ng-if="node.bottomDropzoneMouseOver && !node.bottomNodeAdd">
+          ng-if="node.bottomDropzoneMouseOver && hasBottomNodeFocus !== node.nodeId">
     </span>
   </div>
 </div>

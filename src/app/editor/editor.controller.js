@@ -1512,6 +1512,7 @@
 
       // For when there is a single click on a proposition
       $scope.listenForDoubleClick = function (element, paragraph, proposition) {
+        console.log("Listen for double click")
         if (($scope.cancelListenForDoubleClick === true && !$scope.draggingNode &&
           !$scope.draggingParagraph && !$scope.draggingProposition) ||
           ($scope.tempStopEditable && $scope.whatHasBeenClicked === proposition.id)) {

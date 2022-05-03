@@ -371,12 +371,12 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             [dropItem(node, paragraph, proposition ,'right')] : [assignRightFocus(proposition), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
             ng-mouseover="paragraph.disableRightCursor = false"
             ng-model="inputs.proposition"
-            ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing;"
+            ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault() : inputs.nothing;"
             ng-keyup="
 
                 $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
                 $event.keyCode === 13 && data[0].documentClaimedBy === userId  && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
-                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition == '' && proposition.author === userId ? resetFromEnter() : inputs.nothing;
+                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition == '' && proposition.author === userId ? [ $event.preventDefault(), resetFromEnter()] : inputs.nothing;
                 ($event.keyCode === 8 && inputs.proposition === '' && data[0].documentClaimedBy === userId && highlight.id === proposition.id && highlight.highlit == true) ? deleteProposition(node, paragraph, proposition, null, 'proposition') : inputs.nothing;
                 (data[0].documentClaimedBy === userId && inputs.proposition === '' && $event.keyCode === 8 && proposition.type !== 'blank') ? highlightProposition(node, paragraph, proposition) : inputs.nothing;
                 "

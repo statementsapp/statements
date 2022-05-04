@@ -4869,7 +4869,8 @@
                       return;
                     }
                   }
-                } else {
+                } else if(!$scope.inputs.proposition) {
+                  console.log("Returning preselected")
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k].preSelected = false;
                   return;
                 }

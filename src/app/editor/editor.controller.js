@@ -1573,6 +1573,7 @@
         console.log("Clearing editing")
         console.log("Flag: ", flag)
         console.log("Editing: ", $scope.editing)
+        console.log("Editing copy: ", $scope.editingCopy)
         if (!flag){
           console.log("If not")
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
@@ -1584,6 +1585,7 @@
                     $scope.$apply(function () {
                       console.log("Resetting")
                       if ($scope.editingCopy){
+                        console.log("If editing copy")
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
                       }
                       $scope.editing = '';

@@ -1587,6 +1587,8 @@
                       if ($scope.editingCopy){
                         console.log("If editing copy")
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
+                        console.log("UPDATED: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k].text)
+                        $scope.updateProposition($scope.data[0].nodes[i], $scope.data[0].nodes[i].paragraphs[j], $scope.data[0].nodes[i].paragraphs[j].propositions[k], 'stale')
                         // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).textContent = $scope.editingCopy;
                       }
                       $scope.editing = '';
@@ -1623,7 +1625,7 @@
       };
 
       // Processes an edit to one's own proposition
-      $scope.updateProposition = function (node, paragraph, proposition) {
+      $scope.updateProposition = function (node, paragraph, proposition, flag) {
         // In case an edit out of bounds occurs
         if (proposition.author !== $scope.userId) {
           return;
@@ -1647,8 +1649,13 @@
 
           // var propositionDestination = eval(propositionPath);
           // Copies the current status of the span
-          text = angular.copy(elem.textContent);
-          text = text.replace(/\u00a0/g, ' ');
+          if (!flag){
+            text = angular.copy(elem.textContent);
+            text = text.replace(/\u00a0/g, ' ');
+          } else {
+            text = angular.copy(proposition.text);
+            text = text.replace(/\u00a0/g, ' ');
+          }
           $scope.whatHasBeenClicked = '';
           // Updates the propositions array
           // Defines the payload to be emitted

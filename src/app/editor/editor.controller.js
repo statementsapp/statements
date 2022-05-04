@@ -1581,8 +1581,8 @@
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === $scope.editing &&
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
-                  setTimeout(function () {
-                    $scope.$apply(function () {
+                  // setTimeout(function () {
+                  //   $scope.$apply(function () {
                       console.log("Resetting")
                       if ($scope.editingCopy){
                         console.log("If editing copy")
@@ -1591,12 +1591,12 @@
                       }
                       $scope.editing = '';
                       $scope.editingCopy = '';
-
-                    });
-                  }, 5);
+                      break;
+                  //   });
+                  // }, 5);
                   // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = $scope.editingCopy;
                   $scope.inputs = {};
-                  return;
+                  break;
                 }
               }
             }

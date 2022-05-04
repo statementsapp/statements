@@ -1679,6 +1679,7 @@
 
       // Listener for updates
       $scope.$on('socket:broadcastUpdate', function (event, payload) {
+        console.log("received update")
         if (payload.bookId !== $scope.bookId) {
           return;
         }

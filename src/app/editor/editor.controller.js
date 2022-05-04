@@ -4659,6 +4659,8 @@
         $scope.hasTopNodeFocus = {};
         $scope.hasBottomNodeFocus = '';
         $scope.hasChatFocusId = '';
+        $scope.inputs = {};
+
         if ($scope.editing){
           if (proposition){
             if (proposition.id !== $scope.editing){

@@ -1447,7 +1447,7 @@
 
       // Clears the proposition input, like when clicked away
       $scope.clearPropositionInput = function () {
-
+        console.log("Clear prop input")
         $scope.inputs.proposition = '';
         $scope.inputs.Leftproposition = '';
         $scope.highlight.id = '';
@@ -4869,7 +4869,7 @@
                       return;
                     }
                   }
-                } else if(!$scope.inputs.proposition) {
+                } else {
                   console.log("Returning preselected")
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k].preSelected = false;
                   return;

@@ -25,6 +25,7 @@
         function read() {
           console.log("The scope: ", scope)
           console.log("The model: ", ngModel)
+          console.log("The element: ", element)
           var html = element.html();
           // When we clear the content editable the browser leaves a <br> behind
           // If strip-br attribute is provided then we strip this out

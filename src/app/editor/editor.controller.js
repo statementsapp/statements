@@ -1490,6 +1490,7 @@
 
       // Processes incomplete edits to one's own propositions
       $scope.clearEditable = function () {
+        console.log("Clearing editable")
         if ($scope.whatHasBeenClicked) {
           for (var i = 0; i < $scope.propositions.length; i++) {
             console.log("Going into props array")

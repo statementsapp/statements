@@ -593,9 +593,9 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           class="right-textarea right-text authorprop"
           ng-click="$event.stopPropagation()"
           placeholder="textarea"
-          ng-model="inputs.proposition"
-          ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing"
-          ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs.proposition === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
+          ng-model="inputs.bottomProposition"
+          ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault() : inputs.nothing"
+          ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.bottomProposition != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs.bottomProposition, node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs.proposition === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
           class="texttopic"
           spellcheck="false"
           style="color: black; text-indent: 25px; background-color: white; margin-left: -10px; padding-bottom: 30px;"></span>

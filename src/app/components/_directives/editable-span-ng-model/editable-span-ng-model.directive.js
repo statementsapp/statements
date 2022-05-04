@@ -5,7 +5,7 @@
   function editableSpanNgModel($sce) {
     return {
       restrict: 'A', // only activate on element attribute
-      require: '?^ngModel', // get a hold of NgModelController
+      require: '?ngModel', // get a hold of NgModelController
       link: function(scope, element, attrs, ngModel) {
         // if (!ngModel) return; 
         // do nothing if no ng-model
@@ -23,6 +23,8 @@
 
         // Write data to the model
         function read() {
+          console.log("The scope: ", scope)
+          console.log("The model: ", ngModel)
           var html = element.html();
           // When we clear the content editable the browser leaves a <br> behind
           // If strip-br attribute is provided then we strip this out

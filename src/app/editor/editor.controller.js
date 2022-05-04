@@ -1591,7 +1591,7 @@
                     });
                   }, 5);
                   // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = $scope.editingCopy;
-                  
+                  $scope.inputs = {};
                   return;
                 }
               }
@@ -1601,6 +1601,7 @@
           console.log("Editing else")
           $scope.editing = '';
           $scope.editingCopy = '';
+          $scope.inputs = {};
         }
         
       }

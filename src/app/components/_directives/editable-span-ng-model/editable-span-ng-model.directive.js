@@ -28,9 +28,7 @@
         knead(); // initialize
 
         function read() {
-          console.log("The scope: ", scope)
-          console.log("The model: ", ngModel)
-          console.log("The element: ", element)
+      
           var html = element.html();
           // When we clear the content editable the browser leaves a <br> behind
           // If strip-br attribute is provided then we strip this out
@@ -43,11 +41,9 @@
 
         // Write data to the model
         function knead() {
-   
+          console.log("The scope: ", scope)
           console.log("The element html: ", element.html)
           var html = element.html();
-          console.log("rootscope editing", $rootScope.editing)
-          console.log("scope editing", $scope.editing)
           // When we clear the content editable the browser leaves a <br> behind
           // If strip-br attribute is provided then we strip this out
           if (attrs.stripBr && html === '<br>') {

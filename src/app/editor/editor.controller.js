@@ -1588,7 +1588,7 @@
                         console.log("If editing copy")
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
                         console.log("UPDATED: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k])
-                        console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
+                        angular.element(document.getElementById($scope.editing)).scope().$setViewValue($scope.editingCopy)
                         // $scope.updateProposition($scope.data[0].nodes[i], $scope.data[0].nodes[i].paragraphs[j], $scope.data[0].nodes[i].paragraphs[j].propositions[k], 'stale')
                         // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).textContent = $scope.editingCopy;
                       }

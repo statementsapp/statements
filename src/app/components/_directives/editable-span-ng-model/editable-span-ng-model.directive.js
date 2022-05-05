@@ -41,6 +41,7 @@
 
         // Write data to the model
         function knead() {
+          console.log("dollar scope eh ", $scope)
           console.log("The scope: ", scope)
           console.log("The element html: ", element.html)
           var html = element.html();

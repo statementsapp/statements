@@ -13,7 +13,7 @@
         // Specify how UI should be updated
         ngModel.$render = function() {
           element.html($sce.getTrustedHtml(ngModel.$viewValue || ''));
-          console.log("Say what is that view value: ", ngModel.$viewValue)
+
         };
 
         // Listen for change events to enable binding
@@ -25,6 +25,8 @@
         // Write data to the model
         function read() {
           var html = element.html();
+          console.log("Say what is that view value: ", ngModel)
+          console.log("Say what is that element: ", element)
           // When we clear the content editable the browser leaves a <br> behind
           // If strip-br attribute is provided then we strip this out
           if (attrs.stripBr && html === '<br>') {

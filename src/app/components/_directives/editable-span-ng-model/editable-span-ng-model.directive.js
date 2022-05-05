@@ -13,6 +13,7 @@
         // Specify how UI should be updated
         ngModel.$render = function() {
           element.html($sce.getTrustedHtml(ngModel.$viewValue || ''));
+          console.log("Say what is that view value: ", ngModel.$viewValue)
         };
 
         // Listen for change events to enable binding

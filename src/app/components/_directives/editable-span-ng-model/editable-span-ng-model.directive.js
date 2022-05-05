@@ -16,34 +16,13 @@
         };
 
         // Listen for change events to enable binding
-        element.on('keyup change', function() {
+        element.on('blur keyup change', function() {
           scope.$evalAsync(read);
         });
-
-        element.on('blur', function() {
-          scope.$evalAsync(knead);
-        });
-
         read(); // initialize
-        knead(); // initialize
-
-        function read() {
-      
-          var html = element.html();
-          // When we clear the content editable the browser leaves a <br> behind
-          // If strip-br attribute is provided then we strip this out
-          if (attrs.stripBr && html === '<br>') {
-            console.log("If triggered in editable span ng model")
-            html = '';
-          }
-          ngModel.$setViewValue(html);
-        }
 
         // Write data to the model
-        function knead() {
-          console.log("dollar scope eh ", $scope)
-          console.log("The scope: ", scope)
-          console.log("The element html: ", element.html)
+        function read() {
           var html = element.html();
           // When we clear the content editable the browser leaves a <br> behind
           // If strip-br attribute is provided then we strip this out

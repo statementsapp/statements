@@ -2352,6 +2352,7 @@
       }
 
       $scope.unHighlightNode = function (){
+        console.log("Unhighlight node")
         if ($scope.thereIsAHighlightedNode){
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
             if ($scope.data[0].nodes[i].nodeId === $scope.highlightedNode.nodeId){

@@ -2438,9 +2438,12 @@
             prep.nodeId = $scope.draggedNode.nodeId;
           } else {
             console.log("else dragging node")
-            prep.sectionNumber = node.sectionNumber;
-            prep.sectionLevel = node.sectionLevel;
-            prep.nodeId = node.nodeId;
+            if (!node){
+              prep.sectionNumber = $scope.highlightedNode.sectionNumber;
+              prep.sectionLevel = $scope.highlightedNode.sectionLevel;
+              prep.nodeId = $scope.highlightedNode.nodeId;
+            }
+            
           }
 
 

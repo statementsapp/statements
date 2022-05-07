@@ -2438,10 +2438,12 @@
             prep.nodeId = $scope.draggedNode.nodeId;
           } else {
             console.log("else dragging node")
+            
             if (!node){
               prep.sectionNumber = $scope.highlightedNode.sectionNumber;
               prep.sectionLevel = $scope.highlightedNode.sectionLevel;
               prep.nodeId = $scope.highlightedNode.nodeId;
+              console.log("highlighted node: ", $scope.highlightedNode)
             }
             
           }

@@ -35,6 +35,12 @@
 
     $scope.osClass = deviceDetector.os.windows ? 'windows' : 'mac';
 
+    $scope.compositeVideoSources = {
+      videoSources: [
+        { src: '/assets/movies/endcroppefd.mp4', type: 'video/mp4' }
+      ]
+    };
+
     $scope.authorVideoSources = {
       videoSources: [
         { src: '/assets/movies/P1speduptext2.mp4', type: 'video/mp4' }

@@ -37,20 +37,20 @@
 
     $scope.authorVideoSources = {
       videoSources: [
-        { src: '/assets/movies/endcroppefd.mp4', type: 'video/mp4' }
+        { src: '/assets/movies/P1speduptext.mp4', type: 'video/mp4' }
       ]
     };
 
     $scope.criticVideoSources = {
       videoSources: [
-        { src: '/assets/movies/crops/1_messenger_crop_4x.mp4', type: 'video/mp4' }
+        { src: '/assets/movies/crops/P1spedupreviewer.mp4', type: 'video/mp4' }
       ]
     };
 
 
     $scope.otherVideoSources = {
       videoSources: [
-        { src: '/assets/movies/crops/2_messenger_crop_4x.mp4', type: 'video/mp4' }
+        { src: '/assets/movies/crops/P1spedupmessages.mp4', type: 'video/mp4' }
       ]
     };
 

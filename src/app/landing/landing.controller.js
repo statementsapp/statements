@@ -37,7 +37,7 @@
 
     $scope.authorVideoSources = {
       videoSources: [
-        { src: '/assets/movies/P1speduptext.mp4', type: 'video/mp4' }
+        { src: '/assets/movies/P1speduptext2.mp4', type: 'video/mp4' }
       ]
     };
 

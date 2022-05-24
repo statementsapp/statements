@@ -1586,7 +1586,14 @@
                       console.log("Resetting")
                       if ($scope.editingCopy){
                         console.log("If editing copy")
-                        $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = $scope.editingCopy;
+                        $scope.thisIsACopy = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k])
+                        $scope.data[0].nodes[i].paragraphs[j].propositions[k] = {};
+                        setTimeout(function () {
+                          $scope.$apply(function () {
+                            $scope.data[0].nodes[i].paragraphs[j].propositions[k] = $scope.thisIsACopy;
+                            $scope.thisIsACopy = {};
+                          });
+                        }, 5);
                         console.log("UPDATED: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k])
                         console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
                         // $scope.updateProposition($scope.data[0].nodes[i], $scope.data[0].nodes[i].paragraphs[j], $scope.data[0].nodes[i].paragraphs[j].propositions[k], 'stale')

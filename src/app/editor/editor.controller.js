@@ -1592,10 +1592,11 @@
                           $scope.$apply(function () {
                             $scope.data[0].nodes[i].paragraphs[j].propositions[k] = $scope.thisIsACopy;
                             $scope.thisIsACopy = {};
+                            console.log("UPDATED: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k])
+                            console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
                           });
                         }, 5);
-                        console.log("UPDATED: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k])
-                        console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
+                       
                         // $scope.updateProposition($scope.data[0].nodes[i], $scope.data[0].nodes[i].paragraphs[j], $scope.data[0].nodes[i].paragraphs[j].propositions[k], 'stale')
                         // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).textContent = $scope.editingCopy;
                       }

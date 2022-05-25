@@ -1586,22 +1586,21 @@
                       console.log("Resetting")
                       if ($scope.editingCopy){
                         console.log("If editing copy")
-                        var thisI = angular.copy(i)
-                        var thisJ = angular.copy(j)
-                        var thisK = angular.copy(k)
+                        $scope.thisI = angular.copy(i)
+                        $scope.thisJ = angular.copy(j)
+                        $scope.thisK = angular.copy(k)
                         $scope.thisIsACopy = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k])
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k] = {};
-                        console.log('before ', thisI," ", thisJ, " ", thisK)
                         setTimeout(function () {
                           $scope.$apply(function () {
                             console.log("Running inside timeoutapply")
                             console.log(thisI," ", thisJ, " ", thisK)
-                            $scope.data[0].nodes[thisI].paragraphs[thisJ].propositions[thisK] = $scope.thisIsACopy;
+                            $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK] = $scope.thisIsACopy;
                             $scope.thisIsACopy = {};
-                            var thisI = null;
-                            var thisJ = null;
-                            var thisK = null;
-                            console.log("UPDATED: ", $scope.data[0].nodes[thisI].paragraphs[thisJ].propositions[thisK])
+                            $scope.thisI = null;
+                            $scope.thisJ = null;
+                            $scope.thisK = null;
+                            console.log("UPDATED: ", $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK])
                             console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
                           });
                         }, 5);

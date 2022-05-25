@@ -5,8 +5,8 @@
   function LandingNavbarController($rootScope) {
     var vm = this;
 
-    $scope.screenWidth = window.innerWidth;
-    console.log("Screen width: ", $scope.screenWidth)
+    $rootScope.screenWidth = window.innerWidth;
+    console.log("Screen width: ", $rootScope.screenWidth)
     vm.openRegisterModal = function() {
       $rootScope.$emit('openRegisterModal', {});
     };

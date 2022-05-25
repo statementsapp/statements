@@ -1591,9 +1591,11 @@
                         var thisK = angular.copy(k)
                         $scope.thisIsACopy = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k])
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k] = {};
+                        console.log('before ', thisI," ", thisJ, " ", thisK)
                         setTimeout(function () {
                           $scope.$apply(function () {
                             console.log("Running inside timeoutapply")
+                            console.log(thisI," ", thisJ, " ", thisK)
                             $scope.data[0].nodes[thisI].paragraphs[thisJ].propositions[thisK] = $scope.thisIsACopy;
                             $scope.thisIsACopy = {};
                             var thisI = null;

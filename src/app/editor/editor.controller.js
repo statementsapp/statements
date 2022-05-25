@@ -1593,6 +1593,7 @@
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k] = {};
                         setTimeout(function () {
                           $scope.$apply(function () {
+                            console.log("Running inside timeoutapply")
                             $scope.data[0].nodes[thisI].paragraphs[thisJ].propositions[thisK] = $scope.thisIsACopy;
                             $scope.thisIsACopy = {};
                             var thisI = null;

@@ -52,13 +52,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  height: 100px;
-  width: 600px;
-  background-color: gold;
+
 }
 
 .rightytightyboi {
   justify-content: flex-end;
+  height: 100px;
+  width: 600px;
+  background-color: gold;
 }
 
 @media (min-width: 768px) {

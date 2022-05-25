@@ -47,7 +47,6 @@
     "gulp-size": "~2.0.0",
     "gulp-sourcemaps": "~1.6.0",
     "gulp-terser": "^1.2.0",
-    // "gulp-uglify": "^3.0.2",
     "gulp-useref": "^4.0.0",
     "gulp-util": "~3.0.6",
     "jscs": "^3.0.7",

@@ -1597,11 +1597,12 @@
                             console.log($scope.thisI," ", $scope.thisJ, " ", $scope.thisK)
                             $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK] = $scope.thisIsACopy;
                             $scope.thisIsACopy = {};
+                            console.log("UPDATED: ", $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK])
+                            console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
                             $scope.thisI = null;
                             $scope.thisJ = null;
                             $scope.thisK = null;
-                            console.log("UPDATED: ", $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK])
-                            console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
+                            
                           });
                         }, 5);
                        

@@ -65,12 +65,14 @@ gulp.task('html', [ 'inject', 'partials' ], function () {
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe($.useref())
     .pipe(jsFilter)
-    // .pipe($.sourcemaps.init())
+    // comment out the below for no source maps
+    .pipe($.sourcemaps.init())
     .pipe($.ngAnnotate())
     .pipe($.uglify())
     .on('error', conf.errorHandler('Uglify'))
     .pipe($.rev())
-    // .pipe($.sourcemaps.write('maps'))
+    // comment out the below for no source maps
+    .pipe($.sourcemaps.write('maps'))
     .pipe(jsFilter.restore)
     .pipe(cssFilter)
     .pipe($.cssnano())

@@ -1599,7 +1599,7 @@
                             var thisI = null;
                             var thisJ = null;
                             var thisK = null;
-                            console.log("UPDATED: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k])
+                            console.log("UPDATED: ", $scope.data[0].nodes[thisI].paragraphs[thisJ].propositions[thisK])
                             console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
                           });
                         }, 5);

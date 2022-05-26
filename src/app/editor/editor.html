@@ -55,6 +55,7 @@
               ng-mouseover="node.bottomDropzoneMouseover = true"
               ng-mouseleave="node.bottomDropzoneMouseover = false"
               ng-enter="updateNode(null)"
+              ng-class="{'slightlysmallertitle': title.length > 30}"
               >
           {{title}}
 <!--           <div class="titlesectiondropzone"
@@ -179,7 +180,7 @@
           <!-- <div>Export</div> -->
 
 
-          
+
 <!--           <div class="menu-right-wrapper">
 
             <div class="link-box">

@@ -1615,8 +1615,8 @@
                   //   });
                   // }, 5);
                   // document.getElementById('proposition' + $scope.data[0].nodes[i].paragraphs[j].propositions[k].id).innerText = $scope.editingCopy;
-                  $scope.inputs = {};
-                  break;
+                  // $scope.inputs = {};
+                  // break;
                 }
               }
             }

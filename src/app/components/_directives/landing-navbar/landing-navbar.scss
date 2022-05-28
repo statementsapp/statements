@@ -19,7 +19,7 @@
 }
 
 .logoboi {
-  display: block;
+  display: flex;
   background: url('/assets/images/logo.svg') no-repeat center;
   background-size: contain;
   padding: 4px;
@@ -31,7 +31,7 @@
   font-size: 2.3em;
   color: black !important;
   height: 100%;
-  display: inline-block;
+  display: flex;
 }
 
 .spacerboi {

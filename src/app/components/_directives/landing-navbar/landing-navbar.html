@@ -7,13 +7,13 @@
       <span style="text-align: center"> Write directly by Chat</span>
       </a>
       <a href="#" style="color: black !important; text-decoration: none;">
-      <span ng-click="[joinAsGuest($event), safety = true]" ng-mousedown="plusToggle = !plusToggle" ng-mouseup="plusToggle = !plusToggle" ng-class="{'whiteplus': plusToggle}" class="glyphicon glyphicon-plus" style="tezt-align: center"></span>
+      <span ng-if="screenWidth > 500" ng-click="[joinAsGuest($event), safety = true]" ng-mousedown="plusToggle = !plusToggle" ng-mouseup="plusToggle = !plusToggle" ng-class="{'whiteplus': plusToggle}" class="glyphicon glyphicon-plus" style="tezt-align: center"></span>
       </a>
     </div>
     <!-- <span class="spacerboi"></span> -->
 
     <div class="wrappyboi rightytightyboi">
-     <img src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
+     <img ng-if="screenWidth > 500" src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
     </div>
   </div>
 </div>

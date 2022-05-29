@@ -25,6 +25,11 @@ div.sliderContainer {
   width: 350px;
 }
 
+.disclaimer {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .zero {
   width: calc(295.66px * 2.3);

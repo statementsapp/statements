@@ -113,10 +113,17 @@
 
 .valueprop {
   font-size:2.8vw;
+  padding-left: 20px; 
+  margin-top: -20px;
 }
 
 .nonethatpadding {
   padding-left: 0px;
+}
+
+.nonethatpositioning {
+  padding-left: 0px !important;
+  margin-top: -10px !important;
 }
 
 .slider {

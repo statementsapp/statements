@@ -50,6 +50,7 @@
     $scope.paragraphMouseIsOver = {};
     $scope.statementHighlightIs = '';
     $scope.mouseIsOver = '';
+    $scope.exportMouseover = false;
 
 
     // copies to clipboard

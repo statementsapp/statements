@@ -7,7 +7,7 @@
   }
 
   /** @ngInject */
-  function ndEditorTopicsRenderer() {
+  function stmntsEditorTopicsRenderer() {
     return {
       restrict: 'E',
       scope: true,
@@ -19,6 +19,6 @@
   }
 
   angular.module('statements')
-    .directive('ndEditorTopicsRenderer', ndEditorTopicsRenderer);
+    .directive('stmntsEditorTopicsRenderer', stmntsEditorTopicsRenderer);
 
 })();

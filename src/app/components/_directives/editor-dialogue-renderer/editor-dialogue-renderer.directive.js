@@ -6,7 +6,7 @@
   }
 
   /** @ngInject */
-  function ndEditorDialogueRenderer() {
+  function stmntsEditorDialogueRenderer() {
     return {
       restrict: 'E',
       scope: true,
@@ -18,6 +18,6 @@
   }
 
   angular.module('statements')
-    .directive('ndEditorDialogueRenderer', ndEditorDialogueRenderer);
+    .directive('stmntsEditorDialogueRenderer', stmntsEditorDialogueRenderer);
 
 })();

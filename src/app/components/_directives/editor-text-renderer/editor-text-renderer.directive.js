@@ -7,7 +7,7 @@
   }
 
   /** @ngInject */
-  function ndEditorTextRenderer() {
+  function stmntsEditorTextRenderer() {
     return {
       restrict: 'E',
       scope: true,
@@ -19,6 +19,6 @@
   }
 
   angular.module('statements')
-    .directive('ndEditorTextRenderer', ndEditorTextRenderer);
+    .directive('stmntsEditorTextRenderer', stmntsEditorTextRenderer);
 
 })();

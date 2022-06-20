@@ -17,7 +17,7 @@
   }
 
   /** @ngInject */
-  function ndLandingNavbar() {
+  function stmntsLandingNavbar() {
     return {
       restrict: 'E',
       templateUrl: 'app/components/_directives/landing-navbar/landing-navbar.html',
@@ -29,5 +29,5 @@
   }
 
   angular.module('statements')
-    .directive('ndLandingNavbar', ndLandingNavbar);
+    .directive('stmntsLandingNavbar', stmntsLandingNavbar);
 })();

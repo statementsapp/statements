@@ -5120,6 +5120,7 @@
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
+                      console.log(nodeIndex," ", paragraphIndex, " ", index)
                       $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
                       setTimeout(function () {
                         // $scope.$apply(function () {

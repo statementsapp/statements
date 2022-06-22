@@ -160,7 +160,6 @@
     }
 
     $scope.assignFirstsToNodes = function(){
-      console.log("assigning firsts to nodes")
 
       var apply = {};
 
@@ -191,17 +190,13 @@
             for (var i = 0; i < obj.paragraphs.length; i++){
               if (obj.paragraphs[i][$scope.userId] !== 'hidden' &&
                 !obj.paragraphs[i].hiddenForAll){
-                // console.log(i, " will be skipped")
-                // console.log("Object: ", obj)
                 obj.paragraphs[i].first = true;
                 apply.paragraphSkip = i;
                 break;
               }
             }
-            // console.log("Past that for")
             for (var i = 0; i < obj.paragraphs.length; i++){
               if (i !== apply.paragraphSkip){
-                // console.log(i, " will not get a first")
                 obj.paragraphs[i].first = false;
               }
             }
@@ -209,13 +204,11 @@
             // apply.nodeSkip = null;
             apply.paragraphSkip = null;
 
-            // console.log("Else if paragraphid")
             for (var h = 0; h < obj.paragraphs.length; h++){
               for (var i = 0; i < obj.paragraphs[h].propositions.length; i++){
                 if (obj.paragraphs[h].propositions[i][$scope.userId] !== 'hidden' &&
                   !obj.paragraphs[h].propositions[i].hiddenForAll &&
                   !apply.skip){
-                  // console.log(i, " will get a first on paragraph")
 
                   obj.paragraphs[h].propositions[i].first = true;
                   apply.skip = true;
@@ -252,7 +245,6 @@
     }
 
     function setCursor(pos, id) {
-        console.log("goes into setcursor function")
         var tag = document.getElementById(id);
 
         // Creates range object
@@ -260,7 +252,6 @@
 
         // Creates object for selection
         var set = window.getSelection();
-        console.log("Pos: ", pos)
         // Set start position of range
         setpos.setStart(tag.childNodes[0], pos);
 
@@ -279,7 +270,6 @@
     }
 
     $scope.makePristine = function () {
-      console.log("making pristine")
 
       function traverse(x, key, obj) {
         if (isArray(x)) {
@@ -637,7 +627,6 @@
 
 
       var theDragElement = document.getElementById('dragelement')
-      // console.log("The drag element: ", theDragElement)
       var onMouseMove = function(e){
         // console.log("E:", e)
         // console.log("The drag element:", theDragElement)
@@ -665,7 +654,6 @@
       for (var i = 0; i < $scope.data[0].nodes.length; i++){
         for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
           for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
-            // console.log("Working with: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks)
             if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks === undefined){
               // console.log(angular.copy(i), ", ", angular.copy(j), ", ", angular.copy(k), ": ", angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks))
               $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks = [];
@@ -778,7 +766,6 @@
 
         $scope.bookBeingCompiled = '';
 
-        console.log('Making the text file');
 
         var levelZero = '';
         var levelOne = '';
@@ -786,20 +773,15 @@
         var levelThree = '';
 
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
-          console.log("Node being evaluated: ", $scope.data[0].nodes[i])
 
           if ($scope.data[0].nodes[i].sectionLevel == 0){
-            console.log("If. Adding: ", $scope.data[0].nodes[i].topic)
             $scope.bookBeingCompiled = $scope.bookBeingCompiled + levelZero + $scope.data[0].nodes[i].topic + '\r\n\r\n';
           } else if ($scope.data[0].nodes[i].sectionLevel == 1){
-            console.log("If. Adding: ", $scope.data[0].nodes[i].topic)
             $scope.bookBeingCompiled = $scope.bookBeingCompiled + levelOne + $scope.data[0].nodes[i].topic + '\r\n\r\n';
           } else if ($scope.data[0].nodes[i].sectionLevel == 2){
-            console.log("First else. Adding: ", $scope.data[0].nodes[i].topic)
 
             $scope.bookBeingCompiled = $scope.bookBeingCompiled + levelTwo + $scope.data[0].nodes[i].topic + '\r\n\r\n';
           } else if ($scope.data[0].nodes[i].sectionLevel == 3){
-            console.log("Second else. Adding: ", $scope.data[0].nodes[i].topic)
             $scope.bookBeingCompiled = $scope.bookBeingCompiled + levelThree + $scope.data[0].nodes[i].topic + '\r\n\r\n';
           }
 
@@ -809,7 +791,6 @@
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                 if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k][$scope.userId] !== 'hidden'){
-                  console.log("Text if. Adding: ", $scope.data[0].nodes[i].paragraphs[j].text)
                   $scope.bookBeingCompiled = $scope.bookBeingCompiled + $scope.data[0].nodes[i].paragraphs[j].propositions[k].text + ' ';
                 }
               }
@@ -845,19 +826,16 @@
         create.addEventListener('click', function() {
           var link = document.getElementById('downloadlink');
           link.href = $scope.makeTextFile();
-          console.log('Link HREF: ', link.href);
         }, false);
       }
 
       $scope.clickDownloadLink = function () {
-        console.log("Clicking the download link")
         document.getElementById('downloadlink').click();
       }
 
       $scope.assignColorsToExistingRemarks = function () {
 
         // needed but needs to be rewritten
-        console.log("assigning colors to existing remarks")
 
         function traverse(x, key, obj) {
           if (isArray(x)) {
@@ -5095,9 +5073,6 @@
                         setTimeout(function () {
                         // $scope.$apply(function () {
                          console.log("top timeout")
-                         console.log("i: ", angular.copy(nodeIndex))
-                         console.log("j: ", angular.copy(paragraphIndex))
-                         console.log("k: ", angular.copy(index))
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
                         // });
@@ -5105,8 +5080,6 @@
                         }, 20);
                       } else {
                         setTimeout(function () {
-                        // $scope.$apply(function () {
-                         console.log("this other timeout")
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
                         // });
@@ -5124,7 +5097,6 @@
                       $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
                       setTimeout(function () {
                         // $scope.$apply(function () {
-                          console.log("Not index")
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
                         // });
@@ -5186,14 +5158,12 @@
         for (var i = node.paragraphs.length - 1; i > -1; i--) {
           if (node.paragraphs[i][$scope.userId] !== 'hidden' &&
             node.paragraphs[i].hiddenForAll !== true) {
-            console.log("hits on ", angular.copy(i))
             $scope.selectedParagraph = node.paragraphs[i];
             for (var j = node.paragraphs[i].propositions.length - 1; j > -1; j--) {
               if (node.paragraphs[i].propositions[j][$scope.userId] !== 'hidden' &&
                 !node.paragraphs[i].propositions[j].hiddenForAll
                 && !itsFoundIt) {
                 $scope.selectedProposition = node.paragraphs[i].propositions[j];
-                console.log("selects j ", angular.copy(j), " on i of ", angular.copy(i))
                 itsFoundIt = true;
                 break;
               }
@@ -5282,21 +5252,17 @@
         for (var i = paragraph.propositions.length - 1; i > -1; i--) {
           if (paragraph.propositions[i][$scope.userId] !== 'hidden' &&
             paragraph.propositions[i].hiddenForAll !== true) {
-            console.log("If one")
             if (paragraph.propositions[i].remarks[0] && !index){
-              console.log("If two")
               // var nodeIndex = angular.copy(i)
               // var paragraphIndex = angular.copy(j)
               var index = angular.copy(i)
               setTimeout(function () {
-                 console.log("i: ", angular.copy(i))
                   document.getElementById('proposition' +
                     paragraph.propositions[index].remarks[paragraph.propositions[index].remarks.length-1].id).click();
                 // });
 
               }, 20);
               return;
-              // console.log('ran through')
 
             } else if (!index) {
               // var nodeIndex = angular.copy(i)
@@ -5309,7 +5275,6 @@
 
               }, 20);
               return;
-              // console.log("break didnt work")
             }
 
 
@@ -5586,7 +5551,6 @@
       chatSocket.emit('room', $scope.bookId);
       $timeout(function() {
         if (!$scope.isGuest() && !$scope.loggedIn()) {
-          console.log('you\'re here but you\'re not logged in... curious...');
           apiService.signInAnonymously().then(function () {
             $state.go('main.editor', $stateParams);
           });

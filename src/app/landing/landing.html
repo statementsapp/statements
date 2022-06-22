@@ -21,23 +21,23 @@
 </div>
 
 <div class="navboi" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500">
-  <div class="flexyboi titleboi" ng-class="{'stack': screenWidth < 500}">
-    <div style="display:flex; align-items: center" ng-class="{'stack': screenWidth < 500}">
-      <span class="logoboi" style="padding-right: 12px;" ng-class="{'largerlogo': screenWidth < 500}"></span>
-      <span ng-class="{'nonethatpadding': screenWidth < 500, 'thatpadding': screenWidth > 500}">
-        <a class="thisname" href="#" style="color: black !important; text-decoration: none;  display: flex;" ng-class="{'largerapptitle': screenWidth < 500}">Statements
+  <div class="flexyboi titleboi">
+    <div style="display:flex; align-items: center">
+      <span class="logoboi" style="padding-right: 12px;"></span>
+      <span class="thatpadding">
+        <a class="thisname" href="#" style="color: black !important; text-decoration: none;  display: flex;">Statements
         </a>
         <div>
-          <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop" ng-class="{'nonethatpositioning': screenWidth < 500}">
-              <div ng-class="{'largervalueprop': screenWidth < 500}" style="text-align: center"> Write directly by Chat</div>
+          <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop">
+              <div style="text-align: center"> Write directly by Chat</div>
           </a>
         </div>
       </span>
       <a href="#" style="color: black !important; text-decoration: none; display: flex;">
-        <div ng-if="screenWidth > 500" ng-click="[joinAsGuest($event), safety = true]" ng-mouseover="plusToggle = !plusToggle" ng-mousedown="plusToggle = !plusToggle" ng-mouseup="plusToggle = !plusToggle" ng-class="{'whiteplus': plusToggle}" class="glyphicon glyphicon-plus" style="tezt-align: center"></div>
+        <div ng-click="[joinAsGuest($event), safety = true]" ng-mouseover="plusToggle = !plusToggle" ng-mousedown="plusToggle = !plusToggle" ng-mouseup="plusToggle = !plusToggle" ng-class="{'whiteplus': plusToggle}" class="glyphicon glyphicon-plus" style="tezt-align: center"></div>
       </a>
     </div>
-    <div class="wrappyboi rightytightyboi" ng-if="screenWidth > 500 && cowsComeHome">
+    <div class="wrappyboi rightytightyboi" ng-if="cowsComeHome">
      <img src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
     </div>
   </div>

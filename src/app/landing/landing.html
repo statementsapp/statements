@@ -1,10 +1,7 @@
 <div class="navboi" role="navigation">
   <div class="flexyboi titleboi" ng-class="{'stack': screenWidth < 500}">
-      
-
-      <div style="display:flex; align-items: center" ng-class="{'stack': screenWidth < 500}">
+    <div style="display:flex; align-items: center" ng-class="{'stack': screenWidth < 500}">
       <span class="logoboi" style="padding-right: 12px;" ng-class="{'largerlogo': screenWidth < 500}"></span>
-
       <span ng-class="{'nonethatpadding': screenWidth < 500, 'thatpadding': screenWidth > 500}">
         <a class="thisname" href="#" style="color: black !important; text-decoration: none;  display: flex;" ng-class="{'largerapptitle': screenWidth < 500}">Statements
         </a>
@@ -19,96 +16,34 @@
       </a>
     </div>
       
-
-      
-    
     <!-- <span class="spacerboi"></span> -->
 
     <div class="wrappyboi rightytightyboi" ng-if="screenWidth > 500 && cowsComeHome">
      <img src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
     </div>
-    
-      
-  
   </div>
-<!--   <div>
-    <a href="#" style="color: white !important; text-decoration: none; display: flex;" class="valueprop" >
-        <div ng-class="{'largervalueprop': screenWidth < 500}" style="text-align: center"> Write directly by Chat</div>
-    </a>
-</div> -->
 </div>
 
 
-
 <div class="landing-wrapper" id="widthtograb">
-
-  <!-- I put this here for debugging purposes for the parallax effect -->
-  <!-- Comment out to hide -->
-  <!-- Thanks! -->
-  <!--  <div class="debug-box">-->
-  <!--    <div class="form-check">-->
-  <!--      <label class="form-check-label" for="debugLabel">Debug</label>-->
-  <!--      <input class="form-check-input" id="debugLabel" ng-model="debugMode" style="width: 20px;" type="checkbox"/>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!-- -->
 
   <stmnts-landing-navbar></stmnts-landing-navbar>
   <div ng-class="{ 'debug-on': debugMode }">
     <div class="parallax" du-scroll-container>
       <div class="parallax-group" id="group1">
         <div class="parallax-layer parallax-layer--fore">
-
-
-
-<!--           <div class="col" ng-if="screenWidth < 500 || screenWidth === 500" style="color: black;">
-            <div class="row" style="padding-top: 35px;">
-              <span style="font-size: 1.35em" id="title">Write <span style="">directly</span> by chat</span>
-            </div>
-            <div class="row" style="margin-bottom: 10px">
-              <span style="font-size: 0.95em" id="subtitle">Introducing
-                <span style="font-weight: bold">sentence</span> processing</span>
-            </div>
-          </div> -->
-
-
-
-
-
-
-
-
-
           <div class="col" ng-if="screenWidth < 500 || screenWidth === 500" style="color: black; margin-top: 180px" >
-<!--             <div class="row" style="padding-top: 35px;">
-              <span style="font-size: 1.35em" id="title">Write <span style="">directly</span> by chat</span>
+            <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="compositeVideoSources" style="padding-bottom:10px;">
+            </video>
+            <div class="disclaimer">
+              <span>Rapid Word Processing for Phone - Coming Soon</span>
             </div>
-            <div class="row" style="margin-bottom: 10px">
-              <span style="font-size: 0.95em" id="subtitle">Introducing
-                <span style="font-weight: bold">sentence</span> processing</span>
-            </div> -->
-              <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="compositeVideoSources" style="padding-bottom:10px;">
-              </video>
-              <div class="disclaimer">
-                <span>Rapid Word Processing for Phone - Coming Soon</span>
-              </div>
-              <div ng-if="cowsComeHome">
-                <img src="/assets/images/brooklinebank.jpeg" style="height:23%; margin-top:10px">
-              </div>
+            <div ng-if="cowsComeHome">
+              <img src="/assets/images/brooklinebank.jpeg" style="height:23%; margin-top:10px">
+            </div>
           </div>
 
-
-
-
-
           <div class="col" ng-if="screenWidth > 500" style="color: black;">
-<!--             <div class="row" style="padding-top: 35px;">
-              <span style="font-size: 1.35em" id="title">Write <span style="">directly</span> by chat</span>
-            </div>
-            <div class="row" style="margin-bottom: 10px">
-              <span style="font-size: 0.95em" id="subtitle">Introducing
-                <span style="font-weight: bold">sentence</span> processing</span>
-            </div> -->
             <div class="row" ng-class="osClass" style="margin-top: 100px">
               <div class="browser-wrapper">
                 <div class="browser-bar">

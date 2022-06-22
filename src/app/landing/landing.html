@@ -1,56 +1,56 @@
 
 
 <div class="landing-wrapper" id="widthtograb">
-  
-  <div class="navboi" role="navigation" ng-if="screenWidth < 500">
-    <div class="flexyboi titleboi stack">
-      <div style="display:flex; align-items: center" class="stack">
-        <span class="logoboi largerlogo" style="padding-right: 12px;"></span>
-        <span class="nonethatpadding">
-          <a class="thisname largerapptitle" href="#" style="color: black !important; text-decoration: none;  display: flex;">Statements
-          </a>
-          <div>
-            <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop nonethatpositioning">
-                <div class="largervalueprop" style="text-align: center"> Write directly by Chat</div>
-            </a>
-          </div>
-        </span>
-        <a href="#" style="color: black !important; text-decoration: none; display: flex;">
-        </a>
-      </div>
-      <div class="wrappyboi rightytightyboi" ng-if="cowsComeHome">
-       <img src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
-      </div>
-    </div>
-  </div>
-
-  <div class="navboi" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500">
-    <div class="flexyboi titleboi">
-      <div style="display:flex; align-items: center">
-        <span class="logoboi" style="padding-right: 12px;"></span>
-        <span class="thatpadding">
-          <a class="thisname" href="#" style="color: black !important; text-decoration: none;  display: flex;">Statements
-          </a>
-          <div>
-            <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop">
-                <div style="text-align: center"> Write directly by Chat</div>
-            </a>
-          </div>
-        </span>
-        <a href="#" style="color: black !important; text-decoration: none; display: flex;">
-          <div ng-click="[joinAsGuest($event), safety = true]" ng-mouseover="plusToggle = !plusToggle" ng-mousedown="plusToggle = !plusToggle" ng-mouseup="plusToggle = !plusToggle" ng-class="{'whiteplus': plusToggle}" class="glyphicon glyphicon-plus" style="tezt-align: center"></div>
-        </a>
-      </div>
-      <div class="wrappyboi rightytightyboi" ng-if="cowsComeHome">
-       <img src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
-      </div>
-    </div>
-  </div>
   <!-- <stmnts-landing-navbar></stmnts-landing-navbar> -->
   <div ng-class="{ 'debug-on': debugMode }">
     <div class="parallax" du-scroll-container>
       <div class="parallax-group" id="group1">
         <div class="parallax-layer parallax-layer--fore">
+
+          <div class="navboi" role="navigation" ng-if="screenWidth < 500">
+            <div class="flexyboi titleboi stack">
+              <div style="display:flex; align-items: center" class="stack">
+                <span class="logoboi largerlogo" style="padding-right: 12px;"></span>
+                <span class="nonethatpadding">
+                  <a class="thisname largerapptitle" href="#" style="color: black !important; text-decoration: none;  display: flex;">Statements
+                  </a>
+                  <div>
+                    <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop nonethatpositioning">
+                        <div class="largervalueprop" style="text-align: center"> Write directly by Chat</div>
+                    </a>
+                  </div>
+                </span>
+                <a href="#" style="color: black !important; text-decoration: none; display: flex;">
+                </a>
+              </div>
+              <div class="wrappyboi rightytightyboi" ng-if="cowsComeHome">
+               <img src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
+              </div>
+            </div>
+          </div>
+
+          <div class="navboi" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500">
+            <div class="flexyboi titleboi">
+              <div style="display:flex; align-items: center">
+                <span class="logoboi" style="padding-right: 12px;"></span>
+                <span class="thatpadding">
+                  <a class="thisname" href="#" style="color: black !important; text-decoration: none;  display: flex;">Statements
+                  </a>
+                  <div>
+                    <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop">
+                        <div style="text-align: center"> Write directly by Chat</div>
+                    </a>
+                  </div>
+                </span>
+                <a href="#" style="color: black !important; text-decoration: none; display: flex;">
+                  <div ng-click="[joinAsGuest($event), safety = true]" ng-mouseover="plusToggle = !plusToggle" ng-mousedown="plusToggle = !plusToggle" ng-mouseup="plusToggle = !plusToggle" ng-class="{'whiteplus': plusToggle}" class="glyphicon glyphicon-plus" style="tezt-align: center"></div>
+                </a>
+              </div>
+              <div class="wrappyboi rightytightyboi" ng-if="cowsComeHome">
+               <img src="/assets/images/scalethis.png" style="min-height: 90px;max-height: 90px;min-width: 728px;max-width: 728px; height: 90px; width: 728px;">
+              </div>
+            </div>
+          </div>
 
           <div class="col" ng-if="screenWidth < 500 || screenWidth === 500" style="color: black; margin-top: 180px" >
             <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="compositeVideoSources" style="padding-bottom:10px;">

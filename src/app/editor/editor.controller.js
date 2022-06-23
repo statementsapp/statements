@@ -1522,7 +1522,6 @@
 
 
         if ($scope.whatHasBeenClicked !== proposition.id && !$scope.tempStopEditable) {
-          console.log("That top if")
           document.getElementById(string).contentEditable = true;
           $scope.whatHasBeenClicked = proposition.id;
           $scope.dontrunfocusout = true;
@@ -1532,7 +1531,6 @@
             $scope.clearEditing();
           }
         } else if (!$scope.tempStopEditable){
-          console.log("That else if")
           document.getElementById(string).contentEditable = true;
           $scope.whatHasBeenClicked = proposition.id;
           $scope.dontrunfocusout = true;
@@ -1540,10 +1538,8 @@
           if ($scope.editing !== proposition.id){
             $scope.editingCopy = angular.copy(proposition.text);
             $scope.editing = angular.copy(proposition.id);
-            console.log("Changed editing to ", $scope.editingCopy)
           }
           
-          console.log("Entered editing")
         }
 
       };
@@ -4890,7 +4886,6 @@
                     }
                   }
                 } else {
-                  console.log("Returning preselected")
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k].preSelected = false;
                   return;
                 }
@@ -4955,19 +4950,16 @@
         // console.log("The target: ", event.target)
         // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
-          console.log("I: ", angular.copy(i))
           if (!$scope.data[0].nodes[i].minimized){
             for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
-              console.log('j of: ', j)
               if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
-                console.log('through if on j with value for paragraph: ', j)
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
 
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
                     ($scope.data[0].documentClaimedBy === $scope.userId || $scope.data[0].nodes[i].paragraphs[j].propositions[k].type !== 'blank')){
-                    console.log("first if")
+                    
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
-                      console.log("second if")
+                      
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
@@ -4981,13 +4973,7 @@
                         }
                       }
                       if (remarkIndex || remarkIndex == 0){
-                        console.log("assigning if with remarkIndex ", remarkIndex)
                         setTimeout(function () {
-                        // $scope.$apply(function () {
-                         console.log("top timeout")
-                         console.log("i: ", angular.copy(nodeIndex))
-                         console.log("j: ", angular.copy(paragraphIndex))
-                         console.log("k: ", angular.copy(index))
                           
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].preSelected = true;
                         // });
@@ -4995,8 +4981,6 @@
                         }, 20);
                       } else {
                         setTimeout(function () {
-                        // $scope.$apply(function () {
-                         console.log("this other timeout")
                           
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].preSelected = true;
                         // });

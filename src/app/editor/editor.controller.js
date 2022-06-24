@@ -628,8 +628,6 @@
 
       var theDragElement = document.getElementById('dragelement')
       var onMouseMove = function(e){
-        // console.log("E:", e)
-        // console.log("The drag element:", theDragElement)
 
         setTimeout(function () {
           $scope.$apply(function () {
@@ -853,7 +851,7 @@
               }
 
               if (x !== $scope.userId && x !== '' && obj.type !== 'topic' && alreadyThere) {
-                console.log("Already there for object: ", obj, " and x of ", x)
+                // console.log("Already there for object: ", obj, " and x of ", x)
                 if (obj.author == $scope.userId){
                   obj.color = $scope.userColorTable[index].color;
                 } else {
@@ -863,7 +861,7 @@
               }
 
               if (!alreadyThere && obj.type !== 'topic' && x !== '' && x !== $scope.userId){
-                console.log("NOT already there for object: ", obj, " and x of ", x)
+                // console.log("NOT already there for object: ", obj, " and x of ", x)
                 $scope.userColorTable.push(
                   {
                     author: x,
@@ -1159,13 +1157,13 @@
       };
 
       $scope.assignRightFocus = function (proposition) {
-        console.log("Assign right focus")
+        // console.log("Assign right focus")
         $scope.hasRightFocus.id = proposition.id;
       };
 
       // Selects left editable span
       $scope.selectLeft = function (proposition, paragraph) {
-        console.log("select left")
+        // console.log("select left")
         $scope.selectedProposition = proposition;
         $scope.unHighlightParagraph();
       };
@@ -1206,7 +1204,6 @@
                   $scope.userColor = 'lightgray';
                 }
                 var payloadColor= 'lightgray';
-                console.log("Calc colors if: ", payloadColor)
               } else {
                 // loop through author table
 
@@ -1216,7 +1213,6 @@
                   if ($scope.data[0].authorTable[i].authorId === payload.author){
                     var payloadColor = $scope.data[0].authorTable[i].color;
                     var colorAssigned = true;
-                    console.log("Calc colors else lookup: ", payloadColor)
                     break;
                   }
                   // it pulled the color from the table and assigned it
@@ -1226,7 +1222,7 @@
 
                   var payloadColor = $scope.otherPastels[$scope.data[0].authorTable.length -1];
 
-                  console.log("Calc colors not assigned: ", payloadColor)
+                
 
                   $scope.data[0].authorTable.push({
                     authorId: payload.author,
@@ -1237,7 +1233,6 @@
                   }
                 }
               }
-              console.log("Author table: ", $scope.data[0].authorTable)
               return payloadColor;
       }
 
@@ -1252,7 +1247,6 @@
       }
 
       $scope.makeTitleEditable = function() {
-        console.log("Making title editable")
         document.getElementById('apptitle').contenteditable = true;
       }
 
@@ -1381,7 +1375,6 @@
       };
 
       $scope.carriageReturn = function (node, paragraph) {
-          console.log("Carriage return")
           for (var i = paragraph.propositions.length - 1; i > -1; i--) {
             if (paragraph.propositions[i][$scope.userId] !== 'hidden' &&
               paragraph.propositions[i].hiddenForAll !== true &&
@@ -1393,7 +1386,6 @@
                 $timeout(function () {
                   $('#' + query).trigger('click');
                 }, 0);
-                console.log("Carriage return to return")
                 return;
 
             }
@@ -1426,7 +1418,6 @@
 
       // Clears the proposition input, like when clicked away
       $scope.clearPropositionInput = function () {
-        console.log("Clear prop input")
         $scope.inputs.proposition = '';
         $scope.inputs.Leftproposition = '';
         $scope.highlight.id = '';
@@ -1440,7 +1431,6 @@
 
       // Marks all of another's propositions in a paragraph, second backspace
       $scope.markAllPropositions = function () {
-        console.log("Mark all props")
         $scope.selectedParagraph.markAll = true;
         $scope.selectedParagraph.highlightAll = false;
       };
@@ -1448,13 +1438,11 @@
 
       // Defines what's been highlighted
       $scope.highlightProposition = function (node, paragraph, proposition) {
-        console.log("Highlight proposition")
         console.log("The proposition: ", proposition)
         if ($scope.highlight.id !== proposition.id) {
           $scope.highlight.id = proposition.id;
           $scope.highlight.highlit = true;
         }
-        console.log("Highlight id: ", $scope.highlight.id)
       };
 
       // Defines what's been marked for deletion with additional backspace
@@ -1469,12 +1457,9 @@
 
       // Processes incomplete edits to one's own propositions
       $scope.clearEditable = function () {
-        console.log("Clearing editable")
         if ($scope.whatHasBeenClicked) {
           for (var i = 0; i < $scope.propositions.length; i++) {
-            console.log("Going into props array")
             if ($scope.whatHasBeenClicked === $scope.propositions[i].id) {
-              console.log("If props array")
               // is either clearing what has been clicked or somehow made the proposition inaccessible
               document.getElementById('proposition' + $scope.whatHasBeenClicked).innerText = $scope.propositions[i].text;
             }
@@ -1492,11 +1477,9 @@
 
       // For when there is a single click on a proposition
       $scope.listenForDoubleClick = function (element, paragraph, proposition) {
-        console.log("Listen for double click")
         if (($scope.cancelListenForDoubleClick === true && !$scope.draggingNode &&
           !$scope.draggingParagraph && !$scope.draggingProposition) ||
           ($scope.tempStopEditable && $scope.whatHasBeenClicked === proposition.id)) {
-          console.log("returning listen for double click")
 
           $scope.cancelListenForDoubleClick = false;
           $scope.selectRight(proposition, paragraph);
@@ -1546,11 +1529,7 @@
 
       $scope.clearEditing = function (flag) {
         console.log("Clearing editing")
-        console.log("Flag: ", flag)
-        console.log("Editing: ", $scope.editing)
-        console.log("Editing copy: ", $scope.editingCopy)
         if (!flag){
-          console.log("If not")
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
               for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
@@ -1560,7 +1539,6 @@
                   //   $scope.$apply(function () {
                       console.log("Resetting")
                       if ($scope.editingCopy){
-                        console.log("If editing copy")
                         $scope.thisI = angular.copy(i)
                         $scope.thisJ = angular.copy(j)
                         $scope.thisK = angular.copy(k)
@@ -1568,8 +1546,6 @@
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k] = {};
                         setTimeout(function () {
                           $scope.$apply(function () {
-                            console.log("Running inside timeoutapply")
-                            console.log($scope.thisI," ", $scope.thisJ, " ", $scope.thisK)
                             $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK] = $scope.thisIsACopy;
                             $scope.thisIsACopy = {};
                             console.log("UPDATED: ", $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK])
@@ -4966,9 +4942,8 @@
                       var remarkIndex = null;
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
-                          console.log("m of: ", angular.copy(m))
+                        
                           var remarkIndex = angular.copy(m);
-                          // console.log("Hit. Remark index: ", remarkIndex)
                           break;
                         }
                       }
@@ -4988,17 +4963,14 @@
                         }, 20);
                       }
                       return;
-                      // console.log('ran through')
 
                     } else if (!index) {
-                      console.log("This else here")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
                       setTimeout(function () {
                         // $scope.$apply(function () {
                       
-                            console.log("timeoutt")
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].preSelected = true;
                         // });
 
@@ -5014,9 +4986,6 @@
         }
 
 
-
-
-
       };
 
 
@@ -5024,20 +4993,15 @@
 
        
        $scope.unHighlightParagraph();
-       console.log("The event in book: ", event)
        if (event.target.classList[0] == 'sectiontitle'){
-        console.log("Returning sectio newSectionTitle")
        }
 
         console.log('get book')
         $scope.whatHasBeenClicked = '';
-        // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           if (!$scope.data[0].nodes[i].minimized){
             for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
-              console.log('j of: ', j)
               if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
-                console.log('through if on j with value for paragraph: ', j)
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
@@ -5049,14 +5013,11 @@
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
 
                           var remarkIndex = angular.copy(m);
-                          // console.log("Hit. Remark index: ", remarkIndex)
                           break;
                         }
                       }
                       if (remarkIndex || remarkIndex === 0){
                         setTimeout(function () {
-                        // $scope.$apply(function () {
-                         console.log("top timeout")
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
                         // });
@@ -5071,13 +5032,12 @@
                         }, 20);
                       }
                       return;
-                      // console.log('ran through')
 
                     } else if (!index) {
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
-                      console.log(nodeIndex," ", paragraphIndex, " ", index)
+                      // console.log(nodeIndex," ", paragraphIndex, " ", index)
                       $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
                       setTimeout(function () {
                         // $scope.$apply(function () {
@@ -5087,7 +5047,6 @@
 
                       }, 20);
                       return;
-                      // console.log("break didnt work")
                     }
                   }
                 }

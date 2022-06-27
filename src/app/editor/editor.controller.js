@@ -1537,7 +1537,6 @@
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                   // setTimeout(function () {
                   //   $scope.$apply(function () {
-                      console.log("Resetting")
                       if ($scope.editingCopy){
                         $scope.thisI = angular.copy(i)
                         $scope.thisJ = angular.copy(j)
@@ -1548,8 +1547,6 @@
                           $scope.$apply(function () {
                             $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK] = $scope.thisIsACopy;
                             $scope.thisIsACopy = {};
-                            console.log("UPDATED: ", $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK])
-                            console.log("SCOPE: ", angular.element(document.getElementById($scope.editing)).scope())
                             $scope.thisI = null;
                             $scope.thisJ = null;
                             $scope.thisK = null;
@@ -1573,7 +1570,6 @@
             }
           }
         } else {
-          console.log("Editing else")
           $scope.editing = '';
           $scope.editingCopy = '';
           $scope.inputs = {};
@@ -1583,14 +1579,12 @@
 
       // Backstops something about proposition editability
       $scope.focusouteditable = function (element, proposition) {
-        console.log("Focu sou editable")
         if ($scope.dontrunfocusout) {
           return;
         }
         element.contentEditable = false;
         $scope.whatHasBeenClicked = '';
         document.getElementById('proposition' + proposition.id).innerText = proposition.dialogueText;
-        console.log('El: ', document.getElementById('proposition' + proposition.id));
       };
 
       // Processes an edit to one's own proposition
@@ -1638,7 +1632,6 @@
           };
           // Emits it, clears a variable
           chatSocket.emit('update', $scope.userId, prep.payload, $scope.bookId);
-          console.log('Payload of update: ', prep.payload);
           prep = {};
           
           $scope.clearEditing('dontreset');
@@ -1676,7 +1669,6 @@
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.id &&
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                   $scope.data[0].nodes[i].paragraphs[j].propositions[k].text = payload.text;
-                console.log("UPDATED: ", $scope.data[0].nodes[i].paragraphs[j].propositions[k].text)
                   if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks){
                     for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
                       $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll = true;
@@ -1730,7 +1722,6 @@
       $scope.dragNode = function (node, e) {
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Dragging node: ", node)
             $scope.cancelListenForDoubleClick = true;
             $scope.cancelDrop = true;
             $scope.draggingNode = true;
@@ -1765,7 +1756,6 @@
         $scope.draggingParagraph = true;
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Dragging paragraph: ", paragraph)
             $scope.cancelListenForDoubleClick = true;
             $scope.cancelDrop = true;
             $scope.draggedParagraph = paragraph;
@@ -1822,14 +1812,12 @@
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
         if ($scope.draggingProposition){
-          console.log("returning dragging prop")
           return;
         }
         // rewrite for reorderings
         $scope.draggingProposition = true;
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Dragging proposition")
             document.getElementById(proposition.id).contentEditable = false
             document.getElementById(proposition.id).blur();
             window.getSelection().removeAllRanges();
@@ -1875,7 +1863,6 @@
       }
 
       $scope.clearDrag = function () {
-        console.log("clearing drag")
         setTimeout(function () {
           $scope.$apply(function () {
             if ($scope.draggingParagraph) {
@@ -1885,8 +1872,6 @@
                   $scope.draggedParagraph.propositions[i].isPresentlyBeingDragged = false;
                 }
               }
-
-
 
             } else if ($scope.draggingNode){
               $scope.draggedNode.isPresentlyBeingDragged = false;
@@ -2097,13 +2082,10 @@
       $scope.getReading = function (event, id) {
         var relX = event.pageX - $('#propositionsol' + id).offset().left;
           var relY = event.pageY - $('#propositionsol' + id).offset().top;
-          console.log(relX, ", ", relY)
-          // console.log('height: ', $('#propositionsol' + id).height)
       }
 
       $scope.getPropReading = function (event, proposition) {
         if ($scope.userId !== $scope.data[0].documentClaimedBy){
-          console.log("Not author li click");
           return;
         }
         var relX = event.pageX - $('#wholeprop' + proposition.id).offset().left;
@@ -2114,7 +2096,6 @@
             }, 20);
             
           }
-          console.log(relX, ", ", relY)
           // console.log('height: ', $('#wholeprop' + proposition.id).height)
       }
 
@@ -2122,9 +2103,6 @@
         if (flag === 'ol'){
           //
         }
-        console.log("Flag: ", flag)
-        console.log("Element: ", element ? element : '')
-        console.log("Event: ", event ? event : '')
         // console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
         if (element && event && flag === 'ol'){
           var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;

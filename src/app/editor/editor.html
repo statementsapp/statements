@@ -77,14 +77,14 @@
             <div class="link-box">
               <input id="directLinkInput" type="text" style="font-size: 0.75em;" readonly ng-value="currentLocation"/>
               <button class="btn menubutton"
-                      ng-if="cowsComeHome"
+                      ng-if="!cowsComeHome"
                       type="button"
                       uib-tooltip="Minimal Styling"
                       ng-click="toggleMinimalStyling()">
                 <i class="fa fa-feather-alt"></i>
               </button>
               <button class="btn menubutton"
-                      ng-if="cowsComeHome"
+                      ng-if="!cowsComeHome"
                       type="button"
                       uib-tooltip="Just Messages"
                       ng-click="goFullScreenMessages()">

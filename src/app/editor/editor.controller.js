@@ -620,7 +620,7 @@
       var hidden = '';
       var visibilityChange = '';
       $scope.theseInputs = [];
-      $scope.data[0].isFresh = true;
+      
       if (!$scope.data[0].documentClaimedBy){
         $scope.data[0].authorTable = [];
         $scope.data[0].isFresh = true;

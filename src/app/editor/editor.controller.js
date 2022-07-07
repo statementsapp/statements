@@ -4987,18 +4987,20 @@
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
+                      console.log("seem to be remarks")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
                       var remarkIndex = null;
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
-
+                          console.log("and not hidden")
                           var remarkIndex = angular.copy(m);
                           break;
                         }
                       }
                       if (remarkIndex || remarkIndex === 0){
+                        console.log("looks good to go")
                         setTimeout(function () {
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();

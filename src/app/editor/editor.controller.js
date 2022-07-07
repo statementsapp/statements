@@ -5001,6 +5001,7 @@
                       }
                       if (remarkIndex || remarkIndex === 0){
                         console.log("looks good to go")
+                        console.log("The element: ", document.getElementById('proposition' + $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id)
                         setTimeout(function () {
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();

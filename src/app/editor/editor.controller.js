@@ -2996,7 +2996,10 @@
           // it's a negation
 
         } else if (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
-                ($scope.selectedProposition.type === 'negation' && $scope.selectedProposition.author === $scope.userId && !paragraph.leftAdd)) {
+                ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId &&
+                 !paragraph.leftAdd)) {
+
+          // switched sp negation requirements from sp === your username to just not the document author
 
 
           if ($scope.selectedProposition.type === 'negation') {

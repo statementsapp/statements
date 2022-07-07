@@ -471,8 +471,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-blur=""
 
                 ng-click="
-                       (remark.of.author === userId && whatHasBeenClicked !== remark.id && !cancelListenForDoubleClick) ||
-                       (remark.author === userId)
+                       (whatHasBeenClicked !== remark.id && !cancelListenForDoubleClick)
                               ? [
                                 hideExpandingTextarea(),
                                 selectNode(node),

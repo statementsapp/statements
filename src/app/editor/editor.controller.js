@@ -1204,7 +1204,7 @@
                 if (payload.author === $scope.userId){
                   $scope.userColor = 'lightgray';
                 }
-                var payloadColor= 'lightgray';
+                var payloadColor = 'lightgray';
               } else {
                 // loop through author table
 
@@ -3366,6 +3366,8 @@
           // isPlaceholder: (prep.isPlaceholder ? prep.isPlaceholder : undefined),
           // propositionToSetLaterPosition: propositionToSetLaterPosition !== undefined ? propositionToSetLaterPosition : undefined,
         };
+
+        prep.payload.color = $scope.calcColors(angular.copy(prep.payload));
 
         $scope.tempStopEditable = false;
 

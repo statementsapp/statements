@@ -4690,7 +4690,7 @@
           $scope.$apply(function () {
             console.log($scope.saveI) 
             console.log($scope.saveJ) 
-            console.log($scope.save) 
+            console.log($scope.saveK) 
             console.log($scope.saveM) 
             console.log($scope.saveThisColorForASec)
             if ($scope.saveI || $scope.saveI === 0){

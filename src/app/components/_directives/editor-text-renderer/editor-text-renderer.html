@@ -448,7 +448,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
                 id="proposition{{remark.id}}"
                 style=""
-                ng-style="{ 'border-bottom': {{remark.colorString}}"
+                ng-style="{ 'border-bottom': remark.colorString"
                 ng-class="{
                                 'reviewerprop': remark.type === 'negation' && cowsComeHome,
 

@@ -728,7 +728,10 @@
         return array;
       }
 
-      shuffle($scope.otherPastels);
+      // shuffle($scope.otherPastels);
+
+
+
       $scope.userColorTable = [];
       //initializes as number of colors in the palette
       $scope.userColorCount = $scope.otherPastels.length;
@@ -1192,7 +1195,7 @@
 
       }
 
-      $scope.calcColors = function (payload) {
+      $scope.getColors = function (payload) {
               if ($scope.data[0].authorTable.length == 0){
 
                 $scope.data[0].authorTable = [
@@ -1220,6 +1223,63 @@
                 }
                 if (!colorAssigned){
 
+
+                  var payloadColor = $scope.otherPastels[$scope.data[0].authorTable.length -1];
+
+                
+
+                  $scope.data[0].authorTable.push({
+                    authorId: payload.author,
+                    color: angular.copy(payloadColor)
+                  })
+                  if (payload.author === $scope.userId){
+                    $scope.userColor = payloadColor;
+                  }
+                }
+              }
+              return payloadColor;
+      }
+
+      $scope.calcColors = function (payload) {
+              if ($scope.data[0].authorTable.length == 0){
+
+                $scope.data[0].authorTable = [
+                  {
+                        authorId: angular.copy(payload.author),
+                        color: 'lightgray'
+                  }
+                ]
+                if (payload.author === $scope.userId){
+                  $scope.userColor = 'lightgray';
+                }
+                var payloadColor = 'lightgray';
+
+                // if the author table is presently blank, assign yourself light grey 
+                // as you are now author
+
+
+              } else {
+                // loop through author table
+
+
+
+                for (var i = 0; i < $scope.data[0].authorTable.length; i++){
+                  if ($scope.data[0].authorTable[i].authorId === payload.author){
+                    var payloadColor = $scope.data[0].authorTable[i].color;
+                    var colorAssigned = true;
+                    break;
+                  }
+
+
+                  // look up the color already assigned to the payload author
+                  // if there, the payload will have that color
+
+
+                }
+                if (!colorAssigned){
+
+                  // if it's not in the table,
+                  // make the color the first unused one in the pastels array
 
                   var payloadColor = $scope.otherPastels[$scope.data[0].authorTable.length -1];
 
@@ -3367,7 +3427,7 @@
           // propositionToSetLaterPosition: propositionToSetLaterPosition !== undefined ? propositionToSetLaterPosition : undefined,
         };
 
-        prep.payload.color = $scope.calcColors(angular.copy(prep.payload));
+        
 
         $scope.tempStopEditable = false;
 
@@ -3520,6 +3580,9 @@
       $scope.$on('socket:broadcastProposition', function (event, payload) {
 
         console.log("Received proposition: ", payload)
+
+
+        payload.color = $scope.calcColors(angular.copy(payload));
 
         if (!$scope.data[0].moveCounter){
           $scope.data[0].moveCounter = 0;
@@ -4409,7 +4472,7 @@
 
             //       DIALOGUE PRINTER
 
-            payload.color = $scope.calcColors(angular.copy(payload));
+            
 
             if (payload.type === 'assertion' && !payload.draggedProps){
               var goingToPushThis = {

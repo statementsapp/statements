@@ -3604,7 +3604,7 @@
             console.log("Color table before: ", angular.copy($scope.data[0].authorTable))
 
             payload.color = $scope.calcColors(angular.copy(payload));
-
+            console.log("Payload color 4: ", payload.color)
 
             console.log("Color table after: ", angular.copy($scope.data[0].authorTable))
 
@@ -3838,7 +3838,7 @@
                   }
                 }
               }
-
+               console.log("Payload color 5: ", payload.color)
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarksExpanded = true;
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.unshift(
                 {

@@ -3850,7 +3850,7 @@
                   messagesSoFar: payload.messagesSoFar,
                   previousMessages: payload.previousMessages,
                   of: payload.of,
-                  color: payload.color
+                  color: angular.copy(payload.color)
                 }
               )
 
@@ -3892,7 +3892,7 @@
                   dialogueSide: false,
                   messagesSoFar: payload.messagesSoFar,
                   of: payload.of,
-                  color: payload.color
+                  color: angular.copy(payload.color)
 
                 }
               )

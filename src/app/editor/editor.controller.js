@@ -667,7 +667,7 @@
       $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1'];
 
       // these are the current pastels
-      $scope.otherPastels = ['#e7f8f2','#c7ceea','#ffb7b2'];
+      $scope.otherPastels = ['#c0ecdd','#c7ceea','#ffb7b2'];
       // Other suitable pastels below
       // ,'#c7ceea','#ffb7b2'
 
@@ -4695,7 +4695,7 @@
             console.log($scope.saveThisColorForASec)
             if ($scope.saveI || $scope.saveI === 0){
               $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].colorString = 
-              ('2px solid ' + angular.copy($scope.saveThisColorForASec))
+              ('3px solid ' + angular.copy($scope.saveThisColorForASec))
               console.log("That color again is: ", $scope.saveThisColorForASec)
             }
             $scope.saveI = '';

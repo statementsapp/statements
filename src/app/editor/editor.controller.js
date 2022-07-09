@@ -4613,7 +4613,23 @@
               }
             }
 
+            console.log("COLOR RIGHT BEFORE EH ", angular.copy(payload.color))
 
+
+            if (payload.type === 'negation'){
+              for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
+                if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].id === payload.id){
+                  $scope.saveThisColorForASec = angular.copy(payload.color);
+                  $scope.saveI = angular.copy(apply.nodeTarget)
+                  $scope.saveJ = angular.copy(apply.paragraphTarget)
+                  $scope.saveK = angular.copy(apply.propTarget)
+                  $scope.saveM = angular.copy(i)
+                }
+              }
+            }
+
+
+            console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))
 
 
 
@@ -4666,20 +4682,17 @@
           // console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT
 
-        console.log("COLOR RIGHT BEFORE EH ", angular.copy(payload.color))
-
-
-        if (payload.type === 'negation'){
-          for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
-            if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].id === payload.id){
-              $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].color = angular.copy(payload.color);
-            }
-          }
+        
+        if ($scope.saveI){
+          $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].color = 
+          angular.copy($scope.saveThisColorForASec)
         }
 
-
-        console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))  
-
+        $scope.saveI = '';
+        $scope.saveJ = '';
+        $scope.saveK = '';
+        $scope.saveM = '';
+        $scope.saveThisColorForASec = '';
 
         if (payload.author === $scope.userId) {
           $scope.draggedProposition = {};

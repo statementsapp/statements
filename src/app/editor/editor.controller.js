@@ -4684,23 +4684,30 @@
           }
           // console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT
+        
 
-        console.log($scope.saveI) 
-        console.log($scope.saveJ) 
-        console.log($scope.save) 
-        console.log($scope.saveM) 
-        console.log($scope.saveThisColorForASec)
-        if ($scope.saveI || $scope.saveI === 0){
-          $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].color = 
-          angular.copy($scope.saveThisColorForASec)
-          console.log("That color again is: ", $scope.saveThisColorForASec)
-        }
+        setTimeout(function () {
+          $scope.$apply(function () {
+            console.log($scope.saveI) 
+            console.log($scope.saveJ) 
+            console.log($scope.save) 
+            console.log($scope.saveM) 
+            console.log($scope.saveThisColorForASec)
+            if ($scope.saveI || $scope.saveI === 0){
+              $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].color = 
+              angular.copy($scope.saveThisColorForASec)
+              console.log("That color again is: ", $scope.saveThisColorForASec)
+            }
+            $scope.saveI = '';
+            $scope.saveJ = '';
+            $scope.saveK = '';
+            $scope.saveM = '';
+            $scope.saveThisColorForASec = '';
+          });
+        }, 35);
+        
 
-        $scope.saveI = '';
-        $scope.saveJ = '';
-        $scope.saveK = '';
-        $scope.saveM = '';
-        $scope.saveThisColorForASec = '';
+        
 
         if (payload.author === $scope.userId) {
           $scope.draggedProposition = {};

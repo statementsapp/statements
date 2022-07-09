@@ -3580,9 +3580,12 @@
       $scope.$on('socket:broadcastProposition', function (event, payload) {
 
         console.log("Received proposition: ", payload)
-
+        console.log("Color table before: ", angular.copy($scope.userColorTable))
 
         payload.color = $scope.calcColors(angular.copy(payload));
+
+
+        console.log("Color table after: ", angular.copy($scope.userColorTable))
 
         if (!$scope.data[0].moveCounter){
           $scope.data[0].moveCounter = 0;

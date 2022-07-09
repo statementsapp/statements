@@ -499,7 +499,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               >
 
                 {{remark.text}}
-                <!-- <span style="border-bottom: none;">&nbsp;</span>  -->
+              
 
               </span>
               <span style="border-bottom: none;">&nbsp;</span> 
@@ -509,12 +509,13 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 title="{{remark.id}}"
                 class="right-text right-textarea maininput"
                 ng-if="selectedProposition.id === remark.id && paragraph.topAdd != true && paragraph.bottomAdd != true && paragraph.leftAdd != true"
-                ng-class="{'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy !== userId)),
+                ng-class="{'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy !== userId && cowsComeHome)),
                            'authorprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy === userId))}"
                 ng-click="[assignRightFocus(remark), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
                 ng-mouseover="paragraph.disableRightCursor = false"
                 ng-model="inputs.proposition"
                 ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing"
+                ng-style="{ 'border-bottom': '1px solid {{remark.color}}' }"
                 ng-keyup="
 
                     $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;

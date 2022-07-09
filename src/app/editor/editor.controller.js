@@ -4613,19 +4613,7 @@
               }
             }
 
-            console.log("COLOR RIGHT BEFORE EH ", angular.copy(payload.color))
 
-
-            if (payload.type === 'negation'){
-              for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
-                if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].id === payload.id){
-                  $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].color = angular.copy(payload.color);
-                }
-              }
-            }
-
-
-            console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))
 
 
 
@@ -4677,6 +4665,20 @@
           }
           // console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT
+
+        console.log("COLOR RIGHT BEFORE EH ", angular.copy(payload.color))
+
+
+        if (payload.type === 'negation'){
+          for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
+            if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].id === payload.id){
+              $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].color = angular.copy(payload.color);
+            }
+          }
+        }
+
+
+        console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))  
 
 
         if (payload.author === $scope.userId) {

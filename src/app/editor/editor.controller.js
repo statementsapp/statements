@@ -3603,7 +3603,7 @@
 
 
             console.log("Color table after: ", angular.copy($scope.data[0].authorTable))
-            
+
             // Since n users are connected, does it save to the database n times?
             if (payload.documentClaimedBy){
               $scope.data[0].documentClaimedBy = payload.documentClaimedBy;
@@ -4478,7 +4478,7 @@
 
             //       DIALOGUE PRINTER
 
-            
+            console.log("Color NOW: ", angular.copy(payload.color))
 
             if (payload.type === 'assertion' && !payload.draggedProps){
               var goingToPushThis = {

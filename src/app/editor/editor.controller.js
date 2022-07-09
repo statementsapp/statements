@@ -4617,13 +4617,16 @@
 
 
             if (payload.type === 'negation'){
+              console.log("into there")
               for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
                 if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].id === payload.id){
+                  console.log("IFFFFF")
                   $scope.saveThisColorForASec = angular.copy(payload.color);
                   $scope.saveI = angular.copy(apply.nodeTarget)
                   $scope.saveJ = angular.copy(apply.paragraphTarget)
                   $scope.saveK = angular.copy(apply.propTarget)
                   $scope.saveM = angular.copy(i)
+                  break;
                 }
               }
             }

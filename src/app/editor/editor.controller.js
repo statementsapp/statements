@@ -3580,12 +3580,7 @@
       $scope.$on('socket:broadcastProposition', function (event, payload) {
 
         console.log("Received proposition: ", payload)
-        console.log("Color table before: ", angular.copy($scope.data[0].authorTable))
-
-        payload.color = $scope.calcColors(angular.copy(payload));
-
-
-        console.log("Color table after: ", angular.copy($scope.data[0].authorTable))
+        
 
         if (!$scope.data[0].moveCounter){
           $scope.data[0].moveCounter = 0;
@@ -3601,6 +3596,14 @@
           $scope.$apply(function () {
             console.log("Inside the apply")
 
+
+            console.log("Color table before: ", angular.copy($scope.data[0].authorTable))
+
+            payload.color = $scope.calcColors(angular.copy(payload));
+
+
+            console.log("Color table after: ", angular.copy($scope.data[0].authorTable))
+            
             // Since n users are connected, does it save to the database n times?
             if (payload.documentClaimedBy){
               $scope.data[0].documentClaimedBy = payload.documentClaimedBy;

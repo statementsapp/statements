@@ -4686,7 +4686,7 @@
         }, 30);                                             // HAS A TIMEOUT
 
         
-        if ($scope.saveI){
+        if ($scope.saveI || $scope.saveI === 0){
           $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].color = 
           angular.copy($scope.saveThisColorForASec)
           console.log("That color again is: ", $scope.saveThisColorForASec)

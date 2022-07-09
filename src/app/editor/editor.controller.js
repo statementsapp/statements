@@ -4685,7 +4685,11 @@
           // console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT
 
-        
+        console.log($scope.saveI) 
+        console.log($scope.saveJ) 
+        console.log($scope.save) 
+        console.log($scope.saveM) 
+        console.log($scope.saveThisColorForASec)
         if ($scope.saveI || $scope.saveI === 0){
           $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].color = 
           angular.copy($scope.saveThisColorForASec)

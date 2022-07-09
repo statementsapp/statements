@@ -4615,7 +4615,7 @@
 
             console.log("COLOR RIGHT BEFORE EH ", angular.copy(payload.color))
 
-
+            console.log('PAYLOAD IS THIS THING ', payload)
             if (payload.type === 'negation'){
               console.log("into there")
               for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
@@ -4633,7 +4633,7 @@
 
 
             console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))
-
+            console.log('save i ',$scope.saveI) 
 
 
             temp = {};

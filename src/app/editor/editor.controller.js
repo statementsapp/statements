@@ -1283,17 +1283,21 @@
 
                   var payloadColor = $scope.otherPastels[$scope.data[0].authorTable.length -1];
 
-                
+                  console.log("Payload color 1: ", payloadColor)
 
                   $scope.data[0].authorTable.push({
                     authorId: payload.author,
                     color: angular.copy(payloadColor)
                   })
+                  console.log("Payload color 2: ", payloadColor)
                   if (payload.author === $scope.userId){
                     $scope.userColor = payloadColor;
                   }
                 }
               }
+
+              console.log("Payload color 3: ", payloadColor)
+
               return payloadColor;
       }
 

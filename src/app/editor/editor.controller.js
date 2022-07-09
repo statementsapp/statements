@@ -4694,8 +4694,8 @@
             console.log($scope.saveM) 
             console.log($scope.saveThisColorForASec)
             if ($scope.saveI || $scope.saveI === 0){
-              $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].color = 
-              angular.copy($scope.saveThisColorForASec)
+              $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].colorString = 
+              ('2px solid ' + angular.copy($scope.saveThisColorForASec))
               console.log("That color again is: ", $scope.saveThisColorForASec)
             }
             $scope.saveI = '';

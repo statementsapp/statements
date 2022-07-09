@@ -4613,19 +4613,19 @@
               }
             }
 
-
+            console.log("COLOR RIGHT BEFORE EH ", angular.copy(payload.color))
 
 
             if (payload.type === 'negation'){
               for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
                 if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].id === payload.id){
-                  $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].color = payload.color;
+                  $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].color = angular.copy(payload.color);
                 }
               }
             }
 
 
-
+            console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))
 
 
 

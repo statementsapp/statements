@@ -676,13 +676,13 @@
       $scope.pastelsLength = angular.copy($scope.otherPastels.length); 
       var isColorThere;
       for (var i = 0; i < $scope.data[0].authorTable.length; i++){
-        if ($scope.data[0].authorTable[i].author === $scope.userId){
+        if ($scope.data[0].authorTable[i].author === $scope.userId && $scope.data[0].documentClaimedBy !== $scope.userId){
           isColorThere = true;
           $scope.remarkInputColor = $scope.data[0].authorTable[i].color;
           $scope.remarkInputString = '3px solid ' + $scope.data[0].authorTable[i].color;
         }
       }
-      if (!isColorThere){
+      if (!isColorThere && $scope.data[0].documentClaimedBy !== $scope.userId && $scope.data[0].documentClaimedBy){
         $scope.remarkInputColor = $scope.otherPastels[($scope.pastelsLength - $scope.authorTableLength - 2)];
         $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
       }

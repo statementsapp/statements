@@ -4668,7 +4668,7 @@
               }
 
 
-
+              console.log('remark input string : ', $scope.remarkInputString)
 
             }
 

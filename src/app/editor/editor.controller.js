@@ -4645,6 +4645,31 @@
               $scope.saveK = '';
               $scope.saveM = '';
               $scope.saveThisColorForASec = '';
+
+
+
+
+              // has to get the next color
+              // store in local remarkInputColor variable
+
+              $scope.authorTableLength = angular.copy($scope.data[0].authorTable.length); 
+              $scope.pastelsLength = angular.copy($scope.otherPastels.length); 
+              var isColorThere;
+              for (var i = 0; i < $scope.data[0].authorTable.length; i++){
+                if ($scope.data[0].authorTable[i].author === $scope.userId){
+                  isColorThere = true;
+                  $scope.remarkInputColor = $scope.data[0].authorTable[i].color;
+                  $scope.remarkInputString = '3px solid ' + $scope.data[0].authorTable[i].color;
+                }
+              }
+              if (!isColorThere){
+                $scope.remarkInputColor = $scope.otherPastels[($scope.pastelsLength - $scope.authorTableLength)];
+                $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
+              }
+
+
+
+
             }
 
 

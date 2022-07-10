@@ -677,13 +677,14 @@
       var isColorThere;
       for (var i = 0; i < $scope.data[0].authorTable.length; i++){
         if ($scope.data[0].authorTable[i].author === $scope.userId && $scope.data[0].documentClaimedBy !== $scope.userId){
-          console.log()
+          console.log("Loop if")
           isColorThere = true;
           $scope.remarkInputColor = $scope.data[0].authorTable[i].color;
           $scope.remarkInputString = '3px solid ' + $scope.data[0].authorTable[i].color;
         }
       }
       if (!isColorThere && $scope.data[0].documentClaimedBy !== $scope.userId && $scope.data[0].documentClaimedBy){
+        console.log("Lower if")
         $scope.remarkInputColor = $scope.otherPastels[($scope.pastelsLength - $scope.authorTableLength - 2)];
         $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
       }

@@ -365,7 +365,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             title="{{proposition.id}}"
             class="right-text right-textarea maininput"
             ng-if="selectedProposition.id === proposition.id && selectedParagraph.paragraphId === paragraph.paragraphId && paragraph.topAdd != true && paragraph.bottomAdd != true && !hasLeftFocus.id && !paragraph.leftAdd && (!data[0].documentClaimedBy || proposition.type !== 'blank' || data[0].documentClaimedBy === userId) "
-            ng-class="{'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && selectedProposition.type !== 'negation' && selectedProposition.author !== userId)),
+            ng-style="{ 'border-bottom': remarkInputString}"
+            ng-class="{
                        'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh }"
             ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?
             [dropItem(node, paragraph, proposition ,'right')] : [assignRightFocus(proposition), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
@@ -515,7 +516,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-mouseover="paragraph.disableRightCursor = false"
                 ng-model="inputs.proposition"
                 ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing"
-                ng-style="{ 'border-bottom': remark.remarkInputString}"
+                ng-style="{ 'border-bottom': remarkInputString}"
                 ng-keyup="
 
                     $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;

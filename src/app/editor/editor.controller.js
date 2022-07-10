@@ -677,6 +677,7 @@
       var isColorThere;
       for (var i = 0; i < $scope.data[0].authorTable.length; i++){
         if ($scope.data[0].authorTable[i].author === $scope.userId && $scope.data[0].documentClaimedBy !== $scope.userId){
+          console.log()
           isColorThere = true;
           $scope.remarkInputColor = $scope.data[0].authorTable[i].color;
           $scope.remarkInputString = '3px solid ' + $scope.data[0].authorTable[i].color;
@@ -686,7 +687,7 @@
         $scope.remarkInputColor = $scope.otherPastels[($scope.pastelsLength - $scope.authorTableLength - 2)];
         $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
       }
-
+      var isColorThere = false;
 
       console.log('remark input string : ', $scope.remarkInputString)
 

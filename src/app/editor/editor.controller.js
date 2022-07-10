@@ -4628,22 +4628,23 @@
                   $scope.saveM = angular.copy(i)
                   break;
                 }
-                console.log($scope.saveI) 
-                console.log($scope.saveJ) 
-                console.log($scope.saveK) 
-                console.log($scope.saveM) 
-                console.log($scope.saveThisColorForASec)
-                if ($scope.saveI || $scope.saveI === 0){
-                  $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].colorString = 
-                  ('3px solid ' + angular.copy($scope.saveThisColorForASec))
-                  console.log("That color again is: ", $scope.saveThisColorForASec)
-                }
-                $scope.saveI = '';
-                $scope.saveJ = '';
-                $scope.saveK = '';
-                $scope.saveM = '';
-                $scope.saveThisColorForASec = '';
+
               }
+              console.log($scope.saveI) 
+              console.log($scope.saveJ) 
+              console.log($scope.saveK) 
+              console.log($scope.saveM) 
+              console.log($scope.saveThisColorForASec)
+              if ($scope.saveI || $scope.saveI === 0){
+                $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].colorString = 
+                ('3px solid ' + angular.copy($scope.saveThisColorForASec))
+                console.log("That color again is: ", $scope.saveThisColorForASec)
+              }
+              $scope.saveI = '';
+              $scope.saveJ = '';
+              $scope.saveK = '';
+              $scope.saveM = '';
+              $scope.saveThisColorForASec = '';
             }
 
 

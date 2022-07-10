@@ -683,7 +683,7 @@
         }
       }
       if (!isColorThere){
-        $scope.remarkInputColor = $scope.otherPastels[($scope.pastelsLength - $scope.authorTableLength)];
+        $scope.remarkInputColor = $scope.otherPastels[($scope.pastelsLength - $scope.authorTableLength - 2)];
         $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
       }
 

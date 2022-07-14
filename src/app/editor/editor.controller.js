@@ -1319,7 +1319,29 @@
                   console.log("Payload color 2: ", payloadColor)
                   if (payload.author === $scope.userId){
                     $scope.userColor = payloadColor;
+                  } else {
+                    for (var i = 0; i < $scope.data[0].authorTable.length; i++){
+                      if ($scope.data[0].authorTable[i].authorId === $scope.userId){
+                        var colorYetAssigned = true;
+                        break;
+                      }
+
+
+                      // look up the color already assigned to the payload author
+                      // if there, the payload will have that color
+
+
+                    }
+                    if (!$scope.colorYetAssigned){
+                      $scope.authorTableLength = angular.copy($scope.data[0].authorTable.length); 
+                      $scope.pastelsLength = angular.copy($scope.otherPastels.length); 
+                      $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
+                      $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
+                      console.log("Bumped")
+                    }
+                    
                   }
+                  $scope.colorYetAssigned = false;
                 }
               }
 

@@ -664,10 +664,10 @@
 
       //   Pastel colors for paragraphs
       $scope.pastels = ['#f9ceee', '#e0cdff', '#c1f0fb', '#dcf9a8', '#ffebaf'];
-      $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1'];
+      $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1', '#ffd9c0'];
 
       // these are the current pastels
-      $scope.otherPastels = ['#c0ecdd','#c7ceea','#ffb7b2'];
+      $scope.otherPastels = ['#c0ecdd','#c7ceea','#ffb7b2','#ffd9c0'];
       // Other suitable pastels below
       // ,'#c7ceea','#ffb7b2'
 

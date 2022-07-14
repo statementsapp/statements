@@ -685,7 +685,7 @@
       }
       if (!isColorThere && $scope.data[0].documentClaimedBy !== $scope.userId && $scope.data[0].documentClaimedBy){
         console.log("Lower if")
-        $scope.remarkInputColor = $scope.otherPastels[($scope.pastelsLength - $scope.authorTableLength - 2)];
+        $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
         $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
       }
       var isColorThere = false;

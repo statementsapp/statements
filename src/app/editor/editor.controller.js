@@ -1305,6 +1305,10 @@
                   // make the color the first unused one in the pastels array
 
                   var payloadColor = $scope.otherPastels[$scope.data[0].authorTable.length -1];
+                  if (payload.author !== $scope.userId){
+                    $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
+                    $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
+                  }
 
                   console.log("Payload color 1: ", payloadColor)
 

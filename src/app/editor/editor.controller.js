@@ -4707,7 +4707,14 @@
               $scope.saveM = '';
               $scope.saveThisColorForASec = '';
 
-
+              if ($scope.data[0].dialogue){
+                for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+                  if ($scope.data[0].dialogue[i].author === $scope.userId){
+                    $scope.onTheBoard = true;
+                    break;
+                  }
+                }
+              }
 
 
               // has to get the next color

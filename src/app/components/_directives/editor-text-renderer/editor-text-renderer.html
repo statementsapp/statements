@@ -408,7 +408,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome) || (data[0].documentClaimedBy !== userName && !onTheBoard)">press
             <span>{{enter}}</span> to commit/send
           </span>
-
+       <!--    <span>{{(data[0].documentClaimedBy !== userName && !onTheBoard)}}</span> -->
          <!--  End of main input -->
 
           <ol ui-tree-nodes

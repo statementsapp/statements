@@ -4731,7 +4731,6 @@
 
             if ($scope.selectedProposition.dialogueSide && payload.author === $scope.userId){
               $scope.hasChatFocusId = payload.id;
-
               setTimeout(function () {
                   $scope.selectedProposition.dialogueSide = true;
                   $scope.didItRun(message.id);
@@ -4743,11 +4742,14 @@
                   focusFactory('input' + payload.id);
               }, 20);
             }
+
             $scope.scrollMessagesToBottom();
             $scope.assignFirstsToNodes();
+
             if (payload.author === $scope.userId){
               $scope.makePristine();
             }
+
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
             apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
             profileService.setSelectedBook($scope.data[0]);
@@ -4809,8 +4811,6 @@
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {
         console.log('clear top and bottom focus')
-        console.log('proposition: ', proposition)
-        console.log('$scope.editing', $scope.editing)
         $scope.hasTopFocus = '';
         $scope.hasBottomFocus = {};
         $scope.hasTopNodeFocus = {};
@@ -4865,9 +4865,7 @@
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
                 $scope.hasChatFocusId = id;
                 setTimeout(function () {
-                  console.log("The element to show: ", document.getElementById('#input'+id))
                    focusFactory('input'+ id)
-                   console.log("to be clicked el: ", document.getElementById('input' + id))
                 }, 20);
                 break;
 
@@ -5002,7 +5000,6 @@
       }
 
       $scope.scrollMessagesToBottom = function () {
-        console.log("Runs scroll fcn")
         $timeout(function () {
           var pane = document.getElementById('dialoguelist');
           pane.scrollTop = pane.scrollHeight + 300;
@@ -5051,76 +5048,35 @@
       }
 
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {
-        // console.log('light up book')
-        // var apply = {};
-        // apply.path = '$scope.data[0]';
-        // apply.bookDestination = eval(apply.path);
-        // apply.id = '';
-        // apply.flagged;
-
-        // //Find the rightmost child, if any
-
-        // for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
-        //   if (!$scope.data[0].nodes[i].minimized){
-        //     for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
-        //       for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
-        //         if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length > 0){
-        //           for (var m = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length-1; m > -1; m--){
-        //             if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m][$scope.userId] !== 'hidden' &&
-        //               !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll){
-        //               $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].preSelected = true;
-        //               return;
-        //             }
-        //           }
-        //         } else {
-        //           $scope.data[0].nodes[i].paragraphs[j].propositions[k].preSelected = true;
-        //           return;
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
-
-        // apply = {};
 
 
         console.log('light up book')
-         console.log("Event: ", event)
 
         if (event.target.localName === 'li' || event.target.classList[0] === 'bottomparagraphadder' || event.target.classList[0] !== 'angular-ui-tree'){
           console.log("not those lis or bottom adders")
           return;
         }
-        // console.log("The target: ", event.target)
-        // console.log("Length: ", angular.copy($scope.data[0].nodes.length))
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           if (!$scope.data[0].nodes[i].minimized){
             for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
               if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
-
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
                     ($scope.data[0].documentClaimedBy === $scope.userId || $scope.data[0].nodes[i].paragraphs[j].propositions[k].type !== 'blank')){
-                    
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
-                      
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
                       var remarkIndex = null;
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
-                        
                           var remarkIndex = angular.copy(m);
                           break;
                         }
                       }
                       if (remarkIndex || remarkIndex == 0){
                         setTimeout(function () {
-                          
-                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].preSelected = true;
-                        // });
-                        
+                          $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].preSelected = true;
                         }, 20);
                       } else {
                         setTimeout(function () {

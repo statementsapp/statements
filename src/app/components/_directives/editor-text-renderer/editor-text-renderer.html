@@ -404,13 +404,13 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 event-focus-id="{{proposition.id}}">
 
           </span>
-          <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px;"
+          <span class="zeekyboogydoog" style="position: relative; bottom: 12px;  font-size: 16px;"
                 ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome) || (data[0].documentClaimedBy !== userName && !onTheBoard)">press
             <span>{{enter}}</span> to commit/send
           </span>
-          <span class="bobopeskedeedledottin" style="position: relative; bottom: 12px; font-size: 16px;"
-                ng-if="thisMoveCounter === 1 && data[0].documentClaimedBy === userId">press
-            <span>{{enter}}</span> to commit/send
+          <span class="bobopeskedeedledottin" style="position: relative; bottom: 12px; right: 12px; font-size: 16px;"
+                ng-if="thisMoveCounter === 1 && data[0].documentClaimedBy === userId">end with a
+                          <span>{{colon}}</span> to begin a new section
           </span>
           <!-- <span>{{(data[0].documentClaimedBy !== userName && !onTheBoard)}}</span> -->
          <!--  End of main input -->

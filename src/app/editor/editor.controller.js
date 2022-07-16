@@ -4707,15 +4707,7 @@
               $scope.saveM = '';
               $scope.saveThisColorForASec = '';
 
-              if ($scope.data[0].dialogue){
-                for (var i = 0; i < $scope.data[0].dialogue.length; i++){
-                  if ($scope.data[0].dialogue[i].author === $scope.userId){
-                    $scope.onTheBoard = true;
-                    console.log("On the board payload")
-                    break;
-                  }
-                }
-              }
+
 
 
               // has to get the next color
@@ -4728,6 +4720,16 @@
 
             console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))
             console.log('save i ',$scope.saveI) 
+
+             if ($scope.data[0].dialogue){
+               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+                 if ($scope.data[0].dialogue[i].author === $scope.userId){
+                   $scope.onTheBoard = true;
+                   console.log("On the board payload")
+                   break;
+                 }
+               }
+             }
 
 
             temp = {};

@@ -3028,6 +3028,18 @@
           return;
         }
         $scope.data[0].isFresh = false;
+
+        if ($scope.data[0].dialogue){
+          for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+            if ($scope.data[0].dialogue[i].author === $scope.userId){
+              $scope.onTheBoard = true;
+              $scope.thisMoveCounter++;
+              console.log("On the board payload counted")
+              break;
+            }
+          }
+        }
+        
         console.log("Prepping prop: ", input)
 
         $scope.theseInputs.push(angular.copy(input));

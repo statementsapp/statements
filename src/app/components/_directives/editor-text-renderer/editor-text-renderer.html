@@ -247,10 +247,10 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-if="(paragraph.leftAdd == true && proposition.first)">
 
           </span>
-          <span class="zeekyboogydoog" style="position: relative; display: none; bottom: 12px; font-size: 16px;"
+<!--           <span class="zeekyboogydoog" style="position: relative; display: none; bottom: 12px; font-size: 16px;"
                 ng-if="inputs.proposition.length > 5 && data[0].isFresh && (selectedProposition.id === proposition.id && paragraph.leftAdd == true && proposition.first)"> press
             <span>{{enter}}</span> to commit/send
-          </span>
+          </span> -->
           <span
             ng-mouseover="paragraph.leftMouseOver = true"
             ng-mouseleave="paragraph.leftMouseOver = false"
@@ -405,19 +405,12 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
           </span>
           <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px;"
-                ng-if="inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome">press
+                ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome) || (data[0].documentClaimedBy !== userName && !onTheBoard)">press
             <span>{{enter}}</span> to commit/send
           </span>
 
-          <!--           <span class="remarksexpander" ng-click="toggleRemarksExpansion(proposition)" style="position: relative; bottom: 12px; font-size: 16px;" ng-if="proposition.remarks.length > 0 && !proposition.remarksExpanded" ng-click="">
-                      <span class="glyphicon glyphicon-plus"></span>
-                    </span>
-                    <span class="remarkscontractor" ng-click="toggleRemarksExpansion(proposition)" style="position: relative; bottom: 12px; font-size: 16px;" ng-if="proposition.remarks.length > 0 && proposition.remarksExpanded">
-                      <span class="glyphicon glyphicon-minus"></span>
-                    </span> -->
-          <!--           <span class="bibbitybop" style="position: relative; display: none; bottom: 12px; font-size: 16px;" ng-if="inputs.proposition.length > 5 && !isFresh &&  isAlmostFresh && (selectedProposition.id === proposition.id)"> end with a
-                      <span>{{colon}}</span> to begin a new section
-                    </span> -->
+         <!--  End of main input -->
+
           <ol ui-tree-nodes
               style="padding-left: 0px !important; display: inline"
               ng-model="proposition.remarks"
@@ -543,9 +536,18 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                     event-focus-id="{{remark.id}}">
 
               </span>
-              <!--           <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="inputs.proposition.length > 5 && isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd">press
+                        <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd) || (data[0].documentClaimedBy !== userName && !onTheBoard)">press
                           <span>{{enter}}</span> to commit/send
-                        </span> -->
+                        </span>
+
+
+
+                     <!--    Define rules for when zeekyboogydoog appears for remarkers -->
+
+
+
+
+
               <!--           <span class="bibbitybop" style="position: relative; display: none; bottom: 12px; font-size: 16px;" ng-if="inputs.proposition.length > 5 && !isFresh &&  isAlmostFresh && (selectedProposition.id === proposition.id)"> end with a
                           <span>{{colon}}</span> to begin a new section
                         </span> -->

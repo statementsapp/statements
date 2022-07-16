@@ -614,7 +614,7 @@
       $scope.tempStopEditable = false;
       $scope.minimalStyle = false;
       $scope.diagnostics = false;
-      
+      $scope.onTheBoard = false;
 
 
       var hidden = '';
@@ -625,6 +625,15 @@
         $scope.data[0].authorTable = [];
         $scope.data[0].isFresh = true;
       }
+
+      for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+        if ($scope.data[0].dialogue[i].author === $scope.userId){
+          $scope.onTheBoard = true;
+          break;
+        }
+      }
+
+
 
 
       var theDragElement = document.getElementById('dragelement')

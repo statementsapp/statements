@@ -615,6 +615,8 @@
       $scope.minimalStyle = false;
       $scope.diagnostics = false;
       $scope.onTheBoard = false;
+      $scope.oneMoveIn = false;
+      $scope.thisMoveCounter = 0;
 
 
       var hidden = '';
@@ -630,10 +632,14 @@
         for (var i = 0; i < $scope.data[0].dialogue.length; i++){
           if ($scope.data[0].dialogue[i].author === $scope.userId){
             $scope.onTheBoard = true;
-            break;
+            $scope.thisMoveCounter++;
           }
         }
       }
+
+
+
+
 
 
 
@@ -4721,15 +4727,16 @@
             console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))
             console.log('save i ',$scope.saveI) 
 
-             if ($scope.data[0].dialogue){
-               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
-                 if ($scope.data[0].dialogue[i].author === $scope.userId){
-                   $scope.onTheBoard = true;
-                   console.log("On the board payload")
-                   break;
-                 }
-               }
-             }
+            if ($scope.data[0].dialogue){
+              for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+                if ($scope.data[0].dialogue[i].author === $scope.userId){
+                  $scope.onTheBoard = true;
+                  $scope.thisMoveCounter++;
+                  console.log("On the board payload counted")
+                  break;
+                }
+              }
+            }
 
 
             temp = {};

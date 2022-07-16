@@ -318,12 +318,28 @@ textarea {
   animation-name: zeekyboogydoog;
 }
 
+.bobopeskedeedledottin {
+  color: black !important;
+  animation-duration: 1s;
+  animation-name: bobopeskedeedledottin;
+}
+
 .blankcorrector {
   top: 5px;
   margin-left: 9px;
 }
 
 @keyframes zeekyboogydoog {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bobopeskedeedledottin {
   from {
     opacity: 0;
   }

@@ -3021,7 +3021,6 @@
       }
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
-        console.log("Selected proposition: ", angular.copy($scope.selectedProposition))
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");
           $scope.inputs.proposition = '';
@@ -3039,7 +3038,7 @@
             }
           }
         }
-        
+
         console.log("Prepping prop: ", input)
 
         $scope.theseInputs.push(angular.copy(input));
@@ -3331,7 +3330,6 @@
           } else {
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           }
-          console.log(prep.afterParagraphId, "is the after paragraph id")
           if (!$scope.draggingParagraph && !$scope.draggingProposition){
             prep.targetNodeId = $scope.selectedNode.nodeId;
           } else {
@@ -3408,7 +3406,6 @@
             prep.targetNodeId = $scope.selectedNode.nodeId;
           }
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
-          console.log("The paragraph: ", paragraph)
           if ($scope.draggingProposition || $scope.draggingParagraph){
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           } else {
@@ -3680,12 +3677,8 @@
             console.log("Inside the apply")
 
 
-            console.log("Color table before: ", angular.copy($scope.data[0].authorTable))
 
             payload.color = $scope.calcColors(angular.copy(payload));
-            console.log("Payload color 4: ", payload.color)
-
-            console.log("Color table after: ", angular.copy($scope.data[0].authorTable))
 
             // Since n users are connected, does it save to the database n times?
             if (payload.documentClaimedBy){
@@ -3917,7 +3910,6 @@
                   }
                 }
               }
-               console.log("Payload color 5: ", payload.color)
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarksExpanded = true;
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.unshift(
                 {
@@ -3951,15 +3943,12 @@
                       apply.nodeTarget = i;
                       apply.paragraphTarget = j;
                       apply.propTarget = k;
-                      console.log("About to push to i, j, k of : ", angular.copy(i)," ", angular.copy(j)," ", angular.copy(k))
                       break;
                     }
                   }
                 }
               }
 
-
-              console.log('Unshifting ', angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks))
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarksExpanded = true;
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.unshift(
                 {
@@ -3986,7 +3975,6 @@
 
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
-                  // console.log("Node index of i: ", i)
                   apply.nodeIndex = i;
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
                     if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
@@ -4166,7 +4154,6 @@
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);
                 }
-                console.log("Just placed left: ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.beforePropTarget])
 
               } else {
                   for (var n = angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions.length-1); n > apply.beforePropTarget-1; n--){
@@ -4176,7 +4163,7 @@
                   for (var n = 0; n < payload.draggedProps.length; n++){
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.beforePropTarget] = angular.copy(payload.draggedProps[n]);
                     $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.beforePropTarget].isPresentlyBeingDragged = false;
-                    console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+apply.beforePropTarget].text)
+                    
                   }
               }
 
@@ -4249,7 +4236,7 @@
                 for (var n = 0; n < payload.draggedProps.length; n++){
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.beforeParagraphTarget].propositions[n] = payload.draggedProps[n];
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.beforeParagraphTarget].propositions[n].isPresentlyBeingDragged = false;
-                  console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.beforeParagraphTarget].propositions[n].text)
+              
                 }
               }
 
@@ -4263,7 +4250,6 @@
                       !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
 
                       apply.afterParagraphIndex = angular.copy(j);
-                      console.log("After paragraph index: ", angular.copy(apply.afterParagraphIndex));
                       break;
                     }
                   }
@@ -4337,7 +4323,6 @@
                     }, 20);
                   }
                 } else {
-                  console.log("THE ELSEee")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                     first: true,
                     paragraphId: payload.paragraphId,
@@ -4348,10 +4333,7 @@
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n] = payload.draggedProps[n];
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].hiddenForAll = null;
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].isPresentlyBeingDragged = false;
-                    console.log($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].text, " was just placed");
-                    console.log($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1], " is the paragraph");
-                    console.log($scope.data[0].nodes[apply.nodeIndex], " is the node");
-                    // console.log("Just put in a ", $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphIndex + 1].propositions[n].text)
+              
                   }
                 }
 
@@ -4374,7 +4356,6 @@
                         apply.nodeTarget = angular.copy(i);
                         apply.paragraphTarget = angular.copy(j);
                         apply.afterPropTarget = angular.copy(k);
-                        console.log("I J K: ", apply.nodeTarget, " ", apply.paragraphTarget," ", apply.afterPropTarget)
                         break;
                       }
                     }
@@ -4417,7 +4398,6 @@
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide &&
                   !payload.draggedProps){
                   setTimeout(function () {
-                      console.log("Hayo")
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);
                 }
@@ -4433,7 +4413,6 @@
                         apply.nodeTarget = angular.copy(i);
                         apply.paragraphTarget = angular.copy(j);
                         apply.afterPropTarget = angular.copy(k);
-                        console.log("I J K: ", apply.nodeTarget, " ", apply.paragraphTarget," ", apply.afterPropTarget)
                         break;
                       }
                     }
@@ -4446,7 +4425,7 @@
 
                       $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n+payload.draggedProps.length] =
                       angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n]);
-                      console.log("Just placed: ", angular.copy($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[n]));
+                     
                     }
                     for (var n = 0; n < payload.draggedProps.length; n++){
 
@@ -4481,11 +4460,9 @@
               console.log("replaces blank")
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
-                  console.log("FIRST IF")
                   apply.nodeIndex = i;
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
                     if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
-                      console.log("SECOND IF")
                       apply.afterParagraphIndex = j;
                       $scope.data[0].nodes[i].paragraphs[j].first = false;
                       $scope.data[0].nodes[i].paragraphs[j].hiddenForAll = true;
@@ -4494,7 +4471,6 @@
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll = true;
                         $scope.data[0].nodes[i].paragraphs[j].propositions[k].first = false;
                         if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks){
-                          console.log("In if remarks")
                           for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
                             $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].hiddenForAll = true;
                           }
@@ -4509,7 +4485,6 @@
 
 
               if (!payload.draggedProps){
-                console.log("If not dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
                   paragraphId: payload.paragraphId,
@@ -4532,7 +4507,6 @@
                     document.getElementById('proposition' + payload.id).click();
                 }, 20);
               } else {
-                console.log("else dragged props")
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
                   paragraphId: payload.paragraphId,
@@ -4559,7 +4533,6 @@
 
             //       DIALOGUE PRINTER
 
-            console.log("Color NOW: ", angular.copy(payload.color))
 
             if (payload.type === 'assertion' && !payload.draggedProps){
               var goingToPushThis = {
@@ -4692,14 +4665,10 @@
               }
             }
 
-            console.log("COLOR RIGHT BEFORE EH ", angular.copy(payload.color))
 
-            console.log('PAYLOAD IS THIS THING ', payload)
             if (payload.type === 'negation'){
-              console.log("into there")
               for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.length;i++){
                 if ($scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks[i].id === payload.id){
-                  console.log("IFFFFF")
                   $scope.saveThisColorForASec = angular.copy(payload.color);
                   $scope.saveI = angular.copy(apply.nodeTarget)
                   $scope.saveJ = angular.copy(apply.paragraphTarget)
@@ -4717,7 +4686,6 @@
               if ($scope.saveI || $scope.saveI === 0){
                 $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].colorString = 
                 ('3px solid ' + angular.copy($scope.saveThisColorForASec))
-                console.log("That color again is: ", $scope.saveThisColorForASec)
               }
               $scope.saveI = '';
               $scope.saveJ = '';
@@ -4736,8 +4704,6 @@
             }
 
 
-            console.log("COLOR RIGHT AFTER EH ", angular.copy(payload.color))
-            console.log('save i ',$scope.saveI) 
 
             if ($scope.data[0].dialogue){
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
@@ -4773,7 +4739,6 @@
                   $scope.hideExpandingTextarea();
                   $scope.selectPropositionById(payload.id);
                   $scope.selectedProposition.textSide = false;
-                  console.log("Precedes a bad click eh?")
                   document.getElementById('input' + payload.id).click();
                   focusFactory('input' + payload.id);
               }, 20);
@@ -4797,7 +4762,6 @@
             $scope.inputs.leftProposition = $scope.saveThisForASec;
             $scope.saveThisForASec = '';
           }
-          // console.log("Save for a sec: ", angular.copy($scope.saveThisForASec))
         }, 30);                                             // HAS A TIMEOUT
         
 

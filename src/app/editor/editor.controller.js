@@ -4711,6 +4711,7 @@
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                   if ($scope.data[0].dialogue[i].author === $scope.userId){
                     $scope.onTheBoard = true;
+                    console.log("On the board payload")
                     break;
                   }
                 }

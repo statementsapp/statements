@@ -247,10 +247,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-if="(paragraph.leftAdd == true && proposition.first)">
 
           </span>
-<!--           <span class="zeekyboogydoog" style="position: relative; display: none; bottom: 12px; font-size: 16px;"
-                ng-if="inputs.proposition.length > 5 && data[0].isFresh && (selectedProposition.id === proposition.id && paragraph.leftAdd == true && proposition.first)"> press
-            <span>{{enter}}</span> to commit/send
-          </span> -->
+
           <span
             ng-mouseover="paragraph.leftMouseOver = true"
             ng-mouseleave="paragraph.leftMouseOver = false"
@@ -405,7 +402,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
           </span>
           <span class="zeekyboogydoog" style="position: relative; bottom: 12px;  font-size: 16px;"
-                ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome) || (data[0].documentClaimedBy !== userName && !onTheBoard)">press
+                ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle)">press
             <span>{{enter}}</span> to commit/send
           </span>
           
@@ -537,7 +534,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                     event-focus-id="{{remark.id}}">
 
               </span>
-                        <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd) || (data[0].documentClaimedBy !== userName && !onTheBoard)">press
+                        <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle)">press
                           <span>{{enter}}</span> to commit/send
                         </span>
 

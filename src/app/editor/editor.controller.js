@@ -4778,7 +4778,7 @@
 
         if (payload.author === $scope.userId) {
           $scope.draggedProposition = {};
-          
+          //
         }
 
         $scope.clearAnimationClass();

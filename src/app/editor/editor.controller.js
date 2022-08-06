@@ -3154,7 +3154,7 @@
             prep.afterRemarkId = $scope.selectedProposition.id;
             prep.targetNodeId = $scope.selectedNode.nodeId;
             prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            prep.of = {   
+            prep.of = {    
               type: $scope.selectedProposition.of.type,
               author: $scope.selectedProposition.of.author,
               id: $scope.selectedProposition.of.id,

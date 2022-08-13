@@ -6,8 +6,7 @@
   "private": true,
   "scripts": {
     "test": "gulp test",
-    "postinstall": "bower install",
-    "build": "webpack"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

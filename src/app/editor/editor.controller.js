@@ -36,7 +36,7 @@
     $scope.currentLocation = $location.absUrl();
     $scope.roomUsersHtml = '<span>Nothing here yet</span>';
     $scope.roomUsers = [];
-    $scope.menuExpanded = false;
+    $scope.menuExpanded = false; 
     $scope.propToAddAnimate = {};
     $scope.propToDeleteAnimate = {};
     $scope.propToRejoinAnimate = {};

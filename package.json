@@ -6,7 +6,9 @@
   "private": true,
   "scripts": {
     "test": "gulp test",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "build": "ng build",
+    "heroku-postbuild": "ng build --prod" 
   },
   "dependencies": {
     "body-parser": "^1.19.0",

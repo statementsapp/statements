@@ -75,6 +75,12 @@
           <div class="menu-right-wrapper">
 
             <div class="link-box">
+              <button class="btn menubutton"
+                      type="button"
+                      uib-tooltip="Share Link"
+                      ng-click="copyLink()">
+                <i class="fa fa-book-medical "></i>
+              </button>
               <input id="directLinkInput" type="text" style="font-size: 0.75em;" readonly ng-value="currentLocation"/>
               <button class="btn menubutton"
                       ng-if="!cowsComeHome"
@@ -90,12 +96,7 @@
                       ng-click="goFullScreenMessages()">
                 <i class="fa fa-comment-o"></i>
               </button>
-              <button class="btn menubutton"
-                      type="button"
-                      uib-tooltip="Share Link"
-                      ng-click="copyLink()">
-                <i class="fa fa-book-medical "></i>
-              </button>
+              
               <button class="btn menubutton"
                       type="button"
                       uib-tooltip="Diagnostics"

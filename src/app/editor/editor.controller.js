@@ -699,11 +699,12 @@
           $scope.remarkInputColor = $scope.data[0].authorTable[i].color;
           $scope.remarkInputString = '3px solid ' + $scope.data[0].authorTable[i].color;
           console.log("Test: ", $scope.data[0].authorTable[i].author === $scope.userId)
+
         }
       }
       if (!isColorThere && $scope.data[0].documentClaimedBy !== $scope.userId && $scope.data[0].documentClaimedBy){
         console.log("Lower if")
-        $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
+        $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength)];
         $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
       }
       var isColorThere = false;
@@ -1282,6 +1283,8 @@
       }
 
       $scope.calcColors = function (payload) {
+
+        // calculates colors for a new payload
               if ($scope.data[0].authorTable.length == 0){
 
                 $scope.data[0].authorTable = [

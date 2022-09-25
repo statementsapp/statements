@@ -91,13 +91,7 @@
                 <i class="fa fa-comment-o"></i>
               </button>
 
-              <button class="btn menubutton"
-                      ng-if="!cowsComeHome"
-                      type="button"
-                      uib-tooltip="Minimal Styling"
-                      ng-click="toggleMinimalStyling()">
-                <i class="fa fa-feather-alt"></i>
-              </button>
+
               
               <button class="btn menubutton"
                       type="button"
@@ -117,6 +111,15 @@
                       ng-click="clickDownloadLink()">
                   <span style="color: blue">Export</span>
                 </button>
+
+                <button class="btn menubutton"
+                        ng-if="!cowsComeHome"
+                        type="button"
+                        uib-tooltip="Minimal Styling"
+                        ng-click="toggleMinimalStyling()">
+                  <i class="fa fa-feather-alt"></i>
+                </button>
+                
               </a>
 
 

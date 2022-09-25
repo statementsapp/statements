@@ -361,6 +361,8 @@
        ng-click="clearDrag()"
        style="">
     <div class="col-md-8" ng-if="!cowsComeHome">
+      {{textMouseOver}}
+      {{dialogueMouseOver}}
       <span style="width: 500px;"></span>
       <div ui-tree="treeOptions"
            data-drag-enabled="false"
@@ -388,8 +390,7 @@
           </li>
         </ol>
       </div>
-      {{textMouseOver}}
-      {{dialogueMouseOver}}
+      
       <!-- {{data[0]}} -->
 <!--       {{data[0].authorTable}}
       op:{{otherPastels}}

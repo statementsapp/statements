@@ -1089,6 +1089,18 @@
         }
       };
 
+      // Blurs dialogue
+      $scope.blurDialogue = function () {
+        if (document.getElementById('dialoguepane').classList
+          .contains('dialogueblurrer')) {
+          document.getElementById('dialoguepane').classList
+            .remove('dialogueblurrer');
+        } else {
+          document.getElementById('dialoguepane').classList
+            .add('dialogueblurrer');
+        }
+      };
+
       $scope.queryBlur = function () {
 
         if (document.getElementById('dialoguepane').classList.contains('dialogueblurrer')){
@@ -1152,17 +1164,7 @@
           .remove('dialogueblurrermouseover');
       };
 
-      // Blurs dialogue
-      $scope.blurDialogue = function () {
-        if (document.getElementById('dialoguepane').classList
-          .contains('dialogueblurrer')) {
-          document.getElementById('dialoguepane').classList
-            .remove('dialogueblurrer');
-        } else {
-          document.getElementById('dialoguepane').classList
-            .add('dialogueblurrer');
-        }
-      };
+
 
       // For dialogue blurrer
       $scope.mouseOverDialogueBlurrer = function () {

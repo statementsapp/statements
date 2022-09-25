@@ -606,6 +606,7 @@
       $scope.propositionToSetLater = {};
       $scope.paragraphToSetLater = {};
       $scope.testCounter = 0;
+      $scope.textMouseOver;
       $scope.dialogueMouseOver;
       $scope.recycleRemarks = false;
       $scope.xMouseOver;

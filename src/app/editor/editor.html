@@ -259,6 +259,8 @@
             <br>
           </div> -->
     <div class=""
+         ng-mouseover="textMouseOver = true"
+         ng-mouseleave="textMouseOver = false"
          ng-click=""
          id="thetext"
          style="padding-left: 30px;"
@@ -382,7 +384,8 @@
               id="{{node.nodeId}}"
               ng-if="!node.hiddenForAll"
               style="overflow-wrap: break-word;">
-            {{remarkInputString}}
+            {{textMouseOver}}
+            {{dialogueMouseOver}}
           </li>
         </ol>
       </div>

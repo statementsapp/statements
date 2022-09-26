@@ -1104,7 +1104,7 @@
 
       // For greying the text
       $scope.greyText = function () {
-        console.log("Blurring text")
+        console.log("greying text")
         if (document.getElementById('thetext').classList
           .contains('textgrey')) {
           document.getElementById('thetext').classList
@@ -1117,8 +1117,9 @@
 
       // Greys dialogue
       $scope.greyDialogue = function () {
+        console.log("greying dialogue")
         if (document.getElementById('dialoguepane').classList
-          .contains('dialoguebgrey')) {
+          .contains('dialoguegrey')) {
           document.getElementById('dialoguepane').classList
             .remove('dialoguegrey');
         } else {

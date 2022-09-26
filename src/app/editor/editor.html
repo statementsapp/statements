@@ -259,8 +259,8 @@
             <br>
           </div> -->
     <div class=""
-         ng-mouseover="[textMouseOver = true, dialogueMouseOver = false]"
-         ng-mouseleave="textMouseOver = false"
+         ng-mouseover="[textGrey(), dialogueMouseOver = false]"
+         ng-mouseleave="textGrey()"
          ng-click=""
          id="thetext"
          style="padding-left: 30px;"
@@ -321,8 +321,8 @@
       ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id}"
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
       id="dialoguepane"
-      ng-mouseover="[dialogueMouseOver = true, textMouseOver = false]" 
-      ng-mouseleave="[dialogueMouseOver = false, !inputs.chatProposition ? hasChatFocusId = '' : inputs.nothing]"
+      ng-mouseover="[dialogueGrey()]" 
+      ng-mouseleave="[dialogueGrey(), !inputs.chatProposition ? hasChatFocusId = '' : inputs.nothing]"
     >
       <!-- ng-click="[clearDrag(), $event.stopPropagation()]" -->
       <!--       <span style=""

@@ -1102,6 +1102,31 @@
         }
       };
 
+      // For greying the text
+      $scope.greyText = function () {
+        console.log("Blurring text")
+        if (document.getElementById('thetext').classList
+          .contains('textgrey')) {
+          document.getElementById('thetext').classList
+            .remove('textgrey');
+        } else {
+          document.getElementById('thetext').classList
+            .add('textgrey');
+        }
+      };
+
+      // Greys dialogue
+      $scope.greyDialogue = function () {
+        if (document.getElementById('dialoguepane').classList
+          .contains('dialoguebgrey')) {
+          document.getElementById('dialoguepane').classList
+            .remove('dialoguegrey');
+        } else {
+          document.getElementById('dialoguepane').classList
+            .add('dialoguegrey');
+        }
+      };
+
       $scope.queryBlur = function () {
 
         if (document.getElementById('dialoguepane').classList.contains('dialogueblurrer')){

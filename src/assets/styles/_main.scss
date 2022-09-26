@@ -167,6 +167,14 @@ a {
   filter: blur(6px)
 }
 
+.dialoguegrey {
+  filter: grayscale(10%);
+}
+
+.textgrey{
+  filter: grayscale(10%)
+}
+
 .dialogueblurrermouseover {
   background-color: grey;
   cursor: pointer;

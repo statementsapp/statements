@@ -259,8 +259,8 @@
             <br>
           </div> -->
     <div class=""
-         ng-mouseover="[textGrey(), dialogueMouseOver = false]"
-         ng-mouseleave="textGrey()"
+         ng-mouseover="[greyText(), dialogueMouseOver = false]"
+         ng-mouseleave="greyText()"
          ng-click=""
          id="thetext"
          style="padding-left: 30px;"
@@ -321,8 +321,8 @@
       ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id}"
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
       id="dialoguepane"
-      ng-mouseover="[dialogueGrey()]" 
-      ng-mouseleave="[dialogueGrey(), !inputs.chatProposition ? hasChatFocusId = '' : inputs.nothing]"
+      ng-mouseover="[greyDialogue()]" 
+      ng-mouseleave="[greyDialogue(), !inputs.chatProposition ? hasChatFocusId = '' : inputs.nothing]"
     >
       <!-- ng-click="[clearDrag(), $event.stopPropagation()]" -->
       <!--       <span style=""
@@ -361,8 +361,8 @@
        ng-click="clearDrag()"
        style="">
     <div class="col-md-8" ng-if="!cowsComeHome">
-      {{textMouseOver}}
-      {{dialogueMouseOver}}
+  <!--     {{textMouseOver}}
+      {{dialogueMouseOver}} -->
       <span style="width: 500px;"></span>
       <div ui-tree="treeOptions"
            data-drag-enabled="false"

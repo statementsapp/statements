@@ -1107,11 +1107,14 @@
         console.log("greying text")
         if (document.getElementById('thetext').classList
           .contains('textgrey')) {
+          console.log("Off textgrey")
           document.getElementById('thetext').classList
             .remove('textgrey');
         } else {
+          console.log("ON textgrey")
           document.getElementById('thetext').classList
             .add('textgrey');
+
         }
       };
 
@@ -1120,9 +1123,11 @@
         console.log("greying dialogue")
         if (document.getElementById('dialoguepane').classList
           .contains('dialoguegrey')) {
+          console.log("Off dialoguegrey")
           document.getElementById('dialoguepane').classList
             .remove('dialoguegrey');
         } else {
+          console.log("ON dialoguegrey")
           document.getElementById('dialoguepane').classList
             .add('dialoguegrey');
         }

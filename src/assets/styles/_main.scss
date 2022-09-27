@@ -168,11 +168,13 @@ a {
 }
 
 .dialoguegrey {
-  filter: opacity(80%);
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
 }
 
 .textgrey{
-  filter: opacity(80%)
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
 }
 
 .dialogueblurrermouseover {

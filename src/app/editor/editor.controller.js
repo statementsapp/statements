@@ -1104,7 +1104,6 @@
 
       // For greying the text
       $scope.greyText = function () {
-        console.log("greying text")
         if (document.getElementById('thetext').classList
           .contains('textgrey')) {
           console.log("Off textgrey")
@@ -1120,7 +1119,6 @@
 
       // Greys dialogue
       $scope.greyDialogue = function () {
-        console.log("greying dialogue")
         if (document.getElementById('dialoguepane').classList
           .contains('dialoguegrey')) {
           console.log("Off dialoguegrey")

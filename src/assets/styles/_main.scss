@@ -665,6 +665,10 @@ textarea {
   border-bottom: 1px solid black;
 }
 
+.splitscreentextborder {
+  border-left: 1px solid grey;
+}
+
 .updatecursor {
   cursor: text;
 }
@@ -691,7 +695,7 @@ div#tree-root.textlist {
 
 div#thetext.col-md-12 {
   padding-top: 0px;
-  
+
 }
 
 .paragraphplaceholder {

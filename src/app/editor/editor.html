@@ -263,22 +263,9 @@
          ng-mouseleave="cowsComeHome ? greyDialogue() inputs.nothing"
          ng-click=""
          id="thetext"
-         style="padding-left: 30px; border-right: 1px solid black;"
+         style="padding-left: 30px;"
          ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages}">
-               <!--
-                <span class='dot'
-                    ng-click="!othersAreHidden && (loggedIn() || isGuest()) ? hideOthersParagraphs() : othersAreHidden && (loggedIn() || isGuest()) ? showOthersParagraphs() : inputs.nothing">|||</span>
-                    -->
-      <!--
-         <span class='fullscreentext'
-              ng-click="!fullScreenText && (data[0]) ? goFullScreenText() : fullScreenText && (loggedIn() || isGuest()) ? goSplitScreen() : inputs.nothing">O</span>
-              -->
-      <!--          <span class='fullscreenmessages'
-                    ng-click="!fullScreenMessages && (loggedIn() || isGuest()) ? goFullScreenMessages() : fullScreenMessages && (loggedIn() || isGuest()) ? goSplitScreen() : inputs.nothing">-</span> -->
-      <!--
-         <span class='recycleremarks'
-                       ng-click="!recycleRemarks && (loggedIn() || isGuest()) ? goRecycleRemarks() : recycleRemarks && (loggedIn() || isGuest()) ? dontRecycleRemarks() : inputs.nothing">&</span>
-                       -->
+
       <div ui-tree="treeOptions"
            data-drag-enabled="false"
            id="tree-root"
@@ -289,10 +276,7 @@
            ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
 
       >
-        <!-- hideExpandingTextarea(), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, selectedProposition.dialogueSide = false, selectedThread = {}, -->
-        <!-- getLastVisiblePropositionInBook(data[0], $event),
-        ng-mouseover="lightUpLastVisiblePropositionInBook(data[0], $event)"
-        ng-mouseleave="blurLightUpLastVisiblePropositionInBook(data[0], $event)" -->
+
         <ol ui-tree-nodes
             ng-model='data[0].nodes'
             style=""
@@ -317,6 +301,7 @@
            id="textblurrer"
            ></div>
     </div>
+    <span style="min-width: 3px; width: 3px; background-color: grey;"></span>
     <div
       ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id}"
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "

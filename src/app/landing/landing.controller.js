@@ -22,15 +22,15 @@
 
     setTimeout(function () {
       $scope.$apply(function () {
-        videoOne.addEventListener("loadeddata", function () {
+        $scope.videoOne.addEventListener("loadeddata", function () {
           console.log("ONE has started loading successfully!");
         });
 
-        videoTwo.addEventListener("loadeddata", function () {
+        $scope.videoTwo.addEventListener("loadeddata", function () {
           console.log("TWO has started loading successfully!");
         });
 
-        videoThree.addEventListener("loadeddata", function () {
+        $scope.videoThree.addEventListener("loadeddata", function () {
           console.log("THREE has started loading successfully!");
         });
       });

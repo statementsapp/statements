@@ -12,6 +12,22 @@
     $scope.plusToggle = false;
     console.log("Screen width: ", $scope.screenWidth)
 
+    var videoOne = document.getElementById('exampleAuthor')
+    var videoTwo = document.getElementById('exampleCritic')
+    var videoThree = document.getElementById('otherVideoSources')
+
+    videoOne.addEventListener("loadeddata", function () {
+      console.log("ONE has started loading successfully!");
+    });
+
+    videoTwo.addEventListener("loadeddata", function () {
+      console.log("TWO has started loading successfully!");
+    });
+
+    videoThree.addEventListener("loadeddata", function () {
+      console.log("THREE has started loading successfully!");
+    });
+
     var swiper = new Swiper('.swiper', {
       // Optional parameters
       direction: 'horizontal',

@@ -32,7 +32,7 @@
           console.log("THREE has started loading successfully!");
         });
       });
-    }, 100);
+    }, 5000);
 
     var swiper = new Swiper('.swiper', {
       // Optional parameters

@@ -12,11 +12,11 @@
     $scope.plusToggle = false;
     console.log("Screen width: ", $scope.screenWidth)
 
-    var videoOne = document.getElementById('exampleAuthor')
-    var videoTwo = document.getElementById('exampleCritic')
-    var videoThree = document.getElementById('otherVideoSources')
+    $scope.videoOne = document.getElementById('exampleAuthor')
+    $scope.videoTwo = document.getElementById('exampleCritic')
+    $scope.videoThree = document.getElementById('other')
 
-    console.log("Video one: ", videoOne)
+    console.log("Video one: ", $scope.videoOne)
 
 
 

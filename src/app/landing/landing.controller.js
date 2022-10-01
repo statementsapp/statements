@@ -22,7 +22,7 @@
 
     setTimeout(function () {
       $scope.$apply(function () {
-        $scope.videoOne.addEventListener("loadeddata", function () {
+        $('video#exampleAuthor').addEventListener("loadeddata", function () {
           console.log("ONE has started loading successfully!");
         });
 

@@ -16,6 +16,8 @@
     var videoTwo = document.getElementById('exampleCritic')
     var videoThree = document.getElementById('otherVideoSources')
 
+    console.log("Video one: ", videoOne)
+
 
 
     setTimeout(function () {

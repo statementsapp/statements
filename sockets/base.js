@@ -38,6 +38,7 @@ var ioRoutes = function(io) {
   // code for indefinite reconnect attempts
   io.connect().on('error', function(){
     socket.socket.reconnect();
+    console.log("A reconnect")
   });
 
 };

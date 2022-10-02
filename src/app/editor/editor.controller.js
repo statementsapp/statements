@@ -1186,10 +1186,11 @@
 
       // For text blurrer
       $scope.mouseOverTextBlurrer = function () {
-        document.getElementById('textblurrer').classList
-          .add('dialogueblurrermouseover');
+        if (!$scope.isFresh){
+          document.getElementById('textblurrer').classList
+            .add('dialogueblurrermouseover');
           $scope.lowerDragScroller = !$scope.lowerDragScroller;
-
+        }
       };
 
       // Leave text blurrer

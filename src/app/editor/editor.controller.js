@@ -4856,7 +4856,7 @@
         $scope.hasBottomFocus = {};
         $scope.hasTopNodeFocus = {};
         $scope.hasBottomNodeFocus = '';
-        $scope.hasChatFocusId = '';
+        // $scope.hasChatFocusId = '';
         $scope.inputs = {};
 
         if ($scope.editing){

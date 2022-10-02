@@ -4,7 +4,7 @@
      ng-init="initialize"
      ng-click="blurEdit()"
      style=""
-     ng-class="{'dragpointer': draggingNode || draggingParagraph || draggingProposition}"
+     ng-class="{'dragpointer': draggingNode || draggingParagraph || draggingProposition, 'nonauthorbackground': (data[0].documentClaimedBy && data[0].documentClaimedBy !== userId)}"
      ng-mouseover="containerMouseover = true"
      ng-mouseleave="containerMouseover = false"
      ng-keyup="($event.keyCode === 8 || $event.keyCode === 27) && (draggingProposition || draggingParagraph || draggingNode) ? [clearDragDetector(), clearDrag()] : ($event.keyCode === 8 && thereIsAHighlightedParagraph) ? deleteProposition(highlightedParagraphNode, highlightedParagraph, null, null, 'paragraph') : ($event.keyCode === 8 && thereIsAHighlightedNode) ? deleteProposition(highlightedNode, null, null, null, 'node'): inputs.nothing;"

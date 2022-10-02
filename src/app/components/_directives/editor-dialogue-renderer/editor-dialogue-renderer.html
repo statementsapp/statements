@@ -46,7 +46,7 @@
       >
         <textarea onInput="this.parentNode.dataset.replicatedValue = this.value"
           ng-show="(message.id === hasChatFocusId)"
-          ng-hide="(message.id != hasChatFocusId || (selectedProposition.textSide || !dialogueMouseOver && !inputs.chatProposition))"
+          ng-hide="(message.id != hasChatFocusId || (selectedProposition.textSide)"
           ng-model="inputs.chatProposition"
           class="chatinput dialogueinput thread speech-bubble sent"
           id="input{{message.id}}"

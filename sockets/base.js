@@ -36,10 +36,14 @@ var ioRoutes = function(io) {
   });
 
   // code for indefinite reconnect attempts
-  io.connect().on('error', function(){
-    socket.socket.reconnect();
-    console.log("A reconnect")
+  io.connect().on("reconnecting", function(delay, attempt) {
+    console.log("Reconnecting")
+    // if (attempt === max_socket_reconnects) {
+    //   setTimeout(function(){ socket.socket.reconnect(); }, 5000);
+    //   return console.log("Failed to reconnect. Lets try that again in 5 seconds.");
+    // }
   });
+
 
 };
 

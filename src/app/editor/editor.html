@@ -264,7 +264,7 @@
          ng-click=""
          id="thetext"
          style="padding-left: 30px;"
-         ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : !fullScreenText || loggedIn, 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages}">
+         ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!fullScreenText && !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages}">
                <!--
                 <span class='dot'
                     ng-click="!othersAreHidden && (loggedIn() || isGuest()) ? hideOthersParagraphs() : othersAreHidden && (loggedIn() || isGuest()) ? showOthersParagraphs() : inputs.nothing">|||</span>

@@ -2,6 +2,7 @@
 
 var ioRoutes = function(io) {
   var userCount = 0;
+
   io.on('connection', function(socket) {
     socket.broadcast.emit('user connected');
 
@@ -33,6 +34,12 @@ var ioRoutes = function(io) {
     });
 
   });
+
+  // code for indefinite reconnect attempts
+  io.connect().on('error', function(){
+    socket.socket.reconnect();
+  });
+
 };
 
 module.exports = ioRoutes;

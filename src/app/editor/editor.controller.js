@@ -2326,6 +2326,12 @@
               }, 20);
 
             } else if ($scope.draggingParagraph){
+              if (paragraph.paragraphId === $scope.draggedParagraph && !paragraph.bottomAdd && 
+              !paragraph.topAdd && !paragraph.topMouseOver){
+                $scope.clearDrag();
+                console.log("Returning invalid paragraph drop")
+                return;
+              }
               console.log("bottomadd: ", angular.copy(paragraph.bottomAdd))
               console.log("topadd: ", angular.copy(paragraph.topAdd))
               console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))

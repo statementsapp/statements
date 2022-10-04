@@ -2326,6 +2326,9 @@
               }, 20);
 
             } else if ($scope.draggingParagraph){
+              console.log("bottomadd: ", angular.copy(paragraph.bottomAdd))
+              console.log("topadd: ", angular.copy(paragraph.topAdd))
+              console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))
               for (var i = 0; i < $scope.draggedParagraph.propositions.length; i++){
                 if ($scope.draggedParagraph.propositions[i].isPresentlyBeingDragged){
                   $scope.draggedParagraph.propositions[i].isPresentlyBeingDragged = false;
@@ -4446,6 +4449,7 @@
                 for (var i = 0; i < $scope.data[0].nodes.length; i++){
                   console.log("Is")
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
+
                     console.log("Js")
                     for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                       console.log("Ks")

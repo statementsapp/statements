@@ -362,7 +362,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             title="{{proposition.id}}"
             class="right-text right-textarea maininput"
             ng-if="selectedProposition.id === proposition.id && selectedParagraph.paragraphId === paragraph.paragraphId && paragraph.topAdd != true && paragraph.bottomAdd != true && !hasLeftFocus.id && !paragraph.leftAdd && (!data[0].documentClaimedBy || proposition.type !== 'blank' || data[0].documentClaimedBy === userId) "
-            ng-style="{ 'border-bottom': remarkInputString}"
+            ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId ? remarkInputString : 'white'}"
             ng-class="{
                        'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh }"
             ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?

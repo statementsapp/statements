@@ -2332,7 +2332,7 @@
               console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))
               if (paragraph.paragraphId === $scope.draggedParagraph.paragraphId && !paragraph.bottomAdd && 
               !paragraph.topAdd && !paragraph.topMouseOver){
-                
+                $scope.clearDrag();
                 console.log("Returning invalid paragraph drop")
                 return;
               }

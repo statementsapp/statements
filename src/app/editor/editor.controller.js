@@ -2326,15 +2326,17 @@
               }, 20);
 
             } else if ($scope.draggingParagraph){
-              if (paragraph.paragraphId === $scope.draggedParagraph && !paragraph.bottomAdd && 
+              console.log("bottomadd: ", angular.copy(paragraph.bottomAdd))
+              console.log("topadd: ", angular.copy(paragraph.topAdd))
+              console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))
+              console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))
+              if (paragraph.paragraphId === $scope.draggedParagraph.paragraphId && !paragraph.bottomAdd && 
               !paragraph.topAdd && !paragraph.topMouseOver){
                 $scope.clearDrag();
                 console.log("Returning invalid paragraph drop")
                 return;
               }
-              console.log("bottomadd: ", angular.copy(paragraph.bottomAdd))
-              console.log("topadd: ", angular.copy(paragraph.topAdd))
-              console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))
+              
               for (var i = 0; i < $scope.draggedParagraph.propositions.length; i++){
                 if ($scope.draggedParagraph.propositions[i].isPresentlyBeingDragged){
                   $scope.draggedParagraph.propositions[i].isPresentlyBeingDragged = false;

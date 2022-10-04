@@ -1186,7 +1186,7 @@
 
       // For text blurrer
       $scope.mouseOverTextBlurrer = function () {
-        if (!$scope.isFresh){
+        if (!$scope.data[0].isFresh){
           document.getElementById('textblurrer').classList
             .add('dialogueblurrermouseover');
           $scope.lowerDragScroller = !$scope.lowerDragScroller;

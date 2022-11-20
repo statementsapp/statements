@@ -81,7 +81,7 @@
                       ng-click="copyLink()">
                 <i class="fa fa-book-medical "></i>
               </button>
-              <input id="directLinkInput" type="text" style="font-size: 0.75em; " readonly ng-value="currentLocation"/>
+              <input id="directLinkInput" type="text" style="" id="directlinkinputtext" readonly ng-value="currentLocation"/>
 
               <button class="btn menubutton"
                       ng-if="cowsComeHome"
@@ -103,13 +103,14 @@
               <a download="export.txt" style="" id="downloadlink">
 
                 <button class="btn menubutton btn-primary help downloadbutton"
+                      id="thatdownloadbutton"
                       type="button"
                       uib-tooltip="Export to .txt"
                       ng-mouseover="[makeTextFile(), exportMouseover = true]"
                       ng-mouseleave= "exportMouseover = false;"
                       ng-class= "{'exportcolor': exportMouseover}"
                       ng-click="clickDownloadLink()">
-                  <span style="color: blue">Export</span>
+                  <span style="color: blue" id="exporttext">Export</span>
                 </button>
               </a>
 

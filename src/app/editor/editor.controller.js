@@ -342,7 +342,8 @@
 
       document.getElementById('directLinkInput').style.color = 'black';
       document.getElementById('exporttext').style.color = 'white';
-      document.getElementById('thatdownloadbutton').style.borderColor = 'white';
+      document.getElementById('downloadlink').style.borderColor = 'white';
+      document.getElementById('thatdownloadbutton').style.color = 'white';
       document.getElementById('thatdownloadbutton').style.border = '1px';
 
       var icon = $scope.inverted ? 'fas fa-sun' : 'fas fa-moon';

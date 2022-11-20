@@ -339,10 +339,15 @@
       head.appendChild(style);
       $scope.inverted = !$scope.inverted;
 
-      document.getElementById('directlinkinputtext').style.color = 'black';
-      document.getElementById('exporttext').style.color = 'white';
-      document.getElementById('thatdownloadbutton').style.borderColor = 'white';
-      document.getElementById('thatdownloadbutton').style.border = '1px';
+
+      console.log(document.getElementById('directlinkinputtext'));
+      //.style.color = 'black';
+      console.log(document.getElementById('exporttext'));
+      // .style.color = 'white';
+      console.log(document.getElementById('thatdownloadbutton'));
+      //.style.borderColor = 'white';
+      console.log(document.getElementById('thatdownloadbutton'));
+      // .style.border = '1px';
 
       var icon = $scope.inverted ? 'fas fa-sun' : 'fas fa-moon';
       for (var i = 0; i < $scope.menuButtons.length; i++) {

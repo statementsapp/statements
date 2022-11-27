@@ -51,21 +51,22 @@
 
           <div class="col" ng-if="screenWidth > 500" style="color: black;">
             <div class="navboi" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500">
+              <div class="link-box">
+                <button class="btn menubutton"
+                        type="button"
+                        uib-tooltip="Register"
+                        >
+                  <span style="color: black" id="exporttext">Get Statements</span>
+                </button>
+                <button class="btn menubutton"
+                        type="button"
+                        uib-tooltip="Log In"
+                        >
+                  <span style="color: black" id="exporttext">Log In</span>
+                </button>
+              </div>
               <div class="flexyboi titleboi">
-                <div class="link-box">
-                  <button class="btn menubutton"
-                          type="button"
-                          uib-tooltip="Register"
-                          >
-                    <span style="color: black" id="exporttext">Get Statements</span>
-                  </button>
-                  <button class="btn menubutton"
-                          type="button"
-                          uib-tooltip="Log In"
-                          >
-                    <span style="color: black" id="exporttext">Log In</span>
-                  </button>
-                </div>
+
                 <div style="display:flex; align-items: center">
 
                   <span class="logoboi" style="padding-left: 40px;"></span>

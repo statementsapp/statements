@@ -17,27 +17,28 @@
        ng-click="[clearDragDetector(), draggingNode || draggingParagraph || draggingProposition ? clearDrag() : inputs.nothing]"
        ng-mousemove="assessDragScrollUpper()"
        style="line-height: normal;">
-    <!--     <span class="app-title"
-              ng-click="clearWithAdder()"> {{ title ? title : ''}} </span> -->
+
+    <div class="link-box">
+      <button class="btn menubutton"
+              type="button"
+              uib-tooltip="Register"
+              >
+        <span style="color: black" id="exporttext">Get Statements</span>
+      </button>
+      <button class="btn menubutton"
+              type="button"
+              uib-tooltip="Log In"
+              >
+        <span style="color: black" id="exporttext">Log In</span>
+      </button>
+    </div>
+
     <div id="myNav"
          class="overlay"
          ng-click="closeNav()" 
     >
-      <div class="link-box">
-        <button class="btn menubutton"
-                type="button"
-                uib-tooltip="Register"
-                >
-          <span style="color: black" id="exporttext">Get Statements</span>
-        </button>
-        <button class="btn menubutton"
-                type="button"
-                uib-tooltip="Log In"
-                >
-          <span style="color: black" id="exporttext">Log In</span>
-        </button>
-      </div>
       
+
       <div class="overlay-content">
         <a href="javascript:void(0)"
            ng-click="closeNav()">Some text</a>

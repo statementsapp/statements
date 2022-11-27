@@ -11,6 +11,20 @@
      spellcheck="false"
      id="fulleditor"
      ng-keyup="$event.keyCode === 8 || $event.keyCode === 46 ? [clearDragDetector(), clearDrag(), unHighlightParagraph()] : inputs.nothing">
+     <div class="link-box">
+       <button class="btn menubutton"
+               type="button"
+               uib-tooltip="Register"
+               >
+         <span style="color: black" id="exporttext">Get Statements</span>
+       </button>
+       <button class="btn menubutton"
+               type="button"
+               uib-tooltip="Log In"
+               >
+         <span style="color: black" id="exporttext">Log In</span>
+       </button>
+     </div>
   <div class="row"
        id="firstrow"
        ng-class="{titled: title}"
@@ -18,20 +32,7 @@
        ng-mousemove="assessDragScrollUpper()"
        style="line-height: normal;">
 
-    <div class="link-box">
-      <button class="btn menubutton"
-              type="button"
-              uib-tooltip="Register"
-              >
-        <span style="color: black" id="exporttext">Get Statements</span>
-      </button>
-      <button class="btn menubutton"
-              type="button"
-              uib-tooltip="Log In"
-              >
-        <span style="color: black" id="exporttext">Log In</span>
-      </button>
-    </div>
+
 
     <div id="myNav"
          class="overlay"

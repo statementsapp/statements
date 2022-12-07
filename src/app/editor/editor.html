@@ -172,12 +172,13 @@
                       ng-if="!cowsComeHome"
                       type="button"
                       uib-tooltip="Post to Twitter"
+                      ng-class="'bluetwitter' : draggingProposition"
                       ng-click="draggingProposition ? openTwitterPost() : inputs.nothing">
                   <i class="fa-brands fa-twitter" aria-hidden="true"></i>
               </button>
 
 
-              <button style='padding-left: 0px; color: black;'
+              <button style='padding-left: 0px;'
                       class="btn menubutton"
                       ng-if="!cowsComeHome"
                       type="button"

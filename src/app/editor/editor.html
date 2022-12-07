@@ -167,6 +167,15 @@
                   <i class="fa fa-feather-alt"></i>
               </button>
 
+              <button style='padding-left: 0px;'
+                      class="btn menubutton"
+                      ng-if="!cowsComeHome"
+                      type="button"
+                      uib-tooltip="Post to Twitter"
+                      ng-click="draggingProposition ? openTwitterPost() : inputs.nothing">
+                  <i class="fa fa-twitter"></i>
+              </button>
+
 
               <button style='padding-left: 0px;'
                       class="btn menubutton"

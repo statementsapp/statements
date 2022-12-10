@@ -1054,6 +1054,12 @@
         $scope.stopToggle = true;
       };
 
+      $scope.openTwitterPost = function (text) {
+
+        // Open the Twitter website in a new window and pre-populate the tweet with the specified text
+          window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text));
+      }
+
       // Hides
       $scope.hideThreadAdd = function () {
         $scope.threadAdding = '';

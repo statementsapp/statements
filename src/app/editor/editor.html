@@ -173,7 +173,7 @@
                       type="button"
                       uib-tooltip="Post to Twitter"
                       ng-class="{'bluetwitter' : draggingProposition}"
-                      ng-click="draggingProposition ? openTwitterPost() : inputs.nothing">
+                      ng-click="draggingProposition ? openTwitterPost(draggedProposition.text) : inputs.nothing">
                   <i class="fa-brands fa-twitter" aria-hidden="true"></i>
               </button>
 

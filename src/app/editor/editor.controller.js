@@ -4888,6 +4888,7 @@
       const tweetButton = document.getElementById('tweet-button');
 
         tweetButton.addEventListener('contextmenu', (event) => {
+          console.log("Fired for tweet button")
           event.preventDefault();
           var thisClientX = event.clientX.toString();
           var thisClientY = event.clientY.toString();

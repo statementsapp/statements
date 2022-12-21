@@ -4889,8 +4889,10 @@
 
         tweetButton.addEventListener('contextmenu', (event) => {
           event.preventDefault();
-          tweetButton.style.top = `${event.clientY}px`;
-          tweetButton.style.left = `${event.clientX}px`;
+          var thisClientX = event.clientX.toString();
+          var thisClientY = event.clientY.toString();
+          tweetButton.style.top = thisClientY + 'px';
+          tweetButton.style.left = thisClientX + 'px';
           tweetButton.classList.add('grow');
         });
 

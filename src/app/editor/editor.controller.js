@@ -1063,7 +1063,7 @@
                     // in case you need some middle click things
                     break;
                 case 3:
-                    decrement(); // this is right click
+                     // this is right click
                     console.log("Look at that right click")
                     break;
                 default:

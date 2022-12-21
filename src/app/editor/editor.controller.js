@@ -4885,7 +4885,14 @@
         $scope.clearAnimationClass();
       });
 
+      const tweetButton = document.getElementById('tweet-button');
 
+        tweetButton.addEventListener('contextmenu', (event) => {
+          event.preventDefault();
+          tweetButton.style.top = `${event.clientY}px`;
+          tweetButton.style.left = `${event.clientX}px`;
+          tweetButton.classList.add('grow');
+        });
 
       $scope.clearAnimationClass = function () {
         setTimeout(function () {

@@ -161,6 +161,37 @@ a {
   height: 10px;
 }
 
+// tweet button classes
+
+#tweet-button {
+    width: 0;
+    height: 0;
+    background-color: #1DA1F2;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+  }
+
+  #tweet-button::before {
+    content: "";
+    background-image: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/svgs/brands/twitter.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .grow {
+    width: 70px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
 #dialoguepane {
   padding-right: 0;
   padding-left: 0;

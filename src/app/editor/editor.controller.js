@@ -1054,10 +1054,29 @@
         $scope.stopToggle = true;
       };
 
+      $scope.handleClick = function (event) {
+        switch(event.which) {
+                case 1:
+                    increment(); // this is left click
+                    break;
+                case 2:
+                    // in case you need some middle click things
+                    break;
+                case 3:
+                    decrement(); // this is right click
+                    console.log("Look at that right click")
+                    break;
+                default:
+                    alert("you have a strange mouse!");
+                    break;
+            }
+      }
+
       $scope.openTwitterPost = function (text) {
 
         // Open the Twitter website in a new window and pre-populate the tweet with the specified text
-          window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text + '\n\n' + $scope.currentLocation));
+          window.open('https://twitter.com/intent/tweet?text=' + 
+            encodeURIComponent(text + '\n\n' + $scope.currentLocation));
       }
 
       // Hides

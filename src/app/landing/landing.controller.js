@@ -12,7 +12,8 @@
     $scope.plusToggle = false;
     console.log("Screen width: ", $scope.screenWidth)
 
-    $scope.videoOne = $('video#exampleAuthor');
+    
+    $scope.videoOne = document.getElementById('exampleAuthor')
     $scope.videoTwo = document.getElementById('exampleCritic')
     $scope.videoThree = document.getElementById('other')
 
@@ -22,7 +23,7 @@
 
     setTimeout(function () {
       $scope.$apply(function () {
-        $('video#exampleAuthor').addEventListener("loadeddata", function () {
+        $scope.videoOne.addEventListener("loadeddata", function () {
           console.log("ONE has started loading successfully!");
         });
 

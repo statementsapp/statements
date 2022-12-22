@@ -173,6 +173,7 @@ a {
     top: 0;
     left: 0;
     transition: all 0.5s;
+    opacity: 0;
   }
 
   #tweet-button::before {
@@ -181,7 +182,6 @@ a {
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
-    display: inline-block;
     margin-right: 10px;
   }
 

@@ -1064,6 +1064,7 @@
                 case 3:
                      // this is right click
                     console.log("Look at that right click")
+                        const tweetButton = document.getElementById('tweet-button');
                         event.preventDefault();
                         var thisClientX = event.clientX.toString();
                         var thisClientY = event.clientY.toString();

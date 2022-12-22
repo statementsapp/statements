@@ -627,6 +627,8 @@
       $scope.oneMoveIn = false;
       $scope.thisMoveCounter = 0;
 
+      document.addEventListener('contextmenu', event => event.preventDefault());
+
 
       var hidden = '';
       var visibilityChange = '';

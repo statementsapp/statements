@@ -1066,12 +1066,14 @@
                     console.log("Look at that right click")
                         var tweetButton = document.getElementById('tweet-button');
                         event.preventDefault();
-                        var thisClientX = event.clientX.toString();
-                        var thisClientY = event.clientY.toString();
+
+                        var thisClientX = (parseInt(event.pageX) * 1.33).toString() + 'px';
+                        var thisClientY = (parseInt(event.pageY) * 1.33).toString() + 'px';
+
                         console.log("this client y: ", thisClientY)
                         console.log("this client x: ", thisClientX)
-                        tweetButton.style.top = thisClientY + 'px';
-                        tweetButton.style.left = thisClientX + 'px';
+                        tweetButton.style.top = thisClientY;
+                        tweetButton.style.left = thisClientX;
                         tweetButton.classList.add('grow');
                     break;
                 default:

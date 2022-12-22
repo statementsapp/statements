@@ -1057,7 +1057,6 @@
       $scope.handleClick = function (event) {
         switch(event.which) {
                 case 1:
-                    increment(); // this is left click
                     break;
                 case 2:
                     // in case you need some middle click things
@@ -1065,6 +1064,14 @@
                 case 3:
                      // this is right click
                     console.log("Look at that right click")
+                        event.preventDefault();
+                        var thisClientX = event.clientX.toString();
+                        var thisClientY = event.clientY.toString();
+                        console.log("this client y: ", thisClientY)
+                        console.log("this client x: ", thisClientX)
+                        tweetButton.style.top = thisClientY + 'px';
+                        tweetButton.style.left = thisClientX + 'px';
+                        tweetButton.classList.add('grow');
                     break;
                 default:
                     alert("you have a strange mouse!");
@@ -4885,17 +4892,19 @@
         $scope.clearAnimationClass();
       });
 
-      const tweetButton = document.getElementById('tweet-button');
+      // const tweetButton = document.getElementById('tweet-button');
 
-        tweetButton.addEventListener('contextmenu', (event) => {
-          console.log("Fired for tweet button")
-          event.preventDefault();
-          var thisClientX = event.clientX.toString();
-          var thisClientY = event.clientY.toString();
-          tweetButton.style.top = thisClientY + 'px';
-          tweetButton.style.left = thisClientX + 'px';
-          tweetButton.classList.add('grow');
-        });
+      //   tweetButton.addEventListener('contextmenu', (event) => {
+      //     console.log("Fired for tweet button")
+      //     event.preventDefault();
+      //     var thisClientX = event.clientX.toString();
+      //     var thisClientY = event.clientY.toString();
+      //     tweetButton.style.top = thisClientY + 'px';
+      //     tweetButton.style.left = thisClientX + 'px';
+      //     tweetButton.classList.add('grow');
+      //   });
+
+      
 
       $scope.clearAnimationClass = function () {
         setTimeout(function () {

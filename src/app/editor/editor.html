@@ -1,5 +1,5 @@
 <stmnts-readonly-shield ng-if="!loggedIn()"></stmnts-readonly-shield>
-<div id="tweet-button"><i class="fa-brands fa-twitter" aria-hidden="true"></i>Tweet</div>
+<span id="tweet-button"><i class="fa-brands fa-twitter" aria-hidden="true"></i>Tweet</span>
 <div class="container " 
      ng-init="initialize"
      ng-click="blurEdit()"
@@ -345,7 +345,7 @@
          <span class='recycleremarks'
                        ng-click="!recycleRemarks && (loggedIn() || isGuest()) ? goRecycleRemarks() : recycleRemarks && (loggedIn() || isGuest()) ? dontRecycleRemarks() : inputs.nothing">&</span>
                        -->
-      
+
       <div ui-tree="treeOptions"
            data-drag-enabled="false"
            id="tree-root"

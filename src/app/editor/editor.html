@@ -345,6 +345,7 @@
          <span class='recycleremarks'
                        ng-click="!recycleRemarks && (loggedIn() || isGuest()) ? goRecycleRemarks() : recycleRemarks && (loggedIn() || isGuest()) ? dontRecycleRemarks() : inputs.nothing">&</span>
                        -->
+      <div id="tweet-button"><i class="fa-brands fa-twitter" aria-hidden="true"></i>Tweet</div>
       <div ui-tree="treeOptions"
            data-drag-enabled="false"
            id="tree-root"
@@ -359,7 +360,7 @@
         <!-- getLastVisiblePropositionInBook(data[0], $event),
         ng-mouseover="lightUpLastVisiblePropositionInBook(data[0], $event)"
         ng-mouseleave="blurLightUpLastVisiblePropositionInBook(data[0], $event)" -->
-        <div id="tweet-button"><i class="fa-brands fa-twitter" aria-hidden="true"></i>Tweet</div>
+
         <ol ui-tree-nodes
             ng-model='data[0].nodes'
             style=""

@@ -1067,8 +1067,8 @@
                         var tweetButton = document.getElementById('tweet-button');
                         event.preventDefault();
 
-                        var thisClientX = (parseInt(event.pageX) * .5).toString() + 'px';
-                        var thisClientY = (parseInt(event.pageY) * .5).toString() + 'px';
+                        var thisClientX = (parseInt(event.pageX) * 1).toString() + 'px';
+                        var thisClientY = (parseInt(event.pageY) * 1).toString() + 'px';
 
                         console.log("this client y: ", thisClientY)
                         console.log("this client x: ", thisClientX)

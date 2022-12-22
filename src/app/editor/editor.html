@@ -205,7 +205,7 @@
             <span id="dragelement" class="dragelement" ng-if="draggingProposition || draggingParagraph || draggingNode">
               <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
             </span>
-            
+
 
 
 <!--             <div class="menu-button-wrapper">
@@ -359,6 +359,7 @@
         <!-- getLastVisiblePropositionInBook(data[0], $event),
         ng-mouseover="lightUpLastVisiblePropositionInBook(data[0], $event)"
         ng-mouseleave="blurLightUpLastVisiblePropositionInBook(data[0], $event)" -->
+        <div id="tweet-button"><i class="fa-brands fa-twitter" aria-hidden="true"></i>Tweet</div>
         <ol ui-tree-nodes
             ng-model='data[0].nodes'
             style=""

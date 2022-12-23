@@ -17,12 +17,12 @@
     $scope.videoTwo = document.getElementById('exampleCritic')
     $scope.videoThree = document.getElementById('other')
 
-    console.log("Video one: ", $scope.videoOne)
 
 
 
     setTimeout(function () {
       $scope.$apply(function () {
+        console.log("Video one: ", $scope.videoOne)
         $scope.videoOne.addEventListener("loadeddata", function () {
           console.log("ONE has started loading successfully!");
         });

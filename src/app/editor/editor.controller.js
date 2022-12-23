@@ -1072,11 +1072,12 @@
                     
                     console.log("Look at that right click")
                     $scope.cancelListenForDoubleClick = true;
-                    // setTimeout(function () {
-                    //   $scope.$apply(function () {
-                    //     $scope.cancelListenForDoubleClick = false;
-                    //   });
-                    // }, 10);
+                    setTimeout(function () {
+                      $scope.$apply(function () {
+                        console.log("Into")
+                        $scope.cancelListenForDoubleClick = false;
+                      });
+                    }, 10);
 
                         // var tweetButton = document.getElementById('tweet-button');
                         

@@ -1081,6 +1081,10 @@
                         tweetButton.style.top = thisClientY;
                         tweetButton.style.left = thisClientX;
                         tweetButton.classList.add('grow');
+                    break;
+                default:
+                    alert("you have a strange mouse!");
+                    break;
             }
       }
 
@@ -2083,7 +2087,7 @@
       $scope.clearDrag = function () {
         setTimeout(function () {
           $scope.$apply(function () {
-            $scope.tweetClicked = {};
+            $scope.tweetClicked = {}
             if ($scope.draggingParagraph) {
               for (var i = 0; i < $scope.draggedParagraph.propositions.length; i++){
                 if ($scope.draggedParagraph.propositions[i].isPresentlyBeingDragged){

@@ -2039,6 +2039,10 @@
       }
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
+        if ($scope.cancelListenForDoubleClick){
+          return;
+        }
+        console.log("The cancel: ", $scope.cancelListenForDoubleClick)
         console.log("DRAGGING A PROPOSITION")
         if ($scope.draggingProposition){
           return;

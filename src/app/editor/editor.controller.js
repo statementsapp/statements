@@ -2033,6 +2033,7 @@
       }
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
+        console.log("DRAGGING A PROPOSITION")
         if ($scope.draggingProposition){
           return;
         }

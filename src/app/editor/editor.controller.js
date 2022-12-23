@@ -2040,10 +2040,10 @@
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
         if ($scope.cancelListenForDoubleClick){
+          console.log("The cancel: ", $scope.cancelListenForDoubleClick)
           $scope.cancelListenForDoubleClick = false;
           return;
         }
-        console.log("The cancel: ", $scope.cancelListenForDoubleClick)
         console.log("DRAGGING A PROPOSITION")
         if ($scope.draggingProposition){
           return;

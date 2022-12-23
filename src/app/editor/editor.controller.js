@@ -1081,7 +1081,7 @@
                         tweetButton.style.top = thisClientY;
                         tweetButton.style.left = thisClientX;
                         tweetButton.classList.add('grow');
-                    break;
+                    
                 default:
                     alert("you have a strange mouse!");
                     break;

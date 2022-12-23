@@ -1071,7 +1071,7 @@
                      // this is right click
                     
                     console.log("Look at that right click")
-
+                    event.stopPropagation();
                         // var tweetButton = document.getElementById('tweet-button');
                         
 

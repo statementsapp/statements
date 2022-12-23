@@ -113,12 +113,13 @@
         <span ng-if="userId === data[0].documentClaimedBy" style="color: grey; position:relative; top:42px;">&nbsp;(author)</span>
         <!-- <input type="text" id="copy-input" value="lkjlkjkljkjlj;jkj"/>
         <input type="button" id="copy-button" value="Copy"> -->
-        <div class="pull-right" style="margin-top: 40px" ng-if="cowsComeHome">
+        <div class="pull-right" style="margin-top: 40px" ng-if="">
           <!-- <div>Share link to co-write:</div> -->
           <div class="menu-right-wrapper">
 
             <div class="link-box">
               <button class="btn menubutton"
+                      ng-if="cowsComeHome"
                       type="button"
                       uib-tooltip="Share Link"
                       ng-click="copyLink()">
@@ -148,6 +149,7 @@
                 <button class="btn menubutton btn-primary help downloadbutton"
                       id="thatdownloadbutton"
                       type="button"
+                      ng-if="cowsComeHome"
                       uib-tooltip="Export to .txt"
                       ng-mouseover="[makeTextFile(), exportMouseover = true]"
                       ng-mouseleave= "exportMouseover = false;"

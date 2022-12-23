@@ -1072,11 +1072,11 @@
                     
                     console.log("Look at that right click")
                     $scope.cancelListenForDoubleClick = true;
-                    setTimeout(function () {
-                      // $scope.$apply(function () {
-                        $scope.cancelListenForDoubleClick = false;
-                      // });
-                    }, 10);
+                    // setTimeout(function () {
+                    //   $scope.$apply(function () {
+                    //     $scope.cancelListenForDoubleClick = false;
+                    //   });
+                    // }, 10);
 
                         // var tweetButton = document.getElementById('tweet-button');
                         
@@ -2040,6 +2040,7 @@
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
         if ($scope.cancelListenForDoubleClick){
+          $scope.cancelListenForDoubleClick = false;
           return;
         }
         console.log("The cancel: ", $scope.cancelListenForDoubleClick)

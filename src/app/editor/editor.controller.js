@@ -2112,6 +2112,7 @@
             $scope.dragStrings = [];
             $scope.dragStrings = [];
             $scope.paragraphMouseIsOver = {};
+            document.getElementById('tweet-button').classList.remove('grow')
           });
         }, 20);
       };

@@ -206,7 +206,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             ng-class="{'incoming': propToAddAnimate.id === proposition.id, 'rejoinanimate': propToRejoinAnimate.id === proposition.id, blankcorrector: proposition.type === 'blank'}"
             class="proposition">
 
-           
+           <span id="tweet-button" ng-if="tweetClicked.id === proposition.id"><i class="fa-brands fa-twitter" aria-hidden="true" oncontextmenu='return false' style="padding-right: 5px"></i><span style="color: white;">Tweet</span></span>
             <span ng-if="diagnostics">{{proposition.id}}</span>
 
           <span class="leftpropositionadder"
@@ -351,7 +351,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                           : $event.stopPropagation()"
             class="proposition-text"
             ng-blur="[focusouteditable(this, proposition), paragraph.disableRightCursor = false]"
-            ng-mousedown="handleClick($event)"
+            ng-mousedown="handleClick($event, proposition.id)"
             oncontextmenu="return false"
           >
             {{proposition.text}}

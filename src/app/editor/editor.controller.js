@@ -1056,7 +1056,7 @@
         $scope.stopToggle = true;
       };
 
-      $scope.handleClick = function (event) {
+      $scope.handleClick = function (event, theId) {
         switch(event.which) {
                 case 1:
                     break;
@@ -1064,7 +1064,11 @@
                     // in case you need some middle click things
                     break;
                 case 3:
+                    $scope.tweetClicked = {
+                      id: theId
+                    };
                      // this is right click
+                    }
                     console.log("Look at that right click")
                         var tweetButton = document.getElementById('tweet-button');
                         event.preventDefault();
@@ -2083,6 +2087,7 @@
       $scope.clearDrag = function () {
         setTimeout(function () {
           $scope.$apply(function () {
+            $scope.tweetClicked = {};
             if ($scope.draggingParagraph) {
               for (var i = 0; i < $scope.draggedParagraph.propositions.length; i++){
                 if ($scope.draggedParagraph.propositions[i].isPresentlyBeingDragged){

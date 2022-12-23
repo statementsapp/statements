@@ -1064,23 +1064,25 @@
                     // in case you need some middle click things
                     break;
                 case 3:
+                    event.preventDefault();
                     $scope.tweetClicked = {
                       id: theId
                     };
                      // this is right click
                     
                     console.log("Look at that right click")
-                        var tweetButton = document.getElementById('tweet-button');
-                        event.preventDefault();
 
-                        var thisClientX = (parseInt(event.pageX) * 1).toString() + 'px';
-                        var thisClientY = (parseInt(event.pageY) * 1).toString() + 'px';
+                        // var tweetButton = document.getElementById('tweet-button');
+                        
 
-                        console.log("this client y: ", thisClientY)
-                        console.log("this client x: ", thisClientX)
-                        tweetButton.style.top = thisClientY;
-                        tweetButton.style.left = thisClientX;
-                        tweetButton.classList.add('grow');
+                        // var thisClientX = (parseInt(event.pageX) * 1).toString() + 'px';
+                        // var thisClientY = (parseInt(event.pageY) * 1).toString() + 'px';
+
+                        // console.log("this client y: ", thisClientY)
+                        // console.log("this client x: ", thisClientX)
+                        // tweetButton.style.top = thisClientY;
+                        // tweetButton.style.left = thisClientX;
+                        // tweetButton.classList.add('grow');
                     
               
             }

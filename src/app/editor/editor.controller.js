@@ -1077,7 +1077,7 @@
                         console.log("Into")
                         $scope.cancelListenForDoubleClick = false;
                       });
-                    }, 10);
+                    }, 260);
 
                         // var tweetButton = document.getElementById('tweet-button');
                         

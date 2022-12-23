@@ -1068,7 +1068,7 @@
                       id: theId
                     };
                      // this is right click
-                    }
+                    
                     console.log("Look at that right click")
                         var tweetButton = document.getElementById('tweet-button');
                         event.preventDefault();
@@ -1082,9 +1082,7 @@
                         tweetButton.style.left = thisClientX;
                         tweetButton.classList.add('grow');
                     
-                default:
-                    alert("you have a strange mouse!");
-                    break;
+              
             }
       }
 

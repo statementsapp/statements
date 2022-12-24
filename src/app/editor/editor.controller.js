@@ -1076,6 +1076,11 @@
                     setTimeout(function () {
                       $scope.$apply(function () {
                         console.log("Into")
+                        var offsetHeight = document.getElementById(theId).offsetTop
+                        var offsetWidth = document.getElementById(theId).offsetLeft;
+                        document.getElementById('tweet-button').style.top = offsetHeight;
+                        document.getElementById('tweet-button').style.top = offsetwidth -20;
+
                         $scope.cancelListenForDoubleClick = false;
                       });
                     }, 260);

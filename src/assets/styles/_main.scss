@@ -187,8 +187,8 @@ a {
   }
 
   .grow {
+    position: absolute;
     text-indent: 0px;
-    position: relative;
     border-radius: 5px;
     cursor: pointer;
     opacity: 1 !important;

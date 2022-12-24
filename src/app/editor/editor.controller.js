@@ -1068,12 +1068,7 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
-                    setTimeout(function () {
-                      $scope.$apply(function () {
-                        console.log("Display")
-                        document.getElementById('tweet-button').style.display = 'none';
-                      });
-                    }, 0);
+                    
                     console.log("The prop: ", document.getElementById(theId))
                      // this is right click
                     
@@ -1086,10 +1081,8 @@
                         var offsetWidth = document.getElementById(theId).offsetLeft;
                         console.log("That offset height: ", offsetHeight)
                         console.log("That offset width: ", offsetWidth)
-                        document.getElementById('tweet-button').style.display = absolute;
                         document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
                         document.getElementById('tweet-button').style.left = (offsetWidth - 50).toString() + 'px';
-                        
                         console.log("That style again is: ", document.getElementById('tweet-button').style)
 
                         $scope.cancelListenForDoubleClick = false;

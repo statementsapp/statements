@@ -1080,6 +1080,7 @@
                         var offsetWidth = document.getElementById(theId).offsetLeft;
                         document.getElementById('tweet-button').style.top = offsetHeight;
                         document.getElementById('tweet-button').style.top = offsetWidth -50;
+                        console.log("That style again is: ", document.getElementById('tweet-button').style)
 
                         $scope.cancelListenForDoubleClick = false;
                       });

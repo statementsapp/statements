@@ -181,6 +181,7 @@ a {
     text-indent: 0px;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
   }
 
   #tweet-button::before {
@@ -192,7 +193,7 @@ a {
   }
 
   .grow {
-    position: absolute;
+    
     text-indent: 0px;
     border-radius: 5px;
     cursor: pointer;

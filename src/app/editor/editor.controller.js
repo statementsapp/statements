@@ -1068,6 +1068,11 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
+                    var offsetHeight = document.getElementById('wholeprop' + theId).offsetTop
+                    var offsetWidth = document.getElementById('wholeprop'+ theId).offsetLeft;
+                    document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
+                    document.getElementById('tweet-button').style.left = (offsetWidth - 50).toString() + 'px';
+                    document.getElementById('tweet-button').classList.add("grow");
 
                     console.log("The prop: ", document.getElementById(theId))
                      // this is right click
@@ -1076,15 +1081,13 @@
                     $scope.cancelListenForDoubleClick = true;
                     setTimeout(function () {
                       $scope.$apply(function () {
-                        console.log("Into")
-                        var offsetHeight = document.getElementById('wholeprop' + theId).offsetTop
-                        var offsetWidth = document.getElementById('wholeprop'+ theId).offsetLeft;
-                        console.log("That offset height: ", offsetHeight)
-                        console.log("That offset width: ", offsetWidth)
-                        document.getElementById('tweet-button').classList.add("grow");
-                        document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
-                        document.getElementById('tweet-button').style.left = (offsetWidth - 50).toString() + 'px';
-                        console.log("That style again is: ", document.getElementById(theId));
+                        // console.log("Into")
+                        
+                        // console.log("That offset height: ", offsetHeight)
+                        // console.log("That offset width: ", offsetWidth)
+                        
+                        
+                        // console.log("That style again is: ", document.getElementById(theId));
 
                         $scope.cancelListenForDoubleClick = false;
                       });

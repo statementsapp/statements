@@ -1080,8 +1080,8 @@
                         var offsetWidth = document.getElementById(theId).offsetLeft;
                         console.log("That offset height: ", offsetHeight)
                         console.log("That offset width: ", offsetWidth)
-                        document.getElementById('tweet-button').style.top = offsetHeight;
-                        document.getElementById('tweet-button').style.left = (offsetWidth - 50);
+                        document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
+                        document.getElementById('tweet-button').style.left = (offsetWidth - 50).toString() + 'px';
                         console.log("That style again is: ", document.getElementById('tweet-button').style)
 
                         $scope.cancelListenForDoubleClick = false;

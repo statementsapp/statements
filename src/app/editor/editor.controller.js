@@ -1068,13 +1068,13 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
-                    var offsetHeight = document.getElementById('wholeprop' + theId).offsetTop
+                    var offsetHeight = document.getElementById('wholeprop' + theId).offsetTop;
                     var offsetWidth = document.getElementById('wholeprop'+ theId).offsetLeft;
                     document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
                     document.getElementById('tweet-button').style.left = (offsetWidth).toString() + 'px';
                     document.getElementById('tweet-button').classList.add("grow");
-                    console.log("That offset height: ", offsetHeight)
-                    console.log("That offset width: ", offsetWidth)
+                    console.log("That offset height: ", document.getElementById('wholeprop'+ theId).offsetTop);
+                    console.log("That offset width: ", document.getElementById('wholeprop'+ theId).offsetLeft);
                     
                     
                     console.log("That style again is: ", document.getElementById(theId));

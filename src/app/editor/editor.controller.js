@@ -1077,8 +1077,8 @@
                     setTimeout(function () {
                       $scope.$apply(function () {
                         console.log("Into")
-                        var offsetHeight = document.getElementById(theId).offsetTop
-                        var offsetWidth = document.getElementById(theId).offsetLeft;
+                        var offsetHeight = document.getElementById('wholeprop' + theId).offsetTop
+                        var offsetWidth = document.getElementById('wholeprop'+ theId).offsetLeft;
                         console.log("That offset height: ", offsetHeight)
                         console.log("That offset width: ", offsetWidth)
                         document.getElementById('tweet-button').classList.add("grow");

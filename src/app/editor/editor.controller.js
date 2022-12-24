@@ -1070,6 +1070,8 @@
                     };
                     var offsetHeight = document.getElementById('wholeprop' + theId).getBoundingClientRect().top;
                     var offsetWidth = document.getElementById('wholeprop'+ theId).getBoundingClientRect().left;
+                    console.log("That top before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().top)
+                    console.log("That left before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().left)
                     document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
                     document.getElementById('tweet-button').style.left = (offsetWidth).toString() + 'px';
                     document.getElementById('tweet-button').classList.add("grow");
@@ -1077,7 +1079,6 @@
                     console.log("That offset width: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().left);
                     
                     
-                    console.log("That style again is: ", document.getElementById(theId));
 
                     console.log("The prop: ", document.getElementById(theId))
                      // this is right click

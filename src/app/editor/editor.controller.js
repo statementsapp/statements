@@ -1075,8 +1075,8 @@
                     document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
                     document.getElementById('tweet-button').style.left = (offsetWidth).toString() + 'px';
                     document.getElementById('tweet-button').classList.add("grow");
-                    console.log("That offset height: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().top);
-                    console.log("That offset width: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().left);
+                    console.log("That offset height: ", document.getElementById('tweet-button').getBoundingClientRect().top);
+                    console.log("That offset width: ", document.getElementById('tweet-button').getBoundingClientRect().left);
                     
                     
 

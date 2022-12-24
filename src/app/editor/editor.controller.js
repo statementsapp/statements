@@ -1068,6 +1068,7 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
+                    console.log("The prop: ", document.getElementById(theId))
                      // this is right click
                     
                     console.log("Look at that right click")

@@ -1065,9 +1065,7 @@
                     break;
                 case 3:
                     event.preventDefault();
-                    $scope.tweetClicked = {
-                      id: theId
-                    };
+                    
                     console.log("The prop: ", document.getElementById(theId))
                      // this is right click
                     
@@ -1075,6 +1073,9 @@
                     $scope.cancelListenForDoubleClick = true;
                     setTimeout(function () {
                       $scope.$apply(function () {
+                        $scope.tweetClicked = {
+                          id: theId
+                        };
                         console.log("Into")
                         var offsetHeight = document.getElementById(theId).offsetTop
                         var offsetWidth = document.getElementById(theId).offsetLeft;

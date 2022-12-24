@@ -1078,6 +1078,7 @@
                         console.log("Into")
                         var offsetHeight = document.getElementById(theId).offsetTop
                         var offsetWidth = document.getElementById(theId).offsetLeft;
+                        console.log("That offset width: ", offsetWidth)
                         document.getElementById('tweet-button').style.top = offsetHeight;
                         document.getElementById('tweet-button').style.left = offsetWidth -50;
                         console.log("That style again is: ", document.getElementById('tweet-button').style)

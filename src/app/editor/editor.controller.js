@@ -1084,7 +1084,7 @@
                         document.getElementById('tweet-button').classList.add("grow");
                         document.getElementById('tweet-button').style.top = offsetHeight.toString() + 'px';
                         document.getElementById('tweet-button').style.left = (offsetWidth - 50).toString() + 'px';
-                        console.log("That style again is: ", document.getElementById('tweet-button').style)
+                        console.log("That style again is: ", document.getElementById(theId));
 
                         $scope.cancelListenForDoubleClick = false;
                       });

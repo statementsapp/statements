@@ -1068,7 +1068,7 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
-                    
+
                     console.log("The prop: ", document.getElementById(theId))
                      // this is right click
                     
@@ -2108,6 +2108,7 @@
       }
 
       $scope.clearDrag = function () {
+        console.log("Running clear drag")
         setTimeout(function () {
           $scope.$apply(function () {
             $scope.tweetClicked = {}

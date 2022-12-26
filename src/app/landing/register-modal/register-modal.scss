@@ -37,7 +37,7 @@
 //	color: #333;
 //}
 /* Modal container */
-.modal {
+.thismodal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -50,7 +50,7 @@
 }
 
 /* Modal content */
-.modal-content {
+.thismodal-content {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -76,31 +76,31 @@
 }
 
 /* The Close Button */
-.close {
+.thisclose {
   color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.thisclose:hover,
+.thisclose:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
-.modal-header {
+.thismodal-header {
   padding: 2px 16px;
   background-color: #5cb85c;
   color: white;
 }
 
-.modal-body {
+.thismodal-body {
   padding: 2px 16px;
 }
 
-.modal-footer {
+.thismodal-footer {
   padding: 2px 16px;
   background-color: #5cb85c;
   color: white;

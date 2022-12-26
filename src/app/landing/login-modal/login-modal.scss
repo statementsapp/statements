@@ -12,3 +12,15 @@
   width: 50%;
   float: right;
 }
+
+.modal-register-button {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  float: left;
+}
+
+.modal-register-button button {
+  display: inline-block;
+}

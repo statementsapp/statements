@@ -38,6 +38,7 @@
 //}
 /* Modal container */
 .thismodal {
+
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -51,6 +52,9 @@
 
 /* Modal content */
 .thismodal-content {
+  display: flex;
+    align-items: center;
+    justify-content: center;
   position: relative;
   background-color: #fefefe;
   margin: auto;

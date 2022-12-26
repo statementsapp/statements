@@ -1,110 +1,26 @@
-//* {
-//	box-sizing: border-box;
-//}
-//#container {
-//	background: #f6f5f7;
-//	display: flex;
-//	justify-content: center;
-//	align-items: center;
-//	flex-direction: column;
-//	height: 100vh;
-//	margin: -2opx 0 50px;
-//
-//}
-//
-//h1 {
-//	font-weight: bold;
-//	margin: 0;
-//}
-//
-//h2 {
-//	text-align: center;
-//}
-//
-//p {
-//	font-size: 14px;
-//	font-weight: 100;
-//	line-height: 20px;
-//	letter-space: .5px;
-//	margin: 20px 0 30px;
-//}
-//
-//span {
-//	font-size: 12px;
-//}
-//
-//* {
-//	color: #333;
-//}
-/* Modal container */
-.thismodal {
-
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+.modal-register-button {
+  text-align: center;
+  width: 50%;
+  float: left;
 }
 
-/* Modal content */
-.thismodal-content {
-    align-items: center;
-    justify-content: center;
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 40%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
+.modal-register-button button {
+  display: inline-block;
 }
 
-/* Add animation */
-@-webkit-keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
-/* The Close Button */
-.thisclose {
-  color: white;
+.modal-login-form {
+  width: 50%;
   float: right;
-  font-size: 28px;
-  font-weight: bold;
 }
 
-.thisclose:hover,
-.thisclose:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.modal-register-button {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  float: left;
 }
 
-.thismodal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.thismodal-body {
-  padding: 2px 16px;
-}
-
-.thismodal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+.modal-register-button button {
+  display: inline-block;
 }

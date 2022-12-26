@@ -125,7 +125,24 @@
           </p>
         </div>
       </div>
-
+    <div class="modal-footer">
+      <button type="button"
+              class="btn btn-secondary"
+              ng-click="vm.cancel()">
+        Cancel
+      </button>
+      <button type="submit"
+              ng-disabled="form.$invalid || vm.processing"
+              ng-click="vm.login(form.$valid)"
+              class="btn btn-primary">
+        <span>
+          <span ng-if="vm.processing">
+            <i ng-if="vm.processing"
+               class="fa fa-spinner fa-spin"></i>&nbsp;
+            </span> Submit
+        </span>
+      </button>
+    </div>
     </form>
   </div>
 </div>

@@ -27,7 +27,7 @@
     };
 
     vm.cancel = function() {
-      $uibModalInstance.dismiss(false);
+      $uibModalInstance.dismiss();
     };
   }
 

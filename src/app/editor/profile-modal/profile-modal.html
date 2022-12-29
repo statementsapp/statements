@@ -4,7 +4,8 @@
   </div>
 </div>
 <div class="modal-body"
-     id="modal-body-new-book">
+     id="modal-body-new-book"
+     ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing">
   <form name="form">
     <div class="row">
       <div class="form-group col-md-12">

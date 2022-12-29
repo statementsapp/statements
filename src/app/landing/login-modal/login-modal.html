@@ -8,8 +8,9 @@
 </div>
 <div class="modal-body"
      id="modal-body-login"
-     ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing">
-  <div class="modal-register-button" ng-if="data">
+     ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing"
+     ng-if="data">
+  <div class="modal-register-button" >
     <button type="button" class="btn btn-primary">Register</button>
   </div>
   <div class="modal-login-form">

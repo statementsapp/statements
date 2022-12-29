@@ -80,7 +80,8 @@
   </div>
 </div>
 <div class="modal-body"
-     id="modal-body-login">
+     id="modal-body-login"
+     ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing">
   <div class="modal-register-button">
     <button type="button" class="btn btn-primary">Register</button>
   </div>

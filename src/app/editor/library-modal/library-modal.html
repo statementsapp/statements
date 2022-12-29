@@ -5,7 +5,8 @@
 </div>
 
 <div class="modal-body"
-     id="modal-body-library">
+     id="modal-body-library"
+     ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing">
   <table class="table col-md-12">
     <thead>
     <tr>

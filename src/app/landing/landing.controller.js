@@ -198,6 +198,24 @@
       });
     }
 
+    $scope.openLoginModal = function () {
+      $scope.loginModalInstance = $uibModal.open({
+        animation: true,
+        ariaLabelledBy: 'modal-title-login',
+        ariaDescribedBy: 'modal-body-login',
+        templateUrl: 'app/landing/login-modal/login-modal.html',
+        size: 'lg',
+        controller: 'LoginModalController',
+        controllerAs: 'vm',
+        backdrop: 'static',
+        keyboard: false,
+      }).result.then(function (success) {
+        if (success) {
+          $location.reload();
+        }
+      });
+    };
+
     $scope.joinAsGuest = function () {
       $scope.loggingIn = true;
       $rootScope.logInAsGuest = true;

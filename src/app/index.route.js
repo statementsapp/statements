@@ -119,7 +119,7 @@
                           $state.go('main.editor');
                           $timeout(function () {
                             console.log('OK OPEN MODAL NOW')
-                            $rootScope.openProfileModal();
+                            vm.openProfileModal();
                           }, 250);
                         }, 250);
                       }

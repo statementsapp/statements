@@ -257,7 +257,7 @@
       
     };
 
-    $scope.openProfileModal = function () {
+    vm.openProfileModal = function () {
       $scope.profileModalInstance = $uibModal.open({
         animation: true,
         ariaLabelledBy: 'modal-title-profile',

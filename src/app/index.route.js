@@ -89,20 +89,6 @@
           controllerAs: 'vm',
           templateUrl: 'app/landing/landing.html',
           resolve: {
-            apiService: function (auth, ApiService) {
-              return new ApiService();
-            },
-
-            libraryService: function (LibraryService, library) {
-              var libraryService = new LibraryService();
-              libraryService.setLibrary(library);
-              return libraryService;
-            },
-            profileService: function (ProfileService, profile) {
-              var profileService = new ProfileService();
-              profileService.setProfile(profile);
-              return profileService;
-            },
             requiresNoAuth: function ($rootScope, $state, $timeout, $uibModal) {
               return firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
@@ -131,33 +117,7 @@
                           console.log('THIS ELSE')
                           $rootScope.logInAsGuest = false;
                           $state.go('main.editor');
-                          $timeout(function () {
-                            console.log('OK OPEN MODAL NOW')
-                            $uibModal.open({
-                              animation: true,
-                              ariaLabelledBy: 'modal-title-profile',
-                              ariaDescribedBy: 'modal-body-profile',
-                              templateUrl: 'app/editor/profile-modal/profile-modal.html',
-                              size: 'lg',
-                              controller: 'ProfileModalController',
-                              controllerAs: 'vm',
-                              backdrop: 'static',
-                              keyboard: false,
-                              resolve: {
-                                profileService: profileService,
-                                libraryService: libraryService,
-                                apiService: apiService
-                              }
-                            }).result.then(function () {
-                              $scope.profile = profileService.getProfile();
-
-                              chatSocket.emit('userUpdated', {
-                                userId: $scope.uid,
-                                displayName: $scope.profile.displayName,
-                                bookId: $scope.bookId
-                              });
-                            });
-                          }, 250);
+                          
                         }, 250);
                       }
                     }).catch(function (error) {

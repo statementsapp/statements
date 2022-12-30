@@ -89,7 +89,7 @@
           controllerAs: 'vm',
           templateUrl: 'app/landing/landing.html',
           resolve: {
-            requiresNoAuth: function ($rootScope, $state, $timeout) {
+            requiresNoAuth: function ($rootScope, $state, $timeout, $uibModal) {
               return firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
 
@@ -119,7 +119,30 @@
                           $state.go('main.editor');
                           $timeout(function () {
                             console.log('OK OPEN MODAL NOW')
-                            vm.openProfileModal();
+                            $scope.profileModalInstance = $uibModal.open({
+                              animation: true,
+                              ariaLabelledBy: 'modal-title-profile',
+                              ariaDescribedBy: 'modal-body-profile',
+                              templateUrl: 'app/editor/profile-modal/profile-modal.html',
+                              size: 'lg',
+                              controller: 'ProfileModalController',
+                              controllerAs: 'vm',
+                              backdrop: 'static',
+                              keyboard: false,
+                              resolve: {
+                                profileService: profileService,
+                                libraryService: libraryService,
+                                apiService: apiService
+                              }
+                            }).result.then(function () {
+                              $scope.profile = profileService.getProfile();
+
+                              chatSocket.emit('userUpdated', {
+                                userId: $scope.uid,
+                                displayName: $scope.profile.displayName,
+                                bookId: $scope.bookId
+                              });
+                            });
                           }, 250);
                         }, 250);
                       }

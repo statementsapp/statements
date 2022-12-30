@@ -217,7 +217,7 @@
     };
 
     $scope.openRegisterModal = function () {
-      $timeout(function() {
+      setTimeout(() => {
         $scope.loginModalInstance = $uibModal.open({
           animation: true,
           ariaLabelledBy: 'modal-title-register',
@@ -232,7 +232,8 @@
             $location.reload();
           }
         });
-      }, 500);
+      }, 1000)
+
       
     };
 

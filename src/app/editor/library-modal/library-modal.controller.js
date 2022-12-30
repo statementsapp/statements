@@ -37,6 +37,15 @@
       // TODO delete book logic goes here.
     };
 
+    vm.logout = function () {
+      apiService.signOut().then(function () {
+        profileService.clear();
+        libraryService.clear();
+        $rootScope.guest = false;
+        $state.go('login');
+      });
+    }
+
   }
 
   angular.module('statements')

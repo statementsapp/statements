@@ -89,6 +89,20 @@
           controllerAs: 'vm',
           templateUrl: 'app/landing/landing.html',
           resolve: {
+            apiService: function (auth, ApiService) {
+              return new ApiService();
+            },
+
+            libraryService: function (LibraryService, library) {
+              var libraryService = new LibraryService();
+              libraryService.setLibrary(library);
+              return libraryService;
+            },
+            profileService: function (ProfileService, profile) {
+              var profileService = new ProfileService();
+              profileService.setProfile(profile);
+              return profileService;
+            },
             requiresNoAuth: function ($rootScope, $state, $timeout, $uibModal) {
               return firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {

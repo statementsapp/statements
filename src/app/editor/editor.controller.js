@@ -5962,10 +5962,10 @@
       },
     ];
     if ($rootScope.guest && !$scope.bookId) {
-      $scope.openLibraryModal();
+      $scope.openNewBookModal();
     } else {
       console.log("Profile modal else")
-      $scope.openProfileModal();
+      $scope.openLibraryModal();
     }
   }
 

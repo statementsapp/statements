@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function RegisterModalController($uibModalInstance, $state, ApiService) {
+  function RegisterModalController($uibModalInstance, $state, ApiService, $uibModal) {
     var vm = this;
     vm.apiService = new ApiService();
 
@@ -61,7 +61,7 @@
       console.log("to run the signupmodal")
       console.log("uib modal instance: ", $uibModalInstance)
       setTimeout(() => {
-        $uibModalInstance.open({
+        $uibModal.open({
           animation: true,
           ariaLabelledBy: 'modal-title-register',
           ariaDescribedBy: 'modal-body-register',

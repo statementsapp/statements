@@ -66,7 +66,7 @@
   }
 
   angular.module('statements')
-    .controller('SignupModalController', RegisterModalController);
+    .controller('SignupModalController', SignupModalController);
 
 })
 ();

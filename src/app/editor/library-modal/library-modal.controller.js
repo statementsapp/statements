@@ -8,6 +8,23 @@
     vm.books = libraryService.getBooks(profileService.getBookIds());
     vm.profile = profileService.getProfile();
 
+    vm.processing = false;
+
+    vm.updateProfile = function(isValid) {
+      if (isValid) {
+        vm.processing = true;
+        return apiService.updateProfile(vm.profile).then(function (result) {
+          vm.profile = result.data;
+          profileService.setProfile(result.data);
+          vm.dismiss();
+        }).catch(function (error) {
+          vm.profileError = error.message;
+        });
+      } else {
+        console.log('form not valid');
+      }
+    };
+
     vm.selectBook = function(bookId) {
       $uibModalInstance.close(bookId);
     };

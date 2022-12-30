@@ -47,6 +47,68 @@
       </div>
     </div>
   </div>
+    <form name="form">
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="displayName">Display Name</label>
+          <input type="text"
+                 class="form-control"
+                 id="displayName"
+                 name="displayName"
+                 required
+                 autocomplete="off"
+                 aria-describedby="displayHelp"
+                 ng-keyup="$event.keyCode === 13 ? vm.updateProfile(form.$valid) : form.nothing"
+                 ng-model="vm.profile.displayName" />
+          <small id="displayHelp"
+                 class="form-text text-muted">The name everyone will see.</small>
+        </div>
+
+  <!--       <div class="form-group col-md-12">
+          <label for="first-name">First Name</label>
+          <input type="text"
+                 class="form-control"
+                 id="first-name"
+                 name="firstName"
+                 aria-describedby="firstNameHelp"
+                 ng-model="vm.profile.firstName" />
+          <small id="firstNameHelp"
+                 class="form-text text-muted">Your first name.</small>
+        </div>
+
+        <div class="form-group col-md-12">
+          <label for="last-name">Last Name</label>
+          <input type="text"
+                 class="form-control"
+                 id="last-name"
+                 name="lastName"
+                 aria-describedby="lastNameHelp"
+                 ng-model="vm.profile.lastName" />
+          <small id="lastNameHelp"
+                 class="form-text text-muted">Your last name.</small>
+        </div> -->
+
+        <div class="form-group col-md-12">
+          <label for="email">Email Address</label>
+          <input type="email"
+                 class="form-control"
+                 id="email"
+                 name="email"
+                 required
+                 autocomplete="off"
+                 ng-keyup="$event.keyCode === 13 ? vm.updateProfile(form.$valid) : form.nothing"
+                 aria-describedby="emailAddressHelp"
+                 ng-model="vm.profile.emailAddress" />
+          <small id="emailAddressHelp"
+                 class="form-text text-muted">Your preferred contact email.</small>
+          <p ng-show="form.email.$invalid && !form.email.$pristine"
+             class="help-block">
+            Enter a valid email
+          </p>
+        </div>
+
+      </div>
+    </form>
 </div>
 
 <div class="modal-footer">

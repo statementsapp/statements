@@ -117,6 +117,10 @@
                           console.log('THIS ELSE')
                           $rootScope.logInAsGuest = false;
                           $state.go('main.editor');
+                          $timeout(function () {
+                            console.log('OK OPEN MODAL NOW')
+                            $scope.openProfileModal();
+                          }, 250);
                         }, 250);
                       }
                     }).catch(function (error) {

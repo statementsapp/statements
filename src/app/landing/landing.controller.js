@@ -257,7 +257,32 @@
       
     };
 
-    
+    $scope.openProfileModal = function () {
+      $scope.profileModalInstance = $uibModal.open({
+        animation: true,
+        ariaLabelledBy: 'modal-title-profile',
+        ariaDescribedBy: 'modal-body-profile',
+        templateUrl: 'app/editor/profile-modal/profile-modal.html',
+        size: 'lg',
+        controller: 'ProfileModalController',
+        controllerAs: 'vm',
+        backdrop: 'static',
+        keyboard: false,
+        resolve: {
+          profileService: profileService,
+          libraryService: libraryService,
+          apiService: apiService
+        }
+      }).result.then(function () {
+        $scope.profile = profileService.getProfile();
+
+        chatSocket.emit('userUpdated', {
+          userId: $scope.uid,
+          displayName: $scope.profile.displayName,
+          bookId: $scope.bookId
+        });
+      });
+    };
 
     $scope.joinAsGuest = function () {
       $scope.loggingIn = true;

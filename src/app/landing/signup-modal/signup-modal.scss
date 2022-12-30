@@ -1,67 +1,27 @@
-//.modal-register-button {
-  //text-align: center;
-  //width: 50%;
-  //float: left;
-//}
-
-//.modal-register-button button {
-  //display: inline-block;
-//}
-
-//.modal-login-form {
-  //width: 50%;
-  //float: right;
-//}
-
-//.modal-register-button {
-  //padding-top: 50px;
-  //display: flex;
-  //align-items: center;
-  //width: 50%;
-  //float: left;
-//}
-
-//.modal-register-button button {
-//  display: inline-block;
-//}
-
-* {
-  box-sizing: border-box;
-}
-
-#container {
-  background: #f6f5f7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  margin: -2opx 0 50px;
-
-}
-
-h1 {
-  font-weight: bold;
-  margin: 0;
-}
-
-h2 {
+.modal-register-button {
   text-align: center;
+  width: 50%;
+  float: left;
 }
 
-p {
-  font-size: 14px;
-  font-weight: 100;
-  line-height: 20px;
-  letter-space: .5px;
-  margin: 20px 0 30px;
+.modal-register-button button {
+  display: inline-block;
 }
 
-span {
-  font-size: 12px;
+.modal-login-form {
+  width: 50%;
+  float: right;
 }
 
-* {
-  color: #333;
-
+.modal-register-button {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  float: left;
 }
+
+.modal-register-button button {
+  display: inline-block;
+}
+

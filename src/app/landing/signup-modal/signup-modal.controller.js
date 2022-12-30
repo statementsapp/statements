@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function RegisterModalController($uibModalInstance, $state, ApiService) {
+  function SignupModalController($uibModalInstance, $state, ApiService) {
     var vm = this;
     vm.apiService = new ApiService();
 
@@ -33,7 +33,7 @@
     //   container.classList.remove('right-panel-active');
     // });
 
-    
+
 
     vm.register = function(isValid) {
       if (isValid) {

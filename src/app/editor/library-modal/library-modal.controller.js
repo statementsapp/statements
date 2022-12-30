@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope) {
+  function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state) {
     var vm = this;
 
     vm.books = libraryService.getBooks(profileService.getBookIds());

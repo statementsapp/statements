@@ -110,10 +110,12 @@
 
                         $rootScope.redirectToEditor = false;
                         $rootScope.logInAsGuest = false;
+                        console.log("Going to main editor IF")
                         $state.go('main.editor', $rootScope.editorParams);
                       } else {
                         $rootScope.loggingIn = false;
                         $timeout(function () {
+                          console.log("Going to main editor ELSE")
                           $rootScope.logInAsGuest = false;
                           $state.go('main.editor');
                         }, 250);

@@ -60,7 +60,7 @@
     vm.openSignupModal = function () {
       console.log("Runs the signupmodal")
       setTimeout(() => {
-        $uibModal.open({
+        $uibModalInstance.open({
           animation: true,
           ariaLabelledBy: 'modal-title-register',
           ariaDescribedBy: 'modal-body-register',

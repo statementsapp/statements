@@ -9,11 +9,11 @@
 <div class="modal-body"
      id="modal-body-login"
      ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing"
-     ng-if="data">
-  <div class="modal-register-button" >
+     ng-class="{'justlogin' : !data}">
+  <div class="modal-register-button" ng-class="{'noregister' : !data}">
     <button type="button" class="btn btn-primary">Register</button>
   </div>
-  <div class="modal-login-form">
+  <div class="modal-login-form" ng-class="{'justlogin' : !data}">
     <form name="form"
           novalidate>
       <div class="form-row">

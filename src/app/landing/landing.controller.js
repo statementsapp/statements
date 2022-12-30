@@ -198,6 +198,26 @@
       });
     }
 
+    if ($rootScope.$$listenerCount.openSignupModal === undefined) {
+      $rootScope.$on('openSignupModal', function () {
+        $uibModal.open({
+          animation: true,
+          ariaLabelledBy: 'modal-title-login',
+          ariaDescribedBy: 'modal-body-login',
+          templateUrl: 'app/landing/signup-modal/signup-modal.html',
+          size: 'lg',
+          controller: 'SignupModalController',
+          controllerAs: 'vm',
+          backdrop: 'static',
+          keyboard: false,
+        }).result.then(function (success) {
+          if (success) {
+            $state.go('main.editor');
+          }
+        });
+      });
+    }
+
     $scope.openLoginModal = function () {
       $scope.loginModalInstance = $uibModal.open({
         animation: true,
@@ -237,26 +257,7 @@
       
     };
 
-    $scope.openSignupModal = function () {
-      console.log("Runs the signupmodal")
-      setTimeout(() => {
-        $scope.loginModalInstance = $uibModal.open({
-          animation: true,
-          ariaLabelledBy: 'modal-title-register',
-          ariaDescribedBy: 'modal-body-register',
-          templateUrl: 'app/landing/signup-modal/signup-modal.html',
-          size: 'lg',
-          controller: 'SignupModalController',
-          controllerAs: 'vm',
-          backdrop: 'static',
-        }).result.then(function (success) {
-          if (success) {
-            $location.reload();
-          }
-        });
-      }, 1000)
-      
-    };
+
 
     $scope.joinAsGuest = function () {
       $scope.loggingIn = true;

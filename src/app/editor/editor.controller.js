@@ -5963,6 +5963,9 @@
     ];
     if ($rootScope.guest && !$scope.bookId) {
       $scope.openNewBookModal();
+    } else {
+      console.log("Profile modal else")
+      $scope.openProfileModal();
     }
   }
 

@@ -233,7 +233,22 @@
       });
     };
 
-    
+    $scope.openSignupModal = function () {
+      $scope.loginModalInstance = $uibModal.open({
+        animation: true,
+        ariaLabelledBy: 'modal-title-register',
+        ariaDescribedBy: 'modal-body-register',
+        templateUrl: 'app/landing/signup-modal/signup-modal.html',
+        size: 'lg',
+        controller: 'SignupModalController',
+        controllerAs: 'vm',
+        backdrop: 'static',
+      }).result.then(function (success) {
+        if (success) {
+          $location.reload();
+        }
+      });
+    };
 
     $scope.joinAsGuest = function () {
       $scope.loggingIn = true;

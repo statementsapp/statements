@@ -103,17 +103,18 @@
                     $rootScope.uid = user.uid;
                     user.getIdToken().then(function (token) {
 
-                      // $rootScope.token = token;
+                      $rootScope.token = token;
                       // comment out above line to disable automatic login
                       if ($rootScope.redirectToEditor) {
                         $rootScope.loggingIn = false;
-
+                        console.log('THIS if')
                         $rootScope.redirectToEditor = false;
                         $rootScope.logInAsGuest = false;
                         $state.go('main.editor', $rootScope.editorParams);
                       } else {
                         $rootScope.loggingIn = false;
                         $timeout(function () {
+                          console.log('THIS ELSE')
                           $rootScope.logInAsGuest = false;
                           $state.go('main.editor');
                         }, 250);

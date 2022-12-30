@@ -119,7 +119,7 @@
                           $state.go('main.editor');
                           $timeout(function () {
                             console.log('OK OPEN MODAL NOW')
-                            $scope.profileModalInstance = $uibModal.open({
+                            $uibModal.open({
                               animation: true,
                               ariaLabelledBy: 'modal-title-profile',
                               ariaDescribedBy: 'modal-body-profile',

@@ -217,20 +217,23 @@
     };
 
     $scope.openRegisterModal = function () {
-      $scope.loginModalInstance = $uibModal.open({
-        animation: true,
-        ariaLabelledBy: 'modal-title-register',
-        ariaDescribedBy: 'modal-body-register',
-        templateUrl: 'app/landing/register-modal/register-modal.html',
-        size: 'lg',
-        controller: 'RegisterModalController',
-        controllerAs: 'vm',
-        backdrop: 'static',
-      }).result.then(function (success) {
-        if (success) {
-          $location.reload();
-        }
-      });
+      $timeout(function() {
+        $scope.loginModalInstance = $uibModal.open({
+          animation: true,
+          ariaLabelledBy: 'modal-title-register',
+          ariaDescribedBy: 'modal-body-register',
+          templateUrl: 'app/landing/register-modal/register-modal.html',
+          size: 'lg',
+          controller: 'RegisterModalController',
+          controllerAs: 'vm',
+          backdrop: 'static',
+        }).result.then(function (success) {
+          if (success) {
+            $location.reload();
+          }
+        });
+      }, 500);
+      
     };
 
     $scope.openSignupModal = function () {

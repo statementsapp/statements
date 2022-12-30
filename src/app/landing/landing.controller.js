@@ -217,7 +217,7 @@
     };
 
     $scope.openRegisterModal = function () {
-      setTimeout(() => {
+      // setTimeout(() => {
         $scope.loginModalInstance = $uibModal.open({
           animation: true,
           ariaLabelledBy: 'modal-title-register',
@@ -232,26 +232,29 @@
             $location.reload();
           }
         });
-      }, 1000)
+      // }, 1000)
 
       
     };
 
     $scope.openSignupModal = function () {
-      $scope.loginModalInstance = $uibModal.open({
-        animation: true,
-        ariaLabelledBy: 'modal-title-register',
-        ariaDescribedBy: 'modal-body-register',
-        templateUrl: 'app/landing/signup-modal/signup-modal.html',
-        size: 'lg',
-        controller: 'SignupModalController',
-        controllerAs: 'vm',
-        backdrop: 'static',
-      }).result.then(function (success) {
-        if (success) {
-          $location.reload();
-        }
-      });
+      setTimeout(() => {
+        $scope.loginModalInstance = $uibModal.open({
+          animation: true,
+          ariaLabelledBy: 'modal-title-register',
+          ariaDescribedBy: 'modal-body-register',
+          templateUrl: 'app/landing/signup-modal/signup-modal.html',
+          size: 'lg',
+          controller: 'SignupModalController',
+          controllerAs: 'vm',
+          backdrop: 'static',
+        }).result.then(function (success) {
+          if (success) {
+            $location.reload();
+          }
+        });
+      }, 1000)
+      
     };
 
     $scope.joinAsGuest = function () {

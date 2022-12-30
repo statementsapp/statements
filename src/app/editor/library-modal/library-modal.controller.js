@@ -38,11 +38,13 @@
     };
 
     vm.logout = function () {
+      vm.dismiss();
       apiService.signOut().then(function () {
         profileService.clear();
         libraryService.clear();
         $rootScope.guest = false;
         $state.go('login');
+
       });
     }
 

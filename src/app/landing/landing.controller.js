@@ -238,6 +238,7 @@
     };
 
     $scope.openSignupModal = function () {
+      console.log("Runs the signupmodal")
       setTimeout(() => {
         $scope.loginModalInstance = $uibModal.open({
           animation: true,

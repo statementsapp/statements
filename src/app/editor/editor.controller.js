@@ -5962,7 +5962,7 @@
       },
     ];
     if ($rootScope.guest && !$scope.bookId) {
-      $scope.openNewBookModal();
+      $scope.openAddExistingBookModal();
     } else {
       console.log("Profile modal else")
       $scope.openProfileModal();

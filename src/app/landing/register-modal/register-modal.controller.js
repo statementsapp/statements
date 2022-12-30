@@ -57,7 +57,27 @@
       }
     };
 
-    
+    vm.openSignupModal = function () {
+      console.log("to run the signupmodal")
+      console.log("uib modal instance: ", $uibModalInstance)
+      setTimeout(() => {
+        $uibModalInstance.open({
+          animation: true,
+          ariaLabelledBy: 'modal-title-register',
+          ariaDescribedBy: 'modal-body-register',
+          templateUrl: 'app/landing/signup-modal/signup-modal.html',
+          size: 'lg',
+          controller: 'SignupModalController',
+          controllerAs: 'vm',
+          backdrop: 'static',
+        }).result.then(function (success) {
+          if (success) {
+            $location.reload();
+          }
+        });
+      }, 1000)
+      
+    };
 
     vm.cancel = function() {
       $uibModalInstance.dismiss();

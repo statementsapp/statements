@@ -33,6 +33,8 @@
     //   container.classList.remove('right-panel-active');
     // });
 
+    
+
     vm.register = function(isValid) {
       if (isValid) {
         vm.processing = true;

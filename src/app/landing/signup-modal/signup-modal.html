@@ -116,10 +116,10 @@
           ng-click="vm.register(form.$valid)"
           class="btn btn-primary">
     <span>
-      <span ng-if="vm.processing">
+      <span ng-if="vm.processing" ng-click="vm.register()">
         <i ng-if="vm.processing"
            class="fa fa-spinner fa-spin"></i>&nbsp;
-        </span> Submit
+    </span> Submit
     </span>
   </button>
 </div>

@@ -37,6 +37,31 @@
       // TODO delete book logic goes here.
     };
 
+    vm.addBookFromLibrary = function() {
+      setTimeout({
+        $uibModal.open({
+                animation: true,
+                ariaLabelledBy: 'modal-title-new-book',
+                ariaDescribedBy: 'modal-body-new-book',
+                templateUrl: 'app/editor/new-book-modal/new-book-modal.html',
+                size: 'lg',
+                controller: 'NewBookModalController',
+                controllerAs: 'vm',
+                keyboard: false,
+                backdrop: 'static',
+                // windowTemplateUrl: 'app/editor/new-book-modal/choice-window.html',
+                resolve: {
+                  profileService: profileService,
+                  libraryService: libraryService,
+                  apiService: apiService
+                }
+              })
+      },10)
+      vm.dismiss();
+
+      
+    };
+
     vm.logout = function () {
       vm.dismiss();
       apiService.signOut().then(function () {

@@ -38,7 +38,7 @@
     };
 
     vm.addBookFromLibrary = function() {
-      setTimeout({
+      setTimeout(function () {
         $uibModal.open({
                 animation: true,
                 ariaLabelledBy: 'modal-title-new-book',
@@ -56,8 +56,10 @@
                   apiService: apiService
                 }
               })
-      },10)
+      }, 5);
+
       vm.dismiss();
+
 
       
     };

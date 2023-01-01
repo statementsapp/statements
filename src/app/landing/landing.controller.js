@@ -219,6 +219,10 @@
     }
 
     $scope.openLoginModal = function () {
+      $setTimeout(function() {
+        console.log("The modal element: ", document.getElementsByClassName("modal"));
+      }, 10);
+      console.log("The modal element: ", document.getElementsByClassName("modal"));
       $scope.loginModalInstance = $uibModal.open({
         animation: true,
         ariaLabelledBy: 'modal-title-login',
@@ -231,7 +235,7 @@
         keyboard: false,
       }).result.then(function (success) {
         if (success) {
-          console.log("The modal element: ", document.getElementsByClassName("modal"));
+
           $location.reload();
 
         }

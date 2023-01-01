@@ -221,7 +221,7 @@
     $scope.openLoginModal = function () {
       setTimeout(function() {
         console.log("The modal element: ", document.getElementsByClassName("modal"));
-        document.getElementsByClassName("modal").addEventListener("click", vm.cancel());
+        document.getElementsByClassName("modal").addEventListener("click", $uibModal.dismiss());
       }, 10);
       console.log("The modal element: ", document.getElementsByClassName("modal"));
       $scope.loginModalInstance = $uibModal.open({

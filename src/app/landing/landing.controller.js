@@ -22,18 +22,18 @@
 
     setTimeout(function () {
       $scope.$apply(function () {
-        console.log("Video one: ", $scope.videoOne)
-        $scope.videoOne.addEventListener("loadeddata", function () {
-          console.log("ONE has started loading successfully!");
-        });
+        // console.log("Video one: ", $scope.videoOne)
+        // $scope.videoOne.addEventListener("loadeddata", function () {
+        //   console.log("ONE has started loading successfully!");
+        // });
 
-        $scope.videoTwo.addEventListener("loadeddata", function () {
-          console.log("TWO has started loading successfully!");
-        });
+        // $scope.videoTwo.addEventListener("loadeddata", function () {
+        //   console.log("TWO has started loading successfully!");
+        // });
 
-        $scope.videoThree.addEventListener("loadeddata", function () {
-          console.log("THREE has started loading successfully!");
-        });
+        // $scope.videoThree.addEventListener("loadeddata", function () {
+        //   console.log("THREE has started loading successfully!");
+        // });
       });
     }, 5000);
 

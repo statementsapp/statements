@@ -219,7 +219,7 @@
     }
 
     $scope.openLoginModal = function () {
-      $setTimeout(function() {
+      setTimeout(function() {
         console.log("The modal element: ", document.getElementsByClassName("modal"));
       }, 10);
       console.log("The modal element: ", document.getElementsByClassName("modal"));

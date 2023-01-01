@@ -231,8 +231,9 @@
         keyboard: false,
       }).result.then(function (success) {
         if (success) {
-          $location.reload();
           console.log("The modal element: ", document.getElementsByClassName("modal"));
+          $location.reload();
+
         }
       });
     };

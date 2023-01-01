@@ -115,7 +115,7 @@
                         $rootScope.loggingIn = false;
                         $timeout(function () {
                           console.log('THIS ELSE')
-                          $rootScope.logInAsGuest = false;
+                          $rootScope.logInAsGuest = true;
                           $state.go('main.editor');
                           
                         }, 250);

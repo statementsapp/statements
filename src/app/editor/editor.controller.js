@@ -1080,8 +1080,8 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
-                    var offsetHeight = document.getElementById('wholeprop' + theId).getBoundingClientRect().top;
-                    var offsetWidth = document.getElementById('wholeprop'+ theId).getBoundingClientRect().left;
+                    var offsetHeight = document.getElementById('wholeprop' + theId).getBoundingClientRect().top*.75;
+                    var offsetWidth = document.getElementById('wholeprop'+ theId).getBoundingClientRect().left*.75;
                     console.log("That top before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().top)
                     console.log("That left before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().left)
                     document.getElementById('tweet-button').style.top = (offsetHeight).toString() + 'px';

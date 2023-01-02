@@ -47,6 +47,7 @@
 
 <div class="modal-body"
      id="modal-body-library"
+     ng-if="vm.books.length !== 0"
      ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing"
      >
   <div style="height: 300px; overflow: scroll;">
@@ -144,13 +145,13 @@
   </table> -->
 
 
-  <div ng-if="vm.books.length === 0">
+<!--   <div ng-if="vm.books.length === 0">
     <div class="col-md-12">
       <div class="text-center text-muted">
         There doesn't seem to be anything here yet.
       </div>
     </div>
-  </div>
+  </div> -->
     <form name="form">
       <div class="row">
         <div class="form-group col-md-12">

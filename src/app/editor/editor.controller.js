@@ -5964,7 +5964,7 @@
       $scope.openLibraryModal();
     } else if (!$rootScope.guest){
       console.log("LAST ELSE")
-      $scope.openLibraryModal();
+      // $scope.openLibraryModal();
     }
   }
 

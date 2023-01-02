@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function SignupModalController($uibModalInstance, $state, ApiService) {
+  function SignupModalController($uibModalInstance, $state, ApiService, $rootScope) {
     
     var vm = this;
         vm.apiService = new ApiService();
@@ -24,6 +24,7 @@
 
         vm.register = function(isValid) {
           if (isValid) {
+            $rootScope.redirectToEditor = true;
             vm.processing = true;
             vm.apiService.registerWithEmailAndPassword(vm.user.email, vm.user.password)
               .then(function() {

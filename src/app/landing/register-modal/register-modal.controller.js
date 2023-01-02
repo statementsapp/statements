@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function RegisterModalController($uibModalInstance, $state, ApiService, $uibModal) {
+  function RegisterModalController($uibModalInstance, $state, ApiService, $uibModal, $rootScope) {
     var vm = this;
     vm.apiService = new ApiService();
 

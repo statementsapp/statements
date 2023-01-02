@@ -5795,6 +5795,7 @@
       chatSocket.emit('room', $scope.bookId);
       $timeout(function() {
         if (!$scope.isGuest() && !$scope.loggedIn()) {
+          console.log("Sign in anonymously about to trigger at end of main loop")
           apiService.signInAnonymously().then(function () {
             $state.go('main.editor', $stateParams);
           });

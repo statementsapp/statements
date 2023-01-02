@@ -1080,6 +1080,8 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
+                    document.getElementById($scope.selectedProposition.id).blur();
+
                     var offsetHeight = document.getElementById('wholeprop' + theId).getBoundingClientRect().top*.75;
                     var offsetWidth = document.getElementById('wholeprop'+ theId).getBoundingClientRect().left*.6;
                     console.log("That top before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().top)

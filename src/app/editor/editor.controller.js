@@ -5962,6 +5962,8 @@
       $scope.openLibraryModal();
     } else if (!$scope.bookId){
       console.log("Entry into editor modal else")
+      
+    } else {
       $scope.openNewBookModal();
     }
   }

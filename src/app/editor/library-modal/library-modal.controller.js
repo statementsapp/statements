@@ -55,8 +55,14 @@
                   libraryService: libraryService,
                   apiService: apiService
                 }
-              })
-      }, 5);
+              }).result.then(function (bookId) {
+        console.log("Is there that book id")
+        if (bookId) {
+          chatSocket.emit('leave', bookId);
+          $state.go('main.editor', {bookId: bookId});
+        }
+      });
+      }, 5)
 
       vm.dismiss();
 

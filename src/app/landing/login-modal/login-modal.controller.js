@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function LoginModalController($uibModalInstance, ApiService) {
+  function LoginModalController($uibModalInstance, ApiService, $rootScope) {
     var vm = this;
     vm.apiService = new ApiService();
     vm.processing = false;
@@ -14,9 +14,11 @@
 
     vm.login = function(isValid) {
       if (isValid) {
+
         vm.processing = true;
         vm.apiService.signInWithEmailAndPassword(vm.user.email, vm.user.password)
           .then(function() {
+            $rootScope.redirectToEditor = true;
             vm.processing = false;
             $uibModalInstance.dismiss(true);
           }, function(error) {

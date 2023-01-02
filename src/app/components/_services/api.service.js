@@ -154,6 +154,7 @@
     }
 
     function readBook(bookId) {
+      console.log("Reading book: ", bookId)
       return get('/library/book/' + bookId);
     }
 

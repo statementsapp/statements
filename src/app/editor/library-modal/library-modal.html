@@ -33,7 +33,7 @@
         ng-mouseenter="hover = true"
         ng-mouseleave="hover = false">
       <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book.topic }}
+        {{ book.book.nodes[0].topic }}
       </td>
       <td ng-click="vm.selectBook(book.uid)">
         {{ book.book.lastModified * 1000 | date:'short' }}

@@ -142,6 +142,7 @@
     }
 
     function updateProfile(profile) {
+      console.log("Posting a profile")
       return post('/user/' + $rootScope.uid + '/profile', profile);
     }
 

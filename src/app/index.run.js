@@ -17,6 +17,7 @@
       if ($rootScope.firstEntry) {
         if (!$rootScope.guest) {
           if (to.name === 'main.editor') {
+            console.log("Redirect to editor trueing")
             $rootScope.redirectToEditor = true;
             $rootScope.editorParams = toParams;
           }

@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state, $uibModal) {
+  function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state, $uibModal, chatSocket) {
     var vm = this;
 
     vm.books = libraryService.getBooks(profileService.getBookIds());
@@ -59,6 +59,7 @@
         console.log("Is there that book id")
         if (bookId) {
           chatSocket.emit('leave', bookId);
+          console.log("that book id: ", bookId)
           $state.go('main.editor', {bookId: bookId});
         }
       });

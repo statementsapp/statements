@@ -4,7 +4,7 @@
   /** @ngInject */
   function runBlock($rootScope, $log) {
     $log.debug('runBlock end');
-
+    console.log("Block running")
     $rootScope.firstEntry = true;
     $rootScope.redirectToEditor = false;
     $rootScope.editorParams = {};

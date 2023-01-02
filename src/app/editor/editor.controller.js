@@ -5962,7 +5962,7 @@
     } else if (!$scope.bookId){
       console.log("Entry into editor modal else")
       $scope.openNewBookModal();
-    } else if (!rootScope.guest){
+    } else if (!$rootScope.guest){
       console.log("LAST ELSE")
       $scope.openLibraryModal();
     }

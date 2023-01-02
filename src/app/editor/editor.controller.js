@@ -5960,7 +5960,7 @@
       console.log("Entry into editor if")
       
       $scope.openLibraryModal();
-    } else {
+    } else if (!$scope.bookId){
       console.log("Entry into editor modal else")
       $scope.openNewBookModal();
     }

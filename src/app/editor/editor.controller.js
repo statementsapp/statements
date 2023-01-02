@@ -5961,7 +5961,7 @@
       $scope.openNewBookModal();
     } else if (!$scope.bookId){
       console.log("Entry into editor modal else")
-      $scope.openNewBookModal();
+      $scope.openLibraryModal();
     } else if (!$rootScope.guest){
       console.log("LAST ELSE")
       $scope.openLibraryModal();

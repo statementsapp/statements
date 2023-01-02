@@ -102,7 +102,7 @@
                   } else {
                     $rootScope.uid = user.uid;
                     user.getIdToken().then(function (token) {
-
+                      console.log("That checker")
                       $rootScope.token = token;
                       // comment out above line to disable automatic login
                       if ($rootScope.redirectToEditor) {

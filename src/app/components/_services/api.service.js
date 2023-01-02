@@ -7,6 +7,7 @@
     };
 
     function registerWithEmailAndPassword(email, password) {
+      console.log("Registering")
       var d = $q.defer();
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function () {
@@ -45,6 +46,7 @@
     }
 
     function signInAnonymously() {
+      console.log("Signing in anonymously")
       var d = $q.defer();
       firebase.auth().signInAnonymously()
         .then(function() {

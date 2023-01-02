@@ -5957,9 +5957,10 @@
       },
     ];
     if ($rootScope.guest && !$scope.bookId) {
+      console.log("Entry into editor if")
       $scope.openNewBookModal();
     } else {
-      console.log("Profile modal else")
+      console.log("Entry into editor modal else")
       $scope.openLibraryModal();
     }
   }

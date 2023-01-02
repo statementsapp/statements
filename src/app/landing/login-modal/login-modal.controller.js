@@ -14,11 +14,11 @@
 
     vm.login = function(isValid) {
       if (isValid) {
-
+        $rootScope.redirectToEditor = true;
         vm.processing = true;
         vm.apiService.signInWithEmailAndPassword(vm.user.email, vm.user.password)
           .then(function() {
-            $rootScope.redirectToEditor = true;
+            
             vm.processing = false;
             $uibModalInstance.dismiss(true);
           }, function(error) {

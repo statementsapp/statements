@@ -5958,10 +5958,11 @@
     ];
     if ($rootScope.guest && !$scope.bookId) {
       console.log("Entry into editor if")
-      $scope.openNewBookModal();
+      
+      $scope.openLibraryModal();
     } else {
       console.log("Entry into editor modal else")
-      $scope.openLibraryModal();
+      $scope.openNewBookModal();
     }
   }
 

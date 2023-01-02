@@ -23,6 +23,7 @@
     });
 
     vm.addNewBook = function () {
+      console.log("Adding a new book")
       if (vm.title == ''){
         return;
       }

@@ -666,12 +666,6 @@
       }
 
 
-
-
-
-
-
-
       var theDragElement = document.getElementById('dragelement')
       var onMouseMove = function(e){
 

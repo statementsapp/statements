@@ -5962,8 +5962,9 @@
       $scope.openLibraryModal();
     } else if (!$scope.bookId){
       console.log("Entry into editor modal else")
-      
+      $scope.openNewBookModal();
     } else {
+      console.log("LAST ELSE")
       $scope.openNewBookModal();
     }
   }

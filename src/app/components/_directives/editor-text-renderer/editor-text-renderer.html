@@ -294,7 +294,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                             'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
                             'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden'),
                             'mouseoverborder' : proposition.mouseOver && mouseIsOver === proposition.id && proposition.type !== 'blank && !minimalStyle',
-                            'editing': editing === proposition.id
+                            'editing': editing === proposition.id,
+                            'authorprop':tweetClicked.id === proposition.id
 
                           }"
 

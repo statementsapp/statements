@@ -1691,7 +1691,6 @@
 
       // Defines what's been highlighted
       $scope.highlightProposition = function (node, paragraph, proposition) {
-        console.log("The proposition: ", proposition)
         if ($scope.highlight.id !== proposition.id) {
           $scope.highlight.id = proposition.id;
           $scope.highlight.highlit = true;
@@ -2065,7 +2064,6 @@
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
         if ($scope.cancelListenForDoubleClick){
-          console.log("The cancel: ", $scope.cancelListenForDoubleClick)
           $scope.cancelListenForDoubleClick = false;
           return;
         }
@@ -2122,7 +2120,6 @@
       }
 
       $scope.clearDrag = function () {
-        console.log("Running clear drag")
         setTimeout(function () {
           $scope.$apply(function () {
             $scope.tweetClicked = {}
@@ -2367,8 +2364,8 @@
         }
         // console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
         if (element && event && flag === 'ol'){
-          var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;
-          var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top;
+          var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left-50;
+          var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top-50;
           console.log(event.pageX, ", ", event.pageY)
           console.log($('#propositionsol' + paragraph.paragraphId).offset().left, ", ", $('#propositionsol' + paragraph.paragraphId).offset().top)
           console.log(relX, ", ", relY)

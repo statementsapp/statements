@@ -208,7 +208,9 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
            
             <span ng-if="diagnostics">{{proposition.id}}</span>
-
+            <span style="position:relative; width: 0px; height: 0px;">
+              <span id="tweet-button" ng-class="{'grow': tweetClicked.id}" ng-if="tweetClicked.id === proposition.id" style="position: absolute; right: 10px;"><i class="fa-brands fa-twitter" aria-hidden="true" oncontextmenu='return false' style="padding-right: 5px"></i><span style="color: white;">Tweet</span></span>
+            </span>
           <span class="leftpropositionadder"
                 ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true]"
                 ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false]"

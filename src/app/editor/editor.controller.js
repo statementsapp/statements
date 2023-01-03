@@ -2364,7 +2364,7 @@
         }
         // console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
         if (element && event && flag === 'ol'){
-          var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left-50;
+          var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left-150;
           var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top-50;
           console.log(event.pageX, ", ", event.pageY)
           console.log($('#propositionsol' + paragraph.paragraphId).offset().left, ", ", $('#propositionsol' + paragraph.paragraphId).offset().top)

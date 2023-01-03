@@ -1095,7 +1095,6 @@
                     
                     
 
-                    console.log("The prop: ", document.getElementById(theId))
                      // this is right click
                     
                     console.log("Look at that right click")
@@ -1191,12 +1190,10 @@
       $scope.greyText = function () {
         if (document.getElementById('thetext').classList
           .contains('textgrey')) {
-          console.log("Off textgrey")
           document.getElementById('thetext').classList
             .remove('textgrey');
             $scope.textGrey = false;
         } else {
-          console.log("ON textgrey")
           document.getElementById('thetext').classList
             .add('textgrey');
             $scope.textGrey = true;
@@ -1208,12 +1205,10 @@
       $scope.greyDialogue = function () {
         if (document.getElementById('dialoguepane').classList
           .contains('dialoguegrey')) {
-          console.log("Off dialoguegrey")
           document.getElementById('dialoguepane').classList
             .remove('dialoguegrey');
             $scope.dialogueGrey = false;
         } else {
-          console.log("ON dialoguegrey")
           document.getElementById('dialoguepane').classList
             .add('dialoguegrey');
             $scope.dialogueGrey = true;

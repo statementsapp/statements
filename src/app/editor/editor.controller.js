@@ -1083,8 +1083,8 @@
                     };
                     document.getElementById($scope.selectedProposition.id).blur();
 
-                    var offsetHeight = document.getElementById('proposition' + theId).getBoundingClientRect().top;
-                    var offsetWidth = document.getElementById('proposition'+ theId).getBoundingClientRect().left;
+                    var offsetHeight = document.getElementById('proposition' + theId).getBoundingClientRect().top-50;
+                    var offsetWidth = document.getElementById('proposition'+ theId).getBoundingClientRect().left-50;
                     console.log("That top before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().top)
                     console.log("That left before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().left)
                     document.getElementById('tweet-button').style.top = (offsetHeight).toString() + 'px';
@@ -2364,8 +2364,8 @@
         }
         // console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
         if (element && event && flag === 'ol'){
-          var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left+50;
-          var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top+50;
+          var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;
+          var relY = event.pageY - $('#propositionsol' + paragraph.paragraphId).offset().top;
           console.log(event.pageX, ", ", event.pageY)
           console.log($('#propositionsol' + paragraph.paragraphId).offset().left, ", ", $('#propositionsol' + paragraph.paragraphId).offset().top)
           console.log(relX, ", ", relY)

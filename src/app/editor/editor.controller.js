@@ -1081,7 +1081,10 @@
                     $scope.tweetClicked = {
                       id: theId
                     };
-                    document.getElementById($scope.selectedProposition.id).blur();
+                    if ($scope.selectedProposition.id){
+                      document.getElementById($scope.selectedProposition.id).blur();
+                    }
+                      
 
                     var offsetHeight = document.getElementById('proposition' + theId).getBoundingClientRect().top-30;
                     var offsetWidth = document.getElementById('proposition'+ theId).getBoundingClientRect().left-180;

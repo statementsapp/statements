@@ -1083,8 +1083,8 @@
                     };
                     document.getElementById($scope.selectedProposition.id).blur();
 
-                    var offsetHeight = document.getElementById('proposition' + theId).getBoundingClientRect().top;
-                    var offsetWidth = document.getElementById('proposition'+ theId).getBoundingClientRect().left-100;
+                    var offsetHeight = document.getElementById('proposition' + theId).getBoundingClientRect().top-30;
+                    var offsetWidth = document.getElementById('proposition'+ theId).getBoundingClientRect().left-130;
                     console.log("That top before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().top)
                     console.log("That left before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().left)
                     document.getElementById('tweet-button').style.top = (offsetHeight).toString() + 'px';

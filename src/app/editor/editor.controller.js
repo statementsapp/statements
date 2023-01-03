@@ -1076,6 +1076,7 @@
                     // in case you need some middle click things
                     break;
                 case 3:
+                    console.log("Handling a click")
                     event.preventDefault();
                     $scope.tweetClicked = {
                       id: theId

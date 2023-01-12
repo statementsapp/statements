@@ -5,6 +5,12 @@
   function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state, $uibModal, chatSocket) {
     var vm = this;
 
+     vm.bookId = '';
+     vm.errors = {
+       noBookFound: false,
+       misc: null
+     };
+
     vm.books = libraryService.getBooks(profileService.getBookIds());
     vm.profile = profileService.getProfile();
 

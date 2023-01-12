@@ -59,7 +59,7 @@
                        ng-model="vm.bookId"
                        placeholder="Enter book id"
                        ng-keyup="$event.keyCode === 13 ? vm.openBook() : form.nothing">
-                <p ng-show="vm.errors.noBookFound" class="help-block">
+                <span ng-show="vm.errors.noBookFound" class="help-block"></span>
                 <button class="btn menubutton"
                         type="button"
                         uib-tooltip="Register"

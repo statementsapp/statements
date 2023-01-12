@@ -36,8 +36,10 @@
 
       apiService.readBook(vm.bookId).then(function(result) {
         if (result.data === 'null') {
+          console.log("No book found")
           vm.errors.noBookFound = true;
         } else {
+          console.log("Else book fround")
           vm.errors.noBookFound = false;
           var bookIds = profileService.getBookIds();
           bookIds.push(vm.bookId);

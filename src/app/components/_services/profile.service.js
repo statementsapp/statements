@@ -29,6 +29,7 @@
         };
       }
       profile.books = value;
+      console.log("Profile books: ", profile.books)
     }
 
     function addBookId(bookId) {

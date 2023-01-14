@@ -27,6 +27,7 @@
     }
 
     function addBook(uid, value) {
+      console.log("adding book in library service")
       if (library === '') {
         library = {};
       }

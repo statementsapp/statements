@@ -61,7 +61,7 @@
     </tr>
     </thead>
     <tr class="book-select"
-        ng-repeat="book in vm.books"
+        ng-repeat="book in vm.books | orderBy: '-book.book.lastModified'"
         ng-class="{'table-primary': hover }"
         ng-init="hover = false"
         ng-mouseenter="hover = true"

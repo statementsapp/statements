@@ -117,6 +117,7 @@
                 });
               }
               $scope.profile = profileService.getProfile();
+              console.log("That profile is: ", $scope.profile)
               $scope.userId = $rootScope.uid;
               chatSocket.emit('userUpdated', {
                 userId: $rootScope.uid,
@@ -3594,7 +3595,21 @@
 
         if (!$scope.data[0].documentClaimedBy){
           prep.documentClaimedBy = $scope.userId;
+          // $scope.data[0].editors = [$scope.userId]
         }
+
+        // var itsFound = false;
+        // for (var i = 0; i < $scope.data[0].editors.length; i++){
+          
+        //   if ($scope.data[0].editors[i] === $scope.userId) {
+        //     itsFound = true;
+        //   }
+        // }
+
+        // if (!itsFound){
+        //   $scope.data[0].editors.push($scope.userId)
+        //   itsFound = false;
+        // }
 
         prep.payload = {
           author: $scope.userId,

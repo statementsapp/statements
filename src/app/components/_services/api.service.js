@@ -101,6 +101,25 @@
       return d.promise;
     }
 
+    function p(endpoint, obj) {
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: endpoint,
+        data: JSON.stringify(obj),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + $rootScope.token
+        }
+      }).then(
+        function (result) {
+          d.resolve(result);
+        }, function (error) {
+          d.reject(error);
+        });
+      return d.promise;
+    }
+
     function get(endpoint) {
       var d = $q.defer();
       $http({

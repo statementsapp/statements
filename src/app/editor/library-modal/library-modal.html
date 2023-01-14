@@ -57,7 +57,6 @@
       <th>Topic</th>
       <th>Last Modified</th>
       <th>Date Created</th>
-      <th>Book</th>
       <th></th>
     </tr>
     </thead>
@@ -76,9 +75,7 @@
       <td ng-click="vm.selectBook(book.uid)">
         {{ book.book.dateCreated * 1000 | date:'short' }}
       </td>
-      <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book}}
-      </td>
+
       <td>
         <button class="btn btn-danger"
                 style="z-index: 15"

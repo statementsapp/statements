@@ -32,6 +32,10 @@
     };
 
     vm.openBook = function() {
+      if(vm.bookId.startsWith("http")){
+        vm.bookId = vm.bookId.slice(vm.bookId.indexOf('-'));
+      }
+      console.log("vm book Id: ", vm.bookId)
       vm.processing = true;
 
       apiService.readBook(vm.bookId).then(function(result) {

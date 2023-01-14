@@ -13,6 +13,7 @@
         .then(function () {
           firebase.auth().onAuthStateChanged(function (user) {
             $rootScope.uid = user.uid;
+            $rootScope.guest = false;
             user.getIdToken(true).then(function (token) {
               $rootScope.token = token;
               d.resolve();
@@ -32,6 +33,7 @@
         .then(function () {
           firebase.auth().onAuthStateChanged(function (user) {
             $rootScope.uid = user.uid;
+            $rootScope.guest = false;
             user.getIdToken(true).then(function (token) {
               $rootScope.token = token;
               d.resolve();

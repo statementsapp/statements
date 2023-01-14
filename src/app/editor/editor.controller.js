@@ -117,7 +117,7 @@
                 });
               }
               $scope.profile = profileService.getProfile();
-              console.log("That profile is: ", $scope.profile)
+
               $scope.userId = $rootScope.uid;
               chatSocket.emit('userUpdated', {
                 userId: $rootScope.uid,
@@ -139,6 +139,7 @@
             bookId: $scope.bookId
           });
         }
+        console.log("That profile is: ", $scope.profile)
     }, 250);
 
     // Function that clears vestigial stuff saved into the model

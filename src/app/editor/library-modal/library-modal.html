@@ -57,11 +57,12 @@
       <th>Topic</th>
       <th>Last Modified</th>
       <th>Date Created</th>
+      <th>Book</th>
       <th></th>
     </tr>
     </thead>
     <tr class="book-select"
-        ng-repeat="book in vm.books | orderBy: 'book.book.lastModified'"
+        ng-repeat="book in vm.books | orderBy: '-book.book.lastModified'"
         ng-class="{'table-primary': hover }"
         ng-init="hover = false"
         ng-mouseenter="hover = true"
@@ -74,6 +75,9 @@
       </td>
       <td ng-click="vm.selectBook(book.uid)">
         {{ book.book.dateCreated * 1000 | date:'short' }}
+      </td>
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book}}
       </td>
       <td>
         <button class="btn btn-danger"

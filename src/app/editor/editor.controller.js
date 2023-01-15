@@ -545,6 +545,7 @@
     // Loading data
     $scope.loadData = function (bookId) {
       $timeout(function() {
+        console.log("loading the data ")
         apiService.readBook(bookId).then(function (result) {
           $scope.data = [ result.data ];
           $scope.title = $scope.data[0].nodes[0].topic;

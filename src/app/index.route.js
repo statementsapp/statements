@@ -11,7 +11,7 @@
           template: '<ui-view />',
           resolve: {
             auth: function ($rootScope) {
-
+              console.log("State auth")
               firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
                   $rootScope.uid = user.uid;
@@ -24,20 +24,23 @@
               });
             },
             apiService: function (auth, ApiService) {
+              console.log("State apiservice")
               return new ApiService();
             },
             env: function (apiService, $rootScope) {
+              console.log("State env")
               return apiService.getEnv().then(function (result) {
                 $rootScope.env = result.data;
               });
             },
             libraryService: function (LibraryService, library) {
+              console.log("State libraryservice")
               var libraryService = new LibraryService();
               libraryService.setLibrary(library);
               return libraryService;
             },
             profileService: function (ProfileService, profile) {
-              console.log("profile went through")
+              console.log("state profileservice")
               var profileService = new ProfileService();
               profileService.setProfile(profile);
               return profileService;
@@ -66,6 +69,7 @@
               });
             },
             library: function ($state, $rootScope, apiService) {
+              console.log("state library")
               return apiService.readLibrary().then(function (result) {
                 if (result.status === 200) {
                   return result.data;

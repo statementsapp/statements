@@ -43,6 +43,7 @@
               return profileService;
             },
             profile: function ($state, $rootScope, apiService) {
+              console.log("Just the profile")
               return apiService.readProfile().then(function (result) {
                 if (result.status === 200) {
                   if (result.data !== 'null') {

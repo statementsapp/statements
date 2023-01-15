@@ -39,6 +39,7 @@
     }
 
     function setLibrary(value) {
+      console.log("setting library")
       library = value;
     }
 

@@ -12,6 +12,7 @@
     console.log("Profile books: ", profile.books)
 
     function setProfile(value) {
+      console.log("setting profile")
       profile = value;
     }
 

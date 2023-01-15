@@ -30,7 +30,7 @@
     toastr) {
 
 
-
+    console.log("editor controlling")
 
     // variable declarations
     $scope.currentLocation = $location.absUrl();

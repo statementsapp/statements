@@ -140,7 +140,7 @@
             bookId: $scope.bookId
           });
         }
-        console.log("That profile is: ", $scope.profile)
+        // console.log("That profile is: ", $scope.profile)
     }, 250);
 
     // Function that clears vestigial stuff saved into the model

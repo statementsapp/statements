@@ -96,6 +96,7 @@
           templateUrl: 'app/landing/landing.html',
           resolve: {
             requiresNoAuth: function ($rootScope, $state, $timeout, $uibModal) {
+              console.log("requires no auth")
               return firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
 

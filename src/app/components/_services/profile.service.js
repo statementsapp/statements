@@ -9,6 +9,8 @@
     var profile = {};
     var selectedBook = null;
 
+    console.log("Profile books: ", profile.books)
+
     function setProfile(value) {
       profile = value;
     }
@@ -52,6 +54,7 @@
     }
 
     function getBookIds() {
+      console.log("Profile books in function: ", profile.books)
       return profile.books || [];
     }
 

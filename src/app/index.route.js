@@ -37,6 +37,7 @@
               return libraryService;
             },
             profileService: function (ProfileService, profile) {
+              console.log("profile went through")
               var profileService = new ProfileService();
               profileService.setProfile(profile);
               return profileService;

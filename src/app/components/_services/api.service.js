@@ -3,6 +3,7 @@
 
   /** @ngInject */
   function ApiService($rootScope, $q, $http) {
+    console.log("api servicing")
     var apiService = function () {
     };
 

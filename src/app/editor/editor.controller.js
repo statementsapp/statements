@@ -102,6 +102,7 @@
     // Check to load profile if we're logged in and profile isn't loaded for some reason
     $interval(function () {
         if ($rootScope.uid && $rootScope.token && $scope.profile === undefined) {
+          console.log("interval if")
           apiService.readProfile().then(function (res) {
             if (res.status === 200) {
               if (res.data) {

@@ -28,6 +28,7 @@
     }
 
     function signInWithEmailAndPassword(email, password) {
+      console.log("Signing in")
       var d = $q.defer();
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function () {

@@ -134,8 +134,14 @@
       }).then(
         function (result) {
           if (endpoint === '/library'){
-            console.log("Get result: ", result)
-          }        
+            console.log("Get library result: ", result)
+          } else if (endpoint.startsWith('/library/book')) {
+            console.log("Get library book result: ", result)
+          } else if (endpoint.startsWith('/user')) {
+            console.log("Get user: ", result)
+          } else if (endpoint.startsWith('/library/props')) {
+            console.log("Get library props: ", result)
+          }
           d.resolve(result);
         }, function (error) {
           d.reject(error);
@@ -183,7 +189,7 @@
     }
 
     function readBook(bookId) {
-      console.log("Reading book: ", bookId)
+      
       return get('/library/book/' + bookId);
     }
 

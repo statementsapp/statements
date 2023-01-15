@@ -133,6 +133,9 @@
         }
       }).then(
         function (result) {
+          if (endpoint === '/library'){
+            console.log("Get result: ", result)
+          }        
           d.resolve(result);
         }, function (error) {
           d.reject(error);

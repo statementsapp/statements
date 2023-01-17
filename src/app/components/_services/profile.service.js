@@ -29,6 +29,7 @@
           lastName: 'User',
           displayName: 'Guest User',
           lastModified: new Date(),
+          negations: []
         };
       }
       profile.books = value;
@@ -42,6 +43,17 @@
         });
         if (!existingId) {
           profile.books.push(bookId);
+        }
+      }
+    }
+
+    function addNegationId(bookId) {
+      if (profile.books) {
+        var existingId = profile.books.filter(function (x) {
+          return x === bookId;
+        });
+        if (!existingId) {
+          profile.books.negations.push(bookId);
         }
       }
     }

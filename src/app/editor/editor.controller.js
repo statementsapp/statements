@@ -4951,7 +4951,7 @@
             }
 
             if (payload.type === 'negation' && payload.author === $scope.userId){
-              console.log("Well here is the payload as is: ", profile)
+              console.log("Well here is the payload as is: ", $scope.profile)
             }
 
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));

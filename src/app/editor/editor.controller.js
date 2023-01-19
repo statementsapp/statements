@@ -106,8 +106,10 @@
           apiService.readProfile().then(function (res) {
             if (res.status === 200) {
               if (res.data) {
+                console.log("About to set profile if")
                 profileService.setProfile(res.data);
               } else {
+                console.log("About to set profile else")
                 profileService.setProfile({
                     books: [],
                     emailAddress: '',
@@ -134,6 +136,7 @@
             }
           });
         } else if ($scope.bookId && $scope.profile && !$scope.roomUsers.includes($scope.profile.displayName)) {
+          console.log("that else hey")
           chatSocket.emit('userUpdated', {
             userId: $rootScope.uid,
             displayName: $scope.profile.displayName,

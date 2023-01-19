@@ -4950,8 +4950,12 @@
               $scope.makePristine();
             }
 
+            if (payload.type === 'negation' && payload.author === $scope.userId){
+              console.log("Well here is the payload as is: ", profile)
+            }
+
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
-            apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
+            // apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
             profileService.setSelectedBook($scope.data[0]);
 
             if (payload.author !== $scope.userId && $scope.inputs.proposition){

@@ -693,6 +693,11 @@
       var apply = {};
       var temp = {};
 
+      if (!$scope.profile){
+        console.log("Getting profile")
+        $scope.profile = profileService.getProfile();
+      }
+
       // Deals with empty remarks values
 
       for (var i = 0; i < $scope.data[0].nodes.length; i++){

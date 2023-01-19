@@ -120,7 +120,7 @@
                 });
               }
               $scope.profile = profileService.getProfile();
-
+              console.log("scope profile: ", $scope.profile)
               $scope.userId = $rootScope.uid;
               chatSocket.emit('userUpdated', {
                 userId: $rootScope.uid,
@@ -136,7 +136,7 @@
             }
           });
         } else if ($scope.bookId && $scope.profile && !$scope.roomUsers.includes($scope.profile.displayName)) {
-          console.log("that else hey")
+          // console.log("that else hey")
           chatSocket.emit('userUpdated', {
             userId: $rootScope.uid,
             displayName: $scope.profile.displayName,

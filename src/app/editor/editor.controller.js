@@ -1986,27 +1986,27 @@
         apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
         apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
         // apiService.updateNegateds($scope.bookId, JSON.parse(angular.toJson($scope.bookId)));
-        if (payload.type === 'negation' && $scope.userId === payload.author){
-          console.log("Outgoing negation");
-          apiService.createNegation(book).then(function (result) {
-            var bookId = result.data;
-            libraryService.addBook(bookId, book);
-            var bookIds = profileService.getBookIds();
-            bookIds.push(bookId);
-            console.log('bookIds', bookIds);
-            console.log('profileService', profileService);
-            profileService.setBookIds(bookIds);
-            apiService.updateProfile(profileService.getProfile()).then(function () {
-              vm.processing = false;
-              $uibModalInstance.close(bookId);
-            }).catch(function (error) {
-              console.log(error);
-            });
-          }).catch(function (error) {
-            vm.processing = false;
-            console.error(error);
-          });
-        }
+        // if (payload.type === 'negation' && $scope.userId === payload.author){
+        //   console.log("Outgoing negation");
+        //   apiService.createNegation(book).then(function (result) {
+        //     var bookId = result.data;
+        //     libraryService.addBook(bookId, book);
+        //     var bookIds = profileService.getBookIds();
+        //     bookIds.push(bookId);
+        //     console.log('bookIds', bookIds);
+        //     console.log('profileService', profileService);
+        //     profileService.setBookIds(bookIds);
+        //     apiService.updateProfile(profileService.getProfile()).then(function () {
+        //       vm.processing = false;
+        //       $uibModalInstance.close(bookId);
+        //     }).catch(function (error) {
+        //       console.log(error);
+        //     });
+        //   }).catch(function (error) {
+        //     vm.processing = false;
+        //     console.error(error);
+        //   });
+        // }
 
         profileService.setSelectedBook($scope.data[0]);
       });
@@ -4960,6 +4960,7 @@
 
             if (payload.type === 'negation' && payload.author === $scope.userId){
               console.log("Well here is the payload as is: ", $scope.profile)
+              console.log("Well here is that scope id: ", $scope.userId)
             }
 
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));

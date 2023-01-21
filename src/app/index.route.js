@@ -10,7 +10,7 @@
           abstract: true,
           template: '<ui-view />',
           resolve: {
-            auth: function ($rootScope, ApiService) {
+            auth: function ($rootScope, ApiService, $state) {
               console.log("State auth")
               firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {

@@ -14,7 +14,7 @@
               console.log("State auth")
               firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
-                  $scope.loggingIn = true;
+                  $rootScope.loggingIn = true;
                   $rootScope.logInAsGuest = true;
                   ( new ApiService() ).signInAnonymously().then(function () {
                     $state.go('main.editor');

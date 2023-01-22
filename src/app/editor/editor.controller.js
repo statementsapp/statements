@@ -4952,7 +4952,7 @@
                     }
                     console.log("The profile working on here: ", $scope.profile)
                     console.log("Compiled")
-                    apiService.updateProfile(JSON.parse(angular.toJson($scope.profile))).then(function (result) {
+                    apiService.updateProfile(profileService.getProfile()).then(function (result) {
                       console.log("That result: ", result)
                       $scope.profile = result.data;
                       console.log("That profile now: ", $scope.profile)

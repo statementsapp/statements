@@ -4945,10 +4945,10 @@
 
                     if (!$scope.profile.negations){
                       console.log("1st if")
-                      $scope.profile.negations = [$scope.bookId]; 
+                      profileService.getProfile().negations = [$scope.bookId]; 
                     } else {
                       console.log("Then else")
-                      $scope.profile.negations.push($scope.bookId)
+                      profileService.getProfile().push($scope.bookId)
                     }
                     console.log("The profile working on here: ", $scope.profile)
                     console.log("Compiled")

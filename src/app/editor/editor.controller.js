@@ -4942,8 +4942,10 @@
             
                   console.log("The profile working on here: ", $scope.profile)
                   if (!$scope.profile.negations){
+                    console.log("1st if")
                     $scope.profile.negations = [$scope.bookId]; 
                   } else {
+                    console.log("Then else")
                     $scope.profile.negations.push($scope.bookId)
                   }
                   return apiService.updateProfile($scope.profile).then(function (result) {

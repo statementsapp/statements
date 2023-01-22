@@ -4957,9 +4957,9 @@
                     apiService.updateProfile(profileService.getProfile()).then(function (result) {
                       console.log("That result: ", result.config.data)
                       console.log("json stringified: ", JSON.parse(result.config.data))
-                      $scope.profile = result.data;
+                      $scope.profile = JSON.parse(result.config.data)
                       console.log("That profile now: ", $scope.profile)
-                      profileService.setProfile(result.data);
+                      profileService.setProfile(JSON.parse(result.config.data));
                     }).catch(function (error) {
                       console.log("error: ", error)
                     });

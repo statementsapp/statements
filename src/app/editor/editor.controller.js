@@ -4968,6 +4968,8 @@
               $scope.saveThisForASec = angular.copy($scope.inputs.proposition)
             }
 
+            console.log("Book right now: ", $scope.data[0].nodes[0])
+
           });
           if ($scope.saveThisForASec){
             $scope.inputs.proposition = $scope.saveThisForASec;

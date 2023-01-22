@@ -4938,25 +4938,32 @@
               $scope.makePristine();
             }
 
-            if (payload.type === 'negation' && $scope.userId === payload.author){
             
+
+            if (payload.type === 'negation' && $scope.userId === payload.author){
+                  setTimeout(function () {
+
+                    if (!$scope.profile.negations){
+                      console.log("1st if")
+                      $scope.profile.negations = [$scope.bookId]; 
+                    } else {
+                      console.log("Then else")
+                      $scope.profile.negations.push($scope.bookId)
+                    }
+                    console.log("The profile working on here: ", $scope.profile)
+                    apiService.updateProfile($scope.profile).then(function (result) {
+                      console.log("That result: ", result)
+                      $scope.profile = result.data;
+                      console.log("That profile now: ", $scope.profile)
+                      profileService.setProfile(result.data);
+                    }).catch(function (error) {
+                      console.log("error: ", error)
+                    });
+
+
+                  }, 35);
                   
-                  if (!$scope.profile.negations){
-                    console.log("1st if")
-                    $scope.profile.negations = [$scope.bookId]; 
-                  } else {
-                    console.log("Then else")
-                    $scope.profile.negations.push($scope.bookId)
-                  }
-                  console.log("The profile working on here: ", $scope.profile)
-                  apiService.updateProfile($scope.profile).then(function (result) {
-                    console.log("That result: ", result)
-                    $scope.profile = result.data;
-                    console.log("That profile now: ", $scope.profile)
-                    profileService.setProfile(result.data);
-                  }).catch(function (error) {
-                    console.log("error: ", error)
-                  });
+                  
 
               
             }

@@ -4948,7 +4948,7 @@
                     console.log("Then else")
                     $scope.profile.negations.push($scope.bookId)
                   }
-                  return apiService.updateProfile($scope.profile).then(function (result) {
+                  apiService.updateProfile($scope.profile).then(function (result) {
                     console.log("Got that update profile response")
                     $scope.profile = result.data;
                     console.log("That profile now: ", $scope.profile)

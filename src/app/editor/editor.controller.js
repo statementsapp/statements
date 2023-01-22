@@ -4950,6 +4950,7 @@
                       console.log("Then else")
                       profileService.getProfile().push($scope.bookId)
                     }
+                    console.log("Get profile output: ", profileService.getProfile())
                     console.log("The profile working on here: ", $scope.profile)
                     console.log("Compiled")
                     apiService.updateProfile(profileService.getProfile()).then(function (result) {

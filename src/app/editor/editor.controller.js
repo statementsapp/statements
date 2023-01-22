@@ -4955,7 +4955,7 @@
                     console.log("Get profile output: ", profileService.getProfile())
                     console.log("The profile working on here: ", $scope.profile)
                     apiService.updateProfile(profileService.getProfile()).then(function (result) {
-                      console.log("That result: ", result)
+                      console.log("That result: ", result.config)
                       $scope.profile = result.data;
                       console.log("That profile now: ", $scope.profile)
                       profileService.setProfile(result.data);

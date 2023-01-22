@@ -4959,7 +4959,7 @@
 
               
             }
-
+            console.log("Book right earlier ", $scope.data[0].nodes[0])
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
             apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
             profileService.setSelectedBook($scope.data[0]);

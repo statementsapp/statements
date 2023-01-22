@@ -4948,7 +4948,7 @@
                     console.log("Then else")
                     $scope.profile.negations.push($scope.bookId)
                   }
-                  apiService.updateProfile($scope.profile).then(function (result) {
+                  return apiService.updateProfile($scope.profile).then(function (result) {
                     console.log("Got that update profile response")
                     $scope.profile = result.data;
                     console.log("That profile now: ", $scope.profile)
@@ -4956,7 +4956,7 @@
                   }).catch(function (error) {
                     console.log("error: ", error)
                   });
-
+                  console.log("Ran out the back")
               
             }
             console.log("Book right earlier ", $scope.data[0].nodes[0])

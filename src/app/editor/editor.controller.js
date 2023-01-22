@@ -674,6 +674,8 @@
         }
       }
 
+      console.log("Logging in profile: ", profileService.getProfile())
+
 
       var theDragElement = document.getElementById('dragelement')
       var onMouseMove = function(e){
@@ -4952,7 +4954,6 @@
                     }
                     console.log("Get profile output: ", profileService.getProfile())
                     console.log("The profile working on here: ", $scope.profile)
-                    console.log("Compiled")
                     apiService.updateProfile(profileService.getProfile()).then(function (result) {
                       console.log("That result: ", result)
                       $scope.profile = result.data;

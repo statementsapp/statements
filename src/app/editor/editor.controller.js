@@ -4941,7 +4941,7 @@
             
 
             if (payload.type === 'negation' && $scope.userId === payload.author){
-                  setTimeout(function () {
+                  // setTimeout(function () {
 
                     if (!$scope.profile.negations){
                       console.log("1st if")
@@ -4951,7 +4951,7 @@
                       $scope.profile.negations.push($scope.bookId)
                     }
                     console.log("The profile working on here: ", $scope.profile)
-                    apiService.updateProfile($scope.profile).then(function (result) {
+                    apiService.updateProfile(JSON.parse(angular.toJson($scope.profile))).then(function (result) {
                       console.log("That result: ", result)
                       $scope.profile = result.data;
                       console.log("That profile now: ", $scope.profile)
@@ -4961,7 +4961,7 @@
                     });
 
 
-                  }, 35);
+                  // }, 35);
                   
                   
 

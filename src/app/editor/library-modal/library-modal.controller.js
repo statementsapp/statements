@@ -20,7 +20,7 @@
       if (isValid) {
         vm.processing = true;
         return apiService.updateProfile(vm.profile).then(function (result) {
-          console.log("Got that update profile response")
+          console.log("Got that update profile response: ", result.data)
           vm.profile = result.data;
           profileService.setProfile(result.data);
           vm.dismiss();

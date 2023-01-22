@@ -4941,14 +4941,12 @@
             if (payload.type === 'negation' && $scope.userId === payload.author){
             
                   console.log("The profile working on here: ", $scope.profile)
-                  vm.processing = true;
                   return apiService.updateProfile($scope.profile).then(function (result) {
                     console.log("Got that update profile response")
                     $scope.profile = result.data;
                     profileService.setProfile(result.data);
                   }).catch(function (error) {
-                    console.log("error")
-                    vm.profileError = error.message;
+                    console.log("error: ", error)
                   });
 
               

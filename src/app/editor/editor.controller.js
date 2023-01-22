@@ -4941,9 +4941,15 @@
             if (payload.type === 'negation' && $scope.userId === payload.author){
             
                   console.log("The profile working on here: ", $scope.profile)
+                  if (!$scope.profile.negations){
+                    $scope.profile.negations = [$scope.bookId]; 
+                  } else {
+                    $scope.profile.negations.push($scope.bookId)
+                  }
                   return apiService.updateProfile($scope.profile).then(function (result) {
                     console.log("Got that update profile response")
                     $scope.profile = result.data;
+                    console.log("That profile now: ", $scope.profile)
                     profileService.setProfile(result.data);
                   }).catch(function (error) {
                     console.log("error: ", error)

@@ -4951,6 +4951,7 @@
                       $scope.profile.negations.push($scope.bookId)
                     }
                     console.log("The profile working on here: ", $scope.profile)
+                    console.log("Compiled")
                     apiService.updateProfile(JSON.parse(angular.toJson($scope.profile))).then(function (result) {
                       console.log("That result: ", result)
                       $scope.profile = result.data;

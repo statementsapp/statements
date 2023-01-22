@@ -1986,21 +1986,7 @@
         apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
         // apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
         // apiService.updateNegateds($scope.bookId, JSON.parse(angular.toJson($scope.bookId)));
-        if (payload.type === 'negation' && $scope.userId === payload.author){
-        
-              console.log("The profile working on here: ", $scope.profile)
-              vm.processing = true;
-              return apiService.updateProfile($scope.profile).then(function (result) {
-                console.log("Got that update profile response")
-                $scope.profile = result.data;
-                profileService.setProfile(result.data);
-              }).catch(function (error) {
-                console.log("error")
-                vm.profileError = error.message;
-              });
 
-          
-        }
 
         profileService.setSelectedBook($scope.data[0]);
       });
@@ -4952,9 +4938,20 @@
               $scope.makePristine();
             }
 
-            if (payload.type === 'negation' && payload.author === $scope.userId){
-              console.log("Well here is the payload as is: ", $scope.profile)
-              console.log("Well here is that scope id: ", $scope.userId)
+            if (payload.type === 'negation' && $scope.userId === payload.author){
+            
+                  console.log("The profile working on here: ", $scope.profile)
+                  vm.processing = true;
+                  return apiService.updateProfile($scope.profile).then(function (result) {
+                    console.log("Got that update profile response")
+                    $scope.profile = result.data;
+                    profileService.setProfile(result.data);
+                  }).catch(function (error) {
+                    console.log("error")
+                    vm.profileError = error.message;
+                  });
+
+              
             }
 
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));

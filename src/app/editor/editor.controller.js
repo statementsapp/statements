@@ -4940,7 +4940,7 @@
 
             if (payload.type === 'negation' && $scope.userId === payload.author){
             
-                  console.log("The profile working on here: ", $scope.profile)
+                  
                   if (!$scope.profile.negations){
                     console.log("1st if")
                     $scope.profile.negations = [$scope.bookId]; 
@@ -4948,15 +4948,16 @@
                     console.log("Then else")
                     $scope.profile.negations.push($scope.bookId)
                   }
-                  return apiService.updateProfile($scope.profile).then(function (result) {
-                    console.log("Got that update profile response")
+                  console.log("The profile working on here: ", $scope.profile)
+                  apiService.updateProfile($scope.profile).then(function (result) {
+                    console.log("That result: ", result)
                     $scope.profile = result.data;
                     console.log("That profile now: ", $scope.profile)
                     profileService.setProfile(result.data);
                   }).catch(function (error) {
                     console.log("error: ", error)
                   });
-                  console.log("Ran out the back")
+
               
             }
             console.log("Book right earlier ", $scope.data[0].nodes[0])

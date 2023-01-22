@@ -4970,6 +4970,7 @@
             }
 
             console.log("Book right now: ", $scope.data[0].nodes[0])
+            console.log("Profile right now: ", $scope.profile)
 
           });
           if ($scope.saveThisForASec){

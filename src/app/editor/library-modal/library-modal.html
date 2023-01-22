@@ -51,7 +51,7 @@
      ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing"
      >
   <div style="height: 300px; overflow: scroll;">
-  <h1>These Here Books</h1>
+  <h1>Your Books</h1>
   <table class="table col-md-12" >
     <thead>
     <tr>
@@ -87,9 +87,90 @@
     </tr>
 
   </table>
-  <h1>And the books</h1>
-  <h1>Have Some Books</h1>
+  
 </div>
+
+  <div style="height: 300px; overflow: scroll;">
+  <h1>Recently Commented</h1>
+  <table class="table col-md-12" >
+    <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Last Modified</th>
+      <th>Date Created</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tr class="book-select"
+        ng-repeat="book in vm.books | orderBy:'-book.lastModified'"
+        ng-class="{'table-primary': hover }"
+        ng-init="hover = false"
+        ng-mouseenter="hover = true"
+        ng-mouseleave="hover = false">
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.nodes[0].topic }}
+      </td>
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.lastModified * 1000 | date:'short' }}
+      </td>
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.dateCreated * 1000 | date:'short' }}
+      </td>
+
+      <td>
+        <button class="btn btn-danger"
+                style="z-index: 15"
+                ng-click="deleteBook(book.uid)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+
+  </table>
+  
+</div>
+
+  <div style="height: 300px; overflow: scroll;">
+  <h1>Recently Viewed</h1>
+  <table class="table col-md-12" >
+    <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Last Modified</th>
+      <th>Date Created</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tr class="book-select"
+        ng-repeat="book in vm.books | orderBy:'-book.lastModified'"
+        ng-class="{'table-primary': hover }"
+        ng-init="hover = false"
+        ng-mouseenter="hover = true"
+        ng-mouseleave="hover = false">
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.nodes[0].topic }}
+      </td>
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.lastModified * 1000 | date:'short' }}
+      </td>
+      <td ng-click="vm.selectBook(book.uid)">
+        {{ book.book.dateCreated * 1000 | date:'short' }}
+      </td>
+
+      <td>
+        <button class="btn btn-danger"
+                style="z-index: 15"
+                ng-click="deleteBook(book.uid)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+
+  </table>
+  
+</div>
+
+
 
 <!--   <table class="table col-md-12">
     <thead>

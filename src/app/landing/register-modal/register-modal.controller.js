@@ -46,6 +46,7 @@
             }).then(function() {
               vm.processing = false;
               $uibModalInstance.dismiss(true);
+              // if from editor, have it move to library
             }).catch(function(error) {
               console.error(error);
               vm.processing = false;

@@ -3195,6 +3195,7 @@
 
       $scope.hideZeeky = function () {
         $scope.isFresh = false;
+        document.getElementById('zeekynegation').style.display = 'none';
       }
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {

@@ -540,7 +540,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                     event-focus-id="{{remark.id}}">
 
               </span>
-                        <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5)">press
+                        <span id="zeekynegation" class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5)">press
                           <span>{{enter}}</span> to commit/send
                         </span>
 

@@ -3193,6 +3193,10 @@
         }
       }
 
+      $scope.hideZeeky = function () {
+        $scope.isFresh = false;
+      }
+
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");

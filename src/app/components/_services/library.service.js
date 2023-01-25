@@ -18,8 +18,10 @@
 
     function getBooks(uids) {
       console.log("library for getbooks: ", library)
+      console.log("uids for getbooks: ", uids)
       var books = [];
       for (var key in library) {
+
         if (uids.includes(key)) {
           books.push({ book: library[key], uid: key });
         }

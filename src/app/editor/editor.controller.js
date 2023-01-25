@@ -1084,7 +1084,7 @@
         $scope.stopToggle = true;
       };
 
-      $scope.handleClick = function (event, theId) {
+      $scope.handleClick = function (event, theId, flag) {
         switch(event.which) {
                 case 1:
                     break;
@@ -1094,9 +1094,17 @@
                 case 3:
                     console.log("Handling a click")
                     event.preventDefault();
-                    $scope.tweetClicked = {
-                      id: theId
-                    };
+                    if (flag){
+                      console.log("flag")
+                      $scope.muteClicked = {
+                        id: theId
+                      };
+                    } else {
+                      $scope.tweetClicked = {
+                        id: theId
+                      };
+                    }
+                    
                     if ($scope.selectedProposition.id){
                       document.getElementById($scope.selectedProposition.id).blur();
                     }

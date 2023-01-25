@@ -3879,6 +3879,9 @@
 
         console.log("Received proposition: ", payload)
         
+        if ($scope.data[0].muteds.includes(payload.author)){
+          payload.muted = true;
+        }
 
         if (!$scope.data[0].moveCounter){
           $scope.data[0].moveCounter = 0;
@@ -4139,6 +4142,7 @@
                   messagesSoFar: payload.messagesSoFar,
                   previousMessages: payload.previousMessages,
                   of: payload.of,
+                  muted: payload.muted ? true : undefined
                 }
               )
 
@@ -4177,6 +4181,7 @@
                   dialogueSide: false,
                   messagesSoFar: payload.messagesSoFar,
                   of: payload.of,
+                  muted: payload.muted ? true : undefined
 
                 }
               )
@@ -4796,7 +4801,7 @@
                   previousMessages: payload.previousMessages,
                   messagesSoFar: payload.messagesSoFar,
                   color: payload.color,
-                  muted: ($scope.data[0].muteds.includes(payload.author) ? true : undefined)
+                  muted: payload.muted ? true : undefined)
                 })
               } else {
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){

@@ -21,7 +21,7 @@
       console.log("uids for getbooks: ", uids)
       var books = [];
       for (var key in library) {
-
+        console.log("Key: ", key)
         if (uids.includes(key)) {
           books.push({ book: library[key], uid: key });
         }

@@ -444,7 +444,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               <!--           draggedProposition.id && draggedProposition.id !== proposition.id ? [selectedNode = node, dropProposition(node, paragraph, proposition,'right')] : -->
               <span
 
-                ng-if="!remark.muted && remark.author != userId"
+                ng-if="(message.muted && message.author == userId) || !message.muted"
                 id="proposition{{remark.id}}"
                 style=""
                 ng-style="{ 'border-bottom': remark.colorString}"

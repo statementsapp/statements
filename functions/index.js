@@ -97,6 +97,7 @@ module.exports = function (admin, express) {
     updates[u + '/negations'] = negations;
 
     db.ref().update(updates).then(function () {
+      console.log("Updates? ", updates)
       db.ref(u).once('value').then(function (snap) {
         return res.end(JSON.stringify(snap.val()));
       }).catch(function (error) {

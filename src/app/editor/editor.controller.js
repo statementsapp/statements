@@ -1089,6 +1089,9 @@
       };
 
       $scope.handleClick = function (event, theId, flag) {
+        if ($scope.userId !== $scope.data[0].documentClaimedBy){
+          return;
+        }
         switch(event.which) {
                 case 1:
                     break;
@@ -3880,6 +3883,7 @@
         console.log("Received proposition: ", payload)
         
         if ($scope.data[0].muteds.includes(payload.author)){
+          console.log("Payload muting")
           payload.muted = true;
         }
 

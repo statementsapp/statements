@@ -172,6 +172,7 @@
     }
 
     function readProfile() {
+      console.log("Reading profile with: ", $rootScope.uid)
       return get('/user/' + $rootScope.uid + '/profile');
     }
 

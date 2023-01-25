@@ -430,7 +430,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph)]"
                 ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater()]"
 
-                ng-if="(!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden' && proposition.remarksExpanded)"
+                ng-if="(!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden' && proposition.remarksExpanded)|| ((remark.muted && remark.author == userId) || !remark.muted)"
                 ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id}"
                 class="proposition">
                <!--  {{remark.id}} -->
@@ -444,7 +444,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               <!--           draggedProposition.id && draggedProposition.id !== proposition.id ? [selectedNode = node, dropProposition(node, paragraph, proposition,'right')] : -->
               <span
 
-                ng-if="(message.muted && message.author == userId) || !message.muted"
+                
                 id="proposition{{remark.id}}"
                 style=""
                 ng-style="{ 'border-bottom': remark.colorString}"

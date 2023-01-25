@@ -17,12 +17,10 @@
     };
 
     function getBooks(uids) {
-      console.log("library for getbooks: ", library)
-      console.log("uids for getbooks: ", uids)
+
       var books = [];
       for (var key in library) {
-        console.log("Key: ", key)
-        console.log(key === uids[0])
+
         if (uids.includes(key)) {
           books.push({ book: library[key], uid: key, documentClaimedBy: library[key].documentClaimedBy });
         }

@@ -1156,6 +1156,7 @@
         // Open the Twitter website in a new window and pre-populate the tweet with the specified text
           window.open('https://twitter.com/intent/tweet?text=' + 
             encodeURIComponent(text + '\n\n' + $scope.currentLocation));
+          $scope.tweetClicked = {};
       }
 
       // Hides
@@ -5075,6 +5076,8 @@
         $scope.hasBottomNodeFocus = '';
         // $scope.hasChatFocusId = '';
         $scope.inputs = {};
+        $scope.tweetClicked = {};
+        $scope.muteClicked = {};
 
         if ($scope.editing){
           if (proposition){

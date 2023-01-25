@@ -4801,7 +4801,7 @@
                   previousMessages: payload.previousMessages,
                   messagesSoFar: payload.messagesSoFar,
                   color: payload.color,
-                  muted: payload.muted ? true : undefined)
+                  muted: payload.muted ? true : undefined
                 })
               } else {
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){

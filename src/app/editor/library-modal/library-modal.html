@@ -107,13 +107,13 @@
         ng-init="hover = false"
         ng-mouseenter="hover = true"
         ng-mouseleave="hover = false">
-      <td ng-click="vm.selectBook(book.uid)">
+      <td ng-click="vm.selectBook(bookNegated.uid)">
         {{ bookNegated.book.nodes[0].topic }}
       </td>
-      <td ng-click="vm.selectBook(book.uid)">
+      <td ng-click="vm.selectBook(bookNegated.uid)">
         {{ bookNegated.book.lastModified * 1000 | date:'short' }}
       </td>
-      <td ng-click="vm.selectBook(book.uid)">
+      <td ng-click="vm.selectBook(bookNegated.uid)">
         {{ book.bookNegated.dateCreated * 1000 | date:'short' }}
       </td>
 
@@ -142,19 +142,19 @@
     </tr>
     </thead>
     <tr class="book-select"
-        ng-repeat="book in vm.viewedBooks | orderBy:'-book.lastModified'"
+        ng-repeat="bookViewed in vm.booksViewed | orderBy:'-bookViewed.lastModified'"
         ng-class="{'table-primary': hover }"
         ng-init="hover = false"
         ng-mouseenter="hover = true"
         ng-mouseleave="hover = false">
-      <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book.nodes[0].topic }}
+      <td ng-click="vm.selectBook(bookViewed.uid)">
+        {{ bookViewed.book.nodes[0].topic }}
       </td>
-      <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book.lastModified * 1000 | date:'short' }}
+      <td ng-click="vm.selectBook(bookViewed.uid)">
+        {{ bookViewed.book.lastModified * 1000 | date:'short' }}
       </td>
-      <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book.dateCreated * 1000 | date:'short' }}
+      <td ng-click="vm.selectBook(bookViewed.uid)">
+        {{ bookViewed.book.dateCreated * 1000 | date:'short' }}
       </td>
 
       <td>

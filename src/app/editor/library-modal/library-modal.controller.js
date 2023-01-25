@@ -11,12 +11,17 @@
        misc: null
      };
 
-    vm.books = libraryService.getBooks(profileService.getBookIds());
+     console.log("rootscope: ", $rootScope.uid)
+
+    vm.books = libraryService.getBooks(profileService.getBookIds())
+    .filter(book => book.documentClaimedBy === $rootScope.uid);
     console.log("Profile service in library modal controller: ", profileService.getProfile())
     if (profileService.getProfile().negations){
       vm.negations = profileService.getProfile().negations;
       vm.booksNegated = vm.books.filter(book => vm.negations.includes(book.uid));
     }
+
+    vm.booksViewed = libraryService.getBooks(profileService.getBookIds())
     
     console.log("VM books: ", vm.books)
     console.log("negations on the library modal controller", vm.booksNegated)

@@ -2603,7 +2603,7 @@
       }
 
       $scope.unHighlightNode = function (){
-        console.log("Unhighlight node")
+        // console.log("Unhighlight node")
         if ($scope.thereIsAHighlightedNode){
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
             if ($scope.data[0].nodes[i].nodeId === $scope.highlightedNode.nodeId){
@@ -5252,7 +5252,7 @@
       };
 
       $scope.blurLightUpLastVisiblePropositionInBook = function (book, event) {
-        console.log("blur light up book")
+        // console.log("blur light up book")
         var apply = {};
         apply.path = '$scope.data[0]';
         apply.destination = eval(apply.path);
@@ -5295,7 +5295,7 @@
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {
 
 
-        console.log('light up book')
+        // console.log('light up book')
 
         if (event.target.localName === 'li' || event.target.classList[0] === 'bottomparagraphadder' || event.target.classList[0] !== 'angular-ui-tree'){
           console.log("not those lis or bottom adders")

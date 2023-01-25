@@ -660,7 +660,7 @@
       var visibilityChange = '';
       $scope.theseInputs = [];
       
-      if (!$scope.data[0].documentClaimedBy){
+      if (!$scope.data[0].authorTable){
         $scope.data[0].authorTable = [];
         $scope.data[0].isFresh = true;
       }

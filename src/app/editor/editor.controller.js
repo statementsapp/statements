@@ -653,9 +653,13 @@
       $scope.onTheBoard = false;
       $scope.oneMoveIn = false;
       $scope.thisMoveCounter = 0;
+      
 
       document.addEventListener('contextmenu', event => event.preventDefault());
 
+      if (!$scope.data[0].muteds){
+        $scope.muteds = [];
+      }
 
       var hidden = '';
       var visibilityChange = '';

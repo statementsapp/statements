@@ -106,7 +106,7 @@
           apiService.readProfile().then(function (res) {
             if (res.status === 200) {
               if (res.data) {
-                console.log("About to set profile if")
+                console.log("res data: ", res.data)
                 profileService.setProfile(res.data);
               } else {
                 console.log("About to set profile else")

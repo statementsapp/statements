@@ -4967,7 +4967,6 @@
                       // console.log("json stringified: ", JSON.parse(result.config.data))
                       $scope.profile = result.data;
                       console.log("That profile now: ", $scope.profile)
-                      profileService.setProfile(JSON.parse(result.data));
                     }).catch(function (error) {
                       console.log("error: ", error)
                     });

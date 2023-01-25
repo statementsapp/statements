@@ -12,6 +12,7 @@
      };
 
     vm.books = libraryService.getBooks(profileService.getBookIds());
+    console.log("Profile service in library modal controller: ", profileService.getProfile())
     vm.negations = profileService.getProfile().negations;
     vm.booksNegated = vm.books.filter(book => vm.negations.includes(book.uid));
     

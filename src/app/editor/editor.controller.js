@@ -4954,18 +4954,20 @@
                     if (!$scope.profile.negations){
                       console.log("1st if")
                       profileService.getProfile().negations = [$scope.bookId]; 
+                      profileService.getProfile().flag = 'up'
                     } else {
                       console.log("Then else")
                       profileService.getProfile().push($scope.bookId)
+                      profileService.getProfile().flag = 'up'
                     }
                     console.log("Get profile output: ", profileService.getProfile())
                     console.log("The profile working on here: ", $scope.profile)
                     apiService.updateProfile(profileService.getProfile()).then(function (result) {
                       console.log("That result: ", result.data)
                       // console.log("json stringified: ", JSON.parse(result.config.data))
-                      $scope.profile = JSON.parse(result.data)
+                      $scope.profile = result.data;
                       console.log("That profile now: ", $scope.profile)
-                      profileService.setProfile(JSON.parse(result.config.data));
+                      profileService.setProfile(JSON.parse(result.data));
                     }).catch(function (error) {
                       console.log("error: ", error)
                     });

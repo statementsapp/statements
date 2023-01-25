@@ -102,19 +102,19 @@
     </tr>
     </thead>
     <tr class="book-select"
-        ng-repeat="negation in vm.negations | orderBy:'-negation.lastModified'"
+        ng-repeat="bookNegated in vm.booksNegated | orderBy:'-bookNegated.lastModified'"
         ng-class="{'table-primary': hover }"
         ng-init="hover = false"
         ng-mouseenter="hover = true"
         ng-mouseleave="hover = false">
       <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book.nodes[0].topic }}
+        {{ bookNegated.book.nodes[0].topic }}
       </td>
       <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book.lastModified * 1000 | date:'short' }}
+        {{ bookNegated.book.lastModified * 1000 | date:'short' }}
       </td>
       <td ng-click="vm.selectBook(book.uid)">
-        {{ book.book.dateCreated * 1000 | date:'short' }}
+        {{ book.bookNegated.dateCreated * 1000 | date:'short' }}
       </td>
 
       <td>

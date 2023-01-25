@@ -208,7 +208,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
            
             <span ng-if="diagnostics">{{proposition.id}}</span>
-            <span style="position:relative; width: 0px; height: 0px;" ng-click="openTwitterPost(proposition.text)">
+            <span style="position:relative; width: 0px; height: 0px;" ng-click="[openTwitterPost(proposition.text), $event.stopPropagation]">
               <span id="tweet-button" ng-class="{'grow': tweetClicked.id}" ng-if="tweetClicked.id === proposition.id" style="position: absolute; right: 1px;"><i class="fa-brands fa-twitter" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfclicked': halfClicked}" style="padding-right: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfClicked = !halfClicked" >Tweet</span></span>
             </span>
 
@@ -503,7 +503,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               <!--   'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy !== userId) && cowsComeHome), -->
               </span>
               <span style="border-bottom: none;">&nbsp;</span> 
-              <span style="position:relative; width: 0px; height: 0px;">
+              <span style="position:relative; width: 0px; height: 0px;" ng-click="[muteUser(remark.author), $event.stopPropagation()">
                 <span id="mute-button" ng-class="{'grow': muteClicked.id}" ng-if="muteClicked.id === proposition.id" style="position: absolute;"><i class="fas fa-volume-mute" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfmuteclicked': halfmuteClicked}" style="padding-left: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfMuteClicked = !halfMuteClicked" ></span></span>
               </span>
               <span

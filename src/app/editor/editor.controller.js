@@ -1159,6 +1159,11 @@
           $scope.tweetClicked = {};
       }
 
+      $scope.muteUser = function (id) {
+        $scope.data[0].muteds.push(id);
+        $scope.muteClicked = {};
+      }
+
       // Hides
       $scope.hideThreadAdd = function () {
         $scope.threadAdding = '';
@@ -4786,7 +4791,8 @@
                   id: payload.id,
                   previousMessages: payload.previousMessages,
                   messagesSoFar: payload.messagesSoFar,
-                  color: payload.color
+                  color: payload.color,
+                  muted: ($scope.data[0].muteds.includes(payload.author) ? true : undefined)
                 })
               } else {
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
@@ -4808,7 +4814,8 @@
                   id: payload.id,
                   previousMessages: payload.previousMessages,
                   messagesSoFar: payload.messagesSoFar,
-                  color: payload.color
+                  color: payload.color,
+                  muted: ($scope.data[0].muteds.includes(payload.author) ? true : undefined)
                 })
                 $scope.messageToCopy = {};
               }

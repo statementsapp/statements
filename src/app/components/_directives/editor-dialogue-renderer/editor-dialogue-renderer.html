@@ -26,6 +26,7 @@
         ng-mouseover="[message.mouseOver = true, statementHighlight(message.id), message.updated && !message.deleted ? slideInUpdate() : inputs.nothing]"
         ng-mouseleave="[message.mouseOver = false, statementUnHighlight(message.id)]">
 		    <span 
+          ng-if="!message.muted"
           ng-class="{
             'statementmessagehighlit': statementHighlightIs === message.id && !message.mouseOver && !minimalStyle,
             'underline': message.mouseOver === true,

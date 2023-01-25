@@ -506,7 +506,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               <span style="position:relative; width: 0px; height: 0px;" ng-click="[muteUser(remark.author), $event.stopPropagation()]">
                 <span id="mute-button" ng-class="{'grow': muteClicked.id}" ng-if="muteClicked.id === proposition.id" style="position: absolute;"><i class="fas fa-volume-mute" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfmuteclicked': halfmuteClicked}" style="padding-left: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfMuteClicked = !halfMuteClicked" ></span></span>
               </span>
-              <span>({{proposition.remarks.length - proposition.remarks.filter(remark => remark.muted === true).length}})</span>
+              <span>{{proposition.remarks.length - proposition.remarks.filter(remark => remark.muted === true).length}}</span>
               <span
                 editable-span-ng-model
                 id="{{remark.id}}"

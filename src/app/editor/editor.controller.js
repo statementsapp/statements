@@ -4961,9 +4961,9 @@
                     console.log("Get profile output: ", profileService.getProfile())
                     console.log("The profile working on here: ", $scope.profile)
                     apiService.updateProfile(profileService.getProfile()).then(function (result) {
-                      console.log("That result: ", result.config.data)
-                      console.log("json stringified: ", JSON.parse(result.config.data))
-                      $scope.profile = JSON.parse(result.config.data)
+                      console.log("That result: ", result.data)
+                      // console.log("json stringified: ", JSON.parse(result.config.data))
+                      $scope.profile = JSON.parse(result.data)
                       console.log("That profile now: ", $scope.profile)
                       profileService.setProfile(JSON.parse(result.config.data));
                     }).catch(function (error) {

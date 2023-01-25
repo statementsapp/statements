@@ -52,6 +52,7 @@
     $scope.mouseIsOver = '';
     $scope.exportMouseover = false;
     $scope.halfClicked = false;
+    $scope.halfMuteClicked = false;
 
 
     // copies to clipboard

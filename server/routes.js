@@ -83,6 +83,7 @@ module.exports = function (admin, express) {
     var emailAddress = (p.hasOwnProperty('emailAddress')) ? p.emailAddress : null;
     var lastEditedBook = (p.hasOwnProperty('lastEditedBook')) ? p.lastEditedBook : null;
     var books = (p.hasOwnProperty('books')) ? p.books : null;
+    var negations = (p.hasOwnProperty('negations')) ? p.negations : null;
 
     var updates = {};
     updates[u + '/displayName'] = displayName;
@@ -92,6 +93,7 @@ module.exports = function (admin, express) {
     updates[u + '/lastName'] = lastName;
     updates[u + '/emailAddress'] = emailAddress;
     updates[u + '/books'] = books;
+    updates[u + '/negations'] = negations;
 
     db.ref().update(updates).then(function () {
       db.ref(u).once('value').then(function (snap) {

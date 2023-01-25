@@ -12,7 +12,7 @@
      };
 
      console.log("rootscope: ", $rootScope.uid)
-
+    vm.basisForBooks = libraryService.getBooks(profileService.getBookIds())
     vm.books = libraryService.getBooks(profileService.getBookIds())
     .filter(book => book.documentClaimedBy === $rootScope.uid);
     console.log("Profile service in library modal controller: ", profileService.getProfile())

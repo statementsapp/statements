@@ -17,6 +17,7 @@
     };
 
     function getBooks(uids) {
+      console.log("library for getbooks: ", library)
       var books = [];
       for (var key in library) {
         if (uids.includes(key)) {

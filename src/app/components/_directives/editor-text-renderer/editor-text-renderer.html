@@ -377,7 +377,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault() : inputs.nothing;"
             ng-keyup="
 
-                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
+                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ hideZeeky(), prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
                 $event.keyCode === 13 && data[0].documentClaimedBy === userId  && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
                 $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition == '' && proposition.author === userId ? [ $event.preventDefault(), resetFromEnter()] : inputs.nothing;
                 ($event.keyCode === 8 && inputs.proposition === '' && data[0].documentClaimedBy === userId && highlight.id === proposition.id && highlight.highlit == true) ? deleteProposition(node, paragraph, proposition, null, 'proposition') : inputs.nothing;

@@ -105,7 +105,7 @@
           console.log("interval if")
           apiService.readProfile().then(function (res) {
             if (res.status === 200) {
-              if (res.data) {
+              if (res.data && res.data != null ) {
                 console.log("res data: ", res.data)
                 profileService.setProfile(res.data);
               } else {

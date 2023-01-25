@@ -31,7 +31,7 @@
 
       var book = Object.assign({}, BookFactory.empty(vm.title));
       var now = moment().unix();
-
+      book.documentClaimedBy = $rootScope.uid;
       book.dateCreated = now;
       book.lastModified = now;
       book.lastModifiedBy = $rootScope.uid;

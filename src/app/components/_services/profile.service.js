@@ -21,6 +21,7 @@
     }
 
     function setBookIds(value) {
+      console.log("setting book ids")
       if (profile === null) {
         profile = {
           books: value,

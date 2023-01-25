@@ -52,6 +52,7 @@
                   if (result.data !== 'null') {
                     return result.data;
                   } else {
+                    console.log("profile that returned profile")
                     return {
                       books: [],
                       emailAddress: '',

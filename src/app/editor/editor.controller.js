@@ -4954,11 +4954,9 @@
                     if (!$scope.profile.negations){
                       console.log("1st if")
                       profileService.getProfile().negations = [$scope.bookId]; 
-                      profileService.getProfile().flag = 'up'
                     } else {
                       console.log("Then else")
                       profileService.getProfile().push($scope.bookId)
-                      profileService.getProfile().flag = 'up'
                     }
                     console.log("Get profile output: ", profileService.getProfile())
                     console.log("The profile working on here: ", $scope.profile)

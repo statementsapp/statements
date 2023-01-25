@@ -72,6 +72,7 @@ module.exports = function (admin, express) {
   });
 
   router.post('/user/:uid/profile', function (req, res, next) {
+    console.log("That req: ", req)
     var uid = req.params.uid;
 
     var u = 'users/' + uid;

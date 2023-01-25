@@ -24,8 +24,7 @@
         console.log("Key: ", key)
         console.log(key === uids[0])
         if (uids.includes(key)) {
-          console.log("Pushing: ", key)
-          books.push({ book: library[key], uid: key });
+          books.push({ book: library[key], uid: key, documentClaimedBy: library[key].documentClaimedBy });
         }
       }
       return books;

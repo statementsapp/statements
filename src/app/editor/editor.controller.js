@@ -3194,6 +3194,7 @@
       }
 
       $scope.hideZeeky = function () {
+        console.log("Hiding zeeky")
         $scope.isFresh = false;
         if (document.getElementById('zeekynegation')){
           document.getElementById('zeekynegation').style.display = 'none';

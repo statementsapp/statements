@@ -658,7 +658,7 @@
       document.addEventListener('contextmenu', event => event.preventDefault());
 
       if (!$scope.data[0].muteds){
-        $scope.muteds = [];
+        $scope.data[0].muteds = [];
       }
 
       var hidden = '';

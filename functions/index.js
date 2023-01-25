@@ -83,7 +83,7 @@ module.exports = function (admin, express) {
     var emailAddress = (p.hasOwnProperty('emailAddress')) ? p.emailAddress : null;
     var lastEditedBook = (p.hasOwnProperty('lastEditedBook')) ? p.lastEditedBook : null;
     var books = (p.hasOwnProperty('books')) ? p.books : null;
-    var books = (p.hasOwnProperty('negations')) ? p.negations : null;
+    var negations = (p.hasOwnProperty('negations')) ? p.negations : null;
 
     var updates = {};
     updates[u + '/displayName'] = displayName;

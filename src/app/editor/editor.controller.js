@@ -4956,7 +4956,7 @@
                       profileService.getProfile().negations = [$scope.bookId]; 
                     } else {
                       console.log("Then else")
-                      profileService.getProfile().push($scope.bookId)
+                      profileService.getProfile().negations.push($scope.bookId)
                     }
                     console.log("Get profile output: ", profileService.getProfile())
                     console.log("The profile working on here: ", $scope.profile)

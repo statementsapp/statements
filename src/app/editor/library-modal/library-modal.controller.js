@@ -13,9 +13,10 @@
 
     vm.books = libraryService.getBooks(profileService.getBookIds());
     vm.negations = profileService.getProfile().negations;
+    vm.booksNegated = vm.books.filter(book => negations.includes(book.uid));
     
     console.log("VM books: ", vm.books)
-    console.log("negations on the library modal controller", vm.negations)
+    console.log("negations on the library modal controller", vm.booksNegated)
     vm.profile = profileService.getProfile();
 
     vm.processing = false;

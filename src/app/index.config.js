@@ -14,16 +14,17 @@
     toastrConfig.positionClass = 'toast-bottom-right';
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
-    var firebaseConfig = {
-      apiKey: "AIzaSyDfrkcBavme0JXpZ1qxP070RexWU7Ct1l4",
-      authDomain: "statements-275d0.firebaseapp.com",
-      databaseURL: "https://statements-275d0-default-rtdb.firebaseio.com",
-      projectId: "statements-275d0",
-      storageBucket: "statements-275d0.appspot.com",
-      messagingSenderId: "764215061762",
-      appId: "1:764215061762:web:997def1495aa0e79af261b",
-      measurementId: "G-XZ5HWVV5QX"
+    const firebaseConfig = {
+      apiKey: "AIzaSyBnFxeuoKCj_d4pWd3zkMZqeH95YdUbjNw",
+      authDomain: "statements-local.firebaseapp.com",
+      projectId: "statements-local",
+      storageBucket: "statements-local.appspot.com",
+      messagingSenderId: "279125456259",
+      appId: "1:279125456259:web:f595c1d616eb7fb81032b6",
+      measurementId: "G-0YG4NK8DL9",
+      databaseURL: "https://statements-local-default-rtdb.firebaseio.com",
     };
+    
     firebase.initializeApp(firebaseConfig);
   }
 

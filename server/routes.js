@@ -58,7 +58,7 @@ module.exports = function (admin, express) {
     });
   });
 
-  router.use('/', firebaseMiddleware.auth);
+  // router.use('/', firebaseMiddleware.auth);
 
 // user =====================================================================
 

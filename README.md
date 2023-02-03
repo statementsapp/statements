@@ -91,7 +91,7 @@ Before you run, you'll need to set up your app's config to point to your Firebas
   firebase.initializeApp(config);
 </script>
 ```
-* Paste the information inside the modal's `var config = { ... };` into the appropriate place within the `index.html` file in this project.
+* Paste the information inside the modal's `var config = { ... };` into the appropriate place within the `index.config.js` file in this project.
 * Next, go into Firebase settings and select "Service Accounts"
 * With "Node.js" selected, paste the posted information into server/firebase-admin.js
 * Then select "Generate new private key". Paste the key into config/serviceAccountKey.json
@@ -103,6 +103,7 @@ Before you run, you'll need to set up your app's config to point to your Firebas
 After installing and linking to Firebase, type this into a terminal: 
 
 ```bash
+$ npm i
 $ npm start
 ```
 

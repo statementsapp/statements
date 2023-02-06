@@ -103,7 +103,6 @@ Before you run, you'll need to set up your app's config to point to your Firebas
 After installing and linking to Firebase, type this into a terminal: 
 
 ```bash
-$ npm i
 $ npm start
 ```
 

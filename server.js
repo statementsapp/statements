@@ -1,7 +1,8 @@
 #!/usr/env/bin node
 'use strict';
 
-require('dotenv').config();
+// todo: can i figure out if this is local? 
+require('dotenv').config({path: '.env.local'});
 //
 
 // define globals =====================================
@@ -24,7 +25,11 @@ require('./sockets/index')(io);
 
 // middleware =========================================
 app.use(morgan('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+  verify: (req, res, buf) => {
+    req.rawBody = buf
+  }
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(distDir));
 

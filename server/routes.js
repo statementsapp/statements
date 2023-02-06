@@ -3,6 +3,8 @@ module.exports = function (admin, express) {
 
   var router = express.Router();
   var moment = require('moment');
+  var paymentEvents = require('./payments/events')
+  var checkout = require('./payments/checkout')
   var firebaseMiddleware = require('express-firebase-middleware');
 
   router.get('/ping', function (req, res, next) {
@@ -58,7 +60,11 @@ module.exports = function (admin, express) {
     });
   });
 
-  // router.use('/', firebaseMiddleware.auth);
+  // make router payments cleaner
+  router.use('/payment-events', paymentEvents);
+  router.use('/checkout', checkout)
+
+  router.use('/', firebaseMiddleware.auth);
 
 // user =====================================================================
 

@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function ApiService($rootScope, $q, $http) {
+  function ApiService($rootScope, $q, $http, $location) {
     console.log("api servicing")
     var apiService = function () {
     };
@@ -171,6 +171,16 @@
       return get('/config');
     }
 
+    function buyPremium(successUrl, cancelUrl) {
+      if (successUrl === undefined) {
+        successUrl = $location.absUrl();
+      }
+      if (cancelUrl === undefined) {
+        cancelUrl = $location.absUrl();
+      }
+      return post('/checkout', {successUrl, cancelUrl});
+    }
+
     function readProfile() {
       console.log("Reading profile with: ", $rootScope.uid)
       return get('/user/' + $rootScope.uid + '/profile');
@@ -224,7 +234,8 @@
       updateBook: updateBook,
       removeBook: removeBook,
       updatePropositions: updatePropositions,
-      readPropositions: readPropositions
+      readPropositions: readPropositions,
+      buyPremium
     };
 
     return apiService;

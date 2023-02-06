@@ -24,7 +24,6 @@
     var signUpButton = document.getElementById('signUp')
     var signInButton = document.getElementById('signIn')
     var container = document.getElementById('container')
-
     // signUpButton.addEventListener('click', () => {
     //   container.classList.add('right-panel-active');
     // });
@@ -57,6 +56,13 @@
           });
       }
     };
+
+    vm.buyPremium = function() {
+      // todo test failure from server
+      vm.apiService.buyPremium().then(function(resp) {
+        window.location.href = resp.data.checkoutUrl;
+      })
+    }
 
     vm.openSignupModal = function () {
       console.log("to run the signupmodal")

@@ -7,7 +7,7 @@ module.exports = function (admin, express) {
   var checkout = require('./payments/checkout')
   var billing = require('./payments/billing-portal')
   var firebaseMiddleware = require('express-firebase-middleware');
-  
+
   router.get('/ping', function (req, res, next) {
     return res.send('pong');
   });

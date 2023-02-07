@@ -26,7 +26,7 @@ const updateUserWithPremium = (stripeId) => {
 
 const updateUserRemovePremium = (stripeId) => {
   const users = db.ref(`users`);
-  users.orderByChild('stripeId').equalTo(stripeId).limitToFirst(1).once('value', data => {
+users.orderByChild('stripeId').equalTo(stripeId).limitToFirst(1).once('value', data => {
     const uid = Object.keys(data.val())[0]; 
     db.ref(`/users/${uid}/premium`).set(false)
   });

@@ -7,12 +7,13 @@ var stripe = require('stripe')(config.stripeApiKey)
 
 // note: right now is it not neccessary to do anything on this event
 // because buying premium also triggers a customer.subscription.updated event
-// also, subscription info is available in stripe directly, 
-// so you probably don't have to listen to these unless you want to take some other action 
 const checkoutSessionCompleted = (event) => {
   console.log('checkout.session.completed') 
 }
 
+// currently these events update the users/{uid}/premium value, 
+// but subscription info is already available in stripe directly. 
+// so you probably don't have to listen to these unless you want to take some other action 
 const customerSubscriptionUpdated = (event) => {
   console.log('customer.subscription.updated', event.data.object.customer) 
   if (event.data.object.status === 'active') {

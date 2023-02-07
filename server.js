@@ -1,8 +1,7 @@
 #!/usr/env/bin node
 'use strict';
 
-// todo: can i figure out if this is local? 
-require('dotenv').config({path: '.env.local'});
+require('dotenv').config();
 //
 
 // define globals =====================================

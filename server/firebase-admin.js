@@ -1,7 +1,6 @@
 'use strict';
 
 var admin = require('firebase-admin');
-var serviceAccount = require("./statements-local-firebase-adminsdk.json");
 
 admin.initializeApp({
   credential: admin.credential.cert({

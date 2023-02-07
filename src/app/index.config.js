@@ -24,7 +24,6 @@
       appId: "1:764215061762:web:997def1495aa0e79af261b",
       measurementId: "G-XZ5HWVV5QX"
     };
-    
     firebase.initializeApp(firebaseConfig);
   }
 

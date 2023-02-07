@@ -59,8 +59,12 @@
 
     vm.buyPremium = function() {
       // todo test failure from server
-      vm.apiService.buyPremium().then(function(resp) {
-        window.location.href = resp.data.checkoutUrl;
+      vm.apiService.buyPremium().then(
+      function(resp) {
+        window.location.href = resp.data.redirectUrl;
+      }, 
+      function (error) {
+        console.error('error opening checkout for premium')
       })
     }
 

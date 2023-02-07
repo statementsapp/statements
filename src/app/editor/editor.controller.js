@@ -424,6 +424,16 @@
       });
     };
 
+    $scope.openBillingPortal = function() {
+      apiService.openBillingPortal().then(
+        function(resp) {
+          window.location.href = resp.data.redirectUrl;
+        }, 
+        function (error) {
+          console.error('error opening billing portal')
+        })
+    }
+
     $scope.openLoginModal = function () {
       $scope.loginModalInstance = $uibModal.open({
         animation: true,

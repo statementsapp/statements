@@ -181,6 +181,13 @@
       return post('/checkout', {successUrl, cancelUrl});
     }
 
+    function openBillingPortal(returnUrl) {
+      if (returnUrl === undefined) {
+        returnUrl = $location.absUrl();
+      }
+      return post('/billing', {returnUrl})
+    }
+
     function readProfile() {
       console.log("Reading profile with: ", $rootScope.uid)
       return get('/user/' + $rootScope.uid + '/profile');
@@ -235,7 +242,8 @@
       removeBook: removeBook,
       updatePropositions: updatePropositions,
       readPropositions: readPropositions,
-      buyPremium
+      buyPremium,
+      openBillingPortal
     };
 
     return apiService;

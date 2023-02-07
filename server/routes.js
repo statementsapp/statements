@@ -5,8 +5,9 @@ module.exports = function (admin, express) {
   var moment = require('moment');
   var paymentEvents = require('./payments/events')
   var checkout = require('./payments/checkout')
+  var billing = require('./payments/billing-portal')
   var firebaseMiddleware = require('express-firebase-middleware');
-
+  
   router.get('/ping', function (req, res, next) {
     return res.send('pong');
   });
@@ -60,11 +61,12 @@ module.exports = function (admin, express) {
     });
   });
 
-  // make router payments cleaner
   router.use('/payment-events', paymentEvents);
-  router.use('/checkout', checkout)
-
   router.use('/', firebaseMiddleware.auth);
+
+// payments ================================================================
+  router.use('/checkout', checkout);
+  router.use('/billing', billing);
 
 // user =====================================================================
 
@@ -86,7 +88,7 @@ module.exports = function (admin, express) {
     var displayName = (p.hasOwnProperty('displayName')) ? p.displayName : null;
     var firstName = (p.hasOwnProperty('firstName')) ? p.firstName : null;
     var lastName = (p.hasOwnProperty('lastName')) ? p.lastName : null;
-    var emailAddress = (p.hasOwnProperty('emailAddress')) ? p.emailAddress : null;
+    var emailAddress = (p.hasOwnProperty('email')) ? p.email : null;
     var lastEditedBook = (p.hasOwnProperty('lastEditedBook')) ? p.lastEditedBook : null;
     var books = (p.hasOwnProperty('books')) ? p.books : null;
     var negations = (p.hasOwnProperty('negations')) ? p.negations : null;

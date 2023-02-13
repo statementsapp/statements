@@ -182,6 +182,7 @@
     }
 
     function openBillingPortal(returnUrl) {
+      console.log("return url: ", returnUrl)
       if (returnUrl === undefined) {
         returnUrl = $location.absUrl();
       }

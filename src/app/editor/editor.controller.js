@@ -425,7 +425,7 @@
     };
 
     $scope.openBillingPortal = function() {
-      apiService.openBillingPortal().then(
+      apiService.openBillingPortal($location.absUrl()).then(
         function(resp) {
           window.location.href = resp.data.redirectUrl;
         }, 

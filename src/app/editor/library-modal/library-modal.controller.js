@@ -5,6 +5,8 @@
   function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state, $uibModal, chatSocket) {
     var vm = this;
 
+
+
      vm.bookId = '';
      vm.errors = {
        noBookFound: false,
@@ -26,7 +28,7 @@
     console.log("VM books: ", vm.books)
     console.log("negations on the library modal controller", vm.booksNegated)
     vm.profile = profileService.getProfile();
-
+    console.log("Loaded library profile state is: ", vm.profile)
     vm.processing = false;
 
     vm.updateProfile = function(isValid) {

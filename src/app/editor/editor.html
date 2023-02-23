@@ -169,7 +169,7 @@
                       type="button"
                       uib-tooltip="Diagnostics"
                       ng-click="toggleDiagnostics()"
-                      ng-if="cowsComeHome">
+                      ng-if="!cowsComeHome">
                 <i class="fa fa-comment-o"></i>
               </button>
               <a download="export.txt" style="" id="downloadlink">
@@ -177,7 +177,7 @@
                 <button class="btn menubutton btn-primary help downloadbutton"
                       id="thatdownloadbutton"
                       type="button"
-                      ng-if="cowsComeHome"
+                      ng-if="!cowsComeHome"
                       uib-tooltip="Export to .txt"
                       ng-mouseover="[makeTextFile(), exportMouseover = true]"
                       ng-mouseleave= "exportMouseover = false;"
@@ -191,7 +191,7 @@
               <!-- feather you want in there below -->
               <button style='padding-left: 0px;'
                       class="btn menubutton"
-                      ng-if="cowsComeHome"
+                      ng-if="!cowsComeHome"
                       type="button"
                       uib-tooltip="Minimal Styling"
                       ng-click="toggleMinimalStyling()">

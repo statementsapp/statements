@@ -55,6 +55,81 @@
                >
          <span style="color: black" id="billingtext">(Billing)</span>
        </button>
+
+
+                     <button class="btn menubutton"
+                             ng-if="cowsComeHome"
+                             type="button"
+                             uib-tooltip="Share Link"
+                             ng-click="copyLink()">
+                       <i class="fa fa-book-medical "></i>
+                     </button>
+                     <input id="directLinkInput" type="text" style="" readonly ng-value="currentLocation"/>
+
+                     <button class="btn menubutton"
+                             ng-if="cowsComeHome"
+                             type="button"
+                             uib-tooltip="Just Messages"
+                             ng-click="goFullScreenMessages()">
+                       <i class="fa fa-comment-o"></i>
+                     </button>
+
+
+                     
+                     <button class="btn menubutton"
+                             type="button"
+                             uib-tooltip="Diagnostics"
+                             ng-click="toggleDiagnostics()"
+                             ng-if="!cowsComeHome">
+                       <i class="fa fa-comment-o"></i>
+                     </button>
+                     <a download="export.txt" style="" id="downloadlink">
+
+                       <button class="btn menubutton btn-primary help downloadbutton"
+                             id="thatdownloadbutton"
+                             type="button"
+                             ng-if="!cowsComeHome"
+                             uib-tooltip="Export to .txt"
+                             ng-mouseover="[makeTextFile(), exportMouseover = true]"
+                             ng-mouseleave= "exportMouseover = false;"
+                             ng-class= "{'exportcolor': exportMouseover}"
+                             ng-click="clickDownloadLink()">
+                         <span style="color: blue" id="exporttext">Export</span>
+                       </button>
+                     </a>
+
+
+                     <!-- feather you want in there below -->
+                     <button style='padding-left: 0px;'
+                             class="btn menubutton"
+                             ng-if="!cowsComeHome"
+                             type="button"
+                             uib-tooltip="Minimal Styling"
+                             ng-click="toggleMinimalStyling()">
+                         <i class="fa fa-feather-alt"></i>
+                     </button>
+
+       <!--               <button style='padding-left: 0px;'
+                             class="btn menubutton"
+                             ng-if="!cowsComeHome"
+                             type="button"
+                             uib-tooltip="Post to Twitter"
+                             ng-class="{'bluetwitter' : draggingProposition}"
+                             ng-click="draggingProposition ? openTwitterPost(draggedProposition.text) : inputs.nothing">
+                         <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+                     </button> -->
+
+
+                     <button style='padding-left: 0px;'
+                             class="btn menubutton"
+                             ng-if="!cowsComeHome"
+                             type="button"
+                             uib-tooltip="Minimal Styling"
+                             ng-click="invert()">
+                         <i class="fa fa-feather-alt"></i>
+                     </button>
+
+       
      </div>
   <div class="row"
        id="firstrow"

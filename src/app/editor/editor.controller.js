@@ -5099,8 +5099,8 @@
         }, 0);
       };
 
-      $scope.autoResize = function (textarea) {
-        console.log("Auto resizing")
+      function autoResize(textarea) {
+        console.log("Auto")
       textarea.style.height = 'auto';
       textarea.style.height = textarea.scrollHeight + 'px';
     }

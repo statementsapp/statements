@@ -5100,6 +5100,7 @@
       };
 
       $scope.autoResize = function (textarea) {
+        console.log("Auto resizing")
       textarea.style.height = 'auto';
       textarea.style.height = textarea.scrollHeight + 'px';
     }

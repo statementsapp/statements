@@ -5099,6 +5099,11 @@
         }, 0);
       };
 
+      $scope.autoResize(textarea) = function {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
       $scope.clearTopAndBottomHasFocus = function (proposition) {
         console.log('clear top and bottom focus')
         $scope.hasTopFocus = '';

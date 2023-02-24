@@ -5100,7 +5100,7 @@
       };
 
       function isMutedFilter(remark) {
-        return remark.muted;
+        return remark.muted || remark.deleted;
       }
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {

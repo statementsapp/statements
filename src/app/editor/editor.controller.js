@@ -4981,6 +4981,7 @@
                   $scope.selectPropositionById(payload.id);
                   $scope.selectedProposition.textSide = false;
                   document.getElementById('input' + payload.id).click();
+                  console.log("Rows: ", document.getElementById('input' + payload.id).rows);
                   focusFactory('input' + payload.id);
               }, 20);
             }

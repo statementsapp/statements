@@ -5099,7 +5099,9 @@
         }, 0);
       };
 
-      
+      function isMutedFilter(remark) {
+        return remark.muted;
+      }
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {
         console.log('clear top and bottom focus')

@@ -46,6 +46,7 @@
         }"
       >
         <textarea onInput="this.parentNode.dataset.replicatedValue = this.value"
+          oninput="autoResize(this)"
           ng-show="(message.id === hasChatFocusId)"
           ng-hide="(message.id != hasChatFocusId || (selectedProposition.textSide))"
           ng-model="inputs.chatProposition"
@@ -57,7 +58,6 @@
             'alignright': (message.type === 'assertion' || message.type === 'rejoinder') && message.author !== userId && cowsComeHome,
             'outgoingmessage': message.author !== userId
           }"
-          rows="4"
           spellcheck="false"
           style="">
         </textarea>

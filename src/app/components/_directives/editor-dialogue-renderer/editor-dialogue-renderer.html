@@ -45,7 +45,7 @@
         'chatinputminimized' : hasChatFocusId !== message.id
         }"
       >
-        <textarea onInput="this.parentNode.dataset.replicatedValue = this.value"
+        <textarea 
           oninput="autoResize(this)"
           ng-show="(message.id === hasChatFocusId)"
           ng-hide="(message.id != hasChatFocusId || (selectedProposition.textSide))"
@@ -61,6 +61,7 @@
           spellcheck="false"
           style="">
         </textarea>
+        <!-- onInput="this.parentNode.dataset.replicatedValue = this.value" -->
       </div>
   </div>
 </div>

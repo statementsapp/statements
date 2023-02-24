@@ -5158,6 +5158,8 @@
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
                 $scope.hasChatFocusId = id;
                 setTimeout(function () {
+                  console.log("Rows: ", document.getElementById('input' + $scope.hasChatFocusId).rows);
+                  console.log("Rows id : ", document.getElementById('input' + id).rows);
                    focusFactory('input'+ id)
                    console.log("Has chat focus id: ", $scope.hasChatFocusId)
                 }, 20);

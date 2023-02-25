@@ -5101,7 +5101,7 @@
 
       $scope.isMutedFilter = function (remark) {
         console.log("Remark: ", remark)
-        return remark.muted || remark.deleted;
+        return remark.muted || remark.deleted || remark.rejoined;
       }
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {

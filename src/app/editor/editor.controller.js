@@ -5100,7 +5100,7 @@
       };
 
       $scope.isMutedFilter = function (remark) {
-        console.log("Remark: ", remark)
+        // console.log("Remark: ", remark)
         return remark.muted || remark.deleted || remark.rejoined;
       }
 

@@ -436,7 +436,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph)]"
                 ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater()]"
 
-                ng-if="(!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted) && proposition.remarksExpanded"
+                ng-if="(!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted) "
                 ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id}"
                 class="proposition">
                <!--  {{remark.id}} -->
@@ -501,15 +501,15 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 class="proposition-text"
                 ng-blur="[focusouteditable(this), paragraph.disableRightCursor = false]"
                 ng-mousedown="handleClick($event, proposition.id, 'mute')"
-
+                ng-if="proposition.remarksExpanded"
               >
 
                 {{remark.text}}
               
               <!--   'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy !== userId) && cowsComeHome), -->
               </span>
-              <span style="border-bottom: none;">&nbsp;</span> 
-              <span style="position:relative; width: 0px; height: 0px;" ng-click="[muteUser(remark.author), $event.stopPropagation()]">
+              <span ng-if="proposition.remarksExpanded" style="border-bottom: none;">&nbsp;</span> 
+              <span style="position:relative; width: 0px; height: 0px;" ng-click="[muteUser(remark.author), $event.stopPropagation()]" ng-if="proposition.remarksExpanded">
                 <span id="mute-button" ng-class="{'grow': muteClicked.id}" ng-if="muteClicked.id === proposition.id" style="position: absolute;"><i class="fas fa-volume-mute" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfmuteclicked': halfmuteClicked}" style="padding-left: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfMuteClicked = !halfMuteClicked" ></span></span>
               </span>
               
@@ -518,7 +518,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 id="{{remark.id}}"
                 title="{{remark.id}}"
                 class="right-text right-textarea maininput"
-                ng-if="selectedProposition.id === remark.id && paragraph.topAdd != true && paragraph.bottomAdd != true && paragraph.leftAdd != true"
+                ng-if="selectedProposition.id === remark.id && paragraph.topAdd != true && paragraph.bottomAdd != true && paragraph.leftAdd != true && proposition.remarksExpanded"
                 ng-class="{
                            'authorprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy === userId))}"
                 ng-click="[assignRightFocus(remark), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
@@ -549,7 +549,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
                     ng-click="[selectProposition(proposition), paragraph.disableRightCursor = true, selectedProposition.textSide = true, paragraph.topAdd = false, paragraph.bottomAdd = false, paragraph.leftAdd = false]"
                     event-focus="click"
-                    event-focus-id="{{remark.id}}">
+                    event-focus-id="{{remark.id}}"
+                    ng-if="proposition.remarksExpanded">
 
               </span>
                         <span id="zeekynegation" class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5)">press

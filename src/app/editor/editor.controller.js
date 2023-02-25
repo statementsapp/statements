@@ -5099,7 +5099,7 @@
         }, 0);
       };
 
-      function isMutedFilter(remark) {
+      $scope.isMutedFilter = function (remark) {
         console.log("Remark: ", remark)
         return remark.muted || remark.deleted;
       }

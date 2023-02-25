@@ -5100,6 +5100,7 @@
       };
 
       function isMutedFilter(remark) {
+        console.log("Remark: ", remark)
         return remark.muted || remark.deleted;
       }
 

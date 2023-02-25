@@ -362,7 +362,11 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             <!-- {{proposition.id}} -->
 
           </span>
-          <sub><span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length">(</span><span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span><span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length">)</span>
+          <sub ng-click="toggleRemarksExpansion(proposition)">
+            <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">(</span>
+            <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && proposition.remarksExpanded">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
+            <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && proposition.remarksExpanded">-</span>
+            <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">)</span>
           </sub>
           <span
             editable-span-ng-model 
@@ -422,7 +426,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               style="padding-left: 0px !important; display: inline"
               ng-model="proposition.remarks"
               class="propositions"
-              ng-if="proposition.remarks && proposition.remarksExpanded"
+              ng-if="proposition.remarks"
               ng-mouseleave="[aRemarkIsMousedOver = false]">
 
             <li ng-repeat="remark in proposition.remarks track by $index"

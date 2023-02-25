@@ -362,7 +362,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             <!-- {{proposition.id}} -->
 
           </span>
-          <span>{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
+          <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length">(</span><span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span><span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length">)</span>
           <span
             editable-span-ng-model 
             id="{{proposition.id}}"

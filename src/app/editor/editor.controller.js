@@ -833,6 +833,8 @@
         $('[ui-view]').attr('id', 'wholedamneditor');
       });
 
+      document.getElementById('wholedamneditor').style.backgroundColor = '#15202B';
+
       $scope.userColorTable = [];
       //initializes as number of colors in the palette
       $scope.userColorCount = $scope.otherPastels.length;

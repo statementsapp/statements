@@ -349,7 +349,7 @@
 
 
       // document.getElementById('fulleditor').style.backgroundColor = '#15202B';
-      
+
       document.getElementById('directLinkInput').style.color = 'black';
       document.getElementById('exporttext').style.color = 'white';
       document.getElementById('thatdownloadbutton').style.borderColor = 'white';
@@ -813,6 +813,7 @@
       $scope.assignFirstsToNodes();
 
 
+
       // Shuffles paragraph color order
       function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
@@ -828,7 +829,9 @@
 
       // shuffle($scope.otherPastels);
 
-
+      $(document).ready(function() {
+        $('[ui-view]').attr('id', 'wholedamneditor');
+      });
 
       $scope.userColorTable = [];
       //initializes as number of colors in the palette

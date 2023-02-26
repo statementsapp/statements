@@ -348,6 +348,7 @@
       $scope.inverted = !$scope.inverted;
 
 
+      document.getElementById('fulleditor').style.backgroundColor = '#15202B';
       document.getElementById('directLinkInput').style.color = 'black';
       document.getElementById('exporttext').style.color = 'white';
       document.getElementById('thatdownloadbutton').style.borderColor = 'white';

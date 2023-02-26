@@ -580,7 +580,7 @@ textarea {
 }
 
 .cursor.blinking-cursor {
-  color: #212121 !important;
+  color: white !important;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
   -o-animation: 1s blink step-end infinite;
@@ -588,12 +588,12 @@ textarea {
 }
 
 .cursor.solid-cursor {
-  color: black !important;
+  color: white !important;
   padding-bottom: 10px;
 }
 
 .cursor {
-  color: black !important;
+  color: white !important;
   font-size: 22px;
   padding-bottom: 10px;
 
@@ -635,7 +635,7 @@ textarea {
 }
 
 .chat-input-field {
-  background-color: white;
+  background-color: #15202B;
   font-size: 18px;
 }
 

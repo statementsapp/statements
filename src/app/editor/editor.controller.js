@@ -739,9 +739,11 @@
       $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1', '#ffd9c0'];
 
       // these are the current pastels
-      $scope.otherPastels = ['#c0ecdd','#c7ceea','#ffb7b2','#ffd9c0'];
+      $scope.otherPastels = ['#FF8484', '#5AD5D5', '#FFCE5C'];
       // Other suitable pastels below
       // ,'#c7ceea','#ffb7b2'
+      // Light theme pastels below
+      // '#c0ecdd','#c7ceea','#ffb7b2','#ffd9c0'
 
 
       $scope.authorTableLength = angular.copy($scope.data[0].authorTable.length); 
@@ -833,7 +835,7 @@
         $('[ui-view]').attr('id', 'wholedamneditor');
       });
 
-      document.getElementById('wholedamneditor').style.backgroundColor = '#15202B';
+      document.getElementById('wholedamneditor').style.backgroundColor = '#1E1E1E';
 
       $scope.userColorTable = [];
       //initializes as number of colors in the palette

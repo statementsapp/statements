@@ -369,7 +369,7 @@ textarea {
 .app-title {
   padding-left: 10px;
   font-size: 2.1em;
-  color: white;
+  color: #F0F0F0;
   margin-bottom: 0;
   float: left !important;
   margin-top: 22px;
@@ -408,7 +408,7 @@ textarea {
 }
 
 .addparagraph {
-  background-color: white !important;
+  background-color: #F0F0F0 !important;
   min-height: 20px;
   padding-bottom: 8px;
   text-indent: 40px;
@@ -580,7 +580,7 @@ textarea {
 }
 
 .cursor.blinking-cursor {
-  color: white !important;
+  color: #F0F0F0 !important;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
   -o-animation: 1s blink step-end infinite;
@@ -588,12 +588,12 @@ textarea {
 }
 
 .cursor.solid-cursor {
-  color: white !important;
+  color: #F0F0F0 !important;
   padding-bottom: 10px;
 }
 
 .cursor {
-  color: white !important;
+  color: #F0F0F0 !important;
   font-size: 22px;
   padding-bottom: 10px;
 
@@ -737,7 +737,7 @@ textarea {
 }
 
 .textlist {
-  color: white;
+  color: #F0F0F0;
   list-style: none;
   padding-left: 0;
   margin-top: 30px;
@@ -990,7 +990,7 @@ nav.nav {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
-    color: white;
+    color: #F0F0F0;
     display: block;
     transition: 0.3s;
 

@@ -964,7 +964,7 @@
                 if (obj.author == $scope.userId){
                   obj.color = $scope.userColorTable[index].color;
                 } else {
-                  obj.color = 'lightgray';
+                  obj.color = '#F0F0F0';
                 }
 
               }
@@ -980,7 +980,7 @@
                 if (obj.author == $scope.userId){
                   obj.color = $scope.userColorTable[$scope.userColorTable.length-1].color;
                 } else {
-                  obj.color = 'lightgray';
+                  obj.color = '#F0F0F0';
                 }
 
               }
@@ -1421,13 +1421,13 @@
                 $scope.data[0].authorTable = [
                   {
                         authorId: angular.copy(payload.author),
-                        color: 'lightgray'
+                        color: '#F0F0F0'
                   }
                 ]
                 if (payload.author === $scope.userId){
-                  $scope.userColor = 'lightgray';
+                  $scope.userColor = '#F0F0F0';
                 }
-                var payloadColor = 'lightgray';
+                var payloadColor = '#F0F0F0';
               } else {
                 // loop through author table
 
@@ -1468,13 +1468,13 @@
                 $scope.data[0].authorTable = [
                   {
                         authorId: angular.copy(payload.author),
-                        color: 'lightgray'
+                        color: '#F0F0F0'
                   }
                 ]
                 if (payload.author === $scope.userId){
-                  $scope.userColor = 'lightgray';
+                  $scope.userColor = '#F0F0F0';
                 }
-                var payloadColor = 'lightgray';
+                var payloadColor = '#F0F0F0';
 
                 // if the author table is presently blank, assign yourself light grey 
                 // as you are now author

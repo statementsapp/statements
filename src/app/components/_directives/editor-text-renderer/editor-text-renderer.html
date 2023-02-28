@@ -142,7 +142,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                             selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, prepProposition(inputs.proposition, node, paragraph, null, proposition, $event, 'top')] : inputs.nothing;
                             (inputs.proposition === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
           spellcheck="false"
-          style="color: black; text-indent: 25px; background-color: #212121;"
+          style="color: black; text-indent: 25px; background-color: #0C2340;"
         >
         </span>
       </div>
@@ -620,7 +620,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.bottomProposition != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs.bottomProposition, node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs.proposition === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
           class="texttopic"
           spellcheck="false"
-          style="color: black; text-indent: 25px; background-color: #212121; margin-left: -10px; padding-bottom: 30px;"></span>
+          style="color: black; text-indent: 25px; background-color: #0C2340; margin-left: -10px; padding-bottom: 30px;"></span>
           <span class="cursor visible-cursor"
                 ng-if="paragraph.bottomMouseOver && !paragraph.bottomAdd">
           </span>
@@ -655,7 +655,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     editable-span-ng-model
     ng-model="inputs.newSectionTitle"
     ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
-    style="color: black; text-indent: 25px; background-color: #212121;"
+    style="color: black; text-indent: 25px; background-color: #0C2340"
     class="right-textarea texttopic"
     id="{{bottomNodeAdderId}}"></span>
     <span class="cursor visible-cursor"

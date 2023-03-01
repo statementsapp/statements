@@ -1,149 +1,78 @@
-         <ol ui-tree-nodes
-          style="padding-left: 0px !important;"
-          ng-model="proposition.remarks"
-          class="propositions"
-          ng-if="proposition.remarks">
-          <!-- ng-if="(!proposition.hiddenForAll && !proposition.rejoined && proposition[userId] !== 'hidden') || (proposition.privateFor && proposition.privateFor === userId)" -->
-        <li ng-repeat="remark in proposition.remarks track by $index"
-            id="wholeprop{{remark.id}}"
-            ui-tree-node
-            ng-mouseover="[remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph)]"
-            ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater()]"
-            ng-click="[hideExpandingTextarea(), selectedProposition.textSide = true, selectNode(node), selectLeft(remark, paragraph)]"
-            ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden'))"
-            ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id}"
-            class="proposition">
-            <!-- for hiding negations decluttering, doesnt work perfectly: -->
-            <!-- proposition.assertionId !== hasRightFocus.id || proposition.type !== 'negation' || proposition.author === userId -->
-
-
-
-
-
-          <!-- 'dragdimmed': draggedProposition.id === proposition.id -->
-
-
-<!--           draggedProposition.id && draggedProposition.id !== proposition.id ? [selectedNode = node, dropProposition(node, paragraph, proposition,'right')] : -->
-          <span
-
-
-            id="proposition{{remark.id}}"
-            style=""
-            ng-class="{ 
-                            'negation': proposition.type === 'negation',
-                            'ispresentlybeingdragged': proposition.isPresentlyBeingDragged,
-                            'highlight': highlight.id === proposition.id || (selectedParagraph.highlightAll == true && selectedParagraph.paragraphId === paragraph.paragraphId),
-                            'mark': mark.id === proposition.id || (selectedParagraph.markAll == true && selectedParagraph.paragraphId === paragraph.paragraphId),
-                            'owned-cursor': proposition.author === userId || (proposition.type === 'negation' && proposition.of.author === userId),
-                            'textcursor': whatHasBeenClicked == proposition.id,
-                            'rejoining': hasRightFocus === proposition.id && !selectedProposition.dialogueSide && proposition.type === 'negation' && proposition.of.author === userId,
-                            'updatecursor': this.contentEditable,
-                            'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
-                            'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden'),
-                            'defrejoined' : proposition.rejoined
-                          }"
-
-            ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, remark)]"
-            ng-mouseover="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event),remark.propositionPreSelected = true, paragraph.disableRightCursor = false]"
-            ng-mouseleave="remark.propositionPreSelected = false;"
-            ng-blur=""
-
-            ng-click="
-                   
-
-                    (remark.author === userId && selectedProposition.textSide) && !cancelListenForDoubleClick
-                    ?  [
-                         
-                         mark.id = '',
-                         highlight.id = '',
-                         selectNode(node),
-                         selectParagraph(paragraph),
-                         selectedParagraph = paragraph,
-                         paragraph.topAdd = false,
-                         paragraph.bottomAdd = false,
-                         paragraph.leftAdd = false,
-                         paragraph.disableRightCursor = true,
-                         clearTopAndBottomHasFocus(),
-                         hasRightFocus.id = proposition.id,
-                         listenForDoubleClick(this, paragraph, remark),
-                         $event.stopPropagation()
-                       ]
-                    :  (proposition.of.author === userId && whatHasBeenClicked !== proposition.id) && !cancelListenForDoubleClick
-                          ? [
-                            
-                            hideExpandingTextarea(),
-                            selectNode(node),
-                            selectParagraph(paragraph),
-                            selectProposition(remark),
-                            selectedParagraph.highlightAll = false,
-                            selectedParagraph.markAll = false,
-                            clearTopAndBottomHasFocus(),
-                            mark.id = '',
-                            highlight.id = '',
-                            selectedProposition.textSide = true,
-                            paragraph.topAdd = false,
-                            paragraph.bottomAdd = false,
-                            paragraph.leftAdd = false,
-                            paragraph.disableRightCursor = true,
-                            selectRight(proposition),
-                            hasRightFocus.id = proposition.id,
-                            selectedProposition.dialogueSide = false,
-                            $event.stopPropagation()
-                            ]
-                          : inputs.nothing"
-            class="proposition-text"
-            ng-blur="[focusouteditable(this), paragraph.disableRightCursor = false]"
-
-                >
-
-            {{remark.text}} <!-- {{proposition.position}} -->
-            <!-- {{mark.id === proposition.id}} {{mark.marked === true}} {{selectedProposition.author === userId}} -->
-          </span>
-          <span
-            editable-span-ng-model
-            id="{{proposition.id}}"
-            title="{{proposition.id}}"
-            class="right-text right-textarea maininput"
-            ng-if="selectedProposition.id === proposition.id && paragraph.topAdd != true && paragraph.bottomAdd != true && paragraph.leftAdd != true"
-            ng-class="{'negation': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && selectedProposition.type !== 'negation' && selectedProposition.author !== userId) || (!proposition.leftAdd && selectedProposition.type !== 'blank' && selectedProposition.type === 'negation' && selectedProposition.author === userId))}"
-            ng-click="draggedProposition.id && cancelListenForDoubleClick? [selectedNode = node, dropProposition(node, paragraph, proposition,'right')] : [assignRightFocus(proposition), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
-            ng-mouseover="paragraph.disableRightCursor = false"
-            ng-model="inputs.proposition"
-            ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing"
-            ng-keyup="
-                
-                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ prepProposition(inputs.proposition, thread, proposition, paragraph, $event)] : inputs.nothing;
-                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition === '' && proposition.author === userId ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
-                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition == '' && proposition.author === userId ? resetFromEnter() : inputs.nothing;
-                (($event.keyCode === 8 && mark.id === proposition.id && mark.marked === true && selectedProposition.author === userId) || ($event.keyCode === 8 && inputs.proposition === '' && selectedProposition.type === 'blank') || ($event.keyCode === 8 && inputs.proposition === '' && selectedProposition.type === 'negation' && selectedProposition.of.author === userId && mark.id === proposition.id && mark.marked === true)) ? deleteProposition(node, paragraph, false, false) : inputs.nothing;
-                ($event.keyCode === 8 && highlight.id === proposition.id && highlight.highlit === true) ? markProposition(proposition) : inputs.nothing;
-                (inputs.proposition === '' && $event.keyCode === 8 && proposition.type !== 'blank') ? highlightProposition(node, paragraph, proposition) : inputs.nothing;
-                ($event.keyCode === 8 && selectedParagraph.markAll == true) ? deleteProposition(node, paragraph, true, false) : inputs.nothing;
-                ($event.keyCode === 8 && selectedParagraph.highlightAll == true) ? markAllPropositions(proposition) : inputs.notting;
-                (inputs.proposition === '' && $event.keyCode === 8 && selectedProposition.type !== 'blank') ? highlightAllPropositions(node, paragraph, proposition) : inputs.nothing;"
-            spellcheck="false"
-            contenteditable="true"
-            ng-blur="this.contentEditable = true; ">
-              </span>
-              <!-- below is the code for carriageReturn -->
-     <!--          $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing; -->
-
-          <!-- Need focus variables for left and right -->
-
-          <span class="cursor"
-                ng-class="{'visible-cursor': ((remark.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== remark.id)),
-                           'invisible-cursor': !remark.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === remark.id}"
-
-                ng-click="cancelListenForDoubleClick? [selectedNode = node, dropProposition(node, paragraph, proposition,'right')] : [selectProposition(proposition), paragraph.disableRightCursor = true, selectedProposition.textSide = true, paragraph.topAdd = false, paragraph.bottomAdd = false, paragraph.leftAdd = false]"
-                event-focus="click"
-                event-focus-id="{{proposition.id}}">
-                  
-          </span>
-<!--           <span class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="inputs.proposition.length > 5 && isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd">press 
-            <span>{{enter}}</span> to commit/send
-          </span> -->
-<!--           <span class="bibbitybop" style="position: relative; display: none; bottom: 12px; font-size: 16px;" ng-if="inputs.proposition.length > 5 && !isFresh &&  isAlmostFresh && (selectedProposition.id === proposition.id)"> end with a  
-            <span>{{colon}}</span> to begin a new section
-          </span> -->
-        </li>
-      </ol>
+<div class="bubble-element Group" id="hero" style="box-sizing: border-box; position: absolute; z-index: 3; top: 0px; width: 368.827px; left: 2.84217e-14px; background-color: rgb(255, 255, 255); border-radius: 0px; opacity: 1; height: 800px;">
+    <div class="bubble-r-line" style="margin-top: 9px; height: 60px;">
+        <div class="bubble-r-box" style="height: 60px; left: 7.18203px; width: 297px;">
+            <div class="bubble-element Image clickable-element" tabindex="1" style="position: absolute; box-sizing: border-box; z-index: 18; height: 60px; top: 0px; width: 297px; left: 0px; border-radius: 0px; opacity: 1; cursor: pointer;">
+                <img alt="" src="https://excel-formula-bot2.cdn.bubble.io/f1669483384494x223770736384971460/Full%20logo%20with%20transparent%20background.svg" style="display: block; margin: 0px; width: 100%; height: 100%; border-radius: 0px;">
+            </div>
+        </div>
+    </div>
+    <div class="bubble-r-line" style="margin-top: 74px; height: 589px;">
+        <div class="bubble-r-box" style="height: 589px; left: 0px; width: 368.82px;">
+            <div class="bubble-element Group" style="box-sizing: border-box; position: absolute; z-index: 17; top: 0px; width: 366.939px; left: 0.940868px; background-color: rgb(255, 255, 255); border-radius: 0px; opacity: 1; height: 589px;">
+                <div class="bubble-r-line" style="margin-top: 60px; height: 40px;">
+                    <div class="bubble-r-box" style="height: 40px; left: 20px; width: 350px;">
+                        <div class="bubble-element Text" style="white-space: pre-wrap; position: absolute; box-sizing: border-box; z-index: 10; top: 0px; width: 350px; left: 0px; height: 40px; overflow: visible; font-family: Rubik; font-size: 30px; font-weight: 600; color: rgb(45, 47, 56); line-height: 1.2; padding-top: 3px; padding-left: 0px; padding-right: 0px; border-radius: 0px; opacity: 1;">
+                            <div class="content">Sign up for free
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bubble-r-line" style="margin-top: 20px; height: 16px;">
+                    <div class="bubble-r-box" style="height: 16px; left: 18.7667px; width: 16px;">
+                        <div class="bubble-element 1498171554228x105618760361836540-AAC" style="position: absolute; box-sizing: border-box; z-index: 24; height: 16px; top: 0px; width: 16px; left: 0px;">
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="bubble-r-line" style="margin-top: 0px; height: 50px;">
+                    <div class="bubble-r-box" style="height: 50px; left: 20px; width: 326.938px;">
+                        <input type="input" class="bubble-element Input a1677693688148x1144" tabindex="2" placeholder="Enter name" maxlength="" style="position: absolute; box-sizing: border-box; z-index: 21; height: 50px; top: 0px; width: 326.938px; left: 0px; border: 1px solid rgb(228, 234, 239); background-color: rgb(255, 255, 255); border-radius: 4px; font-family: Rubik; font-size: 15px; font-weight: 400; color: rgb(79, 94, 120); padding: 0px 20px; opacity: 1; transition: border-color 200ms ease 0s, box-shadow 200ms ease 0s;">
+                    </div>
+                </div>
+                <div class="bubble-r-line" style="margin-top: 20px; height: 50px;">
+                    <div class="bubble-r-box" style="height: 50px; left: 20px; width: 326.938px;">
+                        <input type="email" class="bubble-element Input a1677693688148x1144" tabindex="3" placeholder="Enter email" maxlength="" style="position: absolute; box-sizing: border-box; z-index: 12; height: 50px; top: 0px; width: 326.938px; left: 0px; border: 1px solid rgb(228, 234, 239); background-color: rgb(255, 255, 255); border-radius: 4px; font-family: Rubik; font-size: 15px; font-weight: 400; color: rgb(79, 94, 120); padding: 0px 20px; opacity: 1; transition: border-color 200ms ease 0s, box-shadow 200ms ease 0s;">
+                    </div>
+                </div>
+                <div class="bubble-r-line" style="margin-top: 20px; height: 50px;">
+                    <div class="bubble-r-box" style="height: 50px; left: 20px; width: 326.938px;">
+                        <input type="password" autocomplete="new-password" class="bubble-element Input a1677693688148x1144" tabindex="4" placeholder="Enter password" maxlength="" id="pwd" style="position: absolute; box-sizing: border-box; z-index: 13; height: 50px; top: 0px; width: 326.938px; left: 0px; border: 1px solid rgb(228, 234, 239); background-color: rgb(255, 255, 255); border-radius: 4px; font-family: Rubik; font-size: 15px; font-weight: 400; color: rgb(79, 94, 120); padding: 0px 20px; opacity: 1; transition: border-color 200ms ease 0s, box-shadow 200ms ease 0s;" data-hasqtip="0">
+                    </div>
+                </div>
+                <div class="bubble-r-line" style="margin-top: 20px; height: 50px;">
+                    <div class="bubble-r-box" style="height: 50px; left: 20px; width: 326.938px;">
+                        <button class="bubble-element Button clickable-element" tabindex="5" style="padding: 0px; cursor: default; background: none rgb(50, 147, 111); border: none; text-align: center; position: absolute; box-sizing: border-box; z-index: 14; height: 50px; top: 0px; width: 326.938px; left: 0px; font-family: Rubik; font-size: 15px; font-weight: 400; color: rgb(255, 255, 255); line-height: 1.4; border-radius: 4px; opacity: 1; transition: background 200ms ease 0s;">Create account
+                        </button>
+                    </div>
+                </div>
+                <div class="bubble-r-line" style="margin-top: 26px; height: 47px;">
+                    <div class="bubble-r-box" style="height: 47px; left: 9.73906px; width: 350px;">
+                        <div class="bubble-element Text" style="white-space: pre-wrap; position: absolute; box-sizing: border-box; z-index: 20; top: 0px; width: 350px; left: 0px; height: 47px; overflow: visible; font-family: Rubik; font-size: 12px; font-weight: 400; color: rgb(79, 94, 120); text-align: center; line-height: 1.4; padding: 10px 5px 0px; border-radius: 5px; opacity: 1;">
+                            <div class="content">By signing up, you agree to our 
+                                <a href="https://excelformulabot.com/terms-of-service" target="_blank">Terms &amp; Conditions</a>
+                                &amp; 
+                                <a href="https://excelformulabot.com/privacy-policy" target="_blank">Privacy Policy</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bubble-r-line" style="margin-top: 10px; height: 22px;">
+                    <div class="bubble-r-box" style="height: 22px; left: 20px; width: 326.938px;">
+                        <div class="bubble-element Text clickable-element" tabindex="6" style="white-space: pre-wrap; position: absolute; box-sizing: border-box; z-index: 15; top: 0px; width: 326.938px; left: 0px; height: 22px; overflow: visible; font-family: Rubik; font-size: 14px; font-weight: 400; color: rgb(34, 116, 165); text-align: center; line-height: 1.4; border-radius: 0px; opacity: 1; cursor: pointer;">
+                            <div class="content">Already have an account? Log in
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bubble-element Group" style="display: none; box-sizing: border-box;">    
+            </div>
+            <div class="bubble-element Group" style="display: none; box-sizing: border-box;">    
+            </div>
+            <div class="bubble-element Text" style="display: none; white-space: pre-wrap;"> 
+            </div>
+            <div class="bubble-element Text" style="display: none; white-space: pre-wrap;"> 
+            </div>
+        </div>
+    </div>
+</div>

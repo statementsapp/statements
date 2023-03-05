@@ -44,12 +44,12 @@
     -webkit-perspective: 302px;
     perspective: 302px;
     text-align:center;
-    background: rgb(161, 178, 253);
-    background: -moz-linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);
-    background: -webkit-linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);
-    background: linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a1b2fd", endColorstr="#c2e9fb", GradientType=1);
-
+    // background: rgb(161, 178, 253);
+    // background: -moz-linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);
+    // background: -webkit-linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);
+    // background: linear-gradient(315deg, rgba(161, 178, 253, 1) 11%, rgba(194, 233, 251, 1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a1b2fd", endColorstr="#c2e9fb", GradientType=1);
+    background: #0C2340;
   }
 
   .parallax-group {

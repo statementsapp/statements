@@ -56,17 +56,18 @@
           </p>
         </div>
       </div>
-    <div class="modal-footer" style="background-color: #0c2340">
+    <div class="modal-footer" style="background-color: #0c2340; ">
       <button type="button"
               class="btn btn-secondary"
-              ng-click="vm.cancel()">
+              ng-click="vm.cancel()"
+              style="color: black">
         Cancel
       </button>
       <button type="submit"
               ng-disabled="form.$invalid || vm.processing"
               ng-click="vm.login(form.$valid)"
               class="btn btn-primary">
-        <span>
+        <span style="color: white;">
           <span ng-if="vm.processing">
             <i ng-if="vm.processing"
                class="fa fa-spinner fa-spin"></i>&nbsp;

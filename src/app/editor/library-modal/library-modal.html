@@ -1,4 +1,4 @@
-<div class="modal-header">
+<div class="modal-header" style=" background-color: #0c2340; color: #f0f0f0; ">
   <div class="modal-title"
        id="modal-title-my-books"><i class="fa fa-book"></i>&nbsp; Library
   </div>
@@ -49,6 +49,7 @@
      id="modal-body-library"
      ng-if="vm.basisForBooks.length !== 0"
      ng-keyup="$event.keyCode === 27 ? vm.cancel() : form.nothing"
+     style=" background-color: #0c2340; color: #f0f0f0; "
      >
   <div style="height: 300px; overflow: scroll;">
   <h1>Your Books</h1>
@@ -301,7 +302,7 @@
     </form>
 </div>
 
-<div class="modal-footer">
+<div class="modal-footer" style=" background-color: #0c2340; color: #f0f0f0; ">
   <button type="button"
           class="btn btn-secondary"
           ng-click="vm.dismiss()">

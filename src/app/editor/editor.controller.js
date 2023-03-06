@@ -6100,6 +6100,11 @@
       $scope.openNewBookModal();
     } else if (!$scope.bookId){
       console.log("Entry into editor modal else")
+      $(document).ready(function() {
+        $('[ui-view]').attr('id', 'wholedamneditor');
+      });
+
+      document.getElementById('wholedamneditor').style.backgroundColor = '#0C2340';
       $scope.openLibraryModal();
     } else if (!$rootScope.guest){
       console.log("LAST ELSE")

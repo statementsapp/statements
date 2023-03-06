@@ -67,8 +67,8 @@
               ng-disabled="form.$invalid || vm.processing"
               ng-click="vm.login(form.$valid)"
               class="btn btn-primary">
-        <span style="color: white;">
-          <span ng-if="vm.processing">
+        <span style="color: white; background-color: #123561;">
+          <span ng-if="vm.processing" style="color: white; background-color: #123561;">
             <i ng-if="vm.processing"
                class="fa fa-spinner fa-spin"></i>&nbsp;
             </span> Submit

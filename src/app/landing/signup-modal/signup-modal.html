@@ -1,4 +1,4 @@
-<div class="modal-header">
+<div class="modal-header" style="background-color: #0c2340; color: #f0f0f0;">
   <div class="modal-title"
        id="modal-title-register">Register
   </div>
@@ -7,7 +7,8 @@
     <!-- <img src="/assets/images/btn_google_signin_light_normal_web@2x.png" style="text-align: center;"> -->
 </div>
 <div class="modal-body"
-     id="modal-body-register">
+     id="modal-body-register"
+     style="background-color: #0c2340; color: #f0f0f0;">
   <form name="form"
         ng-submit="vm.register(form.$valid)"
         novalidate>
@@ -108,7 +109,8 @@
 <div class="modal-footer">
   <button type="button"
           class="btn btn-secondary"
-          ng-click="vm.cancel()">
+          ng-click="vm.cancel()"
+          style="background-color: #0c2340; color: #f0f0f0;">
     Cancel
   </button>
   <button type="submit"

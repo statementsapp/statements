@@ -116,9 +116,10 @@
   <button type="submit"
           ng-disabled="form.$invalid || vm.processing"
           ng-click="vm.register(form.$valid)"
-          class="btn btn-primary">
-    <span>
-      <span ng-if="vm.processing" ng-click="vm.register()">
+          class="btn btn-primary"
+          style="color: white; background-color: #123561;">
+    <span style="color: white; background-color: #123561;">
+      <span style="color: white; background-color: #123561; border-color: #1f59a3;" ng-if="vm.processing" ng-click="vm.register()">
         <i ng-if="vm.processing"
            class="fa fa-spinner fa-spin"></i>&nbsp;
     </span> Submit

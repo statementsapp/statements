@@ -17,6 +17,11 @@ var ioRoutes = function(io) {
       });
     });
 
+
+    socket.on('disconnect', function() {
+      console.log('Socket disconnected');
+    });
+    
     socket.on('proposition', function(from, obj) { //for first emission
       io.sockets.emit('broadcastProposition', obj);
     });

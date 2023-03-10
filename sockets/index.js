@@ -35,6 +35,10 @@ var socketService = function (io) {
     return connected;
   };
 
+  io.on('disconnect', function() {
+    console.log('Socket disconnected');
+  });
+  
   // 'reconnection': true,
   // 'reconnectionDelay': 500,
   // 'reconnectionAttempts': 10

@@ -38,7 +38,7 @@ var socketService = function (io) {
   io.on('disconnect', function() {
     console.log('Socket disconnected');
   });
-  
+
   // 'reconnection': true,
   // 'reconnectionDelay': 500,
   // 'reconnectionAttempts': 10
@@ -48,6 +48,11 @@ var socketService = function (io) {
     /**
      * Socket for when a user's information is updated.
      */
+
+    socket.on('disconnect', function() {
+      console.log('Socket disconnected');
+    });
+
     socket.on('userUpdated', function (data) {
       var emitUpdate = false;
 

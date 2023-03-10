@@ -85,6 +85,7 @@ var socketService = function (io) {
       debug('room', socket);
 
       socket.on('disconnect', function () {
+        console.log("JUST DISCONNECTED")
         io.sockets.in(bookId).emit('roomUsers', getRoomUsers(bookId));
       });
     });
@@ -94,6 +95,7 @@ var socketService = function (io) {
      */
     socket.on('disconnect', () => {
       if (users.hasOwnProperty(socket.id)) {
+        console.log("JUST DISCONNECTED II")
         // delete users[socket.id];
       }
       debug('disconnect', socket);

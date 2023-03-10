@@ -3248,12 +3248,13 @@
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
 
-
-        if (chatSocket.connected) {
-          console.log("Connected right now")
-        } else {
-          console.log('Socket not connected');
-        }
+        console.log("The chat socket: ", chatSocket)
+        
+        // if (chatSocket.connected) {
+        //   console.log("Connected right now")
+        // } else {
+        //   console.log('Socket not connected');
+        // }
 
 
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){

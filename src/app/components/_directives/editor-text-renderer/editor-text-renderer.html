@@ -63,7 +63,7 @@
         ng-hold="[dragNode(node, $event), clearTopAndBottomHasFocus()]"
         ng-click="draggingNode && !cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : inputs.notting;"    
         style="margin-right: 10px; display: inline-block;">
-    <span ng-click="!draggingNode && !draggingParagraph && !draggingProposition && !node.highlighted && data[0].documentClaimedBy === userId ? [highlightNode(node), $event.stopPropagation()] : $event.stopPropagation()" ng-style="{ 'opacity': node.titleMouseOver && !draggingNode && !draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId && !minimalStyle ? .3 : 0 }"><i class="fa fa-circle" style="font-size: 15px;"></i>
+    <span ng-click="!draggingNode && !draggingParagraph && !draggingProposition && !node.highlighted && data[0].documentClaimedBy === userId ? [highlightNode(node), $event.stopPropagation()] : $event.stopPropagation()" ng-style="{ 'opacity': node.titleMouseOver && !draggingNode && !draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId && !minimalStyle ? .3 : 0 }"><i class="fa fa-th" style="font-size: 15px;"></i>
     </span>
   </span>
   <span
@@ -192,7 +192,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               ng-click="!paragraph.highlighted && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
                         paragraph.highlighted ? markParagraph(node, paragraph) :
                         paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"
-                        ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle && !tweetClicked.id ? .3 : 0 }" class="fa fa-circle" style="font-size: 15px;"></i></span>
+                        ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle && !tweetClicked.id ? .3 : 0 }" class="fa fa-th" style="font-size: 15px;"></i></span>
         </span>
 
         <li ng-repeat="proposition in paragraph.propositions track by $index"

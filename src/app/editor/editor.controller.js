@@ -2640,7 +2640,7 @@
         }
         $scope.thereIsAHighlightedNode = true;
         $scope.highlightedNode = node;
-        console.log("Highlighted node: ", $scope.highlightedNode)
+        console.log("Highligh node highlighted node: ", $scope.highlightedNode)
       }
 
       $scope.unHighlightNode = function (){
@@ -2662,12 +2662,12 @@
         
         $scope.thereIsAHighlightedNode = false;
         $scope.highlightedNode = {};
-        console.log("Highlighted node: ", $scope.highlightedNode)
+        console.log("Un highlight node highlighted node: ", $scope.highlightedNode)
       }
 
       $scope.markNode = function (){
         console.log("Mark node")
-        console.log("Highlighted node: ", $scope.highlightedNode)
+        console.log("mark node highlighted node: ", $scope.highlightedNode)
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           if ($scope.highlightedNode.nodeId === $scope.data[0].nodes[i].nodeId){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
@@ -2736,7 +2736,7 @@
               prep.sectionNumber = $scope.highlightedNode.sectionNumber;
               prep.sectionLevel = $scope.highlightedNode.sectionLevel;
               prep.nodeId = $scope.highlightedNode.nodeId;
-              console.log("highlighted node: ", $scope.highlightedNode)
+              console.log("delete proposition highlighted node: ", $scope.highlightedNode)
             // }
             
           }
@@ -3249,7 +3249,7 @@
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
 
         console.log("The chat socket: ", chatSocket)
-        
+
         // if (chatSocket.connected) {
         //   console.log("Connected right now")
         // } else {

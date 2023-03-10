@@ -1628,8 +1628,19 @@
             $scope.selectedProposition.textSide = true;
             console.log("That element: ", document.getElementById($scope.bottomNodeAdderId))
             // focusFactory($scope.bottomNodeAdderId);
-            document.getElementById($scope.bottomNodeAdderId).click();
           });
+        }, 0);
+        $timeout(function () {
+          // $scope.$apply(function () {
+            console.log("Inside clear bottom node adder apply")
+            node.bottomNodeAdd = true;
+            $scope.selectedNode = node;
+            $scope.selectedProposition = {};
+            $scope.selectedProposition.textSide = true;
+            console.log("That element: ", document.getElementById($scope.bottomNodeAdderId))
+            // focusFactory($scope.bottomNodeAdderId);
+            document.getElementById($scope.bottomNodeAdderId).click();
+          // });
         }, 0);
       };
 

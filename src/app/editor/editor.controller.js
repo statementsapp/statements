@@ -1624,6 +1624,7 @@
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
             $scope.bottomNodeAdderId = IdFactory.next();
+            console.log("That element: ", document.getElementById($scope.bottomNodeAdderId))
             $scope.hasBottomNodeFocus = node.nodeId;
             focusFactory($scope.bottomNodeAdderId);
           });

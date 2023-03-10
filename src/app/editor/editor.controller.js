@@ -1614,9 +1614,11 @@
       };
 
       $scope.clearWithBottomNodeAdder = function (node) {
+
          $scope.unHighlightNode();
         $timeout(function () {
           $scope.$apply(function () {
+            console.log("Inside clear bottom node adder apply")
             node.bottomNodeAdd = true;
             $scope.selectedNode = node;
             $scope.selectedProposition = {};

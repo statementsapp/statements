@@ -1640,6 +1640,7 @@
             console.log("That element: ", document.getElementById($scope.bottomNodeAdderId))
             // focusFactory($scope.bottomNodeAdderId);
             document.getElementById($scope.bottomNodeAdderId).click();
+            focusFactory($scope.bottomNodeAdderId);
           // });
         }, 0);
       };

@@ -372,6 +372,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                style="line-height: inherit; display: inline-block;"
                ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && proposition.remarksExpanded">
             </i>
+          </span>
+          <span ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]">
             <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">(</span>
             <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
             <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">)</span>

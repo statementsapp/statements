@@ -2882,7 +2882,7 @@
                 for (var k = 0; k < $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].remarks.length; k++){
                   $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].remarks[k].hiddenForAll = true;
                   if (payload.dropflag){
-                    scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].remarks[k].droppedElsewhere = true;
+                    $scope.data[0].nodes[payload.sectionNumber].paragraphs[i].propositions[j].remarks[k].droppedElsewhere = true;
                   }
                 }
               }
@@ -5137,7 +5137,10 @@
 
       $scope.isMutedFilter = function (remark) {
         // console.log("Remark: ", remark)
-        return remark.muted || remark.deleted || remark.rejoined;
+        if ($scope.data){
+          return remark.muted || remark.deleted || remark.rejoined;
+        }
+        
       }
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {

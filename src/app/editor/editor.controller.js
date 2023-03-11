@@ -5137,9 +5137,12 @@
 
       $scope.isMutedFilter = function (remark) {
         // console.log("Remark: ", remark)
-        if ($scope.data){
+        setTimeout(function () {
           return remark.muted || remark.deleted || remark.rejoined;
-        }
+        }, 20);
+        // if ($scope.data){
+        //   return remark.muted || remark.deleted || remark.rejoined;
+        // }
         
       }
 

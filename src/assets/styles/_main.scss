@@ -615,6 +615,8 @@ textarea {
 .cursor.visible-cursor {
   padding-bottom: 10px;
   min-width: 6.5px;
+  position: relative;
+  width: 6.5px;
 }
 
 .cursor.invisible-cursor {

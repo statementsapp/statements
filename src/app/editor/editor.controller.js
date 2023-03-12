@@ -55,6 +55,7 @@
     $scope.halfMuteClicked = false;
 
 
+
     // copies to clipboard
     $scope.copyLink = function() {
       var copyElement = document.getElementById('directLinkInput');
@@ -665,6 +666,7 @@
       $scope.onTheBoard = false;
       $scope.oneMoveIn = false;
       $scope.thisMoveCounter = 0;
+      $scope.inputString = 'inputs.' + $scope.userId;
       
 
       document.addEventListener('contextmenu', event => event.preventDefault());

@@ -1762,8 +1762,7 @@
 
       // Clears the proposition input, like when clicked away
       $scope.clearPropositionInput = function () {
-        $scope.inputs.proposition = '';
-        $scope.inputs.Leftproposition = '';
+        $scope.inputs = {};
         $scope.highlight.id = '';
         $scope.mark.id = '';
       };
@@ -3290,7 +3289,7 @@
 
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");
-          $scope.inputs.proposition = '';
+          $scope.inputs = {};;
           return;
         }
         $scope.data[0].isFresh = false;
@@ -3983,10 +3982,7 @@
 
             apply = {};
             if (payload.author === $scope.userId) {
-              $scope.inputs.proposition = '';
-              $scope.inputs.leftProposition = '';
-              $scope.inputs.chatProposition = '';
-              $scope.inputs.newSectionTitle = '';
+              $scope.inputs = {};
             }
 
             if (payload.code === '1') {
@@ -5017,9 +5013,9 @@
             if (payload.author === $scope.data[0].documentClaimedBy &&
               $scope.userId !== $scope.data[0].documentClaimedBy &&
               (payload.type === 'assertion' || payload.type === 'rejoinder') &&
-              $scope.inputs.proposition != "" &&
+              !$scope.inputs &&
               payload.ofParagraphId === $scope.selectedParagraph.paragraphId){
-              $scope.inputs.proposition = '';
+              $scope.inputs = {};
             }
 
             if ($scope.selectedProposition.dialogueSide && payload.author === $scope.userId){
@@ -5079,8 +5075,8 @@
             apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
             profileService.setSelectedBook($scope.data[0]);
 
-            if (payload.author !== $scope.userId && $scope.inputs.proposition){
-              $scope.saveThisForASec = angular.copy($scope.inputs.proposition)
+            if (payload.author !== $scope.userId && $scope.inputs){
+              $scope.saveThisForASec = angular.copy($scope.inputs[payload.id])
             }
 
             console.log("Book right now: ", $scope.data[0].nodes[0])
@@ -5325,8 +5321,7 @@
 
       $scope.resetFromEnter = function () {
         console.log("Resetting from enter")
-        $scope.inputs.proposition = '';
-        $scope.inputs.leftProposition = '';
+        $scope.inputs = {};
       }
 
       $scope.savePropositionForLater = function (id, position, paragraph) {

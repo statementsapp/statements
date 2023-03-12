@@ -402,18 +402,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             spellcheck="false"
             contenteditable="true"
             ng-blur="this.contentEditable = true; ">
-              </span>
-          <!-- Highlight all html: -->
-          <!--               (inputs.proposition === '' && $event.keyCode === 8 && selectedProposition.type !== 'blank' && data[0].documentClaimedBy === userId) ? highlightAllPropositions(node, paragraph, proposition) : inputs.nothing; -->
-          <!--                 ($event.keyCode === 8 && selectedParagraph.markAll == true) ? deleteProposition(node, paragraph, proposition, null, 'proposition', false) : inputs.nothing; -->
-
-
-          <!-- below is the code for carriageReturn -->
-          <!--          $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing; -->
-
-          <!-- Need focus variables for left and right -->
-
-          <span class="cursor leftcursor"
+              </span>  
+          <span class="cursor left-cursor"
                 ng-class="{'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
                            'invisible-cursor': !proposition.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === proposition.id || aRemarkIsMousedOver}"
 

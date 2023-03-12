@@ -611,7 +611,7 @@ textarea {
 }
 
 .cursor.visible-cursor {
-  opacity: 1;
+  content: "|"
   padding-bottom: 10px;
 }
 

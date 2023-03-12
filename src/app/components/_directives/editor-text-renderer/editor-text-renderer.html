@@ -381,9 +381,9 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             id="{{proposition.id}}"
             title="{{proposition.id}}"
             class="right-text right-textarea maininput"
-            ng-if="selectedProposition.id === proposition.id && selectedParagraph.paragraphId === paragraph.paragraphId && paragraph.topAdd != true && paragraph.bottomAdd != true && !hasLeftFocus.id && !paragraph.leftAdd && (!data[0].documentClaimedBy || proposition.type !== 'blank' || data[0].documentClaimedBy === userId) "
             ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId ? remarkInputString : '3px solid #0c2340'}"
             ng-class="{
+                      'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
                        'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh,
                        'hasthatpadding': hasRightFocus.id === proposition.id }"
             ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?
@@ -403,7 +403,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             contenteditable="true"
             ng-blur="this.contentEditable = true; ">
               </span>  
-          <span class="cursor left-cursor"
+<!--           <span class="cursor left-cursor"
                 ng-class="{'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
                            'invisible-cursor': !proposition.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === proposition.id || aRemarkIsMousedOver}"
 
@@ -412,7 +412,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 event-focus="click"
                 event-focus-id="{{proposition.id}}">
 
-          </span>
+          </span> -->
           <span id="zeekyprop" class="zeekyboogydoog" style="position: relative; bottom: 12px;  font-size: 16px;"
                 ng-hide="onTheBoard"
                 ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5 && selectedProposition.id === proposition.id)">press

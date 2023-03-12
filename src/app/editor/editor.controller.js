@@ -1204,7 +1204,11 @@
       };
 
       $scope.runThisFunction = function (id) {
-        console.log("That Id you ordered: ", id)
+        timeout(function() {
+            // Call your initialization function here
+            console.log("That Id you ordered: ", id)
+          }, 3000); // Delay for 3 seconds
+        
 
       }
 

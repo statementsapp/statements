@@ -363,21 +363,19 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
           </span>
 
-          <sub ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]"><!-- ngIf: proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && proposition.remarksExpanded --><i class="fa-solid fa-square-minus ng-scope" style="line-height: inherit; display: inline-block;" ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 &amp;&amp; proposition.remarksExpanded"></i></sub>
 
 
 
-          <span ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]">
+          <sub ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px"
+               >
             <i class="fa-solid fa-square-minus"
                style="line-height: inherit; display: inline-block;"
                ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && proposition.remarksExpanded">
             </i>
-          </span>
-          <span ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]">
             <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">(</span>
             <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
             <span ng-if="proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length > 0 && !proposition.remarksExpanded">)</span>
-          </span>
+          </sub>
           <span
             editable-span-ng-model 
             id="{{proposition.id}}"

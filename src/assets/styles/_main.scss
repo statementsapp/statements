@@ -610,7 +610,7 @@ textarea {
   }
 }
 
-.cursor.visible-cursor {
+.cursor.visible-cursor::after {
   content: "|";
   padding-bottom: 10px;
 }

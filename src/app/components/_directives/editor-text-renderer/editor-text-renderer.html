@@ -174,7 +174,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
 
       <ol ui-tree-nodes
-          style="padding-left: 0px !important;"
+          style="padding-left: 0px !important; font-size: 0px;"
           ng-model="paragraph.propositions" 
           class="propositions"
           ng-mouseover="[lightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = true, $event.stopPropagation(), getReading($event,paragraph.paragraphId)]"
@@ -359,7 +359,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             oncontextmenu="return false"
           >
             {{proposition.text}}
-            {{proposition.first}}
             <!-- {{proposition.id}} -->
 
           </span>

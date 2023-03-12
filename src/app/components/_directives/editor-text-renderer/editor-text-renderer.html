@@ -407,6 +407,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                            'invisible-cursor': !proposition.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === proposition.id || aRemarkIsMousedOver}"
 
                 ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ? [dropItem(node, paragraph, proposition ,'right')] : [ selectProposition(proposition), paragraph.disableRightCursor = true, selectedProposition.textSide = true, paragraph.topAdd = false, paragraph.bottomAdd = false, paragraph.leftAdd = false]"
+                ng-if="hasRightFocus.id !== proposition.id"
                 event-focus="click"
                 event-focus-id="{{proposition.id}}">
 

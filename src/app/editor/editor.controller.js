@@ -1708,7 +1708,7 @@
           for (var i = paragraph.propositions.length - 1; i > -1; i--) {
             if (paragraph.propositions[i][$scope.userId] !== 'hidden' &&
               paragraph.propositions[i].hiddenForAll !== true &&
-              $scope.selectProposition.type !== 'blank') {
+              $scope.selectedProposition.type !== 'blank') {
 
                 document.getElementById($scope.selectedProposition.id).innerText = '';
                 $scope.selectedProposition = {};
@@ -1729,13 +1729,16 @@
           if ($scope.selectedProposition.id !== proposition.id) {
             $scope.clearPropositionInput();
             $scope.selectedProposition = proposition;
+            $scope.hasRightFocus.id = proposition.id;
             focusFactory($scope.selectedProposition.id);
           } else {
             $scope.selectedProposition = proposition;
+            $scope.hasRightFocus.id = proposition.id;
             focusFactory($scope.selectedProposition.id);
           }
         } else {
           $scope.selectedProposition = proposition;
+          $scope.hasRightFocus.id = proposition.id;
           focusFactory($scope.selectedProposition.id);
         }
         $scope.highlight.id = '';

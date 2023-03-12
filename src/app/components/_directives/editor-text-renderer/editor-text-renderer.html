@@ -379,6 +379,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           </sub>
           <span
             editable-span-ng-model 
+            ng-init="runThisFunction(proposition.id)"
             id="{{proposition.id}}"
             title="{{proposition.id}}"
             class="right-text right-textarea maininput"

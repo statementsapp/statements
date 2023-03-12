@@ -1203,6 +1203,11 @@
         $scope.stopToggle = false;
       };
 
+      $scope.runThisFunction = function (id) {
+        console.log("That Id you ordered: ", id)
+
+      }
+
       // Fires sometimes
       $scope.selectBlank = function (node) {
         // console.log("Selecting a blank")

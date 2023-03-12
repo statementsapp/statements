@@ -278,6 +278,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             class="cursor left-cursor">
             </span>
           <!-- 'dragdimmed': draggedProposition.id === proposition.id -->
+          <span>|</span>
           <span
 
             ng-hold="(proposition.type !== 'blank' && proposition.type !== 'negation' && proposition.author === userId && !cancelListenForDoubleClick) ? [dragProposition(node, paragraph, proposition, $event), clearTopAndBottomHasFocus(), $event.stopPropagation()] : inputs.nothing"

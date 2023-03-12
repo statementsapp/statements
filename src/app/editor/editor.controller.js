@@ -3940,6 +3940,7 @@
 
       $scope.$on('socket:broadcastProposition', function (event, payload) {
 
+        
         console.log("Received proposition: ", payload)
         
         if ($scope.data[0].muteds.includes(payload.author)){

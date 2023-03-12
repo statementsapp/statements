@@ -379,7 +379,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           </sub>
           <span
             editable-span-ng-model 
-            ng-init="runThisFunction(proposition.id)"
             id="{{proposition.id}}"
             title="{{proposition.id}}"
             class="right-text right-textarea maininput"
@@ -390,17 +389,17 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                        'hasthatpadding': hasRightFocus.id === proposition.id }"
             ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?
             [dropItem(node, paragraph, proposition ,'right')] : [assignRightFocus(proposition), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
-            ng-mouseover="[paragraph.disableRightCursor = false, inputs.proposition = '|']"
-            ng-mouseleave="inputs.proposition === '|' ? inputs.proposition = '' : inputs.nothing"
-            ng-model="inputs.proposition"
-            ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault() : inputs.nothing;"
+            ng-mouseover="[paragraph.disableRightCursor = false, inputs[userId] = '|']"
+            ng-mouseleave="inputs[userId] === '|' ? inputs[userId] = '' : inputs.nothing"
+            ng-model="inputs[userId]"
+            ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[userId] != '' ? $event.preventDefault() : inputs.nothing;"
             ng-keyup="
 
-                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ hideZeeky(), prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
-                $event.keyCode === 13 && data[0].documentClaimedBy === userId  && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
+                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[userId] != '' ? [ hideZeeky(), prepProposition(inputs[userId], node, paragraph, proposition, $event, 'right')] : inputs.nothing;
+                $event.keyCode === 13 && data[0].documentClaimedBy === userId  && inputs[userId] === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
                 $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition == '' && proposition.author === userId ? [ $event.preventDefault(), resetFromEnter()] : inputs.nothing;
-                ($event.keyCode === 8 && inputs.proposition === '' && data[0].documentClaimedBy === userId && highlight.id === proposition.id && highlight.highlit == true) ? deleteProposition(node, paragraph, proposition, null, 'proposition') : inputs.nothing;
-                (data[0].documentClaimedBy === userId && inputs.proposition === '' && $event.keyCode === 8 && proposition.type !== 'blank') ? highlightProposition(node, paragraph, proposition) : inputs.nothing;
+                ($event.keyCode === 8 && inputs[userId] === '' && data[0].documentClaimedBy === userId && highlight.id === proposition.id && highlight.highlit == true) ? deleteProposition(node, paragraph, proposition, null, 'proposition') : inputs.nothing;
+                (data[0].documentClaimedBy === userId && inputs[userId] === '' && $event.keyCode === 8 && proposition.type !== 'blank') ? highlightProposition(node, paragraph, proposition) : inputs.nothing;
                 "
             spellcheck="false"
             contenteditable="true"

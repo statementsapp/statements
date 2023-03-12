@@ -2279,7 +2279,7 @@
       $scope.checkIfDropValid = function (node, paragraph, proposition, flag){
 
 
-        console.log("Checking if drop valid")
+        c
 
         if ($scope.data[0].documentClaimedBy !== $scope.userId && flag !== 'right'){
 

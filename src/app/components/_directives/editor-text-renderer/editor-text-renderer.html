@@ -304,7 +304,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                           }"
 
             ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, proposition)]"
-            ng-mouseover="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event),proposition.propositionPreSelected = true, paragraph.disableRightCursor = false, mouseIsOver = proposition.id, statementHighlight(proposition.id), !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))) ? inputs[proposition.id] = '|' : inputs.nothing]"
+            ng-mouseover="inputs[proposition.id] = '|' "
             ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), inputs[proposition.id] = '']"
             ng-blur=""
 
@@ -361,6 +361,14 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           >
             {{proposition.text}}
             <!-- {{proposition.id}} -->
+
+
+
+            <!-- ng-mouseover="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event),proposition.propositionPreSelected = true, paragraph.disableRightCursor = false, mouseIsOver = proposition.id, statementHighlight(proposition.id), !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))) ? inputs[proposition.id] = '|' : inputs.nothing]" -->
+
+            <!-- ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), inputs[proposition.id] = ''] -->
+
+
 
           </span>
 

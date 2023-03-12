@@ -1421,13 +1421,13 @@
                 $scope.data[0].authorTable = [
                   {
                         authorId: angular.copy(payload.author),
-                        color: '#0C2340'
+                        color: '#f0f0f0'
                   }
                 ]
                 if (payload.author === $scope.userId){
-                  $scope.userColor = '#0C2340';
+                  $scope.userColor = '#f0f0f0';
                 }
-                var payloadColor = '#0C2340';
+                var payloadColor = '#f0f0f0';
               } else {
                 // loop through author table
 
@@ -1468,13 +1468,13 @@
                 $scope.data[0].authorTable = [
                   {
                         authorId: angular.copy(payload.author),
-                        color: '#0C2340'
+                        color: '#f0f0f0'
                   }
                 ]
                 if (payload.author === $scope.userId){
-                  $scope.userColor = '#0C2340';
+                  $scope.userColor = '#f0f0f0';
                 }
-                var payloadColor = '#0C2340';
+                var payloadColor = '#f0f0f0';
 
                 // if the author table is presently blank, assign yourself light grey 
                 // as you are now author
@@ -5137,7 +5137,7 @@
 
       $scope.isMutedFilter = function (remark) {
         // console.log("Remark: ", remark)
-        
+
         if ($scope.data){
           return remark.muted || remark.deleted || remark.rejoined;
         }

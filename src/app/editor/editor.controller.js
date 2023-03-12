@@ -2279,7 +2279,7 @@
       $scope.checkIfDropValid = function (node, paragraph, proposition, flag){
 
 
-
+        console.log("Checking if drop valid")
 
         if ($scope.data[0].documentClaimedBy !== $scope.userId && flag !== 'right'){
 
@@ -3940,7 +3940,7 @@
 
       $scope.$on('socket:broadcastProposition', function (event, payload) {
 
-        
+
         console.log("Received proposition: ", payload)
         
         if ($scope.data[0].muteds.includes(payload.author)){

@@ -313,6 +313,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
                     (proposition.author === userId && selectedProposition.textSide && !cancelListenForDoubleClick)
                     ?  [
+                         inputs[proposition.id] = '',
                          mark.id = '',
                          highlight.id = '',
                          selectNode(node),

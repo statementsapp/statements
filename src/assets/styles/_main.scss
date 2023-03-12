@@ -267,7 +267,9 @@ i:before {
 }
 
 .maininput {
+  min-width: 6.5px;
   padding-left: 0.5px;
+
 }
 
 .topicgreyed {
@@ -610,8 +612,9 @@ textarea {
   }
 }
 
-.cursor.visible-cursor::after {
+.cursor.visible-cursor {
   padding-bottom: 10px;
+  min-width: 6.5px;
 }
 
 .cursor.invisible-cursor {

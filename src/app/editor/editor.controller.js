@@ -3983,6 +3983,7 @@
               console.log("That payload id: ", payload.id)
               console.log("The element: ", document.getElementById($scope.selectedProposition.id).innerHTML)
               $scope.inputs = {};
+              document.getElementById($scope.selectedProposition.id).innerHTML = '';
             }
 
             if (payload.code === '1') {

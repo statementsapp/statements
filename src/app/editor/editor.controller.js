@@ -3981,7 +3981,7 @@
             if (payload.author === $scope.userId) {
               console.log("Should be clearing an input")
               console.log("That payload id: ", payload.id)
-              $scope.inputs[payload.id] = '';
+              $scope.inputs = {};
             }
 
             if (payload.code === '1') {
@@ -5103,7 +5103,7 @@
           $scope.draggedProposition = {};
           //
         }
-
+        console.log("Inputs at the end of the broadcast: ", $scope.inputs)
         $scope.clearAnimationClass();
       });
 

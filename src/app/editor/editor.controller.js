@@ -3286,7 +3286,7 @@
 
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");
-          $scope.inputs = {};;
+          $scope.inputs = {};
           return;
         }
         $scope.data[0].isFresh = false;
@@ -3980,6 +3980,7 @@
             apply = {};
             if (payload.author === $scope.userId) {
               console.log("Should be clearing an input")
+              console.log("That payload id: ", payload.id)
               $scope.inputs[payload.id] = '';
             }
 

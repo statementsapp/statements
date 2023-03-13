@@ -3981,6 +3981,7 @@
             if (payload.author === $scope.userId) {
               console.log("Should be clearing an input")
               console.log("That payload id: ", payload.id)
+              console.log("The element: ", document.getElementById(payload.id))
               $scope.inputs = {};
             }
 
@@ -5093,6 +5094,7 @@
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+
           });
         }, 35);
         
@@ -5103,7 +5105,7 @@
           $scope.draggedProposition = {};
           //
         }
-        
+
         $scope.clearAnimationClass();
       });
 

@@ -3980,7 +3980,7 @@
             apply = {};
             if (payload.author === $scope.userId) {
               console.log("Should be clearing an input")
-              $scope.inputs = {};
+              $scope.inputs[proposition.id] = '';
             }
 
             if (payload.code === '1') {

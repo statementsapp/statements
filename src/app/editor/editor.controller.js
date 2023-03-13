@@ -3978,7 +3978,7 @@
 
 
             apply = {};
-            if (payload.author === $scope.userId) {
+            if (payload.author === $scope.userId && payload.code !== '3D') {
               console.log("Should be clearing an input")
               console.log("That payload id: ", payload.id)
               console.log("The element: ", document.getElementById($scope.selectedProposition.id).innerHTML)

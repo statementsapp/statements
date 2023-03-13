@@ -5092,7 +5092,7 @@
 
         setTimeout(function () {
           $scope.$apply(function () {
-            
+            console.log("Inputs at the end of the broadcast: ", $scope.inputs)
           });
         }, 35);
         
@@ -5103,7 +5103,7 @@
           $scope.draggedProposition = {};
           //
         }
-        console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+        
         $scope.clearAnimationClass();
       });
 

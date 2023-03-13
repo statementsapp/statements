@@ -305,7 +305,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
             ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, proposition)]"
             ng-mouseover="hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '|' : inputs.nothing "
-            ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), inputs[proposition.id] = '']"
+            ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), hasRightFocus !== proposition.id ? inputs[proposition.id] = '' : inputs.nothing]"
             ng-blur=""
 
             ng-click="

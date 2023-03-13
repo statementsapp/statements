@@ -3981,7 +3981,7 @@
             if (payload.author === $scope.userId) {
               console.log("Should be clearing an input")
               console.log("That payload id: ", payload.id)
-              console.log("The element: ", document.getElementById($scope.selectedProposition.id))
+              console.log("The element: ", document.getElementById($scope.selectedProposition.id).attributes)
               $scope.inputs = {};
             }
 

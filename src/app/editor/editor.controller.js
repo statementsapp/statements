@@ -2277,9 +2277,6 @@
 
       $scope.checkIfDropValid = function (node, paragraph, proposition, flag){
 
-
-        
-
         if ($scope.data[0].documentClaimedBy !== $scope.userId && flag !== 'right'){
 
           return false;
@@ -3982,6 +3979,7 @@
 
             apply = {};
             if (payload.author === $scope.userId) {
+              console.log("Should be clearing an input")
               $scope.inputs = {};
             }
 

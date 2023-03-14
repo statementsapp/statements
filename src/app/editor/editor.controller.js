@@ -5077,6 +5077,7 @@
             profileService.setSelectedBook($scope.data[0]);
 
             if (payload.author !== $scope.userId && $scope.inputs){
+              console.log("Satisfies that if")
               $scope.saveThisForASec = angular.copy($scope.inputs[payload.id])
             }
 
@@ -5085,6 +5086,7 @@
 
           });
           if ($scope.saveThisForASec){
+            console.log("There is a save this for a sec")
             $scope.inputs.proposition = $scope.saveThisForASec;
             $scope.inputs.leftProposition = $scope.saveThisForASec;
             $scope.saveThisForASec = '';

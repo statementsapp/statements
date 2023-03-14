@@ -5640,6 +5640,7 @@
       $scope.lightUpLastVisiblePropositionInParagraph = function (node, paragraph, event) {
         console.log("light up paragraph")
         if (event.target.localName !== 'ol') {
+          console.log("Returning ol localname")
           return;
         }
         // console.log(event.target)

@@ -194,7 +194,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               ng-click="!paragraph.highlighted && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
                         paragraph.highlighted ? markParagraph(node, paragraph) :
                         paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"
-                        ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle && !tweetClicked.id ? .3 : 0 }" class="fa fa-th" style="font-size: 15px;"></i></span>
+                        ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle && !tweetClicked.id && !paragraph.topMouseOver && !paragraph.topAdd &&!paragraph.bottomMouseOver && !paragraph.bottomAdd ? .3 : 0 }" class="fa fa-th" style="font-size: 15px;"></i></span>
         </span>
 
         <li ng-repeat="proposition in paragraph.propositions track by $index"

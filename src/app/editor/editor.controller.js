@@ -5421,7 +5421,6 @@
           });
 
         }, 20);
-        document.getElementById($scope.topAdderId).innerHTML = '|'
         $scope.inputs.proposition = '|';
       }
 

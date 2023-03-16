@@ -15,7 +15,14 @@
           element.focus();
           $(id).focus();
           $(element).focus();
-          element.textContent = element.textContent;
+          const range = document.createRange();
+          range.selectNodeContents(element);
+          range.collapse(false);
+
+          // Set the selection to the new range
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
         } else {
           // element.focus();
           // $(id).focus()

@@ -5435,6 +5435,7 @@
         $scope.isMouseOut = false;
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
+                console.log('Top timer')
                 $scope.makeTopAppear(paragraph);
                 $scope.inputs.proposition = '|';
               }

@@ -601,7 +601,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     >
     </div>
     <div delayed-ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver && !draggingNode)"
-         delay="1000"
+         delay="400"
          class="paragraph addparagraph"
          ng-class=""
          style="height: 26px; margin-left: 70px; margin-bottom: 10px;">

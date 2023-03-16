@@ -5417,7 +5417,7 @@
               if (!$scope.isMouseOut) {
                 $scope.makeItAppear(paragraph);
               }
-            }, 200);
+            }, 100);
       }
 
       $scope.stopBottomParagraphAdderTimer = function (paragraph) {

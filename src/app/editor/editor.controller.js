@@ -5404,6 +5404,10 @@
        
       }
 
+      $scope.thatRunFunction = function () {
+        console.log("Sure did run")
+      }
+
       $scope.lightUpLastVisiblePropositionInBook = function (book, event) {
 
 

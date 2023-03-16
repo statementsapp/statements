@@ -667,6 +667,8 @@
       $scope.oneMoveIn = false;
       $scope.thisMoveCounter = 0;
       $scope.inputString = 'inputs.' + $scope.userId;
+      $scope.timer;
+      $scope.isMouseOut = false;
       
 
       document.addEventListener('contextmenu', event => event.preventDefault());
@@ -5402,6 +5404,25 @@
           $scope.diagnostics = true;
         }
        
+      }
+
+      $scope.makeItAppear = function (paragraph) {
+        paragraph.bottomMouseOver = true; paragraph.topMouseOver = false
+      }
+
+      $scope.startBottomParagraphAdderTimer = function (paragraph) {
+        $scope.isMouseOut = false;
+            $scope.timer = $timeout(function() {
+              if (!$scope.isMouseOut) {
+                $scope.makeItAppear();
+              }
+            }, 200);
+      }
+
+      $scope.stopBottomParagraphAdderTimer = function (paragraph) {
+        $scope.isMouseOut = true;
+            $timeout.cancel($scope.timer);
+            paragraph.bottomMouseOver = false
       }
 
       $scope.thatRunFunction = function () {

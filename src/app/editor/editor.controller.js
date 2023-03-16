@@ -5412,8 +5412,15 @@
       }
 
       $scope.makeTopAppear = function (paragraph) {
-        paragraph.bottomMouseOver = false; 
-        paragraph.topMouseOver = true;
+        
+        setTimeout(function () {
+          $scope.$apply(function () {
+            paragraph.bottomMouseOver = false; 
+            paragraph.topMouseOver = true;
+            $scope.inputs.proposition = '|';
+          });
+
+        }, 20);
       }
 
       $scope.startBottomParagraphAdderTimer = function (paragraph) {
@@ -5437,7 +5444,7 @@
               if (!$scope.isMouseOut) {
                 console.log('Top timer')
                 $scope.makeTopAppear(paragraph);
-                $scope.inputs.proposition = '|';
+                
               }
             }, 100);
       }

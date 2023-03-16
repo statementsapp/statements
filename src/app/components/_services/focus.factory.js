@@ -11,6 +11,7 @@
       $timeout(function() {
         var element = $window.document.getElementById(id);
         if (element) {
+          console.log("Element object: ", element)
           element.focus();
           $(id).focus();
           $(element).focus();

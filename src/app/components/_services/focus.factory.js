@@ -14,8 +14,7 @@
           console.log("Element object: ", element)
           element.focus();
           $(id).focus();
-          $(element).focus();
-          element.setSelectionRange(element.value.length, element.value.length);
+          $(element).focus().get(0).setSelectionRange(element.textContent.length, element.textContent.length);
         } else {
           // element.focus();
           // $(id).focus()

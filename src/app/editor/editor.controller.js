@@ -5407,14 +5407,15 @@
       }
 
       $scope.makeItAppear = function (paragraph) {
-        paragraph.bottomMouseOver = true; paragraph.topMouseOver = false
+        paragraph.bottomMouseOver = true; 
+        paragraph.topMouseOver = false
       }
 
       $scope.startBottomParagraphAdderTimer = function (paragraph) {
         $scope.isMouseOut = false;
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
-                $scope.makeItAppear();
+                $scope.makeItAppear(paragraph);
               }
             }, 200);
       }

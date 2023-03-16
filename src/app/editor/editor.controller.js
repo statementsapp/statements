@@ -5436,6 +5436,7 @@
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
                 $scope.makeTopAppear(paragraph);
+                $scope.inputs.proposition = '|';
               }
             }, 100);
       }

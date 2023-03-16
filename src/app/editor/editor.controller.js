@@ -5411,6 +5411,11 @@
         paragraph.topMouseOver = false
       }
 
+      $scope.makeTopAppear = function (paragraph) {
+        paragraph.bottomMouseOver = false; 
+        paragraph.topMouseOver = true;
+      }
+
       $scope.startBottomParagraphAdderTimer = function (paragraph) {
         $scope.isMouseOut = false;
             $scope.timer = $timeout(function() {
@@ -5424,6 +5429,21 @@
         $scope.isMouseOut = true;
             $timeout.cancel($scope.timer);
             paragraph.bottomMouseOver = false
+      }
+
+      $scope.startTopParagraphAdderTimer = function (paragraph) {
+        $scope.isMouseOut = false;
+            $scope.timer = $timeout(function() {
+              if (!$scope.isMouseOut) {
+                $scope.makeTopAppear(paragraph);
+              }
+            }, 100);
+      }
+
+      $scope.stopTopParagraphAdderTimer = function (paragraph) {
+        $scope.isMouseOut = true;
+            $timeout.cancel($scope.timer);
+            paragraph.topMouseOver = false
       }
 
       $scope.thatRunFunction = function () {

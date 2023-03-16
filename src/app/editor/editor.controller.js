@@ -5417,11 +5417,12 @@
           $scope.$apply(function () {
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
-            
+            $scope.inputs.proposition = '|';
           });
 
         }, 20);
         document.getElementById($scope.topAdderId).innerHTML = '|'
+        $scope.inputs.proposition = '|';
       }
 
       $scope.startBottomParagraphAdderTimer = function (paragraph) {

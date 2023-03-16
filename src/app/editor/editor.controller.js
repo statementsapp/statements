@@ -5417,10 +5417,11 @@
           $scope.$apply(function () {
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
-            document.getElementById($scope.topAdderId).innerHTML = '|'
+            
           });
 
         }, 20);
+        document.getElementById($scope.topAdderId).innerHTML = '|'
       }
 
       $scope.startBottomParagraphAdderTimer = function (paragraph) {

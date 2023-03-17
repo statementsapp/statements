@@ -214,6 +214,11 @@
           </div> -->
         <span ng-if="userId === data[0].documentClaimedBy" style="color: white; position:relative; font-size:16px">&nbsp;(author)</span>
         </span>
+        <span>OKAY DRAGS</span>
+        <span id="dragelement" class="dragelement" >
+          DRAGS
+          <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
+        </span>
         
         <!-- <input type="text" id="copy-input" value="lkjlkjkljkjlj;jkj"/>
         <input type="button" id="copy-button" value="Copy"> -->
@@ -263,11 +268,7 @@
                 </button>
               </a>
 
-              <span>OKAY DRAGS</span>
-              <span id="dragelement" class="dragelement" >
-                DRAGS
-                <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
-              </span>
+
               <!-- feather you want in there below -->
               <button style='padding-left: 0px;'
                       class="btn menubutton"
@@ -298,7 +299,7 @@
                   <i class="fa fa-feather-alt"></i>
               </button>
 
-              
+
 
               
 

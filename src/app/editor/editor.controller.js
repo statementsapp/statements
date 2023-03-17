@@ -2181,6 +2181,7 @@
             $scope.draggedParagraph.isDraggedParagraph = true;
             $scope.draggedProposition = angular.copy(proposition);
             $scope.draggedProps = [angular.copy(proposition)];
+            console.log("Those drag strings: ", angular.copy($scope.dragStrings))
             $scope.dragStrings.push(
               {
                 text: proposition.text
@@ -2244,7 +2245,6 @@
             $scope.draggingNode = false;
             $scope.draggingParagraph = false;
             $scope.draggingProposition = false;
-            $scope.dragStrings = [];
             $scope.dragStrings = [];
             $scope.paragraphMouseIsOver = {};
             document.getElementById('tweet-button').classList.remove('grow')

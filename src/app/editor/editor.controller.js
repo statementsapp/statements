@@ -2182,6 +2182,7 @@
             $scope.draggedProposition = angular.copy(proposition);
             $scope.draggedProps = [angular.copy(proposition)];
             console.log("Those drag strings: ", angular.copy($scope.dragStrings))
+            $scope.dragStrings = [];
             $scope.dragStrings.push(
               {
                 text: proposition.text

@@ -214,10 +214,10 @@
           </div> -->
         <span ng-if="userId === data[0].documentClaimedBy" style="color: white; position:relative; font-size:16px">&nbsp;(author)</span>
         </span>
-        <span>OKAY DRAGS</span>
+        <span style="color: #0f0f0f">OKAY DRAGS</span>
         <span id="dragelement" class="dragelement" >
           DRAGS
-          <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
+          <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}" style="color: #0f0f0f">{{string.text}}</span>
         </span>
         
         <!-- <input type="text" id="copy-input" value="lkjlkjkljkjlj;jkj"/>

@@ -293,6 +293,9 @@
                       ng-click="invert()">
                   <i class="fa fa-feather-alt"></i>
               </button>
+              <span id="dragelement" class="dragelement" >
+                <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
+              </span>
 
               
 
@@ -309,9 +312,7 @@
             </div>
 <!--             <span class="dragelement" ng-if="draggingNode">{{draggedNode.topic}}</span>
             <span class="dragelement" ng-if="draggingParagraph">{{draggedParagraph.text}}</span> -->
-            <span id="dragelement" class="dragelement" >
-              <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
-            </span>
+            
             <!-- ng-if="draggingProposition || draggingParagraph || draggingNode" -->
 
 

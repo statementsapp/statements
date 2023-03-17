@@ -2219,6 +2219,7 @@
       $scope.clearDrag = function () {
         setTimeout(function () {
           $scope.$apply(function () {
+            console.log("Clearing drag")
             $scope.tweetClicked = {}
             if ($scope.draggingParagraph) {
               for (var i = 0; i < $scope.draggedParagraph.propositions.length; i++){
@@ -2484,6 +2485,7 @@
 
         setTimeout(function () {
           $scope.$apply(function () {
+            console.log("Drop item timeout")
             $scope.dragStrings = [];
             $scope.targetNode = node;
 

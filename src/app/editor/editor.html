@@ -263,7 +263,11 @@
                 </button>
               </a>
 
-
+              <span>OKAY DRAGS</span>
+              <span id="dragelement" class="dragelement" >
+                DRAGS
+                <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
+              </span>
               <!-- feather you want in there below -->
               <button style='padding-left: 0px;'
                       class="btn menubutton"
@@ -293,10 +297,8 @@
                       ng-click="invert()">
                   <i class="fa fa-feather-alt"></i>
               </button>
-              <span id="dragelement" class="dragelement" >
-                DRAGS
-                <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}">{{string.text}}</span>
-              </span>
+
+              
 
               
 

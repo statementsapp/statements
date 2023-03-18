@@ -3322,7 +3322,7 @@
       }
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
-
+        console.log("Prep proposition paragraph: ", paragraph)
         console.log("The chat socket: ", chatSocket)
 
         // if (chatSocket.connected) {

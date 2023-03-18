@@ -3928,6 +3928,8 @@
         $scope.dragStrings = [];
         $scope.dragProps = [];
 
+        $scope.inputs.leftProposition = '';
+
       };
 
       $scope.$on('socket:broadcastDeletion', function (event, payload) {

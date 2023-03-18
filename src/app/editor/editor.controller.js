@@ -3448,71 +3448,7 @@
           // Or if it's a continuation of another remark
           // it's a negation
 
-        } else if (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
-                ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId &&
-                 !paragraph.leftAdd)) {
-
-          // switched sp negation requirements from sp === your username to just not the document author
-
-
-          if ($scope.selectedProposition.type === 'negation') {
-            console.log("2b")
-            prep.code = '2B';
-            prep.topic = $scope.selectedProposition.topic;
-            prep.type = 'negation';
-            prep.adjustedText = input;
-            prep.author = $scope.userId;
-            prep.afterRemarkId = $scope.selectedProposition.id;
-            prep.targetNodeId = $scope.selectedNode.nodeId;
-            prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            prep.of = {      
-              type: $scope.selectedProposition.of.type,
-              author: $scope.selectedProposition.of.author,
-              id: $scope.selectedProposition.of.id,
-              text: $scope.selectedProposition.of.text
-            }
-            prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
-            prep.previousMessages.pop();
-            prep.id = IdFactory.next();
-            prep.previousMessages.push(prep.id)
-            prep.messagesSoFar = angular.copy(prep.previousMessages);
-
-
-          } else {
-
-            console.log("2a")
-            prep.code = '2A';
-            prep.topic = $scope.selectedProposition.topic;
-            prep.type = 'negation';
-            prep.adjustedText = input;
-            prep.author = $scope.userId;
-            prep.afterPropositionId = $scope.selectedProposition.id;
-            prep.targetNodeId = $scope.selectedNode.nodeId;
-            prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            prep.of = {
-              type: $scope.selectedProposition.type,
-              author: $scope.selectedProposition.author,
-              id: $scope.selectedProposition.id,
-              text: $scope.selectedProposition.text
-            }
-            prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
-            prep.id = IdFactory.next();
-            prep.previousMessages.push(prep.id)
-            prep.messagesSoFar = angular.copy(prep.previousMessages);
-          }
-
-
-
-
-        // Rejoinders: gone
-
-
-
-
-        } else if ($scope.selectedProposition.question) {
-          //won't run
-
-        } else if (paragraph.topAdd || paragraph.topMouseOver){
+        } else if (paragraph.topAdd){
           console.log("3d")
           prep.code = '3D';
           prep.topic = $scope.selectedProposition.topic;
@@ -3577,6 +3513,70 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
+        } else if (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
+                ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId &&
+                 !paragraph.leftAdd)) {
+
+          // switched sp negation requirements from sp === your username to just not the document author
+
+
+          if ($scope.selectedProposition.type === 'negation') {
+            console.log("2b")
+            prep.code = '2B';
+            prep.topic = $scope.selectedProposition.topic;
+            prep.type = 'negation';
+            prep.adjustedText = input;
+            prep.author = $scope.userId;
+            prep.afterRemarkId = $scope.selectedProposition.id;
+            prep.targetNodeId = $scope.selectedNode.nodeId;
+            prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+            prep.of = {      
+              type: $scope.selectedProposition.of.type,
+              author: $scope.selectedProposition.of.author,
+              id: $scope.selectedProposition.of.id,
+              text: $scope.selectedProposition.of.text
+            }
+            prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+            prep.previousMessages.pop();
+            prep.id = IdFactory.next();
+            prep.previousMessages.push(prep.id)
+            prep.messagesSoFar = angular.copy(prep.previousMessages);
+
+
+          } else {
+
+            console.log("2a")
+            prep.code = '2A';
+            prep.topic = $scope.selectedProposition.topic;
+            prep.type = 'negation';
+            prep.adjustedText = input;
+            prep.author = $scope.userId;
+            prep.afterPropositionId = $scope.selectedProposition.id;
+            prep.targetNodeId = $scope.selectedNode.nodeId;
+            prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+            prep.of = {
+              type: $scope.selectedProposition.type,
+              author: $scope.selectedProposition.author,
+              id: $scope.selectedProposition.id,
+              text: $scope.selectedProposition.text
+            }
+            prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+            prep.id = IdFactory.next();
+            prep.previousMessages.push(prep.id)
+            prep.messagesSoFar = angular.copy(prep.previousMessages);
+          }
+
+
+
+
+        // Rejoinders: gone
+
+
+
+
+        } else if ($scope.selectedProposition.question) {
+          //won't run
+
         } else if ($scope.selectedProposition.type === 'negation' &&
           $scope.selectedProposition.of.type === 'assertion' &&
           $scope.selectedProposition.of.author === $scope.userId &&

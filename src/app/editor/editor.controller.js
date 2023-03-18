@@ -5498,11 +5498,11 @@
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
             $scope.inputs.proposition = '|';
-            document.getElementById($scope.topAdderId).innerHTML = '|'
+            
           });
 
         }, 20);
-        $scope.inputs.proposition = '|';
+        document.getElementById($scope.topAdderId).innerHTML = '|'
       }
 
       $scope.startBottomParagraphAdderTimer = function (paragraph) {

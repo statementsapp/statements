@@ -167,7 +167,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                    paragraph.topMouseOver = false,
                    paragraph.bottomAdd = false,
                    paragraph.leftAdd = false,
-                   clearEditable()]"
+                   clearEditable(),
+                   $event.stopPropagation()]"
 
          id="top{{paragraph.paragraphId}}">
     </div>

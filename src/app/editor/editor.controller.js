@@ -1601,6 +1601,7 @@
 
       // Manages top adder selection
       $scope.clearWithTopAdder = function (paragraph) {
+        console.log("Clearing top adder")
         $scope.unHighlightNode();
         $timeout(function () {
           $scope.$apply(function () {

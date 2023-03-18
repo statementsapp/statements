@@ -788,6 +788,7 @@ textarea {
 
 .leftinputactive {
   display: inline;
+
 }
 
 .bottomadd {
@@ -799,7 +800,8 @@ textarea {
 }
 
 .left-text {
-  padding-left: 0.5px;
+  // padding-left: 0.5px;
+  padding-right: 4px;
   display: inline-block;
 }
 

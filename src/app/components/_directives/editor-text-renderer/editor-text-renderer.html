@@ -612,7 +612,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     <div class="bottomparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'bottom')}"
          ng-mouseover="startBottomParagraphAdderTimer(paragraph)"
-         ng-mouseleave="stopBottomParagraphAdderTimer(paragraph)"
+         ng-mouseleave="[stopBottomParagraphAdderTimer(paragraph), clearPlaceholder(paragraph)]"
          ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), selectParagraph(paragraph),
                     selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
          
@@ -622,7 +622,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     >
     </div>
     <div delayed-ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver && !draggingNode)"
-         ng-mouseleave= "clearPlaceholder(paragraph)"
          delay="200"
          class="paragraph addparagraph"
          ng-class=""

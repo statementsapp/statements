@@ -5491,6 +5491,7 @@
 
       $scope.stopBottomParagraphAdderTimer = function (paragraph) {
         $scope.isMouseOut = true;
+            console.log("About to bottom timeout cancel")
             $timeout.cancel($scope.timer);
             paragraph.bottomMouseOver = false
       }

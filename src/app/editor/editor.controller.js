@@ -1928,6 +1928,11 @@
         
       }
 
+      $scope.whatIsSelectedProp = function () {
+        console.log("Selected proposition: ", angular.copy($scope.selectedProposition));
+        console.log("Input left ", angular.copy($scope.inputs.leftProposition));
+      }
+
       // Backstops something about proposition editability
       $scope.focusouteditable = function (element, proposition) {
         if ($scope.dontrunfocusout) {

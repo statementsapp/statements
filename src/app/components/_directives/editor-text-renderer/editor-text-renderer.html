@@ -243,7 +243,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs.leftProposition === '|' ? [
                   paragraph.leftAdd = true,
                   didItRun(),
-                  
+
                   clearPropositionInput(),
                   paragraph.topAdd = false,
                   paragraph.bottomAdd = false,
@@ -265,8 +265,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 placeholder="textarea"
                 ng-model="inputs.leftProposition"
                 ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.leftProposition != '' ? $event.preventDefault : inputs.nothing"
-                ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide !== true ? [proposition.propositionPreSelected = false, prepProposition(inputs.leftProposition, node, paragraph, proposition, $event, 'left'), inputs.leftProposition = '', $event.stopPropagation()] : inputs.nothing;
-                      (inputs.leftProposition === '' && $event.keyCode === 8) ? inputs.nothing : inputs.nothing;"
+                ng-keyup="[$event.keyCode === 13 && selectedProposition.dialogueSide !== true ? [whatIsSelectedProp(), proposition.propositionPreSelected = false, prepProposition(inputs.leftProposition, node, paragraph, proposition, $event, 'left'), inputs.leftProposition = '', $event.stopPropagation()] : inputs.nothing,
+                      (inputs.leftProposition === '' && $event.keyCode === 8) ? inputs.nothing : inputs.nothing]"
                 spellcheck="false"
                 ng-if="(proposition.first && proposition.type !== 'blank')">
 

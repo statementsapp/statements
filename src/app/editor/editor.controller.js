@@ -1763,6 +1763,34 @@
         $scope.highlight = {};
       };
 
+      $scope.selectPropositionLeft = function (proposition) {
+        if ($scope.selectedProposition) {
+          console.log("A")
+          if ($scope.selectedProposition.id !== proposition.id) {
+            $scope.clearPropositionInput();
+            $scope.selectedProposition = proposition;
+            $scope.hasLeftFocus.id = proposition.id;
+            focusFactory('left'+proposition.id);
+          } else {
+            console.log("B")
+            $scope.selectedProposition = proposition;
+            $scope.hasLeftFocus.id = proposition.id;
+            focusFactory('left'+proposition.id);
+          }
+        } else {
+          console.log("C")
+          $scope.selectedProposition = proposition;
+          $scope.hasLeftFocus.id = proposition.id;
+          focusFactory('left'+proposition.id);
+        }
+        $scope.highlight.id = '';
+        $scope.highlight.highlit = null;
+        $scope.mark.id = '';
+        $scope.mark.marked = null;
+        $scope.mark = {};
+        $scope.highlight = {};
+      };
+
       // Clears the proposition input, like when clicked away
       $scope.clearPropositionInput = function () {
         $timeout(function () {

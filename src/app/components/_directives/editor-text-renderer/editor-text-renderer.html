@@ -252,7 +252,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   selectParagraph(paragraph),
                   selectedParagraph.highlightAll = false,
                   selectedParagraph.markAll = false,
-                  selectedProposition = proposition,
+                  selectPropositionLeft(proposition),
                   clearWithLeftAdder(proposition.id),
                   clearEditable(),
                   $event.stopPropagation()

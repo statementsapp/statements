@@ -3512,6 +3512,71 @@
         } else if ($scope.selectedProposition.question) {
           //won't run
 
+        } else if (paragraph.topAdd || paragraph.topMouseOver){
+          console.log("3d")
+          prep.code = '3D';
+          prep.topic = $scope.selectedProposition.topic;
+          prep.type = 'assertion';
+          prep.adjustedText = input;
+          prep.author = $scope.userId;
+          prep.beforeParagraphId = paragraph.paragraphId;
+          prep.targetNodeId = $scope.selectedNode.nodeId;
+          prep.sectionNumber = $scope.selectedNode.sectionNumber;
+
+          prep.id = IdFactory.next();
+          prep.of = {
+            type: 'itsown',
+            author: 'itsown',
+            id: 'itsown',
+            text: 'itsown'
+          }
+          prep.messagesSoFar = [prep.id]
+        } else if (paragraph.bottomAdd){
+
+          console.log("3e")
+          prep.code = '3E';
+          prep.topic = $scope.selectedProposition.topic;
+          prep.type = 'assertion';
+          prep.adjustedText = input;
+          prep.author = $scope.userId;
+          if (!$scope.draggingParagraph && !$scope.draggingProposition){
+            prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
+          } else {
+            prep.afterParagraphId = angular.copy(paragraph.paragraphId);
+          }
+          if (!$scope.draggingParagraph && !$scope.draggingProposition){
+            prep.targetNodeId = $scope.selectedNode.nodeId;
+          } else {
+            prep.targetNodeId = angular.copy(node.nodeId);
+          }
+          prep.sectionNumber = $scope.selectedNode.sectionNumber;
+          prep.id = IdFactory.next();
+          prep.of = {
+            type: 'itsown',
+            author: 'itsown',
+            id: 'itsown',
+            text: 'itsown'
+          }
+          prep.messagesSoFar = [prep.id]
+        } else if (paragraph.leftAdd){
+          console.log("3f")
+          prep.code = '3F';
+          prep.topic = $scope.selectedProposition.topic;
+          prep.type = 'assertion';
+          prep.adjustedText = input;
+          prep.author = $scope.userId;
+          prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+          prep.targetNodeId = $scope.selectedNode.nodeId;
+          prep.sectionNumber = $scope.selectedNode.sectionNumber;
+          prep.beforePropositionId = proposition.id;
+          prep.id = IdFactory.next();
+          prep.of = {
+            type: 'itsown',
+            author: 'itsown',
+            id: 'itsown',
+            text: 'itsown'
+          }
+          prep.messagesSoFar = [prep.id]
         } else if ($scope.selectedProposition.type === 'negation' &&
           $scope.selectedProposition.of.type === 'assertion' &&
           $scope.selectedProposition.of.author === $scope.userId &&
@@ -3609,71 +3674,6 @@
           prep.id = IdFactory.next();
           prep.messagesSoFar = [prep.id]
 
-        } else if (paragraph.topAdd || paragraph.topMouseOver){
-          console.log("3d")
-          prep.code = '3D';
-          prep.topic = $scope.selectedProposition.topic;
-          prep.type = 'assertion';
-          prep.adjustedText = input;
-          prep.author = $scope.userId;
-          prep.beforeParagraphId = paragraph.paragraphId;
-          prep.targetNodeId = $scope.selectedNode.nodeId;
-          prep.sectionNumber = $scope.selectedNode.sectionNumber;
-
-          prep.id = IdFactory.next();
-          prep.of = {
-            type: 'itsown',
-            author: 'itsown',
-            id: 'itsown',
-            text: 'itsown'
-          }
-          prep.messagesSoFar = [prep.id]
-        } else if (paragraph.bottomAdd){
-
-          console.log("3e")
-          prep.code = '3E';
-          prep.topic = $scope.selectedProposition.topic;
-          prep.type = 'assertion';
-          prep.adjustedText = input;
-          prep.author = $scope.userId;
-          if (!$scope.draggingParagraph && !$scope.draggingProposition){
-            prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
-          } else {
-            prep.afterParagraphId = angular.copy(paragraph.paragraphId);
-          }
-          if (!$scope.draggingParagraph && !$scope.draggingProposition){
-            prep.targetNodeId = $scope.selectedNode.nodeId;
-          } else {
-            prep.targetNodeId = angular.copy(node.nodeId);
-          }
-          prep.sectionNumber = $scope.selectedNode.sectionNumber;
-          prep.id = IdFactory.next();
-          prep.of = {
-            type: 'itsown',
-            author: 'itsown',
-            id: 'itsown',
-            text: 'itsown'
-          }
-          prep.messagesSoFar = [prep.id]
-        } else if (paragraph.leftAdd){
-          console.log("3f")
-          prep.code = '3F';
-          prep.topic = $scope.selectedProposition.topic;
-          prep.type = 'assertion';
-          prep.adjustedText = input;
-          prep.author = $scope.userId;
-          prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-          prep.targetNodeId = $scope.selectedNode.nodeId;
-          prep.sectionNumber = $scope.selectedNode.sectionNumber;
-          prep.beforePropositionId = proposition.id;
-          prep.id = IdFactory.next();
-          prep.of = {
-            type: 'itsown',
-            author: 'itsown',
-            id: 'itsown',
-            text: 'itsown'
-          }
-          prep.messagesSoFar = [prep.id]
         } else if (($scope.selectedProposition.type === 'assertion' &&
           $scope.userId === $scope.data[0].documentClaimedBy) && (!$scope.draggingParagraph || proposition.type !== 'blank') && 
         (!$scope.draggingProposition || proposition.type !== 'blank')){

@@ -5478,7 +5478,7 @@
         $scope.inputs.bottomProposition = '|';
       }
 
-      $scope.clearPlaceholder = function () {
+      $scope.clearPlaceholder = function (paragraph) {
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Clearing the placeholder")

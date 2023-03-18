@@ -3929,7 +3929,7 @@
         $scope.dragProps = [];
 
         $scope.inputs.leftProposition = '';
-        if (document.getElementById('left' + $scope.selectedProposition.id){
+        if (document.getElementById('left' + $scope.selectedProposition.id)){
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 

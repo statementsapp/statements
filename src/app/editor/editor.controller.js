@@ -3937,25 +3937,32 @@
 
         if (paragraph) {
 
-          paragraph.topAdd = false;
-          paragraph.bottomAdd = false;
-          paragraph.leftAdd = false;
-          paragraph.leftMouseOver = false;
-          paragraph.topMouseOver = false;
-          paragraph.bottomAdd = false;
-          paragraph.bottomMouseOver = false;
-          // if (node.bottomNodeAdd){
-          //
-          // }
-          if (node){
-            node.topNodeAdd = false;
-            node.topDropzoneMouseOver= false;
-            node.bottomNodeAdd = false;
-            node.bottomDropzoneMouseOver = false;
-          }
+          $timeout(function () {
+            $scope.$apply(function () {
+              paragraph.topAdd = false;
+              paragraph.bottomAdd = false;
+              paragraph.leftAdd = false;
+              paragraph.leftMouseOver = false;
+              paragraph.topMouseOver = false;
+              paragraph.bottomAdd = false;
+              paragraph.bottomMouseOver = false;
+              // if (node.bottomNodeAdd){
+              //
+              // }
+              if (node){
+                node.topNodeAdd = false;
+                node.topDropzoneMouseOver= false;
+                node.bottomNodeAdd = false;
+                node.bottomDropzoneMouseOver = false;
+              }
+            }, 0);
+          });
+
+          
 
 
         }
+
 
         $scope.hasTopFocus = '';
         $scope.hasBottomFocus = {};

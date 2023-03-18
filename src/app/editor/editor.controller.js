@@ -5480,6 +5480,7 @@
         
         setTimeout(function () {
           $scope.$apply(function () {
+            console.log("Making top appear")
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
             $scope.inputs.proposition = '|';

@@ -5473,7 +5473,7 @@
           });
 
         }, 20);
-        $scope.inputs.proposition = '|';
+        $scope.inputs.bottomProposition = '|';
       }
 
       $scope.makeTopAppear = function (paragraph) {

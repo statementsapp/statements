@@ -1765,9 +1765,14 @@
 
       // Clears the proposition input, like when clicked away
       $scope.clearPropositionInput = function () {
-        $scope.inputs = {};
-        $scope.highlight.id = '';
-        $scope.mark.id = '';
+        $timeout(function () {
+          $scope.$apply(function () {
+            $scope.inputs = {};
+            $scope.highlight.id = '';
+            $scope.mark.id = '';
+          });
+        }, 0);
+        
       };
 
       // Highlights all of another's propositions in a paragraph, first backspace

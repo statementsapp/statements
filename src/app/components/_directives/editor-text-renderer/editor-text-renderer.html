@@ -240,9 +240,10 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           <span editable-span-ng-model
                 contenteditable="true"
                 ng-class="{'leftinputactive': inputs.leftProposition !== '','visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left'))}"
-                ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId ? [
+                ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs.leftProposition === '|' ? [
                   paragraph.leftAdd = true,
                   didItRun(),
+                  
                   clearPropositionInput(),
                   paragraph.topAdd = false,
                   paragraph.bottomAdd = false,

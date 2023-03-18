@@ -239,8 +239,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           </span> -->
           <span editable-span-ng-model
                 contenteditable="true"
-                ng-class="{'leftinputactive': inputs.leftProposition !== '','visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left'))}"
-                ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs.leftProposition === '|' ? [
+                ng-class="{'leftinputactive': inputs['left'+proposition.id] !== '','visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left'))}"
+                ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs['left'+proposition.id] === '|' ? [
                   paragraph.leftAdd = true,
                   didItRun(),
 
@@ -259,14 +259,14 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   ] : inputs.notting"
                 id="left{{proposition.id}}"
                 class="right-textarea right-text left-text authorprop"
-                ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true, (userId === data[0].documentClaimedBy && !inputs.leftProposition) ? inputs.leftProposition = '|': inputs.nothing]"
-                ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false, (userId === data[0].documentClaimedBy && inputs.leftProposition === '|') ? inputs.leftProposition = '': inputs.nothing]"
+                ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true, (userId === data[0].documentClaimedBy && !inputs['left'+proposition.id]) ? inputs['left'+proposition.id] = '|': inputs.nothing]"
+                ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false, (userId === data[0].documentClaimedBy && inputs['left'+proposition.id] === '|') ? inputs['left'+proposition.id] = '': inputs.nothing]"
                 ng-blur="clearLeftAdd(paragraph)"
                 placeholder="textarea"
-                ng-model="inputs.leftProposition"
-                ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.leftProposition != '' ? $event.preventDefault : inputs.nothing"
-                ng-keyup="[$event.keyCode === 13 && selectedProposition.dialogueSide !== true ? [whatIsSelectedProp(), proposition.propositionPreSelected = false, prepProposition(inputs.leftProposition, node, paragraph, proposition, $event, 'left'), inputs.leftProposition = '', $event.stopPropagation()] : inputs.nothing,
-                      (inputs.leftProposition === '' && $event.keyCode === 8) ? inputs.nothing : inputs.nothing]"
+                ng-model="inputs['left'+proposition.id]"
+                ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['left'+proposition.id] != '' ? $event.preventDefault : inputs.nothing"
+                ng-keyup="[$event.keyCode === 13 && selectedProposition.dialogueSide !== true ? [whatIsSelectedProp(), proposition.propositionPreSelected = false, prepProposition(inputs['left'+proposition.id]], node, paragraph, proposition, $event, 'left'), inputs['left'+proposition.id] = '', $event.stopPropagation()] : inputs.nothing,
+                      (inputs['left'+proposition.id] === '' && $event.keyCode === 8) ? inputs.nothing : inputs.nothing]"
                 spellcheck="false"
                 ng-if="(proposition.first && proposition.type !== 'blank')">
 

@@ -3936,6 +3936,7 @@
 
         $scope.inputs.leftProposition = '';
         if (document.getElementById('left' + $scope.selectedProposition.id)){
+          console.log("Clearing with innerHTML")
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 
@@ -3958,6 +3959,7 @@
         console.log("Received proposition: ", payload)
 
         if (payload.author === $scope.userId && $scope.inputs.leftProposition) {
+          console.log("Right up front")
           $scope.inputs.leftProposition = '';
 
         }

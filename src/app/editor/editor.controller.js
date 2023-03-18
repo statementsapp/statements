@@ -1610,6 +1610,7 @@
             $scope.selectedProposition.textSide = true;
             $scope.topAdderId = IdFactory.next();
             $scope.hasTopFocus = paragraph.paragraphId;
+            paragraph.topAdd = true;
             focusFactory($scope.topAdderId);
           });
         }, 0);

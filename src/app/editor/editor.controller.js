@@ -669,6 +669,7 @@
       $scope.inputString = 'inputs.' + $scope.userId;
       $scope.timer;
       $scope.isMouseOut = false;
+      $scope.topAdderId = IdFactory.next();
       
 
       document.addEventListener('contextmenu', event => event.preventDefault());

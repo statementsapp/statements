@@ -3929,6 +3929,9 @@
         $scope.dragProps = [];
 
         $scope.inputs.leftProposition = '';
+        if (document.getElementById('left' + $scope.selectedProposition.id){
+          document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
+        }
 
       };
 
@@ -3947,6 +3950,11 @@
 
 
         console.log("Received proposition: ", payload)
+
+        if (payload.author === $scope.userId && $scope.inputs.leftProposition) {
+          $scope.inputs.leftProposition = '';
+
+        }
         
         if ($scope.data[0].muteds.includes(payload.author)){
           console.log("Payload muting")

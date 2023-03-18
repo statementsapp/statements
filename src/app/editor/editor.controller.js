@@ -5478,6 +5478,10 @@
         $scope.inputs.bottomProposition = '|';
       }
 
+      $scope.clearPlaceholder = function () {
+        document.getElementById(paragraph.paragraphId).innerHTML = ''
+      }
+
       $scope.makeTopAppear = function (paragraph) {
         
         setTimeout(function () {

@@ -3970,9 +3970,11 @@
         $scope.dragProps = [];
 
         $scope.inputs.leftProposition = '';
+        $scope.inputs.bottomProposition = '';
         if (document.getElementById('left' + $scope.selectedProposition.id)){
           console.log("Clearing with innerHTML")
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
+          document.getElementById(paragraph.paragraphId).innerHTML = '';
         }
 
       };

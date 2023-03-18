@@ -5479,7 +5479,14 @@
       }
 
       $scope.clearPlaceholder = function () {
-        document.getElementById(paragraph.paragraphId).innerHTML = ''
+        setTimeout(function () {
+          $scope.$apply(function () {
+            console.log("Clearing the placeholder")
+            document.getElementById(paragraph.paragraphId).innerHTML = ''
+          });
+
+        }, 20);
+        
       }
 
       $scope.makeTopAppear = function (paragraph) {

@@ -786,6 +786,10 @@ textarea {
   cursor: text;
 }
 
+.leftinputactive {
+  display: inline;
+}
+
 .bottomadd {
   padding-bottom: 7px;
 }
@@ -796,6 +800,7 @@ textarea {
 
 .left-text {
   padding-left: 0.5px;
+  display: inline-block;
 }
 
 .texttopic {

@@ -3939,6 +3939,7 @@
 
           $timeout(function () {
             $scope.$apply(function () {
+              console.log("Clearing a bunch of stuff here")
               paragraph.topAdd = false;
               paragraph.bottomAdd = false;
               paragraph.leftAdd = false;

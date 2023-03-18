@@ -5463,8 +5463,17 @@
       }
 
       $scope.makeItAppear = function (paragraph) {
-        paragraph.bottomMouseOver = true; 
-        paragraph.topMouseOver = false
+        
+        console.log("Making appear")
+        setTimeout(function () {
+          $scope.$apply(function () {
+            paragraph.bottomMouseOver = true; 
+            paragraph.topMouseOver = false
+            $scope.inputs.proposition = '|';
+          });
+
+        }, 20);
+        $scope.inputs.proposition = '|';
       }
 
       $scope.makeTopAppear = function (paragraph) {

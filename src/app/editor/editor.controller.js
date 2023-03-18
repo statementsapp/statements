@@ -1566,6 +1566,7 @@
       $scope.clearLeftAdd = function (paragraph) {
         setTimeout(function () {
           // $scope.$apply(function () {
+          console.log("Clearing left add")
           paragraph.leftAdd = false;
           $scope.tempStopEditable = false;
           // });

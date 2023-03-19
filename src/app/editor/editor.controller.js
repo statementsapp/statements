@@ -5482,20 +5482,7 @@
        
       }
 
-      $scope.makeItAppear = function (paragraph) {
-        
-        console.log("Making appear")
-        setTimeout(function () {
-          $scope.$apply(function () {
-            paragraph.bottomMouseOver = true; 
-            paragraph.topMouseOver = false
-            $scope.inputs.proposition = '|';
-            document.getElementById(paragraph.paragraphId).innerHTML = '|'
-          });
-
-        }, 20);
-        $scope.inputs.bottomProposition = '|';
-      }
+      
 
       $scope.clearPlaceholder = function (paragraph) {
         setTimeout(function () {
@@ -5520,24 +5507,40 @@
       }
 
       $scope.makeTopAppear = function (paragraph) {
-        
+        console.log("Making top appear")
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Making top appear")
+            
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
             $scope.inputs['top'+paragraph.paragraphId] = '|'
-            
+            document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
           });
 
         }, 20);
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 
+      $scope.makeItAppear = function (paragraph) {
+        
+        console.log("Making appear")
+        setTimeout(function () {
+          $scope.$apply(function () {
+            paragraph.bottomMouseOver = true; 
+            paragraph.topMouseOver = false
+            $scope.inputs.proposition = '|';
+            document.getElementById(paragraph.paragraphId).innerHTML = '|'
+          });
+
+        }, 20);
+        $scope.inputs.bottomProposition = '|';
+      }
+
       $scope.startBottomParagraphAdderTimer = function (paragraph) {
         $scope.isMouseOut = false;
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
+                console.log('Top timer')
                 $scope.makeItAppear(paragraph);
               }
             }, 100);
@@ -5563,6 +5566,7 @@
 
       $scope.stopTopParagraphAdderTimer = function (paragraph) {
         $scope.isMouseOut = true;
+          console.log("About to top timeout cancel")
             $timeout.cancel($scope.timer);
             paragraph.topMouseOver = false
       }

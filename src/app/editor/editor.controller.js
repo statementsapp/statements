@@ -5505,6 +5505,17 @@
         
       }
 
+      $scope.topAddFunction = function (paragraph) {
+        setTimeout(function () {
+          $scope.$apply(function () {
+            console.log("Top add function")
+            paragraph.topAdd = true;
+            
+          });
+
+        }, 20);
+      }
+
       $scope.makeTopAppear = function (paragraph) {
         
         setTimeout(function () {

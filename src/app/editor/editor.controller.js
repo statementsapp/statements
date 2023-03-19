@@ -3456,7 +3456,7 @@
         } else if (paragraph.topAdd){
           console.log("3d")
           prep.code = '3D';
-          prep.topic = $scope.selectedProposition.topic;
+          prep.topic = $scope.selectedNode.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
           prep.author = $scope.userId;
@@ -5505,12 +5505,12 @@
         
       }
 
-      $scope.topAddFunction = function (paragraph) {
+      $scope.topAddFunction = function (node, paragraph) {
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Top add function")
             paragraph.topAdd = true;
-            
+            $scope.selectedNode = node;
           });
 
         }, 20);

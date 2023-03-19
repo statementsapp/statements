@@ -135,16 +135,16 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           editable-span-ng-model
           ng-class=""
           contenteditable="true"
-          id="{{topAdderId}}"
+          id="{{'top'+paragraph.paragraphId}}"
           title="{{paragraph.topAdderId}}"
           class="right-textarea"
           ng-click="$event.stopPropagation()"
           placeholder="textarea authorprop"
-          ng-model="inputs.proposition"
-          ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing"
+          ng-model="inputs['top'+proposition.id]"
+          ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['top'+proposition.id] != '' ? $event.preventDefault() : inputs.nothing"
           ng-keyup="$event.keyCode === 13 &&
-                            selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, whatsGoingOn(paragraph), prepProposition(inputs.proposition, node, paragraph, null, proposition, $event, 'top')] : inputs.nothing;
-                            (inputs.proposition === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
+                            selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, whatsGoingOn(paragraph), prepProposition(inputs['top'+proposition.id], node, paragraph, null, proposition, $event, 'top')] : inputs.nothing;
+                            (inputs['top'+proposition.id] === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
           spellcheck="false"
           style="color: #f0f0f0; text-indent: 25px; background-color: #0C2340;"
         >

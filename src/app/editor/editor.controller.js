@@ -5523,12 +5523,12 @@
             console.log("Making top appear")
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
-            $scope.inputs.proposition = '|';
+            $scope.inputs['top'+paragraph.paragraphId] = '|'
             
           });
 
         }, 20);
-        document.getElementById($scope.topAdderId).innerHTML = '|'
+        document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 
       $scope.startBottomParagraphAdderTimer = function (paragraph) {

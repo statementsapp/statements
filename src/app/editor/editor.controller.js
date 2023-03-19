@@ -3472,6 +3472,8 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
+
+          document.getElementById('top'+paragraph.paragraphId).innerHTML = '';
         } else if (paragraph.bottomAdd){
 
           console.log("3e")

@@ -5531,7 +5531,7 @@
           });
 
         }, 20);
-        document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
+        // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 
       $scope.startBottomParagraphAdderTimer = function (paragraph) {

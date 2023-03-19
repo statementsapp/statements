@@ -104,7 +104,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     ng-model="node.paragraphs"
     style="padding-left: 0"
 
-    ng-click="!draggingNode && !draggingParagraph && !draggingProposition  && $event.keyCode !== 32 ? [getLastVisiblePropositionInNode(node, $event, this), $event.stopPropagation()] : inputs.nothing">
+    ng-click="$event.stopPropagation()">
+    <!-- !draggingNode && !draggingParagraph && !draggingProposition  && $event.keyCode !== 32 ? [getLastVisiblePropositionInNode(node, $event, this), $event.stopPropagation()] : inputs.nothing -->
   <li ng-repeat="paragraph in node.paragraphs track by $index"
       ng-click="[clearThreadAdding(), paragraph.cursor = false, selectedProposition.dialogueSide = false, selectedParagraph = paragraph]"
       id="paragraph{{paragraph.paragraphId}}"

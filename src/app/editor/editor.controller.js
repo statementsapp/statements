@@ -3476,7 +3476,7 @@
 
           console.log("3e")
           prep.code = '3E';
-          prep.topic = $scope.selectedProposition.topic;
+          prep.topic = $scope.selectedNode.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
           prep.author = $scope.userId;

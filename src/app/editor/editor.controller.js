@@ -3463,7 +3463,7 @@
           prep.beforeParagraphId = paragraph.paragraphId;
           prep.targetNodeId = $scope.selectedNode.nodeId;
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
-
+          $scope.selectedProposition = {};
           prep.id = IdFactory.next();
           prep.of = {
             type: 'itsown',
@@ -3476,6 +3476,7 @@
 
           console.log("3e")
           prep.code = '3E';
+          $scope.selectedProposition = {};
           prep.topic = $scope.selectedNode.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;

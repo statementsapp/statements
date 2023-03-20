@@ -5495,6 +5495,17 @@
         
       }
 
+      $scope.clearPlaceholderTop = function (paragraph) {
+        setTimeout(function () {
+          $scope.$apply(function () {
+            console.log("Clearing the placeholder")
+            document.getElementById('left'+ paragraph.paragraphId).innerHTML = ''
+          });
+
+        }, 20);
+        
+      }
+
       $scope.topAddFunction = function (node, paragraph) {
         setTimeout(function () {
           $scope.$apply(function () {

@@ -155,7 +155,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
          ng-mouseover="startTopParagraphAdderTimer(paragraph)"
-         ng-mouseleave="stopTopParagraphAdderTimer(paragraph)"
+         ng-mouseleave="[stopTopParagraphAdderTimer(paragraph), clearPlaceholderTop(paragraph)]"
          ng-if="!paragraph.topAdd && !paragraph.theBlankParagraph && paragraph.first"
          ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : [
                     topAddFunction(paragraph),
@@ -656,7 +656,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs['bottom'+paragraph.paragraphId], node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs['bottom'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
           class="texttopic"
           spellcheck="false"
-          style="color: #f0f0f0; text-indent: 25px; text-indent: 25px; background-color: #0C2340; margin-left: -10px; padding-bottom: 30px;"></span>
+          style="color: #f0f0f0; text-indent: 125px; text-indent: 25px; background-color: #0C2340; margin-left: -10px; padding-bottom: 30px;"></span>
 <!--           <span class="cursor visible-cursor"
                 ng-if="paragraph.bottomMouseOver && !paragraph.bottomAdd">
           </span> -->

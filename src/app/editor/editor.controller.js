@@ -3505,6 +3505,8 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
+
+          paragraph.bottomAdd = false;
         } else if (paragraph.leftAdd){
           console.log("3f")
           prep.code = '3F';

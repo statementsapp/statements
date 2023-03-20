@@ -5113,7 +5113,8 @@
                   $scope.selectedProposition.textSide = false;
                   document.getElementById('input' + payload.id).click();
                   console.log("Rows: ", document.getElementById('input' + payload.id).rows);
-                  focusFactory('input' + payload.id);
+                  // focusFactory('input' + payload.id);
+                  document.getElementById('input'+payload.id).focus();
               }, 20);
             }
 

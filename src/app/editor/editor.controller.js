@@ -3474,7 +3474,7 @@
           }
           prep.messagesSoFar = [prep.id]
 
-          $scope.inputs['bottom'+paragraph.paragraphId] = '';
+          $scope.inputs['top'+paragraph.paragraphId] = '';
 
           // document.getElementById('top'+paragraph.paragraphId).innerHTML = '';
         } else if (paragraph.bottomAdd){

@@ -789,6 +789,7 @@ textarea {
 .leftinputactive {
   display: inline !important;
   padding-right: 0px !important;
+  cursor: none !important;
 
 }
 
@@ -1083,7 +1084,7 @@ nav.nav {
 }
 
 .bottomparagraphadder {
-  height: 6.5px;
+  height: 10.5px;
   width: 50%;
   margin-top: 3px;
   cursor: pointer;

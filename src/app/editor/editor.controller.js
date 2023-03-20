@@ -3328,7 +3328,8 @@
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
         console.log("Prep proposition paragraph: ", paragraph)
-        console.log("The chat socket: ", chatSocket)
+        
+        console.log("Top clearing")
 
         // if (chatSocket.connected) {
         //   console.log("Connected right now")
@@ -3472,6 +3473,8 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
+
+          $scope.inputs['bottom'+paragraph.paragraphId] = '';
 
           // document.getElementById('top'+paragraph.paragraphId).innerHTML = '';
         } else if (paragraph.bottomAdd){

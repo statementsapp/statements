@@ -5499,7 +5499,7 @@
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Clearing the placeholder")
-            document.getElementById('left'+ paragraph.paragraphId).innerHTML = ''
+            document.getElementById('top'+ paragraph.paragraphId).innerHTML = ''
           });
 
         }, 20);

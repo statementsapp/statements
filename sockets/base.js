@@ -17,6 +17,23 @@ var ioRoutes = function(io) {
       });
     });
 
+    socket.on('connect', () => {
+        console.log('Connected to the server');
+      });
+
+
+
+      socket.on('reconnect', () => {
+        console.log('Reconnected to the server');
+      });
+
+      socket.on('reconnect_attempt', () => {
+        console.log('Attempting to reconnect');
+      });
+
+      socket.on('reconnect_failed', () => {
+        console.log('Reconnection failed');
+      });
 
     socket.on('disconnect', function() {
       console.log('Socket disconnected');

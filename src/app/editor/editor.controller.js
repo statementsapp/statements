@@ -2156,6 +2156,7 @@
             $scope.draggingProposition = false;
             $scope.draggedProposition = {};
             $scope.draggedProps = [];
+            $scope.dragStrings = [];
 
             for (var i = 0; i < paragraph.propositions.length; i++){
               if (!paragraph.propositions[i].hiddenForAll){

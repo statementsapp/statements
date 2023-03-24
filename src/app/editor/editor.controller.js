@@ -3329,10 +3329,10 @@
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
         console.log("Prep proposition paragraph: ", paragraph)
         
-        console.log("Top clearing")
+        
 
         if (paragraph){
-
+          console.log("Is paragraph")
           if (document.getElementById('top' + paragraph.paragraphId)){
             console.log("Clearing top innerHTML")
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';

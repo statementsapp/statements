@@ -3991,7 +3991,8 @@
         $scope.dragProps = [];
 
         $scope.inputs.leftProposition = '';
-        $scope.inputs.bottomProposition = '';
+        $scope.inputs['bottom'+ $scope.selectedParagraph.paragraphId] = '';
+        $scope.inputs['top'+ $scope.selectedParagraph.paragraphId] = '';
         if (document.getElementById('left' + $scope.selectedProposition.id)){
           console.log("Clearing with innerHTML")
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';

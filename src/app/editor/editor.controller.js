@@ -3331,6 +3331,19 @@
         
         console.log("Top clearing")
 
+        if (paragraph){
+          if (document.getElementById('top' + paragraph.paragraphId)){
+            console.log("Clearing top innerHTML")
+            document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
+          }
+
+          if (document.getElementById(paragraph.paragraphId)){
+            console.log("Clearing bottom innerHTML")
+            
+            document.getElementById(paragraph.paragraphId).innerHTML = '';
+          }
+        }
+
         // if (chatSocket.connected) {
         //   console.log("Connected right now")
         // } else {
@@ -4000,18 +4013,8 @@
           console.log("Clearing with innerHTML")
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
-        if (paragraph){
-          if (document.getElementById('top' + paragraph.paragraphId)){
-            console.log("Clearing top innerHTML")
-            document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
-          }
 
-          if (document.getElementById(paragraph.paragraphId)){
-            console.log("Clearing bottom innerHTML")
-            
-            document.getElementById(paragraph.paragraphId).innerHTML = '';
-          }
-        }
+        
         
 
       };

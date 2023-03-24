@@ -5574,7 +5574,7 @@
           $scope.$apply(function () {
             paragraph.bottomMouseOver = true; 
             paragraph.topMouseOver = false
-            $scope.inputs.proposition = '|';
+            $scope.inputs['bottom'+paragraph.paragraphId] = '|'
             if (document.getElementById(paragraph.paragraphId)){
               document.getElementById(paragraph.paragraphId).innerHTML = '|'
             }

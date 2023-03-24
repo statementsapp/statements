@@ -5556,7 +5556,10 @@
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
             $scope.inputs['top'+paragraph.paragraphId] = '|'
-            document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
+            if (document.getElementById('top'+paragraph.paragraphId)){
+              document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
+            }
+            
           });
 
         }, 20);
@@ -5571,7 +5574,10 @@
             paragraph.bottomMouseOver = true; 
             paragraph.topMouseOver = false
             $scope.inputs.proposition = '|';
-            document.getElementById(paragraph.paragraphId).innerHTML = '|'
+            if (document.getElementById(paragraph.paragraphId)){
+              document.getElementById(paragraph.paragraphId).innerHTML = '|'
+            }
+            
           });
 
         }, 20);

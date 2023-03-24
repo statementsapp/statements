@@ -3332,6 +3332,7 @@
         console.log("Top clearing")
 
         if (paragraph){
+
           if (document.getElementById('top' + paragraph.paragraphId)){
             console.log("Clearing top innerHTML")
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
@@ -5513,7 +5514,10 @@
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Clearing the placeholder")
-            document.getElementById(paragraph.paragraphId).innerHTML = ''
+            if (document.getElementById(paragraph.paragraphId)) {
+              document.getElementById(paragraph.paragraphId).innerHTML = ''
+            }
+            
           });
 
         }, 20);
@@ -5524,7 +5528,9 @@
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Clearing the placeholder")
-            document.getElementById('top'+ paragraph.paragraphId).innerHTML = ''
+            if (document.getElementById('top' + paragraph.paragraphId)) {
+              document.getElementById('top' + paragraph.paragraphId).innerHTML = ''
+            }
           });
 
         }, 20);

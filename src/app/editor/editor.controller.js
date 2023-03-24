@@ -5563,7 +5563,7 @@
             
           });
 
-        }, 20);
+        }, 600);
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 

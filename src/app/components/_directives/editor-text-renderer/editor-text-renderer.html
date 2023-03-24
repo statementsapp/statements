@@ -429,7 +429,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                       'maininputactive': inputs[proposition.id] !== '',
                       'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
                        'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh,
-                       'hasthatpadding': hasRightFocus.id === proposition.id }"
+                       'hasthatpadding': hasRightFocus.id === proposition.id,
+                       'firstproppadding': proposition.type === 'blank' }"
             ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?
             [dropItem(node, paragraph, proposition ,'right')] : [assignRightFocus(proposition), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
             ng-mouseover="[hasRightFocus.id != proposition.id ? [paragraph.disableRightCursor = false, thatRunFunction(), inputs[proposition.id] = '|'] : inputs.nothing]"

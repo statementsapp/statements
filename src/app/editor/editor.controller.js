@@ -3999,8 +3999,20 @@
         if (document.getElementById('left' + $scope.selectedProposition.id)){
           console.log("Clearing with innerHTML")
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
-          document.getElementById(paragraph.paragraphId).innerHTML = '';
         }
+        if (paragraph){
+          if (document.getElementById('top' + paragraph.paragraphId)){
+            console.log("Clearing top innerHTML")
+            document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
+          }
+
+          if (document.getElementById(paragraph.paragraphId)){
+            console.log("Clearing bottom innerHTML")
+            
+            document.getElementById(paragraph.paragraphId).innerHTML = '';
+          }
+        }
+        
 
       };
 

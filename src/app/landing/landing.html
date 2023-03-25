@@ -49,39 +49,77 @@
 
 
           <div class="col" ng-if="screenWidth > 500" style="color: black;">
-            <div class="" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500">
-              
+            <div class="" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500"> 
+
+
+
               <div class="link-box" style="">
-              <a class="thisname" href="#" style="color: #F0F0F0 !important; text-decoration: none; ">Statements
-              </a>
-              <div class="landingbuttonscontainer">
-                <input type="text"
+                <a class="thisname" href="#" style="color: #F0F0F0 !important; text-decoration: none; ">Statements
+                </a>
+                <div class="landingbuttonscontainer">
+                  <input type="text"
                        class="form-control"
                        id="title"
                        name="bookId"
                        ng-model="vm.bookId"
                        placeholder="Enter book id"
                        ng-keyup="$event.keyCode === 13 ? vm.openBook() : form.nothing">
-                <span ng-show="vm.errors.noBookFound" class="help-block"></span>
-                <button class="btn menubutton"
+                  <span ng-show="vm.errors.noBookFound" class="help-block"></span>
+                  <button class="btn menubutton"
                         type="button"
                         
                         ng-click="openSignupModal()"
                         style="color: #f0f0f0; background-color: #0C2340;"
                         >
-                  <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Get Statements</span>
-                </button>
-                <button class="btn menubutton"
+                    <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Get Statements</span>
+                  </button>
+                  <button class="btn menubutton"
                         type="button"
                         
                         ng-click="openLoginModal()"
                         style="color: #f0f0f0; background-color: #0C2340;"
                         >
                         <!-- uib-tooltip="Log In" -->
-                  <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Log In</span>
-                </button>
+                    <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Log In</span>
+                  </button>
+                </div>
               </div>
-            </div>
+
+
+
+              <div class="link-box" style="display: flex; justify-content: space-between; align-items: center;">
+                  <a class="thisname" href="#" style="color: #F0F0F0 !important; text-decoration: none;">Statements
+                  </a>
+                  <div class="landingbuttonscontainer">
+                      <input type="text"
+                             class="form-control"
+                             id="title"
+                             name="bookId"
+                             ng-model="vm.bookId"
+                             placeholder="Enter book id"
+                             ng-keyup="$event.keyCode === 13 ? vm.openBook() : form.nothing">
+                      <span ng-show="vm.errors.noBookFound" class="help-block"></span>
+                      <button class="btn menubutton"
+                              type="button"
+                              
+                              ng-click="openSignupModal()"
+                              style="color: #f0f0f0; background-color: #0C2340;"
+                              >
+                          <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Get Statements</span>
+                      </button>
+                      <button class="btn menubutton"
+                              type="button"
+                              
+                              ng-click="openLoginModal()"
+                              style="color: #f0f00f0; background-color: #0C2340;"
+                              >
+                        <!-- uib-tooltip="Log In" -->
+                          <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Log In</span>
+                      </button>
+                  </div>
+
+              </div>
+
               
 
                 <div style="" >

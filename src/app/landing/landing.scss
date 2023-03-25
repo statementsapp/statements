@@ -95,31 +95,35 @@
 }
 
 .navbar {
-            min-height: auto; /* Remove the minimum height restriction */
-        }
+           min-height: auto; /* Remove the minimum height restriction */
+       }
 
-        .navbar-brand {
-            color: #F0F0F0 !important;
-            font-size: 100px; /* Set the font size of "Statements" */
-            line-height: normal; /* Set the line-height to normal */
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+       .navbar-inverse .navbar-brand {
+           color: #F0F0F0 !important;
+           font-size: 100px; /* Set the font size of "Statements" */
+           padding-top: 15px; /* Add top padding */
+           padding-bottom: 15px; /* Add bottom padding */
+       }
 
-        .navbar-header {
-            min-height: auto; /* Remove the minimum height restriction */
-        }
+       .navbar-header {
+           min-height: auto; /* Remove the minimum height restriction */
+           float: none; /* Override the default float */
+       }
 
-        .navbar .navbar-nav > li > .form-control {
-            height: auto; /* Remove the fixed height */
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+       .navbar .navbar-nav > li > .form-control {
+           height: auto; /* Remove the fixed height */
+           margin-top: 15px;
+           margin-bottom: 15px;
+      }
 
-        .navbar .navbar-nav > li > .btn {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+      .navbar .navbar-nav > li > .btn {
+          margin-top: 15px;
+          margin-bottom: 15px;
+      }
+
+      .navbar-collapse {
+          clear: both; /* Clear the float */
+      }
 
 .spacerboi {
   display: block;

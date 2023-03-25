@@ -125,6 +125,10 @@
           clear: both; /* Clear the float */
       }
 
+      .emailinput::placeholder {
+          color: #f0f0f0;
+      }
+
 .spacerboi {
   display: block;
   width: 100%;

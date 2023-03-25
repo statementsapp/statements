@@ -86,8 +86,49 @@
               </div> -->
 
 
+              <nav class="navbar navbar-inverse navbar-fixed-top">
+                      <div class="container-fluid">
+                          <div class="navbar-header">
+                              <a class="navbar-brand" href="#">Statements</a>
+                          </div>
+                          <div class="collapse navbar-collapse">
+                              <ul class="nav navbar-nav navbar-right">
+                                  <li>
+                                      <input type="text"
+                                             class="form-control"
+                                             id="title"
+                                             name="bookId"
+                                             ng-model="vm.bookId"
+                                             placeholder="Enter book id"
+                                             ng-keyup="$event.keyCode === 13 ? vm.openBook() : form.nothing"
+                                             style="margin-top: 8px;">
+                                  </li>
+                                  <li>
+                                      <button class="btn menubutton navbar-btn"
+                                            type="button"
+                                            ng-click="openSignupModal()"
+                                            style="color: #f0f0f0; background-color: #0C2340;"
+                                            >
+                                        <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Get Statements</span>
+                                      </button>
+                                  </li>
+                                  <li>
+                                      <button   class="btn menubutton navbar-btn"
+                                                type="button"
+                                                ng-click="openLoginModal()"
+                                                style="color: #f0f0f0; background-color: #0C2340;"
+                                                >
+                                      <!-- uib-tooltip="Log In" -->
+                                          <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Log In</span>
+                                      </button>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+              </nav>
 
-              <div class="link-box" style="display: flex; justify-content: space-between; align-items: center;">
+
+<!--               <div class="link-box" style="display: flex; justify-content: space-between; align-items: center;">
                   <a class="thisname" href="#" style="color: #F0F0F0 !important; text-decoration: none;">Statements
                   </a>
                   <div class="landingbuttonscontainer">
@@ -113,12 +154,12 @@
                               ng-click="openLoginModal()"
                               style="color: #f0f00f0; background-color: #0C2340;"
                               >
-                        <!-- uib-tooltip="Log In" -->
+                        
                           <span style="color: #f0f0f0; background-color: #0C2340;" id="exporttext">Log In</span>
                       </button>
                   </div>
 
-              </div>
+              </div> -->
 
               
 

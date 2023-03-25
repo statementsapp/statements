@@ -95,7 +95,19 @@
 }
 
 .navbar-brand {
-  color: #f0f0f0;
+            color: #F0F0F0 !important;
+            font-size: 24px; /* Change the font size of "Statements" */
+            padding: 10px; /* Adjust the padding to increase the height of the navbar */
+}
+
+.navbar .navbar-nav > li > .form-control {
+            margin-top: 6px;
+            margin-bottom: 6px;
+}
+
+.navbar .navbar-nav > li > .btn {
+            margin-top: 6px;
+            margin-bottom: 6px;
 }
 
 .spacerboi {

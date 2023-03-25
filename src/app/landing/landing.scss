@@ -94,21 +94,32 @@
   display: flex;
 }
 
-.navbar-brand {
+.navbar {
+            min-height: auto; /* Remove the minimum height restriction */
+        }
+
+        .navbar-brand {
             color: #F0F0F0 !important;
-            font-size: 24px; /* Change the font size of "Statements" */
-            padding: 10px; /* Adjust the padding to increase the height of the navbar */
-}
+            font-size: 100px; /* Set the font size of "Statements" */
+            line-height: normal; /* Set the line-height to normal */
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-.navbar .navbar-nav > li > .form-control {
-            margin-top: 6px;
-            margin-bottom: 6px;
-}
+        .navbar-header {
+            min-height: auto; /* Remove the minimum height restriction */
+        }
 
-.navbar .navbar-nav > li > .btn {
-            margin-top: 6px;
-            margin-bottom: 6px;
-}
+        .navbar .navbar-nav > li > .form-control {
+            height: auto; /* Remove the fixed height */
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .navbar .navbar-nav > li > .btn {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
 .spacerboi {
   display: block;

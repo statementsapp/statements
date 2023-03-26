@@ -5567,6 +5567,25 @@
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 
+      $scope.setup = function () {
+        $scope.step = 0;
+        $scope.steps = [
+            { content: 'console.log("Step 0 executed.")' },
+            { content: 'console.log("Step 1 executed.")' },
+            { content: 'console.log("Step 2 executed.")' },
+            // ...
+        ];
+            
+        $scope.$watch('step', function(newVal, oldVal) {
+          for (var i = 0; i < $scope.steps.length; i++) {
+            if (newVal >= i) {
+              $scope.$eval($scope.steps[i].content);
+            }
+          }
+        });
+          
+      }
+
       $scope.makeItAppear = function (paragraph) {
         
         console.log("Making appear")

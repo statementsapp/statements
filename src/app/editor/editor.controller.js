@@ -5588,9 +5588,10 @@
 
       $scope.makeItAppear = function (paragraph) {
         
-        console.log("Making appear")
+        
         setTimeout(function () {
           $scope.$apply(function () {
+            console.log("Making appear")
             paragraph.bottomMouseOver = true; 
             paragraph.topMouseOver = false
             $scope.inputs['bottom'+paragraph.paragraphId] = '|'

@@ -5558,7 +5558,7 @@
             paragraph.topMouseOver = true;
             $scope.inputs['top'+paragraph.paragraphId] = '|'
             if (document.getElementById('top'+paragraph.paragraphId)){
-              document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
+              // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
             }
             
           });
@@ -5597,7 +5597,7 @@
             $scope.inputs['bottom'+paragraph.paragraphId] = '|'
             if (document.getElementById(paragraph.paragraphId)){
               console.log("That innherthml")
-              document.getElementById(paragraph.paragraphId).innerHTML = '|'
+              // document.getElementById(paragraph.paragraphId).innerHTML = '|'
             }
             
           });

@@ -5592,7 +5592,7 @@
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Making appear")
-            paragraph.bottomMouseOver = true; 
+            
             paragraph.topMouseOver = false
             $scope.inputs['bottom'+paragraph.paragraphId] = '|'
             if (document.getElementById(paragraph.paragraphId)){
@@ -5611,6 +5611,7 @@
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
                 console.log('Top timer')
+                paragraph.bottomMouseOver = true; 
                 $scope.makeItAppear(paragraph);
               }
             }, 100);

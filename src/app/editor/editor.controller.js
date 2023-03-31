@@ -1611,6 +1611,7 @@
             $scope.topAdderId = IdFactory.next();
             $scope.hasTopFocus = paragraph.paragraphId;
             paragraph.topAdd = true;
+            document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
             focusFactory($scope.topAdderId);
           });
         }, 0);
@@ -1671,6 +1672,7 @@
             $scope.hasBottomFocus.id = paragraph.paragraphId;
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
+            document.getElementById(paragraph.paragraphId).innerHTML = '';
             focusFactory(paragraph.paragraphId);
           });
         }, 0);

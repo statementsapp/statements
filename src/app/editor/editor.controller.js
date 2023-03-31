@@ -5596,6 +5596,7 @@
             paragraph.topMouseOver = false
             $scope.inputs['bottom'+paragraph.paragraphId] = '|'
             if (document.getElementById(paragraph.paragraphId)){
+              console.log("That innherthml")
               document.getElementById(paragraph.paragraphId).innerHTML = '|'
             }
             

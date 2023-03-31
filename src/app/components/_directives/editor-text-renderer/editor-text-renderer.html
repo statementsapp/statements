@@ -122,7 +122,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     
     <span ng-if="diagnostics">{{paragraph.paragraphId}}</span>
 
-    <div delayed-ng-if="(paragraph.topAdd == true && hasTopFocus === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.topMouseOver && !draggingNode)"
+    <div delayed-ng-if="(paragraph.topAdd == true && hasTopFocus === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && (paragraph.topMouseOver && hasTopFocus === paragraph.paragraphId) && !draggingNode)"
          ng-mouseover = "paragraph.topMouseOver = true"
          ng-mouseleave = "paragraph.topMouseOver = false"
          ng-click="[topAddFunction(node, paragraph), $event.stopPropagation()]"

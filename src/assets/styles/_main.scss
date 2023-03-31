@@ -794,7 +794,7 @@ textarea {
 
 .leftinputactive {
   cursor: none !important;
-
+  padding-left: none;
 }
 
 
@@ -810,6 +810,7 @@ textarea {
 .left-text {
   // padding-left: 0.5px;
   padding-right: 4px;
+  padding-left: 4px;
   display: inline-block;
 }
 

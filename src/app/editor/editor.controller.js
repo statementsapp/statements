@@ -1612,7 +1612,7 @@
             $scope.hasTopFocus = paragraph.paragraphId;
             paragraph.topAdd = true;
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
-            focusFactory($scope.topAdderId);
+            focusFactory('top'+paragraph.paragraphId);
           });
         }, 0);
       };

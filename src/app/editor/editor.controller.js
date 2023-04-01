@@ -5725,6 +5725,7 @@
           console.log("About to top timeout cancel")
             $timeout.cancel($scope.timer);
             paragraph.topMouseOver = false
+            paragraph.topAdd = false;
       }
 
       $scope.thatRunFunction = function () {

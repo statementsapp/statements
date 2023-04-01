@@ -1612,6 +1612,7 @@
             $scope.hasTopFocus = paragraph.paragraphId;
             paragraph.topAdd = true;
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
+            $scope.inputs['top' + paragraph.paragraphId)] = '';
             focusFactory('top'+paragraph.paragraphId);
           });
         }, 0);
@@ -5530,7 +5531,7 @@
       $scope.clearPlaceholderTop = function (paragraph) {
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Clearing the placeholder")
+            console.log("Clearing the placeholder top")
             $scope.inputs['top'+paragraph.paragraphId] = '';
             if (document.getElementById('top' + paragraph.paragraphId)) {
               document.getElementById('top' + paragraph.paragraphId).innerHTML = ''
@@ -5547,6 +5548,7 @@
             console.log("Top add function")
             paragraph.topAdd = true;
             $scope.selectedNode = node;
+            $scope.inputs['top'+paragraph.paragraphId] = '';
           });
 
         }, 20);

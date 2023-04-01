@@ -5531,6 +5531,7 @@
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Clearing the placeholder")
+            $scope.inputs['top'+paragraph.paragraphId] = '';
             if (document.getElementById('top' + paragraph.paragraphId)) {
               document.getElementById('top' + paragraph.paragraphId).innerHTML = ''
             }

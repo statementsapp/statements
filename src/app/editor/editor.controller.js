@@ -5345,6 +5345,12 @@
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {
         console.log('clear top and bottom focus')
+
+        if ($scope.selectedParagraph.topAdd){
+          console.log("Clearing top add")
+          paragraph.topAdd = false;
+        }
+
         $scope.hasTopFocus = '';
         $scope.hasBottomFocus = {};
         $scope.hasTopNodeFocus = {};

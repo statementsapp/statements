@@ -3795,6 +3795,73 @@
         //   itsFound = false;
         // }
 
+        prep.scriptPayload = {
+          author: 'aaa',
+          text: 'This text you want.',
+          dialogueText: 'This text you want.',
+          type: 'negation',
+          code: prep.code,
+          topic: prep.topic,
+          dialogueSide: $scope.selectedProposition.dialogueSide ? $scope.selectedProposition.dialogueSide : undefined,
+          ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          of: (prep.of ? prep.of : undefined),
+          previousRemarks: prep.previousRemarks ? prep.previousRemarks: undefined,
+          blankId: IdFactory.next(),
+          textSide: $scope.selectedProposition.textSide ? $scope.selectedProposition.textSide : prep.textSide,
+          bookId: $scope.bookId,
+          nodeId: IdFactory.next(),
+          paragraphId: IdFactory.next(),
+          id: prep.id ? prep.id : IdFactory.next(),
+          remarkId: IdFactory.next(),
+          question: (prep.question ? prep.question : undefined),
+          dropflag: $scope.draggedProposition.id ? true : undefined,
+          draggedNode: $scope.draggedNode ? $scope.draggedNode : undefined,
+          draggedProps: ($scope.draggingNode || $scope.draggingParagraph || $scope.draggingProposition) ?
+            $scope.draggedProps : undefined,
+          beforeNodeId: prep.beforeNodeId ? prep.beforeNodeId : undefined,
+          afterNodeId: prep.afterNodeId ? prep.afterNodeId : undefined,
+          replacesNodeId: prep.replacesNodeId ? prep.replacesNodeId : undefined,
+          targetNodeId: prep.targetNodeId ? prep.targetNodeId : undefined,
+          beforeParagraphId: prep.beforeParagraphId ? prep.beforeParagraphId : undefined,
+          afterParagraphId: prep.savedParagraphId ? prep.savedParagraphId : prep.afterParagraphId ? prep.afterParagraphId : undefined,
+          targetParagraphId: prep.targetParagraphId ? prep.targetParagraphId : undefined,
+          beforePropositionId: prep.beforePropositionId ? prep.beforePropositionId : undefined,
+          afterPropositionId: prep.afterPropositionId ? prep.afterPropositionId : undefined,
+          beforeRemarkId: prep.beforeRemarkId ? prep.beforeRemarkId : undefined,
+          afterRemarkId: prep.afterRemarkId ? prep.afterRemarkId : undefined,
+          answeredQuestion: (prep.answeredQuestion ? prep.answeredQuestion : undefined),
+          isAntecedent: (prep.isAntecedent ? prep.isAntecedent : undefined),
+          isConsequent: (prep.isConsequent ? prep.isConsequent : undefined),
+          sectionLevel: (prep.sectionLevel ? prep.sectionLevel : undefined),
+          sectionNumber: (prep.sectionNumber ? prep.sectionNumber : undefined),
+          documentClaimedBy: (prep.documentClaimedBy ? prep.documentClaimedBy : undefined),
+          previousMessages: (prep.previousMessages ? prep.previousMessages : undefined),
+          messagesSoFar: (prep.messagesSoFar ? prep.messagesSoFar : undefined),
+          rejoins: prep.rejoins ? prep.rejoins : undefined
+          // class: (prep.newClass ? prep.newClass : prep.class),
+          // nodePath: (prep.nodePath ? prep.nodePath : undefined),
+          // oldNodePath: (prep.oldNodePath ? prep.oldNodePath : undefined),
+          // selectedParagraphId: $scope.selectedParagraph.paragraphId,
+          // address: prep.address,
+          // nodePath: (prep.nodePath ? prep.nodePath : undefined),
+          // getsOwnNode: (prep.getsOwnNode === true ? prep.getsOwnNode : undefined),
+          // getsOwnParagraph: (prep.getsOwnParagraph === true ? prep.getsOwnParagraph : undefined),
+          // newProp: (prep.newProp === true ? prep.newProp : undefined),
+          // insertsAbove: (prep.insertsAbove === true ? prep.insertsAbove : undefined),
+          // insertsBelow: (prep.insertsBelow === true ? prep.insertsBelow : undefined),
+          // insertsLeft: (prep.insertsLeft === true ? prep.insertsLeft : undefined),
+          // assertionPath: (prep.assertionPath ? prep.assertionPath : undefined),
+          // assertionId: (prep.assertionId ? prep.assertionId : undefined),
+          // remarkAddress: (prep.remarkAddress ? prep.remarkAddress : undefined),
+          // remarkPath: (prep.remarkPath ? prep.remarkPath : undefined),
+          // address: prep.address,
+          // paragraphPosition: prep.paragraphPosition,
+          // ofParagraphPosition: (prep.ofParagraphPosition !== undefined ? prep.ofParagraphPosition : undefined),
+          // isPlaceholder: (prep.isPlaceholder ? prep.isPlaceholder : undefined),
+          // propositionToSetLaterPosition: propositionToSetLaterPosition !== undefined ? propositionToSetLaterPosition : undefined,
+        };
+
         prep.payload = {
           author: $scope.userId,
           text: prep.adjustedText,
@@ -4089,7 +4156,10 @@
               console.log("That payload id: ", payload.id)
               console.log("The element: ", document.getElementById($scope.selectedProposition.id).innerHTML)
               $scope.inputs = {};
-              document.getElementById($scope.selectedProposition.id).innerHTML = '';
+              if ($scope.selectedProposition.id){
+                document.getElementById($scope.selectedProposition.id).innerHTML = '';
+              }
+              
             }
 
             if (payload.code === '1') {
@@ -5189,7 +5259,11 @@
             }
 
             if ($scope.userId === $scope.data[0].documentClaimedBy){
-              $scope.steps[$scope.step] = {};
+              $scope.steps[$scope.step].record = {
+                id: payload.id,
+                paragraphId: payload.paragraphId,
+                nodeId: payload.nodeId
+              };
             }
 
             console.log("Book right now: ", $scope.data[0].nodes[0])

@@ -5549,7 +5549,7 @@
             $scope.selectedNode = node;
             $scope.inputs['top'+paragraph.paragraphId] = '';
             if (document.getElementById('top'+paragraph.paragraphId)){
-              document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
+              document.getElementById('top'+paragraph.paragraphId).innerHTML = ''
             }
           });
 

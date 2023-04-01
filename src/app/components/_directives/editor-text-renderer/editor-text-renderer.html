@@ -154,7 +154,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
          ng-mouseover="startTopParagraphAdderTimer(paragraph)"
-         ng-mouseleave="[stopTopParagraphAdderTimer(paragraph), clearPlaceholderTop(paragraph)]"
+         ng-mouseleave="[stopTopParagraphAdderTimer(paragraph), inputs['top'+paragraph.paragraphId] !== '' ? clearPlaceholderTop(paragraph) : inputs.nothing]"
          ng-if="hasTopFocus !== paragraph.paragraphId && !paragraph.theBlankParagraph && paragraph.first"
          ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : [
                     topAddFunction(paragraph),

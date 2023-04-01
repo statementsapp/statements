@@ -5188,6 +5188,10 @@
               $scope.saveThisForASec = angular.copy($scope.inputs[payload.id])
             }
 
+            if ($scope.userId === $scope.data[0].documentClaimedBy){
+              $scope.steps[$scope.step] = {};
+            }
+
             console.log("Book right now: ", $scope.data[0].nodes[0])
             console.log("Profile right now: ", $scope.profile)
 
@@ -6401,6 +6405,7 @@
       });
 
       document.getElementById('wholedamneditor').style.backgroundColor = '#0C2340';
+      document.getElementById('wholedamneditor').style.height = '100vh';
       $scope.openLibraryModal();
     } else if (!$rootScope.guest){
       console.log("LAST ELSE")

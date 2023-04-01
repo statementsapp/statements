@@ -1608,7 +1608,6 @@
           $scope.$apply(function () {
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
-            $scope.topAdderId = IdFactory.next();
             $scope.hasTopFocus = paragraph.paragraphId;
             paragraph.topAdd = true;
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
@@ -5549,6 +5548,9 @@
             paragraph.topAdd = true;
             $scope.selectedNode = node;
             $scope.inputs['top'+paragraph.paragraphId] = '';
+            if (document.getElementById('top'+paragraph.paragraphId)){
+              document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
+            }
           });
 
         }, 20);

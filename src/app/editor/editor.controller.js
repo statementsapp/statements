@@ -2249,7 +2249,7 @@
 
             setTimeout(function () {
               $scope.$apply(function () {
-
+                console.log("Getting drag element: ", document.getElementById('dragelement'))
                 document.getElementById('dragelement').style.left = ((parseInt(e.pageX) * 1.33) + 10).toString() + 'px';
                 document.getElementById('dragelement').style.top = (parseInt(e.pageY) * 1.33).toString() + 'px';
 

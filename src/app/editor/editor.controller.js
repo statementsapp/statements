@@ -5574,7 +5574,7 @@
             
           });
 
-        }, 600);
+        }, 300);
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 

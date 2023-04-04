@@ -3795,72 +3795,7 @@
         //   itsFound = false;
         // }
 
-        prep.scriptPayload = {
-          author: 'aaa',
-          text: 'This text you want.',
-          dialogueText: 'This text you want.',
-          type: 'negation',
-          code: prep.code,
-          topic: prep.topic,
-          dialogueSide: $scope.selectedProposition.dialogueSide ? $scope.selectedProposition.dialogueSide : undefined,
-          ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          of: (prep.of ? prep.of : undefined),
-          previousRemarks: prep.previousRemarks ? prep.previousRemarks: undefined,
-          blankId: IdFactory.next(),
-          textSide: $scope.selectedProposition.textSide ? $scope.selectedProposition.textSide : prep.textSide,
-          bookId: $scope.bookId,
-          nodeId: IdFactory.next(),
-          paragraphId: IdFactory.next(),
-          id: prep.id ? prep.id : IdFactory.next(),
-          remarkId: IdFactory.next(),
-          question: (prep.question ? prep.question : undefined),
-          dropflag: $scope.draggedProposition.id ? true : undefined,
-          draggedNode: $scope.draggedNode ? $scope.draggedNode : undefined,
-          draggedProps: ($scope.draggingNode || $scope.draggingParagraph || $scope.draggingProposition) ?
-            $scope.draggedProps : undefined,
-          beforeNodeId: prep.beforeNodeId ? prep.beforeNodeId : undefined,
-          afterNodeId: prep.afterNodeId ? prep.afterNodeId : undefined,
-          replacesNodeId: prep.replacesNodeId ? prep.replacesNodeId : undefined,
-          targetNodeId: prep.targetNodeId ? prep.targetNodeId : undefined,
-          beforeParagraphId: prep.beforeParagraphId ? prep.beforeParagraphId : undefined,
-          afterParagraphId: prep.savedParagraphId ? prep.savedParagraphId : prep.afterParagraphId ? prep.afterParagraphId : undefined,
-          targetParagraphId: prep.targetParagraphId ? prep.targetParagraphId : undefined,
-          beforePropositionId: prep.beforePropositionId ? prep.beforePropositionId : undefined,
-          afterPropositionId: prep.afterPropositionId ? prep.afterPropositionId : undefined,
-          beforeRemarkId: prep.beforeRemarkId ? prep.beforeRemarkId : undefined,
-          afterRemarkId: prep.afterRemarkId ? prep.afterRemarkId : undefined,
-          answeredQuestion: (prep.answeredQuestion ? prep.answeredQuestion : undefined),
-          isAntecedent: (prep.isAntecedent ? prep.isAntecedent : undefined),
-          isConsequent: (prep.isConsequent ? prep.isConsequent : undefined),
-          sectionLevel: (prep.sectionLevel ? prep.sectionLevel : undefined),
-          sectionNumber: (prep.sectionNumber ? prep.sectionNumber : undefined),
-          documentClaimedBy: (prep.documentClaimedBy ? prep.documentClaimedBy : undefined),
-          previousMessages: (prep.previousMessages ? prep.previousMessages : undefined),
-          messagesSoFar: (prep.messagesSoFar ? prep.messagesSoFar : undefined),
-          rejoins: prep.rejoins ? prep.rejoins : undefined
-          // class: (prep.newClass ? prep.newClass : prep.class),
-          // nodePath: (prep.nodePath ? prep.nodePath : undefined),
-          // oldNodePath: (prep.oldNodePath ? prep.oldNodePath : undefined),
-          // selectedParagraphId: $scope.selectedParagraph.paragraphId,
-          // address: prep.address,
-          // nodePath: (prep.nodePath ? prep.nodePath : undefined),
-          // getsOwnNode: (prep.getsOwnNode === true ? prep.getsOwnNode : undefined),
-          // getsOwnParagraph: (prep.getsOwnParagraph === true ? prep.getsOwnParagraph : undefined),
-          // newProp: (prep.newProp === true ? prep.newProp : undefined),
-          // insertsAbove: (prep.insertsAbove === true ? prep.insertsAbove : undefined),
-          // insertsBelow: (prep.insertsBelow === true ? prep.insertsBelow : undefined),
-          // insertsLeft: (prep.insertsLeft === true ? prep.insertsLeft : undefined),
-          // assertionPath: (prep.assertionPath ? prep.assertionPath : undefined),
-          // assertionId: (prep.assertionId ? prep.assertionId : undefined),
-          // remarkAddress: (prep.remarkAddress ? prep.remarkAddress : undefined),
-          // remarkPath: (prep.remarkPath ? prep.remarkPath : undefined),
-          // address: prep.address,
-          // paragraphPosition: prep.paragraphPosition,
-          // ofParagraphPosition: (prep.ofParagraphPosition !== undefined ? prep.ofParagraphPosition : undefined),
-          // isPlaceholder: (prep.isPlaceholder ? prep.isPlaceholder : undefined),
-          // propositionToSetLaterPosition: propositionToSetLaterPosition !== undefined ? propositionToSetLaterPosition : undefined,
-        };
+        
 
         prep.payload = {
           author: $scope.userId,
@@ -5257,13 +5192,7 @@
               $scope.saveThisForASec = angular.copy($scope.inputs[payload.id])
             }
 
-            if ($scope.userId === $scope.data[0].documentClaimedBy){
-              $scope.steps[$scope.step].record = {
-                id: payload.id,
-                paragraphId: payload.paragraphId,
-                nodeId: payload.nodeId
-              };
-            }
+            
 
             console.log("Book right now: ", $scope.data[0].nodes[0])
             console.log("Profile right now: ", $scope.profile)
@@ -5585,6 +5514,112 @@
         apply = {};
       };
 
+
+
+
+      $scope.setup = function () {
+        $scope.step = 0;
+        $scope.steps = [
+            {},
+            { 
+              author: 'aaa',
+              text: 'This text you want.',
+              dialogueText: 'This text you want.',
+              type: 'negation',
+              code: '2A',
+              topic: $scope.steps[$scope.step-1].topic,
+              dialogueSide: true,
+              ofNodeId: $scope.steps[$scope.step-1].nodeId,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              ofParagraphId: $scope.steps[$scope.step-1].paragraphId,
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+              of: {
+                    type: $scope.steps[$scope.step-1].type,
+                    author: $scope.steps[$scope.step-1].author,
+                    id: $scope.steps[$scope.step-1].id,
+                    text: $scope.steps[$scope.step-1].text
+                  },
+              blankId: IdFactory.next(),
+              textSide: false,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              id: prep.id ? prep.id : IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              targetNodeId: $scope.steps[$scope.step-1].nodeId,
+              targetParagraphId: $scope.steps[$scope.step-1].paragraphId,
+              afterPropositionId: $scope.steps[$scope.step-1].id,
+              sectionLevel: $scope.steps[$scope.step-1].sectionLevel,
+              sectionNumber: $scope.steps[$scope.step-1].sectionNumber,
+              documentClaimedBy: $scope.data[0].documentClaimedBy,
+              delay: 5,
+            },
+        ];
+
+        if ($scope.userId === $scope.data[0].documentClaimedBy){
+          $scope.steps[$scope.step] = prep.payload;
+        }
+
+        $scope.step++;
+
+
+
+
+
+
+        prep.scriptPayload = {
+          author: 'aaa',
+          text: 'This text you want.',
+          dialogueText: 'This text you want.',
+          type: 'negation',
+          code: '2A',
+          topic: $scope.steps[$scope.step-1].topic,
+          dialogueSide: true,
+          ofNodeId: $scope.steps[$scope.step-1].nodeId,
+          // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          ofParagraphId: $scope.steps[$scope.step-1].paragraphId,
+          // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          // of: (prep.of ? prep.of : undefined),
+          of: {
+                type: $scope.steps[$scope.step-1].type,
+                author: $scope.steps[$scope.step-1].author,
+                id: $scope.steps[$scope.step-1].id,
+                text: $scope.steps[$scope.step-1].text
+              },
+          blankId: IdFactory.next(),
+          textSide: false,
+          bookId: $scope.bookId,
+          nodeId: IdFactory.next(),
+          paragraphId: IdFactory.next(),
+          id: prep.id ? prep.id : IdFactory.next(),
+          remarkId: IdFactory.next(),
+          dropflag: false,
+          targetNodeId: $scope.steps[$scope.step-1].nodeId,
+          targetParagraphId: $scope.steps[$scope.step-1].paragraphId,
+          afterPropositionId: $scope.steps[$scope.step-1].id,
+          sectionLevel: $scope.steps[$scope.step-1].sectionLevel,
+          sectionNumber: $scope.steps[$scope.step-1].sectionNumber,
+          documentClaimedBy: $scope.data[0].documentClaimedBy
+        };
+
+
+        
+            
+        $scope.$watch('step', function(newVal, oldVal) {
+          for (var i = 0; i < $scope.steps.length; i++) {
+            if (newVal >= i) {
+              $scope.$eval($scope.steps[i].content);
+            }
+          }
+        });
+          
+      }
+
+
+
+
       $scope.toggleDiagnostics = function () {
         if ($scope.diagnostics){
           $scope.diagnostics = false;
@@ -5657,24 +5692,17 @@
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 
-      $scope.setup = function () {
-        $scope.step = 0;
-        $scope.steps = [
-            { content: 'console.log("Step 0 executed.")' },
-            { content: 'console.log("Step 1 executed.")' },
-            { content: 'console.log("Step 2 executed.")' },
-            // ...
-        ];
-            
-        $scope.$watch('step', function(newVal, oldVal) {
-          for (var i = 0; i < $scope.steps.length; i++) {
-            if (newVal >= i) {
-              $scope.$eval($scope.steps[i].content);
-            }
-          }
-        });
-          
-      }
+
+
+
+
+
+      
+
+
+
+
+
 
       $scope.makeItAppear = function (paragraph) {
         

@@ -5516,13 +5516,14 @@
 
 
       $scope.runScriptStep = function (step){
-        
+        console.log("Running script step: ", $scope.step)
         setTimeout(function () {
           chatSocket.emit('proposition', step.author, null, $scope.bookId);
         }, step.delay);
       }
 
       $scope.setup = function () {
+        console.log("Setting up")
         $scope.step = 0;
         $scope.steps = [
             {},
@@ -5566,12 +5567,14 @@
         
 
         if ($scope.userId === $scope.data[0].documentClaimedBy){
+          console.log("Outgoing prop saving")
           $scope.steps[$scope.step] = prep.payload;
         }
 
         $scope.step++;
 
         if ($scope.steps[$scope.step]){
+          console.log("About to run a step")
           $scope.runScriptStep($scope.steps[$scope.step])
         }
 

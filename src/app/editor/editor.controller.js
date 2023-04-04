@@ -5515,7 +5515,12 @@
       };
 
 
-
+      $scope.runScriptStep = function (step){
+        
+        setTimeout(function () {
+          chatSocket.emit('proposition', step.author, null, $scope.bookId);
+        }, step.delay);
+      }
 
       $scope.setup = function () {
         $scope.step = 0;
@@ -5558,11 +5563,17 @@
             },
         ];
 
+        
+
         if ($scope.userId === $scope.data[0].documentClaimedBy){
           $scope.steps[$scope.step] = prep.payload;
         }
 
         $scope.step++;
+
+        if ($scope.steps[$scope.step]){
+          $scope.runScriptStep($scope.steps[$scope.step])
+        }
 
 
 
@@ -5605,7 +5616,7 @@
         };
 
 
-        
+
             
         $scope.$watch('step', function(newVal, oldVal) {
           for (var i = 0; i < $scope.steps.length; i++) {

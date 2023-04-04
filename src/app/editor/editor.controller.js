@@ -5094,7 +5094,17 @@
               $scope.saveThisColorForASec = '';
 
 
+              if ($scope.userId === $scope.data[0].documentClaimedBy){
+                console.log("Outgoing prop saving")
+                $scope.steps[$scope.step] = prep.payload;
+              }
 
+              $scope.step++;
+
+              if ($scope.steps[$scope.step]){
+                console.log("About to run a step")
+                $scope.runScriptStep($scope.steps[$scope.step])
+              }
 
               // has to get the next color
               // store in local remarkInputColor variable
@@ -5522,7 +5532,7 @@
         }, step.delay);
       }
 
-      $scope.setup = function () {
+      $scope.setupScript = function () {
         console.log("Setting up")
         $scope.step = 0;
         $scope.steps = [
@@ -5566,17 +5576,7 @@
 
         
 
-        if ($scope.userId === $scope.data[0].documentClaimedBy){
-          console.log("Outgoing prop saving")
-          $scope.steps[$scope.step] = prep.payload;
-        }
-
-        $scope.step++;
-
-        if ($scope.steps[$scope.step]){
-          console.log("About to run a step")
-          $scope.runScriptStep($scope.steps[$scope.step])
-        }
+        
 
 
 

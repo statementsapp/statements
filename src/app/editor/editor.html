@@ -141,7 +141,7 @@
   <div class="row"
        id="firstrow"
        ng-class="{titled: title}"
-       ng-click="[clearDragDetector(), draggingNode || draggingParagraph || draggingProposition ? clearDrag() : inputs.nothing]"
+       ng-click="[clearDragDetector(), didItRun(), draggingNode || draggingParagraph || draggingProposition ? clearDrag() : inputs.nothing]"
        ng-mousemove="assessDragScrollUpper()"
        style="line-height: normal;">
 

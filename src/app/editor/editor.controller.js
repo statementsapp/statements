@@ -5626,7 +5626,7 @@
             };
 
             automatedPayload = Object.assign({}, automatedPayload, preDeterminedValues);
-
+            console.log("Automated payload: ", automatedPayload)
               return automatedPayload;
         }
 

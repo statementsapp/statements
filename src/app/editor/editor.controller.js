@@ -4020,7 +4020,13 @@
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 
-        
+        // SCRIPT STEP
+        $scope.userActions.push(payload);
+
+        // Check if it's time to simulate the second user's action
+        if (isPredefinedPoint($scope.userActions.length)) {
+          $scope.simulateSecondUser(prep.id);
+        }
         
 
       };
@@ -5094,20 +5100,13 @@
               $scope.saveThisColorForASec = '';
 
 
-              if ($scope.userId === $scope.data[0].documentClaimedBy){
-                console.log("Outgoing prop saving")
-                $scope.steps[$scope.step] = prep.payload;
-              }
 
-              $scope.step++;
 
-              if ($scope.steps[$scope.step]){
-                console.log("About to run a step")
-                $scope.runScriptStep($scope.steps[$scope.step])
-              }
 
-              // has to get the next color
-              // store in local remarkInputColor variable
+              
+
+
+
 
 
 
@@ -5526,15 +5525,109 @@
 
 
       $scope.runScriptStep = function (step){
-        console.log("Running script step: ", $scope.step)
-        setTimeout(function () {
-          chatSocket.emit('proposition', step.author, null, $scope.bookId);
-        }, step.delay);
+        // console.log("Running script step: ", $scope.step)
+        // setTimeout(function () {
+        //   chatSocket.emit('proposition', step.author, null, $scope.bookId);
+        // }, step.delay);
       }
 
       $scope.setupScript = function () {
         console.log("Setting up")
-        $scope.step = 0;
+        
+        $scope.userActions = []; // Store the sequence of user actions and their payloads
+        $scope.preDefinedPoints = [
+          { index: 1, 
+            payloadData: {
+              author: 'aaa',
+              text: 'This text you want.',
+              dialogueText: 'This text you want.',
+              type: 'negation',
+              code: '2A',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              blankId: IdFactory.next(),
+              textSide: false,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              delay: 5,
+            } 
+          },
+          // Add more pre-defined points with their respective pre-determined values
+        ];
+
+
+
+        // Function to simulate the second user's action
+        $scope.simulateSecondUser = function(prepId) {
+          if ($scope.userActions.length > 0) {
+            const previousPayload = $scope.userActions.pop();
+
+            // Create the automated payload with scripted features
+            let automatedPayload = createAutomatedPayload(previousPayload, prepId);
+
+            // Send the automated payload out
+            sendAutomatedPayload(automatedPayload);
+          }
+        };
+
+        // Function to check if it's time to simulate the second user's action
+        function isPredefinedPoint(currentIndex) {
+          return $scope.preDefinedPoints.some(point => point.index === currentIndex);
+        }
+
+        // Function to create the automated payload based on the previous payload
+        function createAutomatedPayload(previousPayload, prepId) {
+          // Find the pre-determined values for the current pre-defined point
+            const preDeterminedValues = $scope.preDefinedPoints.find(point => point.index === $scope.userActions.length + 1).payloadData;
+
+            // Extract the required information from the previous payload
+            const topic = previousPayload.topic;
+            const ofNodeId = previousPayload.ofNodeId;
+            const ofParagraphId = previousPayload.ofParagraphId;
+            const of = {
+              type: previousPayload.type,
+              author: previousPayload.author,
+              id: previousPayload.id,
+              text: previousPayload.text
+            };;
+            const id = prepId ? prepId : IdFactory.next();
+            const targetNodeId = previousPayload.targetNodeId;
+            const targetParagraphId = previousPayload.targetParagraphId;
+            const afterPropositionId = previousPayload.afterPropositionId;
+            const sectionLevel = previousPayload.sectionLevel;
+            const sectionNumber = previousPayload.sectionNumber;
+            const documentClaimedBy = previousPayload.documentClaimedBy;
+            // Add any other information you need from the previous payload
+
+            // Create the automated payload with scripted features and populate it with the information from the previous payload and pre-determined values
+            let automatedPayload = {
+              id: previousId, // Use the id from the previous payload
+              // Add any other information you need from the previous payload
+              ...preDeterminedValues, // Merge the pre-determined values into the automated payload
+            };
+
+            return automatedPayload;
+        }
+
+        // Function to send the automated payload out
+        function sendAutomatedPayload(automatedPayload) {
+          console.log('Sending automated payload')
+          setTimeout(function () {
+            chatSocket.emit('proposition', automatedPayload.author, null, $scope.bookId);
+          }, automatedPayload.delay);
+        }
+
+
+
+
+
+
         $scope.steps = [
             {},
             { 
@@ -5543,7 +5636,7 @@
               dialogueText: 'This text you want.',
               type: 'negation',
               code: '2A',
-              topic: $scope.steps[0].topic,
+              topic: $scope.getLastFacts('topic'),
               dialogueSide: true,
               ofNodeId: $scope.steps[0].nodeId,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
@@ -5573,6 +5666,43 @@
               delay: 5,
             },
         ];
+        $scope.lines = [
+          { 
+            author: 'aaa',
+            text: 'This text you want.',
+            dialogueText: 'This text you want.',
+            type: 'negation',
+            code: '2A',
+            topic: $scope.steps[0].topic,
+            dialogueSide: true,
+            ofNodeId: $scope.steps[0].nodeId,
+            // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+            ofParagraphId: $scope.steps[0].paragraphId,
+            // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+            // of: (prep.of ? prep.of : undefined),
+            of: {
+                  type: $scope.steps[0].type,
+                  author: $scope.steps[0].author,
+                  id: $scope.steps[0].id,
+                  text: $scope.steps[0].text
+                },
+            blankId: IdFactory.next(),
+            textSide: false,
+            bookId: $scope.bookId,
+            nodeId: IdFactory.next(),
+            paragraphId: IdFactory.next(),
+            id: prep.id ? prep.id : IdFactory.next(),
+            remarkId: IdFactory.next(),
+            dropflag: false,
+            targetNodeId: $scope.steps[0].nodeId,
+            targetParagraphId: $scope.steps[0].paragraphId,
+            afterPropositionId: $scope.steps[0].id,
+            sectionLevel: $scope.steps[0].sectionLevel,
+            sectionNumber: $scope.steps[0].sectionNumber,
+            documentClaimedBy: $scope.data[0].documentClaimedBy,
+            delay: 5,
+          }
+          ]
 
         
 

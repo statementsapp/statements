@@ -1395,8 +1395,8 @@
       };
 
       $scope.assignRightFocus = function (id) {
-        console.log("Assign right focus")
         $scope.hasRightFocus.id = id;
+        console.log("Assign right focus element: ", document.getElementById(id))
         document.getElementById(id).click();
       };
 

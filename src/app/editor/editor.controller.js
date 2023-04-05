@@ -5570,6 +5570,7 @@
         // Function to simulate the second user's action
         $scope.simulateSecondUser = function(prepId) {
           if ($scope.userActions.length > 0) {
+            console.log("User actions: ", $scope.userActions)
             const previousPayload = $scope.userActions.pop();
 
             // Create the automated payload with scripted features

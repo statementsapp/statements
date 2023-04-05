@@ -1397,7 +1397,7 @@
       $scope.assignRightFocus = function (id) {
         console.log("Assign right focus")
         $scope.hasRightFocus.id = id;
-        focusFactory(id)
+        document.getElementById(id).click();
       };
 
       // Selects left editable span

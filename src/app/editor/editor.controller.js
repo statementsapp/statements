@@ -5607,8 +5607,18 @@
 
             // Create the automated payload with scripted features and populate it with the information from the previous payload and pre-determined values
             let automatedPayload = {
-              id: previousId, // Use the id from the previous payload
-              // Add any other information you need from the previous payload
+              topic: topic, // Use the id from the previous payload
+              ofNodeId: ofNodeId, // Use the id from the previous payload
+              ofParagraphId: ofParagraphId, // Use the id from the previous payload
+              of: of, // Use the id from the previous payload
+              id: id, // Use the id from the previous payload
+              targetNodeId: targetNodeId, // Use the id from the previous payload
+              targetParagraphId: targetParagraphId, // Use the id from the previous payload
+              afterPropositionId: afterPropositionId, // Use the id from the previous payload
+              sectionLevel: sectionLevel, // Use the id from the previous payload
+              sectionNumber: sectionNumber, // Use the id from the previous payload
+              documentClaimedBy: documentClaimedBy, // Use the id from the previous payload
+
               ...preDeterminedValues, // Merge the pre-determined values into the automated payload
             };
 

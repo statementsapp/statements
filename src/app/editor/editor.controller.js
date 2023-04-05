@@ -6024,6 +6024,7 @@
                         console.log("Element: ", document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
                         setTimeout(function () {
+                          console.log("Upper timeout")
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
                         // });
@@ -6031,6 +6032,7 @@
                         }, 20);
                       } else {
                         setTimeout(function () {
+                          console.log("That lower timeout")
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
                         // });

@@ -1394,10 +1394,10 @@
 
       };
 
-      $scope.assignRightFocus = function (proposition) {
+      $scope.assignRightFocus = function (id) {
         console.log("Assign right focus")
-        $scope.hasRightFocus.id = proposition.id;
-        focusFactory(proposition.id)
+        $scope.hasRightFocus.id = id;
+        focusFactory(id)
       };
 
       // Selects left editable span

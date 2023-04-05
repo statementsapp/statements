@@ -5724,51 +5724,51 @@
 
 
 
-        prep.scriptPayload = {
-          author: 'aaa',
-          text: 'This text you want.',
-          dialogueText: 'This text you want.',
-          type: 'negation',
-          code: '2A',
-          topic: $scope.steps[$scope.step-1].topic,
-          dialogueSide: true,
-          ofNodeId: $scope.steps[$scope.step-1].nodeId,
-          // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          ofParagraphId: $scope.steps[$scope.step-1].paragraphId,
-          // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          // of: (prep.of ? prep.of : undefined),
-          of: {
-                type: $scope.steps[$scope.step-1].type,
-                author: $scope.steps[$scope.step-1].author,
-                id: $scope.steps[$scope.step-1].id,
-                text: $scope.steps[$scope.step-1].text
-              },
-          blankId: IdFactory.next(),
-          textSide: false,
-          bookId: $scope.bookId,
-          nodeId: IdFactory.next(),
-          paragraphId: IdFactory.next(),
-          id: prep.id ? prep.id : IdFactory.next(),
-          remarkId: IdFactory.next(),
-          dropflag: false,
-          targetNodeId: $scope.steps[$scope.step-1].nodeId,
-          targetParagraphId: $scope.steps[$scope.step-1].paragraphId,
-          afterPropositionId: $scope.steps[$scope.step-1].id,
-          sectionLevel: $scope.steps[$scope.step-1].sectionLevel,
-          sectionNumber: $scope.steps[$scope.step-1].sectionNumber,
-          documentClaimedBy: $scope.data[0].documentClaimedBy
-        };
+        // prep.scriptPayload = {
+        //   author: 'aaa',
+        //   text: 'This text you want.',
+        //   dialogueText: 'This text you want.',
+        //   type: 'negation',
+        //   code: '2A',
+        //   topic: $scope.steps[$scope.step-1].topic,
+        //   dialogueSide: true,
+        //   ofNodeId: $scope.steps[$scope.step-1].nodeId,
+        //   // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+        //   ofParagraphId: $scope.steps[$scope.step-1].paragraphId,
+        //   // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+        //   // of: (prep.of ? prep.of : undefined),
+        //   of: {
+        //         type: $scope.steps[$scope.step-1].type,
+        //         author: $scope.steps[$scope.step-1].author,
+        //         id: $scope.steps[$scope.step-1].id,
+        //         text: $scope.steps[$scope.step-1].text
+        //       },
+        //   blankId: IdFactory.next(),
+        //   textSide: false,
+        //   bookId: $scope.bookId,
+        //   nodeId: IdFactory.next(),
+        //   paragraphId: IdFactory.next(),
+        //   id: prep.id ? prep.id : IdFactory.next(),
+        //   remarkId: IdFactory.next(),
+        //   dropflag: false,
+        //   targetNodeId: $scope.steps[$scope.step-1].nodeId,
+        //   targetParagraphId: $scope.steps[$scope.step-1].paragraphId,
+        //   afterPropositionId: $scope.steps[$scope.step-1].id,
+        //   sectionLevel: $scope.steps[$scope.step-1].sectionLevel,
+        //   sectionNumber: $scope.steps[$scope.step-1].sectionNumber,
+        //   documentClaimedBy: $scope.data[0].documentClaimedBy
+        // };
 
 
 
             
-        $scope.$watch('step', function(newVal, oldVal) {
-          for (var i = 0; i < $scope.steps.length; i++) {
-            if (newVal >= i) {
-              $scope.$eval($scope.steps[i].content);
-            }
-          }
-        });
+        // $scope.$watch('step', function(newVal, oldVal) {
+        //   for (var i = 0; i < $scope.steps.length; i++) {
+        //     if (newVal >= i) {
+        //       $scope.$eval($scope.steps[i].content);
+        //     }
+        //   }
+        // });
           
       }
 

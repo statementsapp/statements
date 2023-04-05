@@ -3963,6 +3963,16 @@
           chatSocket.emit('proposition', $scope.userId, prep.remarkPayload, $scope.bookId);
         }
 
+        function isPredefinedPoint(currentIndex) {
+          return $scope.preDefinedPoints.some(point => point.index === currentIndex);
+        }
+        // SCRIPT STEP
+        $scope.userActions.push(prep.payload);
+
+        // Check if it's time to simulate the second user's action
+        if (isPredefinedPoint($scope.userActions.length)) {
+          $scope.simulateSecondUser(prep.id);
+        }
 
         prep = {};
 
@@ -4021,16 +4031,7 @@
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 
-        function isPredefinedPoint(currentIndex) {
-          return $scope.preDefinedPoints.some(point => point.index === currentIndex);
-        }
-        // SCRIPT STEP
-        $scope.userActions.push(prep.payload);
-
-        // Check if it's time to simulate the second user's action
-        if (isPredefinedPoint($scope.userActions.length)) {
-          $scope.simulateSecondUser(prep.id);
-        }
+        
         
 
       };

@@ -5560,7 +5560,7 @@
               paragraphId: IdFactory.next(),
               remarkId: IdFactory.next(),
               dropflag: false,
-              delay: 5,
+              delay: 3000,
             } 
           },
           // Add more pre-defined points with their respective pre-determined values

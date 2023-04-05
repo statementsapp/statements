@@ -4021,7 +4021,7 @@
         }
 
         // SCRIPT STEP
-        $scope.userActions.push(payload);
+        $scope.userActions.push(prep.payload);
 
         // Check if it's time to simulate the second user's action
         if (isPredefinedPoint($scope.userActions.length)) {

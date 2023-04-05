@@ -5618,11 +5618,11 @@
               sectionLevel: sectionLevel, // Use the id from the previous payload
               sectionNumber: sectionNumber, // Use the id from the previous payload
               documentClaimedBy: documentClaimedBy, // Use the id from the previous payload
-
-              ...preDeterminedValues, // Merge the pre-determined values into the automated payload
             };
 
-            return automatedPayload;
+            automatedPayload = Object.assign({}, automatedPayload, preDeterminedValues);
+
+              return automatedPayload;
         }
 
         // Function to send the automated payload out

@@ -568,15 +568,15 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                            'authorprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy === userId))}"
                 ng-click="[assignRightFocus(remark), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"
                 ng-mouseover="paragraph.disableRightCursor = false"
-                ng-model="inputs.proposition"
+                ng-model="inputs.remarkProposition"
                 ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing"
                 ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId ? remarkInputString : '3px solid white'}"
                 ng-keyup="
 
-                    $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ hideZeeky(), prepProposition(inputs.proposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
+                    $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? [ hideZeeky(), prepProposition(inputs.remarkProposition, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
                     $event.keyCode === 13 && data[0].documentClaimedBy === userId && selectedProposition.dialogueSide != true && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
-                    $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition == '' && remark.author === userId ? resetFromEnter() : inputs.nothing;
-                    (($event.keyCode === 8 && mark.id === remark.id && mark.marked === true && selectedProposition.author === userId) || ($event.keyCode === 8 && inputs.proposition === '' && selectedProposition.type === 'blank') || ($event.keyCode === 8 && inputs.proposition === '' && selectedProposition.type === 'negation' && selectedProposition.of.author === userId && highlight.id === remark.id && highlight.highlit === true)) ? deleteProposition(node, paragraph, proposition, remark, 'remark') : inputs.nothing;
+                    $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.remarkProposition == '' && remark.author === userId ? resetFromEnter() : inputs.nothing;
+                    (($event.keyCode === 8 && mark.id === remark.id && mark.marked === true && selectedProposition.author === userId) || ($event.keyCode === 8 && inputs.remarkProposition === '' && selectedProposition.type === 'blank') || ($event.keyCode === 8 && inputs.remarkProposition === '' && selectedProposition.type === 'negation' && selectedProposition.of.author === userId && highlight.id === remark.id && highlight.highlit === true)) ? deleteProposition(node, paragraph, proposition, remark, 'remark') : inputs.nothing;
                     (inputs.proposition === '' && $event.keyCode === 8 && proposition.type !== 'blank' && !highlight.id) ? highlightProposition(node, paragraph, remark) : inputs.nothing;"
                 spellcheck="false"
                 contenteditable="true"
@@ -588,7 +588,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
               <!-- Need focus variables for left and right -->
 
-              <span class="cursor"
+<!--               <span class="cursor"
                     ng-class="{'visible-cursor': ((remark.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== remark.id)),
                                'invisible-cursor': !remark.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === remark.id}"
 
@@ -597,7 +597,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                     event-focus-id="{{remark.id}}"
                     ng-if="proposition.remarksExpanded">
 
-              </span>
+              </span> -->
                         <span id="zeekynegation" class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5)">press
                           <span>{{enter}}</span> to commit/send
                         </span>

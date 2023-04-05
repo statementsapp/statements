@@ -1943,6 +1943,7 @@
                       }
                       $scope.editing = '';
                       $scope.editingCopy = '';
+                      $scope.inputs = {};
                       break;
                   //   });
                   // }, 5);

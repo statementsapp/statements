@@ -5634,7 +5634,7 @@
         function sendAutomatedPayload(automatedPayload) {
           console.log('Sending automated payload')
           setTimeout(function () {
-            chatSocket.emit('proposition', automatedPayload.author, null, $scope.bookId);
+            chatSocket.emit('proposition', automatedPayload.author, automatedPayload, $scope.bookId);
           }, automatedPayload.delay);
         }
 

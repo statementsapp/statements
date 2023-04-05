@@ -4021,6 +4021,9 @@
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 
+        function isPredefinedPoint(currentIndex) {
+          return $scope.preDefinedPoints.some(point => point.index === currentIndex);
+        }
         // SCRIPT STEP
         $scope.userActions.push(prep.payload);
 
@@ -5578,9 +5581,7 @@
         };
 
         // Function to check if it's time to simulate the second user's action
-        function isPredefinedPoint(currentIndex) {
-          return $scope.preDefinedPoints.some(point => point.index === currentIndex);
-        }
+        
 
         // Function to create the automated payload based on the previous payload
         function createAutomatedPayload(previousPayload, prepId) {

@@ -5595,7 +5595,7 @@
               author: previousPayload.author,
               id: previousPayload.id,
               text: previousPayload.text
-            };;
+            };
             const id = prepId ? prepId : IdFactory.next();
             const targetNodeId = previousPayload.targetNodeId;
             const targetParagraphId = previousPayload.targetParagraphId;

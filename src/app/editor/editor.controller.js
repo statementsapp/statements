@@ -1745,6 +1745,7 @@
 
       // Selects proposition (propositions are often selected without this function)
       $scope.selectProposition = function (proposition) {
+        console.log("PROPOSITION: ", proposition)
         if ($scope.selectedProposition) {
           if ($scope.selectedProposition.id !== proposition.id) {
             console.log("IF")
@@ -1765,6 +1766,7 @@
           $scope.selectedProposition = proposition;
           $scope.hasRightFocus.id = proposition.id;
           focusFactory($scope.selectedProposition.id);
+          console.log("Selected: ", $scope.selectedProposition.id)
         }
         $scope.highlight.id = '';
         $scope.highlight.highlit = null;

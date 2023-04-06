@@ -6032,7 +6032,8 @@
                         console.log("Element: ", document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
                         setTimeout(function () {
-                          console.log("Upper timeout")
+                          console.log("Upper timeout element: ", document.getElementById(
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
                           document.getElementById(
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
                         // });

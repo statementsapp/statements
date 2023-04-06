@@ -1395,9 +1395,9 @@
       };
 
       $scope.assignRightFocus = function (id) {
-        $scope.hasRightFocus.id = id;
-        console.log("Assign right focus element: ", document.getElementById(id))
-        document.getElementById(id).click();
+        // $scope.hasRightFocus.id = id;
+        // console.log("Assign right focus element: ", document.getElementById(id))
+        // document.getElementById(id).click();
       };
 
       // Selects left editable span

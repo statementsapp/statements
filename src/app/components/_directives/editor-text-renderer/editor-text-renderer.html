@@ -543,7 +543,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                               : inputs.nothing"
                 class="proposition-text"
                 ng-blur="[focusouteditable(this), paragraph.disableRightCursor = false]"
-                ng-mousedown="handleClick($event, proposition.id, 'mute')"
+                ng-mousedown="handleClick($event, remark.id, 'mute')"
                 ng-if="proposition.remarksExpanded"
               >
 

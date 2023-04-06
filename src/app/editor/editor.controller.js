@@ -1747,16 +1747,21 @@
       $scope.selectProposition = function (proposition) {
         if ($scope.selectedProposition) {
           if ($scope.selectedProposition.id !== proposition.id) {
+            console.log("IF")
             $scope.clearPropositionInput();
             $scope.selectedProposition = proposition;
             $scope.hasRightFocus.id = proposition.id;
             focusFactory($scope.selectedProposition.id);
           } else {
+            console.log("LOOK AT THIS ELSE")
+
             $scope.selectedProposition = proposition;
             $scope.hasRightFocus.id = proposition.id;
             focusFactory($scope.selectedProposition.id);
           }
         } else {
+          console.log("AND THIS ELSE")
+
           $scope.selectedProposition = proposition;
           $scope.hasRightFocus.id = proposition.id;
           focusFactory($scope.selectedProposition.id);

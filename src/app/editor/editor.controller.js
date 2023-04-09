@@ -6031,11 +6031,14 @@
                         console.log("looks good to go")
                         console.log("Element: ", document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
+                            $scope.holdOnToThis = angular.copy('proposition' +
+                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
                         setTimeout(function () {
                           console.log("Upper timeout element: ", document.getElementById(
-                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
+                            $scope.holdOnToThis))
                           document.getElementById(
-                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id).click();
+                            $scope.holdOnToThis).click();
+                            $scope.holdOnToThis = '';
                         // });
                         
                         }, 20);

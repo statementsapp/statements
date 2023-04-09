@@ -447,7 +447,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             contenteditable="true"
             ng-blur="this.contentEditable = true; ">
               </span>  
-              &nbsp;
+              &nbsp;&nbsp;
 <!--           <span class="cursor left-cursor"
                 ng-class="{'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
                            'invisible-cursor': !proposition.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === proposition.id || aRemarkIsMousedOver}"
@@ -581,7 +581,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 contenteditable="true"
                 ng-blur="this.contentEditable = true; ">
                   </span>
-                  &nbsp;
+                  &nbsp;&nbsp;
               <!-- {{remark.id}} -->
               <!-- below is the code for carriageReturn -->
               <!--          $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing; -->

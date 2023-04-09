@@ -561,7 +561,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 id="{{remark.id}}"
                 title="{{remark.id}}"
                 class="right-text right-textarea maininput"
-                ng-if="proposition.remarksExpanded"
+                ng-if="proposition.remarksExpanded && !remark.rejoined"
                 ng-class="{
                            'authorprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy === userId))}"
                 ng-click="[assignRightFocus(remark.id), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id ]"

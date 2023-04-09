@@ -3975,8 +3975,9 @@
           return $scope.preDefinedPoints.some(point => point.index === currentIndex);
         }
         // SCRIPT STEP
-        $scope.userActions.push(prep.payload);
-
+        if ($scope.hasBeenSetUp) {
+          $scope.userActions.push(prep.payload);
+        }
         // Check if it's time to simulate the second user's action
         if (isPredefinedPoint($scope.userActions.length)) {
           $scope.simulateSecondUser(prep.id);
@@ -5546,7 +5547,7 @@
 
       $scope.setupScript = function () {
         console.log("Setting up")
-        
+        $scope.hasBeenSetUp = true;
         $scope.userActions = []; // Store the sequence of user actions and their payloads
         $scope.preDefinedPoints = [
           { index: 1, 

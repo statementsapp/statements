@@ -343,7 +343,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             ng-click="
                     (draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ? [dropItem(node, paragraph, proposition ,'right'), $event.stopPropagation()] :
 
-                    (proposition.author === userId && selectedProposition.textSide && !cancelListenForDoubleClick)
+                    (proposition.author === userId && !cancelListenForDoubleClick)
                     ?  [
                          inputs[proposition.id] = '',
                          mark.id = '',

@@ -5849,14 +5849,14 @@
             
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
-            $scope.inputs['top'+paragraph.paragraphId] = '|'
+            // $scope.inputs['top'+paragraph.paragraphId] = '|'
             if (document.getElementById('top'+paragraph.paragraphId)){
               document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
             }
             
           });
 
-        }, 300);
+        }, 200);
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 

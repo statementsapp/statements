@@ -1395,9 +1395,11 @@
       };
 
       $scope.assignRightFocus = function (id) {
-        // $scope.hasRightFocus.id = id;
-        // console.log("Assign right focus element: ", document.getElementById(id))
-        // document.getElementById(id).click();
+        $timeout(function () {
+          $scope.$apply(function () {
+            document.getElementById(id).innerHTML = '';
+          });
+        }, 0);
       };
 
       // Selects left editable span

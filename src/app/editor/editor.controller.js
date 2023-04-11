@@ -5467,7 +5467,7 @@
 
       $scope.resetFromEnter = function () {
         console.log("Resetting from enter")
-        $scope.inputs = {};
+        // $scope.inputs = {};
       }
 
       $scope.savePropositionForLater = function (id, position, paragraph) {

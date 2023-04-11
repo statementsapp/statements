@@ -270,7 +270,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                   ] : inputs.notting"
                 id="left{{proposition.id}}"
                 class="right-textarea right-text left-text authorprop theleft"
-                ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true, (userId === data[0].documentClaimedBy && !inputs['left'+proposition.id] && !paragraph.leftAdd) ? [ thatRunFunction(), inputs['left'+proposition.id] = '|']: inputs.nothing]"
+                ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true, (userId === data[0].documentClaimedBy && !inputs['left'+proposition.id] && !paragraph.leftAdd && ) ? [ thatRunFunction(), inputs['left'+proposition.id] = '|']: inputs.nothing]"
                 ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false, (userId === data[0].documentClaimedBy && inputs['left'+proposition.id] === '|') ? inputs['left'+proposition.id] = '': inputs.nothing]"
                 ng-blur="clearLeftAdd(paragraph)"
                 placeholder="textarea"

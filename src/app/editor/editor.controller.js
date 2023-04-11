@@ -5469,7 +5469,7 @@
 
       $scope.resetFromEnter = function () {
         console.log("Resetting from enter")
-        // $scope.inputs = {};
+        $scope.inputs = {};
       }
 
       $scope.savePropositionForLater = function (id, position, paragraph) {
@@ -5855,6 +5855,7 @@
             if (document.getElementById('top'+paragraph.paragraphId)){
               document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
             }
+            document.getElementById('mainview').addEventListener("click", $scope.handleTopClick);
             
           });
 
@@ -5862,6 +5863,9 @@
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 
+      $scope.handleTopClick = function () {
+        
+      }
 
 
 

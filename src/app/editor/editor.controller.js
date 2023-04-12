@@ -1397,6 +1397,7 @@
       $scope.assignRightFocus = function (id) {
         $timeout(function () {
           $scope.$apply(function () {
+            console.log("Assigning right focus")
             document.getElementById(id).innerHTML = '';
           });
         }, 0);
@@ -5864,7 +5865,7 @@
       }
 
       $scope.handleTopClick = function () {
-        
+
       }
 
 

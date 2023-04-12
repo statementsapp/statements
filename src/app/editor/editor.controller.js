@@ -3989,11 +3989,12 @@
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
           $scope.userActions.push(prep.payload);
+          if (isPredefinedPoint($scope.userActions.length)) {
+            $scope.simulateSecondUser(prep.id);
+          }
         }
         // Check if it's time to simulate the second user's action
-        if (isPredefinedPoint($scope.userActions.length)) {
-          $scope.simulateSecondUser(prep.id);
-        }
+        
 
         prep = {};
 

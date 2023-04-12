@@ -5856,7 +5856,7 @@
             if (document.getElementById('top'+paragraph.paragraphId)){
               document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
             }
-            document.getElementById('mainview').addEventListener("click", $scope.handleTopClick);
+            document.getElementById('mainview').addEventListener("click", $scope.handleTopClick(paragraph));
             
           });
 
@@ -5864,7 +5864,14 @@
         // document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
       }
 
-      $scope.handleTopClick = function () {
+      $scope.handleTopClick = function (paragraph) {
+        console.log("Handling")
+        document.getElementById('top' + paragraph.paragraphId).click();
+      }
+
+      $scope.removeTopClickHandler = function (paragraph) {
+        console.log("Removing")
+        document.getElementById('top'+paragraph.paragraphId).removeEventListener("click", handleTopClick(paragraph));
 
       }
 

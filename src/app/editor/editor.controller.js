@@ -5944,7 +5944,7 @@
                 paragraph.bottomMouseOver = true; 
                 $scope.makeItAppear(paragraph);
               }
-            }, 100);
+            }, 150);
       }
 
       $scope.stopBottomParagraphAdderTimer = function (paragraph) {
@@ -5963,7 +5963,7 @@
                 $scope.makeTopAppear(paragraph);
                 
               }
-            }, 100);
+            }, 150);
       }
 
       $scope.stopTopParagraphAdderTimer = function (paragraph) {

@@ -141,7 +141,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           ng-click="[whatsGoingOn(paragraph),$event.stopPropagation()]"
           placeholder="textarea authorprop"
           ng-model="inputs['top'+paragraph.paragraphId]"
-          ng-mouseover="removeTopClickHandler(paragraph)"
+          ng-mouseover="handling ? removeTopClickHandler(paragraph) : inputs.nothing"
           ng-keydown="$event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['top'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"
           ng-keyup="$event.keyCode === 13 &&
                             selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, whatsGoingOn(paragraph), prepProposition(inputs['top'+paragraph.paragraphId], node, paragraph, null, proposition, $event, 'top')] : inputs.nothing;

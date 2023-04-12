@@ -5852,6 +5852,7 @@
             
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
+            $scope.handling = true;
             // $scope.inputs['top'+paragraph.paragraphId] = '|'
             if (document.getElementById('top'+paragraph.paragraphId)){
               document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
@@ -5881,6 +5882,7 @@
         setTimeout(function () {
           $scope.$apply(function () {
             console.log("Removing")
+            $scope.handling = false;
             document.getElementById('top'+paragraph.paragraphId).removeEventListener("click", handleTopClick(paragraph));
           });
 

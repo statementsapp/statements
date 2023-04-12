@@ -5852,12 +5852,13 @@
             
             paragraph.bottomMouseOver = false; 
             paragraph.topMouseOver = true;
-            $scope.handling = true;
+            
             // $scope.inputs['top'+paragraph.paragraphId] = '|'
             if (document.getElementById('top'+paragraph.paragraphId)){
               document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
             }
             document.getElementById('mainview').addEventListener("click", $scope.handleTopClick(paragraph));
+            $scope.handling = true;
             
           });
 

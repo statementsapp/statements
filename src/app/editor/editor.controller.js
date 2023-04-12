@@ -3734,8 +3734,8 @@
           prep.adjustedText = input;
           prep.author = $scope.userId;
           prep.targetParagraphId = paragraph.paragraphId;
-          prep.targetNodeId = $scope.selectedNode.nodeId;
-          prep.sectionNumber = $scope.selectedNode.sectionNumber;
+          prep.targetNodeId = node.nodeId;
+          prep.sectionNumber = node.sectionNumber;
           if ($scope.draggingProposition || $scope.draggingParagraph){
             prep.afterPropositionId = proposition.id;
           } else {

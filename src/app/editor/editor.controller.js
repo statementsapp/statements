@@ -2597,6 +2597,7 @@
                 $scope.cancelListenForDoubleClick = false;
               }, 20);
             } else if ($scope.draggingProposition){
+              console.log('Into that dragging proposition')
               if (flag === 'left'){
                 console.log("Flag is left")
                 if (proposition.id === $scope.draggedProposition.id){

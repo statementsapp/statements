@@ -35,7 +35,7 @@
 
 
 
-  }
+  
 
   angular.module('statements')
     .directive('reconnectOnMouseMove', reconnectOnMouseMove);

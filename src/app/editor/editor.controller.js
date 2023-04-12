@@ -27,8 +27,7 @@
     $timeout,
     IdFactory,
     ColorFactory,
-    toastr,
-    socketService) {
+    toastr) {
 
 
     console.log("editor controlling")
@@ -3892,8 +3891,8 @@
         $scope.tempStopEditable = false;
 
         console.log("Payload: ", prep.payload)
-        console.log("Socket: ", socketService)
-        socketService.connect();
+        // console.log("Socket: ", socketService)
+        // socketService.connect();
 
         //      CLEARS THINGS AND EMITS THE PAYLOAD
         chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId);

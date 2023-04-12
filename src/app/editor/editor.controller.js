@@ -3141,7 +3141,7 @@
           }
 
 
-            if ($scope.selectedProposition.id){
+            if ($scope.selectedProposition){
               if ($scope.userId !== payload.author &&
                 $scope.selectedProposition.id === payload.id){
                   $scope.selectedNode = {};

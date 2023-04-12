@@ -3729,11 +3729,11 @@
         (!$scope.draggingProposition || proposition.type !== 'blank')){
           console.log("3g")
           prep.code = '3G';
-          prep.topic = $scope.selectedProposition.topic;
+          prep.topic = proposition.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
           prep.author = $scope.userId;
-          prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+          prep.targetParagraphId = paragraph.paragraphId;
           prep.targetNodeId = $scope.selectedNode.nodeId;
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
           if ($scope.draggingProposition || $scope.draggingParagraph){

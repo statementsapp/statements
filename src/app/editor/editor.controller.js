@@ -3890,6 +3890,7 @@
         $scope.tempStopEditable = false;
 
         console.log("Payload: ", prep.payload)
+        console.log("Socket: ", chatSocket)
 
         //      CLEARS THINGS AND EMITS THE PAYLOAD
         chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId);

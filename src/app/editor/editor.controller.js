@@ -5877,8 +5877,15 @@
       }
 
       $scope.removeTopClickHandler = function (paragraph) {
-        console.log("Removing")
-        document.getElementById('top'+paragraph.paragraphId).removeEventListener("click", handleTopClick(paragraph));
+
+        setTimeout(function () {
+          $scope.$apply(function () {
+            console.log("Removing")
+            document.getElementById('top'+paragraph.paragraphId).removeEventListener("click", handleTopClick(paragraph));
+          });
+
+        }, 0);
+        
 
       }
 

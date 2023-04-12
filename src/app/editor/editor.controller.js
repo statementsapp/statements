@@ -5867,10 +5867,10 @@
       $scope.handleTopClick = function (paragraph) {
         
         setTimeout(function () {
-          $scope.$apply(function () {
+          // $scope.$apply(function () {
             console.log("Handling")
             document.getElementById('top' + paragraph.paragraphId).click();
-          });
+          // });
 
         }, 0);
         

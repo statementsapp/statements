@@ -1398,6 +1398,7 @@
         $timeout(function () {
           $scope.$apply(function () {
             console.log("Assigning right focus")
+            $scope.inputs[id] = ''
             document.getElementById(id).innerHTML = '';
           });
         }, 0);

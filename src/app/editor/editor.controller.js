@@ -27,8 +27,7 @@
     $timeout,
     IdFactory,
     ColorFactory,
-    toastr, 
-    socketService) {
+    toastr) {
 
 
     console.log("editor controlling")

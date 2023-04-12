@@ -433,7 +433,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                        'firstproppadding': proposition.type === 'blank' }"
             ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?
             [dropItem(node, paragraph, proposition ,'right')] : [inputs[proposition.id] === '' ? assignRightFocus(proposition.id) : [paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id] ]"
-            ng-mouseover="[hasRightFocus.id != proposition.id ? [paragraph.disableRightCursor = false, thatRunFunction(), inputs[proposition.id] = '|'] : inputs.nothing]"
+            ng-mouseover="[hasRightFocus.id != proposition.id ? [paragraph.disableRightCursor = false, thatRunFunction()] : inputs.nothing]"
             ng-mouseleave="inputs[proposition.id] && hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '' : inputs.nothing"
             ng-model="inputs[proposition.id]"
             ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[proposition.id] != '' ? $event.preventDefault() : inputs.nothing;"

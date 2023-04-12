@@ -28,7 +28,7 @@
     IdFactory,
     ColorFactory,
     toastr, 
-    soketService) {
+    socketService) {
 
 
     console.log("editor controlling")

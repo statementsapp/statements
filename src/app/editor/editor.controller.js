@@ -3750,6 +3750,7 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
+          console.log('got to here')
 
         } else if (($scope.selectedProposition.type === 'blank' &&
           $scope.userId === $scope.data[0].documentClaimedBy) ||
@@ -3787,7 +3788,7 @@
           console.log("womp womp")
           return;
         }
-
+        console.log('and to here')
         if (prep.code === '3E' && $scope.draggingProposition){
           console.log("Special adjustment")
           prep.savedParagraphId = angular.copy(paragraph.paragraphId);

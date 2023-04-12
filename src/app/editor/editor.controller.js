@@ -3140,13 +3140,18 @@
             }
           }
 
-          if ($scope.userId !== payload.author &&
-            $scope.selectedProposition.id === payload.id){
-            $scope.selectedNode = {};
-            $scope.selectedParagraph = {};
-            $scope.selectedProposition = {};
-            $scope.selectedRemark = {};
-          }
+
+            if ($scope.selectedProposition.id){
+              if ($scope.userId !== payload.author &&
+                $scope.selectedProposition.id === payload.id){
+                  $scope.selectedNode = {};
+                  $scope.selectedParagraph = {};
+                  $scope.selectedProposition = {};
+                  $scope.selectedRemark = {};
+              }
+            }
+            
+          
 
         } else if (payload.modifier === 'remark'){
 

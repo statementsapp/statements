@@ -2216,6 +2216,8 @@
       }
 
       $scope.dragProposition = function (node, paragraph, proposition, e) {
+
+        $scope.selectedProposition = proposition;
         if ($scope.cancelListenForDoubleClick){
           $scope.cancelListenForDoubleClick = false;
           return;
@@ -3442,7 +3444,7 @@
 
         // If it's ended with a colon, or a dragged node
         // it's a topic
-        
+
         if ((prep.lastChar === ':' || $scope.draggingNode || $scope.inputs.newSectionTitle) &&
           ($scope.data[0].documentClaimedBy === $scope.userId || !$scope.data[0].documentClaimedBy)) {
           console.log("One")

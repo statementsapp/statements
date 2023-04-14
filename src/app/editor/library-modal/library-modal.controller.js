@@ -8,7 +8,7 @@
     $scope.showModal = true;
 
     $document.on('click', function(event) {
-        if ($scope.showModal && event.target === document.querySelector('.modal-backdrop')) {
+        if ($scope.showModal && event.target === document.querySelector('fade')) {
           $scope.$apply(function() {
             $scope.showModal = false;
           });

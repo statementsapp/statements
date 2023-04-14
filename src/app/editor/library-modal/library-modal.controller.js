@@ -7,7 +7,7 @@
 
     vm.showModal = true;
 
-      $window.addEventListener('click', function(event) {
+      vm.addEventListener('click', function(event) {
         if (vm.showModal && event.target === document.querySelector('.modal-backdrop')) {
           $scope.$apply(function() {
             $scope.showModal = false;

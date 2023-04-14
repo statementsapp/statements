@@ -1394,7 +1394,12 @@
 
       };
 
-      $scope.assignRightFocus = function (id) {
+      $scope.assignRightFocus = function (id, event) {
+        console.log("That right focus event: ", event)
+        if (event.type !== 'click'){
+          console.log("Returning")
+          return;
+        }
         $timeout(function () {
           $scope.$apply(function () {
             console.log("Assigning right focus")

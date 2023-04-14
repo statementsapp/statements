@@ -2,15 +2,15 @@
   'use strict';
 
   /** @ngInject */
-  function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state, $uibModal, chatSocket) {
+  function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state, $uibModal, chatSocket, $document) {
     var vm = this;
 
     vm.showModal = true;
 
-      $rootScope.addEventListener('click', function(event) {
-        if ($rootScope.showModal && event.target === document.querySelector('.modal-backdrop')) {
-          $rootScope.$apply(function() {
-            $rootScope.showModal = false;
+      $document.addEventListener('click', function(event) {
+        if ($document.showModal && event.target === document.querySelector('.modal-backdrop')) {
+          $document.$apply(function() {
+            $document.showModal = false;
           });
         }
       });

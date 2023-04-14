@@ -1733,8 +1733,10 @@
             if (paragraph.propositions[i][$scope.userId] !== 'hidden' &&
               paragraph.propositions[i].hiddenForAll !== true &&
               $scope.selectedProposition.type !== 'blank') {
-
-                document.getElementById($scope.selectedProposition.id).innerText = '';
+                if ($scope.selectedProposition){
+                  document.getElementById($scope.selectedProposition.id).innerText = '';
+                }
+                
                 $scope.selectedProposition = {};
                 var query = paragraph.paragraphId;
                 $timeout(function () {

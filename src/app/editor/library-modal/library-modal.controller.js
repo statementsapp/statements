@@ -7,10 +7,10 @@
 
     vm.showModal = true;
 
-      vm.addEventListener('click', function(event) {
-        if (vm.showModal && event.target === document.querySelector('.modal-backdrop')) {
-          $scope.$apply(function() {
-            $scope.showModal = false;
+      $rootScope.addEventListener('click', function(event) {
+        if ($rootScope.showModal && event.target === document.querySelector('.modal-backdrop')) {
+          $rootScope.$apply(function() {
+            $rootScope.showModal = false;
           });
         }
       });

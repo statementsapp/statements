@@ -9,7 +9,7 @@
 
     $document.on('click', function(event) {
         console.log("Event: ", event)
-        if ($scope.showModal && event.target === document.querySelector('fade')) {
+        if ($scope.showModal && event.target === 'div.modal.fade.ng-isolate-scope.in)') {
           $scope.$apply(function() {
             $scope.showModal = false;
           });

@@ -8,7 +8,7 @@
     $scope.showModal = true;
 
     $document.on('click', function(event) {
-        console.log("Event: ", event)
+        console.log("Event: ", event.target)
         if ($scope.showModal && event.target === 'div.modal.fade.ng-isolate-scope.in)') {
           $scope.$apply(function() {
             $scope.showModal = false;

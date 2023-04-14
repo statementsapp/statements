@@ -1677,7 +1677,10 @@
             $scope.hasBottomFocus.id = paragraph.paragraphId;
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
-            document.getElementById(paragraph.paragraphId).innerHTML = '';
+            if (document.getElementById(paragraph.paragraphId)){
+              document.getElementById(paragraph.paragraphId).innerHTML = '';
+            }
+            
             focusFactory(paragraph.paragraphId);
           });
         }, 0);

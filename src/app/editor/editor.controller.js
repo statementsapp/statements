@@ -1738,7 +1738,7 @@
                 $scope.selectedProposition = {};
                 var query = paragraph.paragraphId;
                 $timeout(function () {
-                  $('#' + query).trigger('click');
+                  $('#bottomadder' + query).trigger('click');
                 }, 0);
                 return;
 

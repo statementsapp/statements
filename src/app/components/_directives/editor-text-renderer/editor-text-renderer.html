@@ -630,7 +630,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                     selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
          
          ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph"
-         id="bottomadder"
+         id="bottomadder{{paragraph.paragraphId}}"
 
     >
     </div>

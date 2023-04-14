@@ -1734,6 +1734,7 @@
               paragraph.propositions[i].hiddenForAll !== true &&
               $scope.selectedProposition.type !== 'blank') {
                 if ($scope.selectedProposition){
+                  console.log("The selected prop: ", angular.copy($scope.selectedProposition));
                   document.getElementById($scope.selectedProposition.id).innerText = '';
                 }
                 

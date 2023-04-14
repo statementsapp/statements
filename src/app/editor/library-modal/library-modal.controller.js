@@ -5,6 +5,15 @@
   function LibraryModalController($uibModalInstance, profileService, libraryService, apiService, $rootScope, $state, $uibModal, chatSocket) {
     var vm = this;
 
+    vm.showModal = true;
+
+      $window.addEventListener('click', function(event) {
+        if (vm.showModal && event.target === document.querySelector('.modal-backdrop')) {
+          $scope.$apply(function() {
+            $scope.showModal = false;
+          });
+        }
+      });
 
 
      vm.bookId = '';

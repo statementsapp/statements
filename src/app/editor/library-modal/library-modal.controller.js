@@ -8,6 +8,7 @@
     $scope.showModal = true;
 
     $document.on('click', function(event) {
+        console.log("Event: ", event)
         if ($scope.showModal && event.target === document.querySelector('fade')) {
           $scope.$apply(function() {
             $scope.showModal = false;

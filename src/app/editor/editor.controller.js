@@ -5403,7 +5403,7 @@
                     $scope.hasChatFocusId = id;
                   });
 
-             
+                console.log("That element: ", document.getElementById('input' + id))
                 setTimeout(function () {
                    document.getElementById('input'+ id).click();
                    console.log("Has chat focus id: ", $scope.hasChatFocusId)

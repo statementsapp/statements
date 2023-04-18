@@ -44,8 +44,11 @@
     <script>
       function autoResize(textarea) {
         console.log("Auto")
-      textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
+        setTimeout(function () {
+          textarea.style.height = 'auto';
+          textarea.style.height = textarea.scrollHeight + 'px';
+        }, 20);
+      x
     }
     </script>
   </head>

@@ -17,8 +17,8 @@
           $(element).focus();
 
 
-          if (scope.selectedProposition){
-            if (scope.selectedProposition.textSide || !scope.selectedProposition.dialogueSide){
+          if (selectedProposition){
+            if (selectedProposition.textSide || !selectedProposition.dialogueSide){
               console.log("Inside two conditions")
               const range = document.createRange();
               range.selectNodeContents(element);

@@ -5078,9 +5078,9 @@
               })
             }
             $timeout(function() {
-              if ($scope.itIsLoaded){
+              
                 $scope.data[0].dialogue[$scope.data[0].dialogue.length].animate = false;
-              }
+              
                   
                 }, 1000); // The timeout duration should match the animation duration in the CSS
             $scope.messageToCopy = {};
@@ -6589,7 +6589,9 @@
           });
         }
       }, 10);
-      $scope.itIsLoaded = true;
+      for (var i = 0; i < $scope.dialogue.length; i++){
+        $scope.dialogue[i].animate = false;
+      }
     }; // end mainLoop
 
     $scope.onMenuClicked = function (key) {

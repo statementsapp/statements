@@ -2,13 +2,14 @@
   'use strict';
 
   /** @ngInject */
-  function focusFactory($timeout, $window) {
+  function focusFactory($timeout, $window, $scope) {
     return function(id) {
       // timeout makes sure that is invoked after any other event has been triggered.
       // e.g. click events that need to run before the focus or
       // inputs elements that are in a disabled state but are enabled when those events
       // are triggered.
       $timeout(function() {
+        console.log("focusing")
         var element = $window.document.getElementById(id);
         if (element) {
           element.focus();
@@ -16,15 +17,20 @@
           $(element).focus();
 
 
-          
-          const range = document.createRange();
-          range.selectNodeContents(element);
-          range.collapse(false);
+          if ($scope.selectedProposition){
+            if ($scope.selectedProposition.textSide || !$scope.selectedProposition.dialogueSide){
+              console.log("Inside two conditions")
+              const range = document.createRange();
+              range.selectNodeContents(element);
+              range.collapse(false);
 
-          // // Set the selection to the new range
-          const selection = window.getSelection();
-          selection.removeAllRanges();
-          selection.addRange(range);
+              // // Set the selection to the new range
+              const selection = window.getSelection();
+              selection.removeAllRanges();
+              selection.addRange(range);
+            }
+          }
+          
 
 
 

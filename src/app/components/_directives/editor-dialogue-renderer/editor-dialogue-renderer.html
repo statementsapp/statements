@@ -21,7 +21,7 @@
         }"
         style="background-color: {{ message.color }}"
         ng-click="[
-          (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), hideExpandingTextarea(), selectPropositionById(message.id), selectedProposition.textSide = false] : inputs.nothing]
+          (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), selectPropositionById(message.id), selectedProposition.textSide = false] : inputs.nothing]
         "
         ng-mouseover="[message.mouseOver = true, statementHighlight(message.id), message.updated && !message.deleted ? slideInUpdate() : inputs.nothing]"
         ng-mouseleave="[message.mouseOver = false, statementUnHighlight(message.id)]">

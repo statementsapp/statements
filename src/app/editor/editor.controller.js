@@ -6320,12 +6320,7 @@
 
       };
 
-      $scope.hideExpandingTextarea = function () {
 
-        // if ($scope.hasChatFocusId) {
-
-
-      };
 
       $scope.clearExpandingClass = function (remark) {
         if (!remark.assertionPath || !$scope.selectProposition) {

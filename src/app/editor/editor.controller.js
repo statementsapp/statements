@@ -3740,7 +3740,7 @@
         (!$scope.draggingProposition || proposition.type !== 'blank')){
           console.log("3g")
           prep.code = '3G';
-          prep.topic = proposition.topic;
+          prep.topic = $scope.selectedProposition ? $scope.selectedProposition. topic : proposition.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
           prep.author = $scope.userId;

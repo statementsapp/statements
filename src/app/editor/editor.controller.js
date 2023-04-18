@@ -5326,7 +5326,7 @@
       $scope.isMutedFilter = function (remark) {
         // console.log("Remark: ", remark)
 
-        if ($scope.data){
+        if ($scope.data && remark){
           return remark.muted || remark.deleted || remark.rejoined;
         }
         

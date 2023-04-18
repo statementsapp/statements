@@ -409,7 +409,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
 
 
-          <sub ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex;"
+          <sub ng-if="proposition.remarks" ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex;"
                >
             <i class="fa-solid fa-square-minus"
                style="line-height: inherit; display: inline-block;"

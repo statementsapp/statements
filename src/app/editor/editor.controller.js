@@ -5399,12 +5399,13 @@
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
                 
                 
-                  $scope.$apply(function () {
+                  
                     $scope.hasChatFocusId = id;
-                  });
+                
 
-                console.log("That element: ", document.getElementById('input' + id))
+                
                 setTimeout(function () {
+                  console.log("That element: ", document.getElementById('input' + id))
                    document.getElementById('input'+ id).click();
                    console.log("Has chat focus id: ", $scope.hasChatFocusId)
                 }, 20);

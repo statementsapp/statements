@@ -5077,7 +5077,7 @@
             }
             $timeout(function() {
               
-                $scope.data[0].dialogue[$scope.data[0].dialogue.length].animate = false;
+                $scope.data[0].dialogue[$scope.data[0].dialogue.length=1].animate = false;
               
                   
                 }, 1000); // The timeout duration should match the animation duration in the CSS
@@ -5195,7 +5195,6 @@
                   $scope.selectedProposition.dialogueSide = true;
                   $scope.didItRun(message.id);
                   $scope.clearTopAndBottomHasFocus();
-                  $scope.hideExpandingTextarea();
                   $scope.selectPropositionById(payload.id);
                   $scope.selectedProposition.textSide = false;
                   document.getElementById('input' + payload.id).click();

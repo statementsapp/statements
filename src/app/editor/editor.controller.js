@@ -3740,13 +3740,13 @@
         (!$scope.draggingProposition || proposition.type !== 'blank')){
           console.log("3g")
           prep.code = '3G';
-          prep.topic = $scope.selectedProposition ? $scope.selectedProposition. topic : proposition.topic;
+          prep.topic = $scope.selectedProposition ? $scope.selectedProposition.topic : proposition.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
           prep.author = $scope.userId;
           prep.targetParagraphId = paragraph.paragraphId;
-          prep.targetNodeId = node.nodeId;
-          prep.sectionNumber = node.sectionNumber;
+          prep.targetNodeId = $scope.selectedNode ? $scope.selectedNode.nodeId : node.nodeId;
+          prep.sectionNumber = $scope.selectedNode ? $scope.selectedNode.nodeId : node.sectionNumber;
           if ($scope.draggingProposition || $scope.draggingParagraph){
             prep.afterPropositionId = proposition.id;
           } else {

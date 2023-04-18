@@ -2120,6 +2120,9 @@
 
 
         $scope.data[0].dialogue.push($scope.messageToCopy);
+        $timeout(function() {
+              newMessage.animate = false;
+            }, 1000); // The timeout duration should match the animation duration in the CSS
         $scope.messageToCopy = {};
 
         if (payload.author === $scope.userId) {

@@ -526,7 +526,7 @@
            data-drag-enabled="false"
            data-empty-placeholder-enabled="false"
            ng-class="{'justmessages' : fullScreenMessages}"
-           class="angular-ui-tree dialoguelist"
+           class="angular-ui-tree dialoguelist parent-div"
            style="padding-top: 15px; padding-left: 20px;">
 
         <ol ui-tree-nodes
@@ -535,7 +535,7 @@
             class="angular-ui-tree-nodes">
            <!--  ng-if="message.hidden !== true && message[userId] !== 'hidden'" -->
           <li ng-repeat="message in data[0].dialogue | orderBy: 'messageNumber'"
-              
+              ng-class="{'slide-in-right': message.animate}"
               ui-tree-node
               class="angular-ui-tree-node" >
             <stmnts-editor-dialogue-renderer></stmnts-editor-dialogue-renderer>

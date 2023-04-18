@@ -1202,17 +1202,8 @@ pre.expanding-clone {
 }
 
 
-  .new-message {
-    animation: bubbleRise 1.5s ease-out forwards;
-    display: list-item;
-    position: relative;
-    bottom: 0;
-    animation: bubbleRise 1.5s ease-out forwards;
-    /* Add your preferred styles for the list-item element here */
-  }
-
-
-@keyframes bubbleRise {
+/* Keyframe animation for the slide-in effect */
+@keyframes slideInRight {
   0% {
     transform: translateX(100%);
     opacity: 0;
@@ -1226,14 +1217,20 @@ pre.expanding-clone {
 /* Parent div */
 .parent-div {
   position: relative;
-  height: auto; /* Adjust height based on list items */
   overflow: hidden;
 }
 
-/* Target list-item element */
-.bubble {
-  
+/* List-item element */
+.message {
+  display: list-item;
+  /* Add your preferred styles for the list-item element here */
 }
+
+/* Animation class for new messages */
+.slide-in-right {
+  animation: slideInRight 1s ease-out forwards;
+}
+
 
 
 .grow-wrap {

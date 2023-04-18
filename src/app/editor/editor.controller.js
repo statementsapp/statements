@@ -29,7 +29,6 @@
     ColorFactory,
     toastr) {
 
-
     console.log("editor controlling")
 
     // variable declarations
@@ -56,6 +55,8 @@
 
 
 
+
+
     // copies to clipboard
     $scope.copyLink = function() {
       var copyElement = document.getElementById('directLinkInput');
@@ -63,6 +64,10 @@
       document.execCommand('copy');
       toastr.info('Link copied to clipboard');
     }
+
+
+
+
 
     // assigns room users
     $scope.$on('socket:roomUsers', function (event, args) {
@@ -81,6 +86,8 @@
       socket.emit('getUsers', $scope.bookId);
 
     });
+
+
 
     /**
      * Changes the menu button color
@@ -1024,17 +1031,8 @@
         pane.scrollTop = pane.scrollHeight;
       }, 30);
 
-      $scope.getSectionByNodeId = function(id){
 
-      }
 
-      $scope.getParagraphByParagraphId = function(id){
-
-      }
-
-      $scope.getPropositionById = function(id){
-
-      }
 
       // If an empty book, focus on the blank proposition
       var blankClickAssigned = {};
@@ -5401,8 +5399,6 @@
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
                 $scope.hasChatFocusId = id;
                 setTimeout(function () {
-                  console.log("Rows: ", document.getElementById('input' + $scope.hasChatFocusId).rows);
-                  console.log("Rows id : ", document.getElementById('input' + id).rows);
                    focusFactory('input'+ id)
                    console.log("Has chat focus id: ", $scope.hasChatFocusId)
                 }, 20);

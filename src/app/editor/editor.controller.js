@@ -5077,7 +5077,7 @@
             }
             $timeout(function() {
               
-                $scope.data[0].dialogue[$scope.data[0].dialogue.length=1].animate = false;
+                $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].animate = false;
               
                   
                 }, 1000); // The timeout duration should match the animation duration in the CSS

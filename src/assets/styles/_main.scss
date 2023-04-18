@@ -1203,6 +1203,34 @@ pre.expanding-clone {
 
 
 
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Parent div */
+.parent-div {
+  position: relative;
+  height: auto; /* Adjust height based on list items */
+  overflow: hidden;
+}
+
+/* Target list-item element */
+.bubble {
+  display: list-item;
+  position: relative;
+  bottom: 0;
+  animation: bubbleRise 1.5s ease-out forwards;
+  /* Add your preferred styles for the list-item element here */
+}
+
+
 .grow-wrap {
   /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
   display: grid;

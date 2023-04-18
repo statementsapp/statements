@@ -5405,7 +5405,7 @@
 
                 }, 0);
                 setTimeout(function () {
-                   focusFactory('input'+ id)
+                   document.getElementById('input'+ id).click();
                    console.log("Has chat focus id: ", $scope.hasChatFocusId)
                 }, 20);
                 break;

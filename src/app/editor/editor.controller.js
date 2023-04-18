@@ -6589,8 +6589,8 @@
           });
         }
       }, 10);
-      for (var i = 0; i < $scope.dialogue.length; i++){
-        $scope.dialogue[i].animate = false;
+      for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+        $scope.data[0].dialogue[i].animate = false;
       }
     }; // end mainLoop
 

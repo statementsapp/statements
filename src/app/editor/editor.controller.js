@@ -2120,9 +2120,7 @@
 
 
         $scope.data[0].dialogue.push($scope.messageToCopy);
-        $timeout(function() {
-              newMessage.animate = false;
-            }, 1000); // The timeout duration should match the animation duration in the CSS
+
         $scope.messageToCopy = {};
 
         if (payload.author === $scope.userId) {
@@ -4993,7 +4991,8 @@
                 id: payload.id,
                 previousMessages: payload.previousMessages,
                 messagesSoFar: payload.messagesSoFar,
-                color: payload.color
+                color: payload.color,
+                animate: true
               }
               $scope.data[0].dialogue.push(
               {
@@ -5006,7 +5005,8 @@
                 id: payload.id,
                 previousMessages: payload.previousMessages,
                 messagesSoFar: payload.messagesSoFar,
-                color: payload.color
+                color: payload.color,
+                animate: true
               })
             } else if (payload.type === 'negation'){
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id &&
@@ -5023,7 +5023,8 @@
                   previousMessages: payload.previousMessages,
                   messagesSoFar: payload.messagesSoFar,
                   color: payload.color,
-                  muted: payload.muted ? true : undefined
+                  muted: payload.muted ? true : undefined,
+                  animate: true
                 })
               } else {
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
@@ -5046,7 +5047,8 @@
                   previousMessages: payload.previousMessages,
                   messagesSoFar: payload.messagesSoFar,
                   color: payload.color,
-                  muted: ($scope.data[0].muteds.includes(payload.author) ? true : undefined)
+                  muted: ($scope.data[0].muteds.includes(payload.author) ? true : undefined), 
+                  animate: true
                 })
                 $scope.messageToCopy = {};
               }
@@ -5071,9 +5073,13 @@
                 id: payload.id,
                 previousMessages: payload.previousMessages,
                 messagesSoFar: payload.messagesSoFar,
-                color: payload.color
+                color: payload.color,
+                animate: true
               })
             }
+            $timeout(function() {
+                  $scope.data[0].dialogue[$scope.data[0].dialogue.length].animate = false;
+                }, 1000); // The timeout duration should match the animation duration in the CSS
             $scope.messageToCopy = {};
 
             if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){

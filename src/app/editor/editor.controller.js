@@ -5397,7 +5397,13 @@
                 $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
-                $scope.hasChatFocusId = id;
+                
+                setTimeout(function () {
+                  $scope.$apply(function () {
+                    $scope.hasChatFocusId = id;
+                  });
+
+                }, 0);
                 setTimeout(function () {
                    focusFactory('input'+ id)
                    console.log("Has chat focus id: ", $scope.hasChatFocusId)

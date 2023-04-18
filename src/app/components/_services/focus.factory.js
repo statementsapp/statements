@@ -2,8 +2,8 @@
   'use strict';
 
   /** @ngInject */
-  function focusFactory($timeout, $window, $scope) {
-    return function(id) {
+  function focusFactory($timeout, $window) {
+    return function(id, selectedProposition) {
       // timeout makes sure that is invoked after any other event has been triggered.
       // e.g. click events that need to run before the focus or
       // inputs elements that are in a disabled state but are enabled when those events
@@ -17,8 +17,8 @@
           $(element).focus();
 
 
-          if ($scope.selectedProposition){
-            if ($scope.selectedProposition.textSide || !$scope.selectedProposition.dialogueSide){
+          if (scope.selectedProposition){
+            if (scope.selectedProposition.textSide || !scope.selectedProposition.dialogueSide){
               console.log("Inside two conditions")
               const range = document.createRange();
               range.selectNodeContents(element);

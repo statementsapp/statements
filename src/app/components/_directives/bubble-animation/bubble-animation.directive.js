@@ -18,6 +18,6 @@
   }
 
   angular.module('statements')
-    .directive('bubbleAnimation', bubbleAnimation;
+    .directive('bubbleAnimation', bubbleAnimation)
 
 }());

@@ -1202,6 +1202,15 @@ pre.expanding-clone {
 }
 
 
+  .new-message {
+    animation: bubbleRise 1.5s ease-out forwards;
+    display: list-item;
+    position: relative;
+    bottom: 0;
+    animation: bubbleRise 1.5s ease-out forwards;
+    /* Add your preferred styles for the list-item element here */
+  }
+
 
 @keyframes bubbleRise {
   0% {
@@ -1223,11 +1232,7 @@ pre.expanding-clone {
 
 /* Target list-item element */
 .bubble {
-  display: list-item;
-  position: relative;
-  bottom: 0;
-  animation: bubbleRise 1.5s ease-out forwards;
-  /* Add your preferred styles for the list-item element here */
+  
 }
 
 

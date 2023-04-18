@@ -5406,7 +5406,7 @@
                 
                 setTimeout(function () {
                   console.log("That element: ", document.getElementById('input' + id))
-                   document.getElementById('input'+ id).click();
+                   focusFactory('input'+ id);
                    console.log("Has chat focus id: ", $scope.hasChatFocusId)
                 }, 20);
                 break;

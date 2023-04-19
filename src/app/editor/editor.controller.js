@@ -4138,6 +4138,7 @@
               $scope.inputs = {};
               if ($scope.selectedProposition.id){
                 document.getElementById($scope.selectedProposition.id).innerHTML = '';
+                console.log("Just cleared this: ", document.getElementById($scope.selectedProposition.id))
               }
               
             }
@@ -4980,19 +4981,19 @@
 
             if (payload.type === 'assertion' && !payload.draggedProps){
               console.log("First dialogue printer")
-              var goingToPushThis = {
-                isMessage: true,
-                author: payload.author,
-                text: payload.text,
-                dialogueText: payload.dialogueText,
-                type: payload.type,
-                of: payload.of,
-                id: payload.id,
-                previousMessages: payload.previousMessages,
-                messagesSoFar: payload.messagesSoFar,
-                color: payload.color,
-                animate: true
-              }
+              // var goingToPushThis = {
+              //   isMessage: true,
+              //   author: payload.author,
+              //   text: payload.text,
+              //   dialogueText: payload.dialogueText,
+              //   type: payload.type,
+              //   of: payload.of,
+              //   id: payload.id,
+              //   previousMessages: payload.previousMessages,
+              //   messagesSoFar: payload.messagesSoFar,
+              //   color: payload.color,
+              //   animate: true
+              // }
               $scope.data[0].dialogue.push(
               {
                 isMessage: true,

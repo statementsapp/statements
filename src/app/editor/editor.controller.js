@@ -6113,13 +6113,12 @@
                         console.log("looks good to go")
                         console.log("Element: ", document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
-                            $scope.holdOnToThis = angular.copy('proposition' +
+                            $scope.holdOnToThis = angular.copy(
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
                         setTimeout(function () {
-                          console.log("Upper timeout element: ", document.getElementById(
-                            $scope.holdOnToThis))
+                          console.log("Upper timeout element: ", document.getElementById($scope.holdOnToThis))
                           document.getElementById(
-                            $scope.holdOnToThis).click();
+                            focusFactory($scope.holdOnToThis)
                             $scope.holdOnToThis = '';
                         // });
                         

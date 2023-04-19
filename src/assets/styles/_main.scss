@@ -1202,34 +1202,7 @@ pre.expanding-clone {
 }
 
 
-/* Keyframe animation for the slide-in effect */
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
-/* Parent div */
-.parent-div {
-  position: relative;
-  overflow: hidden;
-}
-
-/* List-item element */
-.message {
-  display: list-item;
-  /* Add your preferred styles for the list-item element here */
-}
-
-/* Animation class for new messages */
-.slide-in-right {
-  animation: slideInRight 1s ease-out forwards;
-}
 
 
 

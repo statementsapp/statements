@@ -5054,7 +5054,8 @@
 
             } else if (payload.isRejoinder && !payload.draggedProps){
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
-                if ($scope.data[0].dialogue[i].id === payload.of.id){
+                if ($scope.data[0].dialogue[i].id === payload.of.id &&
+                  $scope.data[0].dialogue[i].type !== 'negation'){
                   $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
                   $scope.data[0].dialogue.splice(i, 1);
                 }

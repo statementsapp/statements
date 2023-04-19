@@ -573,7 +573,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId && inputs['remark'+remark.id] != '' ? remarkInputString : 'none'}"
                 ng-keyup="
 
-                    $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['remark'+remark.id] != '' ? [ hideZeeky(), prepProposition(inputs['remark'+remark.id], node, paragraph, proposition, $event, 'right')] : inputs.nothing;
+                    $event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['remark'+remark.id] != '' ? [ hideZeeky(), prepProposition(inputs['remark'+remark.id], node, paragraph, proposition, $event, 'right')] : inputs.nothing;
                     $event.keyCode === 13 && data[0].documentClaimedBy === userId && selectedProposition.dialogueSide != true && inputs['remark'+remark.id] === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
                     $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['remark'+remark.id] == '' && remark.author === userId ? resetFromEnter() : inputs.nothing;
                     (($event.keyCode === 8 && mark.id === remark.id && mark.marked === true && selectedProposition.author === userId) || ($event.keyCode === 8 && inputs['remark'+remark.id] === '' && selectedProposition.type === 'blank') || ($event.keyCode === 8 && inputs['remark'+remark.id] === '' && selectedProposition.type === 'negation' && selectedProposition.of.author === userId && highlight.id === remark.id && highlight.highlit === true)) ? deleteProposition(node, paragraph, proposition, remark, 'remark') : inputs.nothing;

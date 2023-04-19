@@ -5008,7 +5008,7 @@
               })
             } else if (payload.type === 'negation'){
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id &&
-                $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type === 'negation'){
+                $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type !== 'negation'){
                 $scope.data[0].dialogue.push(
                 {
                   isMessage: true,

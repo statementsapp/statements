@@ -5396,6 +5396,8 @@
                 $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
+                $scope.selectedProposition.dialogueSide = true;
+                $scope.selectedProposition.textSide = false;
                 
                 
                   

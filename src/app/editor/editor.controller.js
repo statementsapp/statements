@@ -1061,7 +1061,7 @@
           }
         }
       }
-      if (!blankClickAssigned.assigned) {
+      if (!blankClickAssigned.assigned && $scope.userId === $scope.data[0].documentClaimedBy) {
         // console.log("not blank click assigned")
         // console.log("blank click assigned object: ", blankClickAssigned)
         // console.log("id object: ", $scope.data[0].nodes[0].paragraphs[blankClickAssigned.paragraphPosition])

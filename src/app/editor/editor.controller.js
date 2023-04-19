@@ -6027,7 +6027,7 @@
         // console.log('light up book')
 
         if (event.target.localName === 'li' || event.target.classList[0] === 'bottomparagraphadder' || event.target.classList[0] !== 'angular-ui-tree'){
-          console.log("not those lis or bottom adders")
+          
           return;
         }
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){

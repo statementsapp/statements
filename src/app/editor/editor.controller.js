@@ -6103,7 +6103,8 @@
                       var index = angular.copy(k)
                       var remarkIndex = null;
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
-                        if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll){
+                        if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll &&
+                          !$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].rejoined){
                           console.log("and not hidden")
                           var remarkIndex = angular.copy(m);
                           break;

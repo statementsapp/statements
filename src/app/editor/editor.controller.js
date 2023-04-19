@@ -4140,12 +4140,15 @@
               console.log("That payload id: ", payload.id)
               $scope.inputs = {};
               if ($scope.selectedProposition.id){
-                if (!document.getElementById($scope.selectedProposition.id).classList.contains('thread')) {
-                  document.getElementById($scope.selectedProposition.id).innerHTML = '';
-                  console.log("Just cleared this: ", document.getElementById($scope.selectedProposition.id))
-                } else {
-                  // Do something else if the element doesn't have the class
+                if (document.getElementById($scope.selectedProposition.id)){
+                  if (!document.getElementById($scope.selectedProposition.id).classList.contains('thread')) {
+                    document.getElementById($scope.selectedProposition.id).innerHTML = '';
+                    console.log("Just cleared this: ", document.getElementById($scope.selectedProposition.id))
+                  } else {
+                    // Do something else if the element doesn't have the class
+                  }
                 }
+                
                 
               }
               

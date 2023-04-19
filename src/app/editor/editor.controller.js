@@ -4979,6 +4979,7 @@
 
 
             if (payload.type === 'assertion' && !payload.draggedProps){
+              console.log("First dialogue printer")
               var goingToPushThis = {
                 isMessage: true,
                 author: payload.author,
@@ -5007,8 +5008,8 @@
                 animate: true
               })
             } else if (payload.type === 'negation'){
-              if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id &&
-                $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type !== 'negation'){
+              console.log("Second dialogue printer")
+              if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id){
                 $scope.data[0].dialogue.push(
                 {
                   isMessage: true,
@@ -5025,6 +5026,7 @@
                   animate: true
                 })
               } else {
+                console.log("Third dialogue printer")
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                   if ($scope.data[0].dialogue[i].id === payload.of.id){
                     $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
@@ -5053,6 +5055,7 @@
 
 
             } else if (payload.isRejoinder && !payload.draggedProps){
+              console.log("Fourth dialogue printer")
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if ($scope.data[0].dialogue[i].id === payload.of.id &&
                   $scope.data[0].dialogue[i].type !== 'negation'){

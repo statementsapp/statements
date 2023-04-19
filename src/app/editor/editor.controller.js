@@ -6123,7 +6123,7 @@
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
                         setTimeout(function () {
                           console.log("Upper timeout element: ", document.getElementById($scope.holdOnToThis))
-                          
+                            $scope.selectedProposition = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex];
                             focusFactory($scope.holdOnToThis)
                             $scope.holdOnToThis = '';
                         // });

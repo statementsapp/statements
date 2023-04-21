@@ -3391,6 +3391,7 @@
 
         if ((!input || input == '<br><br>') && !$scope.draggingParagraph){
           console.log("Returning for lack of input otherwise uncaught");
+          $scope.carriageReturn(node, paragraph);
           $scope.inputs = {};
           return;
         }

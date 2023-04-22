@@ -2520,7 +2520,7 @@
           var relY = event.pageY - $('#wholeprop' + proposition.id).offset().top;
           if (relX < -14 && proposition.first){
             setTimeout(function () {
-              document.getElementById('leftadder'+ proposition.id).click();
+              document.getElementById('left'+ proposition.id).click();
             }, 20);
             
           }

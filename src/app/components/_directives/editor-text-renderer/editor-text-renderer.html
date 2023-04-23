@@ -208,7 +208,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             ng-mouseleave="[proposition.preSelected = false, paragraph.propositionMouseover = false, proposition.mouseOver = false, clearSavePropositionForLater()]"
             ng-click="[hideExpandingTextarea(), selectedProposition.textSide = true, selectNode(node), getPropReading($event, proposition), $event.stopPropagation()]"
             ng-if="(!proposition.hiddenForAll && proposition[userId] !== 'hidden')"
-            ng-class="{'incoming': propToAddAnimate.id === proposition.id, 'rejoinanimate': propToRejoinAnimate.id === proposition.id, blankcorrector: proposition.type === 'blank', 'paragraphgreyed': proposition.id === draggedProposition && !draggingParagraph}"
+            ng-class="{'incoming': propToAddAnimate.id === proposition.id, 'rejoinanimate': propToRejoinAnimate.id === proposition.id, blankcorrector: proposition.type === 'blank', 'paragraphgreyed': proposition.id === draggedProposition.id && !draggingParagraph}"
             class="proposition">
 
            

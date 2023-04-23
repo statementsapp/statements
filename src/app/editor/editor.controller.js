@@ -2255,6 +2255,7 @@
             $scope.draggedParagraph = paragraph;
             $scope.draggedParagraph.isDraggedParagraph = true;
             $scope.draggedProposition = angular.copy(proposition);
+            $scope.draggedProposition.isDraggedProposition = true;
             $scope.draggedProps = [angular.copy(proposition)];
             console.log("Those drag strings: ", angular.copy($scope.dragStrings))
             $scope.draggingProposition = true;

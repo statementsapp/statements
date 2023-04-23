@@ -69,7 +69,7 @@
                              type="button"
                              uib-tooltip="Share Link"
                              ng-click="copyLink()">
-                       <i class="fa fa-book-medical "></i>
+                       <i class="fa-regular fa-book-medical"></i>
                      </button>
                      <input id="directLinkInput" type="text" style="" readonly ng-value="currentLocation"/>
 
@@ -78,17 +78,23 @@
                              type="button"
                              uib-tooltip="Just Messages"
                              ng-click="goFullScreenMessages()">
-                       <i class="fa fa-comment-o"></i>
+                       <i class="fa-regular fa-comment"></i>
                      </button>
 
-
+                     <button class="btn menubutton"
+                             type="button"
+                             uib-tooltip="Short Editor"
+                             ng-click="toggleEditorShortening()"
+                             ng-if="!cowsComeHome">
+                       <i class="fa-duotone fa-arrow-up-short-wide"></i>
+                     </button>
                      
                      <button class="btn menubutton"
                              type="button"
                              uib-tooltip="Diagnostics"
                              ng-click="toggleDiagnostics()"
                              ng-if="!cowsComeHome">
-                       <i class="fa fa-comment-o"></i>
+                       <i class="fa-duotone fa-stethoscope"></i>
                      </button>
                      <a download="export.txt" style="" id="downloadlink">
 
@@ -127,14 +133,14 @@
                      </button> -->
 
 
-                     <button style='padding-left: 0px;'
+<!--                      <button style='padding-left: 0px;'
                              class="btn menubutton"
                              ng-if="!cowsComeHome"
                              type="button"
                              uib-tooltip="Minimal Styling"
                              ng-click="invert()">
                          <i class="fa fa-feather-alt"></i>
-                     </button>
+                     </button> -->
 
        
      </div>

@@ -2332,6 +2332,10 @@
         }, 20);
       };
 
+      $scope.toggleEditorShortening = function () {
+        //
+      }
+
       $scope.topNodeClick = function (node, event) {
         // $scope.$apply(function () {
           node.topNodeAdd = true;

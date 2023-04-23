@@ -430,7 +430,7 @@
   <div class="upperdragscroller" style="height: 1px; padding-bottom: 1px; background-color: #f0f0f0; width: 1310px;" ng-mouseover="upperDragScrollerMouseOver = !upperDragScrollerMouseOver;" ng-mousemove="assessDragScrollUpper()"></div>
   <div class="row mainview"
        id="mainview"
-       ng-click="$event.stopPropagation()">
+       ng-click="$event.stopPropagation()" ng-class="{'shorteditor': shortEditor}">
 
     <!--       <div class="col-md-2 topiclist" stylfe="padding: 7px">
             <form role="form">
@@ -456,7 +456,7 @@
          ng-click="$event.stopPropagation()"
          id="thetext"
          style="padding-left: 30px;"
-         ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages}">
+         ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
                <!--
                 <span class='dot'
                     ng-click="!othersAreHidden && (loggedIn() || isGuest()) ? hideOthersParagraphs() : othersAreHidden && (loggedIn() || isGuest()) ? showOthersParagraphs() : inputs.nothing">|||</span>
@@ -476,7 +476,7 @@
            data-drag-enabled="false"
            id="tree-root"
            class="angular-ui-tree textlist"
-           ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition)}"
+           ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition), 'shorteditor': shortEditor}"
            ng-mouseover="[lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
            ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
            ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"

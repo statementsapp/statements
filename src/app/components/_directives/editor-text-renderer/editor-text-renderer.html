@@ -116,7 +116,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
       ng-style="{'background-color': paragraph.color}"
       ng-class="{ paragraphcursor: paragraph.cursor === true,
                   paragraphoffcursor: paragraph.cursor === false,
-                  'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition
+                  'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition,
+                  'blankparagraphpadding': paragraph.theBlankParagraph
                 }">
       
     

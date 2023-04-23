@@ -496,7 +496,7 @@
         >
           <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
               ui-tree-node
-              ng-class="{ mousedovernode: node.mouseOver === true }"
+              ng-class="{ mousedovernode: node.mouseOver === true, 'shorteditor': shortEditor }"
               class="angular-ui-tree-node node"
               id="{{node.nodeId}}"
               ng-if="!node.hiddenForAll">
@@ -533,17 +533,18 @@
            data-drop-enabled="false"
            data-drag-enabled="false"
            data-empty-placeholder-enabled="false"
-           ng-class="{'justmessages' : fullScreenMessages}"
+           ng-class="{'justmessages' : fullScreenMessages, 'shorteditor': shortEditor}"
            class="angular-ui-tree dialoguelist parent-div"
            style="margin-top: 15px; padding-left: 20px;">
 
         <ol ui-tree-nodes
             ng-model='data[0].dialogue'
             style="list-style-type: none; padding-left: 0"
-            class="angular-ui-tree-nodes">
+            class="angular-ui-tree-nodes"
+            ng-class="{'shorteditor': shortEditor}">
            <!--  ng-if="message.hidden !== true && message[userId] !== 'hidden'" -->
           <li ng-repeat="message in data[0].dialogue | orderBy: 'messageNumber'"
-              ng-class="{'slide-in-right': message.animate}"
+              ng-class="{'slide-in-right': message.animate, 'shorteditor': shortEditor}"
               ui-tree-node
               class="angular-ui-tree-node amessage" >
             <stmnts-editor-dialogue-renderer></stmnts-editor-dialogue-renderer>

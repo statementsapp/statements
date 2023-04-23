@@ -427,7 +427,7 @@
 
 
   </div>
-  <div class="upperdragscroller" style="height: 1px; padding-bottom: 1px; background-color: #f0f0f0; width: 1310px;" ng-mouseover="upperDragScrollerMouseOver = !upperDragScrollerMouseOver;" ng-mousemove="assessDragScrollUpper()"></div>
+  <div class="upperdragscroller" style="height: 1px; padding-bottom: 1px; background-color: #f0f0f0; width: 1310px;" ng-mouseover="upperDragScrollerMouseOver = !upperDragScrollerMouseOver;" ng-mousemove="assessDragScrollUpper()" ng-class="{'shortEditor': shortEditor}"></div>
   <div class="row mainview"
        id="mainview"
        ng-click="$event.stopPropagation()">
@@ -476,7 +476,8 @@
            data-drag-enabled="false"
            id="tree-root"
            class="angular-ui-tree textlist"
-           ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition)}"
+           ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition),
+                      'shortEditor': shortEditor}"
            ng-mouseover="[lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
            ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
            ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
@@ -512,7 +513,7 @@
            ></div>
     </div>
     <div
-      ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id}"
+      ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id, 'shortEditor': shortEditor}"
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
       id="dialoguepane"
       ng-mouseover="[!textGrey && cowsComeHome ? greyText() : inputs.nothing]" 

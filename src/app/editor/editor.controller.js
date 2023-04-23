@@ -2334,7 +2334,7 @@
       };
 
       $scope.toggleEditorShortening = function () {
-        $scope.shortEditor = !scope.shortEditor;
+        $scope.shortEditor = !$scope.shortEditor;
       }
 
       $scope.topNodeClick = function (node, event) {

@@ -2334,6 +2334,7 @@
       };
 
       $scope.toggleEditorShortening = function () {
+        console.log("Toggle Shortening Triggered")
         $scope.shortEditor = !$scope.shortEditor;
       }
 

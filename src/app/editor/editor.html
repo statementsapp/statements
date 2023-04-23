@@ -455,7 +455,7 @@
          ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
          ng-click="$event.stopPropagation()"
          id="thetext"
-         style="padding-left: 30px;"
+         style="padding-left: 30px; min-height: 100vh; max-height: 100vh;"
          ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
                <!--
                 <span class='dot'

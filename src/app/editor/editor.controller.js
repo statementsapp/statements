@@ -2324,7 +2324,10 @@
             $scope.draggingProposition = false;
             $scope.dragStrings = [];
             $scope.paragraphMouseIsOver = {};
-            document.getElementById('tweet-button').classList.remove('grow')
+            if (document.getElementById('tweet-button')){
+              document.getElementById('tweet-button').classList.remove('grow')
+            }
+            
           });
         }, 20);
       };

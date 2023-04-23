@@ -677,7 +677,7 @@
       $scope.timer;
       $scope.isMouseOut = false;
       $scope.topAdderId = IdFactory.next();
-      $scope.shortEditor = false;
+      $scope.shortEditor = true;
       
 
       document.addEventListener('contextmenu', event => event.preventDefault());

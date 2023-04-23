@@ -763,8 +763,8 @@ textarea {
 }
 
 .mainview {
-  min-height: 84vh;
-  max-height: 84vh;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
 .textlist {
@@ -776,8 +776,7 @@ textarea {
   // font-family: "Times New Roman", Times, serif;
   // overflow-y: hidden;
   overflow-x: hidden;
-  min-height: 100vh;
-  max-height: 100vh;
+  
   border-right: 1px solid #f0f0f0;
   padding-right: 5px;
 }

@@ -455,8 +455,8 @@
          ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
          ng-click="$event.stopPropagation()"
          id="thetext"
-         style="padding-left: 30px; min-height: 100vh; max-height: 100vh;"
-         ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
+         style="padding-left: 30px;"
+         ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages}">
                <!--
                 <span class='dot'
                     ng-click="!othersAreHidden && (loggedIn() || isGuest()) ? hideOthersParagraphs() : othersAreHidden && (loggedIn() || isGuest()) ? showOthersParagraphs() : inputs.nothing">|||</span>
@@ -476,8 +476,7 @@
            data-drag-enabled="false"
            id="tree-root"
            class="angular-ui-tree textlist"
-           ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition),
-                      'shorteditor': shortEditor}"
+           ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition)}"
            ng-mouseover="[lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
            ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
            ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
@@ -496,7 +495,7 @@
         >
           <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
               ui-tree-node
-              ng-class="{ mousedovernode: node.mouseOver === true, 'shorteditor': shortEditor }"
+              ng-class="{ mousedovernode: node.mouseOver === true }"
               class="angular-ui-tree-node node"
               id="{{node.nodeId}}"
               ng-if="!node.hiddenForAll">
@@ -513,7 +512,7 @@
            ></div>
     </div>
     <div
-      ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id, 'shorteditor': shortEditor}"
+      ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id}"
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
       id="dialoguepane"
       ng-mouseover="[!textGrey && cowsComeHome ? greyText() : inputs.nothing]" 
@@ -533,18 +532,17 @@
            data-drop-enabled="false"
            data-drag-enabled="false"
            data-empty-placeholder-enabled="false"
-           ng-class="{'justmessages' : fullScreenMessages, 'shorteditor': shortEditor}"
+           ng-class="{'justmessages' : fullScreenMessages}"
            class="angular-ui-tree dialoguelist parent-div"
            style="margin-top: 15px; padding-left: 20px;">
 
         <ol ui-tree-nodes
             ng-model='data[0].dialogue'
             style="list-style-type: none; padding-left: 0"
-            class="angular-ui-tree-nodes"
-            ng-class="{'shorteditor': shortEditor}">
+            class="angular-ui-tree-nodes">
            <!--  ng-if="message.hidden !== true && message[userId] !== 'hidden'" -->
           <li ng-repeat="message in data[0].dialogue | orderBy: 'messageNumber'"
-              ng-class="{'slide-in-right': message.animate, 'shorteditor': shortEditor}"
+              ng-class="{'slide-in-right': message.animate}"
               ui-tree-node
               class="angular-ui-tree-node amessage" >
             <stmnts-editor-dialogue-renderer></stmnts-editor-dialogue-renderer>

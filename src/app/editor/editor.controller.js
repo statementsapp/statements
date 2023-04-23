@@ -6036,7 +6036,7 @@
 
 
         // console.log('light up book')
-
+        $scope.paragraphMouseIsOver = {};
         if (event.target.localName === 'li' || event.target.classList[0] === 'bottomparagraphadder' || event.target.classList[0] !== 'angular-ui-tree'){
           
           return;

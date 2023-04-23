@@ -3,9 +3,7 @@
 
   /** @ngInject */
   function bubbleAnimation($timeout) {
-    return {
-
-    		  
+    return {		  
     };
   }
 

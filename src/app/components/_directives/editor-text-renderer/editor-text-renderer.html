@@ -683,13 +683,13 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 </ol>
 <div class="bottomnodedropzone"
      ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'bottomnode') || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingParagraph && !draggingProposition)}"
-     ng-if="hasBottomNodeFocus.id !== node.nodeId && (!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll !== true)"
+     ng-if="hasBottomNodeFocus.id !== node.nodeId && (!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true)"
      ng-mouseover="node.bottomDropzoneMouseOver = true"
      ng-mouseleave="node.bottomDropzoneMouseOver = false"
      ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : inputs.nithing"
      id="bottom{{node.nodeId}}">
 </div>
-<div ng-if="(hasBottomNodeFocus === node.nodeId || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingNode && !draggingParagraph && !draggingProposition) && ((!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll !== true)))"
+<div ng-if="(hasBottomNodeFocus === node.nodeId || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingNode && !draggingParagraph && !draggingProposition) && ((!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true)))"
      style="height: 26px; padding-top: 16px; padding-bottom: 40px; position: relative; left: -10px"
      class='paragraph addparagraph'>
   <div class="proposition">

@@ -5703,7 +5703,8 @@
               afterPropositionId: afterPropositionId, // Use the id from the previous payload
               sectionLevel: sectionLevel, // Use the id from the previous payload
               sectionNumber: sectionNumber, // Use the id from the previous payload
-              documentClaimedBy: documentClaimedBy, // Use the id from the previous payload
+              documentClaimedBy: documentClaimedBy, // Use the id from the previous payload,
+              previousMessages: previousMessages
             };
 
             automatedPayload = Object.assign({}, automatedPayload, preDeterminedValues);

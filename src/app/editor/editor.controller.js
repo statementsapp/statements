@@ -5628,6 +5628,7 @@
               type: 'negation',
               code: '2A',
               dialogueSide: true,
+              previousMessages,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),

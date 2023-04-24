@@ -5692,9 +5692,9 @@
             const previousMessages = previousPayload.messagesSoFar;
 
             //2a
-            prep.previousMessages = previousPayload.messagesSoFar;
-            prep.previousMessages.push(prep.id)
-            prep.messagesSoFar = angular.copy(prep.previousMessages);
+            var previousMessages = previousPayload.messagesSoFar;
+            previousMessages.push(prep.id)
+            var messagesSoFar = angular.copy(prep.previousMessages);
 
             //2b
             // prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);

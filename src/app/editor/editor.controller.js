@@ -5688,6 +5688,7 @@
             const sectionLevel = previousPayload.sectionLevel;
             const sectionNumber = previousPayload.sectionNumber;
             const documentClaimedBy = previousPayload.documentClaimedBy;
+            const previousMessages = previousPayload.previousMessages;
             // Add any other information you need from the previous payload
 
             // Create the automated payload with scripted features and populate it with the information from the previous payload and pre-determined values

@@ -256,7 +256,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs['left'+proposition.id] === '|' ? [
                   paragraph.leftAdd = true,
                   didItRun(),
-
                   clearPropositionInput(),
                   paragraph.topAdd = false,
                   paragraph.bottomAdd = false,
@@ -639,7 +638,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          delay="200"
          class="paragraph addparagraph"
          ng-class=""
-         style="height: 26px; position: relative; left: 60px; margin-bottom: 10px;">
+         style="height: 26px; position: relative; left: 60px; margin-bottom: 0px;">
 
        <!--  <span class="paragraphhandle" ng-if="data[0].documentClaimedBy === userId" style="margin-right: 30px; display: inline-block;"></span> -->
 

@@ -3509,12 +3509,7 @@
 
 
 
-          // Negations
-
-          // If the selected proposition is not your own
-          // and it's a sentence
-          // Or if it's a continuation of another remark
-          // it's a negation
+          
 
         } else if (paragraph.topAdd){
           console.log("3d")
@@ -3594,8 +3589,15 @@
 
           // switched sp negation requirements from sp === your username to just not the document author
 
+          // Negations
+
+          // If the selected proposition is not your own
+          // and it's a sentence
+          // Or if it's a continuation of another remark
+          // it's a negation
 
           if ($scope.selectedProposition.type === 'negation') {
+            //repeated negation
             console.log("2b")
             prep.code = '2B';
             prep.topic = $scope.selectedProposition.topic;
@@ -5628,7 +5630,6 @@
               type: 'negation',
               code: '2A',
               dialogueSide: true,
-              previousMessages: [],
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
@@ -5688,7 +5689,22 @@
             const sectionLevel = previousPayload.sectionLevel;
             const sectionNumber = previousPayload.sectionNumber;
             const documentClaimedBy = previousPayload.documentClaimedBy;
-            const previousMessages = previousPayload.previousMessages;
+            const previousMessages = previousPayload.messagesSoFar;
+
+            //2a
+            prep.previousMessages = previousPayload.messagesSoFar;
+            prep.previousMessages.push(prep.id)
+            prep.messagesSoFar = angular.copy(prep.previousMessages);
+
+            //2b
+            // prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+            // prep.previousMessages.pop();
+            // prep.id = IdFactory.next();
+            // prep.previousMessages.push(prep.id)
+            // prep.messagesSoFar = angular.copy(prep.previousMessages);
+
+
+
             // Add any other information you need from the previous payload
 
             // Create the automated payload with scripted features and populate it with the information from the previous payload and pre-determined values
@@ -5704,7 +5720,8 @@
               sectionLevel: sectionLevel, // Use the id from the previous payload
               sectionNumber: sectionNumber, // Use the id from the previous payload
               documentClaimedBy: documentClaimedBy, // Use the id from the previous payload,
-              previousMessages: previousMessages
+              previousMessages: previousMessages,
+              messagesSoFar: messagesSoFar
             };
 
             automatedPayload = Object.assign({}, automatedPayload, preDeterminedValues);

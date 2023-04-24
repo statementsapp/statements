@@ -5689,7 +5689,7 @@
             const sectionLevel = previousPayload.sectionLevel;
             const sectionNumber = previousPayload.sectionNumber;
             const documentClaimedBy = previousPayload.documentClaimedBy;
-            const previousMessages = previousPayload.messagesSoFar;
+            
 
             //2a
             var previousMessages = previousPayload.messagesSoFar;

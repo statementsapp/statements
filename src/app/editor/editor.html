@@ -228,7 +228,7 @@
         <span ng-if="userId === data[0].documentClaimedBy" style="color: white; position:relative; font-size:16px">&nbsp;(author)</span>
         </span>
 
-        <!-- <span style="color: white;">{{selectedProposition}}</span> -->
+        <span ng-repeat="userAction in userActions" style="color: white;">{{userAction}}</span>
         <span id="dragelement" class="dragelement">
           <span ng-repeat="string in dragStrings" ng-class="{'textremark': string.type}" style="color: #f0f0f0">{{string.text}}</span>
         </span>

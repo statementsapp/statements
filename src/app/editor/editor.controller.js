@@ -4012,11 +4012,11 @@
           chatSocket.emit('proposition', $scope.userId, prep.remarkPayload, $scope.bookId);
         }
 
-        function isPredefinedPoint(currentIndex) {
-          return $scope.preDefinedPoints.some(point => point.index === currentIndex);
+        function isPredefinedPoint(thisPointIndex) {
+          return $scope.preDefinedPoints.some(point => point.index === thisPointIndex);
         }
 
-        
+
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
           $scope.userActions.push(prep.payload);

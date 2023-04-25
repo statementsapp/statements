@@ -5772,12 +5772,13 @@
               id: id, // Use the id from the previous payload
               targetNodeId: targetNodeId, // Use the id from the previous payload
               targetParagraphId: targetParagraphId, // Use the id from the previous payload
-              afterPropositionId: afterPropositionId, // Use the id from the previous payload
+              afterPropositionId: afterPropositionId ? afterPropositionId : undefined,
               sectionLevel: sectionLevel, // Use the id from the previous payload
               sectionNumber: sectionNumber, // Use the id from the previous payload
               documentClaimedBy: documentClaimedBy, // Use the id from the previous payload,
               previousMessages: previousMessages,
-              messagesSoFar: messagesSoFar
+              messagesSoFar: messagesSoFar,
+              afterRemarkId : afterRemarkId ? afterRemarkId : undefined
             };
 
             automatedPayload = Object.assign({}, automatedPayload, preDeterminedValues);

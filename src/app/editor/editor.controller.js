@@ -5736,12 +5736,12 @@
             const targetNodeId = previousPayload.targetNodeId;
             const targetParagraphId = previousPayload.targetParagraphId;
             if (preDeterminedValues.code === '2B'){
-              const afterPropositionId = previousPayload.of.id;
-              const afterRemarkId = previousPayload.remarkId;
+              var afterPropositionId = previousPayload.of.id;
+              var afterRemarkId = previousPayload.remarkId;
             } else if (preDeterminedValues.code === '2A'){
-              const afterPropositionId = previousPayload.id;
+              var afterPropositionId = previousPayload.id;
             } else {
-              const afterPropositionId = undefined;
+              var afterPropositionId = undefined;
             }
             console.log("After proposition id: ", afterPropositionId)
             

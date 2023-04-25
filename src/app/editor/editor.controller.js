@@ -5735,7 +5735,13 @@
             const id = IdFactory.next();
             const targetNodeId = previousPayload.targetNodeId;
             const targetParagraphId = previousPayload.targetParagraphId;
-            const afterPropositionId = previousPayload.afterPropositionId;
+            if (preDeterminedValues.code === '2B'){
+              const afterPropositionId = previousPayload.of.id;
+              const afterRemarkId = previousPayload.remarkId;
+            } else {
+              const afterPropositionId = previousPayload.afterPropositionId;
+            }
+            
             const sectionLevel = previousPayload.sectionLevel;
             const sectionNumber = previousPayload.sectionNumber;
             const documentClaimedBy = previousPayload.documentClaimedBy;

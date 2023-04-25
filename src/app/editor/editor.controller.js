@@ -5675,7 +5675,7 @@
         function createAutomatedPayload(previousPayload, prepId) {
           console.log("Previous payload: ", previousPayload)
           // Find the pre-determined values for the current pre-defined point
-            const preDeterminedValues = $scope.preDefinedPoints.find(point => point.index === $scope.userActions.length + 1).payloadData;
+            const preDeterminedValues = $scope.preDefinedPoints.find(point => point.index === $scope.userActions.length).payloadData;
             console.log("Predetermined values: ", preDeterminedValues)
             // Extract the required information from the previous payload
             const topic = previousPayload.topic;

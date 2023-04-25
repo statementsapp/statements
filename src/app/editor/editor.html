@@ -148,7 +148,7 @@
        id="firstrow"
        ng-class="{titled: title}"
        ng-click="[clearDragDetector(), didItRun(), draggingNode || draggingParagraph || draggingProposition ? clearDrag() : inputs.nothing]"
-       ng-mousemove="assessDragScrollUpper()"
+       ng-mousemove="draggingProposition || draggingParagraph || draggingNode ? assessDragScrollUpper() : inputs.nothing"
        style="line-height: normal;">
 
 

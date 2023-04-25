@@ -3680,6 +3680,7 @@
                 paragraph.propositions[i].id === prep.previousMessages[j] &&
                 j > 1){
                 // If it's one of your own rejoinders in the same thread , count it
+                console.log("Adding to capacity count: ", paragraph.propositions[i].text)
                 prep.capacityCount++;
               }
             }

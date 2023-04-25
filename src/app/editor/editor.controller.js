@@ -5649,6 +5649,28 @@
               delay: 3000,
             } 
           },
+          { index: 3, 
+            payloadData: {
+              author: 'bbb',
+              text: 'Other text.',
+              dialogueText: 'Other text.',
+              type: 'negation',
+              code: '2A',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              blankId: IdFactory.next(),
+              textSide: false,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              delay: 3000,
+            } 
+          }
           // Add more pre-defined points with their respective pre-determined values
         ];
 

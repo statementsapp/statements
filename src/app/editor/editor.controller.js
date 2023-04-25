@@ -4016,6 +4016,7 @@
         }
 
         function isPredefinedPoint(thisPointIndex) {
+          console.log("If point: ", thisPointIndex)
           return $scope.preDefinedPoints.some(point => point.index === thisPointIndex);
         }
 
@@ -4023,7 +4024,7 @@
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
           $scope.userActions.push(prep.payload);
-          if (isPredefinedPoint($scope.userActions[$scope.userActions.length])) {
+          if (isPredefinedPoint($scope.userActions[$scope.userActions.length].index)) {
             $scope.simulateSecondUser(prep.id);
           }
         }

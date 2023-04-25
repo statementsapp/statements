@@ -1769,7 +1769,6 @@
 
       // Selects proposition (propositions are often selected without this function)
       $scope.selectProposition = function (proposition) {
-        console.log("PROPOSITION: ", proposition)
         if ($scope.selectedProposition) {
           if ($scope.selectedProposition.id !== proposition.id) {
             console.log("IF")
@@ -1778,19 +1777,18 @@
             $scope.hasRightFocus.id = proposition.id;
             focusFactory($scope.selectedProposition.id);
           } else {
-            console.log("LOOK AT THIS ELSE")
+           
 
             $scope.selectedProposition = proposition;
             $scope.hasRightFocus.id = proposition.id;
             focusFactory($scope.selectedProposition.id);
           }
         } else {
-          console.log("AND THIS ELSE")
+          
 
           $scope.selectedProposition = proposition;
           $scope.hasRightFocus.id = proposition.id;
           focusFactory($scope.selectedProposition.id);
-          console.log("Selected: ", $scope.selectedProposition.id)
         }
         $scope.highlight.id = '';
         $scope.highlight.highlit = null;
@@ -2765,7 +2763,6 @@
         }
         $scope.thereIsAHighlightedNode = true;
         $scope.highlightedNode = node;
-        console.log("Highligh node highlighted node: ", $scope.highlightedNode)
       }
 
       $scope.unHighlightNode = function (){
@@ -2787,7 +2784,6 @@
         
         $scope.thereIsAHighlightedNode = false;
         $scope.highlightedNode = {};
-        console.log("Un highlight node highlighted node: ", $scope.highlightedNode)
       }
 
       $scope.markNode = function (){
@@ -5013,7 +5009,7 @@
 
 
             if (payload.type === 'assertion' && !payload.draggedProps){
-              console.log("First dialogue printer")
+              
               // var goingToPushThis = {
               //   isMessage: true,
               //   author: payload.author,
@@ -5042,7 +5038,7 @@
                 animate: true
               })
             } else if (payload.type === 'negation'){
-              console.log("Second dialogue printer")
+              
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id){
                 $scope.data[0].dialogue.push(
                 {
@@ -5060,7 +5056,7 @@
                   animate: true
                 })
               } else {
-                console.log("Third dialogue printer")
+                
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                   if ($scope.data[0].dialogue[i].id === payload.of.id){
                     $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
@@ -5089,7 +5085,7 @@
 
 
             } else if (payload.isRejoinder && !payload.draggedProps){
-              console.log("Fourth dialogue printer")
+              
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if ($scope.data[0].dialogue[i].id === payload.of.id &&
                   $scope.data[0].dialogue[i].type !== 'negation'){
@@ -5131,7 +5127,7 @@
 
             // goes split screen on the first message
             if ($scope.isMessageFresh && !$scope.fullScreenMessages){
-              console.log("Message defreshening")
+              
               $scope.goSplitScreen();
               $scope.isMessageFresh = false;
             }
@@ -5279,7 +5275,7 @@
 
               
             }
-            console.log("Book right earlier ", $scope.data[0].nodes[0])
+            
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
             apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
             profileService.setSelectedBook($scope.data[0]);
@@ -5291,8 +5287,7 @@
 
             
 
-            console.log("Book right now: ", $scope.data[0].nodes[0])
-            console.log("Profile right now: ", $scope.profile)
+           
 
           });
           if ($scope.saveThisForASec){

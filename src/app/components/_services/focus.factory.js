@@ -9,7 +9,7 @@
       // inputs elements that are in a disabled state but are enabled when those events
       // are triggered.
       $timeout(function() {
-        console.log("focusing")
+        
         var element = $window.document.getElementById(id);
         if (element) {
           element.focus();
@@ -19,7 +19,7 @@
 
           if (selectedProposition){
             if (selectedProposition.textSide || !selectedProposition.dialogueSide){
-              console.log("Inside two conditions")
+              
               const range = document.createRange();
               range.selectNodeContents(element);
               range.collapse(false);

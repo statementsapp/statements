@@ -5295,7 +5295,7 @@
         }, 35);
         
         function isPredefinedPoint(thisPointIndex) {
-          console.log("If point: ", point)
+          console.log("If point: ", thisPointIndex)
           return $scope.preDefinedPoints.some(point => point.index === thisPointIndex);
         }
 

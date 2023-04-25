@@ -135,12 +135,12 @@ a {
   height: 30px;
   color: #f0f0f0;
   transform: translateZ(0);
-  z-index: 0;
+  z-index: 9999;
 
 }
 
 .upfrontindex{
-  z-index: 9999
+  
 }
 
 .blurrerborderbottom{

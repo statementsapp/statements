@@ -5726,12 +5726,20 @@
             const topic = previousPayload.topic;
             const ofNodeId = previousPayload.ofNodeId;
             const ofParagraphId = previousPayload.ofParagraphId;
-            const of = {
-              type: previousPayload.type,
-              author: previousPayload.author,
-              id: previousPayload.id,
-              text: previousPayload.text
-            };
+            if (payload.code !== '2B') {
+              var of = {
+                type: previousPayload.type,
+                author: previousPayload.author,
+                id: previousPayload.id,
+                text: previousPayload.text
+              };
+            } else {
+              type: previousPayload.of.type,
+              author: previousPayload.of.author,
+              id: previousPayload.of.id,
+              text: previousPayload.of.text
+            }
+            
             const id = IdFactory.next();
             const targetNodeId = previousPayload.targetNodeId;
             const targetParagraphId = previousPayload.targetParagraphId;

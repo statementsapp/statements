@@ -5668,9 +5668,32 @@
               paragraphId: IdFactory.next(),
               remarkId: IdFactory.next(),
               dropflag: false,
-              delay: 3000,
+              delay: 5000,
+            } 
+          },
+          { index: 4, 
+            payloadData: {
+              author: 'ccc',
+              text: 'Have some more text.',
+              dialogueText: 'Have some more text.',
+              type: 'negation',
+              code: '2B',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              blankId: IdFactory.next(),
+              textSide: false,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              delay: 4000,
             } 
           }
+
           // Add more pre-defined points with their respective pre-determined values
         ];
 

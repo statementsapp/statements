@@ -5732,12 +5732,14 @@
                 author: previousPayload.author,
                 id: previousPayload.id,
                 text: previousPayload.text
-              };
+              }
             } else {
-              type: previousPayload.of.type,
-              author: previousPayload.of.author,
-              id: previousPayload.of.id,
-              text: previousPayload.of.text
+              var of = {
+                type: previousPayload.of.type,
+                author: previousPayload.of.author,
+                id: previousPayload.of.id,
+                text: previousPayload.of.text
+              }
             }
             
             const id = IdFactory.next();

@@ -5740,7 +5740,10 @@
               const afterRemarkId = previousPayload.remarkId;
             } else if (preDeterminedValues.code === '2A'){
               const afterPropositionId = previousPayload.id;
+            } else {
+              const afterPropositionId = undefined;
             }
+            console.log("After proposition id: ", afterPropositionId)
             
             const sectionLevel = previousPayload.sectionLevel;
             const sectionNumber = previousPayload.sectionNumber;

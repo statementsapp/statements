@@ -7,14 +7,15 @@
 
     $scope.showModal = true;
 
-    $document.on('click', function(event) {
-        console.log("Event: ", event.target)
-        if ($scope.showModal && event.target === 'div.modal.fade.ng-isolate-scope.in)') {
-          $scope.$apply(function() {
-            $scope.showModal = false;
-          });
-        }
-      });
+    // Some code for dismissing the modal on click outside of it
+    // $document.on('click', function(event) {
+    //     console.log("Event: ", event.target)
+    //     if ($scope.showModal && event.target === 'div.modal.fade.ng-isolate-scope.in)') {
+    //       $scope.$apply(function() {
+    //         $scope.showModal = false;
+    //       });
+    //     }
+    //   });
 
 
      vm.bookId = '';

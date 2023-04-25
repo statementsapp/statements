@@ -5726,7 +5726,7 @@
             const topic = previousPayload.topic;
             const ofNodeId = previousPayload.ofNodeId;
             const ofParagraphId = previousPayload.ofParagraphId;
-            if (payload.code !== '2B') {
+            if (preDeterminedValues.code !== '2B') {
               var of = {
                 type: previousPayload.type,
                 author: previousPayload.author,

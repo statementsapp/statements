@@ -5738,8 +5738,8 @@
             if (preDeterminedValues.code === '2B'){
               const afterPropositionId = previousPayload.of.id;
               const afterRemarkId = previousPayload.remarkId;
-            } else {
-              const afterPropositionId = previousPayload.afterPropositionId;
+            } else if (preDeterminedValues.code === '2A'){
+              const afterPropositionId = previousPayload.id;
             }
             
             const sectionLevel = previousPayload.sectionLevel;

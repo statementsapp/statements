@@ -1318,7 +1318,14 @@
       $scope.assessDragScrollUpper = function () {
         // if ($scope.draggedProposition.id && $scope.upperDragScrollerMouseOver){
 
-          document.getElementById('tree-root').scrollTop--;
+
+
+
+          // document.getElementById('tree-root').scrollTop--;
+
+
+
+          
           // console.log("triggers scroll upper")
         // }
       }

@@ -4023,7 +4023,7 @@
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
           $scope.userActions.push(prep.payload);
-          if (isPredefinedPoint($scope.userActions[$scope.userActions.length-1])) {
+          if (isPredefinedPoint($scope.userActions[$scope.userActions.length])) {
             $scope.simulateSecondUser(prep.id);
           }
         }

@@ -3671,7 +3671,7 @@
           prep.isRejoinder = true;
 
           prep.capacityCount = 0;
-
+          console.log("Previous messages: ", prep.previousMessages);
           for (var i = 0; i < paragraph.propositions.length; i++){
             for (var j = 0; j < prep.previousMessages.length; j++){
               if (paragraph.propositions[i].type === 'assertion' &&

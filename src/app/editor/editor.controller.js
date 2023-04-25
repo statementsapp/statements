@@ -1325,7 +1325,7 @@
 
 
 
-          
+
           // console.log("triggers scroll upper")
         // }
       }
@@ -4032,7 +4032,7 @@
           }
         }
         // Check if it's time to simulate the second user's action
-        
+        console.log("User actions: ", $scope.userActions)
 
         prep = {};
 

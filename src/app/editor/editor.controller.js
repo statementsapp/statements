@@ -4015,6 +4015,8 @@
         function isPredefinedPoint(currentIndex) {
           return $scope.preDefinedPoints.some(point => point.index === currentIndex);
         }
+
+        
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
           $scope.userActions.push(prep.payload);

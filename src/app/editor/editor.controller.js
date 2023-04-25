@@ -5662,7 +5662,7 @@
         $scope.simulateSecondUser = function(prepId) {
           if ($scope.userActions.length > 0) {
             console.log("User actions: ", $scope.userActions)
-            const previousPayload = $scope.userActions.pop();
+            const previousPayload = $scope.userActions[$scope.userActions.length-1];
 
             // Create the automated payload with scripted features
             let automatedPayload = createAutomatedPayload(previousPayload, prepId);

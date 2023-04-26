@@ -3674,7 +3674,7 @@
           console.log("Previous messages: ", prep.previousMessages);
           for (var i = 0; i < paragraph.propositions.length; i++){
             for (var j = 0; j < prep.previousMessages.length; j++){
-              console.log("Considering: ", paragraph.propositions[i])
+              console.log("Considering at ",i,", ",j,":", paragraph.propositions[i])
               if (paragraph.propositions[i].type === 'assertion' &&
                 paragraph.propositions[i].author === $scope.userId &&
                 paragraph.propositions[i].isRejoinder &&

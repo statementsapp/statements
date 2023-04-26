@@ -4495,10 +4495,10 @@
                 }
               }
 
-              for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions.length; i++){
-                for (var j = 0; j < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions[i].remarks.length; j++){
-                  if (payload.rejoins === $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions[i].remarks[j].id){
-                    $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions[i].remarks[j].rejoined = true;
+              for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions.length; i++){
+                for (var j = 0; j < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks.length; j++){
+                  if (payload.rejoins === $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks[j].id){
+                    $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks[j].rejoined = true;
                     break;
                   }
                 }

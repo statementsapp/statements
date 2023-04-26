@@ -395,7 +395,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             oncontextmenu="return false"
           >
             {{proposition.text}}
-            {{proposition.id}}
+            
 
 
 
@@ -550,7 +550,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-if="proposition.remarksExpanded"
               >
 
-                {{remark.text}}{{remark.id}}
+                {{remark.text}}
               
               <!--   'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy !== userId) && cowsComeHome), -->
               </span>

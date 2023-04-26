@@ -5591,7 +5591,12 @@
       $scope.scrollMessagesToBottom = function () {
         $timeout(function () {
           var pane = document.getElementById('dialoguelist');
-          pane.scrollTop = pane.scrollHeight + 300;
+          if ($scope.shortEditor){
+            pane.scrollTop = pane.scrollHeight;
+          } else {
+            pane.scrollTop = pane.scrollHeight + 300;
+          }
+          
         }, 20);
       };
 

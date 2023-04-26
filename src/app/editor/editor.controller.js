@@ -6220,15 +6220,15 @@
                         }
                       }
                       if (remarkIndex || remarkIndex === 0){
-                        console.log("looks good to go")
-                        console.log("Elemrgent: ", 
+                        // console.log("looks good to go")
+                        // console.log("Elemrgent: ", 
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].text)
-                        console.log("Element: ", document.getElementById(
-                            $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
+                        // console.log("Element: ", document.getElementById(
+                        //     $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
                             $scope.holdOnToThis = angular.copy(
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
                         setTimeout(function () {
-                          console.log("Upper timeout element: ", document.getElementById($scope.holdOnToThis))
+                          // console.log("Upper timeout element: ", document.getElementById($scope.holdOnToThis))
                             $scope.selectedProposition = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex];
                             $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
                             $scope.selectedNode = $scope.data[0].nodes[nodeIndex];

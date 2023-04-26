@@ -3677,9 +3677,8 @@
               console.log("Considering at ",i,", ",j,":", paragraph.propositions[i])
               if (paragraph.propositions[i].type === 'assertion' &&
                 paragraph.propositions[i].author === $scope.userId &&
-                paragraph.propositions[i].isRejoinder &&
                 paragraph.propositions[i].id === prep.previousMessages[j] &&
-                j > 1){
+                !paragraph.propositions[i].hiddenForAll){
                 // If it's one of your own rejoinders in the same thread , count it
                 console.log("Adding to capacity count: ", paragraph.propositions[i].text)
                 prep.capacityCount++;

@@ -4384,6 +4384,7 @@
               )
 
               if (payload.author === $scope.userId && !payload.dialogueSide && !$scope.selectedProposition.id){
+                console.log("2A click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
                 }, 20);
@@ -4424,6 +4425,7 @@
               )
 
               if (payload.author === $scope.userId && !payload.dialogueSide){
+                console.log("2A click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
                 }, 20);

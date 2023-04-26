@@ -4434,15 +4434,27 @@
               // rejoinder
 
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
-                if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
+                if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId &&
+                  !$scope.data[0].nodes[i].droppedElsewhere){
                   apply.nodeIndex = i;
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
-                    if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
+                    if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId &&
+                      !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
                       apply.afterParagraphIndex = j;
+                      break;
                     }
                   }
                 }
               }
+
+
+
+              // How does the above deal with hidden or deleted nodes?
+
+
+
+
+
 
               if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1]){
                 for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex-1); i--){
@@ -4483,10 +4495,10 @@
                 }
               }
 
-              for (var i = 0; i < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphTarget].propositions.length; i++){
-                for (var j = 0; j < $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphTarget].propositions[i].remarks.length; j++){
-                  if (payload.rejoins === $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphTarget].propositions[i].remarks[j].id){
-                    $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.afterParagraphTarget].propositions[i].remarks[j].rejoined = true;
+              for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions.length; i++){
+                for (var j = 0; j < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions[i].remarks.length; j++){
+                  if (payload.rejoins === $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions[i].remarks[j].id){
+                    $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphTarget].propositions[i].remarks[j].rejoined = true;
                     break;
                   }
                 }

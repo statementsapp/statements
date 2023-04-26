@@ -4504,7 +4504,7 @@
                 }
 
               }
-              if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
+              if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide && !$scope.selectedProposition.id){
                 setTimeout(function () {
                 //   $scope.$apply(function () {
                     document.getElementById('proposition' + payload.id).click();

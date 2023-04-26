@@ -4383,7 +4383,7 @@
                 }
               )
 
-              if (payload.author === $scope.userId && !payload.dialogueSide){
+              if (payload.author === $scope.userId && !payload.dialogueSide && !$scope.selectedProposition.id){
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
                 }, 20);

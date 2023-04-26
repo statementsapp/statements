@@ -4408,6 +4408,8 @@
                 }, 20);
               } else if (apply.reselectTarget){
                 console.log("2B Collision click")
+                console.log("About to click: ", document.getElementById('proposition' + apply.reselectTarget))
+
                 setTimeout(function () {
                   document.getElementById('proposition' + apply.reselectTarget).click();
                 }, 20);

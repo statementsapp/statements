@@ -4409,7 +4409,7 @@
               } else if (apply.reselectTarget){
                 console.log("2B Collision click")
                 setTimeout(function () {
-                  document.getElementById('remark' + apply.reselectTarget).click();
+                  document.getElementById('proposition' + apply.reselectTarget).click();
                 }, 20);
               }
 
@@ -5231,7 +5231,6 @@
                 if ($scope.data[0].dialogue[i].author === $scope.userId){
                   $scope.onTheBoard = true;
                   $scope.thisMoveCounter++;
-                  console.log("On the board payload counted")
                   break;
                 }
               }

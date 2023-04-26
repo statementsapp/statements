@@ -4390,7 +4390,7 @@
                         if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id === $scope.selectedProposition.id &&
                           !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].hiddenForAll &&
                           ($scope.selectedProposition.textSide || !$scope.selectedProposition.dialogueSide)){
-                          apply.reselectTarget = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id;
+                          apply.reselectTarget = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id);
                           console.log("Got a reslect target: ", apply.reselectTarget)
                           break;
                         }

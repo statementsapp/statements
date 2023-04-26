@@ -3892,7 +3892,8 @@
           documentClaimedBy: (prep.documentClaimedBy ? prep.documentClaimedBy : undefined),
           previousMessages: (prep.previousMessages ? prep.previousMessages : undefined),
           messagesSoFar: (prep.messagesSoFar ? prep.messagesSoFar : undefined),
-          rejoins: prep.rejoins ? prep.rejoins : undefined
+          rejoins: prep.rejoins ? prep.rejoins : undefined,
+          isRejoinder : prep.isRejoinder ? prep.isRejoinder : undefined
           // class: (prep.newClass ? prep.newClass : prep.class),
           // nodePath: (prep.nodePath ? prep.nodePath : undefined),
           // oldNodePath: (prep.oldNodePath ? prep.oldNodePath : undefined),
@@ -4150,7 +4151,6 @@
                 if (document.getElementById($scope.selectedProposition.id)){
                   if (!document.getElementById($scope.selectedProposition.id).classList.contains('thread')) {
                     document.getElementById($scope.selectedProposition.id).innerHTML = '';
-                    console.log("Just cleared this: ", document.getElementById($scope.selectedProposition.id))
                   } else {
                     // Do something else if the element doesn't have the class
                   }

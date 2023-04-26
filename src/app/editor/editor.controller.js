@@ -4409,7 +4409,7 @@
               } else if (apply.reselectTarget){
                 console.log("2B Collision click")
                 setTimeout(function () {
-                  document.getElementById('remark' + apply.reselectTarget).click();
+                  focusFactory('remark' + apply.reselectTarget)
                 }, 20);
               }
 

@@ -4412,7 +4412,7 @@
 
                 setTimeout(function () {
                   document.getElementById('proposition' + apply.reselectTarget).click();
-                }, 20);
+                }, 100);
               }
 
             } else if (payload.code === '2A'){

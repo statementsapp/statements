@@ -79,6 +79,8 @@ ol, ul {
 
 .shorteditor {
   height: 65vh !important;
+  min-height: 65vh !important;
+  max-height: 65vh !important;
 }
 
 html, body, body.ng-scope {
@@ -769,8 +771,8 @@ textarea {
   overflow-x: hidden;
   position: relative;
   margin-bottom: 10px;
-  min-height: 108vh;
-  max-height: 108vh;
+  min-height: 100vh;
+  max-height: 100vh;
 
   cursor: default;
 }

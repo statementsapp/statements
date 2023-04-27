@@ -4409,9 +4409,10 @@
               } else if (apply.reselectTarget){
                 console.log("2B Collision click")
                 console.log("About to click: ", angular.copy(document.getElementById('proposition' + apply.reselectTarget)))
-
+                var copyThis = angular.copy(apply.reselectTarget);
+                console.log("Copy this: ", copyThis)
                 setTimeout(function () {
-                  document.getElementById('proposition' + apply.reselectTarget).click();
+                  document.getElementById('proposition' + copyThis).click();
                 }, 100);
               }
 

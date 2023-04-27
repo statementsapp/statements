@@ -418,11 +418,11 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                >
             <i class="fa-solid fa-square-minus"
                style="line-height: inherit; display: inline-block;"
-               ng-if="proposition.remarks && (proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">
+               ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">
             </i>
-            <span ng-if="proposition.remarks && (proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length) > 0 && !proposition.remarksExpanded ? true : false">(</span>
-            <span ng-if="proposition.remarks && (proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length) > 0 && !proposition.remarksExpanded ? true : false">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
-            <span ng-if="proposition.remarks && (proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length) > 0 && !proposition.remarksExpanded ? true : false">)</span>
+            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">(</span>
+            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
+            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">)</span>
           </sub>
           <span
             editable-span-ng-model 

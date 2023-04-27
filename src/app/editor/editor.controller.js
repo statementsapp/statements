@@ -4401,19 +4401,19 @@
               }
 
 
-              // if (payload.author === $scope.userId && !payload.dialogueSide && !$scope.selectedProposition.id){
-              //   console.log("2B click")
-              //   setTimeout(function () {
-              //     document.getElementById('proposition' + payload.id).click();
-              //   }, 20);
-              // } else if (apply.reselectTarget){
-              //   console.log("2B Collision click")
-              //   console.log("About to click: ", document.getElementById('proposition' + apply.reselectTarget))
+              if (payload.author === $scope.userId && !payload.dialogueSide && !$scope.selectedProposition.id){
+                console.log("2B click")
+                setTimeout(function () {
+                  document.getElementById('proposition' + payload.id).click();
+                }, 20);
+              } else if (apply.reselectTarget){
+                console.log("2B Collision click")
+                console.log("About to click: ", document.getElementById('proposition' + apply.reselectTarget))
 
-              //   setTimeout(function () {
-              //     document.getElementById('proposition' + apply.reselectTarget).click();
-              //   }, 100);
-              // }
+                setTimeout(function () {
+                  document.getElementById('proposition' + apply.reselectTarget).click();
+                }, 100);
+              }
 
             } else if (payload.code === '2A'){
               console.log("2a received")

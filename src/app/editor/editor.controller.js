@@ -4450,11 +4450,37 @@
                 }
               )
 
-              if (payload.author === $scope.userId && !payload.dialogueSide){
+              for (var i = 0; i < $scope.data[0].nodes.length; i++){
+                for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
+                  for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
+                    for (var l = 0; l < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; l++){
+                      if ($scope.selectedProposition.id){
+                        if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id === $scope.selectedProposition.id &&
+                          !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].hiddenForAll &&
+                          ($scope.selectedProposition.textSide || !$scope.selectedProposition.dialogueSide)){
+                          apply.reselectTarget = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id);
+                          console.log("Got a reslect target: ", apply.reselectTarget)
+                          break;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              if (payload.author === $scope.userId && !payload.dialogueSide && !$scope.selectedProposition.id){
                 console.log("2A click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
                 }, 20);
+              } else if (apply.reselectTarget){
+                console.log("2A Collision click")
+                console.log("About to click: ", angular.copy(document.getElementById('proposition' + apply.reselectTarget)))
+                var copyThis = angular.copy(apply.reselectTarget);
+                console.log("Copy this: ", copyThis)
+                setTimeout(function () {
+                  document.getElementById('proposition' + copyThis).click();
+                }, 100);
               }
 
             } else if (payload.code === '3B'){

@@ -414,19 +414,19 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
 
 
-<!--           <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex;"
+          <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex; font-size: 22px"
                >
             <i class="fa-solid fa-square-minus"
                style="line-height: inherit; display: inline-block;"
-               ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">
+               ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" style="font-size: 22px">
             </i>
-            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">(</span>
-            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
-            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">)</span>
-          </sub> -->
+            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" style="font-size: 22px">(</span>
+            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" style="font-size: 22px">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
+            <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" style="font-size: 22px">)</span>
+          </sub>
 
 
-          <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
+
 
 
           <span

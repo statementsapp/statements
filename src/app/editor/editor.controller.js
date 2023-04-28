@@ -4201,7 +4201,8 @@
                               remarks: [],
                               dialogueSide: false,
                               first: true,
-                              messagesSoFar: payload.messagesSoFar
+                              messagesSoFar: payload.messagesSoFar,
+                              remarksExpanded: true
                             }
                           ]
                         }
@@ -4235,7 +4236,8 @@
                               remarks: [],
                               dialogueSide: false,
                               first: true,
-                              messagesSoFar: payload.messagesSoFar
+                              messagesSoFar: payload.messagesSoFar,
+                              remarksExpanded: true
                             }
                           ]
                         }
@@ -4287,7 +4289,8 @@
                               remarks: [],
                               dialogueSide: false,
                               first: true,
-                              messagesSoFar: payload.messagesSoFar
+                              messagesSoFar: payload.messagesSoFar, 
+                              remarksExpanded : true
                             }
                           ]
                         }
@@ -4324,7 +4327,8 @@
                               remarks: [],
                               dialogueSide: false,
                               first: true,
-                              messagesSoFar: payload.messagesSoFar
+                              messagesSoFar: payload.messagesSoFar,
+                              remarksExpanded: true
                             }
                           ]
                         }
@@ -4379,7 +4383,7 @@
                   messagesSoFar: payload.messagesSoFar,
                   previousMessages: payload.previousMessages,
                   of: payload.of,
-                  muted: payload.muted ? true : undefined
+                  muted: payload.muted ? true : undefined,
                 }
               )
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
@@ -4526,7 +4530,8 @@
                       remarks: [],
                       dialogueSide: false,
                       first: true,
-                      messagesSoFar: payload.messagesSoFar
+                      messagesSoFar: payload.messagesSoFar,
+                      remarksExpanded: true
                     }
                   ]
                 }
@@ -4543,7 +4548,8 @@
                       remarks: [],
                       dialogueSide: false,
                       first: true,
-                      messagesSoFar: payload.messagesSoFar
+                      messagesSoFar: payload.messagesSoFar,
+                      remarksExpanded: true
                     }
                   ]
                 }
@@ -4601,7 +4607,8 @@
                  dialogueSide: false,
                  first: true,
                  messagesSoFar: payload.messagesSoFar,
-                 isRejoinder: true
+                 isRejoinder: true,
+                 remarksExpanded: true
                }
              } else {
                $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1] = {
@@ -4613,7 +4620,8 @@
                  dialogueSide: false,
                  first: true,
                  messagesSoFar: payload.messagesSoFar,
-                 isRejoinder: true
+                 isRejoinder: true,
+                 remarksExpanded: true
                }
              }
 
@@ -4674,7 +4682,8 @@
                     dialogueSide: false,
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
-                    preSelected: false
+                    preSelected: false,
+                    remarksExpanded: true
                   }
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                   setTimeout(function () {
@@ -4730,7 +4739,8 @@
                       dialogueSide: false,
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
-                      preSelected: false
+                      preSelected: false,
+                      remarksExpanded: true
                     }
                   ]
                 })
@@ -4756,7 +4766,8 @@
                       dialogueSide: false,
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
-                      preSelected: false
+                      preSelected: false,
+                      remarksExpanded: true
                     }
                   ]
                 })
@@ -4800,7 +4811,8 @@
                         dialogueSide: false,
                         first: true,
                         messagesSoFar: payload.messagesSoFar,
-                        preSelected: false
+                        preSelected: false,
+                        remarksExpanded: true
                       }
                     ]
                   }
@@ -4840,7 +4852,8 @@
                         dialogueSide: false,
                         first: true,
                         messagesSoFar: payload.messagesSoFar,
-                        preSelected: false
+                        preSelected: false,
+                        remarksExpanded: true
                       }
                     ]
                   }
@@ -4906,7 +4919,8 @@
                     dialogueSide: false,
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
-                    preSelected: false
+                    preSelected: false,
+                    remarksExpanded: true
                   }
                 } else {
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1] = {
@@ -4918,7 +4932,8 @@
                     dialogueSide: false,
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
-                    preSelected: false
+                    preSelected: false,
+                    remarksExpanded: true
                   }
                 }
 
@@ -5028,7 +5043,8 @@
                       dialogueSide: false,
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
-                      preSelected: false
+                      preSelected: false,
+                      remarksExpanded: true
                     }
                   ]
                 }

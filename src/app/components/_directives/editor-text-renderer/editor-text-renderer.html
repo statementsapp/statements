@@ -412,11 +412,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
           
 
-          <!-- ng-if="proposition.remarks && (proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" -->
 
-
-
-          
 
 <!--           <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" ng-click="[toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex;"
                >
@@ -429,11 +425,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">)</span>
           </sub> -->
 
-          <i class="fa-solid fa-square-minus"
-             style="line-height: inherit; display: inline-block;"
-             ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">
-          </i>
 
+          <span ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</span>
 
 
           <span

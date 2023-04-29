@@ -5029,7 +5029,6 @@
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
                       preSelected: false,
-                      remarksExpanded: true
                     }
                   ]
                 }

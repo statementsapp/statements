@@ -31,7 +31,6 @@
                                 remarks: [{}],
                                 dialogueSide: false,
                                 first: true,
-                                remarksExpanded: true
                             }
                         ]
                     }

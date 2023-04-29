@@ -5704,7 +5704,7 @@
             payloadData: {
               author: 'aaa',
               text: 'This text you want.',
-              dialogueText: 'This text you want.',
+              dialogueText: 'This text you want and all this text so on and so forth.',
               type: 'negation',
               code: '2A',
               dialogueSide: true,
@@ -5725,7 +5725,7 @@
           { index: 3, 
             payloadData: {
               author: 'bbb',
-              text: 'Other text.',
+              text: 'Other text and with this text there is text.',
               dialogueText: 'Other text.',
               type: 'negation',
               code: '2A',
@@ -5747,7 +5747,7 @@
           { index: 4, 
             payloadData: {
               author: 'ccc',
-              text: 'Have some more text.',
+              text: 'Have some more text that is text and some text that you want.',
               dialogueText: 'Have some more text.',
               type: 'negation',
               code: '2B',

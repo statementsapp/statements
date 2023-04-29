@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Dot</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .content {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: arial;
+        }
+    </style>
+    <script>
+        function isBrown(color) {
+            const r = parseInt(color.substr(1, 2), 16);
+            const g = parseInt(color.substr(3, 2), 16);
+            const b = parseInt(color.substr(5, 2), 16);
+
+            const minRGB = Math.min(r, g, b);
+            const maxRGB = Math.max(r, g, b);
+
+            const chroma = maxRGB - minRGB;
+
+            if (chroma === 0) return false;
+
+            const hue = ((maxRGB === r ? ((g - b) / chroma) % 6 : (maxRGB === g ? 2 + (b - r) / chroma : 4 + (r - g) / chroma)) * 60) % 360;
+            const saturation = chroma / (1 - Math.abs(2 * ((r + g + b) / 765) - 1));
+            const lightness = (r + g + b) / 765;
+
+            return (20 <= hue && hue <= 40) && (0.3 <= saturation) && (0.2 <= lightness && lightness <= 0.7);
+        }
+
+        function getRandomColor() {
+            let color;
+            do {
+                const letters = '0123456789ABCDEF';
+                color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+            } while (isBrown(color));
+            return color;
+        }
+
+        function changeColor() {
+            const spanElement = document.getElementById('color-changing-dot');
+            spanElement.style.color = getRandomColor();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setInterval(changeColor, 100); // Change interval to 100 milliseconds
+        });
+    </script>
+</head>
+<body>
+    <div class="content">
+        This is a sentence<span id="color-changing-dot">.</span>
+    </div>
+</body>
+</html>

@@ -4202,7 +4202,6 @@
                               dialogueSide: false,
                               first: true,
                               messagesSoFar: payload.messagesSoFar,
-                              remarksExpanded: true
                             }
                           ]
                         }
@@ -4237,7 +4236,6 @@
                               dialogueSide: false,
                               first: true,
                               messagesSoFar: payload.messagesSoFar,
-                              remarksExpanded: true
                             }
                           ]
                         }
@@ -4290,7 +4288,6 @@
                               dialogueSide: false,
                               first: true,
                               messagesSoFar: payload.messagesSoFar, 
-                              remarksExpanded : true
                             }
                           ]
                         }
@@ -4328,7 +4325,6 @@
                               dialogueSide: false,
                               first: true,
                               messagesSoFar: payload.messagesSoFar,
-                              remarksExpanded: true
                             }
                           ]
                         }
@@ -4531,7 +4527,6 @@
                       dialogueSide: false,
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
-                      remarksExpanded: true
                     }
                   ]
                 }
@@ -4549,7 +4544,6 @@
                       dialogueSide: false,
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
-                      remarksExpanded: true
                     }
                   ]
                 }
@@ -4608,7 +4602,6 @@
                  first: true,
                  messagesSoFar: payload.messagesSoFar,
                  isRejoinder: true,
-                 remarksExpanded: true
                }
              } else {
                $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1] = {
@@ -4621,7 +4614,6 @@
                  first: true,
                  messagesSoFar: payload.messagesSoFar,
                  isRejoinder: true,
-                 remarksExpanded: true
                }
              }
 
@@ -4683,7 +4675,6 @@
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
                     preSelected: false,
-                    remarksExpanded: true
                   }
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                   setTimeout(function () {
@@ -4740,7 +4731,6 @@
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
                       preSelected: false,
-                      remarksExpanded: true
                     }
                   ]
                 })
@@ -4767,7 +4757,6 @@
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
                       preSelected: false,
-                      remarksExpanded: true
                     }
                   ]
                 })
@@ -4812,7 +4801,6 @@
                         first: true,
                         messagesSoFar: payload.messagesSoFar,
                         preSelected: false,
-                        remarksExpanded: true
                       }
                     ]
                   }
@@ -4853,7 +4841,6 @@
                         first: true,
                         messagesSoFar: payload.messagesSoFar,
                         preSelected: false,
-                        remarksExpanded: true
                       }
                     ]
                   }
@@ -4920,7 +4907,6 @@
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
                     preSelected: false,
-                    remarksExpanded: true
                   }
                 } else {
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1] = {
@@ -4933,7 +4919,6 @@
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
                     preSelected: false,
-                    remarksExpanded: true
                   }
                 }
 

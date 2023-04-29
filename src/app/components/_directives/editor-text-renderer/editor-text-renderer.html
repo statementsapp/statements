@@ -424,9 +424,9 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                style="line-height: inherit; display: inline-block;"
                ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded ? true : false" style="font-size: 22px" ng-click="toggleRemarksExpansion(proposition)">
             </i> -->
-            <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded && proposition.type !== 'blank'" style="font-size: 22px">(</sub>
-            <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded && proposition.type !== 'blank'" style="font-size: 22px">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</sub>
-            <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded && proposition.type !== 'blank'" style="font-size: 22px">)</sub>
+            <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="font-size: 22px">(</sub>
+            <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="font-size: 22px">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</sub>
+            <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="font-size: 22px">)</sub>
           </span>
 
 

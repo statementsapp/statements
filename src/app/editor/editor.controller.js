@@ -5095,6 +5095,8 @@
               })
             } else if (payload.type === 'negation'){
               
+
+
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id){
                 $scope.data[0].dialogue.push(
                 {
@@ -5138,6 +5140,8 @@
                 })
                 $scope.messageToCopy = {};
               }
+
+
 
 
             } else if (payload.isRejoinder && !payload.draggedProps){
@@ -5640,6 +5644,10 @@
         } else {
           return false;
         }
+      }
+
+      $scope.textareaBlur = function (message) {
+        console.log("Blurred a textarea: ", message.dialogueText)
       }
 
       $scope.scrollMessagesToBottom = function () {

@@ -4486,6 +4486,7 @@
             } else if (payload.code === '3B'){
 
               // rejoinder
+              console.log("3B Rejoinder")
 
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId &&
@@ -4569,6 +4570,7 @@
 
             } else if (payload.code === '3A'){
               // regular rejoinder
+              console.log("3A Rejoinder")
 
              for (var i = 0; i < $scope.data[0].nodes.length; i++){
 
@@ -5062,7 +5064,7 @@
 
 
             //       DIALOGUE PRINTER
-
+            console.log("What's that payload type again: ", angular.copy(payload.type))
 
             if (payload.type === 'assertion' && !payload.draggedProps){
               
@@ -5096,7 +5098,7 @@
               })
             } else if (payload.type === 'negation'){
               
-
+              console.log("All negations")
 
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id){
                 $scope.data[0].dialogue.push(
@@ -5114,7 +5116,8 @@
                   muted: payload.muted ? true : undefined,
                   animate: true
                 })
-              } else {
+              } else {  
+
                 
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                   if ($scope.data[0].dialogue[i].id === payload.of.id){
@@ -5146,6 +5149,8 @@
 
 
             } else if (payload.isRejoinder && !payload.draggedProps){
+
+              console.log("Is rejoinder dialogue printer")
               
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if ($scope.data[0].dialogue[i].id === payload.of.id &&

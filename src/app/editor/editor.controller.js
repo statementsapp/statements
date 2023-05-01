@@ -5101,6 +5101,7 @@
               console.log("All negations")
 
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id){
+                // if it's responding to the last one, just push it
                 $scope.data[0].dialogue.push(
                 {
                   isMessage: true,
@@ -5117,16 +5118,27 @@
                   animate: true
                 })
               } else {  
-
-                
+                // 
+                // $scope.data[0].dialogue[i]['collision'+$scope.userId] &&
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
-                  if ($scope.data[0].dialogue[i].id === payload.of.id){
+                  if ($scope.data[0].dialogue[i].id === payload.of.id &&
+                  payload.of.type === 'assertion' &&
+                  $scope.hasChatFocusId === $scope.data[0].dialogue[i].id &&
+                  $scope.data[0].dialogue[i]['collision'+$scope.userId]){
+                    $scope.data[0].dialogue[i]['collision'+$scope.userId] = true;
+                    $scope.data[0].dialogue[i].deletedButCollided = true;
+                    var theresACollision = true
                     $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
-                    $scope.data[0].dialogue.splice(i, 1);
+                    
                   }
                 }
 
                 $scope.data[0].dialogue.push($scope.messageToCopy);
+
+                if (theresACollision){
+                  $scope.data[0].dialogue[$scope.data[0].dialogue.length-1]['notyetseen'+$scope.userId] = true;
+                }
+                  
                 $scope.data[0].dialogue.push(
                 {
                   isMessage: true,
@@ -5142,6 +5154,10 @@
                   muted: ($scope.data[0].muteds.includes(payload.author) ? true : undefined), 
                   animate: true
                 })
+                // if (theresACollision){
+                //   $scope.data[0].dialogue[$scope.data[0].dialogue.length-1]['notyetseen'+$scope.userId] = true;
+                // }
+                
                 $scope.messageToCopy = {};
               }
 
@@ -5151,6 +5167,7 @@
             } else if (payload.isRejoinder && !payload.draggedProps){
 
               console.log("Is rejoinder dialogue printer")
+              console.log("Shouldn't have fired")
               
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if ($scope.data[0].dialogue[i].id === payload.of.id &&
@@ -5653,6 +5670,20 @@
       }
 
       $scope.textareaBlur = function (message) {
+        if (message['collision'+$scope.userId] == true){
+          
+          setTimeout(function () {
+            $scope.$apply(function () {
+              for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+                if($scope.data[0].dialogue[i]['notyetseen'+$scope.userId]){
+                  $scope.data[0].dialogue[i]['notyetseen'+$scope.userId] = false;
+                }
+              }
+              message['collision'+$scope.userId] = false;
+            });
+
+          }, 20);
+        }
         $scope.hasChatFocusId = '';
         console.log("Blurred a textarea: ", message.dialogueText)
       }

@@ -36,8 +36,8 @@
 
     vm.booksViewed = libraryService.getBooks(profileService.getBookIds())
     
-    console.log("VM books: ", vm.books)
-    console.log("negations on the library modal controller", vm.booksNegated)
+    // console.log("VM books: ", vm.books)
+    // console.log("negations on the library modal controller", vm.booksNegated)
     vm.profile = profileService.getProfile();
     console.log("Loaded library profile state is: ", vm.profile)
     vm.processing = false;
@@ -46,7 +46,7 @@
       if (isValid) {
         vm.processing = true;
         return apiService.updateProfile(vm.profile).then(function (result) {
-          console.log("Got that update profile response: ", result.data)
+          // console.log("Got that update profile response: ", result.data)
           vm.profile = result.data;
           profileService.setProfile(result.data);
           vm.dismiss();
@@ -122,7 +122,7 @@
                   apiService: apiService
                 }
               }).result.then(function (bookId) {
-        console.log("Is there that book id")
+        // console.log("Is there that book id")
         if (bookId) {
           chatSocket.emit('leave', bookId);
           console.log("that book id: ", bookId)

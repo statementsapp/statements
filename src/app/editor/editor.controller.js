@@ -678,6 +678,7 @@
       $scope.isMouseOut = false;
       $scope.topAdderId = IdFactory.next();
       $scope.shortEditor = true;
+      $scope.textareaHasFocus = {};
       
 
       document.addEventListener('contextmenu', event => event.preventDefault());
@@ -1542,13 +1543,13 @@
                     $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
                   }
 
-                  console.log("Payload color 1: ", payloadColor)
+                  // console.log("Payload color 1: ", payloadColor)
 
                   $scope.data[0].authorTable.push({
                     authorId: payload.author,
                     color: angular.copy(payloadColor)
                   })
-                  console.log("Payload color 2: ", payloadColor)
+                  // console.log("Payload color 2: ", payloadColor)
                   if (payload.author === $scope.userId){
                     $scope.userColor = payloadColor;
                   } else {
@@ -1577,7 +1578,7 @@
                 }
               }
 
-              console.log("Payload color 3: ", payloadColor)
+              // console.log("Payload color 3: ", payloadColor)
 
               return payloadColor;
       }
@@ -3781,7 +3782,7 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
-          console.log('got to here')
+          
 
         } else if (($scope.selectedProposition.type === 'blank' &&
           $scope.userId === $scope.data[0].documentClaimedBy) ||
@@ -3819,7 +3820,7 @@
           console.log("womp womp")
           return;
         }
-        console.log('and to here')
+        
         if (prep.code === '3E' && $scope.draggingProposition){
           console.log("Special adjustment")
           prep.savedParagraphId = angular.copy(paragraph.paragraphId);
@@ -4027,7 +4028,6 @@
 
           $timeout(function () {
             $scope.$apply(function () {
-              console.log("Clearing a bunch of stuff here")
               paragraph.topAdd = false;
               paragraph.bottomAdd = false;
               paragraph.leftAdd = false;
@@ -5079,6 +5079,7 @@
               //   color: payload.color,
               //   animate: true
               // }
+              console.log("All assertions")
               $scope.data[0].dialogue.push(
               {
                 isMessage: true,
@@ -5360,7 +5361,7 @@
 
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+            // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
 
           });
         }, 35);
@@ -5437,7 +5438,7 @@
       }
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {
-        console.log('clear top and bottom focus')
+        // console.log('clear top and bottom focus')
 
         // if ($scope.selectedParagraph.topAdd){
         //   console.log("Clearing top add")
@@ -5647,6 +5648,7 @@
       }
 
       $scope.textareaBlur = function (message) {
+        $scope.hasChatFocusId = '';
         console.log("Blurred a textarea: ", message.dialogueText)
       }
 
@@ -6960,7 +6962,7 @@
       document.getElementById('wholedamneditor').style.height = '100vh';
       $scope.openLibraryModal();
     } else if (!$rootScope.guest){
-      console.log("LAST ELSE")
+      // console.log("LAST ELSE")
       // $scope.openLibraryModal();
     }
   }

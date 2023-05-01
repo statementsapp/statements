@@ -28,7 +28,7 @@
     vm.basisForBooks = libraryService.getBooks(profileService.getBookIds())
     vm.books = libraryService.getBooks(profileService.getBookIds())
     .filter(book => book.documentClaimedBy === $rootScope.uid);
-    console.log("Profile service in library modal controller: ", profileService.getProfile())
+    // console.log("Profile service in library modal controller: ", profileService.getProfile())
     if (profileService.getProfile().negations){
       vm.negations = profileService.getProfile().negations;
       vm.booksNegated = vm.books.filter(book => vm.negations.includes(book.uid));

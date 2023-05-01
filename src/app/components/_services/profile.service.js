@@ -9,7 +9,7 @@
     var profile = {};
     var selectedBook = null;
 
-    console.log("Profile books: ", profile.books)
+    // console.log("Profile books: ", profile.books)
 
     function setProfile(value) {
       console.log("setting profile")
@@ -34,7 +34,7 @@
         };
       }
       profile.books = value;
-      console.log("Profile books: ", profile.books)
+      // console.log("Profile books: ", profile.books)
     }
 
     function addBookId(bookId) {
@@ -68,7 +68,7 @@
     }
 
     function getBookIds() {
-      console.log("Profile books in function: ", profile.books)
+      // console.log("Profile books in function: ", profile.books)
       return profile.books || [];
     }
 

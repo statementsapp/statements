@@ -1866,6 +1866,7 @@
       };
 
       $scope.toggleRemarksExpansion = function (proposition){
+        console.log("Toggle remarks")
         proposition.remarksExpanded = !proposition.remarksExpanded;
       }
 

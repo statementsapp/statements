@@ -487,7 +487,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               ng-model="proposition.remarks"
               class="propositions"
               ng-if="proposition.remarks && proposition.remarksExpanded"
-              ng-mouseleave="[aRemarkIsMousedOver = false]">
+              ng-mouseleave="[aRemarkIsMousedOver = false, !(proposition.remarks.some(remark => remark.id === hasRightFocus.id)) ? toggleRemarksExpansion(proposition) : inputs.nothing]">
 
             <li ng-repeat="remark in proposition.remarks track by $index"
                 id="wholeprop{{remark.id}}"

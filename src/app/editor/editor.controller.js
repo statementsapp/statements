@@ -5100,7 +5100,7 @@
               
               console.log("All negations")
 
-              if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id){
+              if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].id === payload.of.id){
                 // if it's responding to the last one, just push it
                 $scope.data[0].dialogue.push(
                 {

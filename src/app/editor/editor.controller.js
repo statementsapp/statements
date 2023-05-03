@@ -1859,6 +1859,16 @@
         }
       };
 
+      $scope.hasRightFocusIdFcn = function(remarks, id) {
+          for (var i = 0; i < remarks.length; i++) {
+              if (remarks[i].id === id) {
+                  return true;
+              }
+          }
+          return false;
+      };
+
+
       // Defines what's been marked for deletion with additional backspace
       $scope.markProposition = function (proposition) {
         $scope.mark.id = proposition.id;

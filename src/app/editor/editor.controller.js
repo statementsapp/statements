@@ -1860,9 +1860,9 @@
       };
 
       $scope.hasRightFocusIdFcn = function(remarks, id) {
-          console.log("That id is: ", id)
           for (var i = 0; i < remarks.length; i++) {
-            console.log("The remark: ", remarks[i])
+            console.log("The remark: ", remarks[i].id)
+            console.log("That id is: ", id)
               if (remarks[i].id === id) {
                   return true;
               }
@@ -4455,6 +4455,7 @@
                   type: 'negation',
                   author: payload.author,
                   text: payload.text,
+                  dialogueText: payload.dialogueText,
                   dialogueSide: false,
                   messagesSoFar: payload.messagesSoFar,
                   of: payload.of,

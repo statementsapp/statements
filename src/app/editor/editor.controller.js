@@ -1864,9 +1864,11 @@
             console.log("The remark: ", remarks[i].id)
             console.log("That id is: ", id)
               if (remarks[i].id === id) {
+                  console.log("True: ", i)
                   return true;
               }
           }
+          console.log("False")
           return false;
       };
 

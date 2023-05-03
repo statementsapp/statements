@@ -1862,7 +1862,7 @@
       $scope.hasRightFocusIdFcn = function(remarks, id) {
           console.log("That id is: ", id)
           for (var i = 0; i < remarks.length; i++) {
-            console.log("The remark: ", remarks[i].dialogueText)
+            console.log("The remark: ", remarks[i])
               if (remarks[i].id === id) {
                   return true;
               }

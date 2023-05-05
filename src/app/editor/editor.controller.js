@@ -5138,11 +5138,12 @@
                 // $scope.data[0].dialogue[i]['collision'+$scope.userId] &&
                 console.log("Else negations")
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+                  console.log("Message being considered: ", angular.copy($scope.data[0].dialogue[i]))
                   if ($scope.data[0].dialogue[i].id === payload.of.id &&
                   payload.of.type === 'assertion' &&
                   $scope.hasChatFocusId === $scope.data[0].dialogue[i].id &&
                   $scope.data[0].dialogue[i]['collision'+$scope.userId]){
-                    console.log("Message being considered: ", angular.copy($scope.data[0].dialogue[i]))
+
                     $scope.data[0].dialogue[i]['collision'+$scope.userId] = true;
                     $scope.data[0].dialogue[i].deletedButCollided = true;
                     var theresACollision = true

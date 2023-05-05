@@ -436,7 +436,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           <span
             editable-span-ng-model 
             id="{{proposition.id}}"
-            title="{{proposition.id}}"
             class="right-text right-textarea maininput"
             ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #0c2340' : !proposition.rejoined && inputs[proposition.id] != '' ? remarkInputString : '3px solid #0c2340' }"
             ng-class="{
@@ -578,7 +577,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               <span
                 editable-span-ng-model
                 id="{{remark.id}}"
-                title="{{remark.id}}"
                 class="right-text right-textarea maininput"
                 ng-if="proposition.remarksExpanded && !remark.rejoined"
                 ng-class="{
@@ -674,7 +672,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           editable-span-ng-model
           contenteditable="true"
           id="{{paragraph.paragraphId}}"
-          title="{{paragraph.paragraphId}}"
           class="right-textarea right-text authorprop"
           ng-click="$event.stopPropagation()"
           placeholder="textarea"

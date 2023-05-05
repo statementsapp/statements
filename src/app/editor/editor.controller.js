@@ -5136,6 +5136,7 @@
               } else {  
                 // 
                 // $scope.data[0].dialogue[i]['collision'+$scope.userId] &&
+                console.log("Else negations")
                 for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                   if ($scope.data[0].dialogue[i].id === payload.of.id &&
                   payload.of.type === 'assertion' &&
@@ -5148,10 +5149,12 @@
                     
                   }
                 }
+                console.log("Message to copy: ", $scope.messageToCopy)
 
                 $scope.data[0].dialogue.push($scope.messageToCopy);
 
                 if (theresACollision){
+                  console.log("Theres a collision")
                   $scope.data[0].dialogue[$scope.data[0].dialogue.length-1]['notyetseen'+$scope.userId] = true;
                 }
                   

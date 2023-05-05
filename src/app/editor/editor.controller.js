@@ -5404,7 +5404,9 @@
               $scope.saveThisForASec = angular.copy($scope.inputs[payload.id])
             }
 
-            
+            for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+              console.log(i, ": ", $scope.data[0].dialogue[i])
+            }
 
            
 

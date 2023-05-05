@@ -5146,7 +5146,18 @@
                     $scope.data[0].dialogue[i].deletedButCollided = true;
                     var theresACollision = true
                     $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
-                    
+                    break;
+                  }
+                }
+
+                if (!$scope.messageToCopy){
+                  for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+                    if ($scope.data[0].dialogue[i].id === payload.of.id &&
+                    payload.of.type === 'assertion' &&
+                    !$scope.data[0].dialogue[i]['collision'+$scope.userId]){
+                      $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
+                      break;
+                    }
                   }
                 }
                 console.log("Message to copy: ", $scope.messageToCopy)

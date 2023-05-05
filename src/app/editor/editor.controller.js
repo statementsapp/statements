@@ -5151,7 +5151,7 @@
                     break;
                   }
                 }
-
+                console.log("Message to copy: ", $scope.messageToCopy)
                 if (!$scope.messageToCopy){
 
                   for (var i = 0; i < $scope.data[0].dialogue.length; i++){
@@ -5167,7 +5167,7 @@
                     }
                   }
                 }
-                console.log("Message to copy: ", $scope.messageToCopy)
+                
 
                 $scope.data[0].dialogue.push($scope.messageToCopy);
 

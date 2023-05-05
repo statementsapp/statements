@@ -5152,7 +5152,7 @@
                   }
                 }
                 console.log("Message to copy: ", $scope.messageToCopy)
-                if (!$scope.messageToCopy){
+                if (!$scope.messageToCopy.id){
 
                   for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                     console.log("Message being considered: ", angular.copy($scope.data[0].dialogue[i]))

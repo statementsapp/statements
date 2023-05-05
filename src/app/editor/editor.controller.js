@@ -5142,6 +5142,7 @@
                   payload.of.type === 'assertion' &&
                   $scope.hasChatFocusId === $scope.data[0].dialogue[i].id &&
                   $scope.data[0].dialogue[i]['collision'+$scope.userId]){
+                    console.log("Message being considered: ", angular.copy($scope.data[0].dialogue[i]))
                     $scope.data[0].dialogue[i]['collision'+$scope.userId] = true;
                     $scope.data[0].dialogue[i].deletedButCollided = true;
                     var theresACollision = true

@@ -5428,7 +5428,6 @@
         }, 35);
         
         function isPredefinedPoint(thisPointIndex) {
-          console.log("If point: ", thisPointIndex)
           return $scope.preDefinedPoints.some(point => point.index === thisPointIndex);
         }
 
@@ -5548,9 +5547,6 @@
                   $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m];
                   $scope.hasChatFocusId = id;
                   setTimeout(function () {
-                    console.log("Rows: ", document.getElementById('input' + $scope.hasChatFocusId).rows);
-                  console.log("Rows id : ", document.getElementById('input' + id).rows); 
-                     focusFactory('input'+ id)
                      console.log("Has chat focus id: ", $scope.hasChatFocusId)
                   }, 20);
                   break;
@@ -5573,9 +5569,7 @@
 
                 
                 setTimeout(function () {
-                  console.log("That element: ", document.getElementById('input' + id))
                    focusFactory('input'+ id);
-                   console.log("Has chat focus id: ", $scope.hasChatFocusId)
                 }, 20);
                 break;
 
@@ -5740,7 +5734,7 @@
       };
 
       $scope.blurLightUpLastVisiblePropositionInBook = function (book, event) {
-        // console.log("blur light up book")
+        console.log("blur light up book")
         var apply = {};
         apply.path = '$scope.data[0]';
         apply.destination = eval(apply.path);
@@ -5780,7 +5774,6 @@
       }
 
       $scope.setupScript = function () {
-        console.log("Setting up")
         $scope.hasBeenSetUp = true;
         $scope.userActions = []; // Store the sequence of user actions and their payloads
         $scope.preDefinedPoints = [
@@ -5910,7 +5903,6 @@
             } else {
               var afterPropositionId = undefined;
             }
-            console.log("After proposition id: ", afterPropositionId)
             
             const sectionLevel = previousPayload.sectionLevel;
             const sectionNumber = previousPayload.sectionNumber;
@@ -5952,7 +5944,6 @@
             };
 
             automatedPayload = Object.assign({}, automatedPayload, preDeterminedValues);
-            console.log("Automated payload: ", automatedPayload)
               return automatedPayload;
         }
 
@@ -6119,7 +6110,6 @@
       $scope.clearPlaceholder = function (paragraph) {
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Clearing the placeholder")
             if (document.getElementById(paragraph.paragraphId)) {
               document.getElementById(paragraph.paragraphId).innerHTML = ''
             }
@@ -6133,7 +6123,6 @@
       $scope.clearPlaceholderTop = function (paragraph) {
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Clearing the placeholder top")
             $scope.inputs['top'+paragraph.paragraphId] = '';
             if (document.getElementById('top' + paragraph.paragraphId)) {
               document.getElementById('top' + paragraph.paragraphId).innerHTML = ''
@@ -6147,7 +6136,6 @@
       $scope.topAddFunction = function (node, paragraph) {
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Top add function")
             paragraph.topAdd = true;
             $scope.selectedNode = node;
             $scope.inputs['top'+paragraph.paragraphId] = '';
@@ -6160,7 +6148,6 @@
       }
 
       $scope.makeTopAppear = function (paragraph) {
-        console.log("Making top appear")
         setTimeout(function () {
           $scope.$apply(function () {
             
@@ -6183,8 +6170,6 @@
       $scope.handleTopClick = function (paragraph) {
         
         setTimeout(function () {
-          // $scope.$apply(function () {
-            console.log("Handling")
             document.getElementById('top' + paragraph.paragraphId).click();
           // });
 
@@ -6196,7 +6181,6 @@
 
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Removing")
             $scope.handling = false;
             document.getElementById('top'+paragraph.paragraphId).removeEventListener("click", handleTopClick(paragraph));
           });
@@ -6222,12 +6206,10 @@
         
         setTimeout(function () {
           $scope.$apply(function () {
-            console.log("Making appear")
             
             paragraph.topMouseOver = false
             $scope.inputs['bottom'+paragraph.paragraphId] = '|'
             if (document.getElementById(paragraph.paragraphId)){
-              console.log("That innherthml")
               document.getElementById(paragraph.paragraphId).innerHTML = '|'
             }
             
@@ -6241,7 +6223,6 @@
         $scope.isMouseOut = false;
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
-                console.log('Top timer')
                 paragraph.bottomMouseOver = true; 
                 $scope.makeItAppear(paragraph);
               }
@@ -6250,7 +6231,6 @@
 
       $scope.stopBottomParagraphAdderTimer = function (paragraph) {
         $scope.isMouseOut = true;
-            console.log("About to bottom timeout cancel")
             $timeout.cancel($scope.timer);
             paragraph.bottomMouseOver = false
       }
@@ -6260,7 +6240,6 @@
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
                 paragraph.topMouseOver = true;
-                console.log('Top timer')
                 $scope.makeTopAppear(paragraph);
                 
               }
@@ -6269,7 +6248,6 @@
 
       $scope.stopTopParagraphAdderTimer = function (paragraph) {
         $scope.isMouseOut = true;
-          console.log("About to top timeout cancel")
             $timeout.cancel($scope.timer);
             paragraph.topMouseOver = false
             paragraph.topAdd = false;
@@ -6295,7 +6273,8 @@
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
                     ($scope.data[0].documentClaimedBy === $scope.userId || $scope.data[0].nodes[i].paragraphs[j].propositions[k].type !== 'blank')){
-                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
+                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index && 
+                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarksExpanded){
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
@@ -6360,7 +6339,8 @@
               if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
-                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index){
+                    if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index &&
+                      $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarksExpanded){
                       console.log("seem to be remarks")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
@@ -6375,11 +6355,6 @@
                         }
                       }
                       if (remarkIndex || remarkIndex === 0){
-                        // console.log("looks good to go")
-                        // console.log("Elemrgent: ", 
-                            // $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].text)
-                        // console.log("Element: ", document.getElementById(
-                        //     $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id))
                             $scope.holdOnToThis = angular.copy(
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
                         setTimeout(function () {
@@ -6394,7 +6369,6 @@
                         }, 20);
                       } else {
                         setTimeout(function () {
-                          console.log("That lower timeout")
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
                         // });

@@ -35,7 +35,7 @@
             'negation': (selectedProposition.id === message.id && selectedProposition.type === 'assertion' && selectedProposition.author != userId && (inputs.proposition.charAt(inputs.proposition.length-1) === '!'|| inputs.chatProposition.charAt(inputs.chatProposition.length-1) === '!'))
           }"
         >
-          {{message.text ? message.text : message.dialogueText}}{{message.hiddenForAll}}
+          {{message.text ? message.text : message.dialogueText}}
         </span>
 		  </span>
       <span class="message-timestamp received">{{ message.dateCreated }}

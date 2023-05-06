@@ -5161,6 +5161,7 @@
                     if ($scope.data[0].dialogue[i].id === payload.of.id &&
                     payload.of.type === 'assertion' &&
                     !$scope.data[0].dialogue[i]['collision'+$scope.userId]){
+                      console.log("Trueing: ", i)
                       $scope.data[0].dialogue[i].hiddenForAll = true;
                       $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
                       break;

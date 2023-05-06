@@ -5722,7 +5722,7 @@
 
           }, 20);
         }
-        $scope.hasChatFocusId = '';
+        // $scope.hasChatFocusId = '';
         console.log("Blurred a textarea: ", message.dialogueText)
       }
 

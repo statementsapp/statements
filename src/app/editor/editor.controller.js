@@ -5710,9 +5710,11 @@
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if($scope.data[0].dialogue[i]['notyetseen'+$scope.userId]){
                   $scope.data[0].dialogue[i]['notyetseen'+$scope.userId] = false;
+                } else if ($scope.data[0].dialogue[i]['collision'+$scope.userId]){
+                  $scope.data[0].dialogue[i]['collision'+$scope.userId] = false;
                 }
               }
-              message['collision'+$scope.userId] = false;
+              // message['collision'+$scope.userId] = false;
             });
 
           }, 20);

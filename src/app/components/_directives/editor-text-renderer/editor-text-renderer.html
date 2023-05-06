@@ -494,7 +494,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 id="wholeprop{{remark.id}}"
                 ui-tree-node
                 style="display: inline;"
-                ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph)]"
+                ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph), clearAnimationClass()]"
                 ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater()]"
 
                 ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted)) && proposition.remarksExpanded"

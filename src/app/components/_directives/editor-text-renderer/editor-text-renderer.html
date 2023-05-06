@@ -495,7 +495,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ui-tree-node
                 style="display: inline;"
                 ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph), clearAnimationClass()]"
-                ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater()]"
+                ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater(), proposition.remarksExpanded = false]"
 
                 ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted)) && proposition.remarksExpanded"
                 ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id, 'remarkhidden': proposition.remarksExpanded && (remark.rejoined || remark[userId] == 'hidden')}"

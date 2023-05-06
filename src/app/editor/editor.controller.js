@@ -1863,6 +1863,7 @@
           for (var i = 0; i < remarks.length; i++) {
             console.log("The remark: ", remarks[i].id)
             console.log("That id is: ", id)
+            console.log("A remark is moused over: ", $scope.aRemarkIsMousedOver)
               if (remarks[i].id === id) {
                   console.log("True: ", i)
                   return true;

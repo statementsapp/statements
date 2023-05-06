@@ -5170,7 +5170,7 @@
                   }
                 }
                 
-
+                $scope.messageToCopy.hiddenForAll = false;
                 $scope.data[0].dialogue.push($scope.messageToCopy);
 
                 if (theresACollision){

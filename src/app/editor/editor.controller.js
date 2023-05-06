@@ -5546,6 +5546,7 @@
                   $scope.hasChatFocusId = id;
                   setTimeout(function () {
                      console.log("Has chat focus id: ", $scope.hasChatFocusId)
+                     focusFactory('input'+id);
                   }, 20);
                   break;
                 }

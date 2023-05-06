@@ -5164,6 +5164,7 @@
                       console.log("Trueing: ", i)
                       $scope.data[0].dialogue[i].hiddenForAll = true;
                       $scope.messageToCopy = angular.copy($scope.data[0].dialogue[i]);
+                      console.log("State now: ", $scope.data[0].dialogue[i])
                       break;
                     }
                   }
@@ -5290,11 +5291,7 @@
                 }
 
               }
-              console.log($scope.saveI) 
-              console.log($scope.saveJ) 
-              console.log($scope.saveK) 
-              console.log($scope.saveM) 
-              console.log($scope.saveThisColorForASec)
+
               if ($scope.saveI || $scope.saveI === 0){
                 $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].colorString = 
                 ('3px solid ' + angular.copy($scope.saveThisColorForASec))

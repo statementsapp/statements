@@ -5115,7 +5115,9 @@
             } else if (payload.type === 'negation'){
               
               console.log("All negations")
-
+              console.log($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id)
+                console.log($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].author === payload.author)
+                console.log($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type === 'negation')
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].id === payload.of.id ||
                 ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id &&
                 $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].author === payload.author &&

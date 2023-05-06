@@ -546,8 +546,7 @@
               ng-class="{'slide-in-right': message.animate}"
               ui-tree-node
               class="angular-ui-tree-node amessage" 
-              ng-if="(!message.deletedButCollided || 
-              (message.deletedButCollided && (message['collision'+userId] || !message['notyetseen'+userId])) && !message.hiddenForAll)">
+              ng-if="((message.deletedButCollided && (message['collision'+userId] || !message['notyetseen'+userId])) && !message.hiddenForAll)">
             <stmnts-editor-dialogue-renderer></stmnts-editor-dialogue-renderer>
           </li>
         </ol> 

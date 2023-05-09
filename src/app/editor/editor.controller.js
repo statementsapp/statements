@@ -5847,7 +5847,29 @@
               dropflag: false,
               delay: 4000,
             } 
-          }
+          },
+          { index: 6, 
+            payloadData: {
+              author: 'aaa',
+              text: 'Additional text to add to your text.',
+              dialogueText: 'Additional text to add to your text.',
+              type: 'negation',
+              code: '2A',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              blankId: IdFactory.next(),
+              textSide: false,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              delay: 3000,
+            } 
+          },
 
           // Add more pre-defined points with their respective pre-determined values
         ];

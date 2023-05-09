@@ -478,7 +478,7 @@
            id="tree-root"
            class="angular-ui-tree textlist"
            ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition), 'shorteditor': shortEditor}"
-           ng-mouseover="[!inputs.bottomProposition ? [lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
+           ng-mouseover="!inputs.bottomProposition ? [lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
            ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
            ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
 

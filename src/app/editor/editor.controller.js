@@ -5889,9 +5889,32 @@
               paragraphId: IdFactory.next(),
               remarkId: IdFactory.next(),
               dropflag: false,
-              delay: 4000,
+              delay: 6000,
             } 
           },
+          { index: 9, 
+            payloadData: {
+              author: 'aaa',
+              text: 'Doesnt take a PhD to figure out.',
+              dialogueText: 'Doesnt take a PhD to figure out.',
+              type: 'negation',
+              code: '2A',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              blankId: IdFactory.next(),
+              textSide: false,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              delay: 2000,
+            } 
+          },
+
 
           // Add more pre-defined points with their respective pre-determined values
         ];

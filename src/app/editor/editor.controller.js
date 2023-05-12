@@ -5782,6 +5782,24 @@
         $scope.hasBeenSetUp = true;
         $scope.userActions = []; // Store the sequence of user actions and their payloads
         $scope.preDefinedPoints = [
+          { index: 0, 
+            payloadData: {
+              author: $scope.userId,
+              text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
+              dialogueText: 'A ifrst sentence of text and all this text so much text and what about hte text.',
+              type: 'assertion',
+              dialogueSide: false,
+              on: 'firstBlank'
+              blankId: IdFactory.next(),
+              textSide: true,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              typeTime: 3000,
+            } 
+          },
           { index: 1, 
             payloadData: {
               author: 'aaa',
@@ -5793,7 +5811,7 @@
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
-
+              on: 'previous',
               blankId: IdFactory.next(),
               textSide: false,
               bookId: $scope.bookId,
@@ -5802,6 +5820,25 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               delay: 3000,
+            } 
+          },
+          { index: 2, 
+            payloadData: {
+              author: $scope.userId,
+              text: 'Heretofore texting this text fore and away and also this bok text that is text.',
+              dialogueText: 'Heretofore texting this text fore and away and also this bok text that is text.',
+              type: 'assertion',
+              dialogueSide: false,
+              on: 'firstBlank',
+              modifier: 'top',
+              blankId: IdFactory.next(),
+              textSide: true,
+              bookId: $scope.bookId,
+              nodeId: IdFactory.next(),
+              paragraphId: IdFactory.next(),
+              remarkId: IdFactory.next(),
+              dropflag: false,
+              typeTime: 3000,
             } 
           },
           { index: 3, 
@@ -5922,21 +5959,31 @@
 
 
         // Function to simulate the second user's action
-        $scope.simulateSecondUser = function(prepId) {
-          if ($scope.userActions.length > 0) {
+        $scope.simulateSecondUser = function(prepId, onPayloadIndex, deletePayloadIndex) {
+          
             console.log("User actions: ", $scope.userActions)
-            const previousPayload = $scope.userActions[$scope.userActions.length-1];
 
+            if (deletePayloadIndex){
+
+              c
+            } else if (){
+
+            } else {
+
+            }
+            const previousPayload = $scope.userActions[$scope.userActions.length-1];
+            let  onPayload = $scope.userActions[onPayloadIndex];
             // Create the automated payload with scripted features
+
             let automatedPayload = createAutomatedPayload(previousPayload, prepId);
 
             // Send the automated payload out
             sendAutomatedPayload(automatedPayload);
-          }
+          
         };
 
         // Function to check if it's time to simulate the second user's action
-        
+        function createAutomatedDeletion(previousPayload, prepId) {
 
         // Function to create the automated payload based on the previous payload
         function createAutomatedPayload(previousPayload, prepId) {
@@ -6028,7 +6075,12 @@
         }
 
 
-
+        function sendAutomatedDeletion(automatedDeletionPayload) {
+          console.log('Sending automated deletion')
+          setTimeout(function () {
+            chatSocket.emit('deletion', automatedDeletionPayload.author, automatedDeletionPayload, $scope.bookId);
+          }, automatedDeletionPayload.delay);
+        }
 
 
 

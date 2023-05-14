@@ -5429,7 +5429,7 @@
           });
         }, 35);
         
-        function isPredefinedPoint(thisPointIndex) {
+        function isDefinedPoint(thisPointIndex) {
           return $scope.preDefinedPoints.some(point => point.index === thisPointIndex);
         }
 
@@ -5437,8 +5437,11 @@
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
           $scope.userActions.push(payload);
-          if (isPredefinedPoint($scope.userActions.length)) {
-            $scope.simulateSecondUser($scope.userActions[$scope.userActions.length-1].id);
+          if (isDefinedPoint($scope.userActions.length)) {
+            $scope.simulateUser(
+              $scope.userActions[$scope.userActions.length-1].id, 
+              $scope.userActions[$scope.userActions.length-1].onIndex,
+              $scope.userActions[$scope.userActions.length-1].deletionIndex);
           }
         }
         // Check if it's time to simulate the second user's action
@@ -5448,7 +5451,7 @@
           $scope.draggedProposition = {};
           //
         }
-        console.log("User actions: ", $scope.userActions)
+        console.log("User actions after incoming prop: ", $scope.userActions)
         $scope.clearAnimationClass();
       });
 
@@ -5771,12 +5774,7 @@
       };
 
 
-      $scope.runScriptStep = function (step){
-        // console.log("Running script step: ", $scope.step)
-        // setTimeout(function () {
-        //   chatSocket.emit('proposition', step.author, null, $scope.bookId);
-        // }, step.delay);
-      }
+
 
       $scope.setupScript = function () {
         $scope.hasBeenSetUp = true;
@@ -5786,10 +5784,13 @@
             payloadData: {
               author: $scope.userId,
               text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
-              dialogueText: 'A ifrst sentence of text and all this text so much text and what about hte text.',
               type: 'assertion',
               dialogueSide: false,
-              on: 'firstBlank'
+              step: 'na'
+              which: [node,item, theBlank]
+              on: [id, nodeId]
+              its [self, left, top, bottom, nodetop, nodebottom]
+              site
               blankId: IdFactory.next(),
               textSide: true,
               bookId: $scope.bookId,
@@ -5798,6 +5799,7 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               typeTime: 3000,
+              noClick: false
             } 
           },
           { index: 1, 
@@ -5959,20 +5961,92 @@
 
 
         // Function to simulate the second user's action
-        $scope.simulateSecondUser = function(prepId, onPayloadIndex, deletePayloadIndex) {
+        $scope.simulateUser = function(id, onObject, deletionObjectIndex) {
           
             console.log("User actions: ", $scope.userActions)
 
-            if (deletePayloadIndex){
+            if (deletionObjectIndex){
+              let  deletionPayload = $scope.userActions[deletionObjectIndex];
+            } else if (onObject){
+              if (typeof onObject === 'number'){
+                for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
+                  
+                    for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
+                      if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
+                        for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
+                          if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                            if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index ){
+                              console.log("seem to be remarks")
+                              var nodeIndex = angular.copy(i)
+                              var paragraphIndex = angular.copy(j)
+                              var index = angular.copy(k)
+                              var remarkIndex = null;
+                              for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
+                                if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll &&
+                                  !$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].rejoined &&
+                                  $scope.userActions[$scope.userActions.length-1].id === id){
+                                  console.log("automated: found remark")
+                                  var remarkIndex = angular.copy(m);
+                                  break;
+                                }
+                              }
+                              if (remarkIndex || remarkIndex === 0){
+                                    $scope.holdOnToThis = angular.copy(
+                                    $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
+                                setTimeout(function () {
+                                  // console.log("Upper timeout element: ", document.getElementById($scope.holdOnToThis))
+                                    $scope.selectedProposition = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex];
+                                    $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                                    $scope.selectedNode = $scope.data[0].nodes[nodeIndex];
+                                    focusFactory($scope.holdOnToThis)
+                                    $scope.holdOnToThis = '';
+                                // });
+                                
+                                }, 20);
+                              } else {
+                                setTimeout(function () {
+                                  document.getElementById('proposition' +
+                                    $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                                // });
+                           
+                                }, 20);
+                              }
+                              return;
 
-              c
-            } else if (){
+                            } else if (!index) {
+                              var nodeIndex = angular.copy(i)
+                              var paragraphIndex = angular.copy(j)
+                              var index = angular.copy(k)
+                              // console.log(nodeIndex," ", paragraphIndex, " ", index)
+                              $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                              setTimeout(function () {
+                                // $scope.$apply(function () {
+                                  document.getElementById('proposition' +
+                                    $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                                // });
 
+                              }, 20);
+                              return;
+                            }
+                          }
+                        }
+                      }
+                    
+                  }
+                }
+                let onPayload = $scope.userActions[onPayloadIndex];
+              } else if(onObject === 'firstBlank') {
+
+                let onPayload = $scope.userActions[onPayloadIndex];
+              } else if (onObject === 'lastBlank'{
+
+              }
             } else {
 
             }
-            const previousPayload = $scope.userActions[$scope.userActions.length-1];
-            let  onPayload = $scope.userActions[onPayloadIndex];
+            // const previousPayload = $scope.userActions[$scope.userActions.length-1];
+            
+            
             // Create the automated payload with scripted features
 
             let automatedPayload = createAutomatedPayload(previousPayload, prepId);

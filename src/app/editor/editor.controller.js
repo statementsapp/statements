@@ -5437,11 +5437,12 @@
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
           $scope.userActions.push(payload);
+          console.log("User actions length: ", $scope.userActions.length)
           if (isDefinedPoint($scope.userActions.length)) {
-            $scope.simulateUser(
-              $scope.userActions[$scope.userActions.length-1].id, 
-              $scope.userActions[$scope.userActions.length-1].onIndex,
-              $scope.userActions[$scope.userActions.length-1].deletionIndex);
+            $scope.simulateUser($scope.userActions.length
+              // $scope.userActions[$scope.userActions.length-1].id, 
+              // $scope.userActions[$scope.userActions.length-1].onIndex,
+              // $scope.userActions[$scope.userActions.length-1].deletionIndex);
           }
         }
         // Check if it's time to simulate the second user's action
@@ -5779,6 +5780,26 @@
       $scope.setupScript = function () {
         $scope.hasBeenSetUp = true;
         $scope.userActions = []; // Store the sequence of user actions and their payloads
+        // payloadData: {
+        //   author: $scope.userId,
+        //   text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
+        //   type: 'assertion',
+        //   dialogueSide: false,
+        //   step: 'na'
+        //   which: [node,item, theBlank]
+        //   on: [id, nodeId]
+        //   its [self, left, top, bottom, nodetop, nodebottom]
+        //   blankId: IdFactory.next(),
+        //   textSide: true,
+        //   bookId: $scope.bookId,
+        //   nodeId: IdFactory.next(),
+        //   paragraphId: IdFactory.next(),
+        //   remarkId: IdFactory.next(),
+        //   dropflag: false,
+        //   typeTime: 3000,
+        //   noClick: false, 
+        //   action: proposition
+        // } 
         $scope.preDefinedPoints = [
           { index: 0, 
             payloadData: {
@@ -5786,20 +5807,14 @@
               text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
               type: 'assertion',
               dialogueSide: false,
-              step: 'na'
-              which: [node,item, theBlank]
-              on: [id, nodeId]
-              its [self, left, top, bottom, nodetop, nodebottom]
-              site
-              blankId: IdFactory.next(),
-              textSide: true,
-              bookId: $scope.bookId,
-              nodeId: IdFactory.next(),
-              paragraphId: IdFactory.next(),
-              remarkId: IdFactory.next(),
-              dropflag: false,
+              step: undefined,
+              which: 'theBlank',
+              on: undefined,
+              its: undefined,
               typeTime: 3000,
-              noClick: false
+              noClick: false, 
+              action: 'proposition'
+              
             } 
           },
           { index: 1, 
@@ -5958,12 +5973,46 @@
           // Add more pre-defined points with their respective pre-determined values
         ];
 
+        $scope.clickTypeAndEnter = function(step, id) {
 
+        }
 
         // Function to simulate the second user's action
-        $scope.simulateUser = function(id, onObject, deletionObjectIndex) {
+        $scope.simulateUser = function(index) {
           
             console.log("User actions: ", $scope.userActions)
+            var theStep = $scope.preDefinedPoints[index];
+            var theOn = theStep.on;
+            if (theStep.action ==='proposition'){
+              if (theStep.author === $scope.data[0].documentClaimedBy){
+                if (theStep.which === 'theBlank'){
+
+                } else if (theStep.which === 'node'){
+                  if (theOn)
+
+                } else if (theStep.which === 'item'){
+
+                }
+                // author propositions
+              } else {
+                // reviewer propositions
+                var theCode = theStep.code;
+                if (theCode === '2A'){
+                  //click
+                  //type
+                  // enter
+                } else if (theCode === '2B'){
+                  var idWorkingWith = $scope.userActions[theOn].id;
+                  
+                }
+                
+                var idWorkingWith = $scope.userActions[theOn].id;
+              }
+            } else if (theStep.action ==='deletion'){
+
+            }
+
+
 
             if (deletionObjectIndex){
               let  deletionPayload = $scope.userActions[deletionObjectIndex];

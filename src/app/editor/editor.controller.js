@@ -53,10 +53,6 @@
     $scope.halfClicked = false;
     $scope.halfMuteClicked = false;
 
-
-
-
-
     // copies to clipboard
     $scope.copyLink = function() {
       var copyElement = document.getElementById('directLinkInput');
@@ -64,10 +60,6 @@
       document.execCommand('copy');
       toastr.info('Link copied to clipboard');
     }
-
-
-
-
 
     // assigns room users
     $scope.$on('socket:roomUsers', function (event, args) {
@@ -6027,7 +6019,7 @@
                         for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                           if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll &&
                             !$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].rejoined &&
-                            theOnText.slice(0, 6) === $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].dialogueText ){
+                            theOnText.slice(0, 6) === $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].dialogueText.slice(0, 6)){
                               console.log("automated: found remark")
                               var remarkIndex = angular.copy(m);
                               break;
@@ -6055,31 +6047,28 @@
                         }
                         return;
 
-                        } else if (!index) {
-                          var nodeIndex = angular.copy(i)
-                          var paragraphIndex = angular.copy(j)
-                          var index = angular.copy(k)
-                          // console.log(nodeIndex," ", paragraphIndex, " ", index)
-                          $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
-                          setTimeout(function () {
-                            // $scope.$apply(function () {
-                              document.getElementById('proposition' +
-                                $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
-                            // });
-
-                          }, 20);
-                          return;
-                        }
+                      } else if (!index) {
+                        var nodeIndex = angular.copy(i)
+                        var paragraphIndex = angular.copy(j)
+                        var index = angular.copy(k)
+                        // console.log(nodeIndex," ", paragraphIndex, " ", index)
+                        $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                        setTimeout(function () {
+                          // $scope.$apply(function () {
+                            document.getElementById('proposition' +
+                              $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                          // });
+                        }, 20);
+                        return;
                       }
                     }
                   }
+                }
               }
             }
-
         };
 
-        // Function to check if it's time to simulate the second user's action
-        function createAutomatedDeletion(previousPayload, prepId) {
+
 
         // Function to create the automated payload based on the previous payload
         function createAutomatedPayload(previousPayload, prepId) {

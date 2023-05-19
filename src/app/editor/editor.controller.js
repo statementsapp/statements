@@ -6076,9 +6076,6 @@
               }
             }
 
-
-        
-          
         };
 
         // Function to check if it's time to simulate the second user's action

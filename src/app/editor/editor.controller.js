@@ -5770,6 +5770,7 @@
 
 
       $scope.setupScript = function () {
+        console.log("Setting up script")
         $scope.hasBeenSetUp = true;
         $scope.userActions = []; // Store the sequence of user actions and their payloads
         // payloadData: {

@@ -5983,12 +5983,13 @@
             console.log("User actions: ", $scope.userActions)
             var theStep = $scope.preDefinedPoints[index];
             var theOn = theStep.on;
+            var theOnText = theStep.text;
             if (theStep.action ==='proposition'){
               if (theStep.author === $scope.data[0].documentClaimedBy){
                 if (theStep.which === 'theBlank'){
 
                 } else if (theStep.which === 'node'){
-                  if (theOn)
+                  
 
                 } else if (theStep.which === 'item'){
 
@@ -6012,96 +6013,71 @@
 
             }
 
-
-
-            if (deletionObjectIndex){
-              let  deletionPayload = $scope.userActions[deletionObjectIndex];
-            } else if (onObject){
-              if (typeof onObject === 'number'){
-                for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
-                  
-                    for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
-                      if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
-                        for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
-                          if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
-                            if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index ){
-                              console.log("seem to be remarks")
-                              var nodeIndex = angular.copy(i)
-                              var paragraphIndex = angular.copy(j)
-                              var index = angular.copy(k)
-                              var remarkIndex = null;
-                              for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
-                                if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll &&
-                                  !$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].rejoined &&
-                                  $scope.userActions[$scope.userActions.length-1].id === id){
-                                  console.log("automated: found remark")
-                                  var remarkIndex = angular.copy(m);
-                                  break;
-                                }
-                              }
-                              if (remarkIndex || remarkIndex === 0){
-                                    $scope.holdOnToThis = angular.copy(
-                                    $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
-                                setTimeout(function () {
-                                  // console.log("Upper timeout element: ", document.getElementById($scope.holdOnToThis))
-                                    $scope.selectedProposition = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex];
-                                    $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
-                                    $scope.selectedNode = $scope.data[0].nodes[nodeIndex];
-                                    focusFactory($scope.holdOnToThis)
-                                    $scope.holdOnToThis = '';
-                                // });
-                                
-                                }, 20);
-                              } else {
-                                setTimeout(function () {
-                                  document.getElementById('proposition' +
-                                    $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
-                                // });
-                           
-                                }, 20);
-                              }
-                              return;
-
-                            } else if (!index) {
-                              var nodeIndex = angular.copy(i)
-                              var paragraphIndex = angular.copy(j)
-                              var index = angular.copy(k)
-                              // console.log(nodeIndex," ", paragraphIndex, " ", index)
-                              $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
-                              setTimeout(function () {
-                                // $scope.$apply(function () {
-                                  document.getElementById('proposition' +
-                                    $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
-                                // });
-
-                              }, 20);
-                              return;
+            for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
+              for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){
+                if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
+                  for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
+                    if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                      if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index ){
+                        console.log("seem to be remarks")
+                        var nodeIndex = angular.copy(i)
+                        var paragraphIndex = angular.copy(j)
+                        var index = angular.copy(k)
+                        var remarkIndex = null;
+                        for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
+                          if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll &&
+                            !$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].rejoined &&
+                            theOnText.slice(0, 6) === $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].dialogueText ){
+                              console.log("automated: found remark")
+                              var remarkIndex = angular.copy(m);
+                              break;
                             }
-                          }
+                        }
+                        if (remarkIndex || remarkIndex === 0){
+                          $scope.holdOnToThis = angular.copy(
+                          $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
+                          setTimeout(function () {
+                            // console.log("Upper timeout element: ", document.getElementById($scope.holdOnToThis))
+                              $scope.selectedProposition = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex];
+                              $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                              $scope.selectedNode = $scope.data[0].nodes[nodeIndex];
+                              focusFactory($scope.holdOnToThis)
+                              $scope.holdOnToThis = '';
+                            // });
+                          }, 20);
+                        } else {
+                          setTimeout(function () {
+                            document.getElementById('proposition' +
+                              $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                            // });
+                       
+                          }, 20);
+                        }
+                        return;
+
+                        } else if (!index) {
+                          var nodeIndex = angular.copy(i)
+                          var paragraphIndex = angular.copy(j)
+                          var index = angular.copy(k)
+                          // console.log(nodeIndex," ", paragraphIndex, " ", index)
+                          $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                          setTimeout(function () {
+                            // $scope.$apply(function () {
+                              document.getElementById('proposition' +
+                                $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                            // });
+
+                          }, 20);
+                          return;
                         }
                       }
-                    
+                    }
                   }
-                }
-                let onPayload = $scope.userActions[onPayloadIndex];
-              } else if(onObject === 'firstBlank') {
-
-                let onPayload = $scope.userActions[onPayloadIndex];
-              } else if (onObject === 'lastBlank'{
-
               }
-            } else {
-
             }
-            // const previousPayload = $scope.userActions[$scope.userActions.length-1];
-            
-            
-            // Create the automated payload with scripted features
 
-            let automatedPayload = createAutomatedPayload(previousPayload, prepId);
 
-            // Send the automated payload out
-            sendAutomatedPayload(automatedPayload);
+        
           
         };
 

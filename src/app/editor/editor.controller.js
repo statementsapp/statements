@@ -6025,8 +6025,11 @@
               keyCode: 13,
               bubbles: true
             });
-            element.dispatchEvent(eventKeyDown);
-            element.dispatchEvent(eventKeyUp);
+            setTimeout(function () {
+              element.dispatchEvent(eventKeyDown);
+              element.dispatchEvent(eventKeyUp);
+            }, 20);
+            
           }
         }
 

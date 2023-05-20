@@ -5835,8 +5835,8 @@
               // of: (prep.of ? prep.of : undefined),
               step: 0,
               which: 'item',
-              on: undefined,
-              its: undefined,
+              on: 0,
+              its: 'self',
               typeTime: 3000,
               noClick: false, 
               action: 'proposition'
@@ -6121,7 +6121,7 @@
                         console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
                         console.log("slice: ", theStep.text.slice(0, 6))
                         if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'assertion' &&
-                          theStep.text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
+                          $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                           console.log("Got an id")
                           setTimeout(function () {

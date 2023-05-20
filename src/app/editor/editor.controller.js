@@ -5775,6 +5775,26 @@
         console.log("Setting up script")
         $scope.hasBeenSetUp = true;
         $scope.userActions = []; // Store the sequence of user actions and their payloads
+        // payloadData: {
+        //   author: $scope.userId,
+        //   text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
+        //   type: 'assertion',
+        //   dialogueSide: false,
+        //   step: 'na'
+        //   which: [node,item, theBlank]
+        //   on: [id, nodeId]
+        //   its [self, left, top, bottom, nodetop, nodebottom]
+        //   blankId: IdFactory.next(),
+        //   textSide: true,
+        //   bookId: $scope.bookId,
+        //   nodeId: IdFactory.next(),
+        //   paragraphId: IdFactory.next(),
+        //   remarkId: IdFactory.next(),
+        //   dropflag: false,
+        //   typeTime: 3000,
+        //   noClick: false, 
+        //   action: proposition
+        // } 
         $scope.preDefinedPoints = [
           { index: 0, 
             payloadData: {
@@ -5947,30 +5967,11 @@
 
           // Add more pre-defined points with their respective pre-determined values
         ];
-      }
-        // payloadData: {
-        //   author: $scope.userId,
-        //   text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
-        //   type: 'assertion',
-        //   dialogueSide: false,
-        //   step: 'na'
-        //   which: [node,item, theBlank]
-        //   on: [id, nodeId]
-        //   its [self, left, top, bottom, nodetop, nodebottom]
-        //   blankId: IdFactory.next(),
-        //   textSide: true,
-        //   bookId: $scope.bookId,
-        //   nodeId: IdFactory.next(),
-        //   paragraphId: IdFactory.next(),
-        //   remarkId: IdFactory.next(),
-        //   dropflag: false,
-        //   typeTime: 3000,
-        //   noClick: false, 
-        //   action: proposition
-        // } 
-        
+        $scope.simulateUser(0);
 
+        $scope.clickTypeAndEnter = function(step, id) {
 
+        }
 
         // Function to simulate the second user's action
         $scope.simulateUser = function(index) {

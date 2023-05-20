@@ -5724,6 +5724,10 @@
         console.log("Blurred a textarea: ", message.dialogueText)
       }
 
+      $scope.theresSomething = function () {
+        console.log("Something at least")
+      }
+
       $scope.scrollMessagesToBottom = function () {
         $timeout(function () {
           var pane = document.getElementById('dialoguelist');

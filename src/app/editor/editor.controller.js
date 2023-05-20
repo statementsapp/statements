@@ -6004,7 +6004,7 @@
                 
                 setTimeout(function () {
                   clearInterval(intervalId);
-                  simulateReturnKeyPress(element);
+                  simulateReturnKeyPress(element, text);
                  }, 10);
               }
 
@@ -6022,17 +6022,19 @@
             return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
           }
 
-          function simulateReturnKeyPress(element) {
+          function simulateReturnKeyPress(element, text) {
 
             const event = new Event('keyup', { bubbles: true, cancelable: true });
               event.key = 'Enter';
               event.keyCode = 13;
               event.which = 13;
+              $scope.temporaryText = text;
 
             $scope.$apply(function () {
              setTimeout(function () {
                element.dispatchEvent(event);
                console.log("That event: ", event)
+               $scope.temporaryText = '';
               }, 1000);
             });
             

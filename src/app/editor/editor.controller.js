@@ -5797,7 +5797,7 @@
         // } 
         $scope.preDefinedPoints = [
           { index: 0, 
-            payloadData: {
+            
               author: $scope.userId,
               text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
               type: 'assertion',
@@ -5810,10 +5810,10 @@
               noClick: false, 
               action: 'proposition'
               
-            } 
+            
           },
           { index: 1, 
-            payloadData: {
+           
               author: 'aaa',
               text: 'This text you want and all this text so on and so forth with all the text.',
               dialogueText: 'This text you want and all this text so on and so forth with all the text.',
@@ -5832,10 +5832,10 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               delay: 3000,
-            } 
+         
           },
           { index: 2, 
-            payloadData: {
+            
               author: $scope.userId,
               text: 'Heretofore texting this text fore and away and also this bok text that is text.',
               dialogueText: 'Heretofore texting this text fore and away and also this bok text that is text.',
@@ -5851,10 +5851,10 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               typeTime: 3000,
-            } 
+            
           },
           { index: 3, 
-            payloadData: {
+            
               author: 'bbb',
               text: 'Other text and with this text there is text and following text there is some text.',
               dialogueText: 'Other text and with this text there is text and following text there is some text.',
@@ -5873,10 +5873,10 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               delay: 5000,
-            } 
+            
           },
           { index: 4, 
-            payloadData: {
+            
               author: 'ccc',
               text: 'Have some more text that is text and some text that you want while with this text and this text will be removed.',
               dialogueText: 'Have some more text that is text and some text that you want while with this text and this text will be removed.',
@@ -5895,10 +5895,10 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               delay: 4000,
-            } 
+            
           },
           { index: 6, 
-            payloadData: {
+            
               author: 'aaa',
               text: 'Additional text to add to your text next to this text and in this text book.',
               dialogueText: 'Additional text to add to your text next to this text and in this text book.',
@@ -5917,10 +5917,10 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               delay: 3000,
-            } 
+            
           },
           { index: 7, 
-            payloadData: {
+            
               author: 'ccc',
               text: 'Now youve got this text you really want to dispel here for now comes the text.',
               dialogueText: 'Now youve got this text you really want to dispel here for now comes the text.',
@@ -5939,10 +5939,10 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               delay: 6000,
-            } 
+           
           },
           { index: 9, 
-            payloadData: {
+           
               author: 'aaa',
               text: 'Doesnt take a PhD to figure out but it takes to build a doghouse.',
               dialogueText: 'Doesnt take a PhD to figure out but it takes to build a doghouse.',
@@ -5961,7 +5961,7 @@
               remarkId: IdFactory.next(),
               dropflag: false,
               delay: 2000,
-            } 
+            
           },
 
 

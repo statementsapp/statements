@@ -6009,6 +6009,7 @@
           }
 
           function simulateReturnKeyPress(element) {
+            console.log("About to press")
             const eventKeyDown = new KeyboardEvent('keydown', {
               key: 'Enter',
               code: 'Enter',

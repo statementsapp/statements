@@ -5433,7 +5433,13 @@
           console.log("User actions length: ", $scope.userActions.length)
           if (isDefinedPoint($scope.userActions.length)) {
             console.log("About to simulate user")
-            $scope.simulateUser($scope.userActions.length)
+            setTimeout(function () {
+              $scope.$apply(function () {
+                // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+                $scope.simulateUser($scope.userActions.length)
+              });
+            }, 35);
+            
               // $scope.userActions[$scope.userActions.length-1].id, 
               // $scope.userActions[$scope.userActions.length-1].onIndex,
               // $scope.userActions[$scope.userActions.length-1].deletionIndex);

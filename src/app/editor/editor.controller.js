@@ -6009,17 +6009,25 @@
           }
 
           function simulateReturnKeyPress(element) {
-            console.log("About to press")
-            const event = new KeyboardEvent('keydown', {
+            const eventKeyDown = new KeyboardEvent('keydown', {
               key: 'Enter',
               code: 'Enter',
               which: 13,
               keyCode: 13,
               bubbles: true
             });
-            element.dispatchEvent(event);
+            const eventKeyUp = new KeyboardEvent('keyup', {
+              key: 'Enter',
+              code: 'Enter',
+              which: 13,
+              keyCode: 13,
+              bubbles: true
+            });
+            element.dispatchEvent(eventKeyDown);
+            element.dispatchEvent(eventKeyUp);
           }
         }
+
 
 
 

@@ -5999,7 +5999,9 @@
         $scope.simulateUser = function(index) {
           
             console.log("User actions simulate user: ", $scope.userActions)
+            
             var theStep = $scope.preDefinedPoints[index];
+            console.log("The step: ", theStep)
             var theOn = theStep.on;
             var theOnText = theStep.text;
             if (theStep.action ==='proposition'){

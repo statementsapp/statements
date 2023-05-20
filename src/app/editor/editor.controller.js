@@ -5967,6 +5967,8 @@
 
           // Add more pre-defined points with their respective pre-determined values
         ];
+        $scope.simulateUser(0);
+      }
 
         $scope.clickTypeAndEnter = function(step, id) {
 
@@ -5975,7 +5977,7 @@
         // Function to simulate the second user's action
         $scope.simulateUser = function(index) {
           
-            console.log("User actions: ", $scope.userActions)
+            console.log("User actions simulate user: ", $scope.userActions)
             var theStep = $scope.preDefinedPoints[index];
             var theOn = theStep.on;
             var theOnText = theStep.text;

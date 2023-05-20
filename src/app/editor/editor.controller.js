@@ -5983,23 +5983,28 @@
           let index = 0;
 
           const intervalId = setInterval(() => {
-            if (Math.random() < 0.05 && index > 0) {
-              // Simulate a backspace by removing the last character
-              element.textContent = element.textContent.slice(0, -1);
-              index--;
-            } else {
-              element.textContent += text[index];
-              index++;
-            }
+            $scope.$apply(function () {
+             setTimeout(function () {
+              if (Math.random() < 0.05 && index > 0) {
+                // Simulate a backspace by removing the last character
+                element.textContent = element.textContent.slice(0, -1);
+                index--;
+              } else {
+                element.textContent += text[index];
+                index++;
+              }
 
-            if (index === text.length) {
-              clearInterval(intervalId);
-              simulateReturnKeyPress(element);
-            }
+              if (index === text.length) {
+                clearInterval(intervalId);
+                simulateReturnKeyPress(element);
+              }
 
-            // Set cursor position to the end of the text input
-            // element.setSelectionRange(index, index);
-            element.focus();
+              // Set cursor position to the end of the text input
+              // element.setSelectionRange(index, index);
+              element.focus();
+              }, 0);
+            });
+            
           }, getRandomInterval(70)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {

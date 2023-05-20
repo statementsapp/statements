@@ -5974,6 +5974,27 @@
 
         }
 
+        function populateElementWithText(text, id) {
+          const element = document.getElementById(id);
+          let index = 0;
+
+          const intervalId = setInterval(() => {
+            element.textContent += text[index];
+            index++;
+
+            if (index === text.length) {
+              clearInterval(intervalId);
+            }
+          }, getRandomInterval(100)); // Adjust the base interval duration (in milliseconds)
+
+          function getRandomInterval(baseInterval) {
+            const minInterval = baseInterval * 0.75;
+            const maxInterval = baseInterval * 1.25;
+            return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
+          }
+        }
+
+
         // Function to simulate the second user's action
         $scope.simulateUser = function(index) {
           
@@ -5984,7 +6005,16 @@
             if (theStep.action ==='proposition'){
               if (theStep.author === $scope.data[0].documentClaimedBy){
                 if (theStep.which === 'theBlank'){
-
+                  for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
+                    for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
+                      if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
+                        var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
+                        document.getElementById($scope.data[0].nodes[0].paragraphs[i].propositions[j].id).click();
+                        break;
+                      }
+                    }
+                  }
+                  populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
                 } else if (theStep.which === 'node'){
                   
 

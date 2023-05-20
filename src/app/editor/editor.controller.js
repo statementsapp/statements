@@ -6102,7 +6102,7 @@
 
                 } else if (theStep.which === 'item'){
                   
-                  
+                }
                 // author propositions
               } else {
                 // reviewer propositions

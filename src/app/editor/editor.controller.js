@@ -6035,7 +6035,7 @@
                element.dispatchEvent(event);
                console.log("That event: ", event)
                $scope.temporaryText = '';
-              }, 1000);
+              }, 10);
             });
             
 

@@ -6005,6 +6005,7 @@
             if (theStep.action ==='proposition'){
               if (theStep.author === $scope.data[0].documentClaimedBy){
                 if (theStep.which === 'theBlank'){
+                  console.log("That blank")
                   for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
                     for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
                       if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){

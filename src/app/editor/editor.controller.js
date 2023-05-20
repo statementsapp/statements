@@ -6015,11 +6015,13 @@
               event.keyCode = 13;
               event.which = 13;
 
+            $scope.$apply(function () {
+             setTimeout(function () {
+               element.dispatchEvent(event);
+               console.log("That event: ", event)
+              }, 1000);
+            });
             
-            setTimeout(function () {
-              element.dispatchEvent(event);
-              console.log("That event: ", event)
-             }, 1000);
 
             // console.log("About to press")
             // focusFactory(id)

@@ -5432,6 +5432,7 @@
           $scope.userActions.push(payload);
           console.log("User actions length: ", $scope.userActions.length)
           if (isDefinedPoint($scope.userActions.length)) {
+            console.log("About to simulate user")
             $scope.simulateUser($scope.userActions.length)
               // $scope.userActions[$scope.userActions.length-1].id, 
               // $scope.userActions[$scope.userActions.length-1].onIndex,

@@ -5968,6 +5968,7 @@
           // Add more pre-defined points with their respective pre-determined values
         ];
         $scope.simulateUser(0);
+      }
 
         $scope.clickTypeAndEnter = function(step, id) {
 
@@ -6304,7 +6305,7 @@
         //   }
         // });
           
-      }
+      
 
 
 

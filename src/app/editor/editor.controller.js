@@ -6059,7 +6059,11 @@
                     for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
                       if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
                         var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
-                        focusFactory(thisHereId);
+                        
+                        setTimeout(function () {
+                          document.getElementById(thisHereId).click();
+                        }, 20);
+
                         break;
                       }
                     }

@@ -6009,27 +6009,35 @@
           }
 
           function simulateReturnKeyPress(element) {
-            console.log("About to press")
-            focusFactory(id)
-            const eventKeyDown = new KeyboardEvent('keydown', {
-              key: 'Enter',
-              code: 'Enter',
-              which: 13,
-              keyCode: 13,
-              bubbles: false
-            });
-            const eventKeyUp = new KeyboardEvent('keyup', {
-              key: 'Enter',
-              code: 'Enter',
-              which: 13,
-              keyCode: 13,
-              bubbles: false
-            });
-            setTimeout(function () {
-              console.log("Element pressing: ", element)
-              element.dispatchEvent(eventKeyDown);
-              element.dispatchEvent(eventKeyUp);
-            }, 20);
+
+            const event = new Event('keyup', { bubbles: true, cancelable: true });
+              event.key = 'Enter';
+              event.keyCode = 13;
+              event.which = 13;
+
+            element.dispatchEvent(event);
+
+            // console.log("About to press")
+            // focusFactory(id)
+            // const eventKeyDown = new KeyboardEvent('keydown', {
+            //   key: 'Enter',
+            //   code: 'Enter',
+            //   which: 13,
+            //   keyCode: 13,
+            //   bubbles: false
+            // });
+            // const eventKeyUp = new KeyboardEvent('keyup', {
+            //   key: 'Enter',
+            //   code: 'Enter',
+            //   which: 13,
+            //   keyCode: 13,
+            //   bubbles: false
+            // });
+            // setTimeout(function () {
+            //   console.log("Element pressing: ", element)
+            //   element.dispatchEvent(eventKeyDown);
+            //   element.dispatchEvent(eventKeyUp);
+            // }, 20);
             
           }
         }

@@ -5827,15 +5827,13 @@
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
-              on: 'previous',
-              blankId: IdFactory.next(),
-              textSide: false,
-              bookId: $scope.bookId,
-              nodeId: IdFactory.next(),
-              paragraphId: IdFactory.next(),
-              remarkId: IdFactory.next(),
-              dropflag: false,
-              delay: 3000,
+              step: 0,
+              which: 'item',
+              on: undefined,
+              its: undefined,
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
          
           },
           { index: 2, 
@@ -6103,13 +6101,28 @@
                   
 
                 } else if (theStep.which === 'item'){
-
-                }
+                  
+                  
                 // author propositions
               } else {
                 // reviewer propositions
                 var theCode = theStep.code;
                 if (theCode === '2A'){
+                  for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                      for (var j = 0; i < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                        if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'assertion' &&
+                          theStep.text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
+                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                          console.log("Got an id")
+                          setTimeout(function () {
+                            document.getElementById(thisHereId).click();
+                          }, 20);
+                          break;
+                        }
+                      }
+                    }
+                  }
                   //click
                   //type
                   // enter

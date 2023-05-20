@@ -5979,7 +5979,7 @@
           let index = 0;
 
           const intervalId = setInterval(() => {
-            if (Math.random() < 0.1 && index > 0) {
+            if (Math.random() < 0.05 && index > 0) {
               // Simulate a backspace by removing the last character
               element.textContent = element.textContent.slice(0, -1);
               index--;
@@ -5991,7 +5991,7 @@
             if (index === text.length) {
               clearInterval(intervalId);
             }
-          }, getRandomInterval(50)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(70)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;

@@ -6119,6 +6119,7 @@
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         console.log("J: ", j)
                         console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
+                        console.log("slice: ", theStep.text.slice(0, 6))
                         if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'assertion' &&
                           theStep.text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;

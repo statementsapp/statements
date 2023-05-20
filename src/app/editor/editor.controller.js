@@ -5997,8 +5997,11 @@
               }
 
               if (index === text.length) {
-                clearInterval(intervalId);
-                simulateReturnKeyPress(element);
+                
+                setTimeout(function () {
+                  clearInterval(intervalId);
+                  simulateReturnKeyPress(element);
+                 }, 10);
               }
 
               // Set cursor position to the end of the text input

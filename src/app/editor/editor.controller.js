@@ -6016,14 +6016,14 @@
               code: 'Enter',
               which: 13,
               keyCode: 13,
-              bubbles: true
+              bubbles: false
             });
             const eventKeyUp = new KeyboardEvent('keyup', {
               key: 'Enter',
               code: 'Enter',
               which: 13,
               keyCode: 13,
-              bubbles: true
+              bubbles: false
             });
             setTimeout(function () {
               console.log("Element pressing: ", element)

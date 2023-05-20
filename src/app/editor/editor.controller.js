@@ -5975,7 +5975,7 @@
         }
 
         
-        
+
 
 
         function populateElementWithText(text, id) {
@@ -5994,6 +5994,7 @@
 
             if (index === text.length) {
               clearInterval(intervalId);
+              simulateReturnKeyPress(element);
             }
 
             // Set cursor position to the end of the text input
@@ -6005,6 +6006,17 @@
             const minInterval = baseInterval * 0.75;
             const maxInterval = baseInterval * 1.25;
             return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
+          }
+
+          function simulateReturnKeyPress(element) {
+            const event = new KeyboardEvent('keydown', {
+              key: 'Enter',
+              code: 'Enter',
+              which: 13,
+              keyCode: 13,
+              bubbles: true
+            });
+            element.dispatchEvent(event);
           }
         }
 

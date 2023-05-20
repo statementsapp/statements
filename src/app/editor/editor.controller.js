@@ -5985,7 +5985,7 @@
             if (index === text.length) {
               clearInterval(intervalId);
             }
-          }, getRandomInterval(100)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(50)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;
@@ -6012,7 +6012,7 @@
                     for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
                       if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
                         var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
-                        document.getElementById($scope.data[0].nodes[0].paragraphs[i].propositions[j].id).click();
+                        focusFactory(thisHereId);
                         break;
                       }
                     }

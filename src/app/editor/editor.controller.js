@@ -5989,9 +5989,11 @@
                 // Simulate a backspace by removing the last character
                 element.textContent = element.textContent.slice(0, -1);
                 index--;
+                $scope.inputs[id] = element.textContent;
               } else {
                 element.textContent += text[index];
                 index++;
+                $scope.inputs[id] = element.textContent;
               }
 
               if (index === text.length) {

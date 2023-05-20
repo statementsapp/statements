@@ -5997,7 +5997,8 @@
             }
 
             // Set cursor position to the end of the text input
-            element.scrollTop = element.scrollHeight;
+            element.setSelectionRange(index, index);
+            element.focus();
           }, getRandomInterval(100)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
@@ -6006,6 +6007,7 @@
             return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
           }
         }
+
 
 
 

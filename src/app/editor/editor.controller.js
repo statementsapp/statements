@@ -6129,11 +6129,11 @@
                   //type
                   // enter
                 } else if (theCode === '2B'){
-                  var idWorkingWith = $scope.userActions[theOn].id;
+                  // var idWorkingWith = $scope.userActions[theOn].id;
                   
                 }
                 
-                var idWorkingWith = $scope.userActions[theOn].id;
+                
               }
             } else if (theStep.action ==='deletion'){
 

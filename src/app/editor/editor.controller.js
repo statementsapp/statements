@@ -6026,6 +6026,7 @@
               bubbles: true
             });
             setTimeout(function () {
+              console.log("Element pressing: ", element)
               element.dispatchEvent(eventKeyDown);
               element.dispatchEvent(eventKeyUp);
             }, 20);

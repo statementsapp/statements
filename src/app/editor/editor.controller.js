@@ -5889,7 +5889,7 @@
               action: 'proposition'
          
           },
-          { index: 2, 
+          { index: 3, 
             
               author: $scope.userId,
               text: 'Heretofore texting this text fore and away and also this bok text that is text.',
@@ -5908,7 +5908,7 @@
               typeTime: 3000,
             
           },
-          { index: 3, 
+          { index: 4, 
             
               author: 'bbb',
               text: 'Other text and with this text there is text and following text there is some text.',
@@ -5930,7 +5930,7 @@
               delay: 5000,
             
           },
-          { index: 4, 
+          { index: 5, 
             
               author: 'ccc',
               text: 'Have some more text that is text and some text that you want while with this text and this text will be removed.',

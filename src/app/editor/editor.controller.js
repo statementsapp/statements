@@ -6164,7 +6164,7 @@
                             
                             setTimeout(function () {
                               $scope.$apply(function () {
-                                $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarksExpanded = true;
+                                $scope.toggleRemarksExpansion($scope.data[0].nodes[h].paragraphs[i].propositions[j])
 
                               });
                             }, 20);

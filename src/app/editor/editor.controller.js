@@ -6171,7 +6171,7 @@
                               });
                             }, 20);
                             setTimeout(function () {
-                              document.getElementById('remark'+thisHereId).click();
+                              document.getElementById('proposition'+thisHereId).click();
                             }, 20);
                             populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
                             console.log("Got an id")

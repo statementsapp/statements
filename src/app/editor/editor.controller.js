@@ -5880,7 +5880,7 @@
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
-              step: 0,
+              
               which: 'item',
               on: 0,
               its: 'self',
@@ -6127,6 +6127,7 @@
         $scope.simulateUser = function(index) {
           
             console.log("User actions simulate user: ", $scope.userActions)
+            console.log("Index: ", index)
             
             var theStep = $scope.preDefinedPoints[index];
             console.log("The step: ", theStep)

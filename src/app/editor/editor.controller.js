@@ -6167,14 +6167,16 @@
                               $scope.$apply(function () {
                                 console.log("H: ", thisH)
                                 $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-
+                                document.getElementById('proposition'+thisHereId).click();
                               });
-                            }, 20);
+                            }, 0);
+
                             setTimeout(function () {
-                              document.getElementById('proposition'+thisHereId).click();
+                              
+                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                              console.log("Got an id")
                             }, 20);
-                            populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                            console.log("Got an id")
+                            
                             // $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], null, null, theStep.author, theCode);
                             // setTimeout(function () {
                             //   document.getElementById(thisHereId).click();

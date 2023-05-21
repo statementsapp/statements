@@ -6171,7 +6171,7 @@
                           $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                           console.log("Got an id")
-                          $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], null, null, theStep.author);
+                          $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], null, null, theStep.author, theCode);
                           // setTimeout(function () {
                           //   document.getElementById(thisHereId).click();
                           // }, 20);

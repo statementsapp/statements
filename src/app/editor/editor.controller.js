@@ -6161,11 +6161,11 @@
                           if (
                             $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
                             var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
-                            
+                            var thisH = angular.copy(h)
                             setTimeout(function () {
                               $scope.$apply(function () {
-                                console.log("H: ", h)
-                                $scope.toggleRemarksExpansion($scope.data[0].nodes[h].paragraphs[i].propositions[j])
+                                console.log("H: ", thisH)
+                                $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[i].propositions[j])
 
                               });
                             }, 20);

@@ -5889,25 +5889,21 @@
               action: 'proposition'
          
           },
-          // { index: 3, 
+          { index: 2, 
             
-          //     author: $scope.userId,
-          //     text: 'Heretofore texting this text fore and away and also this bok text that is text.',
-          //     dialogueText: 'Heretofore texting this text fore and away and also this bok text that is text.',
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     on: 'firstBlank',
-          //     modifier: 'top',
-          //     blankId: IdFactory.next(),
-          //     textSide: true,
-          //     bookId: $scope.bookId,
-          //     nodeId: IdFactory.next(),
-          //     paragraphId: IdFactory.next(),
-          //     remarkId: IdFactory.next(),
-          //     dropflag: false,
-          //     typeTime: 3000,
+              author: $scope.userId,
+              text: 'Heretofore texting this text fore and away and also this bok text that is text.',
+              dialogueText: 'Heretofore texting this text fore and away and also this bok text that is text.',
+              type: 'assertion',
+              dialogueSide: false,
+              which: 'item',
+              on: 1,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
             
-          // },
+          },
           // { index: 4, 
             
           //     author: 'bbb',
@@ -6155,7 +6151,38 @@
                   
 
                 } else if (theStep.which === 'item'){
-                  
+                  for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                      for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                        for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
+                          console.log("K: ", k)
+                          console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
+                          console.log("slice: ", theStep.text.slice(0, 6))
+                          if (
+                            $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
+                            var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                            
+                            setTimeout(function () {
+                              $scope.$apply(function () {
+                                $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarksExpanded = true;
+
+                              });
+                            }, 20);
+                            setTimeout(function () {
+                              document.getElementById(thisHereId).click();
+                            }, 20);
+                            populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                            console.log("Got an id")
+                            // $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], null, null, theStep.author, theCode);
+                            // setTimeout(function () {
+                            //   document.getElementById(thisHereId).click();
+                            // }, 20);
+                            break;
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
                 // author propositions
               } else {
@@ -6170,6 +6197,7 @@
                         console.log("slice: ", theStep.text.slice(0, 6))
                         if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'assertion' &&
                           $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
+                          
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                           console.log("Got an id")
                           $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], null, null, theStep.author, theCode);

@@ -6122,7 +6122,7 @@
         // Function to simulate the second user's action
         $scope.simulateUser = function(index) {
           
-            console.log("User actions simulate user: ", $scope.userActions)
+            
             console.log("Index: ", index)
             
             var theStep = $scope.preDefinedPoints[index];
@@ -6132,7 +6132,6 @@
             if (theStep.action ==='proposition'){
               if (theStep.author === $scope.data[0].documentClaimedBy){
                 if (theStep.which === 'theBlank'){
-                  console.log("That blank")
                   for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
                     for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
                       if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
@@ -6155,9 +6154,9 @@
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
-                          console.log("K: ", k)
+      
                           console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
-                          console.log("slice: ", theStep.text.slice(0, 6))
+
                           if (
                             $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
                             var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;

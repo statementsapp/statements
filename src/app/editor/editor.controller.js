@@ -3648,7 +3648,7 @@
             prep.messagesSoFar = angular.copy(prep.previousMessages);
 
 
-          } else if ((automatedAuthor && automatedCode === '2B')){
+          } else if ((automatedAuthor && automatedCode === '2A')){
 
             console.log("2a")
             prep.code = '2A';

@@ -3660,6 +3660,7 @@
             }
             prep.type = 'negation';
             prep.adjustedText = input;
+            console.log("Adjusted text: ", prep.adjustedText)
             
             if (!automatedAuthor){
               prep.author = $scope.userId;

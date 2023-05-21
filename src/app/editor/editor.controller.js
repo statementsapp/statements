@@ -6167,10 +6167,10 @@
                               $scope.$apply(function () {
                                 console.log("H: ", thisH)
                                 $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                                document.getElementById('proposition'+thisHereId).click();
+                                
                               });
                             }, 0);
-
+                            document.getElementById('proposition'+thisHereId).click();
                             setTimeout(function () {
                               
                               populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)

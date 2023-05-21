@@ -6164,6 +6164,7 @@
                             
                             setTimeout(function () {
                               $scope.$apply(function () {
+                                console.log("H: ", h)
                                 $scope.toggleRemarksExpansion($scope.data[0].nodes[h].paragraphs[i].propositions[j])
 
                               });

@@ -3906,7 +3906,7 @@
         
 
         prep.payload = {
-          author: $scope.userId,
+          author: prep.author ? prep.author : $scope.userId,
           text: prep.adjustedText,
           dialogueText: angular.copy(prep.adjustedText),
           type: prep.type,

@@ -6170,7 +6170,11 @@
                                 
                               });
                             }, 0);
-                            document.getElementById('proposition'+thisHereId).click();
+                            
+                            setTimeout(function () {
+                              document.getElementById('proposition'+thisHereId).click();
+
+                            }, 20);
                             setTimeout(function () {
                               
                               populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)

@@ -3385,7 +3385,7 @@
         console.log("State of top add before sending out prop: ", paragraph.leftAdd)
       }
 
-      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag ) {
+      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
         console.log("Prep proposition paragraph: ", paragraph)
         console.log("The input: ", input)
         
@@ -3597,7 +3597,7 @@
           prep.messagesSoFar = [prep.id]
         } else if (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
                 ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId &&
-                 !paragraph.leftAdd)) {
+                 !paragraph.leftAdd) || automatedAuthor) {
 
           // switched sp negation requirements from sp === your username to just not the document author
 
@@ -3608,15 +3608,31 @@
           // Or if it's a continuation of another remark
           // it's a negation
 
-          if ($scope.selectedProposition.type === 'negation') {
+          if ($scope.selectedProposition.type === 'negation' || (automatedAuthor && automatedCode === '2B')) {
             //repeated negation
             console.log("2b")
             prep.code = '2B';
-            prep.topic = $scope.selectedProposition.topic;
+            if (!automatedAuthor){
+              prep.topic = $scope.selectedProposition.topic;
+            } else {
+              prep.topic = node.topic;
+            }
+            
             prep.type = 'negation';
             prep.adjustedText = input;
             prep.author = $scope.userId;
-            prep.afterRemarkId = $scope.selectedProposition.id;
+            if (!automatedAuthor){
+              prep.author = $scope.userId;
+            } else {
+              prep.author = automatedAuthor;
+            }
+
+            if (!automatedAuthor){
+              prep.afterRemarkId = $scope.selectedProposition.id;
+            } else {
+              prep.afterRemarkId = $scope.selectedProposition.id;
+            }
+            
             prep.targetNodeId = $scope.selectedNode.nodeId;
             prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
             prep.of = {      
@@ -3632,27 +3648,57 @@
             prep.messagesSoFar = angular.copy(prep.previousMessages);
 
 
-          } else {
+          } else if ((automatedAuthor && automatedCode === '2B')){
 
             console.log("2a")
             prep.code = '2A';
-            prep.topic = $scope.selectedProposition.topic;
+            
+            if (!automatedAuthor){
+              prep.topic = $scope.selectedProposition.topic;
+            } else {
+              prep.topic = node.topic;
+            }
             prep.type = 'negation';
             prep.adjustedText = input;
-            prep.author = $scope.userId;
-            prep.afterPropositionId = $scope.selectedProposition.id;
-            prep.targetNodeId = $scope.selectedNode.nodeId;
-            prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            prep.of = {
-              type: $scope.selectedProposition.type,
-              author: $scope.selectedProposition.author,
-              id: $scope.selectedProposition.id,
-              text: $scope.selectedProposition.text
+            
+            if (!automatedAuthor){
+              prep.author = $scope.userId;
+            } else {
+              prep.author = automatedAuthor;
             }
-            prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
-            prep.id = IdFactory.next();
-            prep.previousMessages.push(prep.id)
-            prep.messagesSoFar = angular.copy(prep.previousMessages);
+            
+            if (!automatedAuthor){
+              prep.afterPropositionId = $scope.selectedProposition.id;
+              prep.targetNodeId = $scope.selectedNode.nodeId;
+              prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+              prep.of = {
+                type: $scope.selectedProposition.type,
+                author: $scope.selectedProposition.author,
+                id: $scope.selectedProposition.id,
+                text: $scope.selectedProposition.text
+              }
+              prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+              prep.id = IdFactory.next();
+              prep.previousMessages.push(prep.id)
+              prep.messagesSoFar = angular.copy(prep.previousMessages);
+            } else {
+              prep.afterPropositionId = proposition.id;
+              prep.targetNodeId = node.nodeId
+              prep.targetParagraphId = paragraph.paragraphId
+              prep.of = {
+                type: proposition.type,
+                author: proposition.author,
+                id: proposition.id,
+                text: proposition.text
+              }
+              prep.previousMessages = angular.copy(proposition.messagesSoFar);
+              prep.id = IdFactory.next();
+              prep.previousMessages.push(prep.id)
+              prep.messagesSoFar = angular.copy(prep.previousMessages);
+            }
+            
+            
+            
           }
 
 
@@ -6124,10 +6170,10 @@
                           $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                           console.log("Got an id")
-                          $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], null, null);
-                          setTimeout(function () {
-                            document.getElementById(thisHereId).click();
-                          }, 20);
+                          $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], null, null, theStep.author);
+                          // setTimeout(function () {
+                          //   document.getElementById(thisHereId).click();
+                          // }, 20);
                           break;
                         }
                       }

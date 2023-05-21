@@ -3747,7 +3747,7 @@
             prep.code = '3A';
             prep.topic = $scope.selectedProposition.topic;
             prep.type = 'assertion';
-            prep.adjustedText = ;
+            prep.adjustedText = input;
             prep.author = $scope.userId;
             prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
             prep.targetNodeId = $scope.selectedNode.nodeId;

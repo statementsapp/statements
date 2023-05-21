@@ -5483,7 +5483,7 @@
             setTimeout(function () {
               $scope.$apply(function () {
                 // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
-                $scope.simulateUser($scope.userActions.length-1)
+                $scope.simulateUser($scope.userActions.length)
               });
             }, 35);
             

@@ -3879,7 +3879,7 @@
           console.log("Special adjustment")
           prep.savedParagraphId = angular.copy(paragraph.paragraphId);
         }
-
+        console.log("That adjusted text: ", prep.adjustedText)
 
         prep.adjustedText = prep.adjustedText.replace(/&nbsp;/g, ' ');
         prep.adjustedText = angular.copy(prep.adjustedText).replace(/(&lt;br&gt;&lt;br&gt;\.|<br><br>\.)/g, '');

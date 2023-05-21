@@ -3667,7 +3667,7 @@
             } else {
               prep.author = automatedAuthor;
             }
-            
+            console.log("automated author: ", automatedAuthor)
             if (!automatedAuthor){
               prep.afterPropositionId = $scope.selectedProposition.id;
               prep.targetNodeId = $scope.selectedNode.nodeId;

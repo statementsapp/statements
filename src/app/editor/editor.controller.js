@@ -6180,8 +6180,11 @@
               if (theCode === '2A'){
                 console.log("Automated 2a")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  console.log("h")
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                    console.log("i")
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                      console.log("j")
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                         console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
                         if (

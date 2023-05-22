@@ -6174,9 +6174,11 @@
                 }
               }
             } else {
+              console.log("Reviewer prop")
               // reviewer propositions
               var theCode = theStep.code;
               if (theCode === '2A'){
+                console.log("Automated 2a")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){

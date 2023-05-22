@@ -6170,7 +6170,7 @@
 
                     }
 
-                  }
+                  
                 }
               }
             } else if (theStep.action ==='deletion') {

@@ -6120,8 +6120,7 @@
 
         // Function to simulate the second user's action
         $scope.simulateUser = function(index) {
-          
-            
+
             console.log("Index: ", index)
             
             var theStep = $scope.preDefinedPoints[index];
@@ -6259,9 +6258,9 @@
                 
                 
               }
-            } else if (theStep.action ==='deletion'){
+            // } else if (theStep.action ==='deletion'){
 
-            }
+            // }
 
             for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
               for (var j = $scope.data[0].nodes[i].paragraphs.length-1; j > -1; j--){

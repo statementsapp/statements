@@ -6148,6 +6148,7 @@
                   
 
                 } else if (theStep.which === 'item'){
+                  console.log("item")
                   for (var h = 0; h < $scope.data[0].nodes.length; h++){
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
 

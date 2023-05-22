@@ -5904,28 +5904,25 @@
               action: 'proposition'
             
           },
-          // { index: 4, 
+          { index: 3, 
             
-          //     author: 'bbb',
-          //     text: 'Other text and with this text there is text and following text there is some text.',
-          //     dialogueText: 'Other text and with this text there is text and following text there is some text.',
-          //     type: 'negation',
-          //     code: '2A',
-          //     dialogueSide: true,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: $scope.userId,
+              text: 'Other text and with this text there is text and following text there is some text.',
+              dialogueText: 'Other text and with this text there is text and following text there is some text.',
+              type: 'assertion',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
 
-          //     blankId: IdFactory.next(),
-          //     textSide: false,
-          //     bookId: $scope.bookId,
-          //     nodeId: IdFactory.next(),
-          //     paragraphId: IdFactory.next(),
-          //     remarkId: IdFactory.next(),
-          //     dropflag: false,
-          //     delay: 5000,
+              which: 'item',
+              on: 2,
+              its: 'bottom',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
             
-          // },
+          },
           // { index: 5, 
             
           //     author: 'ccc',
@@ -6154,17 +6151,22 @@
                 } else if (theStep.which === 'item'){
                   for (var h = 0; h < $scope.data[0].nodes.length; h++){
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
       
                           console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
 
                           if (
-                            $scope.preDefinedPoints[theOn].text.slice(0, 6) === $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
+                            $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
                             var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
                             var thisH = angular.copy(h)
                             var thisI = angular.copy(i)
                             var thisJ = angular.copy(j)
+                            var thisK = angular.copy(k)
+
+                            }
                             setTimeout(function () {
                               $scope.$apply(function () {
                                 console.log("H: ", thisH)
@@ -6188,6 +6190,34 @@
                             //   document.getElementById(thisHereId).click();
                             // }, 20);
                             break;
+                          }
+                        if (
+                          $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
+                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                          var thisH = angular.copy(h)
+                          var thisI = angular.copy(i)
+                          var thisJ = angular.copy(j)
+                          if (theStep.its === 'top'){
+
+                          } else if (theStep.its === 'bottom'){
+                            setTimeout(function () {
+                              document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+
+                            }, 20);
+                            setTimeout(function () {
+                              document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+
+                            }, 20);
+                            setTimeout(function () {
+                              
+                              populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                              console.log("Got an id")
+                            }, 20);
+                          } else if (theStep.its === 'left'){
+
+                          }
+
                           }
                         }
                       }

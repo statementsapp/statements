@@ -6187,7 +6187,7 @@
                     console.log("i")
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("j")
-                      f
+                      
                         console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
                         if (
                           $scope.preDefinedPoints[theOn].text.slice(0, 6) === 

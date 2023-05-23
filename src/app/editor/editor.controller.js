@@ -6168,6 +6168,8 @@
                       }, 20);
                     } else if (theStep.its === 'left'){
 
+                    } else if (theStep.its === 'self') {
+
                     }
 
                   
@@ -6178,6 +6180,45 @@
               // reviewer propositions
               var theCode = theStep.code;
               if (theCode === '2A'){
+                console.log("Automated 2a")
+                for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  console.log("h")
+                  for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                    console.log("i")
+                    for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                      console.log("j")
+                      f
+                        console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
+                        if (
+                          $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
+                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                          var thisH = angular.copy(h)
+                          var thisI = angular.copy(i)
+                          var thisJ = angular.copy(j)
+                          setTimeout(function () {
+                            $scope.$apply(function () {
+                              console.log("H: ", thisH)
+                              $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                            });
+                          }, 0);
+                                  
+                          setTimeout(function () {
+                            document.getElementById('proposition'+thisHereId).click();
+
+                          }, 20);
+                          setTimeout(function () {
+                            populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                            console.log("Got an id")
+                          }, 20);
+
+                          break;
+                        }
+                      
+                    }
+                  }
+                } 
+              } else if (theCode === '2B'){
                 console.log("Automated 2a")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("h")
@@ -6217,8 +6258,6 @@
                     }
                   }
                 } 
-              } else if (theCode === '2B'){
-
                         
               }   
             }

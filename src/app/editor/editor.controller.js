@@ -6191,7 +6191,7 @@
                         console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
                         if (
                           $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                           var thisH = angular.copy(h)
                           var thisI = angular.copy(i)

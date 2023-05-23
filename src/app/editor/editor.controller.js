@@ -6193,9 +6193,12 @@
                           $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                           $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
-                          var thisH = angular.copy(h)
-                          var thisI = angular.copy(i)
-                          var thisJ = angular.copy(j)
+                          $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
+                            $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
+                            null, null, theStep.author, theCode);
+                          // var thisH = angular.copy(h)
+                          // var thisI = angular.copy(i)
+                          // var thisJ = angular.copy(j)
                           // setTimeout(function () {
                           //   $scope.$apply(function () {
                           //     console.log("H: ", thisH)
@@ -6203,14 +6206,14 @@
                           //   });
                           // }, 0);
                                   
-                          setTimeout(function () {
-                            document.getElementById('proposition'+thisHereId).click();
+                          // setTimeout(function () {
+                          //   document.getElementById('proposition'+thisHereId).click();
 
-                          }, 20);
-                          setTimeout(function () {
-                            populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                            console.log("Got an id")
-                          }, 20);
+                          // }, 20);
+                          // setTimeout(function () {
+                          //   populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                          //   console.log("Got an id")
+                          // }, 20);
 
                           break;
                         }

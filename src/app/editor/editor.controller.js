@@ -6196,12 +6196,12 @@
                           var thisH = angular.copy(h)
                           var thisI = angular.copy(i)
                           var thisJ = angular.copy(j)
-                          setTimeout(function () {
-                            $scope.$apply(function () {
-                              console.log("H: ", thisH)
-                              $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                            });
-                          }, 0);
+                          // setTimeout(function () {
+                          //   $scope.$apply(function () {
+                          //     console.log("H: ", thisH)
+                          //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                          //   });
+                          // }, 0);
                                   
                           setTimeout(function () {
                             document.getElementById('proposition'+thisHereId).click();

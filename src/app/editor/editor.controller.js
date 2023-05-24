@@ -6146,6 +6146,71 @@
                 } else if (theStep.which === 'item'){
                   console.log("item")
                   
+
+                  for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                    console.log("h")
+                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                      console.log("i")
+                      for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                        console.log("j")
+                        for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
+                          if (
+                            $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
+                            var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
+                            var thisH = angular.copy(h)
+                            var thisI = angular.copy(i)
+                            var thisJ = angular.copy(j)
+                            var thisK = angular.copy(k)
+
+                            if (theStep.its === 'top'){
+                              console.log("Its top")
+
+                            } else if (theStep.its === 'bottom'){
+                              console.log("Its bottom")
+                              setTimeout(function () {
+                                document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                              }, 20);
+                              setTimeout(function () {
+                                document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                              }, 20);
+                              setTimeout(function () {
+                                populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                                console.log("Got an id")
+                              }, 20);
+                            } else if (theStep.its === 'left'){
+                              console.log("Its left")
+
+                            } else if (theStep.its === 'self') {
+                              console.log("Its self")
+                              setTimeout(function () {
+                                $scope.$apply(function () {
+                                  console.log("H: ", thisH)
+                                  $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                                });
+                              }, 0);
+                                      
+                              setTimeout(function () {
+                                document.getElementById('proposition'+thisHereId).click();
+
+                              }, 20);
+                              setTimeout(function () {
+                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                                console.log("Got an id")
+                              }, 20);
+
+                              break;
+                            }
+
+                            
+                          }
+                        }
+                      }
+                    }
+                  } 
+
+
+
                   if (
                     $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                     $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
@@ -6153,24 +6218,7 @@
                     var thisH = angular.copy(h)
                     var thisI = angular.copy(i)
                     var thisJ = angular.copy(j)
-                    if (theStep.its === 'top'){
-
-                    } else if (theStep.its === 'bottom'){
-                      setTimeout(function () {
-                        document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                      }, 20);
-                      setTimeout(function () {
-                        document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                      }, 20);
-                      setTimeout(function () {
-                        populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                        console.log("Got an id")
-                      }, 20);
-                    } else if (theStep.its === 'left'){
-
-                    } else if (theStep.its === 'self') {
-
-                    }
+                    
 
                   
                 }

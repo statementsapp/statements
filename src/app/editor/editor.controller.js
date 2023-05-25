@@ -6154,7 +6154,7 @@
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         console.log("j")
                         for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
-                          if (
+                          if (!hasAK &&
                             $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                             $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
                             var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;

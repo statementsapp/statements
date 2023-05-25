@@ -6162,49 +6162,78 @@
                             var thisI = angular.copy(i)
                             var thisJ = angular.copy(j)
                             var thisK = angular.copy(k)
+                            var hasAK = true;
 
-                            if (theStep.its === 'top'){
-                              console.log("Its top")
+                            setTimeout(function () {
+                              $scope.$apply(function () {
+                                console.log("H: ", thisH)
+                                $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                              });
+                            }, 0);
+                                    
+                            setTimeout(function () {
+                              document.getElementById('proposition'+thisHereId).click();
 
-                            } else if (theStep.its === 'bottom'){
-                              console.log("Its bottom")
-                              setTimeout(function () {
-                                document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                              }, 20);
-                              setTimeout(function () {
-                                document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                              }, 20);
-                              setTimeout(function () {
-                                populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                                console.log("Got an id")
-                              }, 20);
-                            } else if (theStep.its === 'left'){
-                              console.log("Its left")
+                            }, 20);
+                            setTimeout(function () {
+                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                              console.log("Got an id")
+                              hasAK = false;
+                            }, 20);
 
-                            } else if (theStep.its === 'self') {
-                              console.log("Its self")
-                              setTimeout(function () {
-                                $scope.$apply(function () {
-                                  console.log("H: ", thisH)
-                                  $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                                });
-                              }, 0);
-                                      
-                              setTimeout(function () {
-                                document.getElementById('proposition'+thisHereId).click();
+                            break;
 
-                              }, 20);
-                              setTimeout(function () {
-                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                                console.log("Got an id")
-                              }, 20);
-
-                              break;
-                            }
+                            
 
                             
                           }
                         }
+                      }
+                      if (!hasAK){
+                        if (theStep.its === 'top'){
+                          console.log("Its top")
+
+                        } else if (theStep.its === 'bottom'){
+                          console.log("Its bottom")
+                          setTimeout(function () {
+                            document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          }, 20);
+                          setTimeout(function () {
+                            document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          }, 20);
+                          setTimeout(function () {
+                            populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                            console.log("Got an id")
+                          }, 20);
+                        } else if (theStep.its === 'left'){
+                          console.log("Its left")
+
+                        } else if (theStep.its === 'self') {
+                          
+                            console.log("Non rejoining selfs")
+
+                          
+                          console.log("Its self")
+                          
+                        }
+                      } else {
+                        setTimeout(function () {
+                          $scope.$apply(function () {
+                            console.log("H: ", thisH)
+                            $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                          });
+                        }, 0);
+                                
+                        setTimeout(function () {
+                          document.getElementById('proposition'+thisHereId).click();
+
+                        }, 20);
+                        setTimeout(function () {
+                          populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                          console.log("Got an id")
+                        }, 20);
+
+                        break;
                       }
                     }
                   } 

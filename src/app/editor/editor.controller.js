@@ -6163,25 +6163,27 @@
                             var thisJ = angular.copy(j)
                             var thisK = angular.copy(k)
                             var hasAK = true;
+                            if (hasAK){
+                              setTimeout(function () {
+                                $scope.$apply(function () {
+                                  console.log("H: ", thisH)
+                                  $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                                });
+                              }, 0);
+                                      
+                              setTimeout(function () {
+                                document.getElementById('proposition'+thisHereId).click();
 
-                            setTimeout(function () {
-                              $scope.$apply(function () {
-                                console.log("H: ", thisH)
-                                $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                              });
-                            }, 0);
-                                    
-                            setTimeout(function () {
-                              document.getElementById('proposition'+thisHereId).click();
+                              }, 20);
+                              setTimeout(function () {
+                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                                console.log("Got an id")
+                                hasAK = false;
+                              }, 20);
 
-                            }, 20);
-                            setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                              console.log("Got an id")
-                              hasAK = false;
-                            }, 20);
-
-                            break;
+                              break;
+                            }
+                            
 
                             
 

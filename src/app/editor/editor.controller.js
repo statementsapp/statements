@@ -6175,7 +6175,7 @@
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
                               console.log("Got an id")
-                              break;
+                              // break;
                             }, 20);
                           }    
                         }

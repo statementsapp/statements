@@ -6184,6 +6184,7 @@
                     }
                   }
                 }
+                // non-k author props
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("h")
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -6192,12 +6193,11 @@
                       if (
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
-                        var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
+                        var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         var thisH = angular.copy(h)
                         var thisI = angular.copy(i)
                         var thisJ = angular.copy(j)
-                        var thisK = angular.copy(k)
-                        var hasAK = true;
+                        var hasAK = false;
                         
                         setTimeout(function () {
                           $scope.$apply(function () {

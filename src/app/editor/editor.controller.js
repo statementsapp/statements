@@ -6251,7 +6251,7 @@
                     populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
                     console.log("Got an id")
                   }, 20);
-                  break;
+                  // break;
                   console.log("Its self")     
                 }
               }

@@ -6197,7 +6197,7 @@
                         var thisH = angular.copy(h)
                         var thisI = angular.copy(i)
                         var thisJ = angular.copy(j)
-                        var hasAK = false;
+                        var hasAK = true;
                         
                         setTimeout(function () {
                           $scope.$apply(function () {
@@ -6211,7 +6211,7 @@
                         setTimeout(function () {
                           populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
                           console.log("Got an id")
-                          hasAK = false;
+                          // hasAK = false;
                         }, 20);
                         break; 
                       }

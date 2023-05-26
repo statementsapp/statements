@@ -6220,9 +6220,9 @@
                 }
                   
                 // props by the author that aren't on remarks by virtue of not getting a k
-                if (theStep.its === 'top'){
+                if (theStep.its === 'top' && !hasAK){
                   console.log("Its top")
-                } else if (theStep.its === 'bottom'){
+                } else if (theStep.its === 'bottom' !hasAK){
                   console.log("Its bottom")
                   setTimeout(function () {
                     document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
@@ -6234,9 +6234,9 @@
                     populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                     console.log("Got an id")
                   }, 20);
-                } else if (theStep.its === 'left'){
+                } else if (theStep.its === 'left' !hasAK){
                   console.log("Its left")
-                } else if (theStep.its === 'self') {     
+                } else if (theStep.its === 'self' !hasAK) {     
                   console.log("Non rejoining selfs")
                   setTimeout(function () {
                     $scope.$apply(function () {

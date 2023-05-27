@@ -5965,6 +5965,25 @@
               action: 'proposition'
           
           },
+          { index: 6, 
+            
+              author: $scope.userId,
+              text: 'Additional left text and look at the left of that text that is on the left in a book.',
+              dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
+              type: 'assertion',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              which: 'item',
+              on: 4,
+              its: 'left',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
+            
+          },
           // { index: 5, 
             
           //     author: 'ccc',

@@ -6032,10 +6032,11 @@
           if (!element){
             $scope.$apply(function () {
              setTimeout(function () {
-                console.log("Element: ", element)
+              console.log("Element binding")
               }, 0);
             });
           }
+          console.log("Element: ", element)
           let index = 0;
           
           const intervalId = setInterval(() => {

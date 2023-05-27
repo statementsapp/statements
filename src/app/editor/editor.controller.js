@@ -6027,9 +6027,17 @@
 
 
         function populateElementWithText(text, id) {
+
           const element = document.getElementById(id);
+          if (!element){
+            $scope.$apply(function () {
+             setTimeout(function () {
+                console.log("Element: ", element)
+              }, 0);
+            });
+          }
           let index = 0;
-          console.log("Element: ", element)
+          
           const intervalId = setInterval(() => {
             $scope.$apply(function () {
              setTimeout(function () {

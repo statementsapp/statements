@@ -5923,6 +5923,25 @@
               action: 'proposition'
             
           },
+          { index: 4, 
+            
+              author: $scope.userId,
+              text: 'Lookee here text and text with all the text.',
+              dialogueText: 'Lookee here text and text with all the text.',
+              type: 'assertion',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              which: 'item',
+              on: 3,
+              its: 'top',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
+            
+          },
           // { index: 5, 
             
           //     author: 'ccc',
@@ -6049,12 +6068,14 @@
                 index--;
                 $scope.inputs[id] = element.textContent;
                 $scope.inputs['remark'+id] = element.textContent;
+                $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
               } else {
                 element.textContent += text[index];
                 index++;
                 $scope.inputs[id] = element.textContent;
                 $scope.inputs['remark'+id] = element.textContent;
+                $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
               }
 
@@ -6211,6 +6232,20 @@
                         var thisJ = angular.copy(j)
                         if (theStep.its === 'top' && !hasAK){
                           console.log("Its top")
+                          // $scope.$apply(function () {
+                            setTimeout(function () {
+                              document.getElementById('topadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                            }, 20);
+                          // });
+                          setTimeout(function () {
+                            document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          }, 20);
+                          // $scope.$apply(function () {
+                            setTimeout(function () {
+                              populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                              console.log("Got an id")
+                            }, 30);
+                          // });
                         } else if (theStep.its === 'bottom' && !hasAK){
                           console.log("Its bottom")
                           // $scope.$apply(function () {

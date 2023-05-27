@@ -6049,11 +6049,13 @@
                 index--;
                 $scope.inputs[id] = element.textContent;
                 $scope.inputs['remark'+id] = element.textContent;
+                $scope.inputs['bottom'+id] = element.textContent;
               } else {
                 element.textContent += text[index];
                 index++;
                 $scope.inputs[id] = element.textContent;
                 $scope.inputs['remark'+id] = element.textContent;
+                $scope.inputs['bottom'+id] = element.textContent;
               }
 
               if (index === text.length) {

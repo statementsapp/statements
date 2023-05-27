@@ -6236,19 +6236,19 @@
                           console.log("Its top")
                           // $scope.$apply(function () {
                             // setTimeout(function () {
-                              document.getElementById('topadder').click();
+                              console.log(document.getElementById('topadder'))
                             // }, 20);
                           // });
-                          setTimeout(function () {
-                            console.log("")
-                            document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                          }, 20);
+                          // setTimeout(function () {
+                          //   console.log("")
+                          //   document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          // }, 20);
                           
                           // $scope.$apply(function () {
-                            setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                              console.log("Got an id")
-                            }, 30);
+                            // setTimeout(function () {
+                            //   populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                            //   console.log("Got an id")
+                            // }, 30);
                           // });
                           break;
                         } else if (theStep.its === 'bottom'){

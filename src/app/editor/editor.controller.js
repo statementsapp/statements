@@ -6235,8 +6235,11 @@
                         if (theStep.its === 'top'){
                           console.log("Its top")
                           // $scope.$apply(function () {
+                          paragraph.topMouseOver = true;
+                          $scope.makeTopAppear(paragraph);
                             setTimeout(function () {
-                              document.getElementById('topadder').click();
+                              document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                              .click();
                             }, 20);
                           // });
                           // setTimeout(function () {

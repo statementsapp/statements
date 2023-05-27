@@ -6236,7 +6236,7 @@
                           console.log("Its top")
                           // $scope.$apply(function () {
                             // setTimeout(function () {
-                              console.log(document.getElementById('topadder'))
+                              document.getElementById('topadder').click();
                             // }, 20);
                           // });
                           // setTimeout(function () {

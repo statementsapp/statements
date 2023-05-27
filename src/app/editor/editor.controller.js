@@ -6093,6 +6093,7 @@
                 $scope.inputs['remark'+id] = element.textContent;
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
+                $scope.inputs['left'+id] = element.textContent;
               } else {
                 element.textContent += text[index];
                 index++;
@@ -6100,6 +6101,7 @@
                 $scope.inputs['remark'+id] = element.textContent;
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
+                $scope.inputs['left'+id] = element.textContent;
               }
 
               if (index === text.length) {
@@ -6299,6 +6301,21 @@
                           
                         } else if (theStep.its === 'left'){
                           console.log("Its left")
+                            setTimeout(function () {
+                              document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                            }, 20);
+                          // });
+                          // setTimeout(function () {
+                          //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          // }, 20);
+                          // $scope.$apply(function () {
+                            setTimeout(function () {
+                              populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                              console.log("Got an id")
+
+                            }, 30);
+                            break;
+                          // });
                         } else if (theStep.its === 'self') {     
                           console.log("Non rejoining selfs")
                           setTimeout(function () {

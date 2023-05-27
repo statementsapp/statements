@@ -6201,9 +6201,11 @@
                           console.log("Its top")
                         } else if (theStep.its === 'bottom' && !hasAK){
                           console.log("Its bottom")
-                          setTimeout(function () {
-                            document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                          }, 20);
+                          $scope.$apply(function () {
+                            setTimeout(function () {
+                              document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                            }, 20);
+                          });
                           // setTimeout(function () {
                           //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           // }, 20);

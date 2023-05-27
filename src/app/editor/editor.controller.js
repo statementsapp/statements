@@ -6698,7 +6698,10 @@
           });
 
         }, 20);
-        console.log("Element having generatef", document.getElementById('top'+paragraph.paragraphId))
+        setTimeout(function () {
+          console.log("Element having generatef", document.getElementById('top'+paragraph.paragraphId))
+        }, 30);
+        
       }
 
       $scope.makeTopAppear = function (paragraph) {

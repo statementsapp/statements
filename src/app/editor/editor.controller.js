@@ -6263,9 +6263,9 @@
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                               console.log("Got an id")
-                              break;
+
                             }, 30);
-                            
+                            break;
                           // });
                           
                         } else if (theStep.its === 'left' && !hasAJ){

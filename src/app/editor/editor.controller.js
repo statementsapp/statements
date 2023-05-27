@@ -6197,6 +6197,42 @@
                         var thisH = angular.copy(h)
                         var thisI = angular.copy(i)
                         var thisJ = angular.copy(j)
+                        if (theStep.its === 'top' && !hasAK){
+                          console.log("Its top")
+                        } else if (theStep.its === 'bottom' && !hasAK){
+                          console.log("Its bottom")
+                          setTimeout(function () {
+                            document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          }, 20);
+                          setTimeout(function () {
+                            document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          }, 20);
+                          setTimeout(function () {
+                            populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                            console.log("Got an id")
+                          }, 20);
+                        } else if (theStep.its === 'left' && !hasAK){
+                          console.log("Its left")
+                        } else if (theStep.its === 'self' && !hasAK) {     
+                          console.log("Non rejoining selfs")
+                          setTimeout(function () {
+                            $scope.$apply(function () {
+                              console.log("H: ", thisH)
+                              $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                            });
+                          }, 0);
+                                  
+                          setTimeout(function () {
+                            document.getElementById('proposition'+thisHereId).click();
+                          }, 20);
+                          setTimeout(function () {
+                            populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                            console.log("Got an id")
+                          }, 20);
+                          // break;
+                          console.log("Its self")    
+                          break; 
+                        }
                         // var hasAK = true;
                         
                         // setTimeout(function () {
@@ -6205,56 +6241,22 @@
                         //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
                         //   });
                         // }, 0);          
-                        setTimeout(function () {
-                          document.getElementById('proposition'+thisHereId).click();
-                        }, 20);
-                        setTimeout(function () {
-                          populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                          console.log("Got an id")
-                          // hasAK = false;
-                        }, 20);
-                        break; 
+                        // setTimeout(function () {
+                        //   document.getElementById('proposition'+thisHereId).click();
+                        // }, 20);
+                        // setTimeout(function () {
+                        //   populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                        //   console.log("Got an id")
+                        //   // hasAK = false;
+                        // }, 20);
+                        // break; 
                       }
                     }
                   }
                 }
                   
                 // props by the author that aren't on remarks by virtue of not getting a k
-                if (theStep.its === 'top' && !hasAK){
-                  console.log("Its top")
-                } else if (theStep.its === 'bottom' && !hasAK){
-                  console.log("Its bottom")
-                  setTimeout(function () {
-                    document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                  }, 20);
-                  setTimeout(function () {
-                    document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                  }, 20);
-                  setTimeout(function () {
-                    populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                    console.log("Got an id")
-                  }, 20);
-                } else if (theStep.its === 'left' && !hasAK){
-                  console.log("Its left")
-                } else if (theStep.its === 'self' && !hasAK) {     
-                  console.log("Non rejoining selfs")
-                  setTimeout(function () {
-                    $scope.$apply(function () {
-                      console.log("H: ", thisH)
-                      $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                    });
-                  }, 0);
-                          
-                  setTimeout(function () {
-                    document.getElementById('proposition'+thisHereId).click();
-                  }, 20);
-                  setTimeout(function () {
-                    populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                    console.log("Got an id")
-                  }, 20);
-                  // break;
-                  console.log("Its self")     
-                }
+                
               }
             } else {
               console.log("Reviewer prop")

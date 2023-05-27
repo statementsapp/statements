@@ -6224,7 +6224,7 @@
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                     console.log("loop i")
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                      if ( !hasAK &&
+                      if ( !hasAJ &&
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
@@ -6244,12 +6244,12 @@
                             document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           }, 20);
                           break;
-                          // $scope.$apply(function () {
-                            // setTimeout(function () {
-                            //   populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                            //   console.log("Got an id")
-                            // }, 30);
-                          // });
+                          $scope.$apply(function () {
+                            setTimeout(function () {
+                              populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                              console.log("Got an id")
+                            }, 30);
+                          });
                         } else if (theStep.its === 'bottom'){
                           console.log("Its bottom")
                           // $scope.$apply(function () {

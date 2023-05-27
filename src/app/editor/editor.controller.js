@@ -6201,20 +6201,20 @@
                           console.log("Its top")
                         } else if (theStep.its === 'bottom' && !hasAK){
                           console.log("Its bottom")
-                          $scope.$apply(function () {
+                          // $scope.$apply(function () {
                             setTimeout(function () {
                               document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                             }, 20);
-                          });
-                          // setTimeout(function () {
-                          //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                          // }, 20);
-                          $scope.$apply(function () {
-                            setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                              console.log("Got an id")
-                            }, 20);
-                          });
+                          // });
+                          setTimeout(function () {
+                            document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          }, 20);
+                          // $scope.$apply(function () {
+                          //   setTimeout(function () {
+                          //     populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                          //     console.log("Got an id")
+                          //   }, 20);
+                          // });
                           
                         } else if (theStep.its === 'left' && !hasAK){
                           console.log("Its left")

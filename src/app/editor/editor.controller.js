@@ -6093,7 +6093,7 @@
               }, 0);
             });
             
-          }, getRandomInterval(70)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(50)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;
@@ -6244,12 +6244,12 @@
                             document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           }, 20);
                           
-                          $scope.$apply(function () {
+                          // $scope.$apply(function () {
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                               console.log("Got an id")
                             }, 30);
-                          });
+                          // });
                           break;
                         } else if (theStep.its === 'bottom'){
                           console.log("Its bottom")

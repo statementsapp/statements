@@ -6239,6 +6239,7 @@
                           console.log("Its top")
                           // $scope.$apply(function () {
                           $scope.data[0].nodes[thisH].paragraphs[thisI].topMouseOver = true;
+                          $scope.data[0].nodes[thisH].paragraphs[thisI].topAdd = true;
                           $scope.makeTopAppear($scope.data[0].nodes[thisH].paragraphs[thisI]);
                             setTimeout(function () {
                               document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)

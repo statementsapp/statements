@@ -6263,8 +6263,9 @@
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                               console.log("Got an id")
+                              break;
                             }, 30);
-                            break;
+                            
                           // });
                           
                         } else if (theStep.its === 'left' && !hasAJ){
@@ -6273,7 +6274,7 @@
                           console.log("Non rejoining selfs")
                           setTimeout(function () {
                             $scope.$apply(function () {
-                              console.log("H: ", thisH)
+                              console.log("Non rejoining H: ", thisH)
                               $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
                             });
                           }, 0);
@@ -6283,11 +6284,12 @@
                           }, 20);
                           setTimeout(function () {
                             populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                            console.log("Got an id")
+                            console.log("Got a self id")
+                            console.log("Its self")    
+                            break; 
                           }, 20);
                           // break;
-                          console.log("Its self")    
-                          break; 
+                          
                         }
                         // var hasAK = true;
                         

@@ -6222,7 +6222,7 @@
                 // props by the author that aren't on remarks by virtue of not getting a k
                 if (theStep.its === 'top' && !hasAK){
                   console.log("Its top")
-                } else if (theStep.its === 'bottom' !hasAK){
+                } else if (theStep.its === 'bottom' && !hasAK){
                   console.log("Its bottom")
                   setTimeout(function () {
                     document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();

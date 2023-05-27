@@ -6684,17 +6684,20 @@
       }
 
       $scope.topAddFunction = function (node, paragraph) {
+        console.log("Top add function")
         setTimeout(function () {
           $scope.$apply(function () {
             paragraph.topAdd = true;
             $scope.selectedNode = node;
             $scope.inputs['top'+paragraph.paragraphId] = '';
+
             if (document.getElementById('top'+paragraph.paragraphId)){
               document.getElementById('top'+paragraph.paragraphId).innerHTML = ''
             }
           });
 
         }, 20);
+        console.log("Element having generatef", document.getElementById('top'+paragraph.paragraphId))
       }
 
       $scope.makeTopAppear = function (paragraph) {

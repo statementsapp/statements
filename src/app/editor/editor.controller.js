@@ -6235,9 +6235,9 @@
                         if (theStep.its === 'top'){
                           console.log("Its top")
                           // $scope.$apply(function () {
-                            setTimeout(function () {
-                              document.getElementById('topadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                            }, 20);
+                            // setTimeout(function () {
+                              console.log(document.getElementById('topadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
+                            // }, 20);
                           // });
                           // setTimeout(function () {
                           //   console.log("")

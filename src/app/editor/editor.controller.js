@@ -6232,7 +6232,7 @@
                         var thisI = angular.copy(i)
                         var thisJ = angular.copy(j)
                         var hasAJ = true;
-                        if (theStep.its === 'top' && !hasAJ){
+                        if (theStep.its === 'top'){
                           console.log("Its top")
                           // $scope.$apply(function () {
                             setTimeout(function () {
@@ -6250,7 +6250,7 @@
                             //   console.log("Got an id")
                             // }, 30);
                           // });
-                        } else if (theStep.its === 'bottom' && !hasAJ){
+                        } else if (theStep.its === 'bottom'){
                           console.log("Its bottom")
                           // $scope.$apply(function () {
                             setTimeout(function () {
@@ -6269,9 +6269,9 @@
                             break;
                           // });
                           
-                        } else if (theStep.its === 'left' && !hasAJ){
+                        } else if (theStep.its === 'left'){
                           console.log("Its left")
-                        } else if (theStep.its === 'self' && !hasAJ) {     
+                        } else if (theStep.its === 'self') {     
                           console.log("Non rejoining selfs")
                           setTimeout(function () {
                             $scope.$apply(function () {

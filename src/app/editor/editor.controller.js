@@ -6193,6 +6193,7 @@
                           var thisJ = angular.copy(j)
                           var thisK = angular.copy(k)
                           var hasAK = true;
+                          console.log("Got a hit on the upper")
                           if (hasAK){
                             // for rejoinders
                             // need to write for 2Bs
@@ -6219,9 +6220,9 @@
                 }
                 // non-k author props
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  console.log("h")
+                  console.log("loop h")
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    console.log("i")
+                    console.log("loop i")
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       if ( !hasAK &&
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
@@ -6286,9 +6287,9 @@
                             populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
                             console.log("Got a self id")
                             console.log("Its self")    
-                            break; 
+                            
                           }, 20);
-                          // break;
+                          break;
                           
                         }
                         // var hasAK = true;

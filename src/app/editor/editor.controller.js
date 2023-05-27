@@ -6204,9 +6204,9 @@
                           setTimeout(function () {
                             document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           }, 20);
-                          setTimeout(function () {
-                            document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                          }, 20);
+                          // setTimeout(function () {
+                          //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                          // }, 20);
                           setTimeout(function () {
                             populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                             console.log("Got an id")

@@ -6234,9 +6234,9 @@
                     populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                     console.log("Got an id")
                   }, 20);
-                } else if (theStep.its === 'left' !hasAK){
+                } else if (theStep.its === 'left' && !hasAK){
                   console.log("Its left")
-                } else if (theStep.its === 'self' !hasAK) {     
+                } else if (theStep.its === 'self' && !hasAK) {     
                   console.log("Non rejoining selfs")
                   setTimeout(function () {
                     $scope.$apply(function () {

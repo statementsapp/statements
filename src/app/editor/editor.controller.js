@@ -6684,6 +6684,7 @@
       }
 
       $scope.topAddFunction = function (node, paragraph) {
+        console.log("The paragraph: ", paragraph)
         console.log("Top add function")
         setTimeout(function () {
           $scope.$apply(function () {

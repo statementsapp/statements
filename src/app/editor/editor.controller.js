@@ -6241,6 +6241,7 @@
                             console.log("")
                             document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           }, 20);
+                          break;
                           // $scope.$apply(function () {
                             // setTimeout(function () {
                             //   populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
@@ -6262,6 +6263,7 @@
                               populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                               console.log("Got an id")
                             }, 30);
+                            break;
                           // });
                           
                         } else if (theStep.its === 'left' && !hasAK){

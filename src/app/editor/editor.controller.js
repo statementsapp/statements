@@ -6031,9 +6031,10 @@
           const element = document.getElementById(id);
           if (!element){
             $scope.$apply(function () {
-             setTimeout(function () {
-              console.log("Element binding")
-              }, 0);
+             // setTimeout(function () {
+              const element = document.getElementById(id);
+              console.log("Element hmmmm: ", element)
+              // }, 0);
             });
           }
           console.log("Element: ", element)

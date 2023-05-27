@@ -3382,7 +3382,10 @@
       }
 
       $scope.whatsGoingOn = function (paragraph) {
-        console.log("State of top add before sending out prop: ", paragraph.leftAdd)
+        console.log("State of top add before sending out prop: ", angular.copy(paragraph))
+        if ($scope.hasBeenSetUp){
+          focusFactory('top'+paragraph.paragraphId)
+        }
       }
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {

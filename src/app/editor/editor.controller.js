@@ -5935,7 +5935,7 @@
               // of: (prep.of ? prep.of : undefined),
 
               which: 'item',
-              on: 3,
+              on: 0,
               its: 'top',
               typeTime: 3000,
               noClick: false, 
@@ -6238,6 +6238,7 @@
                             }, 20);
                           // });
                           setTimeout(function () {
+                            console.log("")
                             document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           }, 20);
                           // $scope.$apply(function () {

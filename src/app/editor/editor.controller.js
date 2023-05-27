@@ -6223,7 +6223,7 @@
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                               console.log("Got an id")
-                            }, 20);
+                            }, 30);
                           // });
                           
                         } else if (theStep.its === 'left' && !hasAK){

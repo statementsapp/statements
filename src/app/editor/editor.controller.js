@@ -6235,9 +6235,9 @@
                         if (theStep.its === 'top'){
                           console.log("Its top")
                           // $scope.$apply(function () {
-                            // setTimeout(function () {
+                            setTimeout(function () {
                               document.getElementById('topadder').click();
-                            // }, 20);
+                            }, 20);
                           // });
                           // setTimeout(function () {
                           //   console.log("")

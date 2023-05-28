@@ -5984,6 +5984,26 @@
               action: 'proposition'
             
           },
+          { index: 7, 
+           
+              author: 'ccc',
+              text: 'Whoa what about this here two bee in the document there yeah.',
+              dialogueText: 'Whoa what about this here two bee in the document there yeah.',
+              type: 'negation',
+              code: '2B',
+              dialogueSide: true,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+              
+              which: 'item',
+              on: 5,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
+          
+          },
           // { index: 5, 
             
           //     author: 'ccc',
@@ -6417,24 +6437,7 @@
                         $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                         $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
                         null, null, theStep.author, theCode);
-                          // var thisH = angular.copy(h)
-                          // var thisI = angular.copy(i)
-                          // var thisJ = angular.copy(j)
-                          // setTimeout(function () {
-                          //   $scope.$apply(function () {
-                          //     console.log("H: ", thisH)
-                          //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                          //   });
-                          // }, 0);
-                                  
-                          // setTimeout(function () {
-                          //   document.getElementById('proposition'+thisHereId).click();
 
-                          // }, 20);
-                          // setTimeout(function () {
-                          //   populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                          //   console.log("Got an id")
-                          // }, 20);
 
                         break;
                       }  
@@ -6442,7 +6445,7 @@
                   }
                 } 
               } else if (theCode === '2B'){
-                console.log("Automated 2a")
+                console.log("Automated 2B")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("h")
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -6450,30 +6453,16 @@
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("j")
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
-                        console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
+                        console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k])
                         if (
                         $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                         $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
-                          var thisH = angular.copy(h)
-                          var thisI = angular.copy(i)
-                          var thisJ = angular.copy(j)
-                          var thisK = angular.copy(k)
-                          setTimeout(function () {
-                            $scope.$apply(function () {
-                              console.log("H: ", thisH)
-                              $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                            });
-                          }, 0);
-                                  
-                          setTimeout(function () {
-                            document.getElementById('proposition'+thisHereId).click();
+                          $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
+                          $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
+                          null, null, theStep.author, theCode);
 
-                          }, 20);
-                          setTimeout(function () {
-                            populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                            console.log("Got an id")
-                          }, 20);
+
                           break;
                         }
                       }

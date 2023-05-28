@@ -5889,7 +5889,7 @@
           { index: 0, 
             
               author: $scope.userId,
-              text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
+              text: 'A ifrst sentence of text and all this content writing with the bok and what about hte bok.',
               type: 'assertion',
               dialogueSide: false,
               step: undefined,
@@ -5905,8 +5905,8 @@
           { index: 1, 
            
               author: 'aaa',
-              text: 'This text you want and all this text so on and so forth with all the text.',
-              dialogueText: 'This text you want and all this text so on and so forth with all the text.',
+              text: 'This text you want and all this text so on and so forth with all the doc.',
+              dialogueText: 'This text you want and all this text so on and so forth with all the doc.',
               type: 'negation',
               code: '2A',
               dialogueSide: true,
@@ -5925,8 +5925,8 @@
           { index: 2, 
             
               author: $scope.userId,
-              text: 'Heretofore texting this text fore and away and also this bok text that is text.',
-              dialogueText: 'Heretofore texting this text fore and away and also this bok text that is text.',
+              text: 'Heretofore texting this text fore and away and also this while bok having the bok.',
+              dialogueText: 'Heretofore texting this text fore and away and also this while bok having the bok.',
               type: 'assertion',
               dialogueSide: false,
               which: 'item',
@@ -5940,8 +5940,8 @@
           { index: 3, 
             
               author: $scope.userId,
-              text: 'Other text and with this text there is text and following text there is some text.',
-              dialogueText: 'Other text and with this text there is text and following text there is some text.',
+              text: 'Other text and with this text there is text and following text there is some statements.',
+              dialogueText: 'Other text and with this text there is text and following text there is some statements.',
               type: 'assertion',
               dialogueSide: true,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),

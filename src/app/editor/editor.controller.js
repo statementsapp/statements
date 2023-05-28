@@ -6322,11 +6322,10 @@
                           // });
                           
                         } else if (theStep.its === 'left'){
-                          console.log("Its left")
-                          console.log("Before: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
+                          
+                          // console.log("Before: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
                             setTimeout(function () {
-                              document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                              console.log("After: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
+                              document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id).click();
                             }, 20);
                           // });
                           // setTimeout(function () {
@@ -6337,7 +6336,7 @@
 
                           // $scope.$apply(function () {
                             setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                              populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id)
                               console.log("Got an id")
 
                             }, 30);

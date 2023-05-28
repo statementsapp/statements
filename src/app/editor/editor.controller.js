@@ -6322,7 +6322,15 @@
                           // });
                           
                         } else if (theStep.its === 'left'){
-                          
+                            $scope.$apply(function () {
+                              $scope.data[0].nodes[thisH].paragraphs[thisI].leftAdd = true;
+                              // setTimeout(function () {
+                              //   populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id)
+                              //   console.log("Got an id")
+
+                              // }, 30);
+                              // break;
+                            });
                           // console.log("Before: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
                             setTimeout(function () {
                               document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id).click();

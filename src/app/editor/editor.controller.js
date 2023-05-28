@@ -6268,9 +6268,12 @@
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                     console.log("loop i")
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                      if ( !hasAJ &&
+                      if ( (!hasAJ &&
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
+                        (!hasAJ &&
+                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         var thisH = angular.copy(h)
                         var thisI = angular.copy(i)
@@ -6320,13 +6323,18 @@
                           
                         } else if (theStep.its === 'left'){
                           console.log("Its left")
+                          console.log("Before: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
                             setTimeout(function () {
                               document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                              console.log("After: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
                             }, 20);
                           // });
                           // setTimeout(function () {
                           //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           // }, 20);
+
+
+
                           // $scope.$apply(function () {
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)

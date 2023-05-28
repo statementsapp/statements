@@ -3635,20 +3635,50 @@
             } else {
               prep.afterRemarkId = $scope.selectedProposition.id;
             }
-            
-            prep.targetNodeId = $scope.selectedNode.nodeId;
-            prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            prep.of = {      
-              type: $scope.selectedProposition.of.type,
-              author: $scope.selectedProposition.of.author,
-              id: $scope.selectedProposition.of.id,
-              text: $scope.selectedProposition.of.text
+
+            if (!automatedAuthor){
+              prep.afterPropositionId = $scope.selectedProposition.id;
+              prep.targetNodeId = $scope.selectedNode.nodeId;
+              prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+              prep.of = {
+                type: $scope.selectedProposition.type,
+                author: $scope.selectedProposition.author,
+                id: $scope.selectedProposition.id,
+                text: $scope.selectedProposition.text
+              }
+              prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+              prep.id = IdFactory.next();
+              prep.previousMessages.push(prep.id)
+              prep.messagesSoFar = angular.copy(prep.previousMessages);
+            } else {
+              prep.afterPropositionId = proposition.id;
+              prep.targetNodeId = node.nodeId
+              prep.targetParagraphId = paragraph.paragraphId
+              prep.of = {
+                type: proposition.type,
+                author: proposition.author,
+                id: proposition.id,
+                text: proposition.text
+              }
+              prep.previousMessages = angular.copy(proposition.messagesSoFar);
+              prep.id = IdFactory.next();
+              prep.previousMessages.push(prep.id)
+              prep.messagesSoFar = angular.copy(prep.previousMessages);
             }
-            prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
-            prep.previousMessages.pop();
-            prep.id = IdFactory.next();
-            prep.previousMessages.push(prep.id)
-            prep.messagesSoFar = angular.copy(prep.previousMessages);
+            
+            // prep.targetNodeId = $scope.selectedNode.nodeId;
+            // prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+            // prep.of = {      
+            //   type: $scope.selectedProposition.of.type,
+            //   author: $scope.selectedProposition.of.author,
+            //   id: $scope.selectedProposition.of.id,
+            //   text: $scope.selectedProposition.of.text
+            // }
+            // prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+            // prep.previousMessages.pop();
+            // prep.id = IdFactory.next();
+            // prep.previousMessages.push(prep.id)
+            // prep.messagesSoFar = angular.copy(prep.previousMessages);
 
 
           } else if ((automatedAuthor && automatedCode === '2A')){

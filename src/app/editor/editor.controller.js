@@ -6205,7 +6205,24 @@
 
             $scope.$apply(function () {
              setTimeout(function () {
-               element.dispatchEvent(event);
+              
+               if (!$scope.preDefinedPoints[$scope.preDefinedPoints.length-1].code){
+               
+               } else {
+                var randomPercentage = Math.random() * 0.6 - 0.3; // Random number between -0.3 and 0.3
+
+                    // Calculate the delay based on the random percentage
+                var delay = 4000 + (4000 * randomPercentage); // Four seconds (4000ms) with random deviation
+
+                    // Execute the action after the calculated delay
+                $timeout(function() {
+                      // Your action goes here
+                  element.dispatchEvent(event);
+                  console.log('Delayed action executed');
+                }, delay);
+
+               }
+               
                console.log("That event: ", event)
                $scope.temporaryText = '';
               }, 10);

@@ -6345,6 +6345,7 @@
                           // }, 20);
                           
                           // $scope.$apply(function () {
+                            debugger;
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                              

@@ -5909,7 +5909,7 @@
               dialogueText: 'This text you want and all this text so on and so forth with all the doc.',
               type: 'negation',
               code: '2A',
-              dialogueSide: true,
+              dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
@@ -5928,7 +5928,7 @@
               text: 'Heretofore texting this text fore and away and also this while bok having the bok.',
               dialogueText: 'Heretofore texting this text fore and away and also this while bok having the bok.',
               type: 'assertion',
-              dialogueSide: false,
+              dialogueSide: true,
               which: 'item',
               on: 1,
               its: 'self',
@@ -5943,7 +5943,7 @@
               text: 'Other text and with this text there is text and following text there is some statements.',
               dialogueText: 'Other text and with this text there is text and following text there is some statements.',
               type: 'assertion',
-              dialogueSide: true,
+              dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
@@ -5982,7 +5982,7 @@
               dialogueText: 'Bee bee bee text so text and text you can text with the text even more bok.',
               type: 'negation',
               code: '2A',
-              dialogueSide: true,
+              dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
@@ -6001,7 +6001,7 @@
               text: 'Additional left text and look at the left of that text that is on the left in a book.',
               dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
               type: 'assertion',
-              dialogueSide: true,
+              dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
@@ -6021,7 +6021,7 @@
               dialogueText: 'Whoa what about this here two bee in the document there yeah.',
               type: 'negation',
               code: '2B',
-              dialogueSide: true,
+              dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),
@@ -6247,6 +6247,7 @@
 
         // Function to simulate the second user's action
         $scope.simulateUser = function(index) {
+          // simulate script
           console.log("Index: ", index)
           var theStep = $scope.preDefinedPoints[index];
           console.log("The step: ", theStep)
@@ -6287,7 +6288,7 @@
                           var thisJ = angular.copy(j)
                           var thisK = angular.copy(k)
                           var hasAK = true;
-                          console.log("Got a hit on the upper")
+                          console.log("simulating a rejoinder")
                           if (hasAK){
                             // for rejoinders
                             // need to write for 2Bs
@@ -6338,7 +6339,7 @@
                             setTimeout(function () {
                               document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                               .click();
-                            }, 20);
+                            }, 40);
                           // });
                           // setTimeout(function () {
                           //   console.log("")

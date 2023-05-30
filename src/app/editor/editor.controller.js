@@ -6205,8 +6205,8 @@
 
             $scope.$apply(function () {
              setTimeout(function () {
-              
-               if (!$scope.preDefinedPoints[$scope.preDefinedPoints.length-1].code){
+               console.log("User actions: ", angular.copy($scope.userActions))
+               if (!$scope.preDefinedPoints[$scope.userActions.length-1].code){
                
                } else {
                 var randomPercentage = Math.random() * 0.6 - 0.3; // Random number between -0.3 and 0.3

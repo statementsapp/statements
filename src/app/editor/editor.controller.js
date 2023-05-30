@@ -103,14 +103,14 @@
     // Check to load profile if we're logged in and profile isn't loaded for some reason
     $interval(function () {
         if ($rootScope.uid && $rootScope.token && $scope.profile === undefined) {
-          console.log("interval if")
+          
           apiService.readProfile().then(function (res) {
             if (res.status === 200) {
               if (res.data && res.data != 'null' ) {
-                console.log("res data: ", res.data)
+                
                 profileService.setProfile(res.data);
               } else {
-                console.log("About to set profile else")
+               
                 profileService.setProfile({
                     books: [],
                     emailAddress: '',
@@ -121,7 +121,7 @@
                 });
               }
               $scope.profile = profileService.getProfile();
-              console.log("scope profile: ", $scope.profile)
+              
               $scope.userId = $rootScope.uid;
               chatSocket.emit('userUpdated', {
                 userId: $rootScope.uid,
@@ -394,7 +394,6 @@
           apiService: apiService
         }
       }).result.then(function (bookId) {
-        console.log("Is there that book id")
         if (bookId) {
           chatSocket.emit('leave', bookId);
           $state.go('main.editor', {bookId: bookId});
@@ -561,7 +560,6 @@
     // Loading data
     $scope.loadData = function (bookId) {
       $timeout(function() {
-        console.log("loading the data ")
         apiService.readBook(bookId).then(function (result) {
           $scope.data = [ result.data ];
           $scope.title = $scope.data[0].nodes[0].topic;
@@ -697,7 +695,6 @@
         }
       }
 
-      console.log("Logging in profile: ", profileService.getProfile())
 
 
       var theDragElement = document.getElementById('dragelement')
@@ -757,17 +754,16 @@
       var isColorThere;
       for (var i = 0; i < $scope.data[0].authorTable.length; i++){
         if ($scope.data[0].authorTable[i].authorId === $scope.userId && $scope.data[0].documentClaimedBy !== $scope.userId){
-          console.log("Loop if i of ", angular.copy(i))
-          console.log("table status: ", angular.copy($scope.data[0].authorTable[i]))
+        
           isColorThere = true;
           $scope.remarkInputColor = $scope.data[0].authorTable[i].color;
           $scope.remarkInputString = '3px solid ' + $scope.data[0].authorTable[i].color;
-          console.log("Test: ", $scope.data[0].authorTable[i].authorId === $scope.userId)
+          
 
         }
       }
       if (!isColorThere && $scope.data[0].documentClaimedBy !== $scope.userId && $scope.data[0].documentClaimedBy){
-        console.log("Lower if")
+       
         $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength-1)];
         $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
       }
@@ -775,7 +771,7 @@
 
       // when a new author comes in, have to advance the color
 
-      console.log('remark input string : ', $scope.remarkInputString)
+     
 
 
       // used to have #edeff8 #DDE1D6 #a7e99c
@@ -1115,7 +1111,7 @@
                     // in case you need some middle click things
                     break;
                 case 3:
-                    console.log("Handling a click")
+                    
                     event.preventDefault();
                     if (flag){
                       console.log("flag")
@@ -1148,11 +1144,9 @@
 
                      // this is right click
                     
-                    console.log("Look at that right click")
                     $scope.cancelListenForDoubleClick = true;
                     setTimeout(function () {
                       $scope.$apply(function () {
-                        console.log("Into")
 
                         $scope.cancelListenForDoubleClick = false;
                       });
@@ -1385,7 +1379,6 @@
 
       // Selects right editable span
       $scope.selectRight = function (proposition, paragraph) {
-        console.log("select right")
         focusFactory(proposition.id);
         $scope.whatHasBeenClicked = proposition.id;
         $scope.unHighlightParagraph();
@@ -1394,17 +1387,14 @@
       };
 
       $scope.assignRightFocus = function (id, event) {
-        console.log("That right focus event: ", event)
         if (event){
           if (event.type !== 'click'){
-            console.log("Returning")
             return;
           }
         }
         
         $timeout(function () {
           $scope.$apply(function () {
-            console.log("Assigning right focus")
             $scope.inputs[id] = ''
             document.getElementById(id).innerHTML = '';
           });
@@ -1562,7 +1552,6 @@
                       $scope.pastelsLength = angular.copy($scope.otherPastels.length); 
                       $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
                       $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
-                      console.log("Bumped")
                     }
                     
                   }
@@ -1614,7 +1603,6 @@
 
       // Manages top adder selection
       $scope.clearWithTopAdder = function (paragraph) {
-        console.log("Clearing top adder")
         $scope.unHighlightNode();
         $timeout(function () {
           $scope.$apply(function () {
@@ -1651,23 +1639,19 @@
          $scope.hasBottomNodeFocus = node.nodeId;
         $timeout(function () {
           $scope.$apply(function () {
-            console.log("Inside clear bottom node adder apply")
             node.bottomNodeAdd = true;
             $scope.selectedNode = node;
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
-            console.log("That element: ", document.getElementById($scope.bottomNodeAdderId))
             // focusFactory($scope.bottomNodeAdderId);
           });
         }, 0);
         $timeout(function () {
           // $scope.$apply(function () {
-            console.log("Inside clear bottom node adder apply")
             node.bottomNodeAdd = true;
             $scope.selectedNode = node;
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
-            console.log("That element: ", document.getElementById($scope.bottomNodeAdderId))
             // focusFactory($scope.bottomNodeAdderId);
             document.getElementById($scope.bottomNodeAdderId).click();
             focusFactory($scope.bottomNodeAdderId);
@@ -1744,7 +1728,6 @@
               paragraph.propositions[i].hiddenForAll !== true &&
               $scope.selectedProposition.type !== 'blank') {
                 if ($scope.selectedProposition){
-                  console.log("The selected prop: ", angular.copy($scope.selectedProposition));
                   document.getElementById($scope.selectedProposition.id).innerText = '';
                 }
                 
@@ -1793,20 +1776,17 @@
 
       $scope.selectPropositionLeft = function (proposition) {
         if ($scope.selectedProposition) {
-          console.log("A")
           if ($scope.selectedProposition.id !== proposition.id) {
             $scope.clearPropositionInput();
             $scope.selectedProposition = proposition;
             $scope.hasLeftFocus.id = proposition.id;
             focusFactory('left'+proposition.id);
           } else {
-            console.log("B")
             $scope.selectedProposition = proposition;
             $scope.hasLeftFocus.id = proposition.id;
             focusFactory('left'+proposition.id);
           }
         } else {
-          console.log("C")
           $scope.selectedProposition = proposition;
           $scope.hasLeftFocus.id = proposition.id;
           focusFactory('left'+proposition.id);
@@ -1853,15 +1833,10 @@
 
       $scope.hasRightFocusIdFcn = function(remarks, id) {
           for (var i = 0; i < remarks.length; i++) {
-            console.log("The remark: ", remarks[i].id)
-            console.log("That id is: ", id)
-            console.log("A remark is moused over: ", $scope.aRemarkIsMousedOver)
               if (remarks[i].id === id) {
-                  console.log("True: ", i)
                   return true;
               }
           }
-          console.log("False")
           return false;
       };
 
@@ -1882,7 +1857,6 @@
         if ($scope.whatHasBeenClicked) {
           for (var i = 0; i < $scope.propositions.length; i++) {
             if ($scope.whatHasBeenClicked === $scope.propositions[i].id) {
-              console.log("Clear editable if")
               // is either clearing what has been clicked or somehow made the proposition inaccessible
               document.getElementById('proposition' + $scope.whatHasBeenClicked).innerText = $scope.propositions[i].text;
             }
@@ -1951,7 +1925,6 @@
       };
 
       $scope.clearEditing = function (flag) {
-        console.log("Clearing editing")
         if (!flag){
           for (var i = 0; i < $scope.data[0].nodes.length; i++){
             for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
@@ -2003,7 +1976,6 @@
 
       $scope.whatIsSelectedProp = function () {
         console.log("Selected proposition: ", angular.copy($scope.selectedProposition));
-        console.log("Input left ", angular.copy($scope.inputs.leftProposition));
       }
 
       // Backstops something about proposition editability
@@ -2271,7 +2243,6 @@
             $scope.draggedProposition = angular.copy(proposition);
             $scope.draggedProposition.isDraggedProposition = true;
             $scope.draggedProps = [angular.copy(proposition)];
-            console.log("Those drag strings: ", angular.copy($scope.dragStrings))
             $scope.draggingProposition = true;
             $scope.dragStrings = [];
             $scope.dragStrings.push(
@@ -6148,7 +6119,6 @@
               // }, 0);
             });
           }
-          console.log("Element: ", element)
           let index = 0;
           
           const intervalId = setInterval(() => {
@@ -6276,7 +6246,7 @@
         // Function to simulate the second user's action
         $scope.simulateUser = function(index) {
           // simulate script
-          console.log("Index: ", index)
+          
           var theStep = $scope.preDefinedPoints[index];
           console.log("The step: ", theStep)
           var theOn = theStep.on;
@@ -6299,13 +6269,13 @@
                 populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
               } else if (theStep.which === 'node'){
               } else if (theStep.which === 'item'){
-                console.log("item")
+              
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  console.log("h")
+               
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    console.log("i")
+              
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                      console.log("j")
+                     
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                         if (!hasAK &&
                         $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
@@ -6316,13 +6286,13 @@
                           var thisJ = angular.copy(j)
                           var thisK = angular.copy(k)
                           var hasAK = true;
-                          console.log("simulating a rejoinder")
+                         
                           if (hasAK){
                             // for rejoinders
                             // need to write for 2Bs
                             setTimeout(function () {
                               $scope.$apply(function () {
-                                console.log("H: ", thisH)
+                                
                                 $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
                               });
                             }, 0);
@@ -6332,7 +6302,7 @@
                             }, 20);
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                              console.log("Got an id")
+                              
                               // break;
                             }, 20);
                           }    
@@ -6343,9 +6313,9 @@
                 }
                 // non-k author props
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  console.log("loop h")
+                 
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    console.log("loop i")
+                    
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       if ( (!hasAJ &&
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
@@ -6377,7 +6347,7 @@
                           // $scope.$apply(function () {
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                              console.log("Got an id")
+                             
                             }, 30);
                           // });
                           break;
@@ -6394,7 +6364,7 @@
                           // $scope.$apply(function () {
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                              console.log("Got an id")
+                           
 
                             }, 30);
                             break;
@@ -6425,16 +6395,16 @@
                           // $scope.$apply(function () {
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id)
-                              console.log("Got an id")
+                             
 
                             }, 30);
                             break;
                           // });
                         } else if (theStep.its === 'self') {     
-                          console.log("Non rejoining selfs")
+                          
                           setTimeout(function () {
                             $scope.$apply(function () {
-                              console.log("Non rejoining H: ", thisH)
+                             
                               $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
                             });
                           }, 0);
@@ -6444,8 +6414,7 @@
                           }, 20);
                           setTimeout(function () {
                             populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                            console.log("Got a self id")
-                            console.log("Its self")    
+                
                             
                           }, 20);
                           break;
@@ -6481,14 +6450,13 @@
               // reviewer propositions
               var theCode = theStep.code;
               if (theCode === '2A'){
-                console.log("Automated 2a")
+              
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  console.log("h")
+            
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    console.log("i")
+                  
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                      console.log("j")
-                      console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j])
+                   
                       if (
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
@@ -6504,15 +6472,15 @@
                   }
                 } 
               } else if (theCode === '2B'){
-                console.log("Automated 2B")
+                
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  console.log("h")
+                  
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    console.log("i")
+                   
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                      console.log("j")
+                      
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
-                        console.log("Testing: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k])
+                       
                         if (
                         $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                         $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
@@ -6811,7 +6779,7 @@
       }
 
       $scope.topAddFunction = function (node, paragraph) {
-        console.log("The paragraph: ", paragraph)
+       
         console.log("Top add function")
         setTimeout(function () {
           $scope.$apply(function () {
@@ -6826,7 +6794,7 @@
 
         }, 20);
         setTimeout(function () {
-          console.log("Element having generatef", document.getElementById('top'+paragraph.paragraphId))
+          //
         }, 30);
         
       }
@@ -7025,7 +6993,7 @@
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index &&
                       $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarksExpanded){
-                      console.log("seem to be remarks")
+                    
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
@@ -7033,7 +7001,7 @@
                       for (var m = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks.length-1; m > -1; m--){
                         if (!$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].hiddenForAll &&
                           !$scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[m].rejoined){
-                          console.log("and not hidden")
+                         
                           var remarkIndex = angular.copy(m);
                           break;
                         }
@@ -7518,7 +7486,6 @@
       chatSocket.emit('room', $scope.bookId);
       $timeout(function() {
         if (!$scope.isGuest() && !$scope.loggedIn()) {
-          console.log("Sign in anonymously about to trigger at end of main loop")
           apiService.signInAnonymously().then(function () {
             $state.go('main.editor', $stateParams);
           });
@@ -7683,10 +7650,8 @@
       },
     ];
     if ($rootScope.guest && !$scope.bookId) {
-      console.log("Entry into editor if")
       $scope.openNewBookModal();
     } else if (!$scope.bookId){
-      console.log("Entry into editor modal else")
       $(document).ready(function() {
         $('[ui-view]').attr('id', 'wholedamneditor');
       });

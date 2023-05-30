@@ -6178,7 +6178,7 @@
                console.log("User actions: ", angular.copy($scope.userActions))
                if ($scope.userActions.length !== 0){
                 console.log("No length")
-                if (!$scope.preDefinedPoints[$scope.userActions.length-1].code){
+                if (!$scope.preDefinedPoints[$scope.userActions.length].code){
                   console.log("no code")
                  element.dispatchEvent(event);
                  console.log("Else event: ", event)
@@ -6345,7 +6345,6 @@
                           // }, 20);
                           
                           // $scope.$apply(function () {
-                            debugger;
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                              

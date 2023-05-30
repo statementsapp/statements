@@ -6206,25 +6206,36 @@
             $scope.$apply(function () {
              setTimeout(function () {
                console.log("User actions: ", angular.copy($scope.userActions))
-               if (!$scope.preDefinedPoints[$scope.userActions.length-1].code || $scope.userActions.length === 0){
-                element.dispatchEvent(event);
+               if ($scope.userActions.length !== 0){
+                console.log("No length")
+                if (!$scope.preDefinedPoints[$scope.userActions.length-1].code){
+                  console.log("no code")
+                 element.dispatchEvent(event);
+                 console.log("Else event: ", event)
+                 $scope.temporaryText = '';
+                } else {
+                 console.log("Negationiy randomness")
+                 var randomPercentage = Math.random() * 0.6 - 0.3; // Random number between -0.3 and 0.3
+
+                     // Calculate the delay based on the random percentage
+                 var delay = 4000 + (4000 * randomPercentage); // Four seconds (4000ms) with random deviation
+
+                     // Execute the action after the calculated delay
+                 $timeout(function() {
+                       // Your action goes here
+                   element.dispatchEvent(event);
+                   console.log("That event: ", event)
+                   $scope.temporaryText = '';
+                 }, delay);
+
+                }
+            
                } else {
-                var randomPercentage = Math.random() * 0.6 - 0.3; // Random number between -0.3 and 0.3
-
-                    // Calculate the delay based on the random percentage
-                var delay = 4000 + (4000 * randomPercentage); // Four seconds (4000ms) with random deviation
-
-                    // Execute the action after the calculated delay
-                $timeout(function() {
-                      // Your action goes here
-                  element.dispatchEvent(event);
-                  console.log('Delayed action executed');
-                }, delay);
-
+                element.dispatchEvent(event);
+                console.log("Else event: ", event)
+                $scope.temporaryText = '';
                }
                
-               console.log("That event: ", event)
-               $scope.temporaryText = '';
               }, 10);
             });
             

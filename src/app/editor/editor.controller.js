@@ -6116,11 +6116,11 @@
             $scope.$apply(function () {
              // setTimeout(function () {
               if (messageFlag){
-                var element = document.getElementById('input'+id);
+                 element = document.getElementById('input'+id);
                 console.log("Message hmmmm: ", element)
                 // }, 0);
               } else {
-                var element = document.getElementById(id);
+                element = document.getElementById(id);
                 console.log("Element hmmmm: ", element)
                 // }, 0);
               }

@@ -6305,7 +6305,7 @@
                           var thisJ = angular.copy(j)
                           var thisK = angular.copy(k)
                           var hasAK = true;
-                         
+                          console.log("This here id: ", thisHereId)
                           if (hasAK){
                             if (theStep.messaged){
                               setTimeout(function () {

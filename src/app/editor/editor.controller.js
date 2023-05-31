@@ -6130,6 +6130,7 @@
           let index = 0;
           
           const intervalId = setInterval(() => {
+            console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {
               if (Math.random() < 0.05 && index > 0) {

@@ -3,7 +3,7 @@
     class="thread-wrapper"
     ng-class="{'authorpadding': message.author === data[0].documentClaimedBy}">
     <p
-      ng-if="threadAdding !== message.messageId"
+      ng-if="threadAdding !== message.id"
       class="thread"
       ng-class="{
         'sent': message.author === userId,
@@ -12,7 +12,7 @@
       id="{{'wholemessage'+ message.id}}"
     >
       <span 
-        id="message{{message.messageId}}"
+        id="message{{message.id}}"
         class="tree-node tree-node-content remark remarkparagraph speech-bubble"
         ng-class="{
           'deleted': message.deleted === true,

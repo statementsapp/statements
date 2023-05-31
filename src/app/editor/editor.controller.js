@@ -6116,11 +6116,11 @@
             $scope.$apply(function () {
              // setTimeout(function () {
               if (messageFlag){
-                const element = document.getElementById('input'+id);
+                var element = document.getElementById('input'+id);
                 console.log("Message hmmmm: ", element)
                 // }, 0);
               } else {
-                const element = document.getElementById(id);
+                var element = document.getElementById(id);
                 console.log("Element hmmmm: ", element)
                 // }, 0);
               }
@@ -6129,7 +6129,7 @@
           }
           let index = 0;
           
-          const intervalId = setInterval((element) => {
+          const intervalId = setInterval(() => {
             console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {

@@ -5905,7 +5905,8 @@
               its: 'self',
               typeTime: 3000,
               noClick: false, 
-              action: 'proposition'
+              action: 'proposition',
+              messaged: true
             
           },
           { index: 3, 
@@ -6108,15 +6109,22 @@
 
 
 
-        function populateElementWithText(text, id) {
+        function populateElementWithText(text, id, messageFlag) {
 
           const element = document.getElementById(id);
           if (!element){
             $scope.$apply(function () {
              // setTimeout(function () {
-              const element = document.getElementById(id);
-              console.log("Element hmmmm: ", element)
-              // }, 0);
+              if (messageFlag){
+                const element = document.getElementById('input'+id);
+                console.log("Message hmmmm: ", element)
+                // }, 0);
+              } else {
+                const element = document.getElementById(id);
+                console.log("Element hmmmm: ", element)
+                // }, 0);
+              }
+              
             });
           }
           let index = 0;
@@ -6133,6 +6141,7 @@
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
                 $scope.inputs['left'+id] = element.textContent;
+                $scope.inputs.chatProposition = element.textContent;
               } else {
                 element.textContent += text[index];
                 index++;
@@ -6141,6 +6150,7 @@
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
                 $scope.inputs['left'+id] = element.textContent;
+                $scope.inputs.chatProposition = element.textContent;
               }
 
               if (index === text.length) {
@@ -6297,23 +6307,30 @@
                           var hasAK = true;
                          
                           if (hasAK){
-                            // for rejoinders
-                            // need to write for 2Bs
-                            setTimeout(function () {
-                              $scope.$apply(function () {
+                            if (theStep.messaged){
+                              setTimeout(function () {
+                                document.getElementById('message'+thisHereId).click();
+                              }, 20);
+                            } else {
+                              // for rejoinders
+                              // need to write for 2Bs
+                              setTimeout(function () {
+                                $scope.$apply(function () {
+                                  
+                                  $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                                });
+                              }, 0);
+                                        
+                              setTimeout(function () {
+                                document.getElementById('proposition'+thisHereId).click();
+                              }, 20);
+                              setTimeout(function () {
+                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
                                 
-                                $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                              });
-                            }, 0);
-                                      
-                            setTimeout(function () {
-                              document.getElementById('proposition'+thisHereId).click();
-                            }, 20);
-                            setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
-                              
-                              // break;
-                            }, 20);
+                                // break;
+                              }, 20);
+                            }
+                            
                           }    
                         }
                       }

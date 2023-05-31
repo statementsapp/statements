@@ -6292,7 +6292,7 @@
                 populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
               } else if (theStep.which === 'node'){
               } else if (theStep.which === 'item'){
-              
+                console.log("An item")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -6350,6 +6350,7 @@
                   }
                 }
                 // non-k author props
+                console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                  
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){

@@ -6312,6 +6312,7 @@
                           console.log("This here id: ", thisHereId)
                           if (hasAK){
                             if (theStep.messaged){
+                              console.log("Its messaged")
                               setTimeout(function () {
                                 document.getElementById('message'+thisHereId).click();
                               }, 20);
@@ -6322,6 +6323,7 @@
                                 // break;
                               }, 20);
                             } else {
+                              console.log("NOT messaged")
                               // for rejoinders
                               // need to write for 2Bs
                               setTimeout(function () {

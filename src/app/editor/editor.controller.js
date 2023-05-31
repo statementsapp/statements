@@ -5465,6 +5465,10 @@
           }
         }, 30);                                             // HAS A TIMEOUT
         
+        if ($scope.hasBeenSetUp){
+          console.log("The selected prop ds: ", angular.copy($scope.selectedProposition.dialogueSide))
+          console.log("The selected prop ts: ", angular.copy($scope.selectedProposition.textSide))
+        }
 
         setTimeout(function () {
           $scope.$apply(function () {

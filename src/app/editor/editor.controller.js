@@ -6111,7 +6111,7 @@
 
         function populateElementWithText(text, id, messageFlag) {
 
-          const element = document.getElementById(id);
+          var element = document.getElementById(id);
           if (!element){
             $scope.$apply(function () {
              // setTimeout(function () {

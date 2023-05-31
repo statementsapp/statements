@@ -5391,7 +5391,10 @@
               $scope.hasChatFocusId = payload.id;
               setTimeout(function () {
                   $scope.selectedProposition.dialogueSide = true;
-                  $scope.didItRun(message.id);
+                  if (message){
+                    $scope.didItRun(message.id);
+                  }
+                  
                   $scope.clearTopAndBottomHasFocus();
                   $scope.selectPropositionById(payload.id);
                   $scope.selectedProposition.textSide = false;

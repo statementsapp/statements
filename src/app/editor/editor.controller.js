@@ -6311,6 +6311,12 @@
                               setTimeout(function () {
                                 document.getElementById('message'+thisHereId).click();
                               }, 20);
+
+                              setTimeout(function () {
+                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true)
+                                
+                                // break;
+                              }, 20);
                             } else {
                               // for rejoinders
                               // need to write for 2Bs

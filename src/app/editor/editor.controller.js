@@ -6129,7 +6129,7 @@
           }
           let index = 0;
           
-          const intervalId = setInterval(() => {
+          const intervalId = setInterval((element) => {
             console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {

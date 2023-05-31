@@ -6134,6 +6134,8 @@
              setTimeout(function () {
               if (Math.random() < 0.05 && index > 0) {
                 // Simulate a backspace by removing the last character
+                console.log("Element: ", element)
+                console.log("Well should be anyway: ", document.getElementById('input'+id))
                 element.textContent = element.textContent.slice(0, -1);
                 index--;
                 $scope.inputs[id] = element.textContent;

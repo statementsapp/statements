@@ -6133,10 +6133,10 @@
             });
           }
           let index = 0;
-          
+          element.textContent = '';
           const intervalId = setInterval(() => {
             
-            element.textContent = '';
+            
             console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {

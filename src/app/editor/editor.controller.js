@@ -6361,6 +6361,8 @@
                     
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("H-I-J: ", h, " ", i, " ", j)
+                      console.log("First: ", $scope.preDefinedPoints[theOn].text.slice(0, 6))
+                      console.log("Second ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))
                       if ( (!hasAJ &&
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||

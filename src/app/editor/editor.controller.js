@@ -6401,7 +6401,7 @@
                             setTimeout(function () {
                               populateElementWithText($scope.preDefinedPoints[index].text, 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                              
-                            }, 30);
+                            }, 300);
                           // });
                           break;
                         } else if (theStep.its === 'bottom'){

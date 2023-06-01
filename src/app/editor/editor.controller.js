@@ -6175,7 +6175,7 @@
 
               // Set cursor position to the end of the text input
               // element.setSelectionRange(index, index);
-              element.focus();
+              // element.focus();
               }, 0);
             });
             

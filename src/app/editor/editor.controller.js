@@ -6159,6 +6159,8 @@
                 $scope.inputs['bottom'+id] = element.textContent;
                 $scope.inputs['left'+id] = element.textContent;
                 $scope.inputs.chatProposition = element.textContent;
+                console.log("Element: ", element.textContent)
+                console.log("Chat prop osition: ", $scope.inputs.chatProposition)
               }
 
               if (index === text.length) {

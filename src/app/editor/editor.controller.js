@@ -6135,6 +6135,8 @@
           let index = 0;
           
           const intervalId = setInterval(() => {
+            
+            element.textContent = '';
             console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {

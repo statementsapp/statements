@@ -6111,7 +6111,14 @@
         }
 
         
-
+        function setCursorPosition(element) {
+          var range = document.createRange();
+          var selection = window.getSelection();
+          range.selectNodeContents(element);
+          range.collapse(false); // collapse the range to the end
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
 
 
         function populateElementWithText(text, id, messageFlag) {
@@ -6164,6 +6171,8 @@
                 console.log("Element: ", element.textContent)
                 console.log("Chat prop osition: ", $scope.inputs.chatProposition)
               }
+
+              setCursorPosition(element); // Set cursor position to the end
 
               if (index === text.length) {
                 

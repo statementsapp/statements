@@ -6325,7 +6325,7 @@
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true)
                                 
                                 // break;
-                              }, 20);
+                              }, 100);
                             } else {
                               console.log("NOT messaged")
                               // for rejoinders

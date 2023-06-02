@@ -6337,27 +6337,55 @@
                 }
                 populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
               } else if (theStep.which === 'node'){
+
+
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                 
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("H-I-J: ", h, " ", i, " ", j)
                       if ( (!hasAJ &&
-                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
-                        (!hasAJ &&
-                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
-                        setTimeout(function () {
-                          document.getElementById(thisHereId).click();
-                        }, 20);
-                        break;
+                        $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
+                         (!hasAJ &&
+                        $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
+                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;    
+                          var thisH = angular.copy(h)
+                          var thisI = angular.copy(i)
+                          var thisJ = angular.copy(j)
+                          var hasAJ = true;
+                          setTimeout(function () {
+                            document.getElementById(thisHereId).click();
+                          }, 20);
+                          break;
                       }
                     }
                   }
                 }
-                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true)
+              populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true)
+
+
+                // for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                 
+                //   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                    
+                //     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                //       console.log("H-I-J: ", h, " ", i, " ", j)
+                //       if ( (!hasAJ &&
+                //       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                //       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
+                //         (!hasAJ &&
+                //       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                //       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
+                //         setTimeout(function () {
+                //           document.getElementById(thisHereId).click();
+                //         }, 20);
+                //         break;
+                //       }
+                //     }
+                //   }
+                // }
+                // populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true)
 
               } else if (theStep.which === 'item'){
                 console.log("An item")

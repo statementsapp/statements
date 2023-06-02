@@ -1170,7 +1170,7 @@
 
       $scope.openTwitterPost = function (text) {
 
-        // Open the Twitter website in a new window and pre-populate the tweet with the specified text
+        // Open the Twitter website in a new window and pre- the tweet with the specified text
           window.open('https://twitter.com/intent/tweet?text=' + 
             encodeURIComponent(text + '\n\n' + $scope.currentLocation));
           $scope.tweetClicked = {};
@@ -6013,6 +6013,26 @@
               action: 'proposition'
           
           },
+          { index: 8, 
+           
+              author: $scope.userId,
+              text: 'A Section Title',
+              dialogueText: 'A Section Title',
+              
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+              
+              which: 'node',
+              on: 6,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
+          
+          },
+
           // { index: 5, 
             
           //     author: 'ccc',
@@ -6123,7 +6143,7 @@
         }
 
 
-        function populateElementWithText(text, id, messageFlag) {
+        function populateElementWithText(text, id, messageFlag, nodeFlag) {
 
           var element = document.getElementById(id);
           if (!element){
@@ -6133,7 +6153,7 @@
                  element = document.getElementById('input'+id);
                 console.log("Message hmmmm: ", element)
                 // }, 0);
-              } else {
+              } else if (!messageFlag){
                 element = document.getElementById(id);
                 console.log("Element hmmmm: ", element)
                 // }, 0);
@@ -6177,11 +6197,18 @@
               setCursorPosition(element); // Set cursor position to the end
 
               if (index === text.length) {
+                if (!nodeFlag){
+                  setTimeout(function () {
+                    clearInterval(intervalId);
+                    simulateReturnKeyPress(element, text);
+                   }, 10);
+                } else {
+                  setTimeout(function () {
+                    clearInterval(intervalId);
+                    simulateReturnKeyPress(element, text+':');
+                   }, 10);
+                }
                 
-                setTimeout(function () {
-                  clearInterval(intervalId);
-                  simulateReturnKeyPress(element, text);
-                 }, 10);
               }
 
               // Set cursor position to the end of the text input
@@ -6310,6 +6337,19 @@
                 }
                 populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
               } else if (theStep.which === 'node'){
+                for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
+                  for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
+                    if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank' &&
+                      !$scope.data[0].nodes[0].paragraphs[i].propositions[j].hiddenForAll){
+                      var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
+                      setTimeout(function () {
+                        document.getElementById(thisHereId).click();
+                      }, 20);
+                      break;
+                    }
+                  }
+                }
+                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
               } else if (theStep.which === 'item'){
                 console.log("An item")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){

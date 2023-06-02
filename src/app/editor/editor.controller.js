@@ -6227,7 +6227,7 @@
 
           function simulateReturnKeyPress(element, text) {
 
-            const event = new Event('keyup', { bubbles: true, cancelable: true });
+            const event = new Event('keyup', { bubbles: false, cancelable: true });
               event.key = 'Enter';
               event.keyCode = 13;
               event.which = 13;

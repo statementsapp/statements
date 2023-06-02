@@ -6850,6 +6850,7 @@
             $scope.selectedNode = node;
             $scope.inputs['top'+paragraph.paragraphId] = '';
             $scope.hasTopFocus = paragraph.paragraphId;
+            $scope.hasBottomFocus = {};
 
             if (document.getElementById('top'+paragraph.paragraphId)){
               document.getElementById('top'+paragraph.paragraphId).innerHTML = ''

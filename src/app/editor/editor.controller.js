@@ -5442,6 +5442,12 @@
 
               
             }
+
+            if ($scope.userId === $scope.data[0].documentClaimedBy &&
+              $scope.hasBeenSetUp &&
+              payload.code === '3F'){
+              $scope.inputs = {};
+            }
             
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
             apiService.updatePropositions($scope.bookId, JSON.parse(angular.toJson($scope.propositions)));
@@ -6166,7 +6172,7 @@
           const intervalId = setInterval(() => {
             
             
-            console.log("Well the element: ", element)
+            // console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {
               if (Math.random() < 0.05 && index > 0) {

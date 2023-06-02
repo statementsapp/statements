@@ -131,9 +131,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          delay="200"
          class="paragraph addparagraph"
          ng-class=""
-         style="position: relative; left: -10px; padding-left: 70px;"
+         style="min-height: 28px; position: relative; left: -10px; padding-left: 70px;"
     >
-      <!-- <div class="proposition" style="display:inline"> -->
         <span
           editable-span-ng-model
           ng-class=""
@@ -152,7 +151,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           style="color: #f0f0f0; left: 50px; background-color: #0C2340; display: inline"
         >
         </span>
-      <!-- </div> -->
     </div>
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
@@ -652,20 +650,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          delay="200"
          class="paragraph addparagraph"
          ng-class=""
-         style="height: 26px; position: relative; left: 60px; ">
-
-       <!--  <span class="paragraphhandle" ng-if="data[0].documentClaimedBy === userId" style="margin-right: 30px; display: inline-block;"></span> -->
-
-      <!-- <div class="proposition" style="display:inline"> -->
-        <!--         <span class="proposition-text">
-                </span> -->
-        <!--         <span
-                      ng-if="paragraph.bottomAdd && hasBottomFocus == paragraph.paragraphId"
-                      class="cursor invisible-cursor"
-                      >
-                </span> -->
-        <!--         <span class="cursor invisible-cursor">
-                </span> -->
+         style="height: 28px; position: relative; left: 60px; ">
         <span
           ng-class=""
           editable-span-ng-model
@@ -680,10 +665,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           class="texttopic"
           spellcheck="false"
           style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; "></span>
-<!--           <span class="cursor visible-cursor"
-                ng-if="paragraph.bottomMouseOver && !paragraph.bottomAdd">
-          </span> -->
-      <!-- </div> -->
     </div>
    
     <div

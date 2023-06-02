@@ -6337,19 +6337,28 @@
                 }
                 populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
               } else if (theStep.which === 'node'){
-                for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
-                  for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
-                    if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank' &&
-                      !$scope.data[0].nodes[0].paragraphs[i].propositions[j].hiddenForAll){
-                      var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
-                      setTimeout(function () {
-                        document.getElementById(thisHereId).click();
-                      }, 20);
-                      break;
+                for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                 
+                  for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                    
+                    for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                      console.log("H-I-J: ", h, " ", i, " ", j)
+                      if ( (!hasAJ &&
+                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
+                        (!hasAJ &&
+                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
+                        setTimeout(function () {
+                          document.getElementById(thisHereId).click();
+                        }, 20);
+                        break;
+                      }
                     }
                   }
                 }
-                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId)
+                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true)
+
               } else if (theStep.which === 'item'){
                 console.log("An item")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){

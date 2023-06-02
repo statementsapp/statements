@@ -6957,12 +6957,12 @@
         $scope.isMouseOut = false;
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
-                paragraph.topMouseOver = true;
-                $scope.$apply(function () {
-                  document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
-                  
-                });
                 
+                $scope.$apply(function () {
+                  
+                  paragraph.topMouseOver = true;
+                });
+                document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
                 // $scope.makeTopAppear(paragraph);
                 
               }

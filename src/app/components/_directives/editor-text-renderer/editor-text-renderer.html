@@ -132,8 +132,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          class="paragraph addparagraph"
          ng-class=""
          style="min-height: 28px; position: relative; left: -10px; padding-left: 70px;"
-    >
-        <span
           editable-span-ng-model
           ng-class=""
           contenteditable="true"
@@ -150,7 +148,6 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           spellcheck="false"
           style="color: #f0f0f0; left: 50px; background-color: #0C2340; display: inline"
         >
-        </span>
     </div>
     <div class="topparagraphadder"
          ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
@@ -650,8 +647,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          delay="200"
          class="paragraph addparagraph"
          ng-class=""
-         style="height: 28px; position: relative; left: 60px; ">
-        <span
+         style="height: 28px; position: relative; left: 60px; "
           ng-class=""
           editable-span-ng-model
           contenteditable="true"
@@ -664,7 +660,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs['bottom'+paragraph.paragraphId], node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs['bottom'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
           class="texttopic"
           spellcheck="false"
-          style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; "></span>
+          style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; ">
     </div>
    
     <div

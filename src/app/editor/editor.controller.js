@@ -6496,14 +6496,17 @@
                           console.log("Its bottom")
                           // $scope.$apply(function () {
                             setTimeout(function () {
+                              console.log("I")
                               document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                             }, 20);
                           // });
                           setTimeout(function () {
+                            console.log("II")
                             document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                           }, 20);
                           // $scope.$apply(function () {
                             setTimeout(function () {
+                              console.log("III")
                               populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
                            
 
@@ -6542,7 +6545,7 @@
                             break;
                           // });
                         } else if (theStep.its === 'self') {     
-                          
+                          console.log("Self")
                           setTimeout(function () {
                             $scope.$apply(function () {
                              

@@ -6958,7 +6958,7 @@
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
                 paragraph.topMouseOver = true;
-                $scope.makeTopAppear(paragraph);
+                // $scope.makeTopAppear(paragraph);
                 
               }
             }, 150);

@@ -5446,7 +5446,7 @@
             if ($scope.userId === $scope.data[0].documentClaimedBy &&
               $scope.hasBeenSetUp &&
               payload.code === '3F'){
-              $scope.inputs = {};
+              $scope.selectedProposition = {};
             }
             
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));

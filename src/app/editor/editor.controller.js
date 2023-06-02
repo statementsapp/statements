@@ -1667,6 +1667,7 @@
           $scope.$apply(function () {
             paragraph.bottomAdd = true;
             $scope.hasBottomFocus.id = paragraph.paragraphId;
+            $scope.hasTopFocus = '';
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
             if (document.getElementById(paragraph.paragraphId)){

@@ -6954,25 +6954,19 @@
       }
 
       $scope.startTopParagraphAdderTimer = function (paragraph) {
-        
-          $scope.$apply(function () {
-            
-            $scope.isMouseOut = false;
-                $scope.timer = $timeout(function() {
-                  if (!$scope.isMouseOut) {
-                    paragraph.topMouseOver = true;
-                    document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
-                    // $scope.makeTopAppear(paragraph);
-                    
-                  }
-                }, 150);
-            
-          });
-
-    
-
-
-        
+        $scope.isMouseOut = false;
+            $scope.timer = $timeout(function() {
+              if (!$scope.isMouseOut) {
+                paragraph.topMouseOver = true;
+                $scope.$apply(function () {
+                  document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
+                  
+                });
+                
+                // $scope.makeTopAppear(paragraph);
+                
+              }
+            }, 150);
       }
 
       $scope.stopTopParagraphAdderTimer = function (paragraph) {

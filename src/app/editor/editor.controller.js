@@ -1609,6 +1609,7 @@
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
             $scope.hasTopFocus = paragraph.paragraphId;
+            console.log("That top focus: ", $scope.hasTopFocus)
             paragraph.topAdd = true;
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
             $scope.inputs['top' + paragraph.paragraphId] = '';

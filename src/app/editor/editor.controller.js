@@ -6958,6 +6958,7 @@
             $scope.timer = $timeout(function() {
               if (!$scope.isMouseOut) {
                 paragraph.topMouseOver = true;
+                document.getElementById('top'+paragraph.paragraphId).innerHTML = '|'
                 // $scope.makeTopAppear(paragraph);
                 
               }

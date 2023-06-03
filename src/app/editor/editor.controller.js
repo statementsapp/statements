@@ -6496,7 +6496,7 @@
                   console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
                   console.log("That points on: ", $scope.preDefinedPoints[theOn].text.slice(0, 6))
                   console.log("That nodes blank: ", theStep.onBlank)
-                  if ($scope.data[0].nodes[h].topic === $scope.preDefinedPoints[theOn].text.slice(0, 6) &&
+                  if ($scope.data[0].nodes[h].topic.slice(0, 6) === $scope.preDefinedPoints[theOn].text.slice(0, 6) &&
                     theStep.onBlank){
                     console.log("Normal blank")
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){

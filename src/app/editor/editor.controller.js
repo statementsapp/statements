@@ -6439,7 +6439,7 @@
                                 document.getElementById('proposition'+thisHereId).click();
                               }, 20);
                               setTimeout(function () {
-                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null null, theStep)
+                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
                                 
                                 // break;
                               }, 20);

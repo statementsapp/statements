@@ -6486,7 +6486,7 @@
 
 
 
-                // put code for non-first blank handlings around here
+                // it does everything except write the blank replacement down
 
 
 

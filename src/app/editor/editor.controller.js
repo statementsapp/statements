@@ -6178,14 +6178,18 @@
               if (Math.random() < 0.05 && index > 0) {
                 // Simulate a backspace by removing the last character
                 console.log("Element: ", element)
-                console.log("Well should be anyway: ", document.getElementById('input'+id))
                 element.textContent = element.textContent.slice(0, -1);
                 index--;
+                if (theStep.its){
+                  if (theStep.its === 'left'){
+                    $scope.inputs['left'+id] = element.textContent;
+                  }
+                }
                 $scope.inputs[id] = element.textContent;
                 $scope.inputs['remark'+id] = element.textContent;
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
-                $scope.inputs['left'+id] = element.textContent;
+                
                 $scope.inputs.chatProposition = element.textContent;
               } else {
                 element.textContent += text[index];
@@ -6194,7 +6198,11 @@
                 $scope.inputs['remark'+id] = element.textContent;
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
-                $scope.inputs['left'+id] = element.textContent;
+                if (theStep.its){
+                  if (theStep.its === 'left'){
+                    $scope.inputs['left'+id] = element.textContent;
+                  }
+                }
                 $scope.inputs.chatProposition = element.textContent;
                 console.log("Element: ", element.textContent)
                 console.log("Chat prop osition: ", $scope.inputs.chatProposition)

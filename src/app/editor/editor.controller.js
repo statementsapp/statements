@@ -6214,11 +6214,13 @@
                 if (!nodeFlag){
                   setTimeout(function () {
                     clearInterval(intervalId);
+                    console.log("ABOUT TO TOP PRESS")
                     simulateReturnKeyPress(element, text);
                    }, 10);
                 } else {
                   setTimeout(function () {
                     clearInterval(intervalId);
+                    console.log("ABOUT TO BOTTOM PRESS")
                     simulateReturnKeyPress(element, text+':');
                    }, 10);
                 }

@@ -6494,9 +6494,9 @@
                 console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
-                  console.log("That nodes blank: ", theStep.itsBlank)
+                  console.log("That nodes blank: ", theStep.onBlank)
                   if ($scope.data[0].nodes[h].topic === $scope.preDefinedPoints[theOn].text.slice(0, 6) &&
-                    theStep.itsBlank){
+                    theStep.onBlank){
                     console.log("Normal blank")
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                       

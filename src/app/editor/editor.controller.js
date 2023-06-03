@@ -6249,9 +6249,9 @@
 
             $scope.$apply(function () {
              setTimeout(function () {
-               console.log("User actions: ", angular.copy($scope.userActions))
+               // console.log("User actions: ", angular.copy($scope.userActions))
                element.dispatchEvent(event);
-               console.log("That event: ", event)
+               // console.log("That event: ", event)
                $scope.temporaryText = '';
 
 
@@ -6620,6 +6620,7 @@
                       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                        console.log("About to reviewer prop")
                         $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                         $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
                         null, null, theStep.author, theCode);
@@ -6644,6 +6645,7 @@
                         $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                         $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
+                          console.log("About to 2b prop")
                           $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                           $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
                           null, null, theStep.author, theCode);

@@ -6493,15 +6493,29 @@
 
                 console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  console.log("That nodes topic: ", $scope.data[0].nodes.topic)
+                  console.log("That nodes blank: ", theStep.itsBlank)
                   if ($scope.data[0].nodes.topic === $scope.preDefinedPoints[theOn].text.slice(0, 6) &&
                     theStep.itsBlank){
                     console.log("Normal blank")
-                    setTimeout(function () {
-                      $scope.$apply(function () {
+                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                      
+                      for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                        if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'blank'){
+                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                          var thisH = angular.copy(h)
+                          var thisI = angular.copy(i)
+                          var thisJ = angular.copy(j)
+                          var hasAJ = true;
+                        }
+                      }
+                    }
+                    // setTimeout(function () {
+                    //   $scope.$apply(function () {
                        
-                        $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                      });
-                    }, 0);
+                    //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                    //   });
+                    // }, 0);
                             
                     setTimeout(function () {
                       document.getElementById('proposition'+thisHereId).click();

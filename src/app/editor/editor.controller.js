@@ -6038,6 +6038,26 @@
               action: 'proposition'
           
           },
+          { index: 9, 
+           
+              author: $scope.userId,
+              text: 'Announcing a first sentence of text in a new section.',
+              dialogueText: 'Announcing a first sentence of text in a new section.',
+              
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+              
+              which: 'item',
+              on: 8,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition',
+              onBlank: true
+          
+          },
 
           // { index: 5, 
             
@@ -6462,8 +6482,37 @@
                   }
                 }
                 // non-k author props
+
+
+
+
+                // put code for non-first blank handlings around here
+
+
+
+
                 console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  if ($scope.data[0].nodes.topic === $scope.preDefinedPoints[theOn].text.slice(0, 6) &&
+                    theStep.itsBlank){
+                    console.log("Normal blank")
+                    setTimeout(function () {
+                      $scope.$apply(function () {
+                       
+                        $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                      });
+                    }, 0);
+                            
+                    setTimeout(function () {
+                      document.getElementById('proposition'+thisHereId).click();
+                    }, 20);
+                    setTimeout(function () {
+                      populateElementWithText($scope.preDefinedPoints[index].text,thisHereId,null, null, theStep)
+                    
+                      
+                    }, 20);
+                    break;
+                  }
                  
                   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                     

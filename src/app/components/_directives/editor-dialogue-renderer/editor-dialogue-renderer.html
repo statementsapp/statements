@@ -9,7 +9,8 @@
         'sent': message.author === userId,
         'received': message.author !== userId
       }"
-      id="{{'wholemessage'+ message.id}}"
+      id="{{'wholemessage'+ message.id}}
+      "
     >
       <span 
         id="message{{message.id}}"
@@ -42,6 +43,7 @@
       </span>
     </p>
       <div class="grow-wrap" ng-class="{
+        'constantauthorspacing': userId === message.author,
         'chatinputminimized' : hasChatFocusId !== message.id
         }"
       >

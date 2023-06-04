@@ -6984,16 +6984,16 @@
 
       $scope.clearPlaceholder = function (paragraph) {
 
-        console.log("Clear placeholder")
-        setTimeout(function () {
-          $scope.$apply(function () {
-            if (document.getElementById(paragraph.paragraphId)) {
-              document.getElementById(paragraph.paragraphId).innerHTML = ''
-            }
+        // console.log("Clear placeholder")
+        // setTimeout(function () {
+        //   $scope.$apply(function () {
+        //     if (document.getElementById(paragraph.paragraphId)) {
+        //       document.getElementById(paragraph.paragraphId).innerHTML = ''
+        //     }
             
-          });
+        //   });
 
-        }, 20);
+        // }, 20);
         
       }
 

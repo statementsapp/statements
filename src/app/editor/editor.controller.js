@@ -5055,6 +5055,7 @@
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
                 if ($scope.data[0].nodes[i].nodeId === payload.targetNodeId){
                   apply.nodeIndex = i;
+                  console.log("Target node index: ", apply.nodeIndex)
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
                     if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
                       apply.afterParagraphIndex = j;

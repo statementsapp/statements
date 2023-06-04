@@ -962,7 +962,7 @@
               }
 
               if (x !== $scope.userId && x !== '' && obj.type !== 'topic' && alreadyThere) {
-                // console.log("Already there for object: ", obj, " and x of ", x)
+                
                 if (obj.author == $scope.userId){
                   obj.color = $scope.userColorTable[index].color;
                 } else {
@@ -6983,6 +6983,8 @@
       
 
       $scope.clearPlaceholder = function (paragraph) {
+
+        console.log("Clear placeholder")
         setTimeout(function () {
           $scope.$apply(function () {
             if (document.getElementById(paragraph.paragraphId)) {
@@ -7114,6 +7116,7 @@
       }
 
       $scope.stopBottomParagraphAdderTimer = function (paragraph) {
+        console.log("Stop bottom")
         $scope.isMouseOut = true;
             $timeout.cancel($scope.timer);
             paragraph.bottomMouseOver = false

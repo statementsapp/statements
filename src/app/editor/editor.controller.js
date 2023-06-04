@@ -5058,6 +5058,7 @@
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
                     if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId){
                       apply.afterParagraphIndex = j;
+                      console.log("Got paragraph index which is j: ", apply.afterParagraphIndex;)
                       $scope.data[0].nodes[i].paragraphs[j].first = false;
                       $scope.data[0].nodes[i].paragraphs[j].hiddenForAll = true;
                       for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){

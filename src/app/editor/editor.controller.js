@@ -3855,7 +3855,7 @@
           prep.adjustedText = input;
           prep.author = $scope.userId;
           
-          if ($scope.draggingProposition || $scope.draggingParagraph){
+          if ($scope.draggingProposition || $scope.draggingParagraph || $scope.hasBeenSetUp){
             prep.targetNodeId = node.nodeId;
           } else {
             prep.targetNodeId = $scope.selectedNode.nodeId;

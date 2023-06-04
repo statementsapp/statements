@@ -3446,7 +3446,7 @@
           }
         }
         console.log("To sieve")
-
+        console.log("Input: ", input)
         if (!paragraph){
           paragraph = {
             empty: 'data'
@@ -3574,6 +3574,7 @@
         } else if (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
                 ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId &&
                  !paragraph.leftAdd) || automatedAuthor) {
+          console.log("Input inside negations: ", input)
 
           // switched sp negation requirements from sp === your username to just not the document author
 

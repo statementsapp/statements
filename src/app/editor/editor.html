@@ -541,9 +541,9 @@
             ng-model='data[0].dialogue'
             style="list-style-type: none; padding-left: 0"
             class="angular-ui-tree-nodes">
-           <!--  ng-if="message.hidden !== true && message[userId] !== 'hidden'" -->
+            <!-- ng-class="{'slide-in-right': message.animate}" -->
           <li ng-repeat="message in data[0].dialogue | orderBy: 'messageNumber'"
-              ng-class="{'slide-in-right': message.animate}"
+              
               ui-tree-node
               class="angular-ui-tree-node amessage" 
               ng-if="((message.deletedButCollided && (message['collision'+userId] || !message['notyetseen'+userId])) || !message.deletedButCollided) && !message.hiddenForAll">
@@ -558,67 +558,10 @@
        style="">
     <div class="col-md-8" ng-if="!cowsComeHome">
       
-  <!--     {{textMouseOver}}
-      {{dialogueMouseOver}} -->
-      
 
-
-
-
-
-
-
-
-
-<!--       <span style="width: 500px;"></span>
-      <div ui-tree="treeOptions"
-           data-drag-enabled="false"
-           id="tree-root"
-           class="angular-ui-tree textlist"
-           ng-mouseover="[$event.stopPropagation()]"
-           ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
-           ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
-
-      >
-        <ol ui-tree-nodes
-            ng-model='data[0].nodes'
-            style=""
-            id="bookdata"
-            class="angular-ui-tree-nodes"
-        >
-          <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
-              ui-tree-node
-              ng-class="{ mousedovernode: node.mouseOver === true }"
-              class="angular-ui-tree-node node"
-              id="{{node.nodeId}}"
-              ng-if="!node.hiddenForAll"
-              style="overflow-wrap: break-word;">
-            
-          </li>
-        </ol>
-      </div> -->
-      
-
-
-
-
-
-
-
-
-      <!-- {{data[0]}} -->
-<!--       {{data[0].authorTable}}
-      op:{{otherPastels}}
-      uc: {{userColor}}
-      uid: {{userId}}
-      title: {{title}} -->
-<!--       {{draggingNode}}
-      {{draggingParagraph}}
-      {{draggingProposition}}
-      LF {{hasLeftFocus}}
-      CLFDC: {{cancelListenForDoubleClick}}
+<!--       CLFDC: {{cancelListenForDoubleClick}}
       TSE: {{tempStopEditable}}
-      WHBC: {{whatHasBeenClicked}} --> 
+      WHBC: {{whatHasBeenClicked}}  -->
 
     </div>
     <div class="col-md-4"

@@ -4866,6 +4866,7 @@
                         first: true,
                         messagesSoFar: payload.messagesSoFar,
                         preSelected: false,
+                        animate: true
                       }
                     ]
                   }
@@ -4906,6 +4907,7 @@
                         first: true,
                         messagesSoFar: payload.messagesSoFar,
                         preSelected: false,
+                        animate: true
                       }
                     ]
                   }
@@ -4972,6 +4974,7 @@
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
                     preSelected: false,
+                    animate: true
                   }
                 } else {
                   $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.afterPropTarget+1] = {
@@ -4984,6 +4987,7 @@
                     first: true,
                     messagesSoFar: payload.messagesSoFar,
                     preSelected: false,
+                    animate: true
                   }
                 }
 
@@ -5096,6 +5100,7 @@
                       first: true,
                       messagesSoFar: payload.messagesSoFar,
                       preSelected: false,
+                      animate: true
                     }
                   ]
                 }

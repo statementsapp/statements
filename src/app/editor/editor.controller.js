@@ -5650,6 +5650,9 @@
                 $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
+                console.log("Selected Node: ", $scope.selectedNode)
+                console.log("Selected Paragraph: ", $scope.selectedParagraph)
+                console.log("Selected Proposition: ", $scope.selectedProposition)
                 $scope.selectedProposition.dialogueSide = true;
                 $scope.selectedProposition.textSide = false;
                 

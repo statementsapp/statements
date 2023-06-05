@@ -50,7 +50,7 @@
         }"
       >
         <textarea 
-          ng-blur="textareaBlur(message)"
+          ng-blur="textareaBlur(message)" 
           oninput="autoResize(this)"
           ng-show="(message.id === hasChatFocusId)"
           ng-hide="(message.id != hasChatFocusId || (selectedProposition.textSide))"

@@ -7,7 +7,8 @@
       class="thread"
       ng-class="{
         'sent': message.author === userId,
-        'received': message.author !== userId
+        'received': message.author !== userId,
+        'itstheauthors': message.author === userId
       }"
       id="{{'wholemessage'+ message.id}}
       "

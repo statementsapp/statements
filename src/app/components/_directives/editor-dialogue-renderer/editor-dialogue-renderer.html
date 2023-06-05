@@ -42,8 +42,9 @@
       <span class="message-timestamp received">{{ message.dateCreated }}
       </span>
     </p>
+      <!-- ng-style="{ 'margin-top': message.author === userId ? '20px' : '5px'}" -->
       <div class="grow-wrap" 
-      ng-style="{ 'margin-top': message.author === userId ? '20px' : '5px'}"
+
       ng-class="{
         'chatinputminimized' : hasChatFocusId !== message.id
         }"

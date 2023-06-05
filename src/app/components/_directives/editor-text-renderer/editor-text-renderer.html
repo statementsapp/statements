@@ -647,7 +647,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          ng-mouseleave="paragraph.bottomMouseOver = false"
          delay="200"
          class="addparagraph exclude"
-         style="position: relative;"
+         style="position: relative; text-indent: 97px"
           ng-class=""
           editable-span-ng-model
           contenteditable="true"
@@ -660,7 +660,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs['bottom'+paragraph.paragraphId], node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs['bottom'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
           class="texttopic"
           spellcheck="false"
-          style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; text-indent: 80px;">
+          style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; ">
     </div>
    
     <div
@@ -680,7 +680,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
      id="bottom{{node.nodeId}}">
 </div>
 <div ng-if="(hasBottomNodeFocus === node.nodeId || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingNode && !draggingParagraph && !draggingProposition) && ((!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true)))"
-     style="padding-top: 16px; padding-bottom: 40px; position: relative; left: -10px; text-indent: 97px"
+     style="padding-top: 16px; padding-bottom: 40px; position: relative; left: -10px; "
      class='addparagraph'>
   <div class="proposition">
   <span

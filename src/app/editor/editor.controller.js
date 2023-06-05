@@ -5505,12 +5505,22 @@
           console.log("User actions length: ", $scope.userActions.length)
           if (isDefinedPoint($scope.userActions.length)) {
             console.log("About to simulate user")
-            setTimeout(function () {
-              $scope.$apply(function () {
-                // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
-                $scope.simulateUser(angular.copy($scope.userActions.length))
-              });
-            }, 35);
+            if ($scope.preDefinedPoints[$scope.userActions.length].author === $scope.userId){
+              setTimeout(function () {
+                $scope.$apply(function () {
+                  // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+                  $scope.simulateUser(angular.copy($scope.userActions.length))
+                });
+              }, 35);
+            } else {
+              setTimeout(function () {
+                $scope.$apply(function () {
+                  // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+                  $scope.simulateUser(angular.copy($scope.userActions.length))
+                });
+              }, 2000);
+            }
+            
             
               // $scope.userActions[$scope.userActions.length-1].id, 
               // $scope.userActions[$scope.userActions.length-1].onIndex,

@@ -542,10 +542,11 @@
             style="list-style-type: none; padding-left: 0"
             class="angular-ui-tree-nodes">
             <!-- ng-class="{'slide-in-right': message.animate}" -->
+            <!-- ng-class="{'fade-in': message.animate}" -->
           <li ng-repeat="message in data[0].dialogue | orderBy: 'messageNumber'"
-              ng-class="{'fade-in': message.animate}"
+              
               ui-tree-node
-              class="angular-ui-tree-node" 
+              class="angular-ui-tree-node fade-in" 
               ng-if="((message.deletedButCollided && (message['collision'+userId] || !message['notyetseen'+userId])) || !message.deletedButCollided) && !message.hiddenForAll">
             <stmnts-editor-dialogue-renderer></stmnts-editor-dialogue-renderer>
           </li>

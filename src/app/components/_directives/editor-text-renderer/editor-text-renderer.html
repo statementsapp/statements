@@ -176,7 +176,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
 
       <ol ui-tree-nodes
-          style="padding-left: 0px !important; font-size: 0px;"
+          style="padding-left: 0px !important; font-size: 0px; text-indent: 20px;"
           ng-model="paragraph.propositions" 
           class="propositions"
           ng-mouseover="!hasRightFocus.id ? [lightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = true, $event.stopPropagation(), getReading($event,paragraph.paragraphId)] : inputs.nothing"

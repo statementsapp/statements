@@ -420,7 +420,7 @@ textarea {
 
 .fade-in {
   opacity: 0;
-  animation: fade 2s;
+  animation: fade 2s forwards;
 }
 
 @keyframes fade {

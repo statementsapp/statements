@@ -129,7 +129,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          ng-mouseleave = "paragraph.topMouseOver = false"
          ng-click="!inputs['top'+paragraph.paragraphId] ? [topAddFunction(node, paragraph), $event.stopPropagation()] : inputs.nothing"
          delay="200"
-         class="addparagraph"
+         class="addparagraph exclude"
          ng-class=""
          style="min-height: 28px; position: relative; left: -10px; padding-left: 70px; overflow: hidden; word-wrap: break-word;"
           editable-span-ng-model
@@ -646,7 +646,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     <div delayed-ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver && !draggingNode)"
          ng-mouseleave="paragraph.bottomMouseOver = false"
          delay="200"
-         class="addparagraph"
+         class="addparagraph exclude"
          style="position: relative;"
           ng-class=""
           editable-span-ng-model

@@ -1168,7 +1168,11 @@ position:absolute;
   }
 }
 
-
+li.paragraph .child-div:not(.exclude) {
+  /* Styles for child divs inside the 'paragraph' parent li, except the one with class 'exclude' */
+  /* Add your desired styles here */
+  text-indent: 0px;
+}
 
 .menu-right-wrapper {
   display: flex;

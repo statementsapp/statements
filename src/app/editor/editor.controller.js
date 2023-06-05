@@ -6270,7 +6270,13 @@
                 }
                 
               }
-
+              if (messageFlag){
+                var thisElement = document.getElementById('input'+id);
+                setTimeout(function () {
+                  thisElement.style.height = 'auto';
+                  thisElement.style.height = thisElement.scrollHeight + 'px';
+                }, 20);
+              }
               // Set cursor position to the end of the text input
               // element.setSelectionRange(index, index);
               // element.focus();

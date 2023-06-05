@@ -546,7 +546,7 @@
           <li ng-repeat="message in data[0].dialogue | orderBy: 'messageNumber'"
               
               ui-tree-node
-              class="angular-ui-tree-node fade-in" 
+              class="angular-ui-tree-node fade-element-in" 
               ng-if="((message.deletedButCollided && (message['collision'+userId] || !message['notyetseen'+userId])) || !message.deletedButCollided) && !message.hiddenForAll">
             <stmnts-editor-dialogue-renderer></stmnts-editor-dialogue-renderer>
           </li>

@@ -418,16 +418,31 @@ textarea {
   overflow: scroll;
 }
 
-.fade-in {
+
+
+.fade-element-in.ng-enter {
+  transition: 0.8s linear all;
   opacity: 0;
-  animation: fade 2s forwards;
 }
 
-@keyframes fade {
-  0% { opacity: 0; }
-  
-  100% { opacity: 1; }
+.fade-element-in-init .fade-element-in.ng-enter {
+  opacity: 1;
 }
+
+.fade-element-in.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fade-element-in.ng-leave {
+  transition: 0.3s linear all;
+  opacity: 1;
+}
+.fade-element-in.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+
+
 
 .isbottomadd {
   height: 3.5px;

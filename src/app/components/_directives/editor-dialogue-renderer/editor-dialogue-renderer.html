@@ -2,7 +2,7 @@
   <div 
     class="thread-wrapper"
     ng-class="{'authorpadding': message.author === data[0].documentClaimedBy}">
-    <p
+    <div
       ng-if="threadAdding !== message.id"
       class="thread"
       ng-class="{
@@ -41,7 +41,7 @@
 		  </span>
       <span class="message-timestamp received">{{ message.dateCreated }}
       </span>
-    </p>
+    </div>
       <!-- ng-style="{ 'margin-top': message.author === userId ? '20px' : '5px'}" -->
       <div class="grow-wrap" 
 

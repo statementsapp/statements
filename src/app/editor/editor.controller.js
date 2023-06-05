@@ -5506,6 +5506,21 @@
           if (isDefinedPoint($scope.userActions.length)) {
             console.log("About to simulate user")
             if ($scope.preDefinedPoints[$scope.userActions.length].author === $scope.userId){
+              if ($scope.preDefinedPoints[$scope.userActions.length-1].author === $scope.userId){
+                setTimeout(function () {
+                  $scope.$apply(function () {
+                    // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+                    $scope.simulateUser(angular.copy($scope.userActions.length))
+                  });
+                }, 35);
+              } else {
+                setTimeout(function () {
+                  $scope.$apply(function () {
+                    // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+                    $scope.simulateUser(angular.copy($scope.userActions.length))
+                  });
+                }, 2000);
+              }
               setTimeout(function () {
                 $scope.$apply(function () {
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)

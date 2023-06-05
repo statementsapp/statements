@@ -5629,6 +5629,7 @@
               for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id === id &&
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].droppedElsewhere){
+                  console.log("Hit by id")
                   $scope.selectedNode = angular.copy($scope.data[0].nodes[i]);
                   $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 
@@ -5644,6 +5645,7 @@
               if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === id &&
                 !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
                 $scope.data[0].nodes[i].paragraphs[j].propositions[k][$scope.userId] !== 'hidden'){
+                console.log("Other hit by id")
                 $scope.selectedNode = angular.copy($scope.data[0].nodes[i]);
                 $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 

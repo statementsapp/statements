@@ -681,7 +681,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 </div>
 <div ng-if="(hasBottomNodeFocus === node.nodeId || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingNode && !draggingParagraph && !draggingProposition) && ((!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true)))"
      style="padding-top: 16px; padding-bottom: 40px; position: relative; left: -10px"
-     class='paragraph addparagraph'>
+     class='addparagraph'>
   <div class="proposition">
   <span
     ng-keyup="$event.keyCode === 13 &&

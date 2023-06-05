@@ -5663,6 +5663,7 @@
 
                 
                 setTimeout(function () {
+                   console.log(document.getElementById('input'+ id));
                    focusFactory('input'+ id);
                 }, 20);
                 break;

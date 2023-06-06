@@ -6082,6 +6082,25 @@
               onBlank: true
           
           },
+          { index: 10, 
+           
+              author: $scope.userId,
+              text: 'Announcing a first sentence of text in a new section.',
+              dialogueText: 'Announcing a first sentence of text in a new section.',
+              
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+              
+              which: 'item',
+              on: 7,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition',
+          
+          },
 
           // { index: 5, 
             

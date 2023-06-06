@@ -6085,8 +6085,8 @@
           { index: 10, 
            
               author: $scope.userId,
-              text: 'Announcing a first sentence of text in a new section.',
-              dialogueText: 'Announcing a first sentence of text in a new section.',
+              text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+              dialogueText: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
               
               dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),

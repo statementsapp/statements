@@ -6628,7 +6628,7 @@
                             setTimeout(function () {
                               console.log("I")
                               document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                            }, 20);
+                            }, 0);
                           // });
                           setTimeout(function () {
                             console.log("II")

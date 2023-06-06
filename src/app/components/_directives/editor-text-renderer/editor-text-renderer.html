@@ -130,7 +130,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          ng-click="!inputs['top'+paragraph.paragraphId] ? [topAddFunction(node, paragraph), $event.stopPropagation()] : inputs.nothing"
          delay="200"
          class="addparagraph exclude"
-         ng-class=""
+         ng-class="{'topaddpadding': paragraph.topAdd}"
          style="min-height: 28px; position: relative; text-indent: 97px; overflow: hidden; word-wrap: break-word; font-weight: 600;"
           editable-span-ng-model
           ng-class=""

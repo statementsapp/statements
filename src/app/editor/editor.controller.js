@@ -6633,7 +6633,7 @@
                           setTimeout(function () {
                             console.log("II")
                             document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                          }, 20);
+                          }, 35);
                           // $scope.$apply(function () {
                             setTimeout(function () {
                               console.log("III")

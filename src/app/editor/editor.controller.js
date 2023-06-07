@@ -5895,6 +5895,8 @@
         //   noClick: false, 
         //   action: proposition
         // } 
+
+        // The predefined points
         $scope.preDefinedPoints = [
           { index: 0, 
             
@@ -5967,231 +5969,143 @@
               action: 'proposition'
             
           },
-          { index: 4, 
+          // { index: 4, 
             
-              author: $scope.userId,
-              text: 'Lookee here text and text with all the text.',
-              dialogueText: 'Lookee here text and text with all the text.',
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'item',
-              on: 0,
-              its: 'top',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          { index: 5, 
-           
-              author: 'bbb',
-              text: 'Bee bee bee text so text and text you can text with the text even more bok.',
-              dialogueText: 'Bee bee bee text so text and text you can text with the text even more bok.',
-              type: 'negation',
-              code: '2A',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 2,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-          
-          },
-          { index: 6, 
-            
-              author: $scope.userId,
-              text: 'Additional left text and look at the left of that text that is on the left in a book.',
-              dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'item',
-              on: 4,
-              its: 'left',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          { index: 7, 
-           
-              author: 'ccc',
-              text: 'Whoa what about this here two bee in the document there yeah.',
-              dialogueText: 'Whoa what about this here two bee in the document there yeah.',
-              type: 'negation',
-              code: '2B',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 5,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-          
-          },
-          { index: 8, 
-           
-              author: $scope.userId,
-              text: 'A Section Title',
-              dialogueText: 'A Section Title',
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'node',
-              on: 6,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-          
-          },
-          { index: 9, 
-           
-              author: $scope.userId,
-              text: 'Announcing a first sentence of text in a new section.',
-              dialogueText: 'Announcing a first sentence of text in a new section.',
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 8,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-              onBlank: true
-          
-          },
-          { index: 10, 
-           
-              author: $scope.userId,
-              text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-              dialogueText: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 7,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-          
-          },
-
-          // { index: 5, 
-            
-          //     author: 'ccc',
-          //     text: 'Have some more text that is text and some text that you want while with this text and this text will be removed.',
-          //     dialogueText: 'Have some more text that is text and some text that you want while with this text and this text will be removed.',
-          //     type: 'negation',
-          //     code: '2B',
-          //     dialogueSide: true,
+          //     author: $scope.userId,
+          //     text: 'Lookee here text and text with all the text.',
+          //     dialogueText: 'Lookee here text and text with all the text.',
+          //     type: 'assertion',
+          //     dialogueSide: false,
           //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
           //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
           //     // of: (prep.of ? prep.of : undefined),
 
-          //     blankId: IdFactory.next(),
-          //     textSide: false,
-          //     bookId: $scope.bookId,
-          //     nodeId: IdFactory.next(),
-          //     paragraphId: IdFactory.next(),
-          //     remarkId: IdFactory.next(),
-          //     dropflag: false,
-          //     delay: 4000,
+          //     which: 'item',
+          //     on: 0,
+          //     its: 'top',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
             
+          // },
+          // { index: 5, 
+           
+          //     author: 'bbb',
+          //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
+          //     dialogueText: 'Bee bee bee text so text and text you can text with the text even more bok.',
+          //     type: 'negation',
+          //     code: '2A',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'item',
+          //     on: 2,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+          
           // },
           // { index: 6, 
             
-          //     author: 'aaa',
-          //     text: 'Additional text to add to your text next to this text and in this text book.',
-          //     dialogueText: 'Additional text to add to your text next to this text and in this text book.',
-          //     type: 'negation',
-          //     code: '2A',
-          //     dialogueSide: true,
+          //     author: $scope.userId,
+          //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
+          //     dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
+          //     type: 'assertion',
+          //     dialogueSide: false,
           //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
           //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
           //     // of: (prep.of ? prep.of : undefined),
 
-          //     blankId: IdFactory.next(),
-          //     textSide: false,
-          //     bookId: $scope.bookId,
-          //     nodeId: IdFactory.next(),
-          //     paragraphId: IdFactory.next(),
-          //     remarkId: IdFactory.next(),
-          //     dropflag: false,
-          //     delay: 3000,
+          //     which: 'item',
+          //     on: 4,
+          //     its: 'left',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
             
           // },
           // { index: 7, 
-            
+           
           //     author: 'ccc',
-          //     text: 'Now youve got this text you really want to dispel here for now comes the text.',
-          //     dialogueText: 'Now youve got this text you really want to dispel here for now comes the text.',
+          //     text: 'Whoa what about this here two bee in the document there yeah.',
+          //     dialogueText: 'Whoa what about this here two bee in the document there yeah.',
           //     type: 'negation',
           //     code: '2B',
-          //     dialogueSide: true,
+          //     dialogueSide: false,
           //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
           //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
           //     // of: (prep.of ? prep.of : undefined),
-
-          //     blankId: IdFactory.next(),
-          //     textSide: false,
-          //     bookId: $scope.bookId,
-          //     nodeId: IdFactory.next(),
-          //     paragraphId: IdFactory.next(),
-          //     remarkId: IdFactory.next(),
-          //     dropflag: false,
-          //     delay: 6000,
+              
+          //     which: 'item',
+          //     on: 5,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+          
+          // },
+          // { index: 8, 
            
+          //     author: $scope.userId,
+          //     text: 'A Section Title',
+          //     dialogueText: 'A Section Title',
+              
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'node',
+          //     on: 6,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+          
           // },
           // { index: 9, 
            
-          //     author: 'aaa',
-          //     text: 'Doesnt take a PhD to figure out but it takes to build a doghouse.',
-          //     dialogueText: 'Doesnt take a PhD to figure out but it takes to build a doghouse.',
-          //     type: 'negation',
-          //     code: '2A',
-          //     dialogueSide: true,
+          //     author: $scope.userId,
+          //     text: 'Announcing a first sentence of text in a new section.',
+          //     dialogueText: 'Announcing a first sentence of text in a new section.',
+              
+          //     dialogueSide: false,
           //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
           //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
           //     // of: (prep.of ? prep.of : undefined),
-
-          //     blankId: IdFactory.next(),
-          //     textSide: false,
-          //     bookId: $scope.bookId,
-          //     nodeId: IdFactory.next(),
-          //     paragraphId: IdFactory.next(),
-          //     remarkId: IdFactory.next(),
-          //     dropflag: false,
-          //     delay: 2000,
-            
+              
+          //     which: 'item',
+          //     on: 8,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition',
+          //     onBlank: true
+          
           // },
+          // { index: 10, 
+           
+          //     author: $scope.userId,
+          //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+          //     dialogueText: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+              
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'item',
+          //     on: 7,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition',
+          
+          // },
+
 
 
           // Add more pre-defined points with their respective pre-determined values

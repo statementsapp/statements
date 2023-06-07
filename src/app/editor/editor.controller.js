@@ -6442,13 +6442,7 @@
                                 
                                 // break;
                               }, 20);
-                              setTimeout(function () {
-                                $scope.$apply(function () {
-                                  
-                                  $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                                });
-                              }, 0);
-
+                              
                             }
                             
                           }    

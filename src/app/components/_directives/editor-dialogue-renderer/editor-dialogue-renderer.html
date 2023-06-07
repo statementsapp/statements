@@ -62,7 +62,8 @@
           ng-style="{ 'background': data[0].documentClaimedBy === userId ? '#f0f0f0' : userColor ? userColor : otherPastels[data[0].authorTable.length-1] }"
           ng-class="{
             'alignright': (message.type === 'assertion' || message.type === 'rejoinder') && message.author !== userId && cowsComeHome,
-            'outgoingmessage': message.author !== userId
+            'outgoingmessage': message.author !== userId,
+            'itstheauthors': userId === data[0].documentClaimedBy
           }"
           spellcheck="false"
           style="margin-top:20px">

@@ -5293,10 +5293,12 @@
                 $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].animate = false;
               
                   
-                }, 1000); // The timeout duration should match the animation duration in the CSS
+                }, 1000); 
+
+                // The timeout duration should match the animation duration in the CSS
             $scope.messageToCopy = {};
 
-            if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
+            if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide && !$scope.hasBeenSetUp){
               $scope.hasChatFocusId = '';
             }
 
@@ -5482,8 +5484,8 @@
         }, 30);                                             // HAS A TIMEOUT
         
         if ($scope.hasBeenSetUp){
-          console.log("The selected prop ds: ", angular.copy($scope.selectedProposition.dialogueSide))
-          console.log("The selected prop ts: ", angular.copy($scope.selectedProposition.textSide))
+          // console.log("The selected prop ds: ", angular.copy($scope.selectedProposition.dialogueSide))
+          // console.log("The selected prop ts: ", angular.copy($scope.selectedProposition.textSide))
         }
 
         setTimeout(function () {

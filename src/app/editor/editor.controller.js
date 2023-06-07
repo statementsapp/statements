@@ -5293,12 +5293,10 @@
                 $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].animate = false;
               
                   
-                }, 1000); 
-
-                // The timeout duration should match the animation duration in the CSS
+                }, 1000); // The timeout duration should match the animation duration in the CSS
             $scope.messageToCopy = {};
 
-            if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide && !$scope.hasBeenSetUp){
+            if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
               $scope.hasChatFocusId = '';
             }
 
@@ -5484,8 +5482,8 @@
         }, 30);                                             // HAS A TIMEOUT
         
         if ($scope.hasBeenSetUp){
-          // console.log("The selected prop ds: ", angular.copy($scope.selectedProposition.dialogueSide))
-          // console.log("The selected prop ts: ", angular.copy($scope.selectedProposition.textSide))
+          console.log("The selected prop ds: ", angular.copy($scope.selectedProposition.dialogueSide))
+          console.log("The selected prop ts: ", angular.copy($scope.selectedProposition.textSide))
         }
 
         setTimeout(function () {
@@ -6171,7 +6169,9 @@
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
                 
-                $scope.inputs.chatProposition = element.textContent;
+                if (messageFlag){
+                  $scope.inputs.chatProposition = element.textContent;
+                }
               } else {
                 element.textContent += text[index];
                 index++;
@@ -6184,7 +6184,9 @@
                     $scope.inputs['left'+id] = element.textContent;
                   }
                 }
-                $scope.inputs.chatProposition = element.textContent;
+                if (messageFlag){
+                  $scope.inputs.chatProposition = element.textContent;
+                }
                 console.log("Element: ", element.textContent)
                 console.log("Chat prop osition: ", $scope.inputs.chatProposition)
               }

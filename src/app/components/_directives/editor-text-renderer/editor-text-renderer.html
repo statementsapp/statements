@@ -638,7 +638,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), selectParagraph(paragraph),
                     selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
          
-         ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph"
+         ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph && data[0].documentClaimedBy === userId"
          id="bottomadder{{paragraph.paragraphId}}"
 
     >
@@ -653,7 +653,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           contenteditable="true"
           id="{{paragraph.paragraphId}}"
           class="right-textarea right-text authorprop"
-          ng-click="$event.stopPropagation()"
+          ng-click="[didItRun(), selectParagraph(paragraph),
+                    selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
           placeholder="textarea"
           ng-model="inputs['bottom'+paragraph.paragraphId]"
           ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"

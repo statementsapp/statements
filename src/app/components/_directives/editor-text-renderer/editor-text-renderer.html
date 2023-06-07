@@ -511,7 +511,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 style=""
                 ng-style="{ 'border-bottom': remark.colorString}"
                 ng-class="{
-                                'reviewerprop': remark.type === 'negation' && cowsComeHome,
+                                'reviewerprop': remark.type === 'negation',
 
                                 'ispresentlybeingdragged': proposition.isPresentlyBeingDragged,
                                 'highlight': highlight.id === remark.id,

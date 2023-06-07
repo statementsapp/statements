@@ -5550,7 +5550,9 @@
       //     tweetButton.classList.add('grow');
       //   });
 
-      
+      $scope.whatsTheEvent = function (event) {
+        console.log("The event: ", angular.copy(event))
+      }
 
       $scope.clearAnimationClass = function () {
         setTimeout(function () {

@@ -277,7 +277,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-keyup="[$event.keyCode === 13 && selectedProposition.dialogueSide !== true ? [whatIsSelectedProp(), proposition.propositionPreSelected = false, prepProposition(inputs['left'+proposition.id], node, paragraph, proposition, $event, 'left'), inputs['left'+proposition.id] = '', $event.stopPropagation()] : inputs.nothing,
                       (inputs['left'+proposition.id] === '' && $event.keyCode === 8) ? inputs.nothing : inputs.nothing]"
                 spellcheck="false"
-                ng-if="(proposition.first && proposition.type !== 'blank')">
+                ng-if="(proposition.first && proposition.type !== 'blank' && userId === data[0]documentClaimedBy)">
 
           </span>
 

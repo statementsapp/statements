@@ -34,7 +34,6 @@
             'underline': message.mouseOver === true,
             'messageupdated': message.text !== message.dialogueText || message.updated,
             'messagedeleted': message.deleted,
-            'negation': (selectedProposition.id === message.id && selectedProposition.type === 'assertion' && selectedProposition.author != userId && (inputs.proposition.charAt(inputs.proposition.length-1) === '!'|| inputs.chatProposition.charAt(inputs.chatProposition.length-1) === '!'))
           }"
         >
           {{message.text ? message.text : message.dialogueText}}

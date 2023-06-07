@@ -1676,7 +1676,7 @@
             
             focusFactory(paragraph.paragraphId);
           });
-        }, 30);
+        }, 10);
       };
 
 

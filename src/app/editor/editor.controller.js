@@ -5897,6 +5897,227 @@
         // } 
 
         // The predefined points
+        $scope.supremeCourtScript = [
+          { index: 0, 
+            
+              author: $scope.userId,
+              text: 'Mr. Chief Justice, and may it please the Court:',
+              dialogueText: function() {
+                              return this.text;
+                            }
+              type: 'assertion',
+              dialogueSide: false,
+              step: undefined,
+              which: 'theBlank',
+              on: undefined,
+              its: undefined,
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
+              
+            
+          },
+          { index: 1, 
+            
+              author: $scope.userId,
+              text: 'Racial classifications are wrong.',
+              dialogueText: function() {
+                              return this.text;
+                            }
+              type: 'assertion',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+
+              which: 'aBlank',
+              on: 0,
+              its: undefined,
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
+            
+          },
+          // { index: 2, 
+            
+          //     author: $scope.userId,
+          //     text: 'Heretofore texting this text fore and away and also this while bok having the bok.',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   }
+          //     type: 'assertion',
+          //     dialogueSide: true,
+          //     which: 'item',
+          //     on: 1,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition',
+          //     messaged: true
+            
+          // },
+          // { index: 3, 
+            
+          //     author: $scope.userId,
+          //     text: 'Other text and with this text there is text and following text there is some statements.',
+          //     dialogueText: 'Other text and with this text there is text and following text there is some statements.',
+          //     type: 'assertion',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+
+          //     which: 'item',
+          //     on: 2,
+          //     its: 'bottom',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+            
+          // },
+          // { index: 4, 
+            
+          //     author: $scope.userId,
+          //     text: 'Lookee here text and text with all the text.',
+          //     dialogueText: 'Lookee here text and text with all the text.',
+          //     type: 'assertion',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+
+          //     which: 'item',
+          //     on: 0,
+          //     its: 'top',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+            
+          // },
+          // { index: 5, 
+           
+          //     author: 'bbb',
+          //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
+          //     dialogueText: 'Bee bee bee text so text and text you can text with the text even more bok.',
+          //     type: 'negation',
+          //     code: '2A',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'item',
+          //     on: 2,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+          
+          // },
+          // { index: 6, 
+            
+          //     author: $scope.userId,
+          //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
+          //     dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
+          //     type: 'assertion',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+
+          //     which: 'item',
+          //     on: 4,
+          //     its: 'left',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+            
+          // },
+          // { index: 7, 
+           
+          //     author: 'ccc',
+          //     text: 'Whoa what about this here two bee in the document there yeah.',
+          //     dialogueText: 'Whoa what about this here two bee in the document there yeah.',
+          //     type: 'negation',
+          //     code: '2B',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'item',
+          //     on: 5,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+          
+          // },
+          // { index: 8, 
+           
+          //     author: $scope.userId,
+          //     text: 'A Section Title',
+          //     dialogueText: 'A Section Title',
+              
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'node',
+          //     on: 6,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
+          
+          // },
+          // { index: 9, 
+           
+          //     author: $scope.userId,
+          //     text: 'Announcing a first sentence of text in a new section.',
+          //     dialogueText: 'Announcing a first sentence of text in a new section.',
+              
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'item',
+          //     on: 8,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition',
+          //     onBlank: true
+          
+          // },
+          // { index: 10, 
+           
+          //     author: $scope.userId,
+          //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+          //     dialogueText: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+              
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
+              
+          //     which: 'item',
+          //     on: 7,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition',
+          
+          // },
+
+
+
+          // Add more pre-defined points with their respective pre-determined values
+        ];
+
+
         $scope.preDefinedPoints = [
           { index: 0, 
             
@@ -6110,6 +6331,8 @@
 
           // Add more pre-defined points with their respective pre-determined values
         ];
+        $scope.preDefinedPoints = $scope.supremeCourtScript;
+        
         $scope.simulateUser(0);
       }
 

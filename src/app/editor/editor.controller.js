@@ -5938,24 +5938,42 @@
               action: 'proposition'
             
           },
-          // { index: 2, 
+          { index: 2, 
             
-          //     author: $scope.userId,
-          //     text: 'Heretofore texting this text fore and away and also this while bok having the bok.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   }
-          //     type: 'assertion',
-          //     dialogueSide: true,
-          //     which: 'item',
-          //     on: 1,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
-          //     messaged: true
+              author: $scope.userId,
+              text: 'That principle was enshrined in our law at great cost following the Civil War.',
+              dialogueText: function() {
+                              return this.text;
+                            }
+              type: 'assertion',
+              dialogueSide: false,
+              which: 'item',
+              on: 1,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition',
+              messaged: false
             
-          // },
+          },
+          { index: 3, 
+            
+              author: $scope.userId,
+              text: "A century of resistance to race neutrality followed, but this Court's landmark decision in Brown finally and firmly rejected the view that racial classifications have any role to play in providing educational opportunities.",
+              dialogueText: function() {
+                              return this.text;
+                            }
+              type: 'assertion',
+              dialogueSide: false,
+              which: 'item',
+              on: 2,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition',
+              messaged: false
+            
+          },
           // { index: 3, 
             
           //     author: $scope.userId,

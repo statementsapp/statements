@@ -6567,6 +6567,7 @@
               } else if (theStep.which === 'aBlank'){
                 var theNodeTopic = theOn.text;
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  console.log("A blank for: ", h)
                   if ($scope.data[0].nodes[h].topic === theNodeTopic){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)

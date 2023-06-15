@@ -6567,10 +6567,10 @@
               } else if (theStep.which === 'aBlank'){
                 var theNodeTopic = theOn.text;
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  console.log("Topic: ", $scope.data[0].nodes[h].topic)
-                  console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
+                  // console.log("Topic: ", $scope.data[0].nodes[h].topic)
+                  // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
-                  if ($scope.data[0].nodes[h].topic === $scope.preDefinedPoints[theOn].text){
+                  if ($scope.data[0].nodes[h].topicslice(0, 6) === $scope.preDefinedPoints[theOn].textslice(0, 6)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {

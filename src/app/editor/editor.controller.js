@@ -5974,25 +5974,27 @@
               messaged: false
             
           },
-          // { index: 3, 
+          { index: 4, 
             
-          //     author: $scope.userId,
-          //     text: 'Other text and with this text there is text and following text there is some statements.',
-          //     dialogueText: 'Other text and with this text there is text and following text there is some statements.',
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: $scope.userId,
+              text: "Since then, the Court has broadly enforced the Constitution's prohibition on the use of racial classifications.",
+              dialogueText: function() {
+                              return this.text;
+                            },
+              type: 'assertion',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
 
-          //     which: 'item',
-          //     on: 2,
-          //     its: 'bottom',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'item',
+              on: 3,
+              its: 'bottom',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
             
-          // },
+          },
           // { index: 4, 
             
           //     author: $scope.userId,

@@ -5904,7 +5904,7 @@
               text: 'Mr. Chief Justice, and may it please the Court:',
               dialogueText: function() {
                               return this.text;
-                            }
+                            },
               type: 'assertion',
               dialogueSide: false,
               step: undefined,
@@ -5923,7 +5923,7 @@
               text: 'Racial classifications are wrong.',
               dialogueText: function() {
                               return this.text;
-                            }
+                            },
               type: 'assertion',
               dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
@@ -6332,7 +6332,7 @@
           // Add more pre-defined points with their respective pre-determined values
         ];
         $scope.preDefinedPoints = $scope.supremeCourtScript;
-        
+
         $scope.simulateUser(0);
       }
 

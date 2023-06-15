@@ -20,6 +20,7 @@
           'deleted': message.deleted === true,
           'sent': message.author === userId,
           'received': message.author !== userId,
+          'bigun':message.dialogueText.length > 200
         }"
         style="background-color: {{ message.color }}"
         ng-click="[

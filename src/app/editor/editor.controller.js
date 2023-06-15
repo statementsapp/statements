@@ -5944,7 +5944,7 @@
               text: 'That principle was enshrined in our law at great cost following the Civil War.',
               dialogueText: function() {
                               return this.text;
-                            }
+                            },
               type: 'assertion',
               dialogueSide: false,
               which: 'item',
@@ -5962,7 +5962,7 @@
               text: "A century of resistance to race neutrality followed, but this Court's landmark decision in Brown finally and firmly rejected the view that racial classifications have any role to play in providing educational opportunities.",
               dialogueText: function() {
                               return this.text;
-                            }
+                            },
               type: 'assertion',
               dialogueSide: false,
               which: 'item',

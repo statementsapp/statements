@@ -6570,7 +6570,7 @@
                   // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                   // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
-                  if ($scope.data[0].nodes[h].topicslice(0, 6) === $scope.preDefinedPoints[theOn].textslice(0, 6)){
+                  if ($scope.data[0].nodes[h].topic.slice(0, 6) === $scope.preDefinedPoints[theOn].text.slice(0, 6)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {

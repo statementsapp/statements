@@ -6540,7 +6540,7 @@
 
 
 
-        // Function to simulate the second user's action
+        // Simulating a user
         $scope.simulateUser = function(index) {
           // simulate script
           
@@ -6555,12 +6555,24 @@
                 for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
                   for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
                     if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
-                      var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
+                      var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                       setTimeout(function () {
                         document.getElementById(thisHereId).click();
                       }, 20);
                       break;
                     }
+                  }
+                }
+                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+              } else if (theStep.which === 'aBlank'){
+                var theNodeTopic = theOn.text;
+                for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  if ($scope.data[0].nodes[h].topic === theNodeTopic){
+                    var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
+                    setTimeout(function () {
+                      document.getElementById(thisHereId).click();
+                    }, 20);
+                    break;
                   }
                 }
                 populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)

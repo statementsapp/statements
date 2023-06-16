@@ -5995,25 +5995,28 @@
               action: 'proposition'
             
           },
-          // { index: 4, 
+          { index: 5, 
             
-          //     author: $scope.userId,
-          //     text: 'Lookee here text and text with all the text.',
-          //     dialogueText: 'Lookee here text and text with all the text.',
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: $scope.userId,
+              text: 'Whatever factors the government may use in deciding which jurors to sit, who you may marry, or which primary schools our children can attend, skin color is not one of them.',
+              dialogueText: function() {
+                              return this.text;
+                            },
+              type: 'assertion',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
 
-          //     which: 'item',
-          //     on: 0,
-          //     its: 'top',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'item',
+              on: 4,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition',
+              messaged: false
             
-          // },
+          },
           // { index: 5, 
            
           //     author: 'bbb',

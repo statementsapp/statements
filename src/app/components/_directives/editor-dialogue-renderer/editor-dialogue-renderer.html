@@ -8,7 +8,8 @@
       ng-class="{
         'sent': message.author === userId,
         'received': message.author !== userId,
-        'itstheauthors': message.author === userId
+        'itstheauthors': message.author === userId,
+        'bigun':message.dialogueText.length > 100
       }"
       id="{{'wholemessage'+ message.id}}
       "
@@ -20,7 +21,7 @@
           'deleted': message.deleted === true,
           'sent': message.author === userId,
           'received': message.author !== userId,
-          'bigun':message.dialogueText.length > 100
+
         }"
         style="background-color: {{ message.color }}"
         ng-click="[

@@ -3988,6 +3988,8 @@
         // console.log("Socket: ", socketService)
         // socketService.connect();
 
+        $scope.statementHighlightIs = '';
+
         //      CLEARS THINGS AND EMITS THE PAYLOAD
         chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId);
 

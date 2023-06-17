@@ -88,7 +88,7 @@
                              type="button"
                              uib-tooltip="Short Editor"
                              ng-click="toggleEditorShortening()"
-                             ng-if="!cowsComeHome">
+                             ng-if="cowsComeHome">
                        <i class="fa-duotone fa-arrow-up-short-wide"></i>
                      </button>
                      
@@ -96,9 +96,10 @@
                              type="button"
                              uib-tooltip="Diagnostics"
                              ng-click="toggleDiagnostics()"
-                             ng-if="!cowsComeHome">
+                             ng-if="cowsComeHome">
                        <i class="fa-duotone fa-stethoscope"></i>
                      </button>
+
                      <a download="export.txt" style="" id="downloadlink">
 
                        <button class="btn menubutton btn-primary help downloadbutton"

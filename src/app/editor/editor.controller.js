@@ -1111,7 +1111,7 @@
                     // in case you need some middle click things
                     break;
                 case 3:
-                    
+                    console.log("Right click")
                     event.preventDefault();
                     if (flag){
                       console.log("flag")

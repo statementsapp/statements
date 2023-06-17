@@ -6367,11 +6367,14 @@
         function setCursorPosition(element) {
           var range = document.createRange();
           var selection = window.getSelection();
-          range.selectNodeContents(element);
-          range.collapse(false); // collapse the range to the end
+          var lastChild = element.lastChild;
+
+          range.setStart(lastChild, lastChild.length);
+          range.collapse(true);
           selection.removeAllRanges();
           selection.addRange(range);
         }
+
 
 
         function populateElementWithText(text, id, messageFlag, nodeFlag, theStep) {

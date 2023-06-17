@@ -3749,7 +3749,7 @@
             }
           }
 
-          if (prep.capacityCount < 2){
+          if (prep.capacityCount < 2 && false){
             console.log("3a")
             prep.code = '3A';
             prep.topic = $scope.selectedProposition.topic;

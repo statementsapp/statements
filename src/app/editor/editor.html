@@ -38,6 +38,7 @@
                type="button"
                uib-tooltip="Log In"
                ng-click="openLoginModal()"
+               ng-if="cowsComeHome"
                >
          <span style="color: black" id="exporttext">(Log In)</span>
        </button>
@@ -52,6 +53,7 @@
                type="button"
                uib-tooltip="Log In"
                ng-click="logout()"
+               ng-if="false"
                >
          <span style="color: black" id="exporttext">(Logout)</span>
        </button>
@@ -59,6 +61,7 @@
                type="button"
                uib-tooltip="Billing"
                ng-click="openBillingPortal()"
+               ng-if="false"
                >
          <span style="color: black" id="billingtext">(Billing)</span>
        </button>

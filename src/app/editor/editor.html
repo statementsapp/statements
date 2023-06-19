@@ -500,7 +500,7 @@
         >
           <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
               ui-tree-node
-              ng-class="{ mousedovernode: node.mouseOver === true }"
+              ng-class="{ 'mousedovernode': node.mouseOver === true, 'setupcaret' : hasBeenSetUp }"
               class="angular-ui-tree-node node"
               id="{{node.nodeId}}"
               ng-if="!node.hiddenForAll">

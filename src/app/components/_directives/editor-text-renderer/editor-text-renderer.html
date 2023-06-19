@@ -71,7 +71,7 @@
     ng-enter="[$event.preventDefault(), updateNode(node)]"
     class="nodetitle"
     ng-click="draggingNode && cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : data[0].documentClaimedBy === userId ? [setNodeEditability(node), $event.stopPropagation()] :$event.stopPropagation() "
-    ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
+    ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId && draggingNode}"
     id="nodetitle{{node.nodeId}}"
     ng-enter="updateNode(node)">
         {{node.topic}}

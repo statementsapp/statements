@@ -127,7 +127,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     <div delayed-ng-if="(paragraph.topAdd == true && hasTopFocus === paragraph.paragraphId) || data[0].documentClaimedBy === userId && paragraph.topMouseOver || hasTopFocus === paragraph.paragraphId && !draggingNode"
          ng-mouseover = "paragraph.topMouseOver = true"
          ng-mouseleave = "paragraph.topMouseOver = false"
-         ng-click="(!inputs['top'+paragraph.paragraphId] && !draggingParagraph && !draggingProposition) ? [didItRunOk(), topAddFunction(node, paragraph), $event.stopPropagation()] : (((draggingProposition && cancelListenForDoubleClick) || (draggingParagraph && cancelListenForDoubleClick) && ('top'+paragraph.paragraphId) !== draggedParagraph.paragraphId))) ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : catchFunction()"
+         ng-click="(!inputs['top'+paragraph.paragraphId] && !draggingParagraph && !draggingProposition) ? [didItRunOk(), topAddFunction(node, paragraph), $event.stopPropagation()] : (((draggingProposition && cancelListenForDoubleClick) || (draggingParagraph && cancelListenForDoubleClick) && ('top'+paragraph.paragraphId) !== draggedParagraph.paragraphId)) ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : catchFunction()"
          delay="200"
          class="addparagraph exclude"
          ng-class="{'topaddpadding': paragraph.topAdd}"

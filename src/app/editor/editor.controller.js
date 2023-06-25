@@ -2689,6 +2689,10 @@
 
       // }
 
+      $scope.catchFunction = function () {
+        console.log("Cancel listen for double click: ", angular.copy($scope.cancelListenForDoubleClick))
+      }
+
       $scope.highlightParagraph = function (node, paragraph){
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){

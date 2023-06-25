@@ -153,7 +153,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          ng-mouseover="paragraph.topMouseOver ? paragraph.topMouseOver = false : startTopParagraphAdderTimer(paragraph)"
          ng-mouseleave="[stopTopParagraphAdderTimer(paragraph), inputs['top'+paragraph.paragraphId] !== '' ? clearPlaceholderTop(paragraph) : inputs.nothing]"
          ng-if="hasTopFocus !== paragraph.paragraphId && !paragraph.theBlankParagraph && paragraph.first"
-         ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : [
+         ng-click="(!inputs['top'+paragraph.paragraphId] && !draggingParagraph && !draggingProposition) ? [didItRunOk(), topAddFunction(node, paragraph), $event.stopPropagation()] : (((draggingProposition && cancelListenForDoubleClick) || (draggingParagraph && cancelListenForDoubleClick) && ('top'+paragraph.paragraphId) !== draggedParagraph.paragraphId))) ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : [
                     topAddFunction(node, paragraph),
                     hideExpandingTextarea(),
                     selectParagraph(paragraph),

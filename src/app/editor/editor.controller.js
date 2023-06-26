@@ -7469,6 +7469,7 @@
               if (!$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
                 for (var k = $scope.data[0].nodes[i].paragraphs[j].propositions.length-1; k > -1; k--){
                   if (!$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                    console.log("K hit: ", angular.copu(k))
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index &&
                       $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarksExpanded){
                     
@@ -7508,6 +7509,7 @@
                       return;
 
                     } else if (!index) {
+                      console.log("Else get last")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)

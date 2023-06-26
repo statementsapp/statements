@@ -16,13 +16,15 @@
     >
       <span 
         id="message{{message.id}}"
-        class="tree-node tree-node-content remark remarkparagraph speech-bubble"
+        
         ng-class="{
+          'bigun':message.text.length > 100,
           'deleted': message.deleted === true,
           'sent': message.author === userId,
           'received': message.author !== userId,
-          'bigun':message.text.length > 100
+
         }"
+        class="tree-node tree-node-content remark remarkparagraph speech-bubble"
         style="background-color: {{ message.color }}"
         ng-click="[
           (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), selectPropositionById(message.id, selectedProposition), selectedProposition.textSide = false] : inputs.nothing]

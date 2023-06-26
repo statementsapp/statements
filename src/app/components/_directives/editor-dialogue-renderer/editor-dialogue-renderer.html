@@ -19,6 +19,7 @@
         
         ng-class="{
           'bigun':message.text.length > 100,
+          'normalun':message.text.length <= 100,
           'deleted': message.deleted === true,
           'sent': message.author === userId,
           'received': message.author !== userId,

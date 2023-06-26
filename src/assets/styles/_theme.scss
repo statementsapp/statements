@@ -17,8 +17,9 @@ form input::-webkit-input-placeholder {
 
 .speech-bubble {
   position: relative;
-  padding: 15px;
-  padding-left:25px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   cursor: pointer;
   overflow: hidden;
   background: #fff;

@@ -5531,6 +5531,8 @@
               // $scope.userActions[$scope.userActions.length-1].id, 
               // $scope.userActions[$scope.userActions.length-1].onIndex,
               // $scope.userActions[$scope.userActions.length-1].deletionIndex);
+          } else {
+            $scope.hasBeenSetUp = false;
           }
         }
         // Check if it's time to simulate the second user's action

@@ -19,21 +19,23 @@
                ng-click="openRegisterModal()"
                style="background-color: rgb(12,35,64); color: white;"
                >
-         <span style="color: black" id="exporttext">(Get Statements)</span>
+         <span  id="exporttext">(Get Statements)</span>
        </button>
        <button class="btn menubutton"
                type="button"
                uib-tooltip="Populate Script"
                ng-click="[setupScript(), $event.stopPropagation()]"
+               style="background-color: rgb(12,35,64); color: white;"
                >
-         <span style="color: black" id="exporttext">(Populate Script)</span>
+         <span  id="exporttext">(Populate Script)</span>
        </button>
        <button class="btn menubutton"
                type="button"
                uib-tooltip="Register"
                ng-click="openLibraryModal()"
+               style="background-color: rgb(12,35,64); color: white;"
                >
-         <span style="color: black" id="exporttext">(Library)</span>
+         <span id="exporttext">(Library)</span>
        </button>
        <button class="btn menubutton"
                type="button"
@@ -74,7 +76,8 @@
                              ng-if="!cowsComeHome"
                              type="button"
                              uib-tooltip="Share Link"
-                             ng-click="copyLink()">
+                             ng-click="copyLink()"
+                             style="background-color: rgb(12,35,64); color: white;">
             <i class="glyphicon glyphicon-book"></i>
         </button>
                      
@@ -112,8 +115,9 @@
                              ng-mouseover="[makeTextFile(), exportMouseover = true]"
                              ng-mouseleave= "exportMouseover = false;"
                              ng-class= "{'exportcolor': exportMouseover}"
-                             ng-click="clickDownloadLink()">
-                <span style="color: blue" id="exporttext">Export</span>
+                             ng-click="clickDownloadLink()"
+                             style="background-color: rgb(12,35,64); color: white;">
+                <span id="exporttext">Export</span>
             </button>
         </a>
 

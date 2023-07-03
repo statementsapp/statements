@@ -3365,6 +3365,8 @@
         }
       }
 
+
+
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
         console.log("Prep proposition paragraph: ", paragraph)
         console.log("The input: ", input)
@@ -5629,6 +5631,139 @@
       $scope.clearThreadAdding = function () {
         $scope.threadAdding = '';
       };
+
+      $scope.mouseOverMessageShow = function () {
+        console.log("Mouseover message show")
+        $scope.inputs.chatProposition = '|';
+        for (var i = 0; i < $scope.data[0].nodes.length; i++){
+          for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
+            for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
+              for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
+                if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id === id &&
+                  !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].droppedElsewhere){
+                  console.log("SHOW HIT")
+                  $scope.selectedNode = angular.copy($scope.data[0].nodes[i]);
+                  $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
+
+                  $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m];
+                  $scope.hasChatFocusId = id;
+                  setTimeout(function () {
+                     console.log("HAS SHOW ID: ", $scope.hasChatFocusId)
+                     focusFactory('input'+id);
+                  }, 20);
+                  break;
+                }
+              }
+              if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === id &&
+                !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
+                $scope.data[0].nodes[i].paragraphs[j].propositions[k][$scope.userId] !== 'hidden'){
+                console.log("OTHER SHOW HIT")
+                $scope.selectedNode = angular.copy($scope.data[0].nodes[i]);
+                $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
+
+                $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
+                console.log("Selected Node SHOW: ", $scope.selectedNode)
+                console.log("Selected Paragraph SHOW: ", $scope.selectedParagraph)
+                console.log("Selected Proposition: SHOW ", $scope.selectedProposition)
+                $scope.selectedProposition.dialogueSide = true;
+                $scope.selectedProposition.textSide = false;
+                
+                
+                  
+                    $scope.hasChatFocusId = id;
+                
+
+                
+                setTimeout(function () {
+                   console.log(document.getElementById('input'+ id));
+                   focusFactory('input'+ id);
+                }, 20);
+                break;
+
+              }
+            }
+          }
+        }
+
+        $scope.foundIt = undefined;
+
+        function traverseArray(arr) {
+          arr.forEach(function (x) {
+            traverse(x);
+          });
+        }
+
+        function traverseObject(obj) {
+          for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+              traverse(obj[key], key, obj);
+            }
+          }
+        }
+
+        function traverse(x, key, obj) {
+          if (isArray(x) && !$scope.foundIt) {
+            traverseArray(x);
+          } else if ((typeof x === 'object') && (x !== null) && !$scope.foundIt) {
+            traverseObject(x);
+          } else if (!$scope.foundIt){
+            if (key === 'paragraphId' && !obj.isDraggedParagraph) {
+              for (var i = 0; i < obj.propositions.length; i++) {
+                if (obj.propositions[i].id === id && obj.propositions[i][$scope.userId] !== 'hidden' &&
+                  !obj.propositions[i].hiddenForAll){
+                    $scope.selectedParagraph = angular.copy(obj);
+                    $scope.selectedProposition = angular.copy(obj.propositions[i]);
+                    $scope.selectedNode = eval(obj.propositions[i].nodePath);
+                    $scope.foundIt = true;
+                    break;
+                }
+              }
+
+              setTimeout(function () {
+                $scope.mark = {};
+                $scope.highlight = {};
+                if ($scope.selectedProposition) {
+                  if ($scope.selectedProposition.id) {
+                    $('#' + $scope.selectedProposition.id + $scope.selectedThread.threadId)
+                          .expanding();
+                    $('#' + $scope.selectedProposition.id + $scope.selectedThread.threadId)
+                          .expanding();
+                    $scope.hasChatFocusId = $scope.selectedProposition.id;
+                  } else {
+                    $('#' + $scope.selectedProposition.id + $scope.selectedThread.threadId)
+                          .expanding();
+                    $('#' + $scope.selectedProposition.id + $scope.selectedThread.threadId)
+                          .expanding();
+                    $scope.hasChatFocusId = $scope.selectedProposition.id;
+                  }
+                } else {
+                  $('#' + $scope.selectedProposition.id + $scope.selectedThread.threadId)
+                        .expanding();
+                  $('#' + $scope.selectedProposition.id + $scope.selectedThread.threadId)
+                        .expanding();
+                  $scope.hasChatFocusId = $scope.selectedProposition.id;
+                }
+                $scope.selectedProposition.dialogueSide = true;
+                var destination = document.getElementById('proposition' + $scope.selectedProposition.id);
+                if (destination) {
+                  destination.scrollIntoView({behavior: 'smooth'});
+                }
+                var query = '#' + $scope.selectedProposition.id + $scope.selectedThread.threadId;
+                $scope.$apply(function () {
+                  $(query).parent().show();
+                  $(query).expanding();
+                  $(query).focus();
+                });
+              }, 20);
+              temp = {};
+              if ($scope.foundIt){
+                return;
+              }
+
+            }
+          }
+        }
+      }
 
       $scope.selectPropositionById = function (id) {
         console.log("Selecting by id")

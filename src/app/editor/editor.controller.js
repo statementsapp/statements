@@ -2500,8 +2500,9 @@
         console.log("It ran")
       }
 
-      $scope.didItRunOk = function (id) {
+      $scope.didItRunOk = function (event) {
         console.log("It ran okay")
+        console.log("That event is: ", event)
       }
 
       $scope.getReading = function (event, id) {

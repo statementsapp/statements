@@ -8271,15 +8271,18 @@
         onClick: $scope.logout
       },
     ];
+
+    $(document).ready(function() {
+      $('[ui-view]').attr('id', 'wholedamneditor');
+    });
+
+    document.getElementById('wholedamneditor').style.backgroundColor = '#0C2340';
+    document.getElementById('wholedamneditor').style.height = '100vh';
+    
     if ($rootScope.guest && !$scope.bookId) {
       $scope.openNewBookModal();
     } else if (!$scope.bookId){
-      $(document).ready(function() {
-        $('[ui-view]').attr('id', 'wholedamneditor');
-      });
-
-      document.getElementById('wholedamneditor').style.backgroundColor = '#0C2340';
-      document.getElementById('wholedamneditor').style.height = '100vh';
+      
       $scope.openLibraryModal();
     } else if (!$rootScope.guest){
       // console.log("LAST ELSE")

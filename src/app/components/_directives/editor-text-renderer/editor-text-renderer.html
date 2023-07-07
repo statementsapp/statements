@@ -654,8 +654,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           id="{{paragraph.paragraphId}}"
           class="right-textarea right-text authorprop"
           placeholder="textarea"
-          ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), didItRunOk($event), selectParagraph(paragraph),
-                     selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
+          ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : $event.type !== 'click' ? [didItRun(), didItRunOk($event), selectParagraph(paragraph),
+                     selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)] : inputs.nothing"
           ng-model="inputs['bottom'+paragraph.paragraphId]"
           ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"
           ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs['bottom'+paragraph.paragraphId], node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs['bottom'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"

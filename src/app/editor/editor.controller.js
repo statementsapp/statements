@@ -4425,14 +4425,16 @@
             } else if (payload.code === '2B'){
               console.log("2b")
               for (var i = 0; i < $scope.data[0].nodes.length; i++){
-
+                console.log('2b i: ', angular.copy(i))
                 for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
-
+                  console.log('2b j: ', angular.copy(j))
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
+                    console.log('2b k: ', angular.copy(k))
                       if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id){
                         apply.nodeTarget = angular.copy(i);
                         apply.paragraphTarget = angular.copy(j);
                         apply.propTarget = angular.copy(k);
+                        console.log('2b hit:')
                         break;
                       }
 

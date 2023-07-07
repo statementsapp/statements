@@ -579,7 +579,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-click="$event.type === 'click' ? [assignRightFocus(remark.id, $event), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id, didItRun() ] : inputs.nothing"
                 ng-mouseover="paragraph.disableRightCursor = false"
                 ng-model="inputs['remark'+remark.id]"
-                
+                ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[remark.id] != '' ? $event.preventDefault() : inputs.nothing;"
                 ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId && inputs['remark'+remark.id] != '' ? remarkInputString : 'none'}"
                 ng-keyup="
 

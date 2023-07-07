@@ -4430,14 +4430,16 @@
                   console.log('2b j: ', angular.copy(j))
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                     console.log('2b k: ', angular.copy(k))
-                      if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id){
+                    for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
+                      if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id === payload.of.id){
+                        // the of id on the payload is a negation, but the above looks for a proposition
                         apply.nodeTarget = angular.copy(i);
                         apply.paragraphTarget = angular.copy(j);
                         apply.propTarget = angular.copy(k);
                         console.log('2b hit:')
                         break;
                       }
-
+                    }
                   }
                 }
               }

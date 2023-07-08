@@ -5210,7 +5210,7 @@
                   if ($scope.data[0].dialogue[i].id === payload.of.id &&
                   payload.of.type === 'assertion' &&
                   $scope.hasChatFocusId === $scope.data[0].dialogue[i].id &&
-                  $scope.userId !== payload.author){
+                  i !== $scope.data[0].dialogue.length-1){
                     console.log("Hit. I: ", i)
                     $scope.data[0].dialogue[i]['collision'+$scope.userId] = true;
                     $scope.data[0].dialogue[i].deletedButCollided = true;

@@ -3369,8 +3369,7 @@
 
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
-        console.log("Prep proposition paragraph: ", paragraph)
-        console.log("The input: ", input)
+        console.log("Prepping prop. SP: ", angular.copy($scope.selectedProposition))
         
 
         if (paragraph){

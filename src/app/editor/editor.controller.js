@@ -4548,6 +4548,7 @@
                 console.log("2A click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
+                  document.getElementById(payload.id).style.borderBottomColor = "#0C2340";
                 }, 20);
               } else if (apply.reselectTarget){
                 console.log("2A Collision click")

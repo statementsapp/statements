@@ -3727,7 +3727,6 @@
           //won't run
 
         } else if ($scope.selectedProposition.type === 'negation' &&
-          $scope.selectedProposition.of.type === 'assertion' &&
           $scope.selectedProposition.of.author === $scope.userId &&
           !$scope.draggingProposition &&
           !$scope.draggingParagraph){

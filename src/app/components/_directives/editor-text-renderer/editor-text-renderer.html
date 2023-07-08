@@ -180,7 +180,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           class="propositions"
           ng-mouseover="!hasRightFocus.id ? [lightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = true, $event.stopPropagation(), getReading($event,paragraph.paragraphId)] : inputs.nothing"
           ng-mouseleave="(!draggingParagraph && !draggingProposition) ? [blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = false, $event.stopPropagation()] : inputs.nothing"
-          ng-class="{'addbelownotowned': hasBottomFocus.id == paragraph.paragraphId, 'bottomadd': paragraph.bottomAdd, 'causeoftopadd': paragraph.topAdd}"
+          ng-class="{'addbelownotowned': hasBottomFocus.id == paragraph.paragraphId, 'bottomadd': paragraph.bottomAdd, 'causeoftopadd': paragraph.topAdd,'nonauthorparagraphspacer': userId !== data[0].documentClaimedBy && !paragraph.first}"
           ng-click="threadAdding ? hideThreadAdd() : !paragraph.leftMouseOver && !draggingProposition && !draggingParagraph && $event.keyCode !== 32 && $event.keyCode !== 13 ? [didItRunOk(null), getLastVisiblePropositionInParagraph(node, paragraph, $event), $event.stopPropagation()] : (draggingProposition || draggingParagraph) ? dropItem(node, paragraph, null,'ol', this, $event): inputs.nothing"
           id="propositionsol{{paragraph.paragraphId}}">
           <!-- ng-if="(!proposition.hiddenForAll && !proposition.rejoined && proposition[userId] !== 'hidden') || (proposition.privateFor && proposition.privateFor === userId)" -->

@@ -4558,6 +4558,9 @@
                 setTimeout(function () {
                   document.getElementById('proposition' + copyThis).click();
                 }, 100);
+              } else {
+                console.log("Else element clicking two ay: ", document.getElementById(payload.id))
+                document.getElementById(payload.id).style.borderBottomColor = "#0C2340";
               }
 
             } else if (payload.code === '3B'){

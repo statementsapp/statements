@@ -4478,6 +4478,7 @@
                 console.log("2B click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
+                  document.getElementById(payload.id).style.borderBottomColor = "#0C2340";
                 }, 20);
               } else if (apply.reselectTarget){
                 console.log("2B Collision click")
@@ -4486,6 +4487,7 @@
                 console.log("Copy this: ", copyThis)
                 setTimeout(function () {
                   document.getElementById('proposition' + copyThis).click();
+                  document.getElementById(copyThis).style.borderBottomColor = "#0C2340";
                 }, 100);
               }
 

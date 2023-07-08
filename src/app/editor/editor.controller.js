@@ -4460,7 +4460,7 @@
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                     for (var l = 0; l < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; l++){
                       if ($scope.selectedProposition.id){
-                        if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id === $scope.selectedProposition.id &&
+                        if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id === payload.id &&
                           !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].hiddenForAll &&
                           ($scope.selectedProposition.textSide || !$scope.selectedProposition.dialogueSide)){
                           apply.reselectTarget = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[l].id);

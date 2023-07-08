@@ -4562,7 +4562,7 @@
                 setTimeout(function () {
                   console.log("Else element clicking two ay: ", document.getElementById(payload.of.id))
                   document.getElementById(payload.of.id).style.borderBottomColor = "#0C2340";
-                }, 500);
+                }, 40);
                 
               }
 

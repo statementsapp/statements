@@ -4561,6 +4561,7 @@
               } else {
                 setTimeout(function () {
                   console.log("Else element clicking two ay: ", document.getElementById(payload.of.id))
+                  console.log("Value", angular.copy($scope.inputs[payload.of.id]))
                   // document.getElementById(payload.of.id).style.borderBottomColor = "#0C2340";
                 }, 40);
                 

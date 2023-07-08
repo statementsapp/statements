@@ -5183,8 +5183,9 @@
               console.log($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id)
                 console.log($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type === 'negation')
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].id === payload.of.id ||
-                ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id  &&
-                $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type === 'negation')){
+                ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id ||
+                $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type === 'negation') ||
+                true){
                 // if it's responding to the last one, just push it
                 $scope.data[0].dialogue.push(
                 {
@@ -5201,7 +5202,7 @@
                   muted: payload.muted ? true : undefined,
                   animate: true
                 })
-              } else {  
+              } else if (cowsComeHome){  
                 // 
                 // $scope.data[0].dialogue[i]['collision'+$scope.userId] &&
                 console.log("Else negations")

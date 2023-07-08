@@ -3370,6 +3370,7 @@
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
         console.log("Prepping prop. SP: ", angular.copy($scope.selectedProposition))
+        console.log("Input: ", angular.copy(input))
         
 
         if (paragraph){
@@ -3738,16 +3739,16 @@
           prep.isRejoinder = true;
 
           prep.capacityCount = 0;
-          console.log("Previous messages: ", prep.previousMessages);
+          // console.log("Previous messages: ", prep.previousMessages);
           for (var i = 0; i < paragraph.propositions.length; i++){
             for (var j = 0; j < prep.previousMessages.length; j++){
-              console.log("Considering at ",i,", ",j,":", paragraph.propositions[i])
+              // console.log("Considering at ",i,", ",j,":", paragraph.propositions[i])
               if (paragraph.propositions[i].type === 'assertion' &&
                 paragraph.propositions[i].author === $scope.userId &&
                 paragraph.propositions[i].id === prep.previousMessages[j] &&
                 !paragraph.propositions[i].hiddenForAll){
                 // If it's one of your own rejoinders in the same thread , count it
-                console.log("Adding to capacity count: ", paragraph.propositions[i].text)
+                // console.log("Adding to capacity count: ", paragraph.propositions[i].text)
                 prep.capacityCount++;
               }
             }

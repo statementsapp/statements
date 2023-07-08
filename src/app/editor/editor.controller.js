@@ -4560,8 +4560,8 @@
                 }, 100);
               } else {
                 setTimeout(function () {
-                  console.log("Else element clicking two ay: ", document.getElementById(payload.id))
-                  document.getElementById(payload.id).style.borderBottomColor = "#0C2340";
+                  console.log("Else element clicking two ay: ", document.getElementById(payload.of.id))
+                  document.getElementById(payload.of.id).style.borderBottomColor = "#0C2340";
                 }, 500);
                 
               }

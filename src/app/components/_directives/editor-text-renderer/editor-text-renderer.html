@@ -427,12 +427,12 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
 
           <!-- 'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh, -->
-          {{inputs[proposition.id]}}
+
           <span
             editable-span-ng-model 
             id="{{proposition.id}}"
             class="right-text right-textarea maininput"
-            ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #0c2340' : inputs[proposition.id] != '' ? remarkInputString : '3px solid #0c2340' }"
+            ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #0c2340' : !inputs[proposition.id] ? remarkInputString : '3px solid #0c2340' }"
             ng-class="{
                       'maininputactive': inputs[proposition.id] !== '',
                       'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),

@@ -6515,10 +6515,10 @@
 
 
 
-        // $scope.preDefinedPoints = $scope.supremeCourtScript;
+         $scope.preDefinedPoints = $scope.supremeCourtScript;
 
 
-        
+
 
         $scope.simulateUser(0);
       }

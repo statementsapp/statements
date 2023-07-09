@@ -6512,7 +6512,13 @@
 
           // Add more pre-defined points with their respective pre-determined values
         ];
-        $scope.preDefinedPoints = $scope.supremeCourtScript;
+
+
+
+        // $scope.preDefinedPoints = $scope.supremeCourtScript;
+
+
+        
 
         $scope.simulateUser(0);
       }

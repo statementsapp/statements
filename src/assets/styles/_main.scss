@@ -961,7 +961,7 @@ div#thetext.col-md-12 {
   padding-top: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 textarea.expanding {
@@ -1380,13 +1380,13 @@ form input::-webkit-input-placeholder {
   &.sent {
     //  margin-right: 20px;
     // margin-left: auto;
-    border-radius: 2em 2em 0 2em;
+    border-radius: 3em 3em 0 3em;
   }
 
   &.received {
     
     margin-right: auto;
-    border-radius: 2em 2em 2em 0;
+    border-radius: 3em 3em 3em 0;
   }
 
   p {

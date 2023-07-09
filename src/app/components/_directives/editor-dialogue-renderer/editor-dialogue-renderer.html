@@ -68,7 +68,8 @@
           ng-class="{
             'alignright': (message.type === 'assertion' || message.type === 'rejoinder') && message.author !== userId && cowsComeHome,
             'outgoingmessage': message.author !== userId,
-            'itstheauthors': userId === data[0].documentClaimedBy
+            'itstheauthors': userId === data[0].documentClaimedBy,
+            'bigun':inputs.chatProposition.length > 100,
           }"
           spellcheck="false"
           style="margin-top:20px">

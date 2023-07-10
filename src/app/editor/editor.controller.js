@@ -3835,7 +3835,7 @@
 
         } else if (($scope.selectedProposition.type === 'assertion' &&
           $scope.userId === $scope.data[0].documentClaimedBy) && (!$scope.draggingParagraph || proposition.type !== 'blank') && 
-        (!$scope.draggingProposition || proposition.type !== 'blank')){
+        ($scope.draggedProposition.id || proposition.type !== 'blank')){
           console.log("3g")
           prep.code = '3G';
           prep.topic = $scope.selectedProposition ? $scope.selectedProposition.topic : proposition.topic;

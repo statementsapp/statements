@@ -3467,6 +3467,9 @@
           }
         }
 
+
+        console.log("Later Dragging Proposition: ", angular.copy($scope.draggingProposition))
+        console.log("Later Dragged Id: ", angular.copy($scope.draggedProposition.id))
         //   Topics
 
         // If it's ended with a colon, or a dragged node

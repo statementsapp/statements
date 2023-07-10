@@ -3378,6 +3378,7 @@
         console.log("Prepping prop. SP: ", angular.copy($scope.selectedProposition))
         console.log("Input: ", angular.copy(input))
         console.log("Proposition: ", angular.copy(proposition))
+        console.log("Dragging Proposition: ", angular.copy($scope.draggingProposition))
 
         if (paragraph){
           console.log("Is paragraph")

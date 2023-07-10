@@ -2527,7 +2527,7 @@
 
       $scope.dropItem = function (node, paragraph, proposition, flag, element, event) {
         if (flag === 'ol'){
-          //
+          // disambiguate 'ol' as there are multiple ols
         }
         // console.log("That element: ", $('#paragraphsol' + paragraph.paragraphId))
         if (element && event && flag === 'ol'){
@@ -2612,6 +2612,12 @@
               }, 20);
             } else if ($scope.draggingProposition){
               console.log('Into that dragging proposition')
+
+              if (flag === 'ol'){
+                // 
+              }
+
+
               if (flag === 'left'){
                 console.log("Flag is left")
                 if (proposition.id === $scope.draggedProposition.id){
@@ -3371,7 +3377,7 @@
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
         console.log("Prepping prop. SP: ", angular.copy($scope.selectedProposition))
         console.log("Input: ", angular.copy(input))
-        
+        console.log("Proposition: ", angular.copy(proposition))
 
         if (paragraph){
           console.log("Is paragraph")

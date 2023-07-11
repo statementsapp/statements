@@ -7144,9 +7144,9 @@
                               setTimeout(function () {
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
                                 
-                                break;
-                              }, 20);
-                              
+                                
+                              }, 25);
+                              break;
                             }
                             
                           }    

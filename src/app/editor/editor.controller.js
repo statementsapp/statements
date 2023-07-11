@@ -7150,13 +7150,16 @@
                             }
                             
                           }    
+
                         }
                       }
                     }
                   }
                 }
                 // non-k author props
-
+                if (hasAK){
+                  return;
+                }
 
 
 

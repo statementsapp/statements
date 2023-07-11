@@ -4568,7 +4568,7 @@
                 setTimeout(function () {
                   document.getElementById('proposition' + copyThis).click();
                 }, 100);
-              } else {
+              } else if (!$scope.hasBeenSetUp){
                 setTimeout(function () {
                   console.log("Else element clicking two ay: ", document.getElementById(payload.of.id))
                   console.log("Value", angular.copy($scope.inputs[payload.of.id]))

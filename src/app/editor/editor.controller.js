@@ -6107,7 +6107,7 @@
           { index: 2, 
            
               author: $scope.userId,
-              text: 'And this next sentence',
+              text: 'Hence while negligible at slow speeds, Newtonian kinematics needs to be corrected by means of the Lorentz transformation.',
               dialogueText: function() {
                               return this.text;
                             },
@@ -6128,8 +6128,30 @@
           },
           { index: 3, 
            
+              author: $scope.userId,
+              text: 'Hence while negligible at slow speeds, Newtonian kinematics needs to be corrected by means of the Lorentz transformation.',
+              dialogueText: function() {
+                              return this.text;
+                            },
+              
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
+              
+              which: 'item',
+              on: 1,
+              its: 'self',
+              typeTime: 4000,
+              noClick: false, 
+              action: 'proposition',
+              onBlank: false
+          
+          },
+          { index: 4, 
+           
               author: 'aaa',
-              text: 'This text you want and all this text so on and so forth with all the doc.',
+              text: 'This flies in the face of more than two hundred years of settled physics.',
               dialogueText: function() {
                               return this.text;
                             },
@@ -6148,24 +6170,6 @@
               action: 'proposition'
          
           },
-          // { index: 4, 
-            
-          //     author: $scope.userId,
-          //     text: 'Heretofore texting this text fore and away and also this while bok having the bok.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'assertion',
-          //     dialogueSide: true,
-          //     which: 'item',
-          //     on: 1,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
-          //     messaged: true
-            
-          // },
           // { index: 5, 
             
           //     author: $scope.userId,

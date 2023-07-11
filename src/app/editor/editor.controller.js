@@ -1850,9 +1850,10 @@
       };
 
       $scope.toggleRemarksExpansion = function (proposition){
-        console.log("Toggle remarks")
+        
+        console.log("proposition remarksexpanded BEFORE: ", angular.copy(proposition.remarksExpanded))
         proposition.remarksExpanded = !proposition.remarksExpanded;
-        console.log("proposition remarksexpanded: ", angular.copy(proposition.remarksExpanded))
+        console.log("proposition remarksexpanded: AFTER", angular.copy(proposition.remarksExpanded))
       }
 
       // Processes incomplete edits to one's own propositions

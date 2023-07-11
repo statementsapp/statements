@@ -6570,7 +6570,7 @@
           { index: 0, 
             
               author: $scope.userId,
-              text: 'A ifrst sentence of text and all this content writing with the bok and what about hte bok.',
+              text: 'Position and time are relative to the movement of observers.',
               type: 'assertion',
               dialogueSide: false,
               step: undefined,
@@ -6586,8 +6586,10 @@
           { index: 1, 
            
               author: 'aaa',
-              text: 'This text you want and all this text so on and so forth with all the doc.',
-              dialogueText: 'This text you want and all this text so on and so forth with all the doc.',
+              text: 'This cannot be the case, as there is an absolute time as one can determined by putting a clock on a ship and then returning, finding that the times agree.',
+              dialogueText: function() {
+                              return this.text;
+                            },
               type: 'negation',
               code: '2A',
               dialogueSide: false,
@@ -6606,8 +6608,10 @@
           { index: 2, 
             
               author: $scope.userId,
-              text: 'Heretofore texting this text fore and away and also this while bok having the bok.',
-              dialogueText: 'Heretofore texting this text fore and away and also this while bok having the bok.',
+              text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
+              dialogueText: function() {
+                              return this.text;
+                            },
               type: 'assertion',
               dialogueSide: true,
               which: 'item',
@@ -6622,8 +6626,10 @@
           { index: 3, 
             
               author: $scope.userId,
-              text: 'Other text and with this text there is text and following text there is some statements.',
-              dialogueText: 'Other text and with this text there is text and following text there is some statements.',
+              text: 'This is due to light having a constant but finite speed in a vacuum regardless of movement.',
+              dialogueText: function() {
+                              return this.text;
+                            },
               type: 'assertion',
               dialogueSide: false,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
@@ -6638,142 +6644,156 @@
               action: 'proposition'
             
           },
-          { index: 4, 
+          // { index: 4, 
             
-              author: $scope.userId,
-              text: 'Lookee here text and text with all the text.',
-              dialogueText: 'Lookee here text and text with all the text.',
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+          //     author: $scope.userId,
+          //     text: 'Lookee here text and text with all the text.',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   },
+          //     type: 'assertion',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
 
-              which: 'item',
-              on: 0,
-              its: 'top',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
+          //     which: 'item',
+          //     on: 0,
+          //     its: 'top',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
             
-          },
-          { index: 5, 
+          // },
+          // { index: 5, 
            
-              author: 'bbb',
-              text: 'Bee bee bee text so text and text you can text with the text even more bok.',
-              dialogueText: 'Bee bee bee text so text and text you can text with the text even more bok.',
-              type: 'negation',
-              code: '2A',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+          //     author: 'bbb',
+          //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   },
+          //     type: 'negation',
+          //     code: '2A',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
               
-              which: 'item',
-              on: 2,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
+          //     which: 'item',
+          //     on: 2,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
           
-          },
-          { index: 6, 
+          // },
+          // { index: 6, 
             
-              author: $scope.userId,
-              text: 'Additional left text and look at the left of that text that is on the left in a book.',
-              dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+          //     author: $scope.userId,
+          //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   },
+          //     type: 'assertion',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
 
-              which: 'item',
-              on: 4,
-              its: 'left',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
+          //     which: 'item',
+          //     on: 4,
+          //     its: 'left',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
             
-          },
-          { index: 7, 
+          // },
+          // { index: 7, 
            
-              author: 'ccc',
-              text: 'Whoa what about this here two bee in the document there yeah.',
-              dialogueText: 'Whoa what about this here two bee in the document there yeah.',
-              type: 'negation',
-              code: '2B',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+          //     author: 'ccc',
+          //     text: 'Whoa what about this here two bee in the document there yeah.',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   },
+          //     type: 'negation',
+          //     code: '2B',
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
               
-              which: 'item',
-              on: 5,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
+          //     which: 'item',
+          //     on: 5,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
           
-          },
-          { index: 8, 
+          // },
+          // { index: 8, 
            
-              author: $scope.userId,
-              text: 'A Section Title',
-              dialogueText: 'A Section Title',
+          //     author: $scope.userId,
+          //     text: 'A Section Title',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   },
               
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
               
-              which: 'node',
-              on: 6,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
+          //     which: 'node',
+          //     on: 6,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition'
           
-          },
-          { index: 9, 
+          // },
+          // { index: 9, 
            
-              author: $scope.userId,
-              text: 'Announcing a first sentence of text in a new section.',
-              dialogueText: 'Announcing a first sentence of text in a new section.',
+          //     author: $scope.userId,
+          //     text: 'Announcing a first sentence of text in a new section.',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   },
               
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
               
-              which: 'item',
-              on: 8,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-              onBlank: true
+          //     which: 'item',
+          //     on: 8,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition',
+          //     onBlank: true
           
-          },
-          { index: 10, 
+          // },
+          // { index: 10, 
            
-              author: $scope.userId,
-              text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-              dialogueText: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+          //     author: $scope.userId,
+          //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+          //     dialogueText: function() {
+          //                     return this.text;
+          //                   },
               
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+          //     dialogueSide: false,
+          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+          //     // of: (prep.of ? prep.of : undefined),
               
-              which: 'item',
-              on: 7,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
+          //     which: 'item',
+          //     on: 7,
+          //     its: 'self',
+          //     typeTime: 3000,
+          //     noClick: false, 
+          //     action: 'proposition',
           
-          },
+          // },
 
 
 

@@ -7103,11 +7103,12 @@
                         if (!hasAK &&
                         $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
                         $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
-                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
+                          
                           var thisH = angular.copy(h)
                           var thisI = angular.copy(i)
                           var thisJ = angular.copy(j)
                           var thisK = angular.copy(k)
+                          var thisHereId = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK].id;
                           var hasAK = true;
                           console.log("This here id: ", thisHereId)
                           if (hasAK){

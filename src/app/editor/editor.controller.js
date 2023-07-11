@@ -7136,6 +7136,7 @@
                               }, 0);
                                         
                               setTimeout(function () {
+                                console.log("STILL THIS HERE ID: ", thisHereId)
                                 document.getElementById('proposition'+thisHereId).click();
                               }, 20);
                               setTimeout(function () {

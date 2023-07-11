@@ -6733,7 +6733,7 @@
           { index: 8, 
            
               author: $scope.userId,
-              text: 'A Section Title',
+              text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
               dialogueText: function() {
                               return this.text;
                             },
@@ -6754,7 +6754,7 @@
           { index: 9, 
            
               author: $scope.userId,
-              text: 'Announcing a first sentence of text in a new section.',
+              text: 'More accurate measurements of observables moving at speeds near that of light can be achieved by using the Lorentz transformation.',
               dialogueText: function() {
                               return this.text;
                             },

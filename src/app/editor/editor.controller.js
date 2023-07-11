@@ -6157,16 +6157,13 @@
                             },
               type: 'assertion',
               dialogueSide: true,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
               which: 'item',
               on: 3,
               its: 'self',
               typeTime: 3000,
               noClick: false, 
-              action: 'proposition'
+              action: 'proposition',
+              messaged: true
             
           },
           // { index: 6, 
@@ -6787,7 +6784,7 @@
 
 
          // // $scope.preDefinedPoints = $scope.supremeCourtScript;
-         // $scope.preDefinedPoints = $scope.physics;
+         $scope.preDefinedPoints = $scope.physics;
 
 
 

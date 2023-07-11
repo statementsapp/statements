@@ -6846,13 +6846,15 @@
                     $scope.inputs['left'+id] = element.textContent;
                   }
                 }
-                $scope.inputs[id] = element.textContent;
+                
                 $scope.inputs['remark'+id] = element.textContent;
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
                 
                 if (messageFlag){
                   $scope.inputs.chatProposition = element.textContent;
+                } else {
+                  $scope.inputs[id] = element.textContent;
                 }
               } else {
                 element.textContent += text[index];
@@ -6868,6 +6870,8 @@
                 }
                 if (messageFlag){
                   $scope.inputs.chatProposition = element.textContent;
+                } else {
+                  $scope.inputs[id] = element.textContent;
                 }
                 console.log("Element: ", element.textContent)
                 console.log("Chat prop osition: ", $scope.inputs.chatProposition)

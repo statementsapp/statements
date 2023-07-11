@@ -6786,8 +6786,8 @@
 
 
 
-         // $scope.preDefinedPoints = $scope.supremeCourtScript;
-         $scope.preDefinedPoints = $scope.physics;
+         // // $scope.preDefinedPoints = $scope.supremeCourtScript;
+         // $scope.preDefinedPoints = $scope.physics;
 
 
 

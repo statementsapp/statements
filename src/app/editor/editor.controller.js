@@ -6152,9 +6152,7 @@
             
               author: $scope.userId,
               text: 'Certain recent experiments like those of Michelson and Morley, cast doubt on the theory that light propagates through a luminiferous ether.',
-              dialogueText: function() {
-                              return this.text;
-                            },
+              dialogueText: 'Certain recent experiments like those of Michelson and Morley, cast doubt on the theory that light propagates through a luminiferous ether.'
               type: 'assertion',
               dialogueSide: true,
               which: 'item',
@@ -6162,8 +6160,7 @@
               its: 'self',
               typeTime: 3000,
               noClick: false, 
-              action: 'proposition',
-              messaged: true
+              action: 'proposition'
             
           },
           // { index: 6, 

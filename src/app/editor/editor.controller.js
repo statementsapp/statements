@@ -6156,7 +6156,7 @@
                               return this.text;
                             },
               type: 'assertion',
-              dialogueSide: false,
+              dialogueSide: true,
               // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               // of: (prep.of ? prep.of : undefined),

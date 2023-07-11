@@ -6141,34 +6141,34 @@
               // of: (prep.of ? prep.of : undefined),
               
               which: 'item',
-              on: 2,
+              on: 0,
               its: 'self',
               typeTime: 3000,
               noClick: false, 
               action: 'proposition'
          
           },
-          // { index: 5, 
+          { index: 4, 
             
-          //     author: $scope.userId,
-          //     text: 'Other text and with this text there is text and following text there is some statements.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: $scope.userId,
+              text: 'Certain recent experiments like those of Michelson and Morley, cast doubt on the theory that light propagates through a luminiferous ether.',
+              dialogueText: function() {
+                              return this.text;
+                            },
+              type: 'assertion',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
 
-          //     which: 'item',
-          //     on: 2,
-          //     its: 'bottom',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'item',
+              on: 3,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
             
-          // },
+          },
           // { index: 6, 
             
           //     author: $scope.userId,

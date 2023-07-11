@@ -6644,156 +6644,156 @@
               action: 'proposition'
             
           },
-          // { index: 4, 
+          { index: 4, 
             
-          //     author: $scope.userId,
-          //     text: 'Lookee here text and text with all the text.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: $scope.userId,
+              text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
+              dialogueText: function() {
+                              return this.text;
+                            },
+              type: 'assertion',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
 
-          //     which: 'item',
-          //     on: 0,
-          //     its: 'top',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'item',
+              on: 0,
+              its: 'top',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
             
-          // },
-          // { index: 5, 
+          },
+          { index: 5, 
            
-          //     author: 'bbb',
-          //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'negation',
-          //     code: '2A',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: 'bbb',
+              text: 'Experiments must be run using clocks with greater precision than we currently have.',
+              dialogueText: function() {
+                              return this.text;
+                            },
+              type: 'negation',
+              code: '2A',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
               
-          //     which: 'item',
-          //     on: 2,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'item',
+              on: 2,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
           
-          // },
-          // { index: 6, 
+          },
+          { index: 6, 
             
-          //     author: $scope.userId,
-          //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: $scope.userId,
+              text: 'This paper makes a speculative and iconoclastic claim.',
+              dialogueText: function() {
+                              return this.text;
+                            },
+              type: 'assertion',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
 
-          //     which: 'item',
-          //     on: 4,
-          //     its: 'left',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'item',
+              on: 4,
+              its: 'left',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
             
-          // },
-          // { index: 7, 
+          },
+          { index: 7, 
            
-          //     author: 'ccc',
-          //     text: 'Whoa what about this here two bee in the document there yeah.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'negation',
-          //     code: '2B',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              author: 'ccc',
+              text: 'Whoa what about this here two bee in the document there yeah.',
+              dialogueText: function() {
+                              return this.text;
+                            },
+              type: 'negation',
+              code: '2B',
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
               
-          //     which: 'item',
-          //     on: 5,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'item',
+              on: 5,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
           
-          // },
-          // { index: 8, 
+          },
+          { index: 8, 
            
-          //     author: $scope.userId,
-          //     text: 'A Section Title',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
+              author: $scope.userId,
+              text: 'A Section Title',
+              dialogueText: function() {
+                              return this.text;
+                            },
               
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
               
-          //     which: 'node',
-          //     on: 6,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
+              which: 'node',
+              on: 6,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition'
           
-          // },
-          // { index: 9, 
+          },
+          { index: 9, 
            
-          //     author: $scope.userId,
-          //     text: 'Announcing a first sentence of text in a new section.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
+              author: $scope.userId,
+              text: 'Announcing a first sentence of text in a new section.',
+              dialogueText: function() {
+                              return this.text;
+                            },
               
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
               
-          //     which: 'item',
-          //     on: 8,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
-          //     onBlank: true
+              which: 'item',
+              on: 8,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition',
+              onBlank: true
           
-          // },
-          // { index: 10, 
+          },
+          { index: 10, 
            
-          //     author: $scope.userId,
-          //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
+              author: $scope.userId,
+              text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+              dialogueText: function() {
+                              return this.text;
+                            },
               
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
+              dialogueSide: false,
+              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              // of: (prep.of ? prep.of : undefined),
               
-          //     which: 'item',
-          //     on: 7,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
+              which: 'item',
+              on: 7,
+              its: 'self',
+              typeTime: 3000,
+              noClick: false, 
+              action: 'proposition',
           
-          // },
+          },
 
 
 

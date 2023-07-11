@@ -5559,6 +5559,7 @@
               // $scope.userActions[$scope.userActions.length-1].onIndex,
               // $scope.userActions[$scope.userActions.length-1].deletionIndex);
           } else {
+            console.log("Turning off has been set up")
             $scope.hasBeenSetUp = false;
           }
         }

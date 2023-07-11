@@ -6126,29 +6126,7 @@
               onBlank: false
           
           },
-          { index: 3, 
-           
-              author: $scope.userId,
-              text: 'Hence while negligible at slow speeds, Newtonian kinematics needs to be corrected by means of the Lorentz transformation.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 1,
-              its: 'self',
-              typeTime: 4000,
-              noClick: false, 
-              action: 'proposition',
-              onBlank: false
-          
-          },
-          { index: 4, 
+          { index: 2, 
            
               author: 'aaa',
               text: 'This flies in the face of more than two hundred years of settled physics.',
@@ -6163,7 +6141,7 @@
               // of: (prep.of ? prep.of : undefined),
               
               which: 'item',
-              on: 3,
+              on: 2,
               its: 'self',
               typeTime: 3000,
               noClick: false, 

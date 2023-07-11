@@ -7111,7 +7111,7 @@
                           var thisJ = angular.copy(j)
                           var thisK = angular.copy(k)
                           var thisHereId = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK].id;
-                          console.log("This here id: ", thisHereId)
+                          
                           var hasAK = true;
                           console.log("This here id: ", thisHereId)
                           if (hasAK){
@@ -7144,7 +7144,7 @@
                               setTimeout(function () {
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
                                 
-                                // break;
+                                break;
                               }, 20);
                               
                             }

@@ -63,7 +63,7 @@
 
     $scope.compositeVideoSources = {
       videoSources: [
-        { src: '/assets/movies/NewLoop.mp4', type: 'video/mp4' }
+        { src: '/assets/movies/P1spedupcomposite.mp4', type: 'video/mp4' }
       ]
     };
 

@@ -6043,773 +6043,777 @@
 
 
       $scope.setupScript = function () {
-        console.log("Setting up script")
-        $scope.hasBeenSetUp = true;
-        $scope.userActions = []; // Store the sequence of user actions and their payloads
-        // payloadData: {
-        //   author: $scope.userId,
-        //   text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
-        //   type: 'assertion',
-        //   dialogueSide: false,
-        //   step: 'na'
-        //   which: [node,item, theBlank]
-        //   on: [id, nodeId]
-        //   its [self, left, top, bottom, nodetop, nodebottom]
-        //   blankId: IdFactory.next(),
-        //   textSide: true,
-        //   bookId: $scope.bookId,
-        //   nodeId: IdFactory.next(),
-        //   paragraphId: IdFactory.next(),
-        //   remarkId: IdFactory.next(),
-        //   dropflag: false,
-        //   typeTime: 3000,
-        //   noClick: false, 
-        //   action: proposition
-        // } 
-        
-        $scope.physics = [
-          { index: 0, 
+        $timeout(function () {
+            console.log("Setting up script")
+            $scope.hasBeenSetUp = true;
+            $scope.userActions = []; // Store the sequence of user actions and their payloads
+            // payloadData: {
+            //   author: $scope.userId,
+            //   text: 'A ifrst sentence of text and all this text so much text and what about hte text.',
+            //   type: 'assertion',
+            //   dialogueSide: false,
+            //   step: 'na'
+            //   which: [node,item, theBlank]
+            //   on: [id, nodeId]
+            //   its [self, left, top, bottom, nodetop, nodebottom]
+            //   blankId: IdFactory.next(),
+            //   textSide: true,
+            //   bookId: $scope.bookId,
+            //   nodeId: IdFactory.next(),
+            //   paragraphId: IdFactory.next(),
+            //   remarkId: IdFactory.next(),
+            //   dropflag: false,
+            //   typeTime: 3000,
+            //   noClick: false, 
+            //   action: proposition
+            // } 
             
-              author: $scope.userId,
-              text: 'Both real and apparent measurements of position and time are necessarily relative to the frame of reference of an observer',
-              type: 'assertion',
-              dialogueSide: false,
-              step: undefined,
-              which: 'theBlank',
-              on: undefined,
-              its: undefined,
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
+            $scope.physics = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'Both real and apparent measurements of position and time are necessarily relative to the frame of reference of an observer',
+                  type: 'assertion',
+                  dialogueSide: false,
+                  step: undefined,
+                  which: 'theBlank',
+                  on: undefined,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                  
+                
+              },
+              { index: 1, 
+               
+                  author: $scope.userId,
+                  text: 'This is due to the speed of light, and hence physical interactions, propagating at a constant speed in all directions regardless of the motion of an observable.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 4000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: false
               
-            
-          },
-          { index: 1, 
-           
-              author: $scope.userId,
-              text: 'This is due to the speed of light, and hence physical interactions, propagating at a constant speed in all directions regardless of the motion of an observable.',
-              dialogueText: function() {
-                              return this.text;
-                            },
+              },
+              { index: 2, 
+               
+                  author: $scope.userId,
+                  text: 'Hence while negligible at slow speeds, Newtonian kinematics needs to be corrected by means of the Lorentz transformation.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 4000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: false
               
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
+              },
+              { index: 3, 
+               
+                  author: 'aaa',
+                  text: 'This flies in the face of more than two hundred years of settled physics.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+             
+              },
+              { index: 4, 
+                
+                  author: $scope.userId,
+                  text: 'Certain recent experiments like those of Michelson and Morley, cast doubt on the theory that light propagates through a luminiferous ether.',
+                  dialogueText: 'Certain recent experiments like those of Michelson and Morley, cast doubt on the theory that light propagates through a luminiferous ether.',
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              // { index: 6, 
+                
+              //     author: $scope.userId,
+              //     text: 'Lookee here text and text with all the text.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 0,
+              //     its: 'top',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 7, 
+               
+              //     author: 'bbb',
+              //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              which: 'item',
-              on: 0,
-              its: 'self',
-              typeTime: 4000,
-              noClick: false, 
-              action: 'proposition',
-              onBlank: false
+              // },
+              // { index: 8, 
+                
+              //     author: $scope.userId,
+              //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'left',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 9, 
+               
+              //     author: 'ccc',
+              //     text: 'Whoa what about this here two bee in the document there yeah.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2B',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 10, 
+               
+              //     author: $scope.userId,
+              //     text: 'A Section Title',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'node',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 11, 
+               
+              //     author: $scope.userId,
+              //     text: 'Announcing a first sentence of text in a new section.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
+              
+              // },
+              // { index: 12, 
+               
+              //     author: $scope.userId,
+              //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+
+
+
+              // Add more pre-defined points with their respective pre-determined values
+            ];
+
+            // The predefined points
+            $scope.supremeCourtScript = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'Mr. Chief Justice, and may it please the Court:',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  step: undefined,
+                  which: 'theBlank',
+                  on: undefined,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                  
+                
+              },
+              { index: 1, 
+                
+                  author: $scope.userId,
+                  text: 'Racial classifications are wrong.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'aBlank',
+                  on: 0,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 2, 
+                
+                  author: $scope.userId,
+                  text: 'That principle was enshrined in our law at great cost following the Civil War.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 3, 
+                
+                  author: $scope.userId,
+                  text: "A century of resistance to race neutrality followed, but this Court's landmark decision in Brown finally and firmly rejected the view that racial classifications have any role to play in providing educational opportunities.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 4, 
+                
+                  author: $scope.userId,
+                  text: "Since then, the Court has broadly enforced the Constitution's prohibition on the use of racial classifications.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 3,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 5, 
+                
+                  author: $scope.userId,
+                  text: 'Whatever factors the government may use in deciding which jurors to sit, who you may marry, or which primary schools our children can attend, skin color is not one of them.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              // { index: 5, 
+               
+              //     author: 'bbb',
+              //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
+              //     dialogueText: 'Bee bee bee text so text and text you can text with the text even more bok.',
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 6, 
+                
+              //     author: $scope.userId,
+              //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
+              //     dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'left',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 7, 
+               
+              //     author: 'ccc',
+              //     text: 'Whoa what about this here two bee in the document there yeah.',
+              //     dialogueText: 'Whoa what about this here two bee in the document there yeah.',
+              //     type: 'negation',
+              //     code: '2B',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 8, 
+               
+              //     author: $scope.userId,
+              //     text: 'A Section Title',
+              //     dialogueText: 'A Section Title',
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'node',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 9, 
+               
+              //     author: $scope.userId,
+              //     text: 'Announcing a first sentence of text in a new section.',
+              //     dialogueText: 'Announcing a first sentence of text in a new section.',
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
+              
+              // },
+              // { index: 10, 
+               
+              //     author: $scope.userId,
+              //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+              //     dialogueText: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+
+
+
+              // Add more pre-defined points with their respective pre-determined values
+            ];
+
+
+            $scope.preDefinedPoints = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'Position and time are relative to the movement of observers.',
+                  type: 'assertion',
+                  dialogueSide: false,
+                  step: undefined,
+                  which: 'theBlank',
+                  on: undefined,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                  
+                
+              },
+              { index: 1, 
+               
+                  author: 'aaa',
+                  text: 'This cannot be the case, as there is an absolute time as one can determined by putting a clock on a ship and then returning, finding that the times agree.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+             
+              },
+              { index: 2, 
+                
+                  author: $scope.userId,
+                  text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              { index: 3, 
+                
+                  author: $scope.userId,
+                  text: 'This is due to light having a constant but finite speed in a vacuum regardless of movement.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 2,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 4, 
+                
+                  author: $scope.userId,
+                  text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 0,
+                  its: 'top',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 5, 
+               
+                  author: 'bbb',
+                  text: 'Experiments must be run using clocks with greater precision than we currently have.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+              
+              },
+              { index: 6, 
+                
+                  author: $scope.userId,
+                  text: 'This paper makes a speculative and iconoclastic claim.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 4,
+                  its: 'left',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 7, 
+               
+                  author: 'ccc',
+                  text: 'Whoa what about this here two bee in the document there yeah.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2B',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 5,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+              
+              },
+              { index: 8, 
+               
+                  author: $scope.userId,
+                  text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'node',
+                  on: 6,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+              
+              },
+              { index: 9, 
+               
+                  author: $scope.userId,
+                  text: 'More accurate measurements of observables moving at speeds near that of light can be achieved by using the Lorentz transformation.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 8,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: true
+              
+              },
+              { index: 10, 
+               
+                  author: $scope.userId,
+                  text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 7,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              
+              },
+
+
+
+              // Add more pre-defined points with their respective pre-determined values
+            ];
+
+
+
+             // $scope.preDefinedPoints = $scope.supremeCourtScript;
+             // $scope.preDefinedPoints = $scope.physics;
+
+
+
+
+            $scope.simulateUser(0);
           
-          },
-          { index: 2, 
-           
-              author: $scope.userId,
-              text: 'Hence while negligible at slow speeds, Newtonian kinematics needs to be corrected by means of the Lorentz transformation.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 1,
-              its: 'self',
-              typeTime: 4000,
-              noClick: false, 
-              action: 'proposition',
-              onBlank: false
           
-          },
-          { index: 3, 
-           
-              author: 'aaa',
-              text: 'This flies in the face of more than two hundred years of settled physics.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'negation',
-              code: '2A',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 0,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-         
-          },
-          { index: 4, 
-            
-              author: $scope.userId,
-              text: 'Certain recent experiments like those of Michelson and Morley, cast doubt on the theory that light propagates through a luminiferous ether.',
-              dialogueText: 'Certain recent experiments like those of Michelson and Morley, cast doubt on the theory that light propagates through a luminiferous ether.',
-              type: 'assertion',
-              dialogueSide: true,
-              which: 'item',
-              on: 3,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          // { index: 6, 
-            
-          //     author: $scope.userId,
-          //     text: 'Lookee here text and text with all the text.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-
-          //     which: 'item',
-          //     on: 0,
-          //     its: 'top',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-            
-          // },
-          // { index: 7, 
-           
-          //     author: 'bbb',
-          //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'negation',
-          //     code: '2A',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 2,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-          
-          // },
-          // { index: 8, 
-            
-          //     author: $scope.userId,
-          //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-
-          //     which: 'item',
-          //     on: 4,
-          //     its: 'left',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-            
-          // },
-          // { index: 9, 
-           
-          //     author: 'ccc',
-          //     text: 'Whoa what about this here two bee in the document there yeah.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-          //     type: 'negation',
-          //     code: '2B',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 5,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-          
-          // },
-          // { index: 10, 
-           
-          //     author: $scope.userId,
-          //     text: 'A Section Title',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-              
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'node',
-          //     on: 6,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-          
-          // },
-          // { index: 11, 
-           
-          //     author: $scope.userId,
-          //     text: 'Announcing a first sentence of text in a new section.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-              
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 8,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
-          //     onBlank: true
-          
-          // },
-          // { index: 12, 
-           
-          //     author: $scope.userId,
-          //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-          //     dialogueText: function() {
-          //                     return this.text;
-          //                   },
-              
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 7,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
-          
-          // },
-
-
-
-          // Add more pre-defined points with their respective pre-determined values
-        ];
-
-        // The predefined points
-        $scope.supremeCourtScript = [
-          { index: 0, 
-            
-              author: $scope.userId,
-              text: 'Mr. Chief Justice, and may it please the Court:',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              step: undefined,
-              which: 'theBlank',
-              on: undefined,
-              its: undefined,
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-              
-            
-          },
-          { index: 1, 
-            
-              author: $scope.userId,
-              text: 'Racial classifications are wrong.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'aBlank',
-              on: 0,
-              its: undefined,
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          { index: 2, 
-            
-              author: $scope.userId,
-              text: 'That principle was enshrined in our law at great cost following the Civil War.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              which: 'item',
-              on: 1,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-              messaged: false
-            
-          },
-          { index: 3, 
-            
-              author: $scope.userId,
-              text: "A century of resistance to race neutrality followed, but this Court's landmark decision in Brown finally and firmly rejected the view that racial classifications have any role to play in providing educational opportunities.",
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              which: 'item',
-              on: 2,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-              messaged: false
-            
-          },
-          { index: 4, 
-            
-              author: $scope.userId,
-              text: "Since then, the Court has broadly enforced the Constitution's prohibition on the use of racial classifications.",
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'item',
-              on: 3,
-              its: 'bottom',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          { index: 5, 
-            
-              author: $scope.userId,
-              text: 'Whatever factors the government may use in deciding which jurors to sit, who you may marry, or which primary schools our children can attend, skin color is not one of them.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'item',
-              on: 4,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-              messaged: false
-            
-          },
-          // { index: 5, 
-           
-          //     author: 'bbb',
-          //     text: 'Bee bee bee text so text and text you can text with the text even more bok.',
-          //     dialogueText: 'Bee bee bee text so text and text you can text with the text even more bok.',
-          //     type: 'negation',
-          //     code: '2A',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 2,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-          
-          // },
-          // { index: 6, 
-            
-          //     author: $scope.userId,
-          //     text: 'Additional left text and look at the left of that text that is on the left in a book.',
-          //     dialogueText: 'Additional left text and look at the left of that text that is on the left in a book.',
-          //     type: 'assertion',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-
-          //     which: 'item',
-          //     on: 4,
-          //     its: 'left',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-            
-          // },
-          // { index: 7, 
-           
-          //     author: 'ccc',
-          //     text: 'Whoa what about this here two bee in the document there yeah.',
-          //     dialogueText: 'Whoa what about this here two bee in the document there yeah.',
-          //     type: 'negation',
-          //     code: '2B',
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 5,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-          
-          // },
-          // { index: 8, 
-           
-          //     author: $scope.userId,
-          //     text: 'A Section Title',
-          //     dialogueText: 'A Section Title',
-              
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'node',
-          //     on: 6,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition'
-          
-          // },
-          // { index: 9, 
-           
-          //     author: $scope.userId,
-          //     text: 'Announcing a first sentence of text in a new section.',
-          //     dialogueText: 'Announcing a first sentence of text in a new section.',
-              
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 8,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
-          //     onBlank: true
-          
-          // },
-          // { index: 10, 
-           
-          //     author: $scope.userId,
-          //     text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-          //     dialogueText: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-              
-          //     dialogueSide: false,
-          //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-          //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-          //     // of: (prep.of ? prep.of : undefined),
-              
-          //     which: 'item',
-          //     on: 7,
-          //     its: 'self',
-          //     typeTime: 3000,
-          //     noClick: false, 
-          //     action: 'proposition',
-          
-          // },
-
-
-
-          // Add more pre-defined points with their respective pre-determined values
-        ];
-
-
-        $scope.preDefinedPoints = [
-          { index: 0, 
-            
-              author: $scope.userId,
-              text: 'Position and time are relative to the movement of observers.',
-              type: 'assertion',
-              dialogueSide: false,
-              step: undefined,
-              which: 'theBlank',
-              on: undefined,
-              its: undefined,
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-              
-            
-          },
-          { index: 1, 
-           
-              author: 'aaa',
-              text: 'This cannot be the case, as there is an absolute time as one can determined by putting a clock on a ship and then returning, finding that the times agree.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'negation',
-              code: '2A',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 0,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-         
-          },
-          { index: 2, 
-            
-              author: $scope.userId,
-              text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: true,
-              which: 'item',
-              on: 1,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-              messaged: true
-            
-          },
-          { index: 3, 
-            
-              author: $scope.userId,
-              text: 'This is due to light having a constant but finite speed in a vacuum regardless of movement.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'item',
-              on: 2,
-              its: 'bottom',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          { index: 4, 
-            
-              author: $scope.userId,
-              text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'item',
-              on: 0,
-              its: 'top',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          { index: 5, 
-           
-              author: 'bbb',
-              text: 'Experiments must be run using clocks with greater precision than we currently have.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'negation',
-              code: '2A',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 2,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-          
-          },
-          { index: 6, 
-            
-              author: $scope.userId,
-              text: 'This paper makes a speculative and iconoclastic claim.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'assertion',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-
-              which: 'item',
-              on: 4,
-              its: 'left',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-            
-          },
-          { index: 7, 
-           
-              author: 'ccc',
-              text: 'Whoa what about this here two bee in the document there yeah.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              type: 'negation',
-              code: '2B',
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 5,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-          
-          },
-          { index: 8, 
-           
-              author: $scope.userId,
-              text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'node',
-              on: 6,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition'
-          
-          },
-          { index: 9, 
-           
-              author: $scope.userId,
-              text: 'More accurate measurements of observables moving at speeds near that of light can be achieved by using the Lorentz transformation.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 8,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-              onBlank: true
-          
-          },
-          { index: 10, 
-           
-              author: $scope.userId,
-              text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
-              dialogueText: function() {
-                              return this.text;
-                            },
-              
-              dialogueSide: false,
-              // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              // of: (prep.of ? prep.of : undefined),
-              
-              which: 'item',
-              on: 7,
-              its: 'self',
-              typeTime: 3000,
-              noClick: false, 
-              action: 'proposition',
-          
-          },
-
-
-
-          // Add more pre-defined points with their respective pre-determined values
-        ];
-
-
-
-         // $scope.preDefinedPoints = $scope.supremeCourtScript;
-         // $scope.preDefinedPoints = $scope.physics;
-
-
-
-
-        $scope.simulateUser(0);
-      }
+        }, 2000);
+        }
 
         $scope.clickTypeAndEnter = function(step, id) {
 

@@ -6833,7 +6833,7 @@
             $scope.simulateUser(0);
           
           
-        }, 5000);
+        }, 8000);
         }
 
         $scope.clickTypeAndEnter = function(step, id) {

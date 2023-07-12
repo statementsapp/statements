@@ -6777,7 +6777,7 @@
               { index: 10, 
                
                   author: $scope.userId,
-                  text: 'Look at this text rejoinder opening up the remarks and saying this yeah.',
+                  text: 'Lengths may be contracted and time expanded by means of an additional term, which bears strong mathematical resemblance to the Pythagorean Theorem.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6795,6 +6795,27 @@
                   action: 'proposition',
               
               },
+              // { index: 11, 
+               
+              //     author: $scope.userId,
+              //     text: 'The form the transformation takes...',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 10,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
 
 
 

@@ -6587,7 +6587,7 @@
               { index: 1, 
                
                   author: 'aaa',
-                  text: 'This cannot be the case, as there is an absolute time as one can determined by putting a clock on a ship and then returning, finding that the times agree.',
+                  text: 'This cannot be the case, as there is an absolute time as one can determine by putting a clock on a ship and then returning, finding that the times agree.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6788,7 +6788,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 8,
+                  on: 9,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 

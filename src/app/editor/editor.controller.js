@@ -6603,198 +6603,199 @@
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
-                  action: 'proposition'
-             
-              },
-              { index: 2, 
-                
-                  author: $scope.userId,
-                  text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: true,
-                  which: 'item',
-                  on: 1,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
                   action: 'proposition',
                   messaged: true
-                
+             
               },
-              { index: 3, 
+              // { index: 2, 
                 
-                  author: $scope.userId,
-                  text: 'This is due to light having a constant but finite speed in a vacuum regardless of movement.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: true,
+              //     which: 'item',
+              //     on: 1,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+                
+              // },
+              // { index: 3, 
+                
+              //     author: $scope.userId,
+              //     text: 'This is due to light having a constant but finite speed in a vacuum regardless of movement.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 2,
-                  its: 'bottom',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 4, 
+              // },
+              // { index: 4, 
                 
-                  author: $scope.userId,
-                  text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 0,
-                  its: 'top',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 0,
+              //     its: 'top',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 5, 
+              // },
+              // { index: 5, 
                
-                  author: 'bbb',
-                  text: 'Experiments must be run using clocks with greater precision than we currently have.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'bbb',
+              //     text: 'Experiments must be run using clocks with greater precision than we currently have.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 2,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              },
-              { index: 6, 
+              // },
+              // { index: 6, 
                 
-                  author: $scope.userId,
-                  text: 'This paper makes a speculative and iconoclastic claim.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'This paper makes a speculative and iconoclastic claim.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 4,
-                  its: 'left',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'left',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 7, 
+              // },
+              // { index: 7, 
                
-                  author: 'ccc',
-                  text: 'Whoa what about this here two bee in the document there yeah.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2B',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'ccc',
+              //     text: 'Whoa what about this here two bee in the document there yeah.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2B',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              },
-              { index: 8, 
+              // },
+              // { index: 8, 
                
-                  author: $scope.userId,
-                  text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'node',
-                  on: 6,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'node',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              },
-              { index: 9, 
+              // },
+              // { index: 9, 
                
-                  author: $scope.userId,
-                  text: 'More accurate measurements of observables moving at speeds near that of light can be achieved by using the Lorentz transformation.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'More accurate measurements of observables moving at speeds near that of light can be achieved by using the Lorentz transformation.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 8,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  onBlank: true
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
               
-              },
-              { index: 10, 
+              // },
+              // { index: 10, 
                
-                  author: $scope.userId,
-                  text: 'Lengths may be contracted and time expanded by means of an additional term, which bears strong mathematical resemblance to the Pythagorean Theorem.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'Lengths may be contracted and time expanded by means of an additional term, which bears strong mathematical resemblance to the Pythagorean Theorem.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 9,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
               
-              },
+              // },
               // { index: 11, 
                
               //     author: $scope.userId,

@@ -6724,7 +6724,7 @@
                                   return this.text;
                                 },
                   type: 'negation',
-                  code: '2B',
+                  code: '2A',
                   dialogueSide: false,
                   // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
                   // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
@@ -6735,7 +6735,6 @@
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
-                  action: 'proposition'
               
               },
               { index: 8, 

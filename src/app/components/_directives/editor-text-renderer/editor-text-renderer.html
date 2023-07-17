@@ -483,7 +483,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               ng-model="proposition.remarks"
               class="propositions"
               ng-if="proposition.remarks && proposition.remarksExpanded"
-              ng-mouseleave="proposition.remarksExpanded = false"
+              ng-mouseleave="proposition.remarksAreMousedOver = false; proposition.remarksExpanded = false"
               ng-mouseover = "proposition.remarksAreMousedOver = true"
 
 >

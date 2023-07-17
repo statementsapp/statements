@@ -6725,7 +6725,7 @@
               { index: 7, 
                
                   author: 'ccc',
-                  text: 'Whoa what about this here two bee in the document there yeah.',
+                  text: 'Does this hold for all observers?.',
                   dialogueText: function() {
                                   return this.text;
                                 },

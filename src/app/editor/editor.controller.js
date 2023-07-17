@@ -5843,6 +5843,9 @@
 
                 
                 setTimeout(function () {
+                   if ($scope.selectedProposition.textSide){
+                    $scope.selectedProposition.textSide = null;
+                   }
                    console.log("Final sp: ", angular.copy($scope.selectedProposition))
                    console.log(document.getElementById('input'+ id));
                    focusFactory('input'+ id);

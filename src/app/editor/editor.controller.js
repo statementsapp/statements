@@ -5971,6 +5971,7 @@
       }
 
       $scope.textareaBlur = function (message) {
+        return;
         if (message['collision'+$scope.userId] == true){
           
           setTimeout(function () {

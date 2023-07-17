@@ -6731,7 +6731,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 5,
+                  on: 2,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 

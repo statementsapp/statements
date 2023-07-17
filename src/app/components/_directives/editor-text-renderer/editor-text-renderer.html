@@ -482,7 +482,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               ng-model="proposition.remarks"
               class="propositions"
               ng-if="proposition.remarks && proposition.remarksExpanded"
-              ng-mouseleave="aRemarkIsMousedOver = false; hasRightFocusIdFcn(proposition.remarks, hasRightFocus.id) ? inputs.nothing : toggleRemarksExpansion(proposition)"
+              ng-mouseleave="[aRemarkIsMousedOver = false hasRightFocusIdFcn(proposition.remarks, hasRightFocus.id) ? inputs.nothing : toggleRemarksExpansion(proposition)]"
 
 >
             <!-- ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater(), proposition.remarksExpanded = false]" -->

@@ -5843,6 +5843,7 @@
 
                 
                 setTimeout(function () {
+                   console.log("Final sp: ", angular.copy($scope.selectedProposition))
                    console.log(document.getElementById('input'+ id));
                    focusFactory('input'+ id);
                 }, 20);

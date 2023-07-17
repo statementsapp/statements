@@ -5562,11 +5562,12 @@
               // $scope.userActions[$scope.userActions.length-1].deletionIndex);
           } else {
             console.log("Turning off has been set up")
-            console.log("Selected prop: ", angular.copy($scope.selectedProposition))
+            
             $scope.hasBeenSetUp = false;
             if ($scope.selectedProposition.textSide){
               $scope.selectedProposition.textSide = null;
             }
+            console.log("Selected prop: ", angular.copy($scope.selectedProposition))
           }
         }
         // Check if it's time to simulate the second user's action

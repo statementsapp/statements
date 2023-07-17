@@ -55,12 +55,12 @@
 
         }"
       >
-        <!-- ng-hide="(message.id != hasChatFocusId || (selectedProposition.textSide))" -->
+        
         <textarea 
           ng-blur="textareaBlur(message)" 
           oninput="autoResize(this)"
           ng-show="(message.id === hasChatFocusId)"
-          
+          ng-hide="(message.id != hasChatFocusId)"
           ng-model="inputs.chatProposition"
           class="chatinput dialogueinput thread speech-bubble sent"
           id="input{{message.id}}"

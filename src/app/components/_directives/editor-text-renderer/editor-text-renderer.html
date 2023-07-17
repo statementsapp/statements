@@ -485,13 +485,13 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               ng-mouseleave="aRemarkIsMousedOver = false; hasRightFocusIdFcn(proposition.remarks, hasRightFocus.id) ? inputs.nothing : toggleRemarksExpansion(proposition)"
 
 >
-
+            <!-- ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater(), proposition.remarksExpanded = false]" -->
             <li ng-repeat="remark in proposition.remarks track by $index"
                 id="wholeprop{{remark.id}}"
                 ui-tree-node
                 style="display: inline;"
                 ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph), clearAnimationClass()]"
-                ng-mouseleave="[remark.preSelected = false, clearSavePropositionForLater(), proposition.remarksExpanded = false]"
+                
 
                 ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted)) && proposition.remarksExpanded"
                 ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id, 'remarkhidden': proposition.remarksExpanded && (remark.rejoined || remark[userId] == 'hidden')}"

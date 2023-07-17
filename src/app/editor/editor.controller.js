@@ -6607,24 +6607,24 @@
                   messaged: true
              
               },
-              // { index: 2, 
+              { index: 2, 
                 
-              //     author: $scope.userId,
-              //     text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: true,
-              //     which: 'item',
-              //     on: 1,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  author: $scope.userId,
+                  text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
                 
-              // },
+              },
               // { index: 3, 
                 
               //     author: $scope.userId,
@@ -6834,7 +6834,7 @@
             $scope.simulateUser(0);
           
           
-        }, 8000);
+        }, 7000);
         }
 
         $scope.clickTypeAndEnter = function(step, id) {

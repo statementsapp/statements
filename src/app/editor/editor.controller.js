@@ -6737,6 +6737,7 @@
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
+                  action: 'proposition'
               
               },
               { index: 8, 

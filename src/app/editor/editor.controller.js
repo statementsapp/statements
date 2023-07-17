@@ -5548,8 +5548,10 @@
                 });
               }, 35);
             } else {
+              console.log("Elsing")
               setTimeout(function () {
                 $scope.$apply(function () {
+                  console.log("Firing sim user fcn")
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
                   $scope.simulateUser(angular.copy($scope.userActions.length))
                 });

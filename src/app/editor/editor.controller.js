@@ -6804,28 +6804,28 @@
                   action: 'proposition',
               
               },
-              { index: 11, 
+              // { index: 11, 
                
-                  author: $scope.userId,
-                  text: 'The form the transformation takes...',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'The form the transformation takes...',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
+              // },
 
 
 

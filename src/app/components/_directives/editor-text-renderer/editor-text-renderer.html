@@ -477,12 +477,13 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           <!-- <span>{{(data[0].documentClaimedBy !== userName && !onTheBoard)}}</span> -->
          <!--  End of main input -->
 
+         <!-- ng-mouseleave="aRemarkIsMousedOver = false; proposition.remarksAreMousedOver = false; hasRightFocusIdFcn(proposition.remarks, hasRightFocus.id) ? inputs.nothing : toggleRemarksExpansion(proposition)" -->
           <ol ui-tree-nodes
               style="padding-left: 0px !important; display: inline"
               ng-model="proposition.remarks"
               class="propositions"
               ng-if="proposition.remarks && proposition.remarksExpanded"
-              ng-mouseleave="aRemarkIsMousedOver = false; proposition.remarksAreMousedOver = false; hasRightFocusIdFcn(proposition.remarks, hasRightFocus.id) ? inputs.nothing : toggleRemarksExpansion(proposition)"
+              ng-mouseleave="propoosition.remarksExpanded = false"
               ng-mouseover = "proposition.remarksAreMousedOver = true"
 
 >

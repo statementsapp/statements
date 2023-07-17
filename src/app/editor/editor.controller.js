@@ -5564,6 +5564,9 @@
             console.log("Turning off has been set up")
             console.log("Selected prop: ", angular.copy($scope.selectedProposition))
             $scope.hasBeenSetUp = false;
+            if ($scope.selectedProposition.textSide){
+              $scope.selectedProposition.textSide = null;
+            }
           }
         }
         // Check if it's time to simulate the second user's action

@@ -3,7 +3,7 @@
 
   /** @ngInject */
   function LandingController($uibModal, $state, $log, $document, $window, $rootScope, $scope, ApiService, deviceDetector) {
-    
+    var vm = this;
     $scope.debug = false;
     $scope.active = 0;
     $scope.processing = false;
@@ -14,9 +14,9 @@
     console.log("State: ", $state)
 
 
-    $scope.saveEmail = function () {
-          console.log("User email: ", $scope.userEmail)
-          var email = $scope.userEmail; // Get the email entered by the user
+    vm.saveEmail = function () {
+          console.log("View model: ", vm)
+          var email = vm.userEmail; // Get the email entered by the user
           console.log("Email: ", email)
           if (email && email.trim() !== '') {
             var database = firebase.database(); 
@@ -34,7 +34,7 @@
           } else {
             console.log('Please enter a valid email address.');
           }
-          $scope.userEmail = ''; // Clear the input field after submission
+          vm.userEmail = ''; // Clear the input field after submission
         };
     
 

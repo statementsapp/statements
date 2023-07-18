@@ -6907,8 +6907,8 @@
                 } else {
                   $scope.inputs[id] = element.textContent;
                 }
-                console.log("Element: ", element.textContent)
-                console.log("Chat prop osition: ", $scope.inputs.chatProposition)
+                // console.log("Element: ", element.textContent)
+                // console.log("Chat prop osition: ", $scope.inputs.chatProposition)
               }
 
               setCursorPosition(element); // Set cursor position to the end

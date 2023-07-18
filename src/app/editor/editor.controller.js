@@ -1026,17 +1026,14 @@
 
       // If an empty book, focus on the blank proposition
       var blankClickAssigned = {};
-      // console.log("blank clicking complex")
       for (var i = $scope.data[0].nodes[0].paragraphs.length-1; i > -1; i--) {
-        // console.log("Into the outer, i of ", i)
         for (var j = $scope.data[0].nodes[0].paragraphs[i].propositions.length-1; j > -1; j--) {
-          // console.log("Into the inner, j of ", j)
           if ($scope.data[0].nodes[0].paragraphs[i][$scope.userId] !== 'hidden' &&
             !$scope.data[0].nodes[0].paragraphs[i].hiddenForAll &&
             $scope.data[0].nodes[0].paragraphs[i].propositions[j][$scope.userId] !== 'hidden' &&
             $scope.data[0].nodes[0].paragraphs[i].propositions[j].hiddenForAll !== true &&
             $scope.data[0].nodes[0].paragraphs[i].propositions[j].type !== 'blank') {
-            // console.log('if')
+           
             blankClickAssigned.assigned = true;
             break;
           } else if ($scope.data[0].nodes[0].paragraphs[i][$scope.userId] !== 'hidden' &&
@@ -1044,7 +1041,7 @@
             $scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank' &&
             $scope.data[0].nodes[0].paragraphs[i].propositions[j].hiddenForAll !== true &&
             $scope.data[0].nodes[0].paragraphs[i].propositions[j][$scope.userId] !== 'hidden') {
-            // console.log('else')
+            
             blankClickAssigned.id = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
             blankClickAssigned.paragraphPosition = i;
             blankClickAssigned.position = j;
@@ -1052,16 +1049,13 @@
         }
       }
       if (!blankClickAssigned.assigned && $scope.userId === $scope.data[0].documentClaimedBy) {
-        // console.log("not blank click assigned")
-        // console.log("blank click assigned object: ", blankClickAssigned)
-        // console.log("id object: ", $scope.data[0].nodes[0].paragraphs[blankClickAssigned.paragraphPosition])
-        // console.log("paragraph id: ", document.getElementById('paragraph' + $scope.data[0].nodes[0].paragraphs[blankClickAssigned.paragraphPosition].paragraphId))
+
         $scope.selectedNode = $scope.data[0].nodes[0];
         $scope.selectedParagraph = $scope.data[0].nodes[0].paragraphs[blankClickAssigned.paragraphPosition];
         $scope.selectedProposition =
         $scope.data[0].nodes[0].paragraphs[blankClickAssigned.paragraphPosition].propositions[blankClickAssigned.position];
         $timeout(function () {
-          // console.log("PROCEEDING WITH BLANK CLICK")
+         
           document.getElementById('proposition' + blankClickAssigned.id).click();
           blankClickAssigned = {};
         }, 10);
@@ -1132,13 +1126,7 @@
                     // left-180
                     // var offsetHeight = document.getElementById('proposition' + theId).getBoundingClientRect().top*.75;
                     // var offsetWidth = document.getElementById('proposition'+ theId).getBoundingClientRect().left*.75;
-                    // console.log("That top before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().top)
-                    // console.log("That left before: ", document.getElementById('wholeprop'+ theId).getBoundingClientRect().left)
-                    // document.getElementById('tweet-button').style.top = (offsetHeight).toString() + 'px';
-                    // document.getElementById('tweet-button').style.left = (offsetWidth).toString() + 'px';
-                    // document.getElementById('tweet-button').classList.add("grow");
-                    // console.log("That offset height: ", document.getElementById('tweet-button').getBoundingClientRect().top);
-                    // console.log("That offset width: ", document.getElementById('tweet-button').getBoundingClientRect().left);
+
                     
                     
 
@@ -1158,8 +1146,6 @@
                         // var thisClientX = (parseInt(event.pageX) * 1).toString() + 'px';
                         // var thisClientY = (parseInt(event.pageY) * 1).toString() + 'px';
 
-                        // console.log("this client y: ", thisClientY)
-                        // console.log("this client x: ", thisClientX)
                         // tweetButton.style.top = thisClientY;
                         // tweetButton.style.left = thisClientX;
                         // tweetButton.classList.add('grow');
@@ -1203,7 +1189,6 @@
 
       // Fires sometimes
       $scope.selectBlank = function (node) {
-        // console.log("Selecting a blank")
         var id = $scope.data[0].nodes[0].paragraphs[0].propositions[0].id;
         $scope.selectedNode = node;
         $scope.selectedParagraph = $scope.data[0].nodes[0].paragraphs[0];
@@ -1223,7 +1208,6 @@
 
       // For blurring the text
       $scope.blurText = function () {
-        console.log("Blurring text")
         if (document.getElementById('thetext').classList
           .contains('textblurrer')) {
           document.getElementById('thetext').classList
@@ -1319,8 +1303,6 @@
 
       $scope.assessDragScrollLower = function () {
         // if ($scope.draggedProposition.id && $scope.upperDragScrollerMouseOver){
-          // console.log("lower ding");
-          // console.log('Element: ', document.getElementById(''));
           document.getElementById('tree-root').scrollTop += 1;
           console.log("triggers scroll lower")
 
@@ -1403,7 +1385,6 @@
 
       // Selects left editable span
       $scope.selectLeft = function (proposition, paragraph) {
-        // console.log("select left")
         $scope.selectedProposition = proposition;
         $scope.unHighlightParagraph();
       };
@@ -1525,13 +1506,11 @@
                     $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
                   }
 
-                  // console.log("Payload color 1: ", payloadColor)
 
                   $scope.data[0].authorTable.push({
                     authorId: payload.author,
                     color: angular.copy(payloadColor)
                   })
-                  // console.log("Payload color 2: ", payloadColor)
                   if (payload.author === $scope.userId){
                     $scope.userColor = payloadColor;
                   } else {
@@ -1559,7 +1538,6 @@
                 }
               }
 
-              // console.log("Payload color 3: ", payloadColor)
 
               return payloadColor;
       }
@@ -1567,8 +1545,6 @@
       // Makes a new left id and focuses on it
       $scope.clearLeftAdd = function (paragraph) {
         setTimeout(function () {
-          // $scope.$apply(function () {
-          console.log("Clearing left add")
           paragraph.leftAdd = false;
           $scope.tempStopEditable = false;
           // });
@@ -1609,7 +1585,6 @@
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
             $scope.hasTopFocus = paragraph.paragraphId;
-            console.log("That top focus: ", $scope.hasTopFocus)
             paragraph.topAdd = true;
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
             $scope.inputs['top' + paragraph.paragraphId] = '';
@@ -1749,7 +1724,6 @@
       $scope.selectProposition = function (proposition) {
         if ($scope.selectedProposition) {
           if ($scope.selectedProposition.id !== proposition.id) {
-            console.log("IF")
             $scope.clearPropositionInput();
             $scope.selectedProposition = proposition;
             $scope.hasRightFocus.id = proposition.id;
@@ -1851,9 +1825,9 @@
 
       $scope.toggleRemarksExpansion = function (proposition){
         
-        console.log("proposition remarksexpanded BEFORE: ", angular.copy(proposition.remarksExpanded))
+        // console.log("proposition remarksexpanded BEFORE: ", angular.copy(proposition.remarksExpanded))
         proposition.remarksExpanded = !proposition.remarksExpanded;
-        console.log("proposition remarksexpanded: AFTER", angular.copy(proposition.remarksExpanded))
+        // console.log("proposition remarksexpanded: AFTER", angular.copy(proposition.remarksExpanded))
       }
 
       // Processes incomplete edits to one's own propositions
@@ -5461,19 +5435,19 @@
                   // setTimeout(function () {
 
                     if (!$scope.profile.negations){
-                      console.log("1st if")
+                      // console.log("1st if")
                       profileService.getProfile().negations = [$scope.bookId]; 
                     } else {
-                      console.log("Then else")
+                      // console.log("Then else")
                       profileService.getProfile().negations.push($scope.bookId)
                     }
-                    console.log("Get profile output: ", profileService.getProfile())
-                    console.log("The profile working on here: ", $scope.profile)
+                    // console.log("Get profile output: ", profileService.getProfile())
+                    // console.log("The profile working on here: ", $scope.profile)
                     apiService.updateProfile(profileService.getProfile()).then(function (result) {
-                      console.log("That result: ", result.data)
+                      // console.log("That result: ", result.data)
                       // console.log("json stringified: ", JSON.parse(result.config.data))
                       $scope.profile = result.data;
-                      console.log("That profile now: ", $scope.profile)
+                      // console.log("That profile now: ", $scope.profile)
                     }).catch(function (error) {
                       console.log("error: ", error)
                     });
@@ -5497,12 +5471,12 @@
             profileService.setSelectedBook($scope.data[0]);
 
             if (payload.author !== $scope.userId && $scope.inputs){
-              console.log("Satisfies that if")
+              // console.log("Satisfies that if")
               $scope.saveThisForASec = angular.copy($scope.inputs[payload.id])
             }
 
             for (var i = 0; i < $scope.data[0].dialogue.length; i++){
-              console.log(i, ": ", $scope.data[0].dialogue[i])
+              // console.log(i, ": ", $scope.data[0].dialogue[i])
             }
 
            
@@ -5539,7 +5513,7 @@
           $scope.userActions.push(payload);
           console.log("User actions length: ", $scope.userActions.length)
           if (isDefinedPoint($scope.userActions.length)) {
-            console.log("About to simulate user")
+            // console.log("About to simulate user")
             if ($scope.preDefinedPoints[$scope.userActions.length].author === $scope.userId){
               setTimeout(function () {
                 $scope.$apply(function () {
@@ -5551,7 +5525,7 @@
               console.log("Elsing")
               setTimeout(function () {
                 $scope.$apply(function () {
-                  console.log("Firing sim user fcn")
+                  // console.log("Firing sim user fcn")
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
                   $scope.simulateUser(angular.copy($scope.userActions.length))
                 });
@@ -5676,14 +5650,14 @@
               for (var m = 0; m < $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks.length; m++){
                 if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].id === id &&
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m].droppedElsewhere){
-                  console.log("SHOW HIT")
+                  // console.log("SHOW HIT")
                   $scope.selectedNode = angular.copy($scope.data[0].nodes[i]);
                   $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 
                   $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[m];
                   $scope.hasChatFocusId = id;
                   setTimeout(function () {
-                     console.log("HAS SHOW ID: ", $scope.hasChatFocusId)
+                     // console.log("HAS SHOW ID: ", $scope.hasChatFocusId)
                      focusFactory('input'+id);
                   }, 20);
                   break;
@@ -5692,14 +5666,14 @@
               if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === id &&
                 !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll &&
                 $scope.data[0].nodes[i].paragraphs[j].propositions[k][$scope.userId] !== 'hidden'){
-                console.log("OTHER SHOW HIT")
+                // console.log("OTHER SHOW HIT")
                 $scope.selectedNode = angular.copy($scope.data[0].nodes[i]);
                 $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
-                console.log("Selected Node SHOW: ", $scope.selectedNode)
-                console.log("Selected Paragraph SHOW: ", $scope.selectedParagraph)
-                console.log("Selected Proposition: SHOW ", $scope.selectedProposition)
+                // console.log("Selected Node SHOW: ", $scope.selectedNode)
+                // console.log("Selected Paragraph SHOW: ", $scope.selectedParagraph)
+                // console.log("Selected Proposition: SHOW ", $scope.selectedProposition)
                 $scope.selectedProposition.dialogueSide = true;
                 $scope.selectedProposition.textSide = false;
                 
@@ -5830,9 +5804,9 @@
                 $scope.selectedParagraph = angular.copy($scope.data[0].nodes[i].paragraphs[j]);
 
                 $scope.selectedProposition = $scope.data[0].nodes[i].paragraphs[j].propositions[k];
-                console.log("Selected Node: ", $scope.selectedNode)
-                console.log("Selected Paragraph: ", $scope.selectedParagraph)
-                console.log("Selected Proposition: ", $scope.selectedProposition)
+                // console.log("Selected Node: ", $scope.selectedNode)
+                // console.log("Selected Paragraph: ", $scope.selectedParagraph)
+                // console.log("Selected Proposition: ", $scope.selectedProposition)
                 $scope.selectedProposition.dialogueSide = true;
                 $scope.selectedProposition.textSide = false;
                 
@@ -7066,7 +7040,7 @@
           // simulate script
           
           var theStep = $scope.preDefinedPoints[index];
-          console.log("The step: ", theStep)
+          // console.log("The step: ", theStep)
           var theOn = theStep.on;
           var theOnText = theStep.text;
           if (theStep.action ==='proposition'){

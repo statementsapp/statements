@@ -14,14 +14,12 @@
           <div class="col" ng-if="screenWidth < 500" style="color: black; " >
             <div class="navboi" role="navigation" ng-if="screenWidth < 500">
               <div class="flexyboi titleboi stack">
-                <div style="display:flex; align-items: center" class="stack">
+                <div style="display:flex; align-items: center; color: white;" class="stack">
+                  Statements
+                </div><div style="display:flex; align-items: center" class="stack">
                   <span class="logoboi largerlogo" style="padding-right: 12px;"></span>
-                  <span class="nonethatpadding">
-                    
+                  <span class="nonethatpadding">            
                     <div>
-<!--                       <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop nonethatpositioning">
-                          <div class="largervalueprop" style="text-align: center"> Write directly by Chat</div>
-                      </a> -->
                     </div>
                   </span>
                   <a href="#" style="color: black !important; text-decoration: none; display: flex;">
@@ -32,11 +30,17 @@
                 </div>
               </div>
             </div>
-            <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="compositeVideoSources" style="padding-bottom:10px;">
+            <video id="exampleAuthor" muted="" loop="" controls style="padding-bottom: 10px;">
+              <source src="/assets/movies/NewLoop.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
-            <div class="disclaimer">
+            <button onclick="document.getElementById('exampleAuthor').play();">Play</button>
+
+<!--             <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="compositeVideoSources" style="padding-bottom:10px;">
+            </video> -->
+            <div class="disclaimer" style="color: white;">
               <div>(Designed for Desktop)</div>
-              <span>Rapid Word Processing for Smartphone Coming Soon</span>
+              <span>Rapid Word Processing for the Smartphone Currently Fundraising</span>
             </div>
             <div ng-if="cowsComeHome">
               <img src="/assets/images/brooklinebank.jpeg" style="height:23%; margin-top:10px">
@@ -47,8 +51,8 @@
 
 
 
-
-          <div class="col" ng-if="screenWidth > 500" style="color: black;">
+          <!-- ng-if="screenWidth > 500"  -->
+          <div class="col" style="color: black;">
             <div class="" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500"> 
 
 
@@ -182,11 +186,59 @@
                   <div style="width: 100%; max-width: 960px; margin: 0 auto; text-align: center; font-family: Arial, sans-serif;">
                     <section style="padding: 60px 0;">
                       <h1 style="color: #f0f0f0; font-size: 42px; font-weight: bold; line-height: 1.4;">Stay Updated on the Latest Developments</h1>
-                      <p style="color: lightgrey; font-size: 21px; margin-top: 20px; line-height: 1.6;">Sign up to receive exclusive news, updates, and special offers directly in your inbox.</p>
-                      <form style="display: inline-block; margin-top: 40px;">
-                        <input type="email" class="emailinput" id="email" name="email" placeholder="Enter your email address" required style="width: 400px;  color: #f0f0f0; padding: 10px 20px; border: 1px solid #ccc; border-radius: 3px;"/>
-                        <button type="submit" style="font-size: inherit; background-color: darkgrey; color: #fff; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; transition: background-color 0.3s;">Subscribe</button>
+                      <!-- <p style="color: lightgrey; font-size: 21px; margin-top: 20px; line-height: 1.6;">Sign up to receive exclusive news, updates, and special offers directly in your inbox.</p> -->
+
+
+
+
+
+                      <div id="mc_embed_shell">
+                            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+                        <style type="text/css">
+                              #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: px;}
+                              /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                                 We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                      </style>
+                      <div id="mc_embed_signup">
+                          <form action="https://gmail.us21.list-manage.com/subscribe/post?u=624340410f3476dafac5c959a&amp;id=f6d5665186&amp;f_id=009adfe6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                              <div id="mc_embed_signup_scroll">
+                                  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                  <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
+                              <div id="mce-responses" class="clear foot">
+                                  <div class="response" id="mce-error-response" style="display: none;"></div>
+                                  <div class="response" id="mce-success-response" style="display: none;"></div>
+                              </div>
+                          <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                              /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                              <input type="text" name="b_624340410f3476dafac5c959a_f6d5665186" tabindex="-1" value="">
+                          </div>
+                              <div class="optionalParent">
+                                  <div class="clear foot">
+                                      <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                                      <p class="brandingLogo" style="margin: 0px auto;"><a href="http://eepurl.com/ivPr0k" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="referral badge"></a></p>
+                                  </div>
+                              </div>
+                          </div>
                       </form>
+                      </div>
+                      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=EMAIL;ftypes[0]=merge;,fnames[1]=FNAME;ftypes[1]=merge;,fnames[2]=LNAME;ftypes[2]=merge;,fnames[3]=ADDRESS;ftypes[3]=merge;,fnames[4]=PHONE;ftypes[4]=merge;,fnames[5]=BIRTHDAY;ftypes[5]=merge;false}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+
+
+
+
+                      <!-- <form style="display: inline-block; margin-top: 40px;" ng-submit="vm.saveEmail()">
+          
+                        <input type="email" ng-model="vm.userEmail" class="emailinput" id="email" name="email" placeholder="Enter your email address" required style="width: 400px; color: #f0f0f0; padding: 10px 20px; border: 1px solid #ccc; border-radius: 3px;" />
+                        <button type="submit" style="font-size: inherit; background-color: darkgrey; color: #fff; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; transition: background-color 0.3s;">Subscribe</button>
+                      </form> -->
+
+
+
+
+
+
+
+
                     </section>
                   </div>
 
@@ -298,6 +350,7 @@
     </div>
   </div>
 </div>
+
 
 
 

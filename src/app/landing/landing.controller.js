@@ -14,24 +14,25 @@
 
 
     $scope.saveEmail = function () {
-      var email = $scope.userEmail; // Get the email entered by the user
-      if (email && email.trim() !== '') {
-        var database = firebase.database();
-        var emailsRef = database.ref('emails');
-        var newEmailRef = emailsRef.push();
-        newEmailRef.set({
-          email: email
-        }, function (error) {
-          if (error) {
-            console.error('Error saving email:', error);
+          var email = $scope.userEmail; // Get the email entered by the user
+          if (email && email.trim() !== '') {
+            var database = firebase.database();
+            var emailsRef = database.ref('emails');
+            var newEmailRef = emailsRef.push();
+            newEmailRef.set({
+              email: email
+            }, function (error) {
+              if (error) {
+                console.error('Error saving email:', error);
+              } else {
+                console.log('Email saved successfully!');
+              }
+            });
           } else {
-            console.log('Email saved successfully!');
+            console.log('Please enter a valid email address.');
           }
-        });
-      } else {
-        console.log('Please enter a valid email address.');
-      }
-    };
+          $scope.userEmail = ''; // Clear the input field after submission
+        };
     
 
     

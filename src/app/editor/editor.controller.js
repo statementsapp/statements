@@ -3530,7 +3530,7 @@
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           }
           if (!$scope.draggingParagraph && !$scope.draggingProposition){
-            prep.targetNodeId = $scope.selectedNode.nodeId;
+            prep.targetNodeId = node.nodeId;
           } else {
             prep.targetNodeId = angular.copy(node.nodeId);
           }

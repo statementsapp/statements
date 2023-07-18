@@ -21,8 +21,8 @@
 
       // Function to update the word
       function updateWord() {
-        vm.animatedWord = document.querySelector(".animated-word");
-        vm.animatedWord.textContent = vm.words[vm.currentWordIndex];
+        // vm.animatedWord = document.querySelector(".animated-word");
+        // vm.animatedWord.textContent = vm.words[vm.currentWordIndex];
 
         // Increment the word index or reset it to 0 if the end is reached
         vm.currentWordIndex = (vm.currentWordIndex + 1) % vm.words.length;

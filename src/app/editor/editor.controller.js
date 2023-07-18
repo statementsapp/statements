@@ -6578,7 +6578,7 @@
               { index: 1, 
                
                   author: 'aaa',
-                  text: 'This cannot be the case, as there is an absolute time as one can determine by putting a clock on a ship and then returning, finding that the times agree.',
+                  text: 'This cannot be the case, as there is an absolute time as one can determine by keeping one clock stationary and putting another on a ship and then returning, finding that the times agree.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6601,7 +6601,7 @@
               { index: 2, 
                 
                   author: $scope.userId,
-                  text: 'While a good approximation, clocks that move at near the speed of light will not agree on the time.',
+                  text: 'While Newtonian physics provides a good approximation, when clocks approach the speed of light, they will not agree on the measurement of time elapsed.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6619,7 +6619,7 @@
               { index: 3, 
                 
                   author: $scope.userId,
-                  text: 'This is due to light having a constant but finite speed in a vacuum regardless of movement.',
+                  text: 'This discrepancy arises because light propagates at a constant but finite speed in a vacuum, irrespective of the motion of the observer or the source of light.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6683,7 +6683,7 @@
               { index: 6, 
                 
                   author: $scope.userId,
-                  text: 'This paper makes a speculative and iconoclastic claim.',
+                  text: 'This paper proposes a revision to Newtonian physics.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6747,7 +6747,7 @@
               { index: 9, 
                
                   author: $scope.userId,
-                  text: 'More accurate measurements of observables moving at speeds near that of light can be achieved by using the Lorentz transformation.',
+                  text: 'More accurate measurements of objects moving at speeds close to that of light can be achieved using the Lorentz transformation.',
                   dialogueText: function() {
                                   return this.text;
                                 },

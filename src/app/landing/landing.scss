@@ -1,6 +1,50 @@
 // Navbar scss:
 
 
+#animation-container {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+}
+
+.animation-text {
+  font-size: 24px;
+}
+
+.animated-word {
+  position: absolute;
+  animation: scrollAnimation 4s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  33.33% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  66.66% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
 .scroll-left {
  font-size: 20px;
  height: 60px;  

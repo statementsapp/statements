@@ -16,7 +16,7 @@
     $scope.saveEmail = function () {
           var email = $scope.userEmail; // Get the email entered by the user
           if (email && email.trim() !== '') {
-            var database = firebase.database();
+            var database = firebase.database(); 
             var emailsRef = database.ref('emails');
             var newEmailRef = emailsRef.push();
             newEmailRef.set({

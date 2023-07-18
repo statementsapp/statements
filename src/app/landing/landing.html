@@ -93,7 +93,7 @@
                     <div>
                       <div href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop">
                           <div id="animation-container">
-                            <div class="animation-text">Write directly by <span class="animated-word">Chat</span></div>
+                            <div class="animation-text">Write directly by <span class="animated-word" ng-model="vm.words[vm.currentWordIndex]"></span></div>
                           </div>
                       </div>
                     </div>
@@ -182,10 +182,8 @@
           </div>
 
 
-          <div id="animation-container">
-            <div class="animation-text">Write directly by <span class="animated-word">Chat</span></div>
-          </div>
-          
+
+
           <div class="guest-button-wrapper" ng-if="screenWidth > 500 && false" style="">
             <div class="inner">
               <br>

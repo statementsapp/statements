@@ -16,16 +16,16 @@
     // Wait for the document to load
     document.addEventListener("DOMContentLoaded", function() {
       // List of words to loop through
-      var words = ["Chat", "Debate", "Argument", "Text"];
-      var currentWordIndex = 0;
+      vm.words = ["Chat", "Debate", "Argument", "Text"];
+      vm.currentWordIndex = 0;
 
       // Function to update the word
       function updateWord() {
-        var animatedWord = document.querySelector(".animated-word");
-        animatedWord.textContent = words[currentWordIndex];
+        vm.animatedWord = document.querySelector(".animated-word");
+        vm.animatedWord.textContent = vm.words[vm.currentWordIndex];
 
         // Increment the word index or reset it to 0 if the end is reached
-        currentWordIndex = (currentWordIndex + 1) % words.length;
+        vm.currentWordIndex = (vm.currentWordIndex + 1) % vm.words.length;
       }
 
       // Call the updateWord function initially

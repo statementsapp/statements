@@ -6701,7 +6701,7 @@
               { index: 7, 
                
                   author: 'ccc',
-                  text: 'Does this hold for all observers?.',
+                  text: 'Does this hold for all observers?',
                   dialogueText: function() {
                                   return this.text;
                                 },

@@ -11,6 +11,7 @@
     $scope.screenWidth = window.innerWidth;
     $scope.plusToggle = false;
     console.log("Screen width: ", $scope.screenWidth)
+    $scope.userEmail = '';
 
 
     $scope.saveEmail = function () {

@@ -14,26 +14,26 @@
     console.log("State: ", $state)
 
     // Wait for the document to load
-    // document.addEventListener("DOMContentLoaded", function() {
-    //   // List of words to loop through
-    //   var words = ["Chat", "Debate", "Argument", "Text"];
-    //   var currentWordIndex = 0;
+    document.addEventListener("DOMContentLoaded", function() {
+      // List of words to loop through
+      var words = ["Chat", "Debate", "Argument", "Text"];
+      var currentWordIndex = 0;
 
-    //   // Function to update the word
-    //   function updateWord() {
-    //     var animatedWord = document.querySelector(".animated-word");
-    //     animatedWord.textContent = words[currentWordIndex];
+      // Function to update the word
+      function updateWord() {
+        var animatedWord = document.querySelector(".animated-word");
+        animatedWord.textContent = words[currentWordIndex];
 
-    //     // Increment the word index or reset it to 0 if the end is reached
-    //     currentWordIndex = (currentWordIndex + 1) % words.length;
-    //   }
+        // Increment the word index or reset it to 0 if the end is reached
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+      }
 
-    //   // Call the updateWord function initially
-    //   updateWord();
+      // Call the updateWord function initially
+      updateWord();
 
-    //   // Set an interval to call the updateWord function every 4 seconds
-    //   setInterval(updateWord, 4000);
-    // });
+      // Set an interval to call the updateWord function every 4 seconds
+      setInterval(updateWord, 4000);
+    });
 
 
 

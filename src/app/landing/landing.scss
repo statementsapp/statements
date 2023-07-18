@@ -10,13 +10,13 @@
 
 .animation-text {
   font-size: 24px;
-}
 
-.animated-word {
-  position: absolute;
-  animation: scrollAnimation 4s infinite;
-  animation-timing-function: linear;
-  white-space: nowrap; /* Added to prevent line breaks */
+  .animated-word {
+    position: absolute;
+    animation: scrollAnimation 4s infinite;
+    animation-timing-function: linear;
+    white-space: nowrap; /* Added to prevent line breaks */
+  }
 }
 
 @keyframes scrollAnimation {
@@ -37,6 +37,7 @@
     opacity: 1;
   }
 }
+
 
 
 

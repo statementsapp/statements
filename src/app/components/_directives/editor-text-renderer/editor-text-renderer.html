@@ -131,7 +131,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          delay="200"
          class="addparagraph exclude"
          ng-class="{'topaddpadding': paragraph.topAdd}"
-         style="min-height: 28px; position: relative; text-indent: 97px; overflow: hidden; word-wrap: break-word; font-weight: 600;"
+         style="min-height: 28px; position: relative; text-indent: 97px; overflow: hidden; word-wrap: break-word; font-weight: 600; line-height: 30px"
           editable-span-ng-model
           ng-class=""
           contenteditable="true"
@@ -651,7 +651,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
          ng-mouseleave="paragraph.bottomMouseOver = false"
          delay="200"
          class="addparagraph exclude"
-         style="position: relative; text-indent: 97px; font-weight: 600; padding-bottom: 10.5px;"
+         style="position: relative; text-indent: 97px; font-weight: 600; padding-bottom: 10.5px; line-height: 30px"
           editable-span-ng-model
           contenteditable="true"
           id="{{paragraph.paragraphId}}"

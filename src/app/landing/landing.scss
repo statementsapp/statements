@@ -16,6 +16,7 @@
   position: absolute;
   animation: scrollAnimation 4s infinite;
   animation-timing-function: linear;
+  white-space: nowrap; /* Added to prevent line breaks */
 }
 
 @keyframes scrollAnimation {
@@ -23,11 +24,11 @@
     transform: translateY(0);
     opacity: 1;
   }
-  33.33% {
+  25% {
     transform: translateY(-30px);
     opacity: 0;
   }
-  66.66% {
+  75% {
     transform: translateY(30px);
     opacity: 0;
   }
@@ -36,6 +37,7 @@
     opacity: 1;
   }
 }
+
 
 
 

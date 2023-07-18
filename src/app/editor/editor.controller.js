@@ -4877,6 +4877,7 @@
                       }
                     ]
                   }
+                  console.log("3E node now: ", angular.copy($scope.data[0].nodes[apply.nodeIndex]))
                   if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
                         document.getElementById('proposition' + payload.id).click();
@@ -4918,6 +4919,7 @@
                       }
                     ]
                   }
+                  console.log("3E node now: ", angular.copy($scope.data[0].nodes[apply.nodeIndex]))
                   if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
                         document.getElementById('proposition' + payload.id).click();

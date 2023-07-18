@@ -14,9 +14,9 @@
     console.log("State: ", $state)
 
 
-    vm.saveEmail = function () {
-          console.log("View model: ", vm)
-          var email = vm.userEmail; // Get the email entered by the user
+    $scope.saveEmail = function () {
+          console.log("User email: ", $scope.userEmail)
+          var email = $scope.userEmail; // Get the email entered by the user
           console.log("Email: ", email)
           if (email && email.trim() !== '') {
             var database = firebase.database(); 
@@ -34,7 +34,7 @@
           } else {
             console.log('Please enter a valid email address.');
           }
-          vm.userEmail = ''; // Clear the input field after submission
+          $scope.userEmail = ''; // Clear the input field after submission
         };
     
 

@@ -14,6 +14,7 @@
 
 
     $scope.saveEmail = function () {
+          console.log("User email: ", $scope.userEmail)
           var email = $scope.userEmail; // Get the email entered by the user
           console.log("Email: ", email)
           if (email && email.trim() !== '') {

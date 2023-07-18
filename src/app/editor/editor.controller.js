@@ -6559,7 +6559,10 @@
               { index: 0, 
                 
                   author: $scope.userId,
-                  text: 'Position and time are relative to the movement of observers.',
+                  text: 'Position and time are relative concepts dependent on the frame of reference of observers.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
                   type: 'assertion',
                   dialogueSide: false,
                   step: undefined,

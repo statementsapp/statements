@@ -33,8 +33,11 @@
                 </div>
               </div>
             </div>
-            <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="compositeVideoSources" style="padding-bottom:10px;">
-            </video>
+            <video id="exampleAuthor" muted="" loop="" controls style="padding-bottom: 10px;">
+                <source src="/assets/movies/NewLoop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <button onclick="document.getElementById('exampleAuthor').play();">Play</button>
             <div class="disclaimer" style="color: white !important;">
               <div>(Designed for Desktop)</div>
               <span>Rapid Word Processing for Smartphone Coming Soon</span>
@@ -88,7 +91,7 @@
 
 
 
-                    
+
                   
               </div>
             </div>

@@ -6554,6 +6554,304 @@
               // Add more pre-defined points with their respective pre-determined values
             ];
 
+            
+            $scope.geocentrism = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'The Earth is at the center of the universe.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  step: undefined,
+                  which: 'theBlank',
+                  on: undefined,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                  
+                
+              },
+              { index: 1, 
+                
+                  author: $scope.userId,
+                  text: 'A wealth of everyday observational evidence makes this clear.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              { index: 2, 
+                
+                  author: $scope.userId,
+                  text: 'Furthermore, scriptural evidence for the truth of geocentrism is robust.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 3, 
+               
+                  author: 'aaa',
+                  text: 'Nyaa nyaa thats just malarkey.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+             
+              },
+              // { index: 2, 
+                
+              //     author: $scope.userId,
+              //     text: 'While Newtonian physics provides a good approximation, when clocks approach the speed of light, they will not agree on the measurement of time elapsed.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: true,
+              //     which: 'item',
+              //     on: 1,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+                
+              // },
+              // { index: 3, 
+                
+              //     author: $scope.userId,
+              //     text: 'This discrepancy arises because light propagates at a constant but finite speed in a vacuum, irrespective of the motion of the observer or the source of light.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 4, 
+                
+              //     author: $scope.userId,
+              //     text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 0,
+              //     its: 'top',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 5, 
+               
+              //     author: 'bbb',
+              //     text: 'Experiments must be run using clocks with greater precision than we currently have.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 6, 
+                
+              //     author: $scope.userId,
+              //     text: 'This paper proposes a revision to Newtonian physics.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'left',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 7, 
+               
+              //     author: 'ccc',
+              //     text: 'Does this hold for all observers?',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 8, 
+               
+              //     author: $scope.userId,
+              //     text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'node',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 9, 
+               
+              //     author: $scope.userId,
+              //     text: 'More accurate measurements of objects moving at speeds close to that of light can be achieved using the Lorentz transformation.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
+              
+              // },
+              // { index: 10, 
+               
+              //     author: $scope.userId,
+              //     text: 'Lengths may be contracted and time expanded by means of this additional term, which bears strong mathematical resemblance to the Pythagorean Theorem.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+              // { index: 11, 
+               
+              //     author: $scope.userId,
+              //     text: 'The form the transformation takes...',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+
+
+
+              // Add more pre-defined points with their respective pre-determined values
+            ];
+
+
 
             $scope.preDefinedPoints = [
               { index: 0, 
@@ -6819,6 +7117,7 @@
 
              // $scope.preDefinedPoints = $scope.supremeCourtScript;
              // $scope.preDefinedPoints = $scope.physics; 
+             $scope.preDefinedPoints = $scope.geocentrism;
 
 
 

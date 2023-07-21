@@ -5363,6 +5363,11 @@
               if ($scope.saveI || $scope.saveI === 0){
                 $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarks[$scope.saveM].colorString = 
                 ('3px solid ' + angular.copy($scope.saveThisColorForASec))
+
+                if ($scope.hasBeenSetUp && payload.code){
+                  console.log("Collapsing an incoming automated remark")
+                  $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarksExpanded = false;
+                }
               }
               $scope.saveI = '';
               $scope.saveJ = '';

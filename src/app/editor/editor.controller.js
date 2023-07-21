@@ -5586,7 +5586,7 @@
       }
 
       function flipCoin() {
-          return Math.random() < 0.4;
+          return Math.random() < 0.05;
         }
 
       $scope.clearAnimationClass = function () {

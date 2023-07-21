@@ -6559,7 +6559,7 @@
               { index: 0, 
                 
                   author: $scope.userId,
-                  text: 'The Earth is at the center of the universe.',
+                  text: 'The Earth is clearly at the center of the universe.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6578,7 +6578,7 @@
               { index: 1, 
                 
                   author: $scope.userId,
-                  text: 'A wealth of everyday observational evidence makes this clear.',
+                  text: 'A wealth of everyday observational evidence makes this clear, including the revolution of the sun, moon, and stars.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6596,7 +6596,7 @@
               { index: 2, 
                 
                   author: $scope.userId,
-                  text: 'Furthermore, scriptural evidence for the truth of geocentrism is robust.',
+                  text: 'The uniform density of stars orbiting Earth also confirms this centrality.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6612,9 +6612,27 @@
                 
               },
               { index: 3, 
+                
+                  author: $scope.userId,
+                  text: 'Furthermore, scriptural evidence for a revolving sun and moon is clear; see Genesis 1:16, Joshua 10:13, and Isaiah 48:13.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 4, 
                
                   author: 'aaa',
-                  text: 'Nyaa nyaa thats just malarkey.',
+                  text: 'Given a thick enough density of stars, planets at the periphery would be judged to be at the center which were not.',
                   dialogueText: function() {
                                   return this.text;
                                 },

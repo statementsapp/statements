@@ -742,7 +742,7 @@
       $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1', '#ffd9c0'];
 
       // these are the current pastels
-      $scope.otherPastels = ['#00FFFF', '#00BFFF', '#6B8E23', '#FF8811'];
+      $scope.otherPastels = ['#00FFFF', '#00BFFF', '#6B8E23', '#ff9225'];
       // Other suitable pastels below
       // ,'#c7ceea','#ffb7b2'
       // Light theme pastels below

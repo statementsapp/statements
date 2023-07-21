@@ -6715,7 +6715,7 @@
               { index: 7, 
                
                   author: 'ddd',
-                  text: 'I simply forget what happens with four reviewers.',
+                  text: 'This requires us to assume that everything written in the Bible is true.',
                   dialogueText: function() {
                                   return this.text;
                                 },

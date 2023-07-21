@@ -6559,7 +6559,7 @@
               { index: 0, 
                 
                   author: $scope.userId,
-                  text: 'The Earth is clearly at the center of the universe.',
+                  text: 'The Earth is clearly fixed at the center of the universe.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6651,6 +6651,75 @@
                   action: 'proposition',
                   messaged: true
              
+              },
+              { index: 5, 
+               
+                  author: 'bbb',
+                  text: 'How come telescopes show us that celestial bodies all exert gravitational forces on each other, but Earth is not affected?',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 5000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 6, 
+               
+                  author: 'ccc',
+                  text: 'Telescopes allow us to see phases to Venus where its lit portion always faces the Sun - how is this explained?',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 7, 
+               
+                  author: 'ddd',
+                  text: 'I simply forget what happens with four reviewers.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
               },
               // { index: 2, 
                 

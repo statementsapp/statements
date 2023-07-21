@@ -5365,8 +5365,13 @@
                 ('3px solid ' + angular.copy($scope.saveThisColorForASec))
 
                 if ($scope.hasBeenSetUp && payload.code){
-                  console.log("Collapsing an incoming automated remark")
-                  $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarksExpanded = false;
+                  if (flipCoin()) {
+                      console.log("Collapsing an incoming automated remark")
+                      $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarksExpanded = false;
+                    } else {
+                      console.log("nothing flip")
+                    }
+                  
                 }
               }
               $scope.saveI = '';
@@ -5579,6 +5584,10 @@
       $scope.whatsTheEvent = function (event) {
         console.log("The event: ", angular.copy(event))
       }
+
+      function flipCoin() {
+          return Math.random() < 0.5;
+        }
 
       $scope.clearAnimationClass = function () {
         setTimeout(function () {

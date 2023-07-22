@@ -1238,8 +1238,8 @@ li.paragraph .child-div:not(.exclude) {
       width: 400px;
       background: #0c2340; /* Set the background color to #0c2340 */
       border-radius: 20px; /* Add border-radius to round the 
-      border-color: white !important;corners */
-      border: 1px;
+      // border-color: white !important;corners */
+      border: 1px solid white;
       font-size: 16px;
 }
 

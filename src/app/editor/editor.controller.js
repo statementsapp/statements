@@ -7273,7 +7273,7 @@
             // console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {
-              if (Math.random() < 0.05 && index > 0) {
+              if (Math.random() < 0.001 && index > 0) {
                 // Simulate a backspace by removing the last character
                 console.log("Element: ", element)
                 element.textContent = element.textContent.slice(0, -1);

@@ -1243,6 +1243,11 @@ li.paragraph .child-div:not(.exclude) {
       font-size: 16px;
 }
 
+.directlink-input-wrapper {
+  position: relative;
+    display: inline-block;
+}
+
 .menu-button-wrapper {
   display: flex;
   flex-direction: row;

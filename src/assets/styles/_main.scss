@@ -1236,16 +1236,17 @@ li.paragraph .child-div:not(.exclude) {
   width: 385px;
   color: #f0f0f0;
       width: 400px;
-      background: #0c2340; /* Set the background color to #0c2340 */
-      border-radius: 20px; /* Add border-radius to round the 
-      // border-color: white !important;corners */
-      border: 1px solid white;
-      font-size: 16px;
+      
 }
 
 .directlink-input-wrapper {
   position: relative;
     display: inline-block;
+    background: #0c2340; /* Set the background color to #0c2340 */
+    border-radius: 20px; /* Add border-radius to round the 
+    // border-color: white !important;corners */
+    border: 1px solid white;
+    font-size: 16px;
 }
 
 .menu-button-wrapper {

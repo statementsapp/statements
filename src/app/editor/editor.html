@@ -236,7 +236,7 @@
                ng-click="(draggedNode.nodeId) ? [selectedNode = node, dropNode(node, 'bottom')] : inputs.nothing"
                id="bottom{{node.nodeId}}">
           </div> -->
-        <span ng-if="userId === data[0].documentClaimedBy" style="color: white; position:relative; font-size:16px">&nbsp;(author)</span>
+        <span ng-if="userId === data[0].documentClaimedBy" style="color: white; position:relative; font-size:16px"><i class="fa-solid fa-pen"></i></span>
         </span>
 
         <!-- <span style="color: white;">{{hasRightFocus}}</span> -->

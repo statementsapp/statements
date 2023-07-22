@@ -6715,7 +6715,7 @@
               { index: 7, 
                
                   author: 'ddd',
-                  text: 'This requires us to assume that everything written in the Bible is true.',
+                  text: 'Scriptural evidence can be unreliable.',
                   dialogueText: function() {
                                   return this.text;
                                 },

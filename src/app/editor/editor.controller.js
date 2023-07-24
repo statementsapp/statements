@@ -7222,7 +7222,7 @@
 
              // $scope.preDefinedPoints = $scope.supremeCourtScript;
              // $scope.preDefinedPoints = $scope.physics; 
-             $scope.preDefinedPoints = $scope.geocentrism;
+             // $scope.preDefinedPoints = $scope.geocentrism;
 
 
 

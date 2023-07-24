@@ -4498,7 +4498,11 @@
                 }
               }
 
-              
+              //Remarks expanded FALSE
+              $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarksExpanded = false;
+
+
+
               $scope.data[0].nodes[apply.nodeTarget].paragraphs[apply.paragraphTarget].propositions[apply.propTarget].remarks.unshift(
                 {
                   id: payload.id,
@@ -4510,7 +4514,7 @@
                   messagesSoFar: payload.messagesSoFar,
                   of: payload.of,
                   muted: payload.muted ? true : undefined,
-                  remarksExpanded: false
+                  
 
                 }
               )

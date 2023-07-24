@@ -1613,25 +1613,25 @@
          $scope.bottomNodeAdderId = IdFactory.next();
          
          $scope.hasBottomNodeFocus = node.nodeId;
+        // $timeout(function () {
+        //   $scope.$apply(function () {
+        //     node.bottomNodeAdd = true;
+        //     $scope.selectedNode = node;
+        //     $scope.selectedProposition = {};
+        //     $scope.selectedProposition.textSide = true;
+        //     // focusFactory($scope.bottomNodeAdderId);
+        //   });
+        // }, 0);
         $timeout(function () {
           $scope.$apply(function () {
             node.bottomNodeAdd = true;
             $scope.selectedNode = node;
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
+            focusFactory($scope.bottomNodeAdderId);
+            // document.getElementById($scope.bottomNodeAdderId).click();
             // focusFactory($scope.bottomNodeAdderId);
           });
-        }, 0);
-        $timeout(function () {
-          // $scope.$apply(function () {
-            node.bottomNodeAdd = true;
-            $scope.selectedNode = node;
-            $scope.selectedProposition = {};
-            $scope.selectedProposition.textSide = true;
-            // focusFactory($scope.bottomNodeAdderId);
-            document.getElementById($scope.bottomNodeAdderId).click();
-            focusFactory($scope.bottomNodeAdderId);
-          // });
         }, 0);
       };
 

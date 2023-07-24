@@ -4509,7 +4509,8 @@
                   dialogueSide: false,
                   messagesSoFar: payload.messagesSoFar,
                   of: payload.of,
-                  muted: payload.muted ? true : undefined
+                  muted: payload.muted ? true : undefined,
+                  remarksExpanded: false
 
                 }
               )

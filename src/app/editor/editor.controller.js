@@ -7244,7 +7244,6 @@
             });
           }
           let index = 0;
-          let thisContent = ''
           element.textContent = '';
           const intervalId = setInterval(() => {
             
@@ -7274,24 +7273,22 @@
                 }
               } else {
                 console.log("Element well: ", angular.copy(element))
+                element.textContent += text[index];
+                index++;
                 
+                $scope.inputs['remark'+id] = element.textContent;
+                $scope.inputs['top'+id] = element.textContent;
+                $scope.inputs['bottom'+id] = element.textContent;
+                if (theStep.its){
+                  if (theStep.its === 'left'){
+                    $scope.inputs['left'+id] = element.textContent;
+                  }
+                }
                 if (messageFlag){
                   console.log("M")
-                  thisContent += text[index];
-                  index++;
-                  $scope.inputs.chatProposition = thisContent;
+                  element.textContent = '';
+                  $scope.inputs.chatProposition = element.textContent;
                 } else {
-                  element.textContent += text[index];
-                  index++;
-                  
-                  $scope.inputs['remark'+id] = element.textContent;
-                  $scope.inputs['top'+id] = element.textContent;
-                  $scope.inputs['bottom'+id] = element.textContent;
-                  if (theStep.its){
-                    if (theStep.its === 'left'){
-                      $scope.inputs['left'+id] = element.textContent;
-                    }
-                  }
                   console.log("E")
                   $scope.inputs[id] = element.textContent;
                 }

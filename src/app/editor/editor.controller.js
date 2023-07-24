@@ -7227,7 +7227,12 @@
 
         function populateElementWithText(text, id, messageFlag, nodeFlag, theStep) {
           console.log("That populating id: ", id)
-          var element = document.getElementById(id);
+          if (messageFlag){
+            var element = document.getElementById(id);
+          } else {
+            var element = document.getElementById('input' + id);
+          }
+          
           if (!element){
             $scope.$apply(function () {
              // setTimeout(function () {

@@ -7048,7 +7048,7 @@
             
              
              // $scope.preDefinedPoints = $scope.geocentrism;
-              // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
+              $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
 
 
 

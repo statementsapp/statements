@@ -7262,7 +7262,7 @@
                   }
                 }
                 
-                $scope.inputs['remark'+id] = element.textContent;
+                
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
                 
@@ -7270,12 +7270,13 @@
                   $scope.inputs.chatProposition = element.textContent;
                 } else {
                   $scope.inputs[id] = element.textContent;
+                  $scope.inputs['remark'+id] = element.textContent;
                 }
               } else {
                 element.textContent += text[index];
                 index++;
                 
-                $scope.inputs['remark'+id] = element.textContent;
+                
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
                 if (theStep.its){
@@ -7288,6 +7289,7 @@
                   $scope.inputs.chatProposition = element.textContent;
                 } else {
                   console.log("E")
+                  $scope.inputs['remark'+id] = element.textContent;
                   $scope.inputs[id] = element.textContent;
                 }
                 // console.log("Element: ", element.textContent)

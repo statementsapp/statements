@@ -5588,7 +5588,7 @@
       }
 
       function flipCoin() {
-          return false;
+          return true;
           // return Math.random() < 0.001;
         }
 
@@ -7057,7 +7057,8 @@
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
-                  action: 'proposition'
+                  action: 'proposition',
+                  onBlank: true
                 
               },
               { index: 5, 

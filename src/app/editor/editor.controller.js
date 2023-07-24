@@ -6611,347 +6611,347 @@
                   messaged: true
              
               },
-              { index: 2, 
+              // { index: 2, 
                 
-                  author: $scope.userId,
-                  text: 'Compounds that slow down the growth of cancers might be investigated for their therapeutic value.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: true,
-                  which: 'item',
-                  on: 0,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     author: $scope.userId,
+              //     text: 'Compounds that slow down the growth of cancers might be investigated for their therapeutic value.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: true,
+              //     which: 'item',
+              //     on: 0,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
                 
-              },
-              { index: 3, 
+              // },
+              // { index: 3, 
                 
-                  author: $scope.userId,
-                  text: 'Mustard Agents and Lymphatic Activity',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'Mustard Agents and Lymphatic Activity',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'node',
-                  on: 2,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'node',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 4, 
+              // },
+              // { index: 4, 
                 
-                  author: $scope.userId,
-                  text: 'Sulphur mustard might be a candidate for “chemical” cancer therapy.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'Sulphur mustard might be a candidate for “chemical” cancer therapy.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 3,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  onBlank: true
+              //     which: 'item',
+              //     on: 3,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
                 
-              },
-              { index: 5, 
+              // },
+              // { index: 5, 
                
-                  author: $scope.userId,
-                  text: 'In laboratory studies on animals, it was found that nitrogen mustard induced severe white blood cell and lymphatic suppression.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'In laboratory studies on animals, it was found that nitrogen mustard induced severe white blood cell and lymphatic suppression.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 4,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
-              { index: 6, 
+              // },
+              // { index: 6, 
                 
-                  author: 'bbb',
-                  text: 'Other substances might cause the same effect, or the experiment was run on a faulty control group.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'bbb',
+              //     text: 'Other substances might cause the same effect, or the experiment was run on a faulty control group.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 7, 
+              // },
+              // { index: 7, 
                
-                  author: 'ccc',
-                  text: 'Mustard agents of any kind cannot have therapeutic value.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'ccc',
+              //     text: 'Mustard agents of any kind cannot have therapeutic value.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              },
-              { index: 8, 
+              // },
+              // { index: 8, 
                
-                  author: $scope.userId,
-                  text: 'A review of other substances shows this leucopenia is exceptional, and the same results were found in subsequent animal trials.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'A review of other substances shows this leucopenia is exceptional, and the same results were found in subsequent animal trials.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 6,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              },
-              { index: 9, 
+              // },
+              // { index: 9, 
                
-                  author: $scope.userId,
-                  text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 8,
-                  its: 'bottom',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  onBlank: true
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
               
-              },
-              { index: 10, 
+              // },
+              // { index: 10, 
                
-                  author: 'ccc',
-                  text: 'Sulphur mustard is known to cause extensive damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: 'ccc',
+              //     text: 'Sulphur mustard is known to cause extensive damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  type: 'negation',
-                  code: '2A',
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     type: 'negation',
+              //     code: '2A',
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 9,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
               
-              },
-              { index:11, 
+              // },
+              // { index:11, 
                
-                  author: $scope.userId,
-                  text: 'Victims exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'Victims exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 10,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
+              //     which: 'item',
+              //     on: 10,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
               
-              },
-              { index:12, 
+              // },
+              // { index:12, 
                
-                  author: $scope.userId,
-                  text: 'This might indicate a role for sulphur mustard in the treatment of lymphoma.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'This might indicate a role for sulphur mustard in the treatment of lymphoma.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 11,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
+              //     which: 'item',
+              //     on: 11,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
               
-              },
-              { index: 13, 
+              // },
+              // { index: 13, 
                 
-                  author: $scope.userId,
-                  text: 'Experiments',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'Experiments',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'node',
-                  on: 12,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'node',
+              //     on: 12,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index:14, 
+              // },
+              // { index:14, 
                
-                  author: $scope.userId,
-                  text: 'Mice with lymphoma were exposed to nitrogen mustard.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'Mice with lymphoma were exposed to nitrogen mustard.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 13,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  onBlank: true
+              //     which: 'item',
+              //     on: 13,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
               
-              },
-              { index: 15, 
+              // },
+              // { index: 15, 
                
-                  author: 'ddd',
-                  text: 'We might expect a deterioration in the mouse’s condition.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: 'ddd',
+              //     text: 'We might expect a deterioration in the mouse’s condition.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  type: 'negation',
-                  code: '2A',
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     type: 'negation',
+              //     code: '2A',
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 14,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
+              //     which: 'item',
+              //     on: 14,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
               
-              },
-              { index:16, 
+              // },
+              // { index:16, 
                
-                  author: $scope.userId,
-                  text: 'Rapid regression of the tumor occurred, with less of an effect each subsequent administration.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'Rapid regression of the tumor occurred, with less of an effect each subsequent administration.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 15,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
+              //     which: 'item',
+              //     on: 15,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
                   
-              },
-              { index:17, 
+              // },
+              // { index:17, 
                
-                  author: $scope.userId,
-                  text: 'The mice lived an unusually long time versus experimental controls.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
+              //     author: $scope.userId,
+              //     text: 'The mice lived an unusually long time versus experimental controls.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
                   
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 16,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-              },
+              //     which: 'item',
+              //     on: 16,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              // },
             ];
 
 

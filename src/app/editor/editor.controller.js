@@ -7172,7 +7172,7 @@
               { index: 10, 
                
                   author: $scope.userId,
-                  text: 'Lengths may be contracted and time expanded by means of this additional term, which bears strong mathematical resemblance to the Pythagorean Theorem.',
+                  text: 'Lengths may be contracted and time expanded by means of this additional term.',
                   dialogueText: function() {
                                   return this.text;
                                 },

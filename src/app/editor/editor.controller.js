@@ -1631,10 +1631,9 @@
             focusFactory($scope.bottomNodeAdderId);
             console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
             console.log("Adder id: ", $scope.bottomNodeAdderId)
-            document.getElementById($scope.bottomNodeAdderId).focus()
             // focusFactory($scope.bottomNodeAdderId);
           });
-          // document.getElementById($scope.bottomNodeAdderId).click();
+          document.getElementById($scope.bottomNodeAdderId).click();
         }, 0);
       };
 

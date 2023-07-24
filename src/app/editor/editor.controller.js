@@ -7719,23 +7719,45 @@
                             break;
                           // });
                         } else if (theStep.its === 'self') {     
-                          console.log("Self")
-                          setTimeout(function () {
-                            $scope.$apply(function () {
-                             
-                              $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                            });
-                          }, 0);
-                                  
-                          setTimeout(function () {
-                            document.getElementById('proposition'+thisHereId).click();
-                          }, 20);
-                          setTimeout(function () {
-                            populateElementWithText($scope.preDefinedPoints[index].text,thisHereId,null, null, theStep)
-                
+
+                          if (theStep.messaged){
+                            console.log("Its messaged")
+                            setTimeout(function () {
+                              document.getElementById('message'+thisHereId).click();
+                            }, 20);
+
+                            setTimeout(function () {
+                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
+                              
+                              // break;
+                            }, 100);
+                            break;
+                          } else {
+                            console.log("Self")
+                            // if (!theStep.noClick){
+                            //   console.log("Not clicked")
+                            //   setTimeout(function () {
+                            //     $scope.$apply(function () {
+                                 
+                            //       $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                            //     });
+                            //   }, 0);
+                            // }
                             
-                          }, 20);
-                          break;
+                                    
+                            setTimeout(function () {
+                              document.getElementById('proposition'+thisHereId).click();
+                            }, 20);
+                            setTimeout(function () {
+                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId,null, null, theStep)
+                            
+                              
+                            }, 20);
+                            break;
+                          }
+                          
+
+                          
                           
                         }
                         // var hasAK = true;

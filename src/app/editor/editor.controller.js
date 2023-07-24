@@ -7286,8 +7286,9 @@
                 }
                 if (messageFlag){
                   console.log("M")
+
+                  $scope.inputs.chatProposition = angular.copy(element.textContent);
                   element.textContent = '';
-                  $scope.inputs.chatProposition = element.textContent;
                 } else {
                   console.log("E")
                   $scope.inputs[id] = element.textContent;

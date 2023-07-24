@@ -6880,7 +6880,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 11,
+                  on: 13,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 

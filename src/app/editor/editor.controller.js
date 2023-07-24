@@ -7262,7 +7262,7 @@
                   }
                 }
                 
-                
+                $scope.inputs['remark'+id] = element.textContent;
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
                 
@@ -7270,28 +7270,25 @@
                   $scope.inputs.chatProposition = element.textContent;
                 } else {
                   $scope.inputs[id] = element.textContent;
-                  $scope.inputs['remark'+id] = element.textContent;
                 }
               } else {
-                
+                console.log("Element well: ", angular.copy(element))
+                element.textContent += text[index];
                 index++;
                 
-                
-                
+                $scope.inputs['remark'+id] = element.textContent;
+                $scope.inputs['top'+id] = element.textContent;
+                $scope.inputs['bottom'+id] = element.textContent;
+                if (theStep.its){
+                  if (theStep.its === 'left'){
+                    $scope.inputs['left'+id] = element.textContent;
+                  }
+                }
                 if (messageFlag){
                   console.log("M")
                   $scope.inputs.chatProposition = element.textContent;
                 } else {
                   console.log("E")
-                  element.textContent += text[index];
-                  $scope.inputs['top'+id] = element.textContent;
-                  $scope.inputs['bottom'+id] = element.textContent;
-                  if (theStep.its){
-                    if (theStep.its === 'left'){
-                      $scope.inputs['left'+id] = element.textContent;
-                    }
-                  }
-                  $scope.inputs['remark'+id] = element.textContent;
                   $scope.inputs[id] = element.textContent;
                 }
                 // console.log("Element: ", element.textContent)

@@ -1608,7 +1608,7 @@
       };
 
       $scope.clearWithBottomNodeAdder = function (node) {
-
+        console.log("Node adder clear")
          $scope.unHighlightNode();
          $scope.bottomNodeAdderId = IdFactory.next();
          

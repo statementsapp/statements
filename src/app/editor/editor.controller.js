@@ -7004,7 +7004,7 @@
               { index: 2, 
                 
                   author: $scope.userId,
-                  text: 'While Newtonian physics provides a good approximation, when clocks approach the speed of light, they will not agree on the measurement of time elapsed.',
+                  text: 'While Newtonian physics provides a good approximation, when clocks approach the speed of light, they will not agree with stationary clocks on how much time has elapsed.',
                   dialogueText: function() {
                                   return this.text;
                                 },

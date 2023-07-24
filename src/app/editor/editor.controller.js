@@ -1630,6 +1630,7 @@
             $scope.selectedProposition.textSide = true;
             focusFactory($scope.bottomNodeAdderId);
             console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
+            console.log("Adder id: ", $scope.bottomNodeAdderId)
             document.getElementById($scope.bottomNodeAdderId).focus()
             // focusFactory($scope.bottomNodeAdderId);
           });

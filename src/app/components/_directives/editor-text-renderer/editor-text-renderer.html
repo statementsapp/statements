@@ -697,11 +697,10 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
     ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
     style="color: #0C2340; text-indent: 25px; background-color: #0C2340"
     class="right-textarea texttopic"
-    id="{{bottomNodeAdderId}}"
-    ng-click="$event.stopPropagation()"></span>
-    <span class="cursor visible-cursor"
+    id="{{bottomNodeAdderId}}"></span>
+<!--     <span class="cursor visible-cursor"
           ng-if="node.bottomDropzoneMouseOver && hasBottomNodeFocus !== node.nodeId">
-    </span>
+    </span> -->
   </div>
 </div>
 

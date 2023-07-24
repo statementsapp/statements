@@ -6611,24 +6611,24 @@
                   messaged: true
              
               },
-              // { index: 2, 
+              { index: 2, 
                 
-              //     author: $scope.userId,
-              //     text: 'Compounds that slow down the growth of cancers might be investigated for their therapeutic value.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: true,
-              //     which: 'item',
-              //     on: 0,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  author: $scope.userId,
+                  text: 'Compounds that slow down the growth of cancers might be investigated for their therapeutic value.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
                 
-              // },
+              },
               // { index: 3, 
                 
               //     author: $scope.userId,

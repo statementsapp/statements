@@ -1630,9 +1630,10 @@
             $scope.selectedProposition.textSide = true;
             focusFactory($scope.bottomNodeAdderId);
             console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
-            document.getElementById($scope.bottomNodeAdderId).click();
+            
             // focusFactory($scope.bottomNodeAdderId);
           });
+          document.getElementById($scope.bottomNodeAdderId).click();
         }, 0);
       };
 

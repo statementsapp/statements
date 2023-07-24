@@ -7251,7 +7251,7 @@
             // console.log("Well the element: ", element)
             $scope.$apply(function () {
              setTimeout(function () {
-              if (Math.random() < 0.001 && index > 0) {
+              if (Math.random() < 0.001 && index > 0 && false) {
                 // Simulate a backspace by removing the last character
                 console.log("Element: ", element)
                 element.textContent = element.textContent.slice(0, -1);
@@ -7273,22 +7273,24 @@
                   $scope.inputs['remark'+id] = element.textContent;
                 }
               } else {
-                element.textContent += text[index];
+                
                 index++;
                 
                 
-                $scope.inputs['top'+id] = element.textContent;
-                $scope.inputs['bottom'+id] = element.textContent;
-                if (theStep.its){
-                  if (theStep.its === 'left'){
-                    $scope.inputs['left'+id] = element.textContent;
-                  }
-                }
+                
                 if (messageFlag){
                   console.log("M")
                   $scope.inputs.chatProposition = element.textContent;
                 } else {
                   console.log("E")
+                  element.textContent += text[index];
+                  $scope.inputs['top'+id] = element.textContent;
+                  $scope.inputs['bottom'+id] = element.textContent;
+                  if (theStep.its){
+                    if (theStep.its === 'left'){
+                      $scope.inputs['left'+id] = element.textContent;
+                    }
+                  }
                   $scope.inputs['remark'+id] = element.textContent;
                   $scope.inputs[id] = element.textContent;
                 }

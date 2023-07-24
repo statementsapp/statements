@@ -6888,6 +6888,70 @@
                   onBlank: true
               
               },
+              { index: 15, 
+               
+                  author: 'ddd',
+                  text: 'We might expect a deterioration in the mouse’s condition.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  type: 'negation',
+                  code: '2A',
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 14,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              
+              },
+              { index:16, 
+               
+                  author: $scope.userId,
+                  text: 'Rapid regression of the tumor occurred, with less of an effect each subsequent administration.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 15,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  
+              },
+              { index:17, 
+               
+                  author: $scope.userId,
+                  text: 'The mice lived an unusually long time versus experimental controls.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 16,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              },
             ];
 
 

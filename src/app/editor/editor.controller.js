@@ -6956,6 +6956,243 @@
               // Add more pre-defined points with their respective pre-determined values
             ];
 
+            $scope.dawnOfChemotherapy = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'Cancer mortality involves the overwhelming the body’s systems through rapid growth of cancerous tissues.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  step: undefined,
+                  which: 'theBlank',
+                  on: undefined,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                  
+                
+              },
+              { index: 1, 
+               
+                  author: 'aaa',
+                  text: 'It also involves the production of faulty cells and renders tissues unable to maintain the body’s homeostasis.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+             
+              },
+              { index: 2, 
+                
+                  author: $scope.userId,
+                  text: 'Compounds that slow down the growth of cancers might be investigated for their therapeutic value.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              { index: 3, 
+                
+                  author: $scope.userId,
+                  text: 'Mustard Agents and Lymphatic Activity',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'node',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 4, 
+                
+                  author: $scope.userId,
+                  text: 'Sulphur mustard might be a candidate for “chemical” cancer therapy.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 3,
+                  its: 'top',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 5, 
+               
+                  author: $scope.userId,
+                  text: 'In laboratory studies on animals, it was found that nitrogen mustard induced severe white blood cell and lymphatic suppression.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 6, 
+                
+                  author: 'bbb',
+                  text: 'Other substances might cause the same effect, or the experiment was run on a faulty control group.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 5,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 7, 
+               
+                  author: 'ccc',
+                  text: 'Mustard agents of any kind cannot have therapeutic value.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 6,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+              
+              },
+              { index: 8, 
+               
+                  author: $scope.userId,
+                  text: 'A review of other substances shows this leucopenia is exceptional, and the same results were found in subsequent animal trials.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 6,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+              
+              },
+              { index: 9, 
+               
+                  author: $scope.userId,
+                  text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 8,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: true
+              
+              },
+              { index: 10, 
+               
+                  author: 'ccc',
+                  text: 'Sulphur mustard is known to cause extensive damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  type: 'negation',
+                  code: '2A',
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 9,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              
+              },
+
+            ];
+
 
 
             $scope.preDefinedPoints = [
@@ -7190,32 +7427,7 @@
                   action: 'proposition',
               
               },
-              // { index: 11, 
-               
-              //     author: $scope.userId,
-              //     text: 'The form the transformation takes...',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-                  
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 5,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
-              
-              // },
 
-
-
-              // Add more pre-defined points with their respective pre-determined values
             ];
 
 
@@ -7223,6 +7435,7 @@
              // $scope.preDefinedPoints = $scope.supremeCourtScript;
              // $scope.preDefinedPoints = $scope.physics; 
              // $scope.preDefinedPoints = $scope.geocentrism;
+              $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
 
 
 

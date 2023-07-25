@@ -417,26 +417,39 @@ textarea {
 
 
 
-.fade-element-in.ng-enter {
+.slide-element-in.ng-enter {
   transition: 0.8s linear all;
   opacity: 0;
+  transform: translateX(100%);
 }
 
-.fade-element-in-init .fade-element-in.ng-enter {
+.slide-element-in-init .slide-element-in.ng-enter {
   opacity: 1;
+  transform: translateX(0);
 }
 
-.fade-element-in.ng-enter.ng-enter-active {
+.slide-element-in.ng-enter.ng-enter-active {
   opacity: 1;
+  transform: translateX(0);
 }
 
-.fade-element-in.ng-leave {
+.slide-element-in.ng-leave {
   transition: 0.8s linear all;
   opacity: 1;
+  transform: translateX(0);
 }
-.fade-element-in.ng-leave.ng-leave-active {
+
+.slide-element-in.ng-leave.ng-leave-active {
   opacity: 0;
+  transform: translateX(-100%);
 }
+
+
+
+
+
+
+
 
 
 .topaddpadding {

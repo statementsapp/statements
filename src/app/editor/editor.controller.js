@@ -7555,6 +7555,7 @@
                               console.log("Its messaged")
                               setTimeout(function () {
                                 document.getElementById('message'+thisHereId).click();
+                                document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
                               }, 20);
 
                               setTimeout(function () {
@@ -7744,6 +7745,7 @@
                             console.log("Its messaged")
                             setTimeout(function () {
                               document.getElementById('message'+thisHereId).click();
+                              document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
                             }, 20);
 
                             setTimeout(function () {

@@ -6626,7 +6626,6 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  messaged: true
                 
               },
               { index: 3, 
@@ -6732,7 +6731,7 @@
                   which: 'item',
                   on: 5,
                   its: 'self',
-                  typeTime: 3000,
+                  typeTime: 5000,
                   noClick: false, 
                   action: 'proposition'
               

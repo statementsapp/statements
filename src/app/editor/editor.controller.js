@@ -6572,7 +6572,7 @@
               { index: 0, 
                 
                   author: $scope.userId,
-                  text: 'Cancer mortality involves the overwhelming the body’s systems through rapid growth of cancerous tissues.',
+                  text: 'Cancer left untreated overwhelms the body’s systems through rapid growth of cancerous tissues.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6689,7 +6689,6 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  messaged: true
               
               },
               { index: 6, 
@@ -6929,6 +6928,7 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
+                  messaged: true
                   
               },
               { index:17, 

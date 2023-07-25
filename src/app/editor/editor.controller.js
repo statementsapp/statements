@@ -6760,7 +6760,7 @@
               { index: 9, 
                
                   author: $scope.userId,
-                  text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed',
+                  text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed in animals.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6782,7 +6782,7 @@
               { index: 10, 
                
                   author: 'ccc',
-                  text: 'Sulphur mustard is known to cause extensive damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
+                  text: 'Sulphur mustard is known to cause unacceptable damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6891,7 +6891,7 @@
               { index: 15, 
                
                   author: 'ddd',
-                  text: 'We might expect a deterioration in the mouse’s condition.',
+                  text: "We might expect a deterioration in the test subjects' condition.",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6914,7 +6914,7 @@
               { index:16, 
                
                   author: $scope.userId,
-                  text: 'Rapid regression of the tumor occurred, with less of an effect each subsequent administration.',
+                  text: 'Rapid regression of tumors occurred, with less of an effect each subsequent administration.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6952,6 +6952,7 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
+                  messaged: true
               },
             ];
 

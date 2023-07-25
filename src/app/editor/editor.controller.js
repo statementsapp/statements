@@ -6804,7 +6804,7 @@
               { index:11, 
                
                   author: $scope.userId,
-                  text: 'Victims exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
+                  text: 'People exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6820,6 +6820,7 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
+                  messaged: true
               
               },
               { index:12, 

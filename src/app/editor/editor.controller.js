@@ -7546,7 +7546,7 @@
                               console.log("Its messaged")
                               setTimeout(function () {
                                 document.getElementById('message'+thisHereId).click();
-                              }, 20);
+                              }, 2000);
 
                               setTimeout(function () {
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
@@ -7567,7 +7567,7 @@
                               setTimeout(function () {
                                 console.log("STILL THIS HERE ID: ", thisHereId)
                                 document.getElementById('proposition'+thisHereId).click();
-                              }, 20);
+                              }, 2000);
                               setTimeout(function () {
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
                                 

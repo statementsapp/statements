@@ -7432,7 +7432,7 @@
         // Simulating a user
         $scope.simulateUser = function(index) {
           // simulate script
-          
+          // if (index > 0 && $scope.preDefinedPoints[index-1])
           var theStep = $scope.preDefinedPoints[index];
           // console.log("The step: ", theStep)
           var theOn = theStep.on;
@@ -7447,7 +7447,7 @@
                       var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
                       setTimeout(function () {
                         document.getElementById(thisHereId).click();
-                      }, 20);
+                      }, 2000);
                       break;
                     }
                   }
@@ -7464,7 +7464,7 @@
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {
                       document.getElementById(thisHereId).click();
-                    }, 20);
+                    }, 2000);
                     break;
                   }
                 }
@@ -7489,7 +7489,7 @@
                           var hasAJ = true;
                           setTimeout(function () {
                             document.getElementById(thisHereId).click();
-                          }, 20);
+                          }, 2000);
                           break;
                       }
                     }

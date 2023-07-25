@@ -7447,12 +7447,15 @@
                       var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j].id;
                       setTimeout(function () {
                         document.getElementById(thisHereId).click();
-                      }, 2000);
+                      }, 20);
                       break;
                     }
                   }
                 }
-                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+                setTimeout(function () {
+                  populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+                }, 2000);
+                
               } else if (theStep.which === 'aBlank'){
                 var theNodeTopic = theOn.text;
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
@@ -7464,11 +7467,14 @@
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {
                       document.getElementById(thisHereId).click();
-                    }, 2000);
+                    }, 20);
                     break;
                   }
                 }
-                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+                setTimeout(function () {
+                  populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+                }, 2000);
+                
               } else if (theStep.which === 'node'){
 
 
@@ -7489,13 +7495,16 @@
                           var hasAJ = true;
                           setTimeout(function () {
                             document.getElementById(thisHereId).click();
-                          }, 2000);
+                          }, 20);
                           break;
                       }
                     }
                   }
                 }
-              populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true, theStep)
+              setTimeout(function () {
+                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true, theStep)
+              }, 2000);
+              
 
 
                 // for (var h = 0; h < $scope.data[0].nodes.length; h++){
@@ -7546,13 +7555,13 @@
                               console.log("Its messaged")
                               setTimeout(function () {
                                 document.getElementById('message'+thisHereId).click();
-                              }, 2000);
+                              }, 20);
 
                               setTimeout(function () {
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
                                 
                                 // break;
-                              }, 100);
+                              }, 2000);
                             } else {
                               console.log("NOT messaged")
                               // for rejoinders
@@ -7567,12 +7576,12 @@
                               setTimeout(function () {
                                 console.log("STILL THIS HERE ID: ", thisHereId)
                                 document.getElementById('proposition'+thisHereId).click();
-                              }, 2000);
+                              }, 20);
                               setTimeout(function () {
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
                                 
                                 
-                              }, 25);
+                              }, 2000);
                               break;
                             }
                             
@@ -7629,7 +7638,7 @@
                       populateElementWithText($scope.preDefinedPoints[index].text,thisHereId,null, null, theStep)
                     
                       
-                    }, 20);
+                    }, 2000);
                     break;
                   }
                  
@@ -7674,7 +7683,7 @@
                               populateElementWithText($scope.preDefinedPoints[index].text, 
                                 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep)
                              
-                            }, 300);
+                            }, 2000);
                           // });
                           break;
                         } else if (theStep.its === 'bottom'){
@@ -7695,7 +7704,7 @@
                               populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep)
                            
 
-                            }, 30);
+                            }, 2000);
                             break;
                           // });
                           
@@ -7726,7 +7735,7 @@
                               populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep)
                              
 
-                            }, 30);
+                            }, 2000);
                             break;
                           // });
                         } else if (theStep.its === 'self') {     
@@ -7741,7 +7750,7 @@
                               populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
                               
                               // break;
-                            }, 100);
+                            }, 2000);
                             break;
                           } else {
                             console.log("Self")
@@ -7763,7 +7772,7 @@
                               populateElementWithText($scope.preDefinedPoints[index].text,thisHereId,null, null, theStep)
                             
                               
-                            }, 20);
+                            }, 2000);
                             break;
                           }
                           

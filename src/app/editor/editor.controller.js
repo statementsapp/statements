@@ -6952,7 +6952,6 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  messaged: true
               },
             ];
 

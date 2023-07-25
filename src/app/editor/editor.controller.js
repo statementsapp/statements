@@ -7227,7 +7227,7 @@
 
         function populateElementWithText(text, id, messageFlag, nodeFlag, theStep) {
           console.log("That populating id: ", id)
-          if (messageFlag){
+          if (!messageFlag){
             var element = document.getElementById(id);
           } else {
             var element = document.getElementById('input' + id);

@@ -5372,7 +5372,7 @@
                 ('3px solid ' + angular.copy($scope.saveThisColorForASec))
 
                 if ($scope.hasBeenSetUp && payload.code){
-                  if (flipCoin()) {
+                  if (true) {
                       console.log("Collapsing an incoming automated remark")
                       $scope.data[0].nodes[$scope.saveI].paragraphs[$scope.saveJ].propositions[$scope.saveK].remarksExpanded = false;
                     } else {
@@ -5593,8 +5593,8 @@
       }
 
       function flipCoin() {
-          return true;
-          // return Math.random() < 0.001;
+          
+          return Math.random() < 0.5;
         }
 
       $scope.clearAnimationClass = function () {
@@ -7294,7 +7294,7 @@
                   console.log("M")
 
                   $scope.inputs.chatProposition = angular.copy(element.textContent);
-                  document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
+                  $scope.scrollMessagesToBottom();
                   
                 } else {
                   console.log("E")

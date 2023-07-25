@@ -7294,6 +7294,7 @@
                   console.log("M")
 
                   $scope.inputs.chatProposition = angular.copy(element.textContent);
+                  document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
                   
                 } else {
                   console.log("E")

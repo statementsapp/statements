@@ -1609,10 +1609,7 @@
 
       $scope.clearWithBottomNodeAdder = function (node) {
         console.log("Node adder clear")
-         $scope.unHighlightNode();
-         $scope.bottomNodeAdderId = IdFactory.next();
          
-         $scope.hasBottomNodeFocus = node.nodeId;
         // $timeout(function () {
         //   $scope.$apply(function () {
         //     node.bottomNodeAdd = true;
@@ -1624,6 +1621,9 @@
         // }, 0);
         $timeout(function () {
           $scope.$apply(function () {
+            $scope.unHighlightNode();
+            $scope.bottomNodeAdderId = IdFactory.next();
+            $scope.hasBottomNodeFocus = node.nodeId;
             node.bottomNodeAdd = true;
             $scope.selectedNode = node;
             $scope.selectedProposition = {};
@@ -1633,8 +1633,9 @@
             console.log("Adder id: ", $scope.bottomNodeAdderId)
             // focusFactory($scope.bottomNodeAdderId);
           });
-          document.getElementById($scope.bottomNodeAdderId).click();
+          
         }, 0);
+        document.getElementById($scope.bottomNodeAdderId).click();
       };
 
       // Manages bottom adder selection

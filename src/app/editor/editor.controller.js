@@ -6328,7 +6328,25 @@
                   messaged: true
               
               },
-              { index: 7, 
+              { index: 5, 
+                
+                  author: $scope.userId,
+                  text: "The solidity of the Earth shows that it is exempt from the forces that move the celestial bodies around it.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 5,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              { index: 8, 
                
                   author: 'ddd',
                   text: 'Scriptural evidence can be unreliable.',
@@ -6344,6 +6362,47 @@
                   
                   which: 'item',
                   on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 9, 
+                
+                  author: $scope.userId,
+                  text: 'Scripture is incapable of error and hence since it models a geocentric universe, we must be living in one.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 8,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 10, 
+               
+                  author: 'ddd',
+                  text: 'Which scripture? And what about when scripture contradicts itself?.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 9,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -7196,7 +7255,7 @@
 
             
              
-             // $scope.preDefinedPoints = $scope.geocentrism;
+             $scope.preDefinedPoints = $scope.geocentrism;
               // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
 
 

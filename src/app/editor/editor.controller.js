@@ -1629,13 +1629,14 @@
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;
             focusFactory($scope.bottomNodeAdderId);
-            console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
-            console.log("Adder id: ", $scope.bottomNodeAdderId)
+            
             // focusFactory($scope.bottomNodeAdderId);
           });
           
         }, 0);
         $timeout(function () {
+          console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
+          console.log("Adder id: ", $scope.bottomNodeAdderId)
           document.getElementById($scope.bottomNodeAdderId).click();
         }, 0);
         

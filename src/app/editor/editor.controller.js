@@ -1637,7 +1637,8 @@
         $timeout(function () {
           console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
           console.log("Adder id: ", $scope.bottomNodeAdderId)
-          document.getElementById($scope.bottomNodeAdderId).click();
+          focusFactory($scope.bottomNodeAdderId);
+          // document.getElementById($scope.bottomNodeAdderId).click();
         }, 0);
         
       };

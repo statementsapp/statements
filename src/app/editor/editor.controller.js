@@ -8424,6 +8424,7 @@
        // }
 
         console.log('get book')
+        console.log("Get last event: ", angular.copy(event))
         $scope.whatHasBeenClicked = '';
         for (var i = $scope.data[0].nodes.length-1; i > -1; i--){
           if (!$scope.data[0].nodes[i].minimized){

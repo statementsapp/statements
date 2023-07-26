@@ -1635,7 +1635,10 @@
           });
           
         }, 0);
-        document.getElementById($scope.bottomNodeAdderId).click();
+        $timeout(function () {
+          document.getElementById($scope.bottomNodeAdderId).click();
+        }, 0);
+        
       };
 
       // Manages bottom adder selection

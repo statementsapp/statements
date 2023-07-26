@@ -6328,7 +6328,7 @@
                   messaged: true
               
               },
-              { index: 5, 
+              { index: 7, 
                 
                   author: $scope.userId,
                   text: "The solidity of the Earth shows that it is exempt from the forces that move the celestial bodies around it.",

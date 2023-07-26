@@ -1609,10 +1609,22 @@
 
       $scope.clearWithBottomNodeAdder = function (node) {
         console.log("Node adder clear")
-         $scope.unHighlightNode();
-         $scope.bottomNodeAdderId = IdFactory.next();
          
-         $scope.hasBottomNodeFocus = node.nodeId;
+         $scope.$apply(function () {
+           $scope.unHighlightNode();
+           $scope.bottomNodeAdderId = IdFactory.next();
+           
+           $scope.hasBottomNodeFocus = node.nodeId;
+           node.bottomNodeAdd = true;
+           $scope.selectedNode = node;
+           $scope.selectedProposition = {};
+           $scope.selectedProposition.textSide = true;
+           document.getElementById($scope.bottomNodeAdderId).click();
+           console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
+           console.log("Adder id: ", $scope.bottomNodeAdderId)
+           // focusFactory($scope.bottomNodeAdderId);
+         });
+         document.getElementById($scope.bottomNodeAdderId).click();
         // $timeout(function () {
         //   $scope.$apply(function () {
         //     node.bottomNodeAdd = true;
@@ -1622,19 +1634,16 @@
         //     // focusFactory($scope.bottomNodeAdderId);
         //   });
         // }, 0);
-        $timeout(function () {
-          $scope.$apply(function () {
-            node.bottomNodeAdd = true;
-            $scope.selectedNode = node;
-            $scope.selectedProposition = {};
-            $scope.selectedProposition.textSide = true;
-            document.getElementById($scope.bottomNodeAdderId).click();
-            console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
-            console.log("Adder id: ", $scope.bottomNodeAdderId)
-            // focusFactory($scope.bottomNodeAdderId);
-          });
-          document.getElementById($scope.bottomNodeAdderId).click();
-        }, 0);
+        // $timeout(function () {
+        //   $scope.$apply(function () {
+            
+        //     document.getElementById($scope.bottomNodeAdderId).click();
+        //     console.log("element: ", document.getElementById($scope.bottomNodeAdderId))
+        //     console.log("Adder id: ", $scope.bottomNodeAdderId)
+        //     // focusFactory($scope.bottomNodeAdderId);
+        //   });
+          
+        // }, 0);
       };
 
       // Manages bottom adder selection

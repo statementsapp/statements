@@ -6226,7 +6226,7 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  messaged: true
+                  messaged: false
                 
               },
               { index: 2, 
@@ -6378,7 +6378,7 @@
               { index: 9, 
                 
                   author: $scope.userId,
-                  text: 'Scripture is incapable of error and hence since it models a geocentric universe, we must be living in one.',
+                  text: 'Scripture is incapable of error and since it models a geocentric universe, we must be living in one.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6396,7 +6396,7 @@
               { index: 10, 
                
                   author: 'ddd',
-                  text: 'Which scripture? And what about when scripture contradicts itself?.',
+                  text: 'Whose scripture? And what about when scripture contradicts itself?',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6415,6 +6415,24 @@
                   action: 'proposition',
                   messaged: true
               
+              },
+              { index: 11, 
+                
+                  author: $scope.userId,
+                  text: "The repeating cycle of seasons and the Earth's general stability shows that it is immune from celestial changes."
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 7,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
               },
               // { index: 2, 
                 

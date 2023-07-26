@@ -684,6 +684,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
      ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : didItRun()"
      id="bottom{{node.nodeId}}">
 </div>
+<!-- There is an issue here with a space being treated like a click and firing getLastVisiblePropInBook
+fix it like all the others -->
 <div ng-if="(data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingNode && !draggingParagraph && !draggingProposition) && ((!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true))"
      style="padding-top: 16px; padding-bottom: 40px; position: relative; left: -10px; "
      class='addparagraph'>

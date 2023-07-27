@@ -6419,7 +6419,7 @@
               { index: 11, 
                 
                   author: $scope.userId,
-                  text: "The repeating cycle of seasons and the Earth's general stability shows that it is immune from celestial changes."
+                  text: "The repeating cycle of seasons and the Earth's general stability shows that it is immune from celestial changes.",
                   dialogueText: function() {
                                   return this.text;
                                 },

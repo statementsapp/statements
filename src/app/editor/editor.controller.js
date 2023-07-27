@@ -3586,7 +3586,7 @@
           // Or if it's a continuation of another remark
           // it's a negation
 
-          if ($scope.selectedProposition.type === 'negation' || (automatedAuthor && automatedCode === '2B')) {
+          if (($scope.selectedProposition.type === 'negation' || (automatedAuthor && automatedCode === '2B')) && false) {
             //repeated negation
             console.log("2b")
             prep.code = '2B';

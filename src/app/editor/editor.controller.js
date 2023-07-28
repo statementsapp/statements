@@ -7001,7 +7001,7 @@
                 
               },
               { index: 1, 
-               
+                  // If that happens, production will drop and the reconstruction of the Japanese economy will be significantly delayed.
                   author: 'aaa',
                   text: "そんなことをすれば生産が低下し、日本経済の再建が大幅に遅れることになる。",
                   dialogueText: function() {
@@ -7026,7 +7026,7 @@
               { index: 2, 
                 
                   author: $scope.userId,
-                  text: "Japan's need to trade for the resources to power its manufacturing make the prizing of high-volume production a mistake once domestic needs are eventually met.",
+                  text: "Japan's need to trade for the resources to fuel its manufacturing make the prizing of high-volume production risky once domestic needs are eventually met.",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7041,48 +7041,71 @@
                   messaged: true
                 
               },
-              // { index: 3, 
-                
-              //     author: $scope.userId,
-              //     text: 'This discrepancy arises because light propagates at a constant but finite speed in a vacuum, irrespective of the motion of the observer or the source of light.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+              
+              { index: 3, 
+                  // Improving Processes at Toyota
+                  author: $scope.userId,
+                  text: 'トヨタのプロセス改善',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'node',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 6000,
+                  noClick: false, 
+                  action: 'proposition'
+              
+              },
+              { index: 4, 
+                  // Toyota should undertake an initiative to improve quality and reduce waste.
+                  author: $scope.userId,
+                  text: 'トヨタは品質向上と無駄削減に取り組むべきだ。',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 2,
-              //     its: 'bottom',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                      which: 'item',
+                      on: 3,
+                      its: 'self',
+                      typeTime: 3000,
+                      noClick: false, 
+                      action: 'proposition',
+                      onBlank: true
                 
-              // },
-              // { index: 4, 
-                
-              //     author: $scope.userId,
-              //     text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+              },
+              { index: 5, 
+                  // This would go a long way in building brand loyalty for Toyota automobiles.
+                  author: $scope.userId,
+                  text: 'これはトヨタ自動車のブランドロイヤルティを構築する上で大いに役立つだろう。',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 0,
-              //     its: 'top',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
+              },
               // { index: 5, 
                
               //     author: 'bbb',

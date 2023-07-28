@@ -6984,7 +6984,7 @@
               { index: 0, 
                 
                   author: $scope.userId,
-                  text: 'Manufacturers in Japan might improve competitiveness by embracing continuous improvement of processes and statistical analysis.',
+                  text: 'Manufacturers in Japan might improve competitiveness by embracing continuous process improvement.',
                   dialogueText: function() {
                                   return this.text;
                                 },

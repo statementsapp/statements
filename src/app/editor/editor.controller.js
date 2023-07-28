@@ -3435,7 +3435,7 @@
           var input = $scope.draggedProposition.text;
         }
 
-        if (prep.lastChar !== '.' && prep.lastChar !== '?' && prep.lastChar !== '!' && prep.lastChar !== ':') {
+        if (prep.lastChar !== '.' && prep.lastChar !== '?' && prep.lastChar !== '!' && prep.lastChar !== ':' && prep.lastChar !== '。') {
           input = input + '.';
         }
         if (paragraph){

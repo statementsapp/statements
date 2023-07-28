@@ -6979,12 +6979,269 @@
 
             ];
 
+            $scope.toyota = [
+              // Toyota Production System
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'Manufacturers in Japan might improve competitiveness by embracing continuous improvement of processes and statistical analysis.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  step: undefined,
+                  which: 'theBlank',
+                  on: undefined,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                  
+                
+              },
+              { index: 1, 
+               
+                  author: 'aaa',
+                  text: "そんなことをすれば生産が低下し、日本経済の再建が大幅に遅れることになる。",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+             
+              },
+              { index: 2, 
+                
+                  author: $scope.userId,
+                  text: "Japan's need to trade for the resources to power its manufacturing make the prizing of high-volume production a mistake once domestic needs are eventually met.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              // { index: 3, 
+                
+              //     author: $scope.userId,
+              //     text: 'This discrepancy arises because light propagates at a constant but finite speed in a vacuum, irrespective of the motion of the observer or the source of light.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 4, 
+                
+              //     author: $scope.userId,
+              //     text: 'Newtonian physics needs to be corrected to account for recent experiments casting doubt upon the existence of a luminiferous ether.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 0,
+              //     its: 'top',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 5, 
+               
+              //     author: 'bbb',
+              //     text: 'Experiments must be run using clocks with greater precision than we currently have.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 6, 
+                
+              //     author: $scope.userId,
+              //     text: 'This paper proposes a revision to Newtonian physics.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'left',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 7, 
+               
+              //     author: 'ccc',
+              //     text: 'Does this hold for all observers? What about accelerating ones?',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 8, 
+               
+              //     author: $scope.userId,
+              //     text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'node',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 9, 
+               
+              //     author: $scope.userId,
+              //     text: 'More accurate measurements of objects moving at speeds close to that of light can be achieved using the Lorentz transformation.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
+              
+              // },
+              // { index: 10, 
+               
+              //     author: 'aaa',
+              //     text: 'This flies in the face of classical electrodynamics as well - can these be systematically revised too?',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 11, 
+               
+              //     author: $scope.userId,
+              //     text: 'Lengths may be contracted and time expanded by means of this additional term.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+
+            ];
 
             
              
-             $scope.preDefinedPoints = $scope.geocentrism;
+             // $scope.preDefinedPoints = $scope.geocentrism;
               // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
+              $scope.preDefinedPoints = $scope.toyota;
 
 
 

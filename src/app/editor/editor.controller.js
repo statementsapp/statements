@@ -6086,6 +6086,251 @@
             //   action: proposition
             // } 
             
+            $scope.listOfLethalities = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'AGI will not be upper-bounded by human ability or human learning speed.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  step: undefined,
+                  which: 'theBlank',
+                  on: undefined,
+                  its: undefined,
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                  
+                
+              },
+              { index: 1, 
+                
+                  author: $scope.userId,
+                  text: 'A cognitive system with sufficiently high cognitive powers, given any medium-bandwidth channel of causal influence, will not find it difficult to bootstrap to overpowering capabilities independent of human infrastructure.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 0,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 2, 
+                
+                  author: $scope.userId,
+                  text: "We need to get alignment right on the 'first critical try' at operating at a 'dangerous' level of intelligence, where unaligned operation at a dangerous level of intelligence kills everybody on Earth and then we don't get to try again.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 1,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 3, 
+                
+                  author: $scope.userId,
+                  text: "We can't just 'decide not to build AGI' because GPUs are everywhere, and knowledge of algorithms is constantly being improved and published",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 2,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 4, 
+               
+                  author: 'aaa',
+                  text: 'We’d just make smarter systems to monitor the AGI.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+             
+              },
+              { index: 5, 
+               
+                  author: 'bbb',
+                  text: "We’d know it immediately if an evil AI were plotting to overpower us.”",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 5000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 6, 
+               
+                  author: 'ccc',
+                  text: 'Techniques will be developed to make the inscrutable matrices highly readable.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 7, 
+                
+                  author: $scope.userId,
+                  text: "We can't just build a very weak system, which is less dangerous because it is so weak, and declare victory; because later there will be more actors that have the capability to build a stronger system and one of them will do so.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 3,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              { index: 8, 
+               
+                  author: 'ddd',
+                  text: 'The best engineers in the world are on it and will consider all possible lethalities.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 9, 
+                
+                  author: $scope.userId,
+                  text: "It is not naturally (by default, barring intervention) the case that everything takes place on a timescale that makes it easy for us to react.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              { index: 10, 
+               
+                  author: 'ddd',
+                  text: "An international moratorium on AGI development will come into being once politicians are aware of the danger.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 7,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 11, 
+                
+                  author: $scope.userId,
+                  text: "We can gather all sorts of information beforehand from less powerful systems that will not kill us if we screw up operating them; but once we are running more powerful systems, we can no longer update on sufficiently catastrophic errors.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 8,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+
+            ];
 
             $scope.geocentrism = [
               { index: 0, 
@@ -7286,8 +7531,10 @@
             
              
              // $scope.preDefinedPoints = $scope.geocentrism;
-              $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
+              // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
               // $scope.preDefinedPoints = $scope.toyota;
+              $scope.preDefinedPoints = $scope.listOfLethalities;
+
 
 
 
@@ -7553,7 +7800,7 @@
                   // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                   // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
-                  if ($scope.data[0].nodes[h].topic.slice(0, 6) === $scope.preDefinedPoints[theOn].text.slice(0, 6)){
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === $scope.preDefinedPoints[theOn].text.slice(0, 11)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {
@@ -7574,11 +7821,11 @@
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("H-I-J: ", h, " ", i, " ", j)
                       if ( (!hasAJ &&
-                        $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
+                        $scope.preDefinedPoints[theOn].text.slice(0,11) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                          (!hasAJ &&
-                        $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
+                        $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;    
                           var thisH = angular.copy(h)
                           var thisI = angular.copy(i)
@@ -7630,8 +7877,8 @@
                      
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                         if (!hasAK &&
-                        $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
+                        $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
                           
                           var thisH = angular.copy(h)
                           var thisI = angular.copy(i)
@@ -7699,9 +7946,9 @@
                 console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
-                  console.log("That points on: ", $scope.preDefinedPoints[theOn].text.slice(0, 6))
+                  console.log("That points on: ", $scope.preDefinedPoints[theOn].text.slice(0, 11))
                   console.log("That nodes blank: ", theStep.onBlank)
-                  if ($scope.data[0].nodes[h].topic.slice(0, 6) === $scope.preDefinedPoints[theOn].text.slice(0, 6) &&
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === $scope.preDefinedPoints[theOn].text.slice(0, 11) &&
                     theStep.onBlank){
                     console.log("Normal blank")
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -7738,14 +7985,14 @@
                     
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("H-I-J: ", h, " ", i, " ", j)
-                      console.log("First: ", $scope.preDefinedPoints[theOn].text.slice(0, 6))
+                      console.log("First: ", $scope.preDefinedPoints[theOn].text.slice(0, 11))
                       console.log("Second ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
                       if ( (!hasAJ &&
-                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
+                      $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                         (!hasAJ &&
-                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
+                      $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         
                         var thisH = angular.copy(h)
@@ -7911,8 +8158,8 @@
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                    
                       if (
-                      $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)){
+                      $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         console.log("About to reviewer prop")
                         $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
@@ -7936,8 +8183,8 @@
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                        
                         if (
-                        $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,6)){
+                        $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
                           console.log("About to 2b prop")
                           $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 

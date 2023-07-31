@@ -6090,7 +6090,7 @@
               { index: 0, 
                 
                   author: $scope.userId,
-                  text: 'AGI will not be upper-bounded by human ability or human learning speed.',
+                  text: 'AGI will not be upper-bounded by human ability or the speed of human learning.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6326,7 +6326,7 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  messaged: false
+                  messaged: true
                 
               },
 

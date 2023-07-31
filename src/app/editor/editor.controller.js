@@ -6145,7 +6145,7 @@
               { index: 3, 
                 
                   author: $scope.userId,
-                  text: "We can't just 'decide not to build AGI' because GPUs are everywhere, and knowledge of algorithms is constantly being improved and published",
+                  text: "We can't 'decide not to build AGI' because GPUs are everywhere, and knowledge of algorithms is constantly being improved and published",
                   dialogueText: function() {
                                   return this.text;
                                 },

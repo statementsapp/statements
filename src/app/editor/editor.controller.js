@@ -6415,6 +6415,29 @@
                 
               },
               { index: 4, 
+               
+                  author: 'aaa',
+                  text: 'Treatments of this type would destroy tissues in the body too broadly to be of medical use.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 5, 
                 
                   author: $scope.userId,
                   text: 'Sulphur mustard might be a candidate for “chemical” cancer therapy.',
@@ -6436,7 +6459,7 @@
                   onBlank: true
                 
               },
-              { index: 5, 
+              { index: 6, 
                
                   author: $scope.userId,
                   text: 'In laboratory studies on animals, it was found that nitrogen mustard induced severe white blood cell and lymphatic suppression.',
@@ -6449,14 +6472,14 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 4,
+                  on: 5,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
               
               },
-              { index: 6, 
+              { index: 7, 
                 
                   author: 'bbb',
                   text: 'Other substances might cause the same effect, or the experiment was run on a faulty control group.',
@@ -6471,14 +6494,14 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 5,
+                  on: 6,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
                 
               },
-              { index: 7, 
+              { index: 8, 
                
                   author: 'ccc',
                   text: 'Mustard agents of any kind cannot have therapeutic value.',
@@ -6493,14 +6516,14 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 5,
+                  on: 6,
                   its: 'self',
                   typeTime: 5000,
                   noClick: false, 
                   action: 'proposition'
               
               },
-              { index: 8, 
+              { index: 9, 
                
                   author: $scope.userId,
                   text: 'A review of other substances shows this leucopenia is exceptional, and the same results were found in subsequent animal trials.',
@@ -6514,7 +6537,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 6,
+                  on: 7,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -6522,7 +6545,7 @@
                   messaged: true
               
               },
-              { index: 9, 
+              { index: 10, 
                
                   author: $scope.userId,
                   text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed in animals.',
@@ -6536,7 +6559,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 8,
+                  on: 9,
                   its: 'bottom',
                   typeTime: 3000,
                   noClick: false, 
@@ -6544,7 +6567,7 @@
                   onBlank: true
               
               },
-              { index: 10, 
+              { index: 11, 
                
                   author: 'ccc',
                   text: 'Sulphur mustard is known to cause unacceptable damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
@@ -6560,39 +6583,17 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 9,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-              
-              },
-              { index:11, 
-               
-                  author: $scope.userId,
-                  text: 'People exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-                  
-                  which: 'item',
                   on: 10,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  messaged: true
               
               },
               { index:12, 
                
                   author: $scope.userId,
-                  text: 'This might indicate a role for sulphur mustard in the treatment of lymphoma.',
+                  text: 'People exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6608,9 +6609,31 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
+                  messaged: true
               
               },
-              { index: 13, 
+              { index:13, 
+               
+                  author: $scope.userId,
+                  text: 'This might indicate a role for sulphur mustard in the treatment of lymphoma.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 12,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              
+              },
+              { index: 14, 
                 
                   author: $scope.userId,
                   text: 'Experiments',
@@ -6624,14 +6647,14 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'node',
-                  on: 12,
+                  on: 13,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
                 
               },
-              { index:14, 
+              { index:15, 
                
                   author: $scope.userId,
                   text: 'Mice with lymphoma were exposed to nitrogen mustard.',
@@ -6645,7 +6668,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 13,
+                  on: 14,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -6653,7 +6676,7 @@
                   onBlank: true
               
               },
-              { index: 15, 
+              { index: 16, 
                
                   author: 'ddd',
                   text: "We might expect a deterioration in the test subjects' condition.",
@@ -6669,14 +6692,14 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 14,
+                  on: 15,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
               
               },
-              { index:16, 
+              { index:17, 
                
                   author: $scope.userId,
                   text: 'Rapid regression of tumors occurred, with less of an effect each subsequent administration.',
@@ -6690,7 +6713,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 15,
+                  on: 16,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -6698,7 +6721,7 @@
                   messaged: true
                   
               },
-              { index:17, 
+              { index:18, 
                
                   author: $scope.userId,
                   text: 'The mice lived an unusually long time versus experimental controls.',
@@ -6712,7 +6735,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 16,
+                  on: 17,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -7263,8 +7286,8 @@
             
              
              // $scope.preDefinedPoints = $scope.geocentrism;
-              // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
-              $scope.preDefinedPoints = $scope.toyota;
+              $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
+              // $scope.preDefinedPoints = $scope.toyota;
 
 
 

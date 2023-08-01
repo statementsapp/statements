@@ -4586,7 +4586,7 @@
               }
 
 
-
+              console.log("The index working with: ", apply.afterParagraphIndex)
               // How does the above deal with hidden or deleted nodes?
 
 
@@ -4595,6 +4595,7 @@
 
 
               if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1]){
+                console.log("Went into the if")
                 for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex-1); i--){
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[i + 1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[i]);
                 }
@@ -4615,6 +4616,7 @@
                   ]
                 }
               } else {
+                console.log("Went into the else")
                 $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
                   paragraphId: payload.paragraphId,

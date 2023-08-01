@@ -7376,7 +7376,7 @@
                   action: 'proposition'
                 
               },
-              { index: 5, 
+              { index: 6, 
                   //    トヨタは外国で成功しているプロセスを採用できるでしょうか?
                   author: 'bbb',
                   text: "Can Toyota adopt a process that is used with success in a foreign country?",
@@ -7398,7 +7398,7 @@
                   action: 'proposition'
               
               },
-              { index: 6, 
+              { index: 7, 
                   //  同社はロッキード工場での米国航空機組み立てから教訓を学ぶことができるだろう。
                   author: $scope.userId,
                   text: "The company could learn lessons from American aircraft assembly at the Lockheed plant.",
@@ -7419,7 +7419,7 @@
                   action: 'proposition'
                 
               },
-              { index: 7, 
+              { index: 8, 
                   //  他の部品にボトルネックが発生すると、余分な部品が溜まってしまい、効率が下がってしまいます。
                   author: $scope.userId,
                   text: "We are losing efficiency by having excess parts accumulate when bottlenecks appear for other parts.",
@@ -7433,14 +7433,14 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 6,
+                  on: 7,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
                 
               },
-              { index: 8, 
+              { index: 9, 
                   //    ロッキードのプロセスをどのように再現できるでしょうか?
                   author: 'ccc',
                   text: "How can we replicate Lockheed's process?",
@@ -7455,14 +7455,14 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 6,
+                  on: 7,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
               
               },
-              { index: 9, 
+              { index: 10, 
                   // これにより、月の初めに生産が遅れ、後半に追いつき生産が行われ、必死の生産ペースで欠陥が発生する原因になっているのでしょうか?   
                   author: 'ccc',
                   text: "Is this causing slow production early in the month, and catch-up production in the later part where the frantic pace of production causes defects?",
@@ -7477,7 +7477,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 2,
+                  on: 8,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 

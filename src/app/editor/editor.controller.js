@@ -7374,73 +7374,116 @@
                   action: 'proposition'
                 
               },
-              // { index: 5, 
-               
-              //     author: 'bbb',
-              //     text: 'Experiments must be run using clocks with greater precision than we currently have.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+              { index: 5, 
+                  // Can Toyota adopt a process that is used with success in a foreign country?
+                  author: 'bbb',
+                  text: "トヨタは外国で成功しているプロセスを採用できるでしょうか?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 2,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
               
-              // },
-              // { index: 6, 
-                
-              //     author: $scope.userId,
-              //     text: 'This paper proposes a revision to Newtonian physics.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+              },
+              { index: 6, 
+                  // The company could learn lessons from American aircraft assembly at the Lockheed plant. 
+                  author: $scope.userId,
+                  text: "同社はロッキード工場での米国航空機組み立てから教訓を学ぶことができるだろう。",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 4,
-              //     its: 'left',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 5,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 7, 
-               
-              //     author: 'ccc',
-              //     text: 'Does this hold for all observers? What about accelerating ones?',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+              },
+              { index: 7, 
+                  // We are losing efficiency by having excess parts accumulate when bottlenecks appear for other parts.
+                  author: $scope.userId,
+                  text: "他の部品にボトルネックが発生すると、余分な部品が溜まってしまい、効率が下がってしまいます。",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 6,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 8, 
+                  // How can we replicate Lockheed's process?
+                  author: 'ccc',
+                  text: 'ロッキードのプロセスをどのように再現できるでしょうか?',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 2,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 6,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
               
-              // },
-              // { index: 8, 
-               
+              },
+              { index: 9, 
+                  // Is this causing slow production early in the month, and catch-up production in the later part where the frantic pace of production causes defects?   
+                  author: 'ccc',
+                  text: "これにより、月の初めに生産が遅れ、後半に追いつき生産が行われ、必死の生産ペースで欠陥が発生する原因になっているのでしょうか?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+              
+              },
+              // { index: 10, 
+              //     // The needed basic parts could be machined for each component part, and a worksheet designed so that the assembler can  
               //     author: $scope.userId,
               //     text: 'Adjusting Position and Time Measurements for the Fixed Speed of Light',
               //     dialogueText: function() {
@@ -7532,8 +7575,8 @@
              
              // $scope.preDefinedPoints = $scope.geocentrism;
               // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
-              // $scope.preDefinedPoints = $scope.toyota;
-              $scope.preDefinedPoints = $scope.listOfLethalities;
+              $scope.preDefinedPoints = $scope.toyota;
+              // $scope.preDefinedPoints = $scope.listOfLethalities;
 
 
 

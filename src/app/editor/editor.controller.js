@@ -7332,9 +7332,9 @@
               
               },
               { index: 4, 
-                  // Toyota should undertake an initiative to improve quality and reduce waste.
+                  //    トヨタは品質向上と無駄削減に取り組むべきだ。
                   author: $scope.userId,
-                  text: 'トヨタは品質向上と無駄削減に取り組むべきだ。',
+                  text: "Toyota should undertake an initiative to improve quality and reduce waste.",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7354,9 +7354,9 @@
                 
               },
               { index: 5, 
-                  // This would go a long way in building brand loyalty for Toyota automobiles.
+                  //    これはトヨタ自動車のブランドロイヤルティを構築する上で大いに役立つだろう。
                   author: $scope.userId,
-                  text: 'これはトヨタ自動車のブランドロイヤルティを構築する上で大いに役立つだろう。',
+                  text: "This would go a long way in building brand loyalty for Toyota automobiles.",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7375,9 +7375,9 @@
                 
               },
               { index: 5, 
-                  // Can Toyota adopt a process that is used with success in a foreign country?
+                  //    トヨタは外国で成功しているプロセスを採用できるでしょうか?
                   author: 'bbb',
-                  text: "トヨタは外国で成功しているプロセスを採用できるでしょうか?",
+                  text: "Can Toyota adopt a process that is used with success in a foreign country?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7397,9 +7397,9 @@
               
               },
               { index: 6, 
-                  // The company could learn lessons from American aircraft assembly at the Lockheed plant. 
+                  //  同社はロッキード工場での米国航空機組み立てから教訓を学ぶことができるだろう。
                   author: $scope.userId,
-                  text: "同社はロッキード工場での米国航空機組み立てから教訓を学ぶことができるだろう。",
+                  text: "The company could learn lessons from American aircraft assembly at the Lockheed plant.",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7418,9 +7418,9 @@
                 
               },
               { index: 7, 
-                  // We are losing efficiency by having excess parts accumulate when bottlenecks appear for other parts.
+                  //  他の部品にボトルネックが発生すると、余分な部品が溜まってしまい、効率が下がってしまいます。
                   author: $scope.userId,
-                  text: "他の部品にボトルネックが発生すると、余分な部品が溜まってしまい、効率が下がってしまいます。",
+                  text: "We are losing efficiency by having excess parts accumulate when bottlenecks appear for other parts.",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7439,9 +7439,9 @@
                 
               },
               { index: 8, 
-                  // How can we replicate Lockheed's process?
+                  //    ロッキードのプロセスをどのように再現できるでしょうか?
                   author: 'ccc',
-                  text: 'ロッキードのプロセスをどのように再現できるでしょうか?',
+                  text: "How can we replicate Lockheed's process?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7461,9 +7461,9 @@
               
               },
               { index: 9, 
-                  // Is this causing slow production early in the month, and catch-up production in the later part where the frantic pace of production causes defects?   
+                  // これにより、月の初めに生産が遅れ、後半に追いつき生産が行われ、必死の生産ペースで欠陥が発生する原因になっているのでしょうか?   
                   author: 'ccc',
-                  text: "これにより、月の初めに生産が遅れ、後半に追いつき生産が行われ、必死の生産ペースで欠陥が発生する原因になっているのでしょうか?",
+                  text: "Is this causing slow production early in the month, and catch-up production in the later part where the frantic pace of production causes defects?",
                   dialogueText: function() {
                                   return this.text;
                                 },

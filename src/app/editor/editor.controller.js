@@ -7412,8 +7412,8 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 5,
-                  its: 'bottom',
+                  on: 6,
+                  its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
@@ -7464,7 +7464,7 @@
               },
               { index: 10, 
                   // これにより、月の初めに生産が遅れ、後半に追いつき生産が行われ、必死の生産ペースで欠陥が発生する原因になっているのでしょうか?   
-                  author: 'ccc',
+                  author: 'aaa',
                   text: "Is this causing slow production early in the month, and catch-up production in the later part where the frantic pace of production causes defects?",
                   dialogueText: function() {
                                   return this.text;

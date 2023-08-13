@@ -3772,16 +3772,18 @@
             prep.type = 'assertion';
             prep.adjustedText = input;
             prep.author = $scope.userId;
-            console.log("Well is there a node: ", angular.copy(node))
             prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            if (node){
-              if ($scope.hasBeenSetUp){
-                prep.targetNodeId = node.nodeId;
-              } else {
-                prep.targetNodeId = $scope.selectedNode.nodeId;
-              }
-            }
             
+            if ($scope.hasBeenSetUp){
+              if (!node){
+                prep.targetNodeId = $scope.selectedNode.nodeId;
+              } else {
+                prep.targetNodeId = node.nodeId;
+              }
+              
+            } else {
+              
+            }
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             prep.rejoins = $scope.selectedProposition.id;
             prep.of = {

@@ -12,6 +12,7 @@
         
         var element = $window.document.getElementById(id);
         if (element) {
+          console.log("There is element focusing")
           element.focus();
           $(id).focus();
           $(element).focus();

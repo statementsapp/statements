@@ -7954,6 +7954,7 @@
                                   
                                   $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
                                   $scope.selectedNode = $scope.data[0].nodes[thisH];
+                                  console.log("Now the selected node is: ", angular.copy($scope.selectedNode.nodeId))
                                 });
                               }, 0);
                                         

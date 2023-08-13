@@ -3359,7 +3359,7 @@
 
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
- 
+        console.log("Well first off that node: ", node)
         console.log("Input: ", angular.copy(input))
 
 

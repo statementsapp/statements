@@ -8551,6 +8551,8 @@
       }
 
       $scope.makeTopAppear = function (paragraph) {
+        console.log("Make top appear returning")
+        return;
         setTimeout(function () {
           $scope.$apply(function () {
             
@@ -8571,6 +8573,8 @@
       }
 
       $scope.handleTopClick = function (paragraph) {
+        console.log("Handle top click returning")
+        return;
         
         setTimeout(function () {
             document.getElementById('top' + paragraph.paragraphId).click();
@@ -8581,6 +8585,8 @@
       }
 
       $scope.removeTopClickHandler = function (paragraph) {
+        console.log("Remove top click returning")
+        return;
 
         setTimeout(function () {
           $scope.$apply(function () {

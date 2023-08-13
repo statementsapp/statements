@@ -470,11 +470,11 @@
     <div class=""
          ng-mouseover="[!dialogueGrey && cowsComeHome ? greyDialogue() : inputs.nothing]"
          ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
-         
+         ng-click="[getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()]"
          id="thetext"
          style="padding-left: 30px;"
          ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
-         <!-- ng-click="[getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()]" -->
+
 
       <div ui-tree="treeOptions"
            data-drag-enabled="false"

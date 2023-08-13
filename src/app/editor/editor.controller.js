@@ -7609,7 +7609,7 @@
 
 
         function populateElementWithText(text, id, messageFlag, nodeFlag, theStep) {
-          console.log("That populating id: ", id)
+         
           if (!messageFlag){
             var element = document.getElementById(id);
           } else {
@@ -7641,7 +7641,6 @@
              setTimeout(function () {
               if (Math.random() < 0.001 && index > 0 && false) {
                 // Simulate a backspace by removing the last character
-                console.log("Element: ", element)
                 element.textContent = element.textContent.slice(0, -1);
                 index--;
                 if (theStep.its){
@@ -7660,7 +7659,6 @@
                   $scope.inputs[id] = element.textContent;
                 }
               } else {
-                console.log("Element well: ", angular.copy(element))
                 element.textContent += text[index];
                 index++;
                 
@@ -7673,13 +7671,13 @@
                   }
                 }
                 if (messageFlag){
-                  console.log("M")
+                  
 
                   $scope.inputs.chatProposition = angular.copy(element.textContent);
                   $scope.scrollMessagesToBottom();
                   
                 } else {
-                  console.log("E")
+                  
                   $scope.inputs[id] = element.textContent;
                 }
                 // console.log("Element: ", element.textContent)

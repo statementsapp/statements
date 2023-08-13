@@ -7930,7 +7930,7 @@
                           var thisJ = angular.copy(j)
                           var thisK = angular.copy(k)
                           var thisHereId = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK].id;
-                          $scope.selectedNode = $scope.data[0].nodes[thisH];
+                          
                           
                           var hasAK = true;
                           console.log("This here id: ", thisHereId)
@@ -7955,6 +7955,7 @@
                                 $scope.$apply(function () {
                                   
                                   $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                                  $scope.selectedNode = $scope.data[0].nodes[thisH];
                                 });
                               }, 0);
                                         

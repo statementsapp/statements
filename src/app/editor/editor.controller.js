@@ -3359,7 +3359,7 @@
 
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
-        console.log("Well first off that node: ", node)
+        
         console.log("Input: ", angular.copy(input))
 
 
@@ -3773,12 +3773,14 @@
             prep.adjustedText = input;
             prep.author = $scope.userId;
             prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            
-            if ($scope.hasBeenSetUp){
-              prep.targetNodeId = node.nodeId;
-            } else {
-              prep.targetNodeId = $scope.selectedNode.nodeId;
+            if (node){
+              if ($scope.hasBeenSetUp){
+                prep.targetNodeId = node.nodeId;
+              } else {
+                prep.targetNodeId = $scope.selectedNode.nodeId;
+              }
             }
+            
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             prep.rejoins = $scope.selectedProposition.id;
             prep.of = {

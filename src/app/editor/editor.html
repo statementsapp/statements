@@ -496,13 +496,10 @@
            ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition), 'shorteditor': shortEditor}"
            ng-mouseover="!inputs.bottomProposition ? [whatsTheEvent($event), lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
            ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
-           ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
+           
 
       >
-        <!-- hideExpandingTextarea(), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, selectedProposition.dialogueSide = false, selectedThread = {}, -->
-        <!-- getLastVisiblePropositionInBook(data[0], $event),
-        ng-mouseover="lightUpLastVisiblePropositionInBook(data[0], $event)"
-        ng-mouseleave="blurLightUpLastVisiblePropositionInBook(data[0], $event)" -->
+      <!-- ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing" -->
 
         <ol ui-tree-nodes
             ng-model='data[0].nodes'

@@ -3359,10 +3359,9 @@
 
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
-        console.log("Prepping prop. SP: ", angular.copy($scope.selectedProposition))
+ 
         console.log("Input: ", angular.copy(input))
-        console.log("Proposition: ", angular.copy(proposition))
-        console.log("Dragging Proposition: ", angular.copy($scope.draggingProposition))
+
 
         if (paragraph){
           console.log("Is paragraph")
@@ -7691,6 +7690,7 @@
                   setTimeout(function () {
                     clearInterval(intervalId);
                     console.log("ABOUT TO TOP PRESS")
+                    console.log("SELECTED NODE HERE: ", $scope.selectedNode.nodeId)
                     simulateReturnKeyPress(element, text);
                    }, 10);
                 } else {

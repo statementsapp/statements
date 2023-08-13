@@ -3773,7 +3773,12 @@
             prep.adjustedText = input;
             prep.author = $scope.userId;
             prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            prep.targetNodeId = $scope.selectedNode.nodeId;
+            
+            if ($scope.hasBeenSetUp){
+              prep.targetNodeId = node.nodeId;
+            } else {
+              prep.targetNodeId = $scope.selectedNode.nodeId;
+            }
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             prep.rejoins = $scope.selectedProposition.id;
             prep.of = {

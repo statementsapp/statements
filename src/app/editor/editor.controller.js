@@ -7419,71 +7419,71 @@
                   action: 'proposition'
                 
               },
-              { index: 8, 
-                  //  他の部品にボトルネックが発生すると、余分な部品が溜まってしまい、効率が下がってしまいます。
-                  author: $scope.userId,
-                  text: "We are losing efficiency by having excess parts accumulate when bottlenecks appear for other parts.",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              // { index: 8, 
+              //     //  他の部品にボトルネックが発生すると、余分な部品が溜まってしまい、効率が下がってしまいます。
+              //     author: $scope.userId,
+              //     text: "We are losing efficiency by having excess parts accumulate when bottlenecks appear for other parts.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 7,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 9, 
-                  //    ロッキードのプロセスをどのように再現できるでしょうか?
-                  author: 'ccc',
-                  text: "How can we replicate Lockheed's process?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              // },
+              // { index: 9, 
+              //     //    ロッキードのプロセスをどのように再現できるでしょうか?
+              //     author: 'ccc',
+              //     text: "How can we replicate Lockheed's process?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 7,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              },
-              { index: 10, 
-                  // これにより、月の初めに生産が遅れ、後半に追いつき生産が行われ、必死の生産ペースで欠陥が発生する原因になっているのでしょうか?   
-                  author: 'aaa',
-                  text: "Is this causing slow production early in the month, and catch-up production in the later part where the frantic pace of production causes defects?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              // },
+              // { index: 10, 
+              //     // これにより、月の初めに生産が遅れ、後半に追いつき生産が行われ、必死の生産ペースで欠陥が発生する原因になっているのでしょうか?   
+              //     author: 'aaa',
+              //     text: "Is this causing slow production early in the month, and catch-up production in the later part where the frantic pace of production causes defects?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 8,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
               
-              },
+              // },
               // { index: 10, 
               //     // The needed basic parts could be machined for each component part, and a worksheet designed so that the assembler can  
               //     author: $scope.userId,

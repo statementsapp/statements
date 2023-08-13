@@ -75,7 +75,8 @@
     id="nodetitle{{node.nodeId}}"
     ng-enter="updateNode(node)">
         {{node.topic}}
-        <span ng-if="diagnostics">{{node.nodeId}}</span>
+
+        {{node.nodeId}}
 </span>
 
 <!-- ng-keydown="$event.keyCode === 13 ? $event.preventDefault : inputs.nothing" -->
@@ -121,7 +122,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 }">
       
     
-    <span ng-if="diagnostics">{{paragraph.paragraphId}}</span>
+   {{paragraph.paragraphId}}
+   
     <!-- {{paragraph.paragraphId}} -->
 
     <div delayed-ng-if="(paragraph.topAdd == true && hasTopFocus === paragraph.paragraphId) || data[0].documentClaimedBy === userId && paragraph.topMouseOver || hasTopFocus === paragraph.paragraphId && !draggingNode"

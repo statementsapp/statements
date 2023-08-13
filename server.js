@@ -13,10 +13,10 @@ const express    = require('express'),
       http       = require('http'),
       app        = module.exports = express(),
       server     = http.createServer(app),
-      io         = require('socket.io').listen(server);
+      io         = require('socket.io').listen(server, {'pingTimeout': 1000000});
 
 
-
+      
 const distDir = path.resolve(__dirname, './dist/');
 
 const port = process.env.PORT || 3000;

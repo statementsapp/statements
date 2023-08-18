@@ -6691,7 +6691,7 @@
               { index: 5, 
                 
                   author: $scope.userId,
-                  text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gens- ler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
+                  text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
                   dialogueText: function() {
                                   return this.text;
                                 },

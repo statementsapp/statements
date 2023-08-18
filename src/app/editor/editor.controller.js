@@ -6730,6 +6730,27 @@
                   action: 'proposition'
                 
               },
+              { index: 7, 
+                
+                  author: $scope.userId,
+                  text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 6,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
               // { index: 4, 
                
               //     author: 'bbb',
@@ -8559,6 +8580,7 @@
                             setTimeout(function () {
                               console.log("I")
                               document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                              document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
                             }, 0);
                           // });
                           // setTimeout(function () {

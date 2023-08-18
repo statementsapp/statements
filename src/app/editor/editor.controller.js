@@ -6751,51 +6751,52 @@
                   action: 'proposition'
                 
               },
-              // { index: 4, 
+              { index: 8, 
                
-              //     author: 'bbb',
-              //     text: 'Treatments of this type would destroy tissues in the body too broadly to be of medical use.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'aaa',
+                  text: "Can we provide an initial reason to move for judgment, perhaps related to secondary contracts being misclassified?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 2,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 7,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },
-              // { index: 5, 
+              },
+              { index: 9, 
                 
-              //     author: $scope.userId,
-              //     text: 'Sulphur mustard might be a candidate for “chemical” cancer therapy.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: $scope.userId,
+                  text: 'The SEC’s claim that certain digital assets subject to secondary sales on Coinbase’s platform are “investment contracts” under the securities laws is baseless.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 3,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     onBlank: true
+                  which: 'item',
+                  on: 8,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: true,
+                  messaged: true
                 
-              // },
+              },
               // { index: 6, 
                
               //     author: $scope.userId,

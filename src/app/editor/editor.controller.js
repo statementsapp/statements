@@ -8441,6 +8441,7 @@
                               setTimeout(function () {
                                 console.log("STILL THIS HERE ID: ", thisHereId)
                                 document.getElementById('proposition'+thisHereId).click();
+                                document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
                               }, 20);
                               setTimeout(function () {
                                 console.log("Now the selected node is: ", angular.copy($scope.selectedNode.nodeId))

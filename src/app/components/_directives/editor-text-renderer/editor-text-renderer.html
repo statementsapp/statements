@@ -123,7 +123,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
       
     
    <!-- {{paragraph.paragraphId}} -->
-   
+
     <!-- {{paragraph.paragraphId}} -->
 
     <div delayed-ng-if="(paragraph.topAdd == true && hasTopFocus === paragraph.paragraphId) || data[0].documentClaimedBy === userId && paragraph.topMouseOver || hasTopFocus === paragraph.paragraphId && !draggingNode"
@@ -328,7 +328,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                             'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
                             'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden'),
                             'mouseoverborder' : proposition.mouseOver && mouseIsOver === proposition.id && proposition.type !== 'blank && !minimalStyle',
-                            'editing': editing === proposition.id,
+                            'editing': editing === proposition.id && !hasBeenSetUp,
                             'authorprop':tweetClicked.id === proposition.id,
                             'havesomepadding': !proposition.first
 

@@ -4661,6 +4661,7 @@
                 }
               } else {
                 // it is placed inline
+                console.log("Goes inline")
                 for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.length; i++){
                   if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i].id === payload.afterPropositionId){
                     apply.afterPropTarget = angular.copy(i);
@@ -4684,6 +4685,7 @@
                       messagesSoFar: payload.messagesSoFar,
                     }
                 } else {
+                  console.log("Prop pushing")
                   // have to push
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.push(
                     {

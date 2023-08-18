@@ -163,7 +163,7 @@
      <!-- ng-click="[clearDragDetector(), didItRun(), draggingNode || draggingParagraph || draggingProposition ? clearDrag() : inputs.nothing]" -->
   <div class="row"
        id="firstrow"
-       ng-class="{titled: title, 'abovegap': hasBeenSetUpBefore}"
+       ng-class="{titled: title, 'abovegap': hasBeenSetUpBefore && shortEditor}"
        
        ng-mousemove="draggingProposition || draggingParagraph || draggingNode ? assessDragScrollUpper() : inputs.nothing"
        style="line-height: normal;">

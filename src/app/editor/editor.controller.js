@@ -667,8 +667,10 @@
       $scope.timer;
       $scope.isMouseOut = false;
       $scope.topAdderId = IdFactory.next();
-      $scope.shortEditor = true;
       $scope.textareaHasFocus = {};
+
+
+      $scope.shortEditor = false;
       
 
       document.addEventListener('contextmenu', event => event.preventDefault());

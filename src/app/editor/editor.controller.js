@@ -6589,6 +6589,412 @@
 
             ];
 
+            $scope.coinbase = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'INTRODUCTION AND SUMMARY OF ARGUMENT:',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'theBlank',
+                  on: undefined,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 1, 
+                
+                  author: $scope.userId,
+                  text: 'SEC v. Coinbase is the latest installment in the SEC’s escalating campaign against digital assets, often referred to as “cryptocurrencies,” “crypto,” or “tokens.”',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                
+              },
+              { index: 2, 
+                
+                  author: $scope.userId,
+                  text: 'As this case demonstrates, the SEC is choosing to use the blunt and unpredictable tool of enforcement proceedings, to the exclusion of all other methods, to regulate the trillion-dollar digital asset industry.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                
+              },
+              // { index: 3, 
+                
+              //     author: $scope.userId,
+              //     text: 'Mustard Agents and Lymphatic Activity',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'node',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 4, 
+               
+              //     author: 'bbb',
+              //     text: 'Treatments of this type would destroy tissues in the body too broadly to be of medical use.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 5, 
+                
+              //     author: $scope.userId,
+              //     text: 'Sulphur mustard might be a candidate for “chemical” cancer therapy.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 3,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
+                
+              // },
+              // { index: 6, 
+               
+              //     author: $scope.userId,
+              //     text: 'In laboratory studies on animals, it was found that nitrogen mustard induced severe white blood cell and lymphatic suppression.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+              // { index: 7, 
+                
+              //     author: 'bbb',
+              //     text: 'Other substances might cause the same effect, or the experiment was run on a faulty control group.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 8, 
+               
+              //     author: 'ccc',
+              //     text: 'Mustard agents of any kind cannot have therapeutic value.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 5000,
+              //     noClick: false, 
+              //     action: 'proposition'
+              
+              // },
+              // { index: 9, 
+               
+              //     author: $scope.userId,
+              //     text: 'A review of other substances shows this leucopenia is exceptional, and the same results were found in subsequent animal trials.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 10, 
+               
+              //     author: $scope.userId,
+              //     text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed in animals.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
+              
+              // },
+              // { index: 11, 
+               
+              //     author: 'ccc',
+              //     text: 'Sulphur mustard is known to cause unacceptable damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     type: 'negation',
+              //     code: '2A',
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 10,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+              // { index:12, 
+               
+              //     author: $scope.userId,
+              //     text: 'People exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 11,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index:13, 
+               
+              //     author: $scope.userId,
+              //     text: 'This might indicate a role for sulphur mustard in the treatment of lymphoma.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 12,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+              // { index: 14, 
+                
+              //     author: $scope.userId,
+              //     text: 'Experiments',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'node',
+              //     on: 13,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index:15, 
+               
+              //     author: $scope.userId,
+              //     text: 'Mice with lymphoma were exposed to nitrogen mustard.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 14,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     onBlank: true
+              
+              // },
+              // { index: 16, 
+               
+              //     author: 'ddd',
+              //     text: "We might expect a deterioration in the test subjects' condition.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     type: 'negation',
+              //     code: '2A',
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 15,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // },
+              // { index:17, 
+               
+              //     author: $scope.userId,
+              //     text: 'Rapid regression of tumors occurred, with less of an effect each subsequent administration.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 16,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+                  
+              // },
+              // { index:18, 
+               
+              //     author: $scope.userId,
+              //     text: 'The mice lived an unusually long time versus experimental controls.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+                  
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 17,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              // },
+            ];
+
             $scope.dawnOfChemotherapy = [
               { index: 0, 
                 
@@ -7586,9 +7992,9 @@
              
              // $scope.preDefinedPoints = $scope.geocentrism;
               // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
-              $scope.preDefinedPoints = $scope.toyota;
+              // $scope.preDefinedPoints = $scope.toyota;
               // $scope.preDefinedPoints = $scope.listOfLethalities;
-
+              $scope.preDefinedPoints = $scope.coinbase;
 
 
 

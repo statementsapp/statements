@@ -3714,7 +3714,7 @@
 
 
 
-        // Rejoinders: gone
+        // Rejoinders: gone as standalones
 
 
 
@@ -3785,6 +3785,11 @@
               
             } else {
               
+            }
+            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide){
+              prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+            } else {
+              prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             }
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             prep.rejoins = $scope.selectedProposition.id;
@@ -4587,17 +4592,27 @@
                   !$scope.data[0].nodes[i].droppedElsewhere){
                   apply.nodeIndex = i;
                   for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
-                    if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId &&
-                      !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
-                      apply.afterParagraphIndex = j;
-                      break;
-                    }
+                    if (payload.afterParagraphId){
+                      if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.afterParagraphId &&
+                        !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
+                        apply.afterParagraphIndex = j;
+                        break;
+                      }
+                    } else { // it is inline
+                      if ($scope.data[0].nodes[i].paragraphs[j].paragraphId === payload.targetParagraphId &&
+                        !$scope.data[0].nodes[i].paragraphs[j].hiddenForAll){
+                        apply.targetParagraphIndex = j;
+                        break;
+                      }
+
+                    }         
                   }
                 }
               }
 
 
               console.log("The index working with: ", apply.afterParagraphIndex)
+              console.log("The prop index working with: ", apply.afterPropositionId)
               // How does the above deal with hidden or deleted nodes?
 
 
@@ -4605,7 +4620,7 @@
 
 
 
-              if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1]){
+              if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] && apply.afterParagraphIndex){
                 console.log("Went into the if")
                 for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex-1); i--){
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[i + 1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[i]);
@@ -4626,7 +4641,7 @@
                     }
                   ]
                 }
-              } else {
+              } else if (apply.afterParagraphIndex){
                 console.log("Went into the else")
                 $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
@@ -4643,6 +4658,45 @@
                       messagesSoFar: payload.messagesSoFar,
                     }
                   ]
+                }
+              } else {
+                // it is placed inline
+                for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.length; i++){
+                  if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i].id === payload.afterPropositionId){
+                    apply.afterPropTarget = angular.copy(i);
+                    break;
+                  }
+                }
+                if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[apply.afterPropTarget+1]){
+                  for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.length-1; 
+                    i > (apply.afterPropTarget); i--){
+                    $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i+1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i]);
+                  }
+                  $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[apply.afterPropTarget] = 
+                    {
+                      id: payload.id,
+                      type: 'assertion',
+                      author: payload.author,
+                      text: payload.text,
+                      remarks: [],
+                      dialogueSide: false,
+                      first: true,
+                      messagesSoFar: payload.messagesSoFar,
+                    }
+                } else {
+                  // have to push
+                  $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.push(
+                    {
+                      id: payload.id,
+                      type: 'assertion',
+                      author: payload.author,
+                      text: payload.text,
+                      remarks: [],
+                      dialogueSide: false,
+                      first: true,
+                      messagesSoFar: payload.messagesSoFar,
+                    }
+                  )
                 }
               }
 

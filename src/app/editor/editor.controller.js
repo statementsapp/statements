@@ -3784,7 +3784,7 @@
               }
               
             } else {
-              
+              prep.targetNodeId = $scope.selectedNode.nodeId;
             }
             if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide){
               prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
@@ -4612,7 +4612,7 @@
 
 
               console.log("The index working with: ", apply.afterParagraphIndex)
-              console.log("The prop index working with: ", apply.afterPropositionId)
+              console.log("The prop index working with: ", payload.afterPropositionId)
               // How does the above deal with hidden or deleted nodes?
 
 

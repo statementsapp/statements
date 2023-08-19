@@ -3787,9 +3787,9 @@
               prep.targetNodeId = $scope.selectedNode.nodeId;
             }
             if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide){
-              prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            } else {
               prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
+            } else {
+              prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
             }
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             prep.rejoins = $scope.selectedProposition.id;

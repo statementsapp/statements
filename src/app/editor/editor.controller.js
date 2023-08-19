@@ -3791,7 +3791,7 @@
             } else {
               prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
             }
-            prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
+            
             prep.rejoins = $scope.selectedProposition.id;
             prep.of = {
               type: $scope.selectedProposition.type,

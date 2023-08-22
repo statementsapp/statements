@@ -6875,6 +6875,27 @@
                   onBlank: true,
                 
               },
+              { index: 10, 
+                
+                  author: $scope.userId,
+                  text: 'The longstanding Howey test for determining whether some- thing is an “investment contract,” and thus a security, makes clear that any individual digital asset is no more a security than an orange in an orange grove.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 9,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                
+              },
               // { index: 6, 
                
               //     author: $scope.userId,

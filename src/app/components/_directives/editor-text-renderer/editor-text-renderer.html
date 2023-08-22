@@ -431,6 +431,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           <!-- 'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh, -->
 
           <span
+            check-cursor-visibility
             editable-span-ng-model 
             id="{{proposition.id}}"
             class="right-text right-textarea maininput"
@@ -575,6 +576,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               </span>
               <!-- ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing" -->
               <span
+                check-cursor-visibility
                 editable-span-ng-model
                 id="{{remark.id}}"
                 style="display: inline;"

@@ -6938,7 +6938,72 @@
                   noClick: false, 
                   action: 'proposition',
               
+              }, // 
+              { index: 13, 
+                
+                  author: $scope.userId,
+                  text: 'A recent ruling in this district confirms that while it is possible for a digital asset to be a part of an “investment contract,” the digital assets themselves are not securities.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 12,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                
               },
+              { index: 14, 
+               
+                  author: 'aaa',
+                  text: "Which?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 13,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 15, 
+               
+                  author: $scope.userId,
+                  text: 'See SEC v. Ripple Labs, Inc., 2023 WL 4507900 (S.D.N.Y. July 13, 2023).',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 14,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              
+              }, // 
+
               // { index: 7, 
                 
               //     author: 'bbb',
@@ -8339,7 +8404,7 @@
               }, 0);
             });
             
-          }, getRandomInterval(30)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(25)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;

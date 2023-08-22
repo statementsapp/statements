@@ -4611,8 +4611,8 @@
               }
 
 
-              console.log("The index working with: ", apply.afterParagraphIndex)
-              console.log("The prop index working with: ", payload.afterPropositionId)
+              // console.log("The index working with: ", apply.afterParagraphIndex)
+              // console.log("The prop index working with: ", payload.afterPropositionId)
               // How does the above deal with hidden or deleted nodes?
 
 
@@ -4643,7 +4643,7 @@
                 }
                 for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions.length; i++){
                   for (var j = 0; j < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks.length; j++){
-                    console.log("3B considering: ", $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks[j])
+                    // console.log("3B considering: ", $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks[j])
                     if (payload.rejoins === $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks[j].id){
                       $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex].propositions[i].remarks[j].rejoined = true;
                       break;
@@ -5606,8 +5606,8 @@
         }, 30);                                             // HAS A TIMEOUT
         
         if ($scope.hasBeenSetUp){
-          console.log("The selected prop ds: ", angular.copy($scope.selectedProposition.dialogueSide))
-          console.log("The selected prop ts: ", angular.copy($scope.selectedProposition.textSide))
+          // console.log("The selected prop ds: ", angular.copy($scope.selectedProposition.dialogueSide))
+          // console.log("The selected prop ts: ", angular.copy($scope.selectedProposition.textSide))
         }
 
         setTimeout(function () {
@@ -5685,7 +5685,7 @@
       //   });
 
       $scope.whatsTheEvent = function (event) {
-        console.log("The event: ", angular.copy(event))
+        // console.log("The event: ", angular.copy(event))
       }
 
       function flipCoin() {
@@ -6114,7 +6114,7 @@
       };
 
       $scope.blurLightUpLastVisiblePropositionInBook = function (book, event) {
-        console.log("blur light up book")
+        // console.log("blur light up book")
         var apply = {};
         apply.path = '$scope.data[0]';
         apply.destination = eval(apply.path);
@@ -9576,7 +9576,7 @@
       };
 
       $scope.blurLightUpLastVisiblePropositionInParagraph = function (node, paragraph, event) {
-        console.log("blur paragraph")
+        
         // for (var i = paragraph.propositions.length - 1; i > -1; i--) {
         //   if (paragraph.propositions[i][$scope.userId] !== 'hidden' && paragraph.propositions[i].hiddenForAll !== true &&
         //     paragraph.propositions[i].preSelected === true) {

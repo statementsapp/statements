@@ -6896,26 +6896,49 @@
                   action: 'proposition',
                 
               },
-              // { index: 6, 
+              { index: 11, 
                
-              //     author: $scope.userId,
-              //     text: 'In laboratory studies on animals, it was found that nitrogen mustard induced severe white blood cell and lymphatic suppression.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'aaa',
+                  text: "And how exactly is cryptocurrency like an orange?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 5,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
+                  which: 'item',
+                  on: 10,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },
+              },
+              { index: 12, 
+               
+                  author: $scope.userId,
+                  text: 'In some circumstances—not at issue here—digital assets can be the subject of an investment contract, but that is all.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 11,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              
+              },
               // { index: 7, 
                 
               //     author: 'bbb',

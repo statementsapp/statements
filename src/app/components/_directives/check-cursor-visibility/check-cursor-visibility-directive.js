@@ -26,6 +26,7 @@
                 parentContainer[0].scrollTop -= (parentRect.top - rect.top);
                 } else if (rect.bottom > parentRect.bottom) {
                 // Cursor is below the viewable area
+                    console.log('B E L O W')
                 parentContainer[0].scrollTop += (rect.bottom - parentRect.bottom);
                 }
             });

@@ -6,10 +6,10 @@
     return {
       restrict: 'A',
       link: function(scope, elem, attrs) {
-            let parentContainer = elem.parent(); // Assuming direct parent is the scroll container
+        let parentContainer = elem.parent(); // Assuming direct parent is the scroll container
 
-            elem.on('keyup', function() {
-              $timeout(function() {
+        elem.on('keyup', function() {
+            $timeout(function() {
                 let sel = window.getSelection();
                 if (!sel.rangeCount) return;
 
@@ -22,17 +22,16 @@
                 dummy.parentNode.removeChild(dummy);
 
                 if (rect.top < parentRect.top) {
-                  // Cursor is above the viewable area
-                    console.log("Scroll if visibility")
-                  parentContainer[0].scrollTop -= (parentRect.top - rect.top);
+                // Cursor is above the viewable area
+                parentContainer[0].scrollTop -= (parentRect.top - rect.top);
                 } else if (rect.bottom > parentRect.bottom) {
-                  // Cursor is below the viewable area
-                    console.log("Scroll else visibility")
-                  parentContainer[0].scrollTop += (rect.bottom - parentRect.bottom);
+                // Cursor is below the viewable area
+                parentContainer[0].scrollTop += (rect.bottom - parentRect.bottom);
                 }
-              });
             });
-          }
+        });
+      }
+    };
   }
 
   angular.module('statements')

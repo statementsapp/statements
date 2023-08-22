@@ -20,6 +20,7 @@
 
             if (rect.top < elem[0].getBoundingClientRect().top || 
                 rect.bottom > elem[0].getBoundingClientRect().bottom) {
+                console.log("Does a visibility adjustment")
               elem[0].scrollTop = rect.top - elem[0].getBoundingClientRect().top + elem[0].scrollTop;
             }
           });

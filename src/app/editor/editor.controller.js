@@ -6693,7 +6693,7 @@
               { index: 1, 
                 
                   author: $scope.userId,
-                  text: 'SEC v. Coinbase is the latest installment in the SEC’s escalating campaign against digital assets, often referred to as “cryptocurrencies,” “crypto,” or “tokens.”',
+                  text: 'SEC v. Coinbase is the latest installment in the SEC’s escalating campaign against digital assets, often referred to as “cryptocurrencies,” “crypto,” or “tokens”',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -6873,7 +6873,6 @@
                   noClick: false, 
                   action: 'proposition',
                   onBlank: true,
-                  messaged: true
                 
               },
               // { index: 6, 
@@ -8296,7 +8295,7 @@
               }, 0);
             });
             
-          }, getRandomInterval(40)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(30)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;

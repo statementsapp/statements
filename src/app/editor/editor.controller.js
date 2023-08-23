@@ -8404,7 +8404,7 @@
               }, 0);
             });
             
-          }, getRandomInterval(25)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(30)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;

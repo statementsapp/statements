@@ -8365,7 +8365,8 @@
                   $scope.scrollMessagesToBottom();
                   
                 } else {
-                  
+                  var textElement = document.getElementById("thetext");
+                  textElement.scrollTop = textElement.scrollHeight;
                   $scope.inputs[id] = element.textContent;
                 }
                 // console.log("Element: ", element.textContent)

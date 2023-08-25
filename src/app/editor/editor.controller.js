@@ -669,6 +669,8 @@
       $scope.topAdderId = IdFactory.next();
       $scope.textareaHasFocus = {};
 
+      $scope.currentRemarkIndex = 0;
+
 
       $scope.shortEditor = false;
       
@@ -2727,10 +2729,9 @@
         $scope.highlightedParagraphNode = {};
       }
 
-      $scope.randomItem = function(input) {
+      $scope.currentItem = function(input) {
           if (!input || !input.length) return [];
-          var randomIndex = Math.floor(Math.random() * input.length);
-          return [input[randomIndex]]; // return an array with only one item.
+          return [input[$scope.currentRemarkIndex % input.length]];
       };
 
       $scope.reloadRemark = function() {

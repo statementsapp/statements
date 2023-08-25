@@ -2742,6 +2742,10 @@
           }
       };
 
+      $scope.nextRemark = function() {
+          $scope.currentRemarkIndex++;
+      };
+
       $scope.highlightNode = function (node){
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           if (node.nodeId === $scope.data[0].nodes[i].nodeId){

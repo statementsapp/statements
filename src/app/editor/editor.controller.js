@@ -3587,7 +3587,7 @@
           // Or if it's a continuation of another remark
           // it's a negation
 
-          if (($scope.selectedProposition.type === 'negation' || (automatedAuthor && automatedCode === '2B')) && false) {
+          if (($scope.selectedProposition.type === 'negation' || (automatedAuthor && automatedCode === '2B')) && !$scope.hasBeenSetUp) {
             //repeated negation
             console.log("2b")
             prep.code = '2B';
@@ -4509,8 +4509,8 @@
                 for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
 
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
-                    console.log("That id: ", angular.copy(payload.of.id))
-                    console.log("That of id: ", angular.copy(($scope.data[0].nodes[i].paragraphs[j].propositions[k].id)))
+                    console.log("That of id: ", angular.copy(payload.of.id))
+                    console.log("That of: ", angular.copy(($scope.data[0].nodes[i].paragraphs[j].propositions[k].id)))
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id &&
                       !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                       console.log("GOT YA!")

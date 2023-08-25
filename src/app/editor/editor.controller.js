@@ -4511,6 +4511,7 @@
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id &&
                       !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
+                      console.log("GOT YA!")
                       apply.nodeTarget = i;
                       apply.paragraphTarget = j;
                       apply.propTarget = k;

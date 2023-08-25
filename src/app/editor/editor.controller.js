@@ -2727,6 +2727,20 @@
         $scope.highlightedParagraphNode = {};
       }
 
+      $scope.randomItem = function(input) {
+          if (!input || !input.length) return [];
+          var randomIndex = Math.floor(Math.random() * input.length);
+          return [input[randomIndex]]; // return an array with only one item.
+      };
+
+      $scope.reloadRemark = function() {
+          if ($scope.proposition && $scope.proposition.remarks && $scope.proposition.remarks.length) {
+              // Toggle the last remark to trigger ng-repeat's re-evaluation.
+              var temp = $scope.proposition.remarks.pop();
+              $scope.proposition.remarks.unshift(temp);
+          }
+      };
+
       $scope.highlightNode = function (node){
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           if (node.nodeId === $scope.data[0].nodes[i].nodeId){

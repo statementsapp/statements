@@ -491,7 +491,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
 
 >
 
-            <li ng-repeat="remark in proposition.remarks track by $index"
+            <li ng-repeat="remark in ::randomItem(proposition.remarks) track by $index"
                 id="wholeprop{{remark.id}}"
                 ui-tree-node
                 style="display: inline;"
@@ -501,15 +501,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted)) && proposition.remarksExpanded"
                 ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id, 'remarkhidden': proposition.remarksExpanded && (remark.rejoined || remark[userId] == 'hidden')}"
                 class="proposition">
-               <!--  {{remark.id}} -->
-              <!-- for hiding negations decluttering, doesnt work perfectly: -->
-              <!-- proposition.assertionId !== hasRightFocus.id || proposition.type !== 'negation' || proposition.author === userId -->
-
-
-              <!-- 'dragdimmed': draggedProposition.id === proposition.id -->
-
-
-              <!--           draggedProposition.id && draggedProposition.id !== proposition.id ? [selectedNode = node, dropProposition(node, paragraph, proposition,'right')] : -->
+              <i class="fas fa-recycle" ng-click="reloadRemark()" style="font-size: 22px;"></i>
               <span
 
                 

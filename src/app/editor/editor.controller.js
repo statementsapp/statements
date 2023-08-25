@@ -2731,7 +2731,13 @@
 
       $scope.currentItem = function(input) {
           if (!input || !input.length) return [];
-          return [input[$scope.currentRemarkIndex % input.length]];
+
+              // Ensure we skip items where rejoined is true
+              while (input[$scope.currentRemarkIndex % input.length].rejoined) {
+                  $scope.currentRemarkIndex++; // Move to the next item if current is rejoined
+              }
+
+              return [input[$scope.currentRemarkIndex % input.length]];
       };
 
       $scope.reloadRemark = function() {

@@ -410,7 +410,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
           <!-- ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" -->
 
 
-          <span ng-if="proposition.type !== 'blank' && proposition.remarks" ng-mouseover="[toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex; font-size: 16px; padding-right: 7px;"
+          <span ng-if="proposition.type !== 'blank' && proposition.remarks" ng-mouseover="[nextRemark(), toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex; font-size: 16px; padding-right: 7px;"
                >
 <!--             <i class="fa-solid fa-square-minus"
                style="line-height: inherit; display: inline-block;"
@@ -503,7 +503,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 class="proposition">
 
               <!-- <i class="fas fa-recycle" ng-click="reloadRemark()" style="font-size: 22px;"></i> -->
-              
+
               <span
 
                 

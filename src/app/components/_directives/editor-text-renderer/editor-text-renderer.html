@@ -501,7 +501,9 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted)) && proposition.remarksExpanded"
                 ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id, 'remarkhidden': proposition.remarksExpanded && (remark.rejoined || remark[userId] == 'hidden')}"
                 class="proposition">
-              <i class="fas fa-recycle" ng-click="reloadRemark()" style="font-size: 22px;"></i>
+
+              <!-- <i class="fas fa-recycle" ng-click="reloadRemark()" style="font-size: 22px;"></i> -->
+              
               <span
 
                 

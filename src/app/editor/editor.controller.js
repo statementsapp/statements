@@ -1365,6 +1365,7 @@
 
       // Selects right editable span
       $scope.selectRight = function (proposition, paragraph) {
+        // $scope.inputs[proposition.id] = '';
         focusFactory(proposition.id);
         $scope.whatHasBeenClicked = proposition.id;
         $scope.unHighlightParagraph();

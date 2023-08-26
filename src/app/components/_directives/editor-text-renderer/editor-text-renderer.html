@@ -364,7 +364,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                        ) && !cancelListenForDoubleClick
                           ? [
                             alternateSensor(proposition),
-                            inputs[proposition.id] = '';
+                            inputs[proposition.id] = '',
                             hideExpandingTextarea(),
                             selectNode(node),
                             selectParagraph(paragraph),

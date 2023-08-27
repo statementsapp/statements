@@ -2731,10 +2731,12 @@
       }
 
       $scope.currentItem = function(input) {
+        console.log("Current iteming")
           if (!input || !input.length) return [];
 
               // Ensure we skip items where rejoined is true
               while (input[$scope.currentRemarkIndex % input.length].rejoined) {
+                  console.log("Current remark index: ", angular.copy($scope.currentRemarkIndex))
                   $scope.currentRemarkIndex++; // Move to the next item if current is rejoined
               }
 
@@ -5556,6 +5558,7 @@
             }
 
             if ($scope.selectedProposition.dialogueSide && payload.author === $scope.userId){
+              console.log("On the dialogue side")
               $scope.hasChatFocusId = payload.id;
               setTimeout(function () {
                   $scope.selectedProposition.dialogueSide = true;

@@ -2763,6 +2763,9 @@
               $scope.currentRemarkIndex++; // Move to the next item if current is rejoined
               counter++;
 
+              // Keep currentRemarkIndex within bounds of the array's length
+              $scope.currentRemarkIndex %= input.length;
+
               // Break the loop if we've checked all items in the input array
               if (counter >= input.length) {
                   console.log("All items are rejoined");
@@ -2772,6 +2775,7 @@
 
           return [input[$scope.currentRemarkIndex % input.length]];
       };
+
 
 
 

@@ -2732,7 +2732,11 @@
 
       $scope.currentItem = function(input) {
         console.log("Current iteming")
-          if (!input || !input.length) return [];
+          if (!input || !input.length){
+            console.log("No input")
+            return [];
+          } 
+            
 
               // Ensure we skip items where rejoined is true
               while (input[$scope.currentRemarkIndex % input.length].rejoined) {

@@ -2772,7 +2772,7 @@
 
           return [input[$scope.currentRemarkIndex % input.length]];
       };
-      By using the counter variable, we can track the number of items checked. If counter reaches the length of the input array, it means we have checked all items without finding a suitable one, so we can safely exit the loop to avoid an infinite loop.
+
 
 
 

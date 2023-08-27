@@ -2730,22 +2730,55 @@
         $scope.highlightedParagraphNode = {};
       }
 
-      $scope.currentItem = function(input) {
-        console.log("Current iteming")
-          if (!input || !input.length){
-            console.log("No input")
-            return [];
-          } 
+      // $scope.currentItem = function(input) {
+      //   console.log("Current iteming")
+      //     if (!input || !input.length){
+      //       console.log("No input")
+      //       return [];
+      //     } 
             
 
-              // Ensure we skip items where rejoined is true
-              while (input[$scope.currentRemarkIndex % input.length].rejoined) {
-                  console.log("Current remark index: ", angular.copy($scope.currentRemarkIndex))
-                  $scope.currentRemarkIndex++; // Move to the next item if current is rejoined
-              }
+      //         // Ensure we skip items where rejoined is true
+      //         while (input[$scope.currentRemarkIndex % input.length].rejoined) {
+      //             console.log("Current remark index: ", angular.copy($scope.currentRemarkIndex))
+      //             $scope.currentRemarkIndex++; // Move to the next item if current is rejoined
+      //         }
 
-              return [input[$scope.currentRemarkIndex % input.length]];
+      //         return [input[$scope.currentRemarkIndex % input.length]];
+      // };
+
+      $scope.currentItem = function(input) {
+          console.log("Current iteming");
+
+          if (!input || !input.length) {
+              console.log("No input");
+              return [];
+          }
+
+          let counter = 0; // Counter to ensure we don't loop infinitely
+          
+          // Ensure we skip items where rejoined is true
+          while (input[$scope.currentRemarkIndex % input.length].rejoined) {
+              console.log("Current remark index: ", $scope.currentRemarkIndex);
+              $scope.currentRemarkIndex++; // Move to the next item if current is rejoined
+              counter++;
+
+              // Break the loop if we've checked all items in the input array
+              if (counter >= input.length) {
+                  console.log("All items are rejoined");
+                  return [];
+              }
+          }
+
+          return [input[$scope.currentRemarkIndex % input.length]];
       };
+      By using the counter variable, we can track the number of items checked. If counter reaches the length of the input array, it means we have checked all items without finding a suitable one, so we can safely exit the loop to avoid an infinite loop.
+
+
+
+
+
+
 
       $scope.reloadRemark = function() {
           if ($scope.proposition && $scope.proposition.remarks && $scope.proposition.remarks.length) {

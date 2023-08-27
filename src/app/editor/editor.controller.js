@@ -5307,6 +5307,7 @@
                 color: payload.color,
                 animate: true
               })
+              console.log("Pushed assertion")
             } else if (payload.type === 'negation'){
               
               console.log("All negations")
@@ -5431,6 +5432,7 @@
                 animate: true
               })
             }
+            console.log("About to animate")
             $timeout(function() {
               
                 $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].animate = false;

@@ -5456,6 +5456,8 @@
               $scope.isMessageFresh = false;
             }
 
+            console.log("Before already there")
+
             for (var i = 0; i < $scope.userColorTable.length; i++) {
               if ($scope.userColorTable[i].author === payload.author &&
                 payload.author !== $scope.userId) {
@@ -5530,6 +5532,7 @@
 
 
             if ($scope.data[0].dialogue){
+              console.log("If dialogue")
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if ($scope.data[0].dialogue[i].author === $scope.userId){
                   $scope.onTheBoard = true;

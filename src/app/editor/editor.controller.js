@@ -746,7 +746,7 @@
       $scope.lighterOtherPastels = ['#ffbec4', '#edf5dd', '#d0f1e5', '#dbe0f1', '#ffa64c'];
 
       // these are the current pastels
-      $scope.otherPastels = ['#00FFFF', '#00BFFF', '#9acd33', '#ff9225'];
+      $scope.otherPastels = ['#00FFFF', '#00BFFF', '#9acd33', '#ff9225', '#9ea3f5'];
       // Other suitable pastels below
       // ,'#c7ceea','#ffb7b2'
       // Light theme pastels below
@@ -7079,7 +7079,116 @@
                   noClick: false, 
                   action: 'proposition',
               
-              }, // 
+              }, 
+              { index: 16, 
+               
+                  author: $scope.userId,
+                  text: 'The subsequent decision in SEC v. Ter- raform Labs Pte. Ltd., 2023 WL 4858299 (S.D.N.Y. July 31, 2023), is consistent with this premise; Terraform recognized that a digital asset itself is not an “investment contract,” concluding only that the digital assets at issue were the subject of an “investment contract.” Id. at *12.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 15,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+              
+              }, 
+              { index: 17, 
+               
+                  author: 'aaa',
+                  text: "What is at stake here?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 16,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 18, 
+               
+                  author: $scope.userId,
+                  text: 'It is important to keep view of what is at stake.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 17,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              }, 
+              { index: 19, 
+               
+                  author: 'aaa',
+                  text: "And that is?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 18,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 20, 
+               
+                  author: $scope.userId,
+                  text: 'Digital assets represent a significant seg- ment of the global economy and an integral part of the American financial system.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 19,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              }, 
+              //
 
               // { index: 7, 
                 

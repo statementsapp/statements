@@ -7170,7 +7170,7 @@
               { index: 20, 
                
                   author: $scope.userId,
-                  text: 'Digital assets represent a significant seg- ment of the global economy and an integral part of the American financial system.',
+                  text: 'Digital assets represent a significant segment of the global economy and an integral part of the American financial system.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7185,7 +7185,74 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
+                  messaged: false
+              
+              }, 
+              { index: 21, 
+               
+                  author: 'bbb',
+                  text: "Would the size of the cryptocurrency industry be a legal for the SEC not to regulate it?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 20,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
                   messaged: true
+              
+              },
+              { index: 22, 
+               
+                  author: 'ccc',
+                  text: "Provide an argument from public utility.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 20,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },// This is not just about speculative or institutional trading— millions of Americans use digital assets for everyday financial transactions.
+              { index: 23, 
+               
+                  author: $scope.userId,
+                  text: 'Digital assets represent a significant segment of the global economy and an integral part of the American financial system.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 19,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
               
               }, 
               //

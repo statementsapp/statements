@@ -7255,6 +7255,96 @@
                   messaged: false
               
               }, 
+              { index: 24, 
+               
+                  author: 'ccc',
+                  text: "The SEC feels a need to regulate certain things that might be important or 'integral' from how it interprets it own enabling statute",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 23,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 25, 
+               
+                  author: 'ddd',
+                  text: "Show the importance of crypto as money.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 23,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },// 
+              { index: 26, 
+               
+                  author: 'eee',
+                  text: "What about an antiquarian discussion of gold and silver-backed currency?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 23,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },// 
+              { index: 27, 
+               
+                  author: $scope.userId,
+                  text: 'This is not just about speculative or institutional trading—millions of Americans use digital assets for everyday financial transactions.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 25,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              }, 
               //
 
               // { index: 7, 

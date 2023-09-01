@@ -8762,7 +8762,11 @@
           var theOn = theStep.on;
           var theOnText = theStep.text;
           if (!theStep.messaged){
-            $scope.threadAdding = '';
+            setTimeout(function () {
+              $scope.$apply(function () {
+                $scope.hasChatFocusId = '';
+              });
+            }, 0);
           }
           if (theStep.action ==='proposition'){
             console.log("It's a prop")

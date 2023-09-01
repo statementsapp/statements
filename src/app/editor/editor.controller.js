@@ -7083,7 +7083,7 @@
               { index: 16, 
                
                   author: $scope.userId,
-                  text: 'The subsequent decision in SEC v. Ter- raform Labs Pte. Ltd., 2023 WL 4858299 (S.D.N.Y. July 31, 2023), is consistent with this premise; Terraform recognized that a digital asset itself is not an “investment contract,” concluding only that the digital assets at issue were the subject of an “investment contract.” Id. at *12.',
+                  text: 'The subsequent decision in SEC v. Terraform Labs Pte. Ltd., 2023 WL 4858299 (S.D.N.Y. July 31, 2023), is consistent with this premise; Terraform recognized that a digital asset itself is not an “investment contract,” concluding only that the digital assets at issue were the subject of an “investment contract.” Id. at *12.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8761,6 +8761,9 @@
           // console.log("The step: ", theStep)
           var theOn = theStep.on;
           var theOnText = theStep.text;
+          if (!theStep.messaged){
+            $scope.threadAdding = '';
+          }
           if (theStep.action ==='proposition'){
             console.log("It's a prop")
             if (theStep.author === $scope.data[0].documentClaimedBy){

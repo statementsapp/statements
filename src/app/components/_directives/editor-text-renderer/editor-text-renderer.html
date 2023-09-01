@@ -491,8 +491,8 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
               ng-mouseover = "proposition.remarksAreMousedOver = true"
 
 >
-
-            <li ng-repeat="remark in currentItem(proposition.remarks) track by $index"
+                <!-- ng-repeat="remark in currentItem(proposition.remarks) track by $index" -->
+            <li ng-repeat="remark in proposition.remarks track by $index"
                 id="wholeprop{{remark.id}}"
                 ui-tree-node
                 style="display: inline;"

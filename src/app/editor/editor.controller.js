@@ -2748,7 +2748,7 @@
       // };
 
       $scope.currentItem = function(input) {
-          console.log("Current iteming");
+          
 
           if (!input || !input.length) {
               console.log("No input");
@@ -2768,7 +2768,6 @@
 
               // Break the loop if we've checked all items in the input array
               if (counter >= input.length) {
-                  console.log("All items are rejoined");
                   return [];
               }
           }

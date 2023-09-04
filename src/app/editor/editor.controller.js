@@ -4758,10 +4758,12 @@
                 for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.length; i++){
                   if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i].id === payload.afterPropositionId){
                     apply.afterPropTarget = angular.copy(i);
+                    console.log("After prop target eh: ", apply.afterPropTarget)
                     break;
                   }
                 }
                 if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[apply.afterPropTarget+1]){
+                  console.log("First one if")
                   for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.length-1; 
                     i > (apply.afterPropTarget); i--){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i+1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i]);

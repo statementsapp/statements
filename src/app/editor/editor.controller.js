@@ -7240,7 +7240,7 @@
               { index: 23, 
                
                   author: $scope.userId,
-                  text: 'Digital assets represent a significant segment of the global economy and an integral part of the American financial system.',
+                  text: 'This is not just about speculative or institutional trading—millions of Americans use digital assets for everyday financial transactions.',
                   dialogueText: function() {
                                   return this.text;
                                 },

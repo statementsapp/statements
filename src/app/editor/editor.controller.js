@@ -3825,7 +3825,7 @@
             prep.adjustedText = input;
             prep.author = $scope.userId;
             
-            if (hasBeenSetUp){
+            if ($scope.hasBeenSetUp){
               prep.afterPropositionId = angular.copy(proposition.of.id);
             } else {
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
@@ -3848,7 +3848,7 @@
             prep.adjustedText = input;
             prep.author = $scope.userId;
             // prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            if (hasBeenSetUp){
+            if ($scope.hasBeenSetUp){
               prep.afterPropositionId = angular.copy(proposition.of.id);
             } else {
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);

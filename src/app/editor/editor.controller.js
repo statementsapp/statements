@@ -7256,209 +7256,209 @@
                   messaged: false
               
               }, 
-              // { index: 24, 
+              { index: 24, 
                
-              //     author: 'ccc',
-              //     text: "The SEC feels a need to regulate certain things that might be important or 'integral' from how it interprets it own enabling statute",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'ccc',
+                  text: "The SEC feels a need to regulate certain things that might be important or 'integral' from how it interprets it own enabling statute",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 23,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 23,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },
-              // { index: 25, 
+              },
+              { index: 25, 
                
-              //     author: 'ddd',
-              //     text: "Show the importance of crypto as money.",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'ddd',
+                  text: "Show the importance of crypto as money.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 23,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 23,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },// 
-              // { index: 26, 
+              },// 
+              { index: 26, 
                
-              //     author: 'eee',
-              //     text: "What about an antiquarian discussion of gold and silver-backed currency?",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'eee',
+                  text: "What about an antiquarian discussion of gold and silver-backed currency?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 23,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 23,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },// 
-              // { index: 27, 
+              },// 
+              { index: 27, 
                
-              //     author: $scope.userId,
-              //     text: 'This is not just about speculative or institutional trading—millions of Americans use digital assets for everyday financial transactions.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: $scope.userId,
+                  text: 'This is not just about speculative or institutional trading—millions of Americans use digital assets for everyday financial transactions.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 25,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: false
+                  which: 'item',
+                  on: 25,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // }, 
-              // { index: 28, 
+              }, 
+              { index: 28, 
                
-              //     author: 'eee',
-              //     text: "Can we make a case based on explicit constitutional rights?",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'eee',
+                  text: "Can we make a case based on explicit constitutional rights?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 27,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },
-              // { index: 29, 
+              },
+              { index: 29, 
                
-              //     author: 'fff',
-              //     text: "Please elaborate.",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'fff',
+                  text: "Please elaborate.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 27,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },// 
-              // { index: 30, 
+              },// 
+              { index: 30, 
                
-              //     author: 'aaa',
-              //     text: "How else does it matter?",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'aaa',
+                  text: "How else does it matter?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 27,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },// 
-              // { index: 31, 
+              },// 
+              { index: 31, 
                
-              //     author: 'aaa',
-              //     text: "More to this.",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'aaa',
+                  text: "More to this.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 27,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },// 
-              // { index: 32, 
+              },// 
+              { index: 32, 
                
-              //     author: $scope.userId,
-              //     text: 'The SEC’s regulation-by-enforcement approach is not only detrimental to the industry, it also directly impacts individual Americans who use digital assets.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: $scope.userId,
+                  text: 'The SEC’s regulation-by-enforcement approach is not only detrimental to the industry, it also directly impacts individual Americans who use digital assets.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 29,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: false
+                  which: 'item',
+                  on: 29,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // }, 
+              }, 
               //
 
               // { index: 7, 

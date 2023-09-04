@@ -3847,8 +3847,12 @@
             prep.type = 'assertion';
             prep.adjustedText = input;
             prep.author = $scope.userId;
-            prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            
+            // prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+            if (hasBeenSetUp){
+              prep.afterPropositionId = angular.copy(proposition.of.id);
+            } else {
+              prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+            }
             if ($scope.hasBeenSetUp){
               if (!node){
                 prep.targetNodeId = $scope.selectedNode.nodeId;

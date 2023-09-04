@@ -3848,11 +3848,16 @@
             prep.adjustedText = input;
             prep.author = $scope.userId;
             // prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            if ($scope.hasBeenSetUp){
-              prep.afterPropositionId = angular.copy(proposition.of.id);
-            } else {
+            // if ($scope.hasBeenSetUp){
+            //   if ($scope.selectedProposition.type === 'negation'){
+            //     prep.afterPropositionId = angular.copy(proposition.of.id);
+            //   } else {
+
+            //   }
+              
+            // } else {
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            }
+            // }
             if ($scope.hasBeenSetUp){
               if (!node){
                 prep.targetNodeId = $scope.selectedNode.nodeId;
@@ -3863,11 +3868,15 @@
             } else {
               prep.targetNodeId = $scope.selectedNode.nodeId;
             }
+
+
             if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide){
               prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             } else {
               prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
             }
+
+            
             
             prep.rejoins = $scope.selectedProposition.id;
             prep.of = {

@@ -3830,6 +3830,8 @@
             } else {
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
             }
+            console.log("Got after prop id for: ", angular.copy($scope.selectedProposition.of.text))
+            console.log("The proposition: ", angular.copy(proposition))
             prep.targetNodeId = $scope.selectedNode.nodeId;
             prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
             prep.rejoins = $scope.selectedProposition.id;
@@ -3857,6 +3859,8 @@
               
             // } else {
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+              console.log("Got after prop id for: ", angular.copy($scope.selectedProposition.of.text))
+              console.log("The proposition: ", angular.copy(proposition))
             // }
             if ($scope.hasBeenSetUp){
               if (!node){
@@ -3876,7 +3880,7 @@
               prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
             }
 
-            
+
             
             prep.rejoins = $scope.selectedProposition.id;
             prep.of = {

@@ -3858,7 +3858,8 @@
                 } else {
                   prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
                 }
-                console.log("Got after prop id for A A A : ", angular.copy($scope.selectedProposition.of.text))
+                console.log("Got after prop id : ", angular.copy($scope.selectedProposition.of.text))
+                console.log("SP for A A A: ", angular.copy($scope.selectedProposition.text))
                 console.log("The proposition: ", angular.copy(proposition))
               } else {
                 console.log("B")
@@ -9152,6 +9153,7 @@
                                 console.log("STILL THIS HERE ID: ", thisHereId)
                                 document.getElementById('proposition'+thisHereId).click();
                                 document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
+
                               }, 20);
                               setTimeout(function () {
                                 console.log("Now the selected node is: ", angular.copy($scope.selectedNode.nodeId))

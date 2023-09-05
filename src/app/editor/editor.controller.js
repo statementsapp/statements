@@ -3853,7 +3853,7 @@
             if ($scope.hasBeenSetUp){
               if ($scope.selectedProposition.type === 'negation'){
                 console.log('A')
-                prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+                prep.afterPropositionId = angular.copy(proposition.id);
                 console.log("Got after prop id for A A A : ", angular.copy($scope.selectedProposition.of.text))
                 console.log("The proposition: ", angular.copy(proposition))
               } else {

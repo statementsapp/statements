@@ -3849,19 +3849,23 @@
             prep.type = 'assertion';
             prep.adjustedText = input;
             prep.author = $scope.userId;
-            // prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            // if ($scope.hasBeenSetUp){
-            //   if ($scope.selectedProposition.type === 'negation'){
-            //     prep.afterPropositionId = angular.copy(proposition.of.id);
-            //   } else {
-
-            //   }
+            prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+            if ($scope.hasBeenSetUp){
+              if ($scope.selectedProposition.type === 'negation'){
+                console.log('A')
+                prep.afterPropositionId = angular.copy(proposition.of.id);
+              } else {
+                console.log("B")
+                prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+                console.log("Got after prop id for B B B : ", angular.copy($scope.selectedProposition.of.text))
+                console.log("The proposition: ", angular.copy(proposition))
+              }
               
-            // } else {
+            } else {
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-              console.log("Got after prop id for: ", angular.copy($scope.selectedProposition.of.text))
+              console.log("Got after prop id for C C C : ", angular.copy($scope.selectedProposition.of.text))
               console.log("The proposition: ", angular.copy(proposition))
-            // }
+            }
             if ($scope.hasBeenSetUp){
               if (!node){
                 prep.targetNodeId = $scope.selectedNode.nodeId;

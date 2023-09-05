@@ -3854,7 +3854,7 @@
               if ($scope.selectedProposition.type === 'negation'){
                 console.log('A')
                 prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-                console.log("Got after prop id for B B B : ", angular.copy($scope.selectedProposition.of.text))
+                console.log("Got after prop id for A A A : ", angular.copy($scope.selectedProposition.of.text))
                 console.log("The proposition: ", angular.copy(proposition))
               } else {
                 console.log("B")
@@ -9138,6 +9138,7 @@
                                   
                                   $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
                                   $scope.selectedNode = $scope.data[0].nodes[thisH];
+                                  $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
                                   
                                 });
                               }, 0);

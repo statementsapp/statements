@@ -3893,7 +3893,15 @@
 
 
             
+
+            // NEED TO MAKE THE .REJOINS ACCURATE FOR AUTOMATED 3Bs
+            // need it to access the remark it is being written on and set the rejoins to its id
+
             prep.rejoins = $scope.selectedProposition.id;
+
+
+
+
             prep.of = {
               type: $scope.selectedProposition.type,
               author: $scope.selectedProposition.author,
@@ -9157,6 +9165,7 @@
                               }, 20);
                               setTimeout(function () {
                                 console.log("Now the selected node is: ", angular.copy($scope.selectedNode.nodeId))
+                                $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
                                 
                                 

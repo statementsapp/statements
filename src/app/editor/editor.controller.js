@@ -9140,7 +9140,8 @@
 
                               setTimeout(function () {
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
-                                
+                                console.log("The this here id: ", angular.copy(thisHereId))
+                                console.log("The currently selected prop: ", angular.copy($scope.selectedProposition.text))
                                 // break;
                               }, 2000);
                             } else {

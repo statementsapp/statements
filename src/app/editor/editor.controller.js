@@ -9139,6 +9139,7 @@
                               }, 20);
 
                               setTimeout(function () {
+                                $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
                                 populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
                                 console.log("The this here id: ", angular.copy(thisHereId))
                                 console.log("The currently selected prop: ", angular.copy($scope.selectedProposition.text))

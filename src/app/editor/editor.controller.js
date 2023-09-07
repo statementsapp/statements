@@ -7390,119 +7390,119 @@
                   messaged: true
               
               }, 
-              { index: 28, 
+              // { index: 28, 
                
-                  author: 'eee',
-                  text: "Can we make a case based on explicit constitutional rights?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'eee',
+              //     text: "Can we make a case based on explicit constitutional rights?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 27,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 27,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
-              { index: 29, 
+              // },
+              // { index: 29, 
                
-                  author: 'fff',
-                  text: "Please elaborate.",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'fff',
+              //     text: "Please elaborate.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 27,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 27,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },// 
-              { index: 30, 
+              // },// 
+              // { index: 30, 
                
-                  author: 'aaa',
-                  text: "How else does it matter?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'aaa',
+              //     text: "How else does it matter?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 27,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 27,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },// 
-              { index: 31, 
+              // },// 
+              // { index: 31, 
                
-                  author: 'aaa',
-                  text: "More to this.",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'aaa',
+              //     text: "More to this.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 27,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 27,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },// 
-              { index: 32, 
+              // },// 
+              // { index: 32, 
                
-                  author: $scope.userId,
-                  text: '',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: '',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 29,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 29,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              }, 
+              // }, 
               //
 
               // { index: 7, 

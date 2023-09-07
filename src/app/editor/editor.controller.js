@@ -8764,11 +8764,11 @@
 
             
              
-             // $scope.preDefinedPoints = $scope.geocentrism;
+             $scope.preDefinedPoints = $scope.geocentrism;
               // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
               // $scope.preDefinedPoints = $scope.toyota;
               // $scope.preDefinedPoints = $scope.listOfLethalities;
-              $scope.preDefinedPoints = $scope.coinbase;
+              // $scope.preDefinedPoints = $scope.coinbase;
 
 
 

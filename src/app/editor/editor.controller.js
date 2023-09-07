@@ -7303,7 +7303,7 @@
               { index: 24, 
                
                   author: 'ccc',
-                  text: "The SEC feels a need to regulate certain things that might be important or 'integral' from how it interprets it own enabling statute",
+                  text: "The SEC feels a need to regulate according to how it interprets its own enabling statute",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7372,7 +7372,7 @@
               { index: 27, 
                
                   author: $scope.userId,
-                  text: 'This is not just about speculative or institutional trading—millions of Americans use digital assets for everyday financial transactions.',
+                  text: 'The SEC’s regulation-by-enforcement approach is not only detrimental to the industry, it also directly impacts individual Americans who use digital assets.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7485,7 +7485,7 @@
               { index: 32, 
                
                   author: $scope.userId,
-                  text: 'The SEC’s regulation-by-enforcement approach is not only detrimental to the industry, it also directly impacts individual Americans who use digital assets.',
+                  text: '',
                   dialogueText: function() {
                                   return this.text;
                                 },

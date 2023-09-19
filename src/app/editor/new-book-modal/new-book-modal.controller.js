@@ -36,6 +36,7 @@
       book.lastModified = now;
       book.lastModifiedBy = $rootScope.uid;
       apiService.createBook(book).then(function (result) {
+        console.log("Add new result: ", result)
         var bookId = result.data;
         libraryService.addBook(bookId, book);
         var bookIds = profileService.getBookIds();

@@ -18,7 +18,7 @@
         var chromeOnlyElement = document.getElementById('chromeOnlyElement');
 
         if (!isChrome) {
-            chromeOnlyElement.style.display = 'none';
+            chromeOnlyElement.style.display = 'none !important';
         }
     });
 

@@ -467,6 +467,9 @@
             </div>
             <br>
           </div> -->
+
+
+
     <div class=""
          ng-mouseover="[!dialogueGrey && cowsComeHome ? greyDialogue() : inputs.nothing]"
          ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
@@ -512,6 +515,9 @@
            id="textblurrer"
            ></div>
     </div>
+
+
+
     <div
       ng-class="{'col-md-12' : (fullScreenMessages && (loggedIn() || isGuest())), 'col-md-4' : !fullScreenText && !fullScreenMessages, 'nomessages' : fullScreenText, 'dialoguedropdeny' : draggedproposition.id, 'shorteditor': shortEditor}"
       ng-click="[selectedProposition.dialogueSide = true, queryBlur() ? blurDialogue() : inputs.notting] "
@@ -553,6 +559,9 @@
         </ol> 
       </div>
     </div>
+
+
+    
   </div><!-- Row -->
   <div class="row"
        ng-click="clearDrag()"

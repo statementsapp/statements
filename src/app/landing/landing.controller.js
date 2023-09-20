@@ -14,16 +14,16 @@
     console.log("State: ", $state)
 
     document.addEventListener('DOMContentLoaded', function() {
-        var userAgent = navigator.userAgent;
-        
-        var isChrome = userAgent.indexOf('Chrome') > -1 && userAgent.indexOf('Safari') > -1 && userAgent.indexOf('Edg') === -1 && userAgent.indexOf('OPR') === -1 && userAgent.indexOf('CriOS') === -1 && userAgent.indexOf('Version') === -1;
-
-        var chromeOnlyElement = document.getElementById('chromeOnlyElement');
+        var isChrome = !!window.chrome && (/Chrome/.test(navigator.userAgent)) && navigator.vendor.indexOf('Google Inc.') !== -1;
 
         if (!isChrome) {
-            chromeOnlyElement.style.display = 'none';
+            var chromeOnlyElement = document.getElementById('chromeOnlyElement');
+            if (chromeOnlyElement) {
+                chromeOnlyElement.style.display = 'none';
+            }
         }
     });
+
 
     // Wait for the document to load
     document.addEventListener("DOMContentLoaded", function() {

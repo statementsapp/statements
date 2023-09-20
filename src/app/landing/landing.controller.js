@@ -13,6 +13,15 @@
     console.log("Screen width: ", $scope.screenWidth)
     console.log("State: ", $state)
 
+    document.addEventListener('DOMContentLoaded', function() {
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        var chromeOnlyElement = document.getElementById('chromeOnlyElement');
+
+        if (!isChrome) {
+            chromeOnlyElement.style.display = 'none';
+        }
+    });
+
     // Wait for the document to load
     document.addEventListener("DOMContentLoaded", function() {
       // List of words to loop through

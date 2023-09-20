@@ -14,11 +14,11 @@
     console.log("State: ", $state)
 
     document.addEventListener('DOMContentLoaded', function() {
-        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor) && !/Edg/.test(navigator.userAgent) && !/OPR/.test(navigator.userAgent) && !/CriOS/.test(navigator.userAgent);
         var chromeOnlyElement = document.getElementById('chromeOnlyElement');
 
         if (!isChrome) {
-            chromeOnlyElement.style.display = 'none !important';
+            chromeOnlyElement.style.display = 'none';
         }
     });
 

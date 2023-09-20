@@ -15,7 +15,7 @@
 
     
 
-    etTimeout(function () {
+    setTimeout(function () {
           $scope.$apply(function () {
 
             var isChrome = !!window.chrome && (/Chrome/.test(navigator.userAgent)) && navigator.vendor.indexOf('Google Inc.') !== -1;

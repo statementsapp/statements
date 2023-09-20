@@ -28,7 +28,7 @@
             console.log("Chrome only element: ", chromeOnlyElement)
 
           });
-        }, 2000);
+        }, 50);
 
 
     // Wait for the document to load

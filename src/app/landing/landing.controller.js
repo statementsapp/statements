@@ -14,7 +14,10 @@
     console.log("State: ", $state)
 
     document.addEventListener('DOMContentLoaded', function() {
-        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor) && !/Edg/.test(navigator.userAgent) && !/OPR/.test(navigator.userAgent) && !/CriOS/.test(navigator.userAgent);
+        var userAgent = navigator.userAgent;
+        
+        var isChrome = userAgent.indexOf('Chrome') > -1 && userAgent.indexOf('Safari') > -1 && userAgent.indexOf('Edg') === -1 && userAgent.indexOf('OPR') === -1 && userAgent.indexOf('CriOS') === -1 && userAgent.indexOf('Version') === -1;
+
         var chromeOnlyElement = document.getElementById('chromeOnlyElement');
 
         if (!isChrome) {

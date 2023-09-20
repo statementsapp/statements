@@ -200,7 +200,7 @@
           <div class="icon">
                   <div class="arrow"></div>
               </div>
-          <div class="guest-button-wrapper" ng-if="screenWidth > 500" style="">
+          
 
 
 
@@ -218,7 +218,8 @@
               
               <br>
 
-              <button class="btn btn-lg btn-default btn-block"
+              <button class="guest-button-wrapper btn btn-lg btn-default btn-block"
+                      ng-if="screenWidth > 500"
                       ng-click="screenWidth > 500 ? [joinAsGuest($event), safety = true] : inputs.nothing"
                       style="border: 1px solid black; width: auto; font-size: .95em !important"
                       type="button">
@@ -231,7 +232,7 @@
               </button>
               
             
-          </div>
+          
           </div>
         </div>
       </div>

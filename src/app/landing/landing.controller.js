@@ -14,8 +14,9 @@
     console.log("State: ", $state)
 
     document.addEventListener('DOMContentLoaded', function() {
+        console.log("Is this listener even running")
         var isChrome = !!window.chrome && (/Chrome/.test(navigator.userAgent)) && navigator.vendor.indexOf('Google Inc.') !== -1;
-
+        console.log("Is Chrome: ", isChrome)
         if (!isChrome) {
             var chromeOnlyElement = document.getElementById('chromeOnlyElement');
             if (chromeOnlyElement) {

@@ -13,14 +13,14 @@
     console.log("Screen width: ", $scope.screenWidth)
     console.log("State: ", $state)
 
-    (function() {
-        var isChrome = !!window.chrome && (/Chrome/.test(navigator.userAgent)) && navigator.vendor.indexOf('Google Inc.') !== -1;
+    var isChrome = !!window.chrome && (/Chrome/.test(navigator.userAgent)) && navigator.vendor.indexOf('Google Inc.') !== -1;
 
-        var chromeOnlyElement = document.getElementById('chromeOnlyElement');
-        if (!isChrome && chromeOnlyElement) {
-            chromeOnlyElement.style.display = 'none';
-        }
-    })();
+    var chromeOnlyElement = document.getElementById('chromeOnlyElement');
+    if (!isChrome && chromeOnlyElement) {
+        chromeOnlyElement.style.display = 'none';
+    }
+
+    console.log("Chrome only element: ", chromeOnlyElement)
 
 
     // Wait for the document to load

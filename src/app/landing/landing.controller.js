@@ -13,14 +13,22 @@
     console.log("Screen width: ", $scope.screenWidth)
     console.log("State: ", $state)
 
-    var isChrome = !!window.chrome && (/Chrome/.test(navigator.userAgent)) && navigator.vendor.indexOf('Google Inc.') !== -1;
+    
 
-    var chromeOnlyElement = document.getElementById('chromeOnlyElement');
-    if (!isChrome && chromeOnlyElement) {
-        chromeOnlyElement.style.display = 'none';
-    }
+    etTimeout(function () {
+          $scope.$apply(function () {
 
-    console.log("Chrome only element: ", chromeOnlyElement)
+            var isChrome = !!window.chrome && (/Chrome/.test(navigator.userAgent)) && navigator.vendor.indexOf('Google Inc.') !== -1;
+
+            var chromeOnlyElement = document.getElementById('chromeOnlyElement');
+            if (!isChrome && chromeOnlyElement) {
+                chromeOnlyElement.style.display = 'none';
+            }
+
+            console.log("Chrome only element: ", chromeOnlyElement)
+
+          });
+        }, 2000);
 
 
     // Wait for the document to load

@@ -5104,6 +5104,7 @@
                     }, 20);
                   }
                 } else {
+                  console.log("Bottomadd with dragprops")
                   for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex -1); i--){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[i + 1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[i]);
                   }
@@ -5116,6 +5117,7 @@
                   }
                   for (var n = 0; n < payload.draggedProps.length; n++){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n] = payload.draggedProps[n];
+                    $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1].propositions[n].isPresentlyBeingDragged = false;
                   }
                 }
 

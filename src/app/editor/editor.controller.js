@@ -2540,6 +2540,7 @@
               if (!paragraph.propositions[i].hiddenForAll){
                 proposition = paragraph.propositions[i];
                 flag = 'right';
+                break;
               }
             }
           }

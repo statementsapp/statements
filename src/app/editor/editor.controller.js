@@ -2575,6 +2575,7 @@
               console.log("topadd: ", angular.copy(paragraph.topAdd))
               console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))
               console.log("topmouseover: ", angular.copy(paragraph.topMouseOver))
+              console.log("flag eh: ", angular.copy(flag))
               if (paragraph.paragraphId === $scope.draggedParagraph.paragraphId && !paragraph.bottomAdd && 
               !paragraph.topAdd && !paragraph.topMouseOver){
                 $scope.clearDrag();
@@ -2589,6 +2590,7 @@
               }
               $scope.deleteProposition($scope.draggedNode, $scope.draggedParagraph, null, null, 'paragraph', true);
               setTimeout(function () {
+                console.log("flag in timeout: ", angular.copy(flag))
                 // prepProposition = function (input, node, paragraph, proposition, event, draggedProps, propositionToSetLaterPosition)
                 $scope.prepProposition(null, node, paragraph, proposition, null, flag);
 

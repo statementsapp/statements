@@ -2531,7 +2531,7 @@
             for (var i = 0; i < paragraph.propositions.length; i++){
               if (!paragraph.propositions[i].hiddenForAll){
                 proposition = paragraph.propositions[i];
-                flag = 'right';
+                flag = 'left';
                 break;
               }
             }

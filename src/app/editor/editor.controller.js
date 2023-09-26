@@ -2525,7 +2525,7 @@
           console.log(event.pageX, ", ", event.pageY)
           console.log($('#propositionsol' + paragraph.paragraphId).offset().left, ", ", $('#propositionsol' + paragraph.paragraphId).offset().top)
           console.log(relX, ", ", relY)
-          if (relY > -24){
+          if (relX > 30){
             console.log("left ol")
             flag = 'left';
             for (var i = 0; i < paragraph.propositions.length; i++){

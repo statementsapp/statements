@@ -12,7 +12,7 @@
      spellcheck="false"
      id="fulleditor"
      ng-keyup="$event.keyCode === 8 || $event.keyCode === 46 ? [clearDragDetector(), clearDrag(), unHighlightParagraph(), didItRun()] : inputs.nothing">
-     <div class="link-box pull-right chromeOnlyElement">
+     <div class="link-box pull-right chromeOnlyElement" style="display: flex; align-items: flex-start; margin-right: 70px;">
        <button class="btn menubutton"
                type="button"
                uib-tooltip="Register"
@@ -21,7 +21,7 @@
                >
          <span  id="exporttext">(Get Statements)</span>
        </button>
-       <!-- <div id="chromeOnlyElement" style="display: flex; align-items: flex-start; margin-right: 70px;">  -->
+      
        
        <div class="icon">
                <div class="arrow"></div>

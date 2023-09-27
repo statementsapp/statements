@@ -2494,6 +2494,16 @@
         console.log("That event is: ", event)
       }
 
+      $scope.leftOlClickHandle = function (node, paragraph, event) {
+        var relX = event.pageX - $('#propositionsol' + id).offset().left;
+        console.log("Relx: ", relX)
+        if (relX > -14){
+          $scope.getLastVisiblePropositionInParagraph(node, paragraph, $event)
+        }
+
+        
+      }
+
       $scope.getReading = function (event, id) {
         var relX = event.pageX - $('#propositionsol' + id).offset().left;
           var relY = event.pageY - $('#propositionsol' + id).offset().top;

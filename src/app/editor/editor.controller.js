@@ -425,6 +425,30 @@
       });
     };
 
+    $scope.openExportModal = function () {
+      $scope.addBookModalInstance = $uibModal.open({
+        animation: true,
+        ariaLabelledBy: 'modal-title-export',
+        ariaDescribedBy: 'modal-body-export',
+        templateUrl: 'app/editor/library-modal/export-modal.html',
+        size: 'lg',
+        controller: 'ExportModalController',
+        controllerAs: 'vm',
+        keyboard: false,
+        backdrop: 'static',
+        resolve: {
+          profileService: profileService,
+          libraryService: libraryService,
+          apiService: apiService
+        }
+      }).result.then(function (bookId) {
+        if (bookId) {
+          // chatSocket.emit('leave', $scope.bookId);
+          $state.go('main.editor', {bookId: bookId});
+        }
+      });
+    };
+
     $scope.openBillingPortal = function() {
       apiService.openBillingPortal($location.absUrl()).then(
         function(resp) {

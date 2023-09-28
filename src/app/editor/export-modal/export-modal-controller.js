@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function NewBookModalController($rootScope,
+  function ExportModalController ($rootScope,
                                   IdFactory,
                                   $uibModalInstance,
                                   profileService,
@@ -63,6 +63,6 @@
   }
 
   angular.module('statements')
-    .controller('NewBookModalController', NewBookModalController);
+    .controller('ExportModalController', ExportModalController);
 
 })();

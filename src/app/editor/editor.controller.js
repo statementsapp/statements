@@ -430,7 +430,7 @@
         animation: true,
         ariaLabelledBy: 'modal-title-export',
         ariaDescribedBy: 'modal-body-export',
-        templateUrl: 'app/editor/library-modal/export-modal.html',
+        templateUrl: 'app/editor/export-modal/export-modal.html',
         size: 'lg',
         controller: 'ExportModalController',
         controllerAs: 'vm',

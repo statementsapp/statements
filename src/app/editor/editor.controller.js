@@ -10507,6 +10507,7 @@
       for (var i = 0; i < $scope.data[0].dialogue.length; i++){
         $scope.data[0].dialogue[i].animate = false;
       }
+      console.log("How about that multi authoredness: ", $scope.data[0].multiAuthor)
     }; // end mainLoop 
 
     $scope.onMenuClicked = function (key) {

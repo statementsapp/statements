@@ -5,10 +5,11 @@
   function BookFactory(IdFactory) {
 
     // TODO This needs to be defined as a typed object with enums and such
-    var empty = function(title) {
+    var empty = function(title, multiFlag) {
       return {
         nodes: [
             {
+                multiAuthor: multiFlag,
                 topic: title,
                 isTitle: true,
                 dateCreated: Date(),

@@ -22,14 +22,14 @@
       document.getElementById('title').focus();
     });
 
-    vm.addNewBook = function () {
+    vm.addNewBook = function (multiFlag) {
       console.log("Adding a new book")
       if (vm.title == ''){
         return;
       }
       vm.processing = true;
 
-      var book = Object.assign({}, BookFactory.empty(vm.title));
+      var book = Object.assign({}, BookFactory.empty(vm.title, multiFlag));
       var now = moment().unix();
       book.documentClaimedBy = $rootScope.uid;
       book.dateCreated = now;

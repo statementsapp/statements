@@ -1256,6 +1256,12 @@ li.paragraph .child-div:not(.exclude) {
       
 }
 
+.singleauthorbutton:active {
+    background-color: white;
+    color: #0c2340;
+    border: 1px solid #0c2340;
+}
+
 .lefttextaddl {
   padding-right: 8px;
 }

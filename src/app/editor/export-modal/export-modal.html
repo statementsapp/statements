@@ -16,8 +16,8 @@
                >
               <!--  ng-class="{ 'has-error': form.title.$invalid && !form.title.$pristine }" -->
           <!--   <label for="title" class="titular" ng-if="vm.title == ''">Enter a Title</label> -->
-            <span class='instruction' style="padding-bottom: 40px;">
-              <div ng-if="!cowsComeHome" style="">Please enter your email:</div>
+            <span class='instruction' style="">
+              <div ng-if="!cowsComeHome" style="text-align: center">Please enter your email:</div>
 
             </span>
             <br>
@@ -27,7 +27,7 @@
                    name="title"
                    ng-model="vm.title"
                    required
-                   placeholder="Enter a title"
+                   placeholder=""
                    ng-keyup="$event.keyCode === 13 ? vm.addNewBook() : form.nothing">
 
             <div class="button-container" style="text-align: center; margin-top: 20px; padding-bottom: 15px;">

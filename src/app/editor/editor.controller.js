@@ -4413,6 +4413,7 @@
                       minimized: false,
                       sectionLevel: payload.sectionLevel,
                       sectionNumber: payload.sectionNumber,
+                      sectionClaimedBy: payload.author,
                       paragraphs: [
                         {
                           first: true,
@@ -4436,6 +4437,8 @@
                   } else {
                     $scope.data[0].nodes[apply.parentNodeIndex+1] = angular.copy(payload.draggedNode);
                     $scope.data[0].nodes[apply.parentNodeIndex+1].sectionNumber = (apply.parentNodeIndex+1);
+                    $scope.data[0].nodes[apply.parentNodeIndex+1].sectionClaimedBy= payload.author;
+
                   }
 
                 } else {
@@ -4447,6 +4450,7 @@
                       minimized: false,
                       sectionLevel: payload.sectionLevel,
                       sectionNumber: payload.sectionNumber,
+                      sectionClaimedBy: payload.author,
                       paragraphs: [
                         {
                           first: true,
@@ -4499,6 +4503,7 @@
                       minimized: false,
                       sectionLevel: payload.sectionLevel,
                       sectionNumber: payload.sectionNumber,
+                      sectionClaimedBy: payload.author,
                       paragraphs: [
                         {
                           first: true,
@@ -4521,7 +4526,7 @@
                     }
                   } else {
                     $scope.data[0].nodes[apply.parentNodeIndex] = payload.draggedNode;
-                    $scope.data[0].nodes[apply.parentNodeIndex] = payload.draggedNode;
+                    $scope.data[0].nodes[apply.parentNodeIndex].sectionClaimedBy = payload.author;
                   }
 
                 } else {
@@ -4536,6 +4541,7 @@
                       lastModified: null,
                       nodeId: payload.nodeId,
                       minimized: false,
+                      sectionClaimedBy: payload.author,
                       paragraphs: [
                         {
                           first: true,
@@ -4558,6 +4564,7 @@
                     }
                   } else {
                     $scope.data[0].nodes[apply.parentNodeIndex] = payload.draggedNode;
+                    $scope.data[0].nodes[apply.parentNodeIndex].sectionClaimedBy = payload.author;
                   }
 
                 }

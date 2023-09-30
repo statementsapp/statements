@@ -7,9 +7,10 @@
     // TODO This needs to be defined as a typed object with enums and such
     var empty = function(title, multiFlag) {
       return {
+        multiAuthor: multiFlag
         nodes: [
             {
-                multiAuthor: multiFlag,
+
                 topic: title,
                 isTitle: true,
                 dateCreated: Date(),

@@ -2366,14 +2366,14 @@
 
       $scope.checkIfDropValid = function (node, paragraph, proposition, flag){
         // console.log("Checking if drop valid")
-        if ($scope.data[0].documentClaimedBy !== $scope.userId && flag !== 'right'){
+        if (node.sectionClaimedBy !== $scope.userId){
           
           return false;
         }
         var check = {};
 
         // if the blank paragraph is there, only allow rights
-        if (!node.paragraphs[0].hiddenForAll && flag !== 'right' && flag !== "topnode" && flag !== 'bottomnode'){
+        if ((!node.paragraphs[0].hiddenForAll && flag !== 'right' && flag !== "topnode" && flag !== 'bottomnode') || node.sectionClaimedBy !== $scope.userId){
 
           return false;
         }
@@ -10031,7 +10031,8 @@
                         // });
                         
                         }, 20);
-                      } else {
+                      } else if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
+                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId){
                         setTimeout(function () {
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
@@ -10041,7 +10042,8 @@
                       }
                       return;
 
-                    } else if (!index) {
+                    } else if (!index && ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
+                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId)) {
                       console.log("Else get last")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)

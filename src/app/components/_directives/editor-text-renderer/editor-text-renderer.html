@@ -79,7 +79,7 @@
         <!-- {{node.nodeId}} -->
 </span>
 
-<!-- ng-keydown="$event.keyCode === 13 ? $event.preventDefault : inputs.nothing" -->
+<span ng-if="userId === node.sectionClaimedBy" style="color: white; position:relative; font-size:16px"><i class="fa-solid fa-pen"></i></span>
   <span ng-if="node.minimized && data[0].documentClaimedBy === userId"
         ng-click="toggleNode()"
         style="padding-right: 10px">+</span>

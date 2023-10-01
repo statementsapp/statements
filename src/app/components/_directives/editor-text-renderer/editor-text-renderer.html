@@ -676,11 +676,11 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
   </li>
 </ol>
 <div class="bottomnodedropzone"
-     ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'bottomnode') || (data[0].documentClaimedBy === userId && node.bottomDropzoneMouseOver && !draggingParagraph && !draggingProposition)}"
+     ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'bottomnode') || (node.bottomDropzoneMouseOver && !draggingParagraph && !draggingProposition)}"
      ng-if="hasBottomNodeFocus.id !== node.nodeId && (!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true)"
      ng-mouseover="node.bottomDropzoneMouseOver = true"
      ng-mouseleave="node.bottomDropzoneMouseOver = false"
-     ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : didItRun()"
+     ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : didItRun()"
      id="bottom{{node.nodeId}}">
 </div>
 <!-- There is an issue here with a space being treated like a click and firing getLastVisiblePropInBook

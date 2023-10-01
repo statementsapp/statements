@@ -23,7 +23,7 @@
     });
 
     vm.addNewBook = function (multiFlag) {
-      console.log("Adding a new book")
+      console.log("Adding a new book. multiFlag: ", multiFlag)
       if (vm.title == ''){
         return;
       }

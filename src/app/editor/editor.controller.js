@@ -1838,6 +1838,7 @@
 
       // Defines what's been highlighted
       $scope.highlightProposition = function (node, paragraph, proposition) {
+        console.log("Highlighting proposition")
         if ($scope.highlight.id !== proposition.id) {
           $scope.highlight.id = proposition.id;
           $scope.highlight.highlit = true;
@@ -2728,6 +2729,7 @@
       }
 
       $scope.highlightParagraph = function (node, paragraph){
+        console.log("Highlighting paragraph")
         for (var i = 0; i < $scope.data[0].nodes.length; i++){
           for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
 

@@ -22,8 +22,9 @@
       document.getElementById('title').focus();
     });
 
-    vm.addNewBook = function (multiFlag) {
+    vm.addNewBook = function (multiFlag, event) {
       console.log("Adding a new book. multiFlag: ", multiFlag)
+      console.log("Event: ", event)
       if (vm.title == ''){
         return;
       }

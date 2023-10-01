@@ -38,8 +38,8 @@
               <div style="padding-bottom: 10px" ng-if="vm.title">Press <strong>enter</strong> to begin writing</div>
             </span> -->
             <div class="button-container" style="text-align: center; margin-top: 20px; padding-bottom: 15px;">
-                <button ng-click="[console.log($event),vm.addNewBook(true)]" style="background-color: #0c2340; color: white; font-family: Arial; font-size: 110%; line-height: 1.428571429; padding: 10px 20px; border: 1px solid white; border-radius: 10px;">Multi-Author</button>
-                <button class="singleauthorbutton" ng-click="vm.addNewBook(false)" style="background-color: #0c2340; color: white; font-family: Arial; font-size: 110%; line-height: 1.428571429; padding: 10px 20px; border: 1px solid white; border-radius: 10px; margin-right: 10px;">Single Author</button>
+                <button ng-click="[vm.addNewBook(true, $event)]" style="background-color: #0c2340; color: white; font-family: Arial; font-size: 110%; line-height: 1.428571429; padding: 10px 20px; border: 1px solid white; border-radius: 10px;">Multi-Author</button>
+                <button class="singleauthorbutton" ng-click="vm.addNewBook(false, $event)" style="background-color: #0c2340; color: white; font-family: Arial; font-size: 110%; line-height: 1.428571429; padding: 10px 20px; border: 1px solid white; border-radius: 10px; margin-right: 10px;">Single Author</button>
 
                 
 

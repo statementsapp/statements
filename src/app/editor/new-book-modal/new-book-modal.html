@@ -29,6 +29,7 @@
                    ng-model="vm.title"
                    required
                    placeholder="Enter a title"
+                   ng-keyup="$event.keyCode === '13' ? vm.nothing : vm.nothing"
                    >
 <!--             <p ng-show="form.title.$invalid && !form.title.$pristine"
                class="help-block">

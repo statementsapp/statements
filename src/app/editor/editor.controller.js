@@ -2519,7 +2519,7 @@
       }
 
       $scope.leftOlClickHandle = function (node, paragraph, event) {
-        var relX = event.pageX - $('#propositionsol' + id).offset().left;
+        var relX = event.pageX - $('#propositionsol' + paragraph.paragraphId).offset().left;
         console.log("Relx: ", relX)
         if (relX > -14){
           $scope.getLastVisiblePropositionInParagraph(node, paragraph, $event)

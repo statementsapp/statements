@@ -9507,6 +9507,7 @@
                 $scope.inputs['remark'+id] = element.textContent;
                 $scope.inputs['top'+id] = element.textContent;
                 $scope.inputs['bottom'+id] = element.textContent;
+                $scope.inputs.newSectionTitle = element.textContent;
                 if (theStep.its){
                   if (theStep.its === 'left'){
                     $scope.inputs['left'+id] = element.textContent;
@@ -9735,7 +9736,9 @@
                   }
 
                   // populate with text
-
+                  setTimeout(function () {
+                    populateElementWithText( $scope.preDefinedPoints[index].text,$scope.bottomNodeAdderId, null, true, theStep)
+                  }, 2000);
 
 
                 } else {

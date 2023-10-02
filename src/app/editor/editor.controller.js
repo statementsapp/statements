@@ -9734,9 +9734,10 @@
                       }
                     }
                   }
-
+                  console.log("Bottom node adder id outside: ", $scope.bottomNodeAdderId)
                   // populate with text
                   setTimeout(function () {
+                    console.log("Bottom node adder id inside: ", $scope.bottomNodeAdderId)
                     populateElementWithText( $scope.preDefinedPoints[index].text,$scope.bottomNodeAdderId, null, true, theStep)
                   }, 2000);
 

@@ -9451,7 +9451,7 @@
 
 
         function populateElementWithText(text, id, messageFlag, nodeFlag, theStep) {
-         
+          console.log("Id populating: ", id)
           if (!messageFlag){
             var element = document.getElementById(id);
           } else {

@@ -3568,7 +3568,8 @@
         // If it's ended with a colon, or a dragged node
         // it's a topic
 
-        if ((prep.lastChar === ':' || $scope.draggingNode || $scope.inputs.newSectionTitle)) {
+        if ((prep.lastChar === ':' || $scope.draggingNode || $scope.inputs.newSectionTitle) && 
+          ($scope.data[0].multiAuthor || $scope.data[0].documentClaimedBy === $scope.userId)) {
           console.log("One")
           prep.code = '1';
           if (prep.lastChar === ':'){
@@ -7817,6 +7818,609 @@
               // },
             ];
 
+            $scope.nodeAdd = [
+              { index: 0, 
+                
+                  author: $scope.userId,
+                  text: 'INTRODUCTION AND SUMMARY OF ARGUMENT.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'theBlank',
+                  on: undefined,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 1, 
+                
+                  author: $scope.userId,
+                  text: 'Section eh',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'node',
+                  nodeAdd: true,
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: true
+                
+              },
+              // { index: 2, 
+                
+              //     author: $scope.userId,
+              //     text: 'As this case demonstrates, the SEC is choosing to use the blunt and unpredictable tool of enforcement proceedings, to the exclusion of all other methods, to regulate the trillion-dollar digital asset industry.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: true,
+              //     which: 'item',
+              //     on: 1,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+                
+              // },
+              // { index: 3, 
+                
+              //     author: $scope.userId,
+              //     text: 'For years, digital asset industry members have asked the SEC to provide clarity about the precise question now at issue: which digital assets are securities, and when is registration required for companies like Coinbase that facilitate trading in a range of digital assets.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 2,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 4, 
+                
+              //     author: $scope.userId,
+              //     text: 'Rather than transparently working with an innovative, nascent industry in which millions of Americans hold valuable assets, the SEC has resorted to increasingly arbitrary and aggressive enforcement tactics that leave industry players confused about how to avoid becoming the subject of the next enforcement proceeding.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 3,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 5, 
+                
+              //     author: $scope.userId,
+              //     text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 6, 
+                
+              //     author: $scope.userId,
+              //     text: 'But the SEC cannot arbitrarily decide whether to drive such a major industry out of the United States.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 7, 
+                
+              //     author: $scope.userId,
+              //     text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 6,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 8, 
+               
+              //     author: 'aaa',
+              //     text: "Can we provide an initial reason to move for judgment, perhaps related to secondary contracts being misclassified?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 9, 
+                
+              //     author: $scope.userId,
+              //     text: 'The SEC’s claim that certain digital assets subject to secondary sales on Coinbase’s platform are “investment contracts” under the securities laws is baseless.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+                
+              // },
+              // { index: 10, 
+                
+              //     author: $scope.userId,
+              //     text: 'The longstanding Howey test for determining whether something is an “investment contract,” and thus a security, makes clear that any individual digital asset is no more a security than an orange in an orange grove.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+                
+              // },
+              // { index: 11, 
+               
+              //     author: 'aaa',
+              //     text: "And how exactly is cryptocurrency like an orange?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 10,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 12, 
+               
+              //     author: $scope.userId,
+              //     text: 'In some circumstances—not at issue here—digital assets can be the subject of an investment contract, but that is all.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 11,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // }, // 
+              // { index: 13, 
+                
+              //     author: $scope.userId,
+              //     text: 'A recent ruling in this district confirms that while it is possible for a digital asset to be a part of an “investment contract,” the digital assets themselves are not securities.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 12,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+                
+              // },
+              // { index: 14, 
+               
+              //     author: 'aaa',
+              //     text: "Which?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 13,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 15, 
+               
+              //     author: $scope.userId,
+              //     text: 'See SEC v. Ripple Labs, Inc., 2023 WL 4507900 (S.D.N.Y. July 13, 2023).',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 14,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // }, 
+              // { index: 16, 
+               
+              //     author: $scope.userId,
+              //     text: 'The subsequent decision in SEC v. Terraform Labs Pte. Ltd., 2023 WL 4858299 (S.D.N.Y. July 31, 2023), is consistent with this premise; Terraform recognized that a digital asset itself is not an “investment contract,” concluding only that the digital assets at issue were the subject of an “investment contract.” Id. at *12.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 15,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              
+              // }, 
+              // { index: 17, 
+               
+              //     author: 'aaa',
+              //     text: "What is at stake here?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 16,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 18, 
+               
+              //     author: $scope.userId,
+              //     text: 'It is important to keep view of what is at stake.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 17,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // }, 
+              // { index: 19, 
+               
+              //     author: 'aaa',
+              //     text: "And that is?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 18,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 20, 
+               
+              //     author: $scope.userId,
+              //     text: 'Digital assets represent a significant segment of the global economy and an integral part of the American financial system.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 19,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
+              
+              // }, 
+              // { index: 21, 
+               
+              //     author: 'bbb',
+              //     text: "Would the size of the cryptocurrency industry be a legal for the SEC not to regulate it?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 20,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 22, 
+               
+              //     author: 'ccc',
+              //     text: "Provide an argument from public utility.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 20,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },// This is not just about speculative or institutional trading— millions of Americans use digital assets for everyday financial transactions.
+              // { index: 23, 
+               
+              //     author: $scope.userId,
+              //     text: 'This is not just about speculative or institutional trading—millions of Americans use digital assets for everyday financial transactions.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 22,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
+              
+              // }, 
+              // { index: 24, 
+               
+              //     author: 'ccc',
+              //     text: "The SEC feels a need to regulate according to how it interprets its own enabling statute",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 23,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 25, 
+               
+              //     author: 'ddd',
+              //     text: "Show the importance of crypto as money.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 23,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },// 
+              // { index: 26, 
+               
+              //     author: 'eee',
+              //     text: "What about an antiquarian discussion of gold and silver-backed currency?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 23,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },// 
+              // { index: 27, 
+               
+              //     author: $scope.userId,
+              //     text: 'The SEC’s regulation-by-enforcement approach is not only detrimental to the industry, it also directly impacts individual Americans who use digital assets.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 25,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
+              
+              // }, 
+
+            ];
+
             $scope.dawnOfChemotherapy = [
               { index: 0, 
                 
@@ -8817,6 +9421,7 @@
               // $scope.preDefinedPoints = $scope.toyota;
               // $scope.preDefinedPoints = $scope.listOfLethalities;
               $scope.preDefinedPoints = $scope.coinbase;
+              $scope.preDefinedPoints = $scope.nodeAdd;
 
 
 
@@ -9103,58 +9708,65 @@
                 }, 2000);
                 
               } else if (theStep.which === 'node'){
-
-
-                for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                      console.log("H-I-J: ", h, " ", i, " ", j)
-                      if ( (!hasAJ &&
-                        $scope.preDefinedPoints[theOn].text.slice(0,11) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
-                         (!hasAJ &&
-                        $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
-                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;    
-                          var thisH = angular.copy(h)
-                          var thisI = angular.copy(i)
-                          var thisJ = angular.copy(j)
-                          var hasAJ = true;
-                          setTimeout(function () {
-                            document.getElementById(thisHereId).click();
-                          }, 20);
-                          break;
+                if (theStep.nodeAdder){
+                  for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                      for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                        console.log("H-I-J: ", h, " ", i, " ", j)
+                        if ( (!hasAJ &&
+                          $scope.preDefinedPoints[theOn].text.slice(0,11) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
+                           (!hasAJ &&
+                          $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
+                            var thisH = angular.copy(h)
+                            var thisI = angular.copy(i)
+                            var thisJ = angular.copy(j)
+                            var hasAJ = true;
+                            var thisHereNodeId = $scope.data[0].nodes[h].nodeId
+                            
+                            setTimeout(function () {
+                              document.getElementById('bottom' + thisHereNodeId).click();
+                            }, 20);
+                            break;
+                        }
                       }
                     }
                   }
+
+                  // populate with text
+
+
+
+                } else {
+                    for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                      for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                        for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                          console.log("H-I-J: ", h, " ", i, " ", j)
+                          if ( (!hasAJ &&
+                            $scope.preDefinedPoints[theOn].text.slice(0,11) === 
+                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
+                             (!hasAJ &&
+                            $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
+                              var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;    
+                              var thisH = angular.copy(h)
+                              var thisI = angular.copy(i)
+                              var thisJ = angular.copy(j)
+                              var hasAJ = true;
+                              setTimeout(function () {
+                                document.getElementById(thisHereId).click();
+                              }, 20);
+                              break;
+                          }
+                        }
+                      }
+                    }
+                  setTimeout(function () {
+                    populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true, theStep)
+                  }, 2000);
                 }
-              setTimeout(function () {
-                populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true, theStep)
-              }, 2000);
-              
 
-
-                // for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                 
-                //   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                    
-                //     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                //       console.log("H-I-J: ", h, " ", i, " ", j)
-                //       if ( (!hasAJ &&
-                //       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                //       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6)) ||
-                //         (!hasAJ &&
-                //       $scope.preDefinedPoints[theOn].text.slice(0, 6) === 
-                //       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,6))){
-                //         setTimeout(function () {
-                //           document.getElementById(thisHereId).click();
-                //         }, 20);
-                //         break;
-                //       }
-                //     }
-                //   }
-                // }
-                // populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true)
 
               } else if (theStep.which === 'item'){
                 console.log("An item")

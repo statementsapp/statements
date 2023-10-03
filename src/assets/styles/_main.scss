@@ -1266,6 +1266,22 @@ li.paragraph .child-div:not(.exclude) {
   padding-right: 8px;
 }
 
+.minimap-container {
+    position: fixed;
+    width: 200px; /* Adjust as necessary */
+    height: 150px; /* Adjust as necessary */
+    overflow: hidden;
+    border: 1px solid #000;
+    bottom: 10px; /* position the minimap at the bottom right corner */
+    right: 10px;
+}
+
+.minimap-content {
+    transform: scale(0.2); /* 20% of original size */
+    transform-origin: 0 0;
+}
+
+
 .directlink-input-wrapper {
   position: relative;
     display: inline-block;

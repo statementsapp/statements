@@ -9738,11 +9738,10 @@
                     }
                   }
                   console.log("Bottom node adder id outside: ", $scope.bottomNodeAdderId)
-                  console.log("Element outside: ", document.getElementById(thisHereNodeId))
                   console.log("Element outside by bottom adder: ", document.getElementById($scope.bottomNodeAdderId))
                   // populate with text
                   setTimeout(function () {
-                    console.log("Bottom node adder id inside: ", $scope.bottomNodeAdderId)
+                    console.log("Element inside: ", document.getElementById($scope.bottomNodeAdderId))
                     populateElementWithText( $scope.preDefinedPoints[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep)
                   }, 2000);
 

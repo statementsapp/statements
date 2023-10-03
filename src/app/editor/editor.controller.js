@@ -9741,7 +9741,7 @@
                   // populate with text
                   setTimeout(function () {
                     console.log("Bottom node adder id inside: ", $scope.bottomNodeAdderId)
-                    populateElementWithText( $scope.preDefinedPoints[index].text,$scope.bottomNodeAdderId, null, true, theStep)
+                    populateElementWithText( $scope.preDefinedPoints[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep)
                   }, 2000);
 
 

@@ -1654,7 +1654,7 @@
             $scope.bottomNodeAdderId = IdFactory.next();
             $scope.hasBottomNodeFocus = node.nodeId;
             node.bottomNodeAdd = true;
-            // node.bottomDropzoneMouseOver = true;
+            node.bottomDropzoneMouseOver = true;
             $scope.selectedNode = node;
             $scope.selectedProposition = {};
             $scope.selectedProposition.textSide = true;

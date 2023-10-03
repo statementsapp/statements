@@ -11143,29 +11143,7 @@
       }
       console.log("How about that multi authoredness: ", $scope.data[0].multiAuthor)
 
-      const content = document.getElementById('thetext');
 
-            // Create off-screen canvas
-            const offScreenCanvas = document.createElement('canvas');
-            offScreenCanvas.width = content.offsetWidth;
-            offScreenCanvas.height = content.offsetHeight;
-            const offScreenCtx = offScreenCanvas.getContext('2d');
-
-            // Draw content to off-screen canvas
-            html2canvas(content, { canvas: offScreenCanvas }).then(() => {
-                // Create minimap canvas
-                const minimapCanvas = document.createElement('canvas');
-                minimapCanvas.width = offScreenCanvas.width * 0.2;  // 20% of the original width
-                minimapCanvas.height = offScreenCanvas.height * 0.2;  // 20% of the original height
-                const minimapCtx = minimapCanvas.getContext('2d');
-
-                // Draw scaled image to minimap canvas
-                minimapCtx.drawImage(offScreenCanvas, 0, 0, minimapCanvas.width, minimapCanvas.height);
-
-                // Convert to image and display
-                const minimapImage = document.getElementById('minimap');
-                minimapImage.src = minimapCanvas.toDataURL('image/png');
-            });
 
 
     }; // end mainLoop 

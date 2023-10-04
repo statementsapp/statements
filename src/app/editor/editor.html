@@ -475,17 +475,15 @@
                 ng-mouseover="[!dialogueGrey && cowsComeHome ? greyDialogue() : inputs.nothing]"
                 ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
                 ng-click="!hasBottomNodeFocus ? [getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()] : inputs.nothing"
-                id="mthetext"
-                style="padding-left: 15px; width: 100%"
-                ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
+                id="mthetext">
 
 
              <div ui-tree="treeOptions"
                   data-drag-enabled="false"
                   id="tree-root"
-                  style="margin-top: 0px;"
+                  style=""
                   class="angular-ui-tree textlist"
-                  ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition), 'shorteditor': shortEditor}"
+                  ng-class=""
                   ng-mouseover="!inputs.bottomProposition ? [whatsTheEvent($event), lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
                   ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
                   
@@ -515,52 +513,7 @@
                      ng-mouseover="node.mouseOver = true;"
                      ng-mouseleave="node.mouseOver = false;"
                      ng-click="[stopNgClick()]">
-                     <!-- toggleNode(node),  -->
 
-                   <!--   <div class="topnodedropzone"
-                          ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'topnode') || (!node.isTitle && data[0].documentClaimedBy === userId) && node.topDropzoneMouseOver}"
-                          ng-if="!node.topNodeAdd"
-                          ng-mouseover="node.topDropzoneMouseOver = true"
-                          ng-mouseleave="node.topDropzoneMouseOver = false"
-                          ng-click="(draggingNode && checkIfDropValid(node, null, null, 'topnode')) ? [dropItem(node, null, null, 'top')] : (!draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId) ? [clearWithTopNodeAdder(node), $event.stopPropagation()] : inputs.nithing"
-                          id="top{{node.nodeId}}">
-                     </div>
-                     <div ng-if="hasTopNodeFocus === node.nodeId"
-                          style="height: 26px; padding-top: 16px; padding-bottom: 40px; position: relative; left: -10px"
-                          class='paragraph addparagraph'>
-                       <div class="proposition"> -->
-
-
-                         <!--       ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing" -->
-                         
-
-                   <!--       <span
-
-                           ng-keyup="$event.keyCode === 13 &&
-                                             selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, prepProposition(inputs.newSectionTitle, node, null, null, $event, 'top')] : inputs.nothing;
-                                             (inputs.newSectionTitle === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
-                           contenteditable="true"
-                           editable-span-ng-model
-                           ng-model="inputs.newSectionTitle"
-                           ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId,
-                                      'authorprop': data[0].documentClaimedBy === userId}"
-                           style="color: black; text-indent: 25px; background-color: white;"
-                           class="right-textarea texttopic"
-                           id="{{topNodeAdderId}}"></span>
-                       </div>
-                     </div> -->
-
-                     <!--  {{node.bottomNodeAdd}} -->
-                   <!--   <span class="nodehandle"
-                           ng-if="!node.hiddenForAll && !draggingNode && !draggingParagraph && !draggingProposition && node.mouseOver"
-                           ng-hold="dragNode(node, $event)"
-                           ng-click="draggingNode && !cancelDrop ? dropItem(node, null, null, 'bottom') : inputs.notting;"
-                           style="margin-right: 30px; display: inline-block;">O
-                     </span> -->
-
-
-
-                   <!--   kind of works but needs mouseover of the whole topic line -->
 
 
                    <div class="sectiontitle"
@@ -586,13 +539,13 @@
                            <!-- {{node.nodeId}} -->
                    </span>
 
-                   <span ng-if="userId === node.sectionClaimedBy" style="color: white; position:relative; font-size:16px"><i class="fa-solid fa-pen"></i></span>
-                     <span ng-if="node.minimized && data[0].documentClaimedBy === userId"
+                   <!-- <span ng-if="userId === node.sectionClaimedBy" style="color: white; position:relative; font-size:16px"><i class="fa-solid fa-pen"></i></span> -->
+           <!--           <span ng-if="node.minimized && data[0].documentClaimedBy === userId"
                            ng-click="toggleNode()"
                            style="padding-right: 10px">+</span>
                      <span ng-if="node.mouseOver && !node.minimized && data[0].documentClaimedBy === userId"
                            ng-click="toggleNode()"
-                           style="padding-right: 10px">-</span>
+                           style="padding-right: 10px">-</span> -->
                    </div>
 
 

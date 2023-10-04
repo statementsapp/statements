@@ -476,7 +476,7 @@
                 ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
                 ng-click="!hasBottomNodeFocus ? [getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()] : inputs.nothing"
                 id="mthetext"
-                style="padding-left: 30px;"
+                style="padding-left: 30px; width: 100%"
                 ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
 
 

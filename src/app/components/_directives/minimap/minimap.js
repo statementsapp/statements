@@ -5,37 +5,56 @@
         .module('statements')
         .directive('minimap', minimap);
 
-    minimap.$inject = ['$compile'];
+    minimap.$inject = ['$compile', '$timeout'];
 
-    function minimap($compile) {
+    function minimap($compile, $timeout) {
         return {
             restrict: 'A',
             link: function(scope, element, attrs) {
-                // Re-render the minimap
-                function renderMinimap() {
-                    // Begin with an empty minimap content
-                    const minimapContent = angular.element('<div class="minimap-content"></div>');
-                    const ol = angular.element('<ol class="angular-ui-tree-nodes"></ol>');
+                const scaleFactor = 0.2;
+                let viewport = null;
 
-                    // Assuming data[0].nodes is an array, reconstruct the list
-                    angular.forEach(scope.data[0].nodes, function(node) {
-                        const li = angular.element('<li></li>');
-                        li.text(node.someProperty);  // replace `someProperty` with whatever represents this node
-                        ol.append(li);
+                $timeout(function() {
+                    const targetElement = angular.element(document.querySelector(attrs.targetSelector));
+                    const contentHTML = targetElement[0].outerHTML;
+
+                    element.empty();
+
+                    const minimapContent = angular.element('<div class="minimap-content"></div>');
+                    minimapContent.html(contentHTML);
+                    minimapContent.css({
+                        'transform': `scale(${scaleFactor})`,
+                        'transform-origin': 'top left'
                     });
 
-                    minimapContent.append(ol);
-                    element.empty().addClass('minimap-container').append(minimapContent);
-                    $compile(minimapContent)(scope);
-                }
+                    element.addClass('minimap-container').append(minimapContent);
+                    $compile(minimapContent.contents())(scope);
 
-                // Watch for changes and re-render
-                scope.$watchCollection("data[0].nodes", function(newVal, oldVal) {
-                    if (newVal !== oldVal) {
-                        renderMinimap();
+                    if (!viewport) {
+                        viewport = angular.element('<div class="minimap-viewport"></div>');
+                        element.append(viewport);
                     }
+
+                    function updateViewport() {
+                        // Calculate the size and position of the viewport based on the scroll position
+                        const viewHeight = window.innerHeight * scaleFactor;
+                        const viewWidth = window.innerWidth * scaleFactor;
+                        const scrollTop = targetElement.scrollTop() * scaleFactor;
+                        const scrollLeft = targetElement.scrollLeft() * scaleFactor;
+
+                        viewport.css({
+                            'height': `${viewHeight}px`,
+                            'width': `${viewWidth}px`,
+                            'top': `${scrollTop}px`,
+                            'left': `${scrollLeft}px`
+                        });
+                    }
+
+                    targetElement.on('scroll', updateViewport);
+                    updateViewport();
                 });
             }
         };
     }
+
 })();

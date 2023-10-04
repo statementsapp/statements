@@ -463,7 +463,7 @@
                 ng-mouseover="[!dialogueGrey && cowsComeHome ? greyDialogue() : inputs.nothing]"
                 ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
                 ng-click="!hasBottomNodeFocus ? [getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()] : inputs.nothing"
-                id="thetext"
+                id="mthetext"
                 style="padding-left: 30px;"
                 ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'splitscreentextborder' : (!isMessageFresh&& !fullScreenMessages && !fullScreenText), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
 
@@ -483,14 +483,14 @@
                <ol ui-tree-nodes
                    ng-model='data[0].nodes'
                    style=""
-                   id="bookdata"
+                   id="mbookdata"
                    class="angular-ui-tree-nodes"
                >
                  <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
                      ui-tree-node
                      ng-class="{ 'mousedovernode': node.mouseOver === true, 'setupcaret' : hasBeenSetUp }"
                      class="angular-ui-tree-node node"
-                     id="{{node.nodeId}}"
+                     id="m{{node.nodeId}}"
                      ng-if="!node.hiddenForAll">
                    
                    <div
@@ -566,7 +566,7 @@
                        class="nodetitle"
                        ng-click="draggingNode && cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : data[0].documentClaimedBy === userId ? [setNodeEditability(node), $event.stopPropagation()] :$event.stopPropagation() "
                        ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId && draggingNode}"
-                       id="nodetitle{{node.nodeId}}"
+                       id="mnodetitle{{node.nodeId}}"
                        ng-enter="updateNode(node)">
                            {{node.topic}}
 
@@ -603,7 +603,7 @@
                        <!-- !draggingNode && !draggingParagraph && !draggingProposition  && $event.keyCode !== 32 ? [getLastVisiblePropositionInNode(node, $event, this), $event.stopPropagation()] : inputs.nothing -->
                      <li ng-repeat="paragraph in node.paragraphs track by $index"
                          ng-click="[clearThreadAdding(), paragraph.cursor = false, selectedProposition.dialogueSide = false, selectedParagraph = paragraph]"
-                         id="paragraph{{paragraph.paragraphId}}"
+                         id="mparagraph{{paragraph.paragraphId}}"
                          ng-mouseover="[paragraph.mouseOver = true, paragraphMouseIsOver.id = paragraph.paragraphId]"
                          ng-mouseleave="[paragraph.mouseOver = false, paragraph.leftMouseOver = false]"
                          class="tree-node tree-node-content paragraph"
@@ -631,7 +631,7 @@
                              editable-span-ng-model
                              ng-class=""
                              contenteditable="true"
-                             id="top{{paragraph.paragraphId}}"
+                             id="mtop{{paragraph.paragraphId}}"
                              class="right-textarea"
                              placeholder="textarea authorprop"
                              ng-model="inputs['top'+paragraph.paragraphId]"
@@ -664,7 +664,7 @@
                                       clearEditable(),
                                       $event.stopPropagation()]"
 
-                            id="topadder">
+                            id="mtopadder">
                        </div>
 
                        <div>
@@ -678,7 +678,7 @@
                              ng-mouseleave="(!draggingParagraph && !draggingProposition) ? [blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = false, $event.stopPropagation()] : inputs.nothing"
                              ng-class="{'addbelownotowned': hasBottomFocus.id == paragraph.paragraphId, 'bottomadd': paragraph.bottomAdd, 'causeoftopadd': paragraph.topAdd,'nonauthorparagraphspacer': userId !== data[0].documentClaimedBy}"
                              ng-click="threadAdding ? hideThreadAdd() : !paragraph.leftMouseOver && !draggingProposition && !draggingParagraph && $event.keyCode !== 32 && $event.keyCode !== 13 ? [leftOlClickHandle(node, paragraph, $event), $event.stopPropagation()] : (draggingProposition || draggingParagraph) ? dropItem(node, paragraph, null,'ol', this, $event): inputs.nothing"
-                             id="propositionsol{{paragraph.paragraphId}}">
+                             id="mpropositionsol{{paragraph.paragraphId}}">
                              <!-- ng-if="(!proposition.hiddenForAll && !proposition.rejoined && proposition[userId] !== 'hidden') || (proposition.privateFor && proposition.privateFor === userId)" -->
                            <span class="paragraphhandle"
                                  
@@ -694,7 +694,7 @@
                            </span>
 
                            <li ng-repeat="proposition in paragraph.propositions track by $index"
-                               id="wholeprop{{proposition.id}}"
+                               id="mwholeprop{{proposition.id}}"
                                ui-tree-node
                                ng-init=""
                                ng-mouseover="[proposition.preSelected = true, paragraph.propositionMouseover = true, proposition.mouseOver = true, savePropositionForLater(proposition.id, proposition.position, paragraph)]"
@@ -761,7 +761,7 @@
                                      clearEditable(),
                                      $event.stopPropagation()
                                      ] : inputs.notting"
-                                   id="left{{proposition.id}}"
+                                   id="mleft{{proposition.id}}"
                                    class="right-textarea right-text left-text authorprop theleft"
                                    ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true, (userId === data[0].documentClaimedBy && !inputs['left'+proposition.id] && !paragraph.leftAdd) ? [ thatRunFunction(), inputs['left'+proposition.id] = '|']: inputs.nothing]"
                                    ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false, (userId === data[0].documentClaimedBy && inputs['left'+proposition.id] === '|') ? inputs['left'+proposition.id] = '': inputs.nothing]"
@@ -806,7 +806,7 @@
                              <span
 
                                ng-hold="(proposition.type !== 'blank' && proposition.type !== 'negation' && proposition.author === userId && !cancelListenForDoubleClick) ? [dragProposition(node, paragraph, proposition, $event), clearTopAndBottomHasFocus(), $event.stopPropagation()] : inputs.nothing"
-                               id="proposition{{proposition.id}}"
+                               id="mproposition{{proposition.id}}"
                                style=""
                                ng-class="{ 
                                                'statementsentencehighlit': statementHighlightIs === proposition.id && !proposition.preSelected && proposition.type !== 'blank' && !minimalStyle,
@@ -927,7 +927,7 @@
                              <span
                                
                                editable-span-ng-model 
-                               id="{{proposition.id}}"
+                               id="m{{proposition.id}}"
                                class="right-text right-textarea maininput"
                                style="padding-right: 8px;"
                                ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #0c2340' : inputs[proposition.id] != undefined && inputs[proposition.id] != null && inputs[proposition.id] ? remarkInputString : '3px solid #0c2340' }"
@@ -987,7 +987,7 @@
                    >
                                    <!-- ng-repeat="remark in currentItem(proposition.remarks) track by $index" -->
                                <li ng-repeat="remark in proposition.remarks track by $index"
-                                   id="wholeprop{{remark.id}}"
+                                   id="mwholeprop{{remark.id}}"
                                    ui-tree-node
                                    style="display: inline;"
                                    ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph), clearAnimationClass()]"
@@ -1002,7 +1002,7 @@
                                  <span
 
                                    
-                                   id="proposition{{remark.id}}"
+                                   id="mproposition{{remark.id}}"
                                    style=""
                                    ng-style="{ 'border-bottom': remark.colorString}"
                                    ng-class="{
@@ -1067,7 +1067,7 @@
                                  <span
 
                                    editable-span-ng-model
-                                   id="{{remark.id}}"
+                                   id="m{{remark.id}}"
                                    style="display: inline;"
                                    class="right-text right-textarea maininput"
                                    ng-if="proposition.remarksExpanded && !remark.rejoined"
@@ -1137,7 +1137,7 @@
                                        selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
                             
                             ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph && data[0].documentClaimedBy === userId"
-                            id="bottomadder{{paragraph.paragraphId}}"
+                            id="mbottomadder{{paragraph.paragraphId}}"
 
                        >
                        </div>
@@ -1148,7 +1148,7 @@
                             style="position: relative; text-indent: 97px; font-weight: 600; padding-bottom: 10.5px; line-height: 30px"
                              editable-span-ng-model
                              contenteditable="true"
-                             id="{{paragraph.paragraphId}}"
+                             id="m{{paragraph.paragraphId}}"
                              class="right-textarea right-text authorprop"
                              placeholder="textarea"
                              ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : $event.type === 'click' ? [didItRun(), didItRunOk($event), selectParagraph(paragraph),
@@ -1166,7 +1166,7 @@
                          ng-if="node.bottomAdd"
                          ng-model="inputs.newSectionTitle"
                          ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
-                         id="lower{{node.nodeId}}"></div>
+                         id="mlower{{node.nodeId}}"></div>
                      </li>
                    </ol>
                    <div class="bottomnodedropzone"
@@ -1175,7 +1175,7 @@
                         ng-mouseover="node.bottomDropzoneMouseOver = true"
                         ng-mouseleave="node.bottomDropzoneMouseOver = false"
                         ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : didItRun()"
-                        id="bottom{{node.nodeId}}">
+                        id="mbottom{{node.nodeId}}">
                    </div>
                    <!-- There is an issue here with a space being treated like a click and firing getLastVisiblePropInBook
                    fix it like all the others 7/26/23-->
@@ -1193,7 +1193,7 @@
                        ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
                        style="text-indent: 25px; background-color: #0C2340; text-indent:100px; color: white;"
                        class="right-textarea texttopic"
-                       id="{{bottomNodeAdderId}}"
+                       id="m{{bottomNodeAdderId}}"
                        ></span>
                        <!-- ng-click="$event.stopPropagation()" -->
 
@@ -1225,7 +1225,7 @@
                   ng-mouseleave="mouseLeaveTextBlurrer()"
                   ng-mousemove="assessDragScrollLower()"
                   ng-click="blurText()"
-                  id="textblurrer"
+                  id="mtextblurrer"
                   ng-if="false"
                   ></div>
            </div>

@@ -457,7 +457,13 @@
        id="mainview"
        ng-click="" ng-class="{'shorteditor': shortEditor}">
 
-       <div minimap target-selector="#thetext"></div>
+       <div minimap>
+           <!-- Your transcluded content goes here -->
+           <div id="thetext">
+               <!-- Content you want to show in the minimap -->
+           </div>
+       </div>
+
 
     <!--       <div class="col-md-2 topiclist" stylfe="padding: 7px">
             <form role="form">

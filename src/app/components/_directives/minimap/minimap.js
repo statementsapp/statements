@@ -5,31 +5,26 @@
         .module('statements')
         .directive('minimap', minimap);
 
-    minimap.$inject = ['$timeout'];
-
-    function minimap($timeout) {
+    function minimap() {
         return {
             restrict: 'A',
-            link: function(scope, element, attrs) {
-                $timeout(function() {
-                    const targetElement = angular.element(document.querySelector(attrs.targetSelector));
-
-                    // Get outerHTML of the target element
-                    const contentHTML = targetElement[0].outerHTML;
-
-                    // Create a minimap content container
+            transclude: true,
+            link: function(scope, element, attrs, ctrl, transclude) {
+                
+                // Use the transclude function to clone and link the content
+                transclude(scope, function(clone) {
                     const minimapContent = angular.element('<div class="minimap-content"></div>');
 
-                    // Set its content to be the outerHTML of the target element
-                    minimapContent.html(contentHTML);
+                    // Append cloned content to the minimap container
+                    minimapContent.append(clone);
                     
-                    // Scale down the content
+                    // Apply the scaling CSS
                     minimapContent.css({
-                        'transform': 'scale(0.2)',  // scale to 20% of the original size
+                        'transform': 'scale(0.2)',
                         'transform-origin': 'top left'
                     });
-                    
-                    // Append this to the main minimap container
+
+                    // Append the minimap content to the main minimap container
                     element.addClass('minimap-container').append(minimapContent);
                 });
             }

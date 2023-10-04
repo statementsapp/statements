@@ -1272,22 +1272,17 @@ li.paragraph .child-div:not(.exclude) {
     right: 10px;
     border: 1px solid black;
     overflow: hidden;
-    /* You can define a fixed width and height for the minimap container */
-    width: 200px; 
-    height: 200px;
+    /* Set a defined size for the minimap container */
+    width: 200px;
+    height: 600px;
 }
 
 .minimap-content {
     width: 100%;
     height: auto;
-    pointer-events: none; /* This ensures that clicks on the minimap do not trigger events on the elements inside */
+    pointer-events: none; /* Ensures clicks on the minimap don't trigger events */
 }
 
-.minimap-viewport {
-    position: absolute;
-    border: 2px dashed red;
-    pointer-events: none; /* Make sure this overlay doesn't interfere with user interactions */
-}
 
 
 

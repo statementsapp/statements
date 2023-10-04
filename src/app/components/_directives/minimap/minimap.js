@@ -20,7 +20,6 @@
                     
                     // Apply the scaling CSS
                     minimapContent.css({
-                        'transform': 'scale(0.2)',
                         'transform-origin': 'top left'
                     });
 

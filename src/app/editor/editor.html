@@ -476,13 +476,14 @@
                 ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
                 ng-click="!hasBottomNodeFocus ? [getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()] : inputs.nothing"
                 id="mthetext"
-                style="padding-left: 30px; width: 100%"
+                style="padding-left: 15px; width: 100%"
                 ng-class="{'col-md-12' : (fullScreenText && (loggedIn() || isGuest())), 'col-md-8' : !fullScreenText, 'notext' : fullScreenMessages, 'shorteditor': shortEditor}">
 
 
              <div ui-tree="treeOptions"
                   data-drag-enabled="false"
                   id="tree-root"
+                  style="margin-top: 0px;"
                   class="angular-ui-tree textlist"
                   ng-class="{'textcursor': (!draggingNode && !draggingParagraph && !draggingProposition), 'shorteditor': shortEditor}"
                   ng-mouseover="!inputs.bottomProposition ? [whatsTheEvent($event), lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"

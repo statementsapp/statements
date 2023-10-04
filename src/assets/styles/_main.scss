@@ -1269,12 +1269,12 @@ li.paragraph .child-div:not(.exclude) {
 .minimap-container {
     position: fixed;
     bottom: 10px;
-    right: 10px;
+    right: 0px;
     border: 1px solid black;
     overflow: hidden;
     /* Set a defined size for the minimap container */
-    width: 200px;
-    height: 600px;
+    width: 827px;
+    height: 1185px;
 }
 
 .minimap-content {

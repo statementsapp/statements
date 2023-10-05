@@ -611,6 +611,7 @@
                            >
                        </div>
                        <div class="topparagraphadder"
+                            style="opacity: 0;"
                             ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
                             ng-mouseover="paragraph.topMouseOver ? paragraph.topMouseOver = false : startTopParagraphAdderTimer(paragraph)"
                             ng-mouseleave="[stopTopParagraphAdderTimer(paragraph), inputs['top'+paragraph.paragraphId] !== '' ? clearPlaceholderTop(paragraph) : inputs.nothing]"
@@ -650,7 +651,7 @@
                                  
 
                                            
-                                 style="margin-right: 10px; display: inline-block;">
+                                 style="margin-right: 10px; display: inline-block; opacity: 0;">
                              <span ><i ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
                                  ng-click="!paragraph.highlighted && node.sectionClaimedBy === userId && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
                                            paragraph.highlighted ? markParagraph(node, paragraph) :
@@ -709,6 +710,7 @@
 
 
                              <span editable-span-ng-model
+                                   style="opacity: 0;"
                                    contenteditable="true"
                                    ng-class="{'leftinputactive': inputs['left'+proposition.id] !== '' && paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left'))}"
                                    ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs['left'+proposition.id] === '|' ? [
@@ -870,7 +872,7 @@
                              <!-- ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" -->
 
 
-                             <span ng-if="proposition.type !== 'blank' && proposition.remarks" ng-mouseover="[nextRemark(), toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex; font-size: 16px; padding-right: 7px;"
+                             <span ng-if="proposition.type !== 'blank' && proposition.remarks" ng-mouseover="[nextRemark(), toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex; font-size: 16px; padding-right: 7px; opacity: 0;"
                                   >
                    <!--             <i class="fa-solid fa-square-minus"
                                   style="line-height: inherit; display: inline-block;"
@@ -891,7 +893,7 @@
                              <!-- 'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh, -->
                              &nbsp;
                              <span
-                               
+                               style="opacity: 0;"
                                editable-span-ng-model 
                                id="m{{proposition.id}}"
                                class="right-text right-textarea maininput"
@@ -1096,6 +1098,7 @@
                          </ol>
                        </div>
                        <div class="bottomparagraphadder"
+                            style="opacity: 0;"
                             ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'bottom') , 'isbottomadd': paragraph.bottomMouseOver, 'notisbottomadd': !paragraph.bottomMouseOver}"
                             ng-mouseover="startBottomParagraphAdderTimer(paragraph)"
                             ng-mouseleave="!paragraph.bottomMouseOver ? [stopBottomParagraphAdderTimer(paragraph), clearPlaceholder(paragraph)] : inputs.nothing"
@@ -1111,7 +1114,7 @@
                             ng-mouseleave="paragraph.bottomMouseOver = false"
                             delay="200"
                             class="addparagraph exclude"
-                            style="position: relative; text-indent: 97px; font-weight: 600; padding-bottom: 10.5px; line-height: 30px"
+                            style="position: relative; text-indent: 97px; font-weight: 600; padding-bottom: 10.5px; line-height: 30px; opacity: 0;"
                              editable-span-ng-model
                              contenteditable="true"
                              id="m{{paragraph.paragraphId}}"
@@ -1141,7 +1144,8 @@
                         ng-mouseover="node.bottomDropzoneMouseOver = true"
                         ng-mouseleave="node.bottomDropzoneMouseOver = false"
                         ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : didItRun()"
-                        id="mbottom{{node.nodeId}}">
+                        id="mbottom{{node.nodeId}}"
+                        style="opacity: 0;">
                    </div>
                    <!-- There is an issue here with a space being treated like a click and firing getLastVisiblePropInBook
                    fix it like all the others 7/26/23-->

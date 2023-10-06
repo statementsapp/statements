@@ -1,5 +1,750 @@
 <stmnts-readonly-shield ng-if="!loggedIn()"></stmnts-readonly-shield>
 <!-- <span id="tweet-button" ng-class="{'grow': tweetClicked.id}" ><i class="fa-brands fa-twitter" aria-hidden="true" oncontextmenu='return false' style="padding-right: 5px"></i><span style="color: white;">Tweet</span></span> -->
+
+
+
+<div minimap>
+
+
+
+
+
+
+    <!-- Your transcluded content goes here -->
+    <div class=""
+         ng-mouseover="[!dialogueGrey && cowsComeHome ? greyDialogue() : inputs.nothing]"
+         ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
+         ng-click="!hasBottomNodeFocus ? [getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()] : inputs.nothing"
+         id="mthetext">
+
+
+      <div ui-tree="treeOptions"
+           data-drag-enabled="false"
+           id="tree-root"
+           style=""
+           class="angular-ui-tree textlist"
+           ng-class=""
+           ng-mouseover="!inputs.bottomProposition ? [whatsTheEvent($event), lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
+           ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
+           
+
+      >
+      <!-- ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing" -->
+
+        <ol ui-tree-nodes
+            ng-model='data[0].nodes'
+            style=""
+            id="mbookdata"
+            class="angular-ui-tree-nodes"
+        >
+          <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
+              ui-tree-node
+              ng-class="{ 'mousedovernode': node.mouseOver === true, 'setupcaret' : hasBeenSetUp }"
+              class="angular-ui-tree-node node"
+              id="m{{node.nodeId}}"
+              ng-if="!node.hiddenForAll">
+            
+            <div
+              class="tree-node tree-node-content texttopic"
+              ng-class="{
+                titlestyling: node.isTitle,
+                openfield: data[0].nodes[0].paragraphs[0].propositions[0].author === '',
+              }"
+              ng-mouseover="node.mouseOver = true;"
+              ng-mouseleave="node.mouseOver = false;"
+              ng-click="[stopNgClick()]">
+
+
+
+            <div class="sectiontitle"
+                 ng-mouseover="node.titleMouseOver= true"
+                 ng-mouseleave="node.titleMouseOver= false">
+              <span class="nodehandle"
+                    ng-hold="[dragNode(node, $event), clearTopAndBottomHasFocus()]"
+                    ng-click="draggingNode && !cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : inputs.notting;"    
+                    style="margin-right: 10px; display: inline-block;">
+                <span ng-click="!draggingNode && !draggingParagraph && !draggingProposition && !node.highlighted && data[0].documentClaimedBy === userId ? [highlightNode(node), $event.stopPropagation()] : $event.stopPropagation()" ng-style="{ 'opacity': node.titleMouseOver && !draggingNode && !draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId && !minimalStyle ? .3 : 0 }"><i class="fa fa-th" style="font-size: 15px;"></i>
+                </span>
+              </span>
+              <span
+                ng-hold="[dragNode(node),clearTopAndBottomHasFocus()]"
+                ng-enter="[$event.preventDefault(), updateNode(node)]"
+                class="nodetitle"
+                ng-click="draggingNode && cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : data[0].documentClaimedBy === userId ? [setNodeEditability(node), $event.stopPropagation()] :$event.stopPropagation() "
+                ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId && draggingNode}"
+                id="mnodetitle{{node.nodeId}}"
+                ng-enter="updateNode(node)">
+                    {{node.topic}}
+
+                    <!-- {{node.nodeId}} -->
+            </span>
+
+            <!-- <span ng-if="userId === node.sectionClaimedBy" style="color: white; position:relative; font-size:16px"><i class="fa-solid fa-pen"></i></span> -->
+    <!--           <span ng-if="node.minimized && data[0].documentClaimedBy === userId"
+                    ng-click="toggleNode()"
+                    style="padding-right: 10px">+</span>
+              <span ng-if="node.mouseOver && !node.minimized && data[0].documentClaimedBy === userId"
+                    ng-click="toggleNode()"
+                    style="padding-right: 10px">-</span> -->
+            </div>
+
+
+            <!--   <div class="bottomnodedropzone"
+                   ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'bottomnode')}"
+                   ng-if="!node.bottomNodeAdd"
+                   ng-mouseover="node.bottomDropzoneMouseOver = true"
+                   ng-mouseleave="node.bottomDropzoneMouseOver = false"
+                   ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId) && cowsComeHome ? [clearWithBottomNodeAdder(node), bottomNodeClick(node)] : inputs.nithing"
+                   id="bottom{{node.nodeId}}">
+              </div> -->
+            </div>
+            <!-- ng-mouseover="[lightUpLastVisiblePropositionInNode(node, $event), $event.stopPropagation()]"
+            ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.stopPropagation()]" -->
+            <ol ui-tree-nodes
+                ng-if="!node.minimized"
+                ng-model="node.paragraphs"
+                style="padding-left: 0"
+
+                ng-click="$event.stopPropagation()">
+                <!-- !draggingNode && !draggingParagraph && !draggingProposition  && $event.keyCode !== 32 ? [getLastVisiblePropositionInNode(node, $event, this), $event.stopPropagation()] : inputs.nothing -->
+              <li ng-repeat="paragraph in node.paragraphs track by $index"
+                  ng-click="[clearThreadAdding(), paragraph.cursor = false, selectedProposition.dialogueSide = false, selectedParagraph = paragraph]"
+                  id="mparagraph{{paragraph.paragraphId}}"
+                  ng-mouseover="[paragraph.mouseOver = true, paragraphMouseIsOver.id = paragraph.paragraphId]"
+                  ng-mouseleave="[paragraph.mouseOver = false, paragraph.leftMouseOver = false]"
+                  class="tree-node tree-node-content paragraph"
+                  ng-if="!node.minimized && !paragraph.hiddenForAll"
+                  ng-style="{'background-color': paragraph.color}"
+                  ng-class="{ paragraphcursor: paragraph.cursor === true,
+                              paragraphoffcursor: paragraph.cursor === false,
+                              'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition,
+                              'blankparagraphpadding': paragraph.theBlankParagraph
+                            }">
+                  
+                
+               <!-- {{paragraph.paragraphId}} -->
+
+                <!-- {{paragraph.paragraphId}} -->
+
+                <div delayed-ng-if="(paragraph.topAdd == true && hasTopFocus === paragraph.paragraphId) || data[0].documentClaimedBy === userId && paragraph.topMouseOver || hasTopFocus === paragraph.paragraphId && !draggingNode"
+                     ng-mouseover = "paragraph.topMouseOver = true"
+                     ng-mouseleave = "paragraph.topMouseOver = false"
+                     ng-click="(!inputs['top'+paragraph.paragraphId] && !draggingParagraph && !draggingProposition) ? [didItRunOk(), topAddFunction(node, paragraph), $event.stopPropagation()] : ((draggingProposition && cancelListenForDoubleClick) || (draggingParagraph && cancelListenForDoubleClick)) && paragraph.paragraphId !== draggedParagraph.paragraphId ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : catchFunction()"
+                     delay="200"
+                     class="addparagraph exclude"
+                     ng-class="{'topaddpadding': paragraph.topAdd}"
+                     style="min-height: 28px; position: relative; text-indent: 97px; overflow: hidden; word-wrap: break-word; font-weight: 600; line-height: 30px"
+                      editable-span-ng-model
+                      ng-class=""
+                      contenteditable="true"
+                      id="mtop{{paragraph.paragraphId}}"
+                      class="right-textarea"
+                      placeholder="textarea authorprop"
+                      ng-model="inputs['top'+paragraph.paragraphId]"
+                      ng-mouseover="handling ? removeTopClickHandler(paragraph) : inputs.nothing"
+                      ng-keydown="$event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['top'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"
+                      ng-keyup="$event.keyCode === 13 &&
+                                        selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, whatsGoingOn(paragraph), prepProposition(inputs['top'+paragraph.paragraphId], node, paragraph, null, proposition, $event, 'top')] : inputs.nothing;
+                                        (inputs['top'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
+                      spellcheck="false"
+                      style="color: #f0f0f0; left: 50px; background-color: #0C2340; display: inline"
+                    >
+                </div>
+                <div class="topparagraphadder"
+                     style="opacity: 0;"
+                     ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
+                     ng-mouseover="paragraph.topMouseOver ? paragraph.topMouseOver = false : startTopParagraphAdderTimer(paragraph)"
+                     ng-mouseleave="[stopTopParagraphAdderTimer(paragraph), inputs['top'+paragraph.paragraphId] !== '' ? clearPlaceholderTop(paragraph) : inputs.nothing]"
+                     ng-if="hasTopFocus !== paragraph.paragraphId && !paragraph.theBlankParagraph && paragraph.first"
+                     ng-click="(!inputs['top'+paragraph.paragraphId] && !draggingParagraph && !draggingProposition) ? [didItRunOk(), topAddFunction(node, paragraph), $event.stopPropagation()] : ((draggingProposition && cancelListenForDoubleClick) || (draggingParagraph && cancelListenForDoubleClick)) && paragraph.paragraphId !== draggedParagraph.paragraphId ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : [
+                                topAddFunction(node, paragraph),
+                                hideExpandingTextarea(),
+                                selectParagraph(paragraph),
+                                selectNode(node),
+                                clearTopAndBottomHasFocus(),
+                                clearWithTopAdder(paragraph),
+                               selectedParagraph.highlightAll = false,
+                               selectedParagraph.markAll = false,
+                               clearPropositionInput(),
+                               paragraph.bottomAdd = false,
+                               paragraph.leftAdd = false,
+                               clearEditable(),
+                               $event.stopPropagation()]"
+
+                     id="mtopadder">
+                </div>
+
+                <div>
+
+
+                  <ol ui-tree-nodes
+                      style="padding-left: 0px !important; font-size: 0px; text-indent: 20px;"
+                      ng-model="paragraph.propositions" 
+                      class="propositions"
+                      ng-mouseover="!hasRightFocus.id ? [lightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = true, $event.stopPropagation(), getReading($event,paragraph.paragraphId)] : inputs.nothing"
+                      ng-mouseleave="(!draggingParagraph && !draggingProposition) ? [blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = false, $event.stopPropagation()] : inputs.nothing"
+                      ng-class="{'addbelownotowned': hasBottomFocus.id == paragraph.paragraphId, 'bottomadd': paragraph.bottomAdd, 'causeoftopadd': paragraph.topAdd,'nonauthorparagraphspacer': userId !== data[0].documentClaimedBy}"
+                      ng-click="threadAdding ? hideThreadAdd() : !paragraph.leftMouseOver && !draggingProposition && !draggingParagraph && $event.keyCode !== 32 && $event.keyCode !== 13 ? [leftOlClickHandle(node, paragraph, $event), $event.stopPropagation()] : (draggingProposition || draggingParagraph) ? dropItem(node, paragraph, null,'ol', this, $event): inputs.nothing"
+                      id="mpropositionsol{{paragraph.paragraphId}}">
+                      <!-- ng-if="(!proposition.hiddenForAll && !proposition.rejoined && proposition[userId] !== 'hidden') || (proposition.privateFor && proposition.privateFor === userId)" -->
+                    <span class="paragraphhandle"
+                          
+
+                                    
+                          style="margin-right: 10px; display: inline-block; opacity: 0;">
+                      <span ><i ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
+                          ng-click="!paragraph.highlighted && node.sectionClaimedBy === userId && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
+                                    paragraph.highlighted ? markParagraph(node, paragraph) :
+                                    paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"
+                                    ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle && !tweetClicked.id && 
+                                    !paragraph.theBlankParagraph && !paragraph.topMouseOver && !paragraph.topAdd &&!paragraph.bottomMouseOver && !paragraph.bottomAdd ? .3 : 0 }" class="fa fa-th" style="font-size: 15px;"></i></span>
+                    </span>
+
+                    <li ng-repeat="proposition in paragraph.propositions track by $index"
+                        id="mwholeprop{{proposition.id}}"
+                        ui-tree-node
+                        ng-init=""
+                        ng-mouseover="[proposition.preSelected = true, paragraph.propositionMouseover = true, proposition.mouseOver = true, savePropositionForLater(proposition.id, proposition.position, paragraph)]"
+                        ng-mouseleave="[proposition.preSelected = false, paragraph.propositionMouseover = false, proposition.mouseOver = false, clearSavePropositionForLater()]"
+                        ng-click="[hideExpandingTextarea(), selectedProposition.textSide = true, selectNode(node), getPropReading($event, proposition), $event.stopPropagation()]"
+                        ng-if="(!proposition.hiddenForAll && proposition[userId] !== 'hidden')"
+                        ng-class="{'incoming': propToAddAnimate.id === proposition.id, 'rejoinanimate': propToRejoinAnimate.id === proposition.id, blankcorrector: proposition.type === 'blank', 'paragraphgreyed': proposition.id === draggedProposition.id && !draggingParagraph}"
+                        class="proposition">
+
+                       
+                        <span ng-if="diagnostics">{{proposition.id}}</span>
+                        <span style="position:relative; width: 0px; height: 0px;" ng-click="[openTwitterPost(proposition.text), $event.stopPropagation]">
+                          <span id="tweet-button" ng-class="{'grow': tweetClicked.id}" ng-if="tweetClicked.id === proposition.id" style="position: absolute; right: 1px;"><i class="fa-brands fa-twitter" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfclicked': halfClicked}" style="padding-right: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfClicked = !halfClicked" >Tweet</span></span>
+                        </span>
+
+            <!--           <span class="leftpropositionadder"
+                            ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true]"
+                            ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false]"
+                            ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId ? [
+                              didItRun(),
+                              clearPropositionInput(),
+                              paragraph.topAdd = false,
+                              paragraph.bottomAdd = false,
+                              paragraph.leftAdd = true,
+                              paragraph.leftMouseOver = false,
+                              selectParagraph(paragraph),
+                              selectedParagraph.highlightAll = false,
+                              selectedParagraph.markAll = false,
+                              selectedProposition = proposition,
+                              clearWithLeftAdder(proposition.id),
+                              clearEditable(),
+                              $event.stopPropagation()
+                              ] : inputs.notting"
+
+                            ng-if="proposition.first && proposition.type !== 'blank'"
+                            id="leftadder{{proposition.id}}">
+                      </span> -->
+
+
+
+
+                      <!-- 'visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left')) -->
+
+
+
+
+
+                      <span editable-span-ng-model
+                            style="opacity: 0;"
+                            contenteditable="true"
+                            ng-class="{'leftinputactive': inputs['left'+proposition.id] !== '' && paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left'))}"
+                            ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs['left'+proposition.id] === '|' ? [
+                              paragraph.leftAdd = true,
+                              didItRun(),
+                              clearPropositionInput(),
+                              paragraph.topAdd = false,
+                              paragraph.bottomAdd = false,
+                              paragraph.leftAdd = true,
+                              paragraph.leftMouseOver = false,
+                              selectParagraph(paragraph),
+                              selectedParagraph.highlightAll = false,
+                              selectedParagraph.markAll = false,
+                              selectPropositionLeft(proposition),
+                              clearWithLeftAdder(proposition.id),
+                              clearEditable(),
+                              $event.stopPropagation()
+                              ] : inputs.notting"
+                            id="mleft{{proposition.id}}"
+                            class="right-textarea right-text left-text authorprop theleft"
+                            ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true, (userId === data[0].documentClaimedBy && !inputs['left'+proposition.id] && !paragraph.leftAdd) ? [ thatRunFunction(), inputs['left'+proposition.id] = '|']: inputs.nothing]"
+                            ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false, (userId === data[0].documentClaimedBy && inputs['left'+proposition.id] === '|') ? inputs['left'+proposition.id] = '': inputs.nothing]"
+                            ng-blur="clearLeftAdd(paragraph)"
+                            placeholder="textarea"
+                            ng-model="inputs['left'+proposition.id]"
+                            ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['left'+proposition.id] != '' ? $event.preventDefault : inputs.nothing"
+                            ng-keyup="[$event.keyCode === 13 && selectedProposition.dialogueSide !== true ? [whatIsSelectedProp(), proposition.propositionPreSelected = false, prepProposition(inputs['left'+proposition.id], node, paragraph, proposition, $event, 'left'), inputs['left'+proposition.id] = '', $event.stopPropagation()] : inputs.nothing,
+                                  (inputs['left'+proposition.id] === '' && $event.keyCode === 8) ? inputs.nothing : inputs.nothing]"
+                            spellcheck="false"
+                            ng-if="(proposition.first && proposition.type !== 'blank' && userId === data[0].documentClaimedBy)">
+
+                      </span>
+
+            <!--           <span
+                        ng-mouseover="paragraph.leftMouseOver = true"
+                        ng-mouseleave="paragraph.leftMouseOver = false"
+
+                        ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition ,'left')] : data[0].documentClaimedBy === userId ? [
+                                didItRunOk(),
+                                clearPropositionInput(),
+                                paragraph.topAdd = false,
+                                paragraph.bottomAdd = false,
+                                paragraph.leftAdd = true,
+                                paragraph.leftMouseOver = false,
+                                paragraph.disableRightCursor = true,
+                                selectedParagraph.highlightAll = false,
+                                selectedParagraph.markAll = false,
+                                selectParagraph(paragraph),
+                                clearWithLeftAdder(proposition.id),
+                                clearEditable(),
+                                $event.stopPropagation()
+                              ] : inputs.nothing"
+
+                        ng-class="{'visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left')),
+                                         'invisible-cursor': !paragraph.leftMouseOver || !proposition.preSelected|| !proposition.first}"
+                        ng-if="proposition.first && data[0].documentClaimedBy === userId && proposition.type !== 'blank'"
+                        class="cursor left-cursor" style="padding-right:4px;">
+                        </span> -->
+                      <!-- 'dragdimmed': draggedProposition.id === proposition.id -->
+                      
+                      <span
+
+                        ng-hold="(proposition.type !== 'blank' && proposition.type !== 'negation' && proposition.author === userId && !cancelListenForDoubleClick) ? [dragProposition(node, paragraph, proposition, $event), clearTopAndBottomHasFocus(), $event.stopPropagation()] : inputs.nothing"
+                        id="mproposition{{proposition.id}}"
+                        style=""
+                        ng-class="{ 
+                                        'statementsentencehighlit': statementHighlightIs === proposition.id && !proposition.preSelected && proposition.type !== 'blank' && !minimalStyle,
+                                        'rejoinder': proposition.type === 'rejoinder',
+                                        'negation': proposition.type === 'negation',
+                                        'ispresentlybeingdragged': proposition.isPresentlyBeingDragged,
+                                        'highlight': highlight.id === proposition.id || (proposition.highlighted),
+                                        'mark': mark.id === proposition.id || (proposition.marked),
+                                        'owned-cursor': proposition.author === userId || (proposition.type === 'negation' && proposition.of.author === userId),
+                                        'textcursor': whatHasBeenClicked == proposition.id,
+                                        'rejoining': hasRightFocus === proposition.id && !selectedProposition.dialogueSide && proposition.type === 'negation' && proposition.of.author === userId,
+                                        'updatecursor': this.contentEditable,
+                                        'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
+                                        'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden'),
+                                        'mouseoverborder' : proposition.mouseOver && mouseIsOver === proposition.id && proposition.type !== 'blank && !minimalStyle',
+                                        'editing': editing === proposition.id && !hasBeenSetUp,
+                                        'authorprop':tweetClicked.id === proposition.id,
+                                        'havesomepadding': !proposition.first
+
+                                      }"
+
+                        ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, proposition)]"
+                        ng-mouseover="hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '|' : inputs.nothing "
+                        ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '' : inputs.nothing]"
+                        ng-blur=""
+
+                        ng-click="
+                                (draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ? [dropItem(node, paragraph, proposition ,'right'), $event.stopPropagation()] :
+
+                                (proposition.author === userId && !cancelListenForDoubleClick)
+                                ?  [
+                                     inputs[proposition.id] = '',
+                                     mark.id = '',
+                                     highlight.id = '',
+                                     selectNode(node),
+                                     selectParagraph(paragraph),
+                                     selectedParagraph = paragraph,
+                                     paragraph.topAdd = false,
+                                     paragraph.bottomAdd = false,
+                                     paragraph.leftAdd = false,
+                                     clearTopAndBottomHasFocus(proposition),
+                                     hasRightFocus.id = proposition.id,
+                                     hasLeftFocus = {},
+                                     listenForDoubleClick(this, paragraph, proposition),
+                                     $event.stopPropagation()
+                                   ]
+                                :  ( (proposition.type !== 'negation' && proposition.author !== userId) ||
+                                    (proposition.type === 'negation' && proposition.of.author === userId || proposition.author === userId)
+                                   ) && !cancelListenForDoubleClick
+                                      ? [
+                                        alternateSensor(proposition),
+                                        inputs[proposition.id] = '',
+                                        hideExpandingTextarea(),
+                                        selectNode(node),
+                                        selectParagraph(paragraph),
+                                        selectProposition(proposition),
+                                        selectedParagraph.highlightAll = false,
+                                        selectedParagraph.markAll = false,
+                                        clearTopAndBottomHasFocus(proposition),
+                                        mark.id = '',
+                                        highlight.id = '',
+                                        selectedProposition.textSide = true,
+                                        paragraph.topAdd = false,
+                                        paragraph.bottomAdd = false,
+                                        paragraph.leftAdd = false,
+                                        paragraph.disableRightCursor = true,
+                                        tweetClicked = {},
+                                        hasLeftFocus = {},
+                                        hasRightFocus.id = proposition.id,
+                                        selectRight(proposition, paragraph),
+                                        selectedProposition.dialogueSide = false,
+                                        $event.stopPropagation()
+                                        ]
+                                      : $event.stopPropagation()"
+                        class="proposition-text"
+                        ng-blur="[focusouteditable(this, proposition), paragraph.disableRightCursor = false]"
+                        ng-mousedown="handleClick($event, proposition.id)"
+                        oncontextmenu="return false"
+                      >
+                        {{proposition.text}}
+                        
+
+
+
+                        <!-- ng-mouseover="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event),proposition.propositionPreSelected = true, paragraph.disableRightCursor = false, mouseIsOver = proposition.id, statementHighlight(proposition.id), !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))) ? inputs[proposition.id] = '|' : inputs.nothing]" -->
+
+                        <!-- ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), inputs[proposition.id] = ''] -->
+
+
+
+                      </span>
+
+
+                      
+                      <!-- ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" -->
+
+
+                      <span ng-if="proposition.type !== 'blank' && proposition.remarks" ng-mouseover="[nextRemark(), toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex; font-size: 16px; padding-right: 7px; opacity: 0;"
+                           >
+            <!--             <i class="fa-solid fa-square-minus"
+                           style="line-height: inherit; display: inline-block;"
+                           ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" style="font-size: 22px" ng-click="toggleRemarksExpansion(proposition)">
+                        </i>
+                        <i class="fa-solid fa-square-plus"
+                           style="line-height: inherit; display: inline-block;"
+                           ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded ? true : false" style="font-size: 22px" ng-click="toggleRemarksExpansion(proposition)">
+                        </i> -->
+                        <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="">(</sub>
+                        <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</sub>
+                        <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="">)</sub>
+                      </span>
+
+
+
+
+                      <!-- 'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh, -->
+                      &nbsp;
+                      <span
+                        style="opacity: 0;"
+                        editable-span-ng-model 
+                        id="m{{proposition.id}}"
+                        class="right-text right-textarea maininput"
+                        style="padding-right: 8px;"
+                        ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #0c2340' : inputs[proposition.id] != undefined && inputs[proposition.id] != null && inputs[proposition.id] ? remarkInputString : '3px solid #0c2340' }"
+                        ng-class="{
+                                  'maininputactive': inputs[proposition.id] !== '',
+                                  'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
+                                   
+                                   'hasthatpadding': hasRightFocus.id === proposition.id,
+                                   'firstproppadding': proposition.type === 'blank' }"
+                        ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?
+                        [dropItem(node, paragraph, proposition ,'right')] : [inputs[proposition.id] === '' ? assignRightFocus(proposition.id, $event) : [paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id] ]"
+                        ng-mouseover="[hasRightFocus.id != proposition.id ? [paragraph.disableRightCursor = false, thatRunFunction()] : inputs.nothing]"
+                        ng-mouseleave="inputs[proposition.id] && hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '' : inputs.nothing"
+                        ng-model="inputs[proposition.id]"
+                        ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[proposition.id] != '' ? $event.preventDefault() : inputs.nothing;"
+                        ng-keyup="
+                            $event.keyCode === 13 && hasBeenSetUp ? [ $event.preventDefault(), hideZeeky(), prepProposition(temporaryText, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
+                            $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[proposition.id] != '' && inputs[proposition.id] != '|' && !hasBeenSetUp ? [ hideZeeky(), prepProposition(inputs[proposition.id], node, paragraph, proposition, $event, 'right')] : inputs.nothing;
+                            $event.keyCode === 13 && data[0].documentClaimedBy === userId  && inputs[proposition.id] === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
+                            $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[proposition.id] == '' && proposition.author === userId ? [ $event.preventDefault(), resetFromEnter()] : inputs.nothing;
+                            ($event.keyCode === 8 && inputs[proposition.id] === '' && data[0].documentClaimedBy === userId && highlight.id === proposition.id && highlight.highlit == true) ? deleteProposition(node, paragraph, proposition, null, 'proposition') : inputs.nothing;
+                            (data[0].documentClaimedBy === userId && inputs[proposition.id] === '' && $event.keyCode === 8 && proposition.type !== 'blank') ? highlightProposition(node, paragraph, proposition) : inputs.nothing;
+                            "
+                        spellcheck="false"
+                        contenteditable="true"
+                        ng-blur="this.contentEditable = true; ">
+                          </span>  
+                          
+            <!--           <span class="cursor left-cursor"
+                            ng-class="{'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
+                                       'invisible-cursor': !proposition.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === proposition.id || aRemarkIsMousedOver}"
+
+                            ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ? [dropItem(node, paragraph, proposition ,'right')] : [ selectProposition(proposition), paragraph.disableRightCursor = true, selectedProposition.textSide = true, paragraph.topAdd = false, paragraph.bottomAdd = false, paragraph.leftAdd = false]"
+                            ng-if="hasRightFocus.id !== proposition.id"
+                            event-focus="click"
+                            event-focus-id="{{proposition.id}}">
+
+                      </span> -->
+                      <span id="zeekyprop" class="zeekyboogydoog" style="position: relative; bottom: 12px;  font-size: 16px; padding-left: 7px;"
+                            ng-hide="onTheBoard"
+                            ng-if="(inputs[proposition.id].length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5 && selectedProposition.id === proposition.id)">press
+                        <span>{{enter}}</span> to commit/send
+                      </span>
+                      
+                      <!-- <span>{{(data[0].documentClaimedBy !== userName && !onTheBoard)}}</span> -->
+                     <!--  End of main input -->
+
+                     <!-- ng-mouseleave="aRemarkIsMousedOver = false; proposition.remarksAreMousedOver = false; hasRightFocusIdFcn(proposition.remarks, hasRightFocus.id) ? inputs.nothing : toggleRemarksExpansion(proposition)" -->
+                      <ol ui-tree-nodes
+                          style="padding-left: 0px !important; display: inline"
+                          ng-model="proposition.remarks"
+                          class="propositions"
+                          ng-if="proposition.remarks && proposition.remarksExpanded"
+                          ng-mouseleave="proposition.remarksAreMousedOver = false; proposition.remarksExpanded = false"
+                          ng-mouseover = "proposition.remarksAreMousedOver = true"
+
+            >
+                            <!-- ng-repeat="remark in currentItem(proposition.remarks) track by $index" -->
+                        <li ng-repeat="remark in proposition.remarks track by $index"
+                            id="mwholeprop{{remark.id}}"
+                            ui-tree-node
+                            style="display: inline;"
+                            ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph), clearAnimationClass()]"
+                            ng-mouseleave="!proposition.remarksAreMousedOver ? [remark.preSelected = false, clearSavePropositionForLater(), proposition.remarksExpanded = false] : inputs.nothing"
+
+                            ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted)) && proposition.remarksExpanded"
+                            ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id, 'remarkhidden': proposition.remarksExpanded && (remark.rejoined || remark[userId] == 'hidden')}"
+                            class="proposition">
+
+                          <!-- <i class="fas fa-recycle" ng-click="reloadRemark()" style="font-size: 22px;"></i> -->
+
+                          <span
+
+                            
+                            id="mproposition{{remark.id}}"
+                            style=""
+                            ng-style="{ 'border-bottom': remark.colorString}"
+                            ng-class="{
+                                            'reviewerprop': remark.type === 'negation',
+
+                                            'ispresentlybeingdragged': proposition.isPresentlyBeingDragged,
+                                            'highlight': highlight.id === remark.id,
+                                            'mark': mark.id === remark.id,
+                                            'owned-cursor': proposition.author === userId || (proposition.type === 'negation' && proposition.of.author === userId),
+                                            'textcursor': whatHasBeenClicked == proposition.id,
+                                            'rejoining': hasRightFocus === proposition.id && !selectedProposition.dialogueSide && proposition.type === 'negation' && proposition.of.author === userId,
+                                            'updatecursor': this.contentEditable,
+                                            'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
+                                            'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden' ||
+                                            (data[0].documentClaimedBy === userId && inputs.propostion !== '' && selectedProposition.id === remark.id) ),
+                                            'defrejoined' : remark.rejoined
+                                          }"
+
+                            ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, remark)]"
+                            ng-mouseover="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event),remark.propositionPreSelected = true, proposition.propositionPreSelected = false, paragraph.disableRightCursor = false, statementHighlight(remark.id)]"
+                            ng-mouseleave="[remark.propositionPreSelected = false, statementUnHighlight(remark.id)]"
+                            ng-blur=""
+
+                            ng-click="
+                                   (whatHasBeenClicked !== remark.id && !cancelListenForDoubleClick && data[0].documentClaimedBy === userId)
+                                          ? [
+                                            didItRun(),
+                                            didItRun(),
+                                            hideExpandingTextarea(),
+                                            selectNode(node),
+                                            selectParagraph(paragraph),
+                                            selectProposition(remark),
+                                            selectedParagraph.highlightAll = false,
+                                            selectedParagraph.markAll = false,
+                                            clearTopAndBottomHasFocus(),
+                                            highlight.id = '',
+                                            selectedProposition.textSide = true,
+                                            paragraph.topAdd = false,
+                                            paragraph.bottomAdd = false,
+                                            paragraph.leftAdd = false,
+                                            paragraph.disableRightCursor = true,
+                                            hasRightFocus.id = remark.id,
+                                            selectedProposition.dialogueSide = false,
+                                            $event.stopPropagation()
+                                            ]
+                                          : inputs.nothing"
+                            class="proposition-text"
+                            ng-blur="[focusouteditable(this), paragraph.disableRightCursor = false]"
+                            ng-mousedown="handleClick($event, remark.id, 'mute')"
+                            ng-if="proposition.remarksExpanded"
+                          >
+
+                            {{remark.text}}
+                          
+                          <!--   'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy !== userId) && cowsComeHome), -->
+                          </span>
+                          <span ng-if="!proposition.remarksExpanded" style="border-bottom: none;">&nbsp;</span> 
+                          <span style="position:relative; width: 0px; height: 0px;" ng-click="[muteUser(remark.author), $event.stopPropagation()]" ng-if="proposition.remarksExpanded">
+                            <span id="mute-button" ng-class="{'grow': muteClicked.id}" ng-if="muteClicked.id === proposition.id" style="position: absolute;"><i class="fas fa-volume-mute" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfmuteclicked': halfmuteClicked}" style="padding-left: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfMuteClicked = !halfMuteClicked" ></span></span>
+                          </span>
+                          <!-- ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing" -->
+                          <span
+
+                            editable-span-ng-model
+                            id="m{{remark.id}}"
+                            style="display: inline;"
+                            class="right-text right-textarea maininput"
+                            ng-if="proposition.remarksExpanded && !remark.rejoined"
+                            ng-class="{
+                                       'authorprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy === userId))}"
+                            ng-click="$event.type === 'click' && data[0].documentClaimedBy === userId ? [assignRightFocus(remark.id, $event), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id, didItRun() ] : inputs.nothing"
+                            ng-mouseover="paragraph.disableRightCursor = false"
+                            ng-model="inputs['remark'+remark.id]"
+                            ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[remark.id] != '' ? $event.preventDefault() : inputs.nothing;"
+                            ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId && inputs['remark'+remark.id] != '' ? remarkInputString : 'none'}"
+                            ng-keyup="
+
+                                $event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['remark'+remark.id] != '' ? [ $event.preventDefault(), hideZeeky(), prepProposition(inputs['remark'+remark.id], node, paragraph, proposition, $event, 'right')] : inputs.nothing;
+                                $event.keyCode === 13 && data[0].documentClaimedBy === userId && selectedProposition.dialogueSide != true && inputs['remark'+remark.id] === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
+                                $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['remark'+remark.id] == '' && remark.author === userId ? resetFromEnter() : inputs.nothing;
+                                (($event.keyCode === 8 && mark.id === remark.id && mark.marked === true && selectedProposition.author === userId) || ($event.keyCode === 8 && inputs['remark'+remark.id] === '' && selectedProposition.type === 'blank') || ($event.keyCode === 8 && inputs['remark'+remark.id] === '' && selectedProposition.type === 'negation' && selectedProposition.of.author === userId && highlight.id === remark.id && highlight.highlit === true)) ? deleteProposition(node, paragraph, proposition, remark, 'remark') : inputs.nothing;
+                                (inputs['remark'+remark.id] === '' && $event.keyCode === 8 && proposition.type !== 'blank' && !highlight.id) ? highlightProposition(node, paragraph, remark) : inputs.nothing;"
+                            spellcheck="false"
+                            contenteditable="true"
+                            ng-blur="this.contentEditable = true; ">
+                              </span>
+                          <!-- {{remark.id}} -->
+                          <!-- below is the code for carriageReturn -->
+                          <!--          $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing; -->
+
+                          <!-- Need focus variables for left and right -->
+
+            <!--               <span class="cursor"
+                                ng-class="{'visible-cursor': ((remark.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== remark.id)),
+                                           'invisible-cursor': !remark.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === remark.id}"
+
+                                ng-click="[selectProposition(proposition), paragraph.disableRightCursor = true, selectedProposition.textSide = true, paragraph.topAdd = false, paragraph.bottomAdd = false, paragraph.leftAdd = false]"
+                                event-focus="click"
+                                event-focus-id="{{remark.id}}"
+                                ng-if="proposition.remarksExpanded">
+
+                          </span> -->
+                                    <span id="zeekynegation" class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5)">press
+                                      <span>{{enter}}</span> to commit/send
+                                    </span>
+
+
+
+                                 <!--    Define rules for when zeekyboogydoog appears for remarkers -->
+
+
+
+
+
+                          <!--           <span class="bibbitybop" style="position: relative; display: none; bottom: 12px; font-size: 16px;" ng-if="inputs.proposition.length > 5 && !isFresh &&  isAlmostFresh && (selectedProposition.id === proposition.id)"> end with a
+                                      <span>{{colon}}</span> to begin a new section
+                                    </span> -->
+                        </li>
+                      </ol>
+                      <!--  remarks end -->
+
+
+                    </li>
+
+                  </ol>
+                </div>
+                <div class="bottomparagraphadder"
+                     style="opacity: 0;"
+                     ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'bottom') , 'isbottomadd': paragraph.bottomMouseOver, 'notisbottomadd': !paragraph.bottomMouseOver}"
+                     ng-mouseover="startBottomParagraphAdderTimer(paragraph)"
+                     ng-mouseleave="!paragraph.bottomMouseOver ? [stopBottomParagraphAdderTimer(paragraph), clearPlaceholder(paragraph)] : inputs.nothing"
+                     ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), selectParagraph(paragraph),
+                                selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
+                     
+                     ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph && data[0].documentClaimedBy === userId"
+                     id="mbottomadder{{paragraph.paragraphId}}"
+
+                >
+                </div>
+                <div delayed-ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver && !draggingNode)"
+                     ng-mouseleave="paragraph.bottomMouseOver = false"
+                     delay="200"
+                     class="addparagraph exclude"
+                     style="position: relative; text-indent: 97px; font-weight: 600; padding-bottom: 10.5px; line-height: 30px; opacity: 0;"
+                      editable-span-ng-model
+                      contenteditable="true"
+                      id="m{{paragraph.paragraphId}}"
+                      class="right-textarea right-text authorprop"
+                      placeholder="textarea"
+                      ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : $event.type === 'click' ? [didItRun(), didItRunOk($event), selectParagraph(paragraph),
+                                 selectNode(node), clearTopAndBottomHasFocus(),  selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)] : inputs.nothing"
+                      ng-model="inputs['bottom'+paragraph.paragraphId]"
+                      ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"
+                      ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs['bottom'+paragraph.paragraphId], node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs['bottom'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
+                      class="texttopic"
+                      spellcheck="false"
+                      style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; ">
+                </div>
+               
+                <div
+                  editable-span-ng-model
+                  ng-if="node.bottomAdd"
+                  ng-model="inputs.newSectionTitle"
+                  ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
+                  id="mlower{{node.nodeId}}"></div>
+              </li>
+            </ol>
+            <div class="bottomnodedropzone"
+                 ng-class="{'nodeblackline': (checkIfDropValid(node, null, null, 'bottomnode') || (node.bottomDropzoneMouseOver && !draggingParagraph && !draggingProposition) && !hasBeenSetUp)}"
+                 ng-if="hasBottomNodeFocus.id !== node.nodeId && (!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true)"
+                 ng-mouseover="node.bottomDropzoneMouseOver = true"
+                 ng-mouseleave="node.bottomDropzoneMouseOver = false"
+                 ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : didItRun()"
+                 id="mbottom{{node.nodeId}}"
+                 style="opacity: 0;">
+            </div>
+            <!-- There is an issue here with a space being treated like a click and firing getLastVisiblePropInBook
+            fix it like all the others 7/26/23-->
+            <div ng-if="(node.bottomDropzoneMouseOver && !draggingNode && !draggingParagraph && !draggingProposition) && ((!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true))"
+                 style="padding-top: 16px; padding-bottom: 40px; position: relative; left: 20px; "
+                 class='addparagraph'>
+              <div class="proposition">
+              <span
+                ng-keyup="$event.keyCode === 13 &&
+                                    selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, prepProposition(inputs.newSectionTitle, node, null, null, $event, 'bottom')] : inputs.nothing;
+                                    (inputs.newSectionTitle === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
+                contenteditable="true"
+                editable-span-ng-model
+                ng-model="inputs.newSectionTitle"
+                ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
+                style="text-indent: 25px; background-color: #0C2340; text-indent:100px; color: white;"
+                class="right-textarea texttopic"
+                id="m{{bottomNodeAdderId}}"
+                ></span>
+                <!-- ng-click="$event.stopPropagation()" -->
+
+            <!--     <span class="cursor visible-cursor"
+                      ng-if="node.bottomDropzoneMouseOver && hasBottomNodeFocus !== node.nodeId">
+                </span> -->
+              </div>
+            </div>
+
+            <!-- sub-nodes -->
+            <!-- <ol ui-tree-nodes
+                ng-model="node.children"
+                style="list-style-type: none; list-style: none; padding-left: 10px"
+                class="angular-ui-tree-nodes">
+              <li ng-repeat="node in node.children"
+                  ui-tree-node
+                  ng-click="selectNode(node); $event.stopPropagation();"
+                  id="{{node.nodeId}}">
+                <nd-editor-text-renderer></nd-editor-text-renderer>
+              </li>
+            </ol> -->
+
+
+          </li>
+        </ol>
+      </div>
+      <div style="height: 10px;"
+           ng-mouseover="mouseOverTextBlurrer()"
+           ng-mouseleave="mouseLeaveTextBlurrer()"
+           ng-mousemove="assessDragScrollLower()"
+           ng-click="blurText()"
+           id="mtextblurrer"
+           ng-if="false"
+           ></div>
+    </div>
+</div>
+
+
+
+
+
 <div class="container " 
      reconnect-on-mouse-move
      ng-init="initialize"
@@ -463,743 +1208,7 @@
 
 
 
-       <div minimap>
 
-
-
-
-
-
-           <!-- Your transcluded content goes here -->
-           <div class=""
-                ng-mouseover="[!dialogueGrey && cowsComeHome ? greyDialogue() : inputs.nothing]"
-                ng-mouseleave="cowsComeHome ? greyDialogue() : inputs.nothing"
-                ng-click="!hasBottomNodeFocus ? [getLastVisiblePropositionInBook(book, $event),$event.stopPropagation()] : inputs.nothing"
-                id="mthetext">
-
-
-             <div ui-tree="treeOptions"
-                  data-drag-enabled="false"
-                  id="tree-root"
-                  style=""
-                  class="angular-ui-tree textlist"
-                  ng-class=""
-                  ng-mouseover="!inputs.bottomProposition ? [whatsTheEvent($event), lightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing"
-                  ng-mouseleave="[blurLightUpLastVisiblePropositionInBook(book, $event), $event.stopPropagation()]"
-                  
-
-             >
-             <!-- ng-click="(!draggingNode && !draggingParagraph && !draggingProposition && $event.keyCode !== 32 && $event.keyCode !== 13) ? [getLastVisiblePropositionInBook(book, $event), $event.stopPropagation()] : inputs.nothing" -->
-
-               <ol ui-tree-nodes
-                   ng-model='data[0].nodes'
-                   style=""
-                   id="mbookdata"
-                   class="angular-ui-tree-nodes"
-               >
-                 <li ng-repeat="node in data[0].nodes | orderBy: 'class'"
-                     ui-tree-node
-                     ng-class="{ 'mousedovernode': node.mouseOver === true, 'setupcaret' : hasBeenSetUp }"
-                     class="angular-ui-tree-node node"
-                     id="m{{node.nodeId}}"
-                     ng-if="!node.hiddenForAll">
-                   
-                   <div
-                     class="tree-node tree-node-content texttopic"
-                     ng-class="{
-                       titlestyling: node.isTitle,
-                       openfield: data[0].nodes[0].paragraphs[0].propositions[0].author === '',
-                     }"
-                     ng-mouseover="node.mouseOver = true;"
-                     ng-mouseleave="node.mouseOver = false;"
-                     ng-click="[stopNgClick()]">
-
-
-
-                   <div class="sectiontitle"
-                        ng-mouseover="node.titleMouseOver= true"
-                        ng-mouseleave="node.titleMouseOver= false">
-                     <span class="nodehandle"
-                           ng-hold="[dragNode(node, $event), clearTopAndBottomHasFocus()]"
-                           ng-click="draggingNode && !cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : inputs.notting;"    
-                           style="margin-right: 10px; display: inline-block;">
-                       <span ng-click="!draggingNode && !draggingParagraph && !draggingProposition && !node.highlighted && data[0].documentClaimedBy === userId ? [highlightNode(node), $event.stopPropagation()] : $event.stopPropagation()" ng-style="{ 'opacity': node.titleMouseOver && !draggingNode && !draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId && !minimalStyle ? .3 : 0 }"><i class="fa fa-th" style="font-size: 15px;"></i>
-                       </span>
-                     </span>
-                     <span
-                       ng-hold="[dragNode(node),clearTopAndBottomHasFocus()]"
-                       ng-enter="[$event.preventDefault(), updateNode(node)]"
-                       class="nodetitle"
-                       ng-click="draggingNode && cancelDrop && checkIfDropValid(node, null, null, 'bottomnode') ? dropItem(node, null, null, 'bottom') : data[0].documentClaimedBy === userId ? [setNodeEditability(node), $event.stopPropagation()] :$event.stopPropagation() "
-                       ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId && draggingNode}"
-                       id="mnodetitle{{node.nodeId}}"
-                       ng-enter="updateNode(node)">
-                           {{node.topic}}
-
-                           <!-- {{node.nodeId}} -->
-                   </span>
-
-                   <!-- <span ng-if="userId === node.sectionClaimedBy" style="color: white; position:relative; font-size:16px"><i class="fa-solid fa-pen"></i></span> -->
-           <!--           <span ng-if="node.minimized && data[0].documentClaimedBy === userId"
-                           ng-click="toggleNode()"
-                           style="padding-right: 10px">+</span>
-                     <span ng-if="node.mouseOver && !node.minimized && data[0].documentClaimedBy === userId"
-                           ng-click="toggleNode()"
-                           style="padding-right: 10px">-</span> -->
-                   </div>
-
-
-                   <!--   <div class="bottomnodedropzone"
-                          ng-class="{'nodeblackline': checkIfDropValid(node, null, null, 'bottomnode')}"
-                          ng-if="!node.bottomNodeAdd"
-                          ng-mouseover="node.bottomDropzoneMouseOver = true"
-                          ng-mouseleave="node.bottomDropzoneMouseOver = false"
-                          ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition && data[0].documentClaimedBy === userId) && cowsComeHome ? [clearWithBottomNodeAdder(node), bottomNodeClick(node)] : inputs.nithing"
-                          id="bottom{{node.nodeId}}">
-                     </div> -->
-                   </div>
-                   <!-- ng-mouseover="[lightUpLastVisiblePropositionInNode(node, $event), $event.stopPropagation()]"
-                   ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.stopPropagation()]" -->
-                   <ol ui-tree-nodes
-                       ng-if="!node.minimized"
-                       ng-model="node.paragraphs"
-                       style="padding-left: 0"
-
-                       ng-click="$event.stopPropagation()">
-                       <!-- !draggingNode && !draggingParagraph && !draggingProposition  && $event.keyCode !== 32 ? [getLastVisiblePropositionInNode(node, $event, this), $event.stopPropagation()] : inputs.nothing -->
-                     <li ng-repeat="paragraph in node.paragraphs track by $index"
-                         ng-click="[clearThreadAdding(), paragraph.cursor = false, selectedProposition.dialogueSide = false, selectedParagraph = paragraph]"
-                         id="mparagraph{{paragraph.paragraphId}}"
-                         ng-mouseover="[paragraph.mouseOver = true, paragraphMouseIsOver.id = paragraph.paragraphId]"
-                         ng-mouseleave="[paragraph.mouseOver = false, paragraph.leftMouseOver = false]"
-                         class="tree-node tree-node-content paragraph"
-                         ng-if="!node.minimized && !paragraph.hiddenForAll"
-                         ng-style="{'background-color': paragraph.color}"
-                         ng-class="{ paragraphcursor: paragraph.cursor === true,
-                                     paragraphoffcursor: paragraph.cursor === false,
-                                     'paragraphgreyed' : paragraph.paragraphId === draggedParagraph.paragraphId && !draggingProposition,
-                                     'blankparagraphpadding': paragraph.theBlankParagraph
-                                   }">
-                         
-                       
-                      <!-- {{paragraph.paragraphId}} -->
-
-                       <!-- {{paragraph.paragraphId}} -->
-
-                       <div delayed-ng-if="(paragraph.topAdd == true && hasTopFocus === paragraph.paragraphId) || data[0].documentClaimedBy === userId && paragraph.topMouseOver || hasTopFocus === paragraph.paragraphId && !draggingNode"
-                            ng-mouseover = "paragraph.topMouseOver = true"
-                            ng-mouseleave = "paragraph.topMouseOver = false"
-                            ng-click="(!inputs['top'+paragraph.paragraphId] && !draggingParagraph && !draggingProposition) ? [didItRunOk(), topAddFunction(node, paragraph), $event.stopPropagation()] : ((draggingProposition && cancelListenForDoubleClick) || (draggingParagraph && cancelListenForDoubleClick)) && paragraph.paragraphId !== draggedParagraph.paragraphId ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : catchFunction()"
-                            delay="200"
-                            class="addparagraph exclude"
-                            ng-class="{'topaddpadding': paragraph.topAdd}"
-                            style="min-height: 28px; position: relative; text-indent: 97px; overflow: hidden; word-wrap: break-word; font-weight: 600; line-height: 30px"
-                             editable-span-ng-model
-                             ng-class=""
-                             contenteditable="true"
-                             id="mtop{{paragraph.paragraphId}}"
-                             class="right-textarea"
-                             placeholder="textarea authorprop"
-                             ng-model="inputs['top'+paragraph.paragraphId]"
-                             ng-mouseover="handling ? removeTopClickHandler(paragraph) : inputs.nothing"
-                             ng-keydown="$event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['top'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"
-                             ng-keyup="$event.keyCode === 13 &&
-                                               selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, whatsGoingOn(paragraph), prepProposition(inputs['top'+paragraph.paragraphId], node, paragraph, null, proposition, $event, 'top')] : inputs.nothing;
-                                               (inputs['top'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
-                             spellcheck="false"
-                             style="color: #f0f0f0; left: 50px; background-color: #0C2340; display: inline"
-                           >
-                       </div>
-                       <div class="topparagraphadder"
-                            style="opacity: 0;"
-                            ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'top')}"
-                            ng-mouseover="paragraph.topMouseOver ? paragraph.topMouseOver = false : startTopParagraphAdderTimer(paragraph)"
-                            ng-mouseleave="[stopTopParagraphAdderTimer(paragraph), inputs['top'+paragraph.paragraphId] !== '' ? clearPlaceholderTop(paragraph) : inputs.nothing]"
-                            ng-if="hasTopFocus !== paragraph.paragraphId && !paragraph.theBlankParagraph && paragraph.first"
-                            ng-click="(!inputs['top'+paragraph.paragraphId] && !draggingParagraph && !draggingProposition) ? [didItRunOk(), topAddFunction(node, paragraph), $event.stopPropagation()] : ((draggingProposition && cancelListenForDoubleClick) || (draggingParagraph && cancelListenForDoubleClick)) && paragraph.paragraphId !== draggedParagraph.paragraphId ? [paragraph.topAdd = true, dropItem(node, paragraph, null ,'top')] : [
-                                       topAddFunction(node, paragraph),
-                                       hideExpandingTextarea(),
-                                       selectParagraph(paragraph),
-                                       selectNode(node),
-                                       clearTopAndBottomHasFocus(),
-                                       clearWithTopAdder(paragraph),
-                                      selectedParagraph.highlightAll = false,
-                                      selectedParagraph.markAll = false,
-                                      clearPropositionInput(),
-                                      paragraph.bottomAdd = false,
-                                      paragraph.leftAdd = false,
-                                      clearEditable(),
-                                      $event.stopPropagation()]"
-
-                            id="mtopadder">
-                       </div>
-
-                       <div>
-
-
-                         <ol ui-tree-nodes
-                             style="padding-left: 0px !important; font-size: 0px; text-indent: 20px;"
-                             ng-model="paragraph.propositions" 
-                             class="propositions"
-                             ng-mouseover="!hasRightFocus.id ? [lightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = true, $event.stopPropagation(), getReading($event,paragraph.paragraphId)] : inputs.nothing"
-                             ng-mouseleave="(!draggingParagraph && !draggingProposition) ? [blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event), paragraph.propositionsMouseover = false, $event.stopPropagation()] : inputs.nothing"
-                             ng-class="{'addbelownotowned': hasBottomFocus.id == paragraph.paragraphId, 'bottomadd': paragraph.bottomAdd, 'causeoftopadd': paragraph.topAdd,'nonauthorparagraphspacer': userId !== data[0].documentClaimedBy}"
-                             ng-click="threadAdding ? hideThreadAdd() : !paragraph.leftMouseOver && !draggingProposition && !draggingParagraph && $event.keyCode !== 32 && $event.keyCode !== 13 ? [leftOlClickHandle(node, paragraph, $event), $event.stopPropagation()] : (draggingProposition || draggingParagraph) ? dropItem(node, paragraph, null,'ol', this, $event): inputs.nothing"
-                             id="mpropositionsol{{paragraph.paragraphId}}">
-                             <!-- ng-if="(!proposition.hiddenForAll && !proposition.rejoined && proposition[userId] !== 'hidden') || (proposition.privateFor && proposition.privateFor === userId)" -->
-                           <span class="paragraphhandle"
-                                 
-
-                                           
-                                 style="margin-right: 10px; display: inline-block; opacity: 0;">
-                             <span ><i ng-hold="[dragParagraph(node, paragraph, $event), clearTopAndBottomHasFocus()]"
-                                 ng-click="!paragraph.highlighted && node.sectionClaimedBy === userId && !cancelDrop ? [highlightParagraph(node, paragraph), $event.stopPropagation()] :
-                                           paragraph.highlighted ? markParagraph(node, paragraph) :
-                                           paragraph.marked ? deleteProposition(node, paragraph, proposition, null, null, null) : $event.stopPropagation()"
-                                           ng-style="{ 'opacity': paragraph.mouseOver && !draggingNode && !draggingParagraph && !draggingProposition && !paragraph.propositionMouseover && !paragraph.topMouseOver && !paragraph.bottomMouseOver && data[0].documentClaimedBy === userId && paragraphMouseIsOver.id === paragraph.paragraphId && !minimalStyle && !tweetClicked.id && 
-                                           !paragraph.theBlankParagraph && !paragraph.topMouseOver && !paragraph.topAdd &&!paragraph.bottomMouseOver && !paragraph.bottomAdd ? .3 : 0 }" class="fa fa-th" style="font-size: 15px;"></i></span>
-                           </span>
-
-                           <li ng-repeat="proposition in paragraph.propositions track by $index"
-                               id="mwholeprop{{proposition.id}}"
-                               ui-tree-node
-                               ng-init=""
-                               ng-mouseover="[proposition.preSelected = true, paragraph.propositionMouseover = true, proposition.mouseOver = true, savePropositionForLater(proposition.id, proposition.position, paragraph)]"
-                               ng-mouseleave="[proposition.preSelected = false, paragraph.propositionMouseover = false, proposition.mouseOver = false, clearSavePropositionForLater()]"
-                               ng-click="[hideExpandingTextarea(), selectedProposition.textSide = true, selectNode(node), getPropReading($event, proposition), $event.stopPropagation()]"
-                               ng-if="(!proposition.hiddenForAll && proposition[userId] !== 'hidden')"
-                               ng-class="{'incoming': propToAddAnimate.id === proposition.id, 'rejoinanimate': propToRejoinAnimate.id === proposition.id, blankcorrector: proposition.type === 'blank', 'paragraphgreyed': proposition.id === draggedProposition.id && !draggingParagraph}"
-                               class="proposition">
-
-                              
-                               <span ng-if="diagnostics">{{proposition.id}}</span>
-                               <span style="position:relative; width: 0px; height: 0px;" ng-click="[openTwitterPost(proposition.text), $event.stopPropagation]">
-                                 <span id="tweet-button" ng-class="{'grow': tweetClicked.id}" ng-if="tweetClicked.id === proposition.id" style="position: absolute; right: 1px;"><i class="fa-brands fa-twitter" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfclicked': halfClicked}" style="padding-right: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfClicked = !halfClicked" >Tweet</span></span>
-                               </span>
-
-                   <!--           <span class="leftpropositionadder"
-                                   ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true]"
-                                   ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false]"
-                                   ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId ? [
-                                     didItRun(),
-                                     clearPropositionInput(),
-                                     paragraph.topAdd = false,
-                                     paragraph.bottomAdd = false,
-                                     paragraph.leftAdd = true,
-                                     paragraph.leftMouseOver = false,
-                                     selectParagraph(paragraph),
-                                     selectedParagraph.highlightAll = false,
-                                     selectedParagraph.markAll = false,
-                                     selectedProposition = proposition,
-                                     clearWithLeftAdder(proposition.id),
-                                     clearEditable(),
-                                     $event.stopPropagation()
-                                     ] : inputs.notting"
-
-                                   ng-if="proposition.first && proposition.type !== 'blank'"
-                                   id="leftadder{{proposition.id}}">
-                             </span> -->
-
-
-
-
-                             <!-- 'visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left')) -->
-
-
-
-
-
-                             <span editable-span-ng-model
-                                   style="opacity: 0;"
-                                   contenteditable="true"
-                                   ng-class="{'leftinputactive': inputs['left'+proposition.id] !== '' && paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left'))}"
-                                   ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition,'left')] : data[0].documentClaimedBy === userId && inputs['left'+proposition.id] === '|' ? [
-                                     paragraph.leftAdd = true,
-                                     didItRun(),
-                                     clearPropositionInput(),
-                                     paragraph.topAdd = false,
-                                     paragraph.bottomAdd = false,
-                                     paragraph.leftAdd = true,
-                                     paragraph.leftMouseOver = false,
-                                     selectParagraph(paragraph),
-                                     selectedParagraph.highlightAll = false,
-                                     selectedParagraph.markAll = false,
-                                     selectPropositionLeft(proposition),
-                                     clearWithLeftAdder(proposition.id),
-                                     clearEditable(),
-                                     $event.stopPropagation()
-                                     ] : inputs.notting"
-                                   id="mleft{{proposition.id}}"
-                                   class="right-textarea right-text left-text authorprop theleft"
-                                   ng-mouseover="[paragraph.leftMouseOver = true, paragraph.topMouseOver = false, paragraph.bottomMouseOver = false, paragraph.disableRightCursor = true, (userId === data[0].documentClaimedBy && !inputs['left'+proposition.id] && !paragraph.leftAdd) ? [ thatRunFunction(), inputs['left'+proposition.id] = '|']: inputs.nothing]"
-                                   ng-mouseleave="[paragraph.leftMouseOver = false, paragraph.disableRightCursor = false, (userId === data[0].documentClaimedBy && inputs['left'+proposition.id] === '|') ? inputs['left'+proposition.id] = '': inputs.nothing]"
-                                   ng-blur="clearLeftAdd(paragraph)"
-                                   placeholder="textarea"
-                                   ng-model="inputs['left'+proposition.id]"
-                                   ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['left'+proposition.id] != '' ? $event.preventDefault : inputs.nothing"
-                                   ng-keyup="[$event.keyCode === 13 && selectedProposition.dialogueSide !== true ? [whatIsSelectedProp(), proposition.propositionPreSelected = false, prepProposition(inputs['left'+proposition.id], node, paragraph, proposition, $event, 'left'), inputs['left'+proposition.id] = '', $event.stopPropagation()] : inputs.nothing,
-                                         (inputs['left'+proposition.id] === '' && $event.keyCode === 8) ? inputs.nothing : inputs.nothing]"
-                                   spellcheck="false"
-                                   ng-if="(proposition.first && proposition.type !== 'blank' && userId === data[0].documentClaimedBy)">
-
-                             </span>
-
-                   <!--           <span
-                               ng-mouseover="paragraph.leftMouseOver = true"
-                               ng-mouseleave="paragraph.leftMouseOver = false"
-
-                               ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.leftAdd = true, dropItem(node, paragraph, proposition ,'left')] : data[0].documentClaimedBy === userId ? [
-                                       didItRunOk(),
-                                       clearPropositionInput(),
-                                       paragraph.topAdd = false,
-                                       paragraph.bottomAdd = false,
-                                       paragraph.leftAdd = true,
-                                       paragraph.leftMouseOver = false,
-                                       paragraph.disableRightCursor = true,
-                                       selectedParagraph.highlightAll = false,
-                                       selectedParagraph.markAll = false,
-                                       selectParagraph(paragraph),
-                                       clearWithLeftAdder(proposition.id),
-                                       clearEditable(),
-                                       $event.stopPropagation()
-                                     ] : inputs.nothing"
-
-                               ng-class="{'visible-cursor': paragraph.leftMouseOver && proposition.preSelected && proposition.first && !paragraph.leftAdd && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'left')),
-                                                'invisible-cursor': !paragraph.leftMouseOver || !proposition.preSelected|| !proposition.first}"
-                               ng-if="proposition.first && data[0].documentClaimedBy === userId && proposition.type !== 'blank'"
-                               class="cursor left-cursor" style="padding-right:4px;">
-                               </span> -->
-                             <!-- 'dragdimmed': draggedProposition.id === proposition.id -->
-                             
-                             <span
-
-                               ng-hold="(proposition.type !== 'blank' && proposition.type !== 'negation' && proposition.author === userId && !cancelListenForDoubleClick) ? [dragProposition(node, paragraph, proposition, $event), clearTopAndBottomHasFocus(), $event.stopPropagation()] : inputs.nothing"
-                               id="mproposition{{proposition.id}}"
-                               style=""
-                               ng-class="{ 
-                                               'statementsentencehighlit': statementHighlightIs === proposition.id && !proposition.preSelected && proposition.type !== 'blank' && !minimalStyle,
-                                               'rejoinder': proposition.type === 'rejoinder',
-                                               'negation': proposition.type === 'negation',
-                                               'ispresentlybeingdragged': proposition.isPresentlyBeingDragged,
-                                               'highlight': highlight.id === proposition.id || (proposition.highlighted),
-                                               'mark': mark.id === proposition.id || (proposition.marked),
-                                               'owned-cursor': proposition.author === userId || (proposition.type === 'negation' && proposition.of.author === userId),
-                                               'textcursor': whatHasBeenClicked == proposition.id,
-                                               'rejoining': hasRightFocus === proposition.id && !selectedProposition.dialogueSide && proposition.type === 'negation' && proposition.of.author === userId,
-                                               'updatecursor': this.contentEditable,
-                                               'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
-                                               'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden'),
-                                               'mouseoverborder' : proposition.mouseOver && mouseIsOver === proposition.id && proposition.type !== 'blank && !minimalStyle',
-                                               'editing': editing === proposition.id && !hasBeenSetUp,
-                                               'authorprop':tweetClicked.id === proposition.id,
-                                               'havesomepadding': !proposition.first
-
-                                             }"
-
-                               ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, proposition)]"
-                               ng-mouseover="hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '|' : inputs.nothing "
-                               ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '' : inputs.nothing]"
-                               ng-blur=""
-
-                               ng-click="
-                                       (draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ? [dropItem(node, paragraph, proposition ,'right'), $event.stopPropagation()] :
-
-                                       (proposition.author === userId && !cancelListenForDoubleClick)
-                                       ?  [
-                                            inputs[proposition.id] = '',
-                                            mark.id = '',
-                                            highlight.id = '',
-                                            selectNode(node),
-                                            selectParagraph(paragraph),
-                                            selectedParagraph = paragraph,
-                                            paragraph.topAdd = false,
-                                            paragraph.bottomAdd = false,
-                                            paragraph.leftAdd = false,
-                                            clearTopAndBottomHasFocus(proposition),
-                                            hasRightFocus.id = proposition.id,
-                                            hasLeftFocus = {},
-                                            listenForDoubleClick(this, paragraph, proposition),
-                                            $event.stopPropagation()
-                                          ]
-                                       :  ( (proposition.type !== 'negation' && proposition.author !== userId) ||
-                                           (proposition.type === 'negation' && proposition.of.author === userId || proposition.author === userId)
-                                          ) && !cancelListenForDoubleClick
-                                             ? [
-                                               alternateSensor(proposition),
-                                               inputs[proposition.id] = '',
-                                               hideExpandingTextarea(),
-                                               selectNode(node),
-                                               selectParagraph(paragraph),
-                                               selectProposition(proposition),
-                                               selectedParagraph.highlightAll = false,
-                                               selectedParagraph.markAll = false,
-                                               clearTopAndBottomHasFocus(proposition),
-                                               mark.id = '',
-                                               highlight.id = '',
-                                               selectedProposition.textSide = true,
-                                               paragraph.topAdd = false,
-                                               paragraph.bottomAdd = false,
-                                               paragraph.leftAdd = false,
-                                               paragraph.disableRightCursor = true,
-                                               tweetClicked = {},
-                                               hasLeftFocus = {},
-                                               hasRightFocus.id = proposition.id,
-                                               selectRight(proposition, paragraph),
-                                               selectedProposition.dialogueSide = false,
-                                               $event.stopPropagation()
-                                               ]
-                                             : $event.stopPropagation()"
-                               class="proposition-text"
-                               ng-blur="[focusouteditable(this, proposition), paragraph.disableRightCursor = false]"
-                               ng-mousedown="handleClick($event, proposition.id)"
-                               oncontextmenu="return false"
-                             >
-                               {{proposition.text}}
-                               
-
-
-
-                               <!-- ng-mouseover="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event),proposition.propositionPreSelected = true, paragraph.disableRightCursor = false, mouseIsOver = proposition.id, statementHighlight(proposition.id), !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))) ? inputs[proposition.id] = '|' : inputs.nothing]" -->
-
-                               <!-- ng-mouseleave="[proposition.propositionPreSelected = false, statementUnHighlight(proposition.id), inputs[proposition.id] = ''] -->
-
-
-
-                             </span>
-
-
-                             
-                             <!-- ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" -->
-
-
-                             <span ng-if="proposition.type !== 'blank' && proposition.remarks" ng-mouseover="[nextRemark(), toggleRemarksExpansion(proposition), $event.stopPropagation()]" style="text-indent: 0px; display: inline-flex; font-size: 16px; padding-right: 7px; opacity: 0;"
-                                  >
-                   <!--             <i class="fa-solid fa-square-minus"
-                                  style="line-height: inherit; display: inline-block;"
-                                  ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && proposition.remarksExpanded ? true : false" style="font-size: 22px" ng-click="toggleRemarksExpansion(proposition)">
-                               </i>
-                               <i class="fa-solid fa-square-plus"
-                                  style="line-height: inherit; display: inline-block;"
-                                  ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded ? true : false" style="font-size: 22px" ng-click="toggleRemarksExpansion(proposition)">
-                               </i> -->
-                               <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="">(</sub>
-                               <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="">{{proposition.remarks.length - proposition.remarks.filter(isMutedFilter).length}}</sub>
-                               <sub ng-if="proposition.remarks && (proposition.remarks.length - (proposition.remarks | filter:isMutedFilter).length) > 0 && !proposition.remarksExpanded && proposition.type !== 'blank'" style="">)</sub>
-                             </span>
-
-
-
-
-                             <!-- 'authorprop': (!data[0].documentClaimedBy || data[0].documentClaimedBy === userId) && !data[0].isFresh, -->
-                             &nbsp;
-                             <span
-                               style="opacity: 0;"
-                               editable-span-ng-model 
-                               id="m{{proposition.id}}"
-                               class="right-text right-textarea maininput"
-                               style="padding-right: 8px;"
-                               ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #0c2340' : inputs[proposition.id] != undefined && inputs[proposition.id] != null && inputs[proposition.id] ? remarkInputString : '3px solid #0c2340' }"
-                               ng-class="{
-                                         'maininputactive': inputs[proposition.id] !== '',
-                                         'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
-                                          
-                                          'hasthatpadding': hasRightFocus.id === proposition.id,
-                                          'firstproppadding': proposition.type === 'blank' }"
-                               ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ?
-                               [dropItem(node, paragraph, proposition ,'right')] : [inputs[proposition.id] === '' ? assignRightFocus(proposition.id, $event) : [paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id] ]"
-                               ng-mouseover="[hasRightFocus.id != proposition.id ? [paragraph.disableRightCursor = false, thatRunFunction()] : inputs.nothing]"
-                               ng-mouseleave="inputs[proposition.id] && hasRightFocus.id !== proposition.id ? inputs[proposition.id] = '' : inputs.nothing"
-                               ng-model="inputs[proposition.id]"
-                               ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[proposition.id] != '' ? $event.preventDefault() : inputs.nothing;"
-                               ng-keyup="
-                                   $event.keyCode === 13 && hasBeenSetUp ? [ $event.preventDefault(), hideZeeky(), prepProposition(temporaryText, node, paragraph, proposition, $event, 'right')] : inputs.nothing;
-                                   $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[proposition.id] != '' && inputs[proposition.id] != '|' && !hasBeenSetUp ? [ hideZeeky(), prepProposition(inputs[proposition.id], node, paragraph, proposition, $event, 'right')] : inputs.nothing;
-                                   $event.keyCode === 13 && data[0].documentClaimedBy === userId  && inputs[proposition.id] === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
-                                   $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[proposition.id] == '' && proposition.author === userId ? [ $event.preventDefault(), resetFromEnter()] : inputs.nothing;
-                                   ($event.keyCode === 8 && inputs[proposition.id] === '' && data[0].documentClaimedBy === userId && highlight.id === proposition.id && highlight.highlit == true) ? deleteProposition(node, paragraph, proposition, null, 'proposition') : inputs.nothing;
-                                   (data[0].documentClaimedBy === userId && inputs[proposition.id] === '' && $event.keyCode === 8 && proposition.type !== 'blank') ? highlightProposition(node, paragraph, proposition) : inputs.nothing;
-                                   "
-                               spellcheck="false"
-                               contenteditable="true"
-                               ng-blur="this.contentEditable = true; ">
-                                 </span>  
-                                 
-                   <!--           <span class="cursor left-cursor"
-                                   ng-class="{'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
-                                              'invisible-cursor': !proposition.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === proposition.id || aRemarkIsMousedOver}"
-
-                                   ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick && draggedProposition.id !== proposition.id ? [dropItem(node, paragraph, proposition ,'right')] : [ selectProposition(proposition), paragraph.disableRightCursor = true, selectedProposition.textSide = true, paragraph.topAdd = false, paragraph.bottomAdd = false, paragraph.leftAdd = false]"
-                                   ng-if="hasRightFocus.id !== proposition.id"
-                                   event-focus="click"
-                                   event-focus-id="{{proposition.id}}">
-
-                             </span> -->
-                             <span id="zeekyprop" class="zeekyboogydoog" style="position: relative; bottom: 12px;  font-size: 16px; padding-left: 7px;"
-                                   ng-hide="onTheBoard"
-                                   ng-if="(inputs[proposition.id].length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !cowsComeHome && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5 && selectedProposition.id === proposition.id)">press
-                               <span>{{enter}}</span> to commit/send
-                             </span>
-                             
-                             <!-- <span>{{(data[0].documentClaimedBy !== userName && !onTheBoard)}}</span> -->
-                            <!--  End of main input -->
-
-                            <!-- ng-mouseleave="aRemarkIsMousedOver = false; proposition.remarksAreMousedOver = false; hasRightFocusIdFcn(proposition.remarks, hasRightFocus.id) ? inputs.nothing : toggleRemarksExpansion(proposition)" -->
-                             <ol ui-tree-nodes
-                                 style="padding-left: 0px !important; display: inline"
-                                 ng-model="proposition.remarks"
-                                 class="propositions"
-                                 ng-if="proposition.remarks && proposition.remarksExpanded"
-                                 ng-mouseleave="proposition.remarksAreMousedOver = false; proposition.remarksExpanded = false"
-                                 ng-mouseover = "proposition.remarksAreMousedOver = true"
-
-                   >
-                                   <!-- ng-repeat="remark in currentItem(proposition.remarks) track by $index" -->
-                               <li ng-repeat="remark in proposition.remarks track by $index"
-                                   id="mwholeprop{{remark.id}}"
-                                   ui-tree-node
-                                   style="display: inline;"
-                                   ng-mouseover="[aRemarkIsMousedOver = true, remark.preSelected = true, savePropositionForLater(remark.id, null, paragraph), clearAnimationClass()]"
-                                   ng-mouseleave="!proposition.remarksAreMousedOver ? [remark.preSelected = false, clearSavePropositionForLater(), proposition.remarksExpanded = false] : inputs.nothing"
-
-                                   ng-if="((!remark.hiddenForAll && !remark.rejoined && remark[userId] !== 'hidden')|| ((remark.muted && remark.author == userId) || !remark.muted)) && proposition.remarksExpanded"
-                                   ng-class="{'incoming': propToAddAnimate.id === remark.id, 'rejoinanimate': propToRejoinAnimate.id === remark.id, 'remarkhidden': proposition.remarksExpanded && (remark.rejoined || remark[userId] == 'hidden')}"
-                                   class="proposition">
-
-                                 <!-- <i class="fas fa-recycle" ng-click="reloadRemark()" style="font-size: 22px;"></i> -->
-
-                                 <span
-
-                                   
-                                   id="mproposition{{remark.id}}"
-                                   style=""
-                                   ng-style="{ 'border-bottom': remark.colorString}"
-                                   ng-class="{
-                                                   'reviewerprop': remark.type === 'negation',
-
-                                                   'ispresentlybeingdragged': proposition.isPresentlyBeingDragged,
-                                                   'highlight': highlight.id === remark.id,
-                                                   'mark': mark.id === remark.id,
-                                                   'owned-cursor': proposition.author === userId || (proposition.type === 'negation' && proposition.of.author === userId),
-                                                   'textcursor': whatHasBeenClicked == proposition.id,
-                                                   'rejoining': hasRightFocus === proposition.id && !selectedProposition.dialogueSide && proposition.type === 'negation' && proposition.of.author === userId,
-                                                   'updatecursor': this.contentEditable,
-                                                   'cursorpointer': (proposition.type !== 'negation' && proposition.of.author !== userId),
-                                                   'greyedout' : (proposition.hiddenForAll || proposition[userId] === 'hidden' ||
-                                                   (data[0].documentClaimedBy === userId && inputs.propostion !== '' && selectedProposition.id === remark.id) ),
-                                                   'defrejoined' : remark.rejoined
-                                                 }"
-
-                                   ng-enter="[proposition.propositionPreSelected = false, updateProposition(node, paragraph, remark)]"
-                                   ng-mouseover="[blurLightUpLastVisiblePropositionInParagraph(node, paragraph, $event),remark.propositionPreSelected = true, proposition.propositionPreSelected = false, paragraph.disableRightCursor = false, statementHighlight(remark.id)]"
-                                   ng-mouseleave="[remark.propositionPreSelected = false, statementUnHighlight(remark.id)]"
-                                   ng-blur=""
-
-                                   ng-click="
-                                          (whatHasBeenClicked !== remark.id && !cancelListenForDoubleClick && data[0].documentClaimedBy === userId)
-                                                 ? [
-                                                   didItRun(),
-                                                   didItRun(),
-                                                   hideExpandingTextarea(),
-                                                   selectNode(node),
-                                                   selectParagraph(paragraph),
-                                                   selectProposition(remark),
-                                                   selectedParagraph.highlightAll = false,
-                                                   selectedParagraph.markAll = false,
-                                                   clearTopAndBottomHasFocus(),
-                                                   highlight.id = '',
-                                                   selectedProposition.textSide = true,
-                                                   paragraph.topAdd = false,
-                                                   paragraph.bottomAdd = false,
-                                                   paragraph.leftAdd = false,
-                                                   paragraph.disableRightCursor = true,
-                                                   hasRightFocus.id = remark.id,
-                                                   selectedProposition.dialogueSide = false,
-                                                   $event.stopPropagation()
-                                                   ]
-                                                 : inputs.nothing"
-                                   class="proposition-text"
-                                   ng-blur="[focusouteditable(this), paragraph.disableRightCursor = false]"
-                                   ng-mousedown="handleClick($event, remark.id, 'mute')"
-                                   ng-if="proposition.remarksExpanded"
-                                 >
-
-                                   {{remark.text}}
-                                 
-                                 <!--   'reviewerprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy !== userId) && cowsComeHome), -->
-                                 </span>
-                                 <span ng-if="!proposition.remarksExpanded" style="border-bottom: none;">&nbsp;</span> 
-                                 <span style="position:relative; width: 0px; height: 0px;" ng-click="[muteUser(remark.author), $event.stopPropagation()]" ng-if="proposition.remarksExpanded">
-                                   <span id="mute-button" ng-class="{'grow': muteClicked.id}" ng-if="muteClicked.id === proposition.id" style="position: absolute;"><i class="fas fa-volume-mute" aria-hidden="true" oncontextmenu='return false' ng-class="{'halfmuteclicked': halfmuteClicked}" style="padding-left: 5px; display:inline"></i><span style="color: white;" nd-mousedown="halfMuteClicked = !halfMuteClicked" ></span></span>
-                                 </span>
-                                 <!-- ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition != '' ? $event.preventDefault : inputs.nothing" -->
-                                 <span
-
-                                   editable-span-ng-model
-                                   id="m{{remark.id}}"
-                                   style="display: inline;"
-                                   class="right-text right-textarea maininput"
-                                   ng-if="proposition.remarksExpanded && !remark.rejoined"
-                                   ng-class="{
-                                              'authorprop': ((!proposition.leftAdd && selectedProposition.type !== 'blank' && data[0].documentClaimedBy === userId))}"
-                                   ng-click="$event.type === 'click' && data[0].documentClaimedBy === userId ? [assignRightFocus(remark.id, $event), paragraph.disableRightCursor = true, hasRightFocus.id = proposition.id, didItRun() ] : inputs.nothing"
-                                   ng-mouseover="paragraph.disableRightCursor = false"
-                                   ng-model="inputs['remark'+remark.id]"
-                                   ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[remark.id] != '' ? $event.preventDefault() : inputs.nothing;"
-                                   ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId && inputs['remark'+remark.id] != '' ? remarkInputString : 'none'}"
-                                   ng-keyup="
-
-                                       $event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['remark'+remark.id] != '' ? [ $event.preventDefault(), hideZeeky(), prepProposition(inputs['remark'+remark.id], node, paragraph, proposition, $event, 'right')] : inputs.nothing;
-                                       $event.keyCode === 13 && data[0].documentClaimedBy === userId && selectedProposition.dialogueSide != true && inputs['remark'+remark.id] === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing;
-                                       $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['remark'+remark.id] == '' && remark.author === userId ? resetFromEnter() : inputs.nothing;
-                                       (($event.keyCode === 8 && mark.id === remark.id && mark.marked === true && selectedProposition.author === userId) || ($event.keyCode === 8 && inputs['remark'+remark.id] === '' && selectedProposition.type === 'blank') || ($event.keyCode === 8 && inputs['remark'+remark.id] === '' && selectedProposition.type === 'negation' && selectedProposition.of.author === userId && highlight.id === remark.id && highlight.highlit === true)) ? deleteProposition(node, paragraph, proposition, remark, 'remark') : inputs.nothing;
-                                       (inputs['remark'+remark.id] === '' && $event.keyCode === 8 && proposition.type !== 'blank' && !highlight.id) ? highlightProposition(node, paragraph, remark) : inputs.nothing;"
-                                   spellcheck="false"
-                                   contenteditable="true"
-                                   ng-blur="this.contentEditable = true; ">
-                                     </span>
-                                 <!-- {{remark.id}} -->
-                                 <!-- below is the code for carriageReturn -->
-                                 <!--          $event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs.proposition === '' ? [$event.preventDefault(), carriageReturn(node, paragraph)] : inputs.nothing; -->
-
-                                 <!-- Need focus variables for left and right -->
-
-                   <!--               <span class="cursor"
-                                       ng-class="{'visible-cursor': ((remark.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== remark.id)),
-                                                  'invisible-cursor': !remark.preSelected || paragraph.leftMouseOver || paragraph.disableRightCursor || hasRightFocus.id === remark.id}"
-
-                                       ng-click="[selectProposition(proposition), paragraph.disableRightCursor = true, selectedProposition.textSide = true, paragraph.topAdd = false, paragraph.bottomAdd = false, paragraph.leftAdd = false]"
-                                       event-focus="click"
-                                       event-focus-id="{{remark.id}}"
-                                       ng-if="proposition.remarksExpanded">
-
-                                 </span> -->
-                                           <span id="zeekynegation" class="zeekyboogydoog" style="position: relative; bottom: 12px; font-size: 16px; display: none;" ng-if="(inputs.proposition.length > 5 && data[0].isFresh && !paragraph.leftAdd && !paragraph.topAdd && !paragraph.bottomAdd && !minimalStyle) || (data[0].documentClaimedBy !== userName && !onTheBoard && !minimalStyle && inputs.proposition.length > 5)">press
-                                             <span>{{enter}}</span> to commit/send
-                                           </span>
-
-
-
-                                        <!--    Define rules for when zeekyboogydoog appears for remarkers -->
-
-
-
-
-
-                                 <!--           <span class="bibbitybop" style="position: relative; display: none; bottom: 12px; font-size: 16px;" ng-if="inputs.proposition.length > 5 && !isFresh &&  isAlmostFresh && (selectedProposition.id === proposition.id)"> end with a
-                                             <span>{{colon}}</span> to begin a new section
-                                           </span> -->
-                               </li>
-                             </ol>
-                             <!--  remarks end -->
-
-
-                           </li>
-
-                         </ol>
-                       </div>
-                       <div class="bottomparagraphadder"
-                            style="opacity: 0;"
-                            ng-class="{'blackline': checkIfDropValid(node, paragraph, null, 'bottom') , 'isbottomadd': paragraph.bottomMouseOver, 'notisbottomadd': !paragraph.bottomMouseOver}"
-                            ng-mouseover="startBottomParagraphAdderTimer(paragraph)"
-                            ng-mouseleave="!paragraph.bottomMouseOver ? [stopBottomParagraphAdderTimer(paragraph), clearPlaceholder(paragraph)] : inputs.nothing"
-                            ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : [didItRun(), selectParagraph(paragraph),
-                                       selectNode(node), clearTopAndBottomHasFocus(), selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)]"
-                            
-                            ng-if="hasBottomFocus.id !== paragraph.paragraphId && !paragraph.theBlankParagraph && data[0].documentClaimedBy === userId"
-                            id="mbottomadder{{paragraph.paragraphId}}"
-
-                       >
-                       </div>
-                       <div delayed-ng-if="(paragraph.bottomAdd == true && hasBottomFocus.id === paragraph.paragraphId) || (data[0].documentClaimedBy === userId && paragraph.bottomMouseOver && !draggingNode)"
-                            ng-mouseleave="paragraph.bottomMouseOver = false"
-                            delay="200"
-                            class="addparagraph exclude"
-                            style="position: relative; text-indent: 97px; font-weight: 600; padding-bottom: 10.5px; line-height: 30px; opacity: 0;"
-                             editable-span-ng-model
-                             contenteditable="true"
-                             id="m{{paragraph.paragraphId}}"
-                             class="right-textarea right-text authorprop"
-                             placeholder="textarea"
-                             ng-click="(draggingProposition || draggingParagraph) && cancelListenForDoubleClick ? [paragraph.bottomAdd = true, dropItem(node, paragraph, null ,'bottom'), $event.stopPropagation()] : $event.type === 'click' ? [didItRun(), didItRunOk($event), selectParagraph(paragraph),
-                                        selectNode(node), clearTopAndBottomHasFocus(),  selectedParagraph.highlightAll = false, selectedParagraph.markAll = false, clearPropositionInput(), paragraph.bottomMouseOver = false, paragraph.topAdd = false, clearEditable(), clearWithBottomAdder(paragraph)] : inputs.nothing"
-                             ng-model="inputs['bottom'+paragraph.paragraphId]"
-                             ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"
-                             ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs['bottom'+paragraph.paragraphId], node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs['bottom'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
-                             class="texttopic"
-                             spellcheck="false"
-                             style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; ">
-                       </div>
-                      
-                       <div
-                         editable-span-ng-model
-                         ng-if="node.bottomAdd"
-                         ng-model="inputs.newSectionTitle"
-                         ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
-                         id="mlower{{node.nodeId}}"></div>
-                     </li>
-                   </ol>
-                   <div class="bottomnodedropzone"
-                        ng-class="{'nodeblackline': (checkIfDropValid(node, null, null, 'bottomnode') || (node.bottomDropzoneMouseOver && !draggingParagraph && !draggingProposition) && !hasBeenSetUp)}"
-                        ng-if="hasBottomNodeFocus.id !== node.nodeId && (!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true)"
-                        ng-mouseover="node.bottomDropzoneMouseOver = true"
-                        ng-mouseleave="node.bottomDropzoneMouseOver = false"
-                        ng-click="(draggingNode && checkIfDropValid(node, null, null, 'bottomnode')) ? [dropItem(node, null, null, 'bottom')] : (!draggingParagraph && !draggingProposition) ? [clearWithBottomNodeAdder(node), $event.stopPropagation()] : didItRun()"
-                        id="mbottom{{node.nodeId}}"
-                        style="opacity: 0;">
-                   </div>
-                   <!-- There is an issue here with a space being treated like a click and firing getLastVisiblePropInBook
-                   fix it like all the others 7/26/23-->
-                   <div ng-if="(node.bottomDropzoneMouseOver && !draggingNode && !draggingParagraph && !draggingProposition) && ((!node.paragraphs[0].theBlankParagraph || node.paragraphs[0].hiddenForAll == true))"
-                        style="padding-top: 16px; padding-bottom: 40px; position: relative; left: 20px; "
-                        class='addparagraph'>
-                     <div class="proposition">
-                     <span
-                       ng-keyup="$event.keyCode === 13 &&
-                                           selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, prepProposition(inputs.newSectionTitle, node, null, null, $event, 'bottom')] : inputs.nothing;
-                                           (inputs.newSectionTitle === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
-                       contenteditable="true"
-                       editable-span-ng-model
-                       ng-model="inputs.newSectionTitle"
-                       ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
-                       style="text-indent: 25px; background-color: #0C2340; text-indent:100px; color: white;"
-                       class="right-textarea texttopic"
-                       id="m{{bottomNodeAdderId}}"
-                       ></span>
-                       <!-- ng-click="$event.stopPropagation()" -->
-
-                   <!--     <span class="cursor visible-cursor"
-                             ng-if="node.bottomDropzoneMouseOver && hasBottomNodeFocus !== node.nodeId">
-                       </span> -->
-                     </div>
-                   </div>
-
-                   <!-- sub-nodes -->
-                   <!-- <ol ui-tree-nodes
-                       ng-model="node.children"
-                       style="list-style-type: none; list-style: none; padding-left: 10px"
-                       class="angular-ui-tree-nodes">
-                     <li ng-repeat="node in node.children"
-                         ui-tree-node
-                         ng-click="selectNode(node); $event.stopPropagation();"
-                         id="{{node.nodeId}}">
-                       <nd-editor-text-renderer></nd-editor-text-renderer>
-                     </li>
-                   </ol> -->
-
-
-                 </li>
-               </ol>
-             </div>
-             <div style="height: 10px;"
-                  ng-mouseover="mouseOverTextBlurrer()"
-                  ng-mouseleave="mouseLeaveTextBlurrer()"
-                  ng-mousemove="assessDragScrollLower()"
-                  ng-click="blurText()"
-                  id="mtextblurrer"
-                  ng-if="false"
-                  ></div>
-           </div>
-       </div>
 
 
 

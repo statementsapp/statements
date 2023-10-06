@@ -1275,6 +1275,7 @@ li.paragraph .child-div:not(.exclude) {
     /* Set a defined size for the minimap container */
     width: 827px;
     height: 1185px;
+    transform-origin: top left;
     transform: scale(0.25);
 }
 

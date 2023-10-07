@@ -14,7 +14,15 @@
       id="{{'wholemessage'+ message.id}}
       "
     >
-      <!-- style="background-color: {{ message.color }}" -->
+      <!-- 
+
+
+      For getting grey message color for others' assertions
+      ng-style="{ 'background-color': (message.author !== userId && message.type == 'assertion')  ? 'grey' : message.color }" 
+
+
+
+      -->
       <span 
         id="message{{message.id}}"
         
@@ -27,8 +35,7 @@
 
         }"
         class="tree-node tree-node-content remark remarkparagraph speech-bubble"
-        
-        ng-style="{ 'background-color': (message.author !== userId && message.type == 'assertion')  ? 'grey' : message.color }"
+        style="background-color: {{ message.color }}"
         ng-click="[
           (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), selectPropositionById(message.id, selectedProposition), selectedProposition.textSide = false] : inputs.nothing]
         "

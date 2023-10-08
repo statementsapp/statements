@@ -6841,7 +6841,7 @@
 
             ];
 
-            $scope.coinbase = [
+            $scope.coinbase = { authorNumber: 0, sequence: [
               { index: 0, 
                 
                   author: $scope.userId,
@@ -7440,130 +7440,166 @@
                   messaged: false
               
               }, 
-              // { index: 28, 
-               
-              //     author: 'eee',
-              //     text: "Can we make a case based on explicit constitutional rights?",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
-              
-              // },
-              // { index: 29, 
-               
-              //     author: 'fff',
-              //     text: "Please elaborate.",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
-              
-              // },// 
-              // { index: 30, 
-               
-              //     author: 'aaa',
-              //     text: "How else does it matter?",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
-              
-              // },// 
-              // { index: 31, 
-               
-              //     author: 'aaa',
-              //     text: "More to this.",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 27,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
-              
-              // },// 
-              // { index: 32, 
-               
-              //     author: $scope.userId,
-              //     text: '',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 29,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
-              
-              // }, 
-              //
+            ]
+            };
+            
+            
+            $scope.coinbase2 = { authorNumber: 1, sequence: [
+              { index: 0, 
+                
+                  author: '111',
+                  text: 'ARGUMENT:',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
+                  which: 'theBlank',
+                  on: undefined,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 1, 
+                
+                  author: '111',
+                  text: 'The SEC’s shoot-first-and-provide-guidance-never approach threatens the U.S. digital asset industry.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: true
+                
+              },
+              { index: 2, 
+               
+                  author: 'ccc',
+                  text: "Spell it out for us.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 3, 
+                
+                  author: '111',
+                  text: 'The SEC’s decision to regulate digital assets through one-off enforcement actions rather than the ordinary tools of economic regulation is destructive to the digital asset industry and the livelihoods of the millions of people and businesses who rely on digital assets and exchanges.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+                
+              },
+              { index: 4, 
+                
+                  author: '111',
+                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              // { index: 5, 
+                
+              //     author: $scope.userId,
+              //     text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
+              // { index: 6, 
+                
+              //     author: $scope.userId,
+              //     text: 'But the SEC cannot arbitrarily decide whether to drive such a major industry out of the United States.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
+                
+              // },
               // { index: 7, 
                 
-              //     author: 'bbb',
-              //     text: 'Other substances might cause the same effect, or the experiment was run on a faulty control group.',
+              //     author: $scope.userId,
+              //     text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-              //     type: 'negation',
-              //     code: '2A',
+              //     type: 'assertion',
               //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
@@ -7571,7 +7607,7 @@
 
               //     which: 'item',
               //     on: 6,
-              //     its: 'self',
+              //     its: 'bottom',
               //     typeTime: 3000,
               //     noClick: false, 
               //     action: 'proposition'
@@ -7579,34 +7615,13 @@
               // },
               // { index: 8, 
                
-              //     author: 'ccc',
-              //     text: 'Mustard agents of any kind cannot have therapeutic value.',
+              //     author: 'aaa',
+              //     text: "Can we provide an initial reason to move for judgment, perhaps related to secondary contracts being misclassified?",
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
               //     type: 'negation',
               //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 6,
-              //     its: 'self',
-              //     typeTime: 5000,
-              //     noClick: false, 
-              //     action: 'proposition'
-              
-              // },
-              // { index: 9, 
-               
-              //     author: $scope.userId,
-              //     text: 'A review of other substances shows this leucopenia is exceptional, and the same results were found in subsequent animal trials.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-                  
               //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
@@ -7621,39 +7636,58 @@
               //     messaged: true
               
               // },
-              // { index: 10, 
-               
+              // { index: 9, 
+                
               //     author: $scope.userId,
-              //     text: 'Victims exposed to an accidental release of sulphur mustard showed the same leucopenia as was observed in animals.',
+              //     text: 'The SEC’s claim that certain digital assets subject to secondary sales on Coinbase’s platform are “investment contracts” under the securities laws is baseless.',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-                  
+              //     type: 'assertion',
               //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               //     // of: (prep.of ? prep.of : undefined),
-                  
+
               //     which: 'item',
-              //     on: 9,
-              //     its: 'bottom',
+              //     on: 8,
+              //     its: 'self',
               //     typeTime: 3000,
               //     noClick: false, 
               //     action: 'proposition',
-              //     onBlank: true
-              
+                
               // },
-              // { index: 11, 
-               
-              //     author: 'ccc',
-              //     text: 'Sulphur mustard is known to cause unacceptable damage to the body as demonstrated in the trenches of the Western Front during the First World War.',
+              // { index: 10, 
+                
+              //     author: $scope.userId,
+              //     text: 'The longstanding Howey test for determining whether something is an “investment contract,” and thus a security, makes clear that any individual digital asset is no more a security than an orange in an orange grove.',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-                  
+              //     type: 'assertion',
               //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+                
+              // },
+              // { index: 11, 
+               
+              //     author: 'aaa',
+              //     text: "And how exactly is cryptocurrency like an orange?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
               //     type: 'negation',
               //     code: '2A',
+              //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               //     // of: (prep.of ? prep.of : undefined),
@@ -7664,16 +7698,16 @@
               //     typeTime: 3000,
               //     noClick: false, 
               //     action: 'proposition',
+              //     messaged: true
               
               // },
-              // { index:12, 
+              // { index: 12, 
                
               //     author: $scope.userId,
-              //     text: 'People exposed to a release of sulphur mustard during the Second World War showed suppression of their lymphatic systems.',
+              //     text: 'In some circumstances—not at issue here—digital assets can be the subject of an investment contract, but that is all.',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-                  
               //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
@@ -7685,34 +7719,12 @@
               //     typeTime: 3000,
               //     noClick: false, 
               //     action: 'proposition',
-              //     messaged: true
               
-              // },
-              // { index:13, 
-               
-              //     author: $scope.userId,
-              //     text: 'This might indicate a role for sulphur mustard in the treatment of lymphoma.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-                  
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
-                  
-              //     which: 'item',
-              //     on: 12,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              
-              // },
-              // { index: 14, 
+              // }, // 
+              // { index: 13, 
                 
               //     author: $scope.userId,
-              //     text: 'Experiments',
+              //     text: 'A recent ruling in this district confirms that while it is possible for a digital asset to be a part of an “investment contract,” the digital assets themselves are not securities.',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
@@ -7722,22 +7734,44 @@
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               //     // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'node',
+              //     which: 'item',
+              //     on: 12,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+                
+              // },
+              // { index: 14, 
+               
+              //     author: 'aaa',
+              //     text: "Which?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
               //     on: 13,
               //     its: 'self',
               //     typeTime: 3000,
               //     noClick: false, 
-              //     action: 'proposition'
-                
+              //     action: 'proposition',
+              //     messaged: true
+              
               // },
-              // { index:15, 
+              // { index: 15, 
                
               //     author: $scope.userId,
-              //     text: 'Mice with lymphoma were exposed to nitrogen mustard.',
+              //     text: 'See SEC v. Ripple Labs, Inc., 2023 WL 4507900 (S.D.N.Y. July 13, 2023).',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-                  
               //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
@@ -7749,20 +7783,16 @@
               //     typeTime: 3000,
               //     noClick: false, 
               //     action: 'proposition',
-              //     onBlank: true
               
-              // },
+              // }, 
               // { index: 16, 
                
-              //     author: 'ddd',
-              //     text: "We might expect a deterioration in the test subjects' condition.",
+              //     author: $scope.userId,
+              //     text: 'The subsequent decision in SEC v. Terraform Labs Pte. Ltd., 2023 WL 4858299 (S.D.N.Y. July 31, 2023), is consistent with this premise; Terraform recognized that a digital asset itself is not an “investment contract,” concluding only that the digital assets at issue were the subject of an “investment contract.” Id. at *12.',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-                  
               //     dialogueSide: false,
-              //     type: 'negation',
-              //     code: '2A',
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
               //     // of: (prep.of ? prep.of : undefined),
@@ -7774,15 +7804,16 @@
               //     noClick: false, 
               //     action: 'proposition',
               
-              // },
-              // { index:17, 
+              // }, 
+              // { index: 17, 
                
-              //     author: $scope.userId,
-              //     text: 'Rapid regression of tumors occurred, with less of an effect each subsequent administration.',
+              //     author: 'aaa',
+              //     text: "What is at stake here?",
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-                  
+              //     type: 'negation',
+              //     code: '2A',
               //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
@@ -7795,16 +7826,15 @@
               //     noClick: false, 
               //     action: 'proposition',
               //     messaged: true
-                  
+              
               // },
-              // { index:18, 
+              // { index: 18, 
                
               //     author: $scope.userId,
-              //     text: 'The mice lived an unusually long time versus experimental controls.',
+              //     text: 'It is important to keep view of what is at stake.',
               //     dialogueText: function() {
               //                     return this.text;
               //                   },
-                  
               //     dialogueSide: false,
               //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
               //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
@@ -7816,8 +7846,220 @@
               //     typeTime: 3000,
               //     noClick: false, 
               //     action: 'proposition',
+              //     messaged: true
+              
+              // }, 
+              // { index: 19, 
+               
+              //     author: 'aaa',
+              //     text: "And that is?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 18,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
               // },
-            ];
+              // { index: 20, 
+               
+              //     author: $scope.userId,
+              //     text: 'Digital assets represent a significant segment of the global economy and an integral part of the American financial system.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 19,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
+              
+              // }, 
+              // { index: 21, 
+               
+              //     author: 'bbb',
+              //     text: "Would the size of the cryptocurrency industry be a legal for the SEC not to regulate it?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 20,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 22, 
+               
+              //     author: 'ccc',
+              //     text: "Provide an argument from public utility.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 20,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },// This is not just about speculative or institutional trading— millions of Americans use digital assets for everyday financial transactions.
+              // { index: 23, 
+               
+              //     author: $scope.userId,
+              //     text: 'This is not just about speculative or institutional trading—millions of Americans use digital assets for everyday financial transactions.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 22,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
+              
+              // }, 
+              // { index: 24, 
+               
+              //     author: 'ccc',
+              //     text: "The SEC feels a need to regulate according to how it interprets its own enabling statute",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 23,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },
+              // { index: 25, 
+               
+              //     author: 'ddd',
+              //     text: "Show the importance of crypto as money.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 23,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },// 
+              // { index: 26, 
+               
+              //     author: 'eee',
+              //     text: "What about an antiquarian discussion of gold and silver-backed currency?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 23,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
+              
+              // },// 
+              // { index: 27, 
+               
+              //     author: $scope.userId,
+              //     text: 'The SEC’s regulation-by-enforcement approach is not only detrimental to the industry, it also directly impacts individual Americans who use digital assets.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
+                  
+              //     which: 'item',
+              //     on: 25,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
+              
+              // }, 
+            ]
+            };
+
+
+
+
+
+
+
+
 
             $scope.nodeAdd = [
               { index: 0, 
@@ -9427,7 +9669,9 @@
 
 
 
-            $scope.simulateUser(0);
+            $scope.simulateUser(0, $scope.coinbase);
+            $scope.simulateUser(0, $scope.coinbase2);
+            // $scope.simulateUser(0, $scope.coinbase3);
           
           
         }, 5000);
@@ -9660,10 +9904,10 @@
 
 
         // Simulating a user
-        $scope.simulateUser = function(index) {
+        $scope.simulateUser = function(index, script) {
           // simulate script
           // if (index > 0 && $scope.preDefinedPoints[index-1])
-          var theStep = $scope.preDefinedPoints[index];
+          var theStep = script[index];
           // console.log("The step: ", theStep)
           var theOn = theStep.on;
           var theOnText = theStep.text;
@@ -9676,7 +9920,7 @@
           }
           if (theStep.action ==='proposition'){
             console.log("It's a prop")
-            if (theStep.author === $scope.data[0].documentClaimedBy){
+            if (theStep.author === $scope.userId){
               if (theStep.which === 'theBlank'){
                 for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
                   for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
@@ -9690,7 +9934,7 @@
                   }
                 }
                 setTimeout(function () {
-                  populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+                  populateElementWithText( script[index].text,thisHereId, null, null, theStep, script)
                 }, 2000);
                 
               } else if (theStep.which === 'aBlank'){
@@ -9699,7 +9943,7 @@
                   // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                   // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === $scope.preDefinedPoints[theOn].text.slice(0, 11)){
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script[theOn].text.slice(0, 11)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {
@@ -9709,7 +9953,7 @@
                   }
                 }
                 setTimeout(function () {
-                  populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+                  populateElementWithText( script[index].text,thisHereId, null, null, theStep, script)
                 }, 2000);
                 
               } else if (theStep.which === 'node'){
@@ -9719,10 +9963,10 @@
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         console.log("H-I-J: ", h, " ", i, " ", j)
                         if ( (!hasAJ &&
-                          $scope.preDefinedPoints[theOn].text.slice(0,11) === 
+                          script[theOn].text.slice(0,11) === 
                           $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                            (!hasAJ &&
-                          $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                          script[theOn].text.slice(0, 11) === 
                           $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                             var thisH = angular.copy(h)
                             var thisI = angular.copy(i)
@@ -9743,7 +9987,7 @@
                   // populate with text
                   setTimeout(function () {
                     console.log("Element inside: ", document.getElementById($scope.bottomNodeAdderId))
-                    populateElementWithText( $scope.preDefinedPoints[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep)
+                    populateElementWithText( script[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep, script)
                   }, 2000);
 
 
@@ -9753,10 +9997,10 @@
                         for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                           console.log("H-I-J: ", h, " ", i, " ", j)
                           if ( (!hasAJ &&
-                            $scope.preDefinedPoints[theOn].text.slice(0,11) === 
+                            script[theOn].text.slice(0,11) === 
                             $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                              (!hasAJ &&
-                            $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                            script[theOn].text.slice(0, 11) === 
                             $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                               var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;    
                               var thisH = angular.copy(h)
@@ -9772,7 +10016,7 @@
                       }
                     }
                   setTimeout(function () {
-                    populateElementWithText( $scope.preDefinedPoints[index].text,thisHereId, null, true, theStep)
+                    populateElementWithText( script[index].text,thisHereId, null, true, theStep, script)
                   }, 2000);
                 }
 
@@ -9787,7 +10031,7 @@
                      
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                         if (!hasAK &&
-                        $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                        script[theOn].text.slice(0, 11) === 
                         $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
                           
                           var thisH = angular.copy(h)
@@ -9809,7 +10053,7 @@
 
                               setTimeout(function () {
                                 $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
-                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
+                                populateElementWithText(script[index].text,thisHereId, true, null, theStep, script)
                                 console.log("The this here id: ", angular.copy(thisHereId))
                                 console.log("The currently selected prop: ", angular.copy($scope.selectedProposition.text))
                                 // break;
@@ -9837,7 +10081,7 @@
                               setTimeout(function () {
                                 console.log("Now the selected node is: ", angular.copy($scope.selectedNode.nodeId))
                                 $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
-                                populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, null, null, theStep)
+                                populateElementWithText(script[index].text,thisHereId, null, null, theStep, script)
                                 
                                 
                               }, 2000);
@@ -9866,9 +10110,9 @@
                 console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
-                  console.log("That points on: ", $scope.preDefinedPoints[theOn].text.slice(0, 11))
+                  console.log("That points on: ", script[theOn].text.slice(0, 11))
                   console.log("That nodes blank: ", theStep.onBlank)
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === $scope.preDefinedPoints[theOn].text.slice(0, 11) &&
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script[theOn].text.slice(0, 11) &&
                     theStep.onBlank){
                     console.log("Normal blank")
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -9894,7 +10138,7 @@
                       document.getElementById('proposition'+thisHereId).click();
                     }, 20);
                     setTimeout(function () {
-                      populateElementWithText($scope.preDefinedPoints[index].text,thisHereId,null, null, theStep)
+                      populateElementWithText(script[index].text,thisHereId,null, null, theStep, script)
                     
                       
                     }, 2000);
@@ -9905,13 +10149,13 @@
                     
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("H-I-J: ", h, " ", i, " ", j)
-                      console.log("First: ", $scope.preDefinedPoints[theOn].text.slice(0, 11))
+                      console.log("First: ", script[theOn].text.slice(0, 11))
                       console.log("Second ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
                       if ( (!hasAJ &&
-                      $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                      script[theOn].text.slice(0, 11) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                         (!hasAJ &&
-                      $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                      script[theOn].text.slice(0, 11) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         
@@ -9939,8 +10183,8 @@
                           
                           // $scope.$apply(function () {
                             setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text, 
-                                'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep)
+                              populateElementWithText(script[index].text, 
+                                'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script)
                              
                             }, 2000);
                           // });
@@ -10119,9 +10363,35 @@
                     }
                   }
                 }          
+              } else {
+
               }   
             }   
           } else if (theStep.action ==='proposition') {
+            for (var h = 0; h < $scope.data[0].nodes.length; h++){
+              
+              for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+               
+                for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                  
+                  for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
+                   
+                    if (
+                    script[theOn].text.slice(0, 11) === 
+                    $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
+                      var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
+                      console.log("About to other author prop")
+                      $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
+                      $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
+                      null, null, theStep.author, theCode);
+
+
+                      break;
+                    }
+                  }
+                }
+              }
+            } 
             //
           }
         }     
@@ -10133,7 +10403,7 @@
         function createAutomatedPayload(previousPayload, prepId) {
           console.log("Previous payload: ", previousPayload)
           // Find the pre-determined values for the current pre-defined point
-            const preDeterminedValues = $scope.preDefinedPoints.find(point => point.index === $scope.userActions.length).payloadData;
+            const preDeterminedValues = script.find(point => point.index === $scope.userActions.length).payloadData;
             console.log("Predetermined values: ", preDeterminedValues)
             // Extract the required information from the previous payload
             const topic = previousPayload.topic;

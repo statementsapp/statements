@@ -5850,7 +5850,7 @@
           $scope.draggedProposition = {};
           //
         }
-        console.log("User actions after incoming prop: ", $scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript])
+        console.log("User actions after incoming prop: ", $scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].length)
         $scope.clearAnimationClass();
       });
 

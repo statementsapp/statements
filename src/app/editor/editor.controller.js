@@ -9672,7 +9672,7 @@
               // $scope.preDefinedPoints = $scope.dawnOfChemotherapy;
               // $scope.preDefinedPoints = $scope.toyota;
               // $scope.preDefinedPoints = $scope.listOfLethalities;
-              $scope.preDefinedPoints = $scope.coinbase;
+              // $scope.preDefinedPoints = $scope.coinbase;
               // $scope.preDefinedPoints = $scope.nodeAdd;
 
 
@@ -9914,6 +9914,7 @@
 
         // Simulating a user
         $scope.simulateUser = function(index, script) {
+          console.log("A simulate user. Index: ", index, " Script: ", script)
           // simulate script
           // if (index > 0 && $scope.preDefinedPoints[index-1])
           var theStep = script.sequence[index];

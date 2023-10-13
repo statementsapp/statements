@@ -5790,15 +5790,24 @@
           });
         }, 35);
         
-        function isDefinedPoint(thisPointIndex) {
+        function isDefinedPoint(thisPointIndex, script) {
           console.log("Is defined point eh")
-          return $scope.preDefinedPoints.some(point => point.index === thisPointIndex);
+          return script.sequence[thisPointIndex].some(point => point.index === thisPointIndex);
         }
 
 
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
-          $scope.userActions.push(payload);
+
+          for (var i = 0; i < $scope.allTheScripts.length; i++){
+            if ($scope.allTheScripts[i].authorNumber === payload.authorNumber){
+              $scope.allTheScripts[i].stack.push(payload)
+              var whichScript = angular.copy(i)
+              break;
+            }
+          }
+
+          // $scope.userActions.push(payload);
           console.log("User actions length: ", $scope.userActions.length)
           if (isDefinedPoint($scope.userActions.length)) {
             // console.log("About to simulate user")
@@ -5806,7 +5815,7 @@
               setTimeout(function () {
                 $scope.$apply(function () {
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
-                  $scope.simulateUser(angular.copy($scope.userActions.length))
+                  $scope.simulateUser($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].sequence.length])
                 });
               }, 35);
             } else {
@@ -5815,7 +5824,7 @@
                 $scope.$apply(function () {
                   // console.log("Firing sim user fcn")
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
-                  $scope.simulateUser(angular.copy($scope.userActions.length))
+                  $scope.simulateUser($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].sequence.length])
                 });
               }, 2000);
             }
@@ -5841,7 +5850,7 @@
           $scope.draggedProposition = {};
           //
         }
-        console.log("User actions after incoming prop: ", $scope.userActions)
+        console.log("User actions after incoming prop: ", $scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript])
         $scope.clearAnimationClass();
       });
 
@@ -6841,7 +6850,7 @@
 
             ];
 
-            $scope.coinbase = { authorNumber: 0, sequence: [
+            $scope.coinbase = { authorNumber: 0, stack: [], sequence: [
               { index: 0, 
                 
                   author: $scope.userId,
@@ -7444,7 +7453,7 @@
             };
             
             
-            $scope.coinbase2 = { authorNumber: 1, sequence: [
+            $scope.coinbase2 = { authorNumber: 1, stack: [], sequence: [
               { index: 0, 
                 
                   author: '111',
@@ -8053,7 +8062,7 @@
             ]
             };
 
-
+            $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2]
 
 
 
@@ -9907,7 +9916,7 @@
         $scope.simulateUser = function(index, script) {
           // simulate script
           // if (index > 0 && $scope.preDefinedPoints[index-1])
-          var theStep = script[index];
+          var theStep = script.sequence[index];
           // console.log("The step: ", theStep)
           var theOn = theStep.on;
           var theOnText = theStep.text;
@@ -9934,7 +9943,7 @@
                   }
                 }
                 setTimeout(function () {
-                  populateElementWithText( script[index].text,thisHereId, null, null, theStep, script)
+                  populateElementWithText( script.sequence[index].text,thisHereId, null, null, theStep, script)
                 }, 2000);
                 
               } else if (theStep.which === 'aBlank'){
@@ -9943,7 +9952,7 @@
                   // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                   // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script[theOn].text.slice(0, 11)){
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {
@@ -9953,7 +9962,7 @@
                   }
                 }
                 setTimeout(function () {
-                  populateElementWithText( script[index].text,thisHereId, null, null, theStep, script)
+                  populateElementWithText( script.sequence[index].text,thisHereId, null, null, theStep, script)
                 }, 2000);
                 
               } else if (theStep.which === 'node'){
@@ -9963,10 +9972,10 @@
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         console.log("H-I-J: ", h, " ", i, " ", j)
                         if ( (!hasAJ &&
-                          script[theOn].text.slice(0,11) === 
+                          script.sequence[theOn].text.slice(0,11) === 
                           $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                            (!hasAJ &&
-                          script[theOn].text.slice(0, 11) === 
+                          script.sequence[theOn].text.slice(0, 11) === 
                           $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                             var thisH = angular.copy(h)
                             var thisI = angular.copy(i)
@@ -9987,7 +9996,7 @@
                   // populate with text
                   setTimeout(function () {
                     console.log("Element inside: ", document.getElementById($scope.bottomNodeAdderId))
-                    populateElementWithText( script[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep, script)
+                    populateElementWithText( script.sequence[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep, script)
                   }, 2000);
 
 
@@ -9997,10 +10006,10 @@
                         for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                           console.log("H-I-J: ", h, " ", i, " ", j)
                           if ( (!hasAJ &&
-                            script[theOn].text.slice(0,11) === 
+                            script.sequence[theOn].text.slice(0,11) === 
                             $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                              (!hasAJ &&
-                            script[theOn].text.slice(0, 11) === 
+                            script.sequence[theOn].text.slice(0, 11) === 
                             $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                               var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;    
                               var thisH = angular.copy(h)
@@ -10016,7 +10025,7 @@
                       }
                     }
                   setTimeout(function () {
-                    populateElementWithText( script[index].text,thisHereId, null, true, theStep, script)
+                    populateElementWithText( script.sequence[index].text,thisHereId, null, true, theStep, script)
                   }, 2000);
                 }
 
@@ -10031,7 +10040,7 @@
                      
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                         if (!hasAK &&
-                        script[theOn].text.slice(0, 11) === 
+                        script.sequence[theOn].text.slice(0, 11) === 
                         $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
                           
                           var thisH = angular.copy(h)
@@ -10053,7 +10062,7 @@
 
                               setTimeout(function () {
                                 $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
-                                populateElementWithText(script[index].text,thisHereId, true, null, theStep, script)
+                                populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script)
                                 console.log("The this here id: ", angular.copy(thisHereId))
                                 console.log("The currently selected prop: ", angular.copy($scope.selectedProposition.text))
                                 // break;
@@ -10081,7 +10090,7 @@
                               setTimeout(function () {
                                 console.log("Now the selected node is: ", angular.copy($scope.selectedNode.nodeId))
                                 $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
-                                populateElementWithText(script[index].text,thisHereId, null, null, theStep, script)
+                                populateElementWithText(script.sequence[index].text,thisHereId, null, null, theStep, script)
                                 
                                 
                               }, 2000);
@@ -10110,9 +10119,9 @@
                 console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
-                  console.log("That points on: ", script[theOn].text.slice(0, 11))
+                  console.log("That points on: ", script.sequence[theOn].text.slice(0, 11))
                   console.log("That nodes blank: ", theStep.onBlank)
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script[theOn].text.slice(0, 11) &&
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11) &&
                     theStep.onBlank){
                     console.log("Normal blank")
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -10138,7 +10147,7 @@
                       document.getElementById('proposition'+thisHereId).click();
                     }, 20);
                     setTimeout(function () {
-                      populateElementWithText(script[index].text,thisHereId,null, null, theStep, script)
+                      populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script)
                     
                       
                     }, 2000);
@@ -10149,13 +10158,13 @@
                     
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("H-I-J: ", h, " ", i, " ", j)
-                      console.log("First: ", script[theOn].text.slice(0, 11))
+                      console.log("First: ", script.sequence[theOn].text.slice(0, 11))
                       console.log("Second ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
                       if ( (!hasAJ &&
-                      script[theOn].text.slice(0, 11) === 
+                      script.sequence[theOn].text.slice(0, 11) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
                         (!hasAJ &&
-                      script[theOn].text.slice(0, 11) === 
+                      script.sequence[theOn].text.slice(0, 11) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         
@@ -10183,7 +10192,7 @@
                           
                           // $scope.$apply(function () {
                             setTimeout(function () {
-                              populateElementWithText(script[index].text, 
+                              populateElementWithText(script.sequence[index].text, 
                                 'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script)
                              
                             }, 2000);
@@ -10236,7 +10245,7 @@
 
                           // $scope.$apply(function () {
                             setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep)
+                              populateElementWithText(script.sequence[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep)
                              
 
                             }, 2000);
@@ -10252,7 +10261,7 @@
                             }, 20);
 
                             setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId, true, null, theStep)
+                              populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep)
                               
                               // break;
                             }, 2000);
@@ -10274,7 +10283,7 @@
                               document.getElementById('proposition'+thisHereId).click();
                             }, 20);
                             setTimeout(function () {
-                              populateElementWithText($scope.preDefinedPoints[index].text,thisHereId,null, null, theStep)
+                              populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep)
                             
                               
                             }, 2000);
@@ -10323,7 +10332,7 @@
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                    
                       if (
-                      $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                      script.sequence[theOn].text.slice(0, 11) === 
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         console.log("About to reviewer prop")
@@ -10348,7 +10357,7 @@
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                        
                         if (
-                        $scope.preDefinedPoints[theOn].text.slice(0, 11) === 
+                        script.sequence[theOn].text.slice(0, 11) === 
                         $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
                           console.log("About to 2b prop")
@@ -10377,7 +10386,7 @@
                   for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                    
                     if (
-                    script[theOn].text.slice(0, 11) === 
+                    script.sequence[theOn].text.slice(0, 11) === 
                     $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
                       var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
                       console.log("About to other author prop")

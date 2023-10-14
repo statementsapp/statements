@@ -5808,7 +5808,6 @@
           }
 
           // $scope.userActions.push(payload);
-          $scope.allTheScripts[i].stack.push(payload)
           
           if (isDefinedPoint($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript].sequence)) {
             // console.log("About to simulate user")

@@ -2535,8 +2535,8 @@
           var relY = event.pageY - $('#propositionsol' + id).offset().top;
       }
 
-      $scope.getPropReading = function (event, proposition) {
-        if ($scope.userId !== $scope.data[0].documentClaimedBy){
+      $scope.getPropReading = function (event, proposition, node) {
+        if ($scope.userId !== node.sectionClaimedBy || $scope.hasBeenSetUp){
           return;
         }
         var relX = event.pageX - $('#wholeprop' + proposition.id).offset().left;

@@ -3469,7 +3469,7 @@
 
 
 
-      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode ) {
+      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber ) {
         
         console.log("Input: ", angular.copy(input))
 
@@ -4078,6 +4078,7 @@
         
 
         prep.payload = {
+          authorNumber: authorNumber ? authorNumber : undefined,
           author: prep.author ? prep.author : $scope.userId,
           text: prep.adjustedText,
           dialogueText: angular.copy(prep.adjustedText),
@@ -9704,7 +9705,7 @@
 
 
 
-        function populateElementWithText(text, id, messageFlag, nodeFlag, theStep) {
+        function populateElementWithText(text, id, messageFlag, nodeFlag, theStep, authorNumber) {
           console.log("Id populating: ", id)
           if (!messageFlag){
             var element = document.getElementById(id);
@@ -9945,7 +9946,7 @@
                   }
                 }
                 setTimeout(function () {
-                  populateElementWithText( script.sequence[index].text,thisHereId, null, null, theStep, script)
+                  populateElementWithText( script.sequence[index].text,thisHereId, null, null, theStep, script.authorNumber)
                 }, 2000);
                 
               } else if (theStep.which === 'aBlank'){
@@ -9964,7 +9965,7 @@
                   }
                 }
                 setTimeout(function () {
-                  populateElementWithText( script.sequence[index].text,thisHereId, null, null, theStep, script)
+                  populateElementWithText( script.sequence[index].text,thisHereId, null, null, theStep, script.authorNumber)
                 }, 2000);
                 
               } else if (theStep.which === 'node'){
@@ -9998,7 +9999,7 @@
                   // populate with text
                   setTimeout(function () {
                     console.log("Element inside: ", document.getElementById($scope.bottomNodeAdderId))
-                    populateElementWithText( script.sequence[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep, script)
+                    populateElementWithText( script.sequence[index].text,angular.copy($scope.bottomNodeAdderId), null, true, theStep, script.authorNumber)
                   }, 2000);
 
 
@@ -10027,7 +10028,7 @@
                       }
                     }
                   setTimeout(function () {
-                    populateElementWithText( script.sequence[index].text,thisHereId, null, true, theStep, script)
+                    populateElementWithText( script.sequence[index].text,thisHereId, null, true, theStep, script.authorNumber)
                   }, 2000);
                 }
 
@@ -10064,7 +10065,7 @@
 
                               setTimeout(function () {
                                 $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
-                                populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script)
+                                populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script.authorNumber)
                                 console.log("The this here id: ", angular.copy(thisHereId))
                                 console.log("The currently selected prop: ", angular.copy($scope.selectedProposition.text))
                                 // break;
@@ -10092,7 +10093,7 @@
                               setTimeout(function () {
                                 console.log("Now the selected node is: ", angular.copy($scope.selectedNode.nodeId))
                                 $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
-                                populateElementWithText(script.sequence[index].text,thisHereId, null, null, theStep, script)
+                                populateElementWithText(script.sequence[index].text,thisHereId, null, null, theStep, script.authorNumber)
                                 
                                 
                               }, 2000);
@@ -10149,7 +10150,7 @@
                       document.getElementById('proposition'+thisHereId).click();
                     }, 20);
                     setTimeout(function () {
-                      populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script)
+                      populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
                     
                       
                     }, 2000);
@@ -10216,7 +10217,7 @@
                           // $scope.$apply(function () {
                             setTimeout(function () {
                               console.log("III")
-                              populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep)
+                              populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script.authorNumber)
                            
 
                             }, 2000);
@@ -10247,7 +10248,7 @@
 
                           // $scope.$apply(function () {
                             setTimeout(function () {
-                              populateElementWithText(script.sequence[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep)
+                              populateElementWithText(script.sequence[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep, script.authorNumber)
                              
 
                             }, 2000);
@@ -10263,7 +10264,7 @@
                             }, 20);
 
                             setTimeout(function () {
-                              populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep)
+                              populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script.authorNumber)
                               
                               // break;
                             }, 2000);
@@ -10285,7 +10286,7 @@
                               document.getElementById('proposition'+thisHereId).click();
                             }, 20);
                             setTimeout(function () {
-                              populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep)
+                              populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
                             
                               
                             }, 2000);
@@ -10341,7 +10342,7 @@
                         console.log("About to reviewer prop")
                         $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                         $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
-                        null, null, theStep.author, theCode);
+                        null, null, theStep.author, theCode, script.authorNumber);
 
 
                         break;
@@ -10366,7 +10367,7 @@
                           console.log("About to 2b prop")
                           $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                           $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
-                          null, null, theStep.author, theCode);
+                          null, null, theStep.author, theCode, script.authorNumber);
 
 
                           break;
@@ -10395,7 +10396,7 @@
                       console.log("About to other author prop")
                       $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                       $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
-                      null, null, theStep.author, theCode);
+                      null, null, theStep.author, theCode, script.authorNumber);
 
 
                       break;

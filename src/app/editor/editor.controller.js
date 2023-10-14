@@ -5794,6 +5794,9 @@
         
         function isDefinedPoint(thisPointIndex, script) {
           console.log("Is defined point eh")
+          console.log("This point index: ", thisPointIndex)
+          console.log("Script: ", script)
+
           return script.sequence[thisPointIndex].some(point => point.index === thisPointIndex);
         }
 

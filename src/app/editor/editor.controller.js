@@ -5800,7 +5800,7 @@
 
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
-          if (payload.authorNumber){
+          if (payload.authorNumber || payload.authorNumber == 0){
             console.log("Payload author number: ", payload.authorNumber)
           } else {
             console.log("No payload author number")

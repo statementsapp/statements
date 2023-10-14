@@ -5797,7 +5797,7 @@
           console.log("This point index: ", thisPointIndex)
           console.log("Script: ", script)
 
-          return script.sequence[thisPointIndex].some(point => point.index === thisPointIndex);
+          return script.[thisPointIndex].some(point => point.index === thisPointIndex);
         }
 
 

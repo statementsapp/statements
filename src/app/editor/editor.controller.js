@@ -9929,7 +9929,7 @@
             }, 0);
           }
           if (theStep.action ==='proposition'){
-            console.log("It's a prop")
+            console.log("It's a prop: ", theStep.text)
             if (theStep.author === $scope.userId){
               if (theStep.which === 'theBlank'){
                 for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){

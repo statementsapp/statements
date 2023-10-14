@@ -5808,10 +5808,10 @@
           }
 
           // $scope.userActions.push(payload);
-          console.log("User actions length: ", $scope.userActions.length)
-          if (isDefinedPoint($scope.userActions.length)) {
+          
+          if (isDefinedPoint($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript].sequence)) {
             // console.log("About to simulate user")
-            if ($scope.preDefinedPoints[$scope.userActions.length].author === $scope.userId){
+            if ($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length].author === $scope.userId){
               setTimeout(function () {
                 $scope.$apply(function () {
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)

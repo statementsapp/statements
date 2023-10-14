@@ -9799,13 +9799,13 @@
                     clearInterval(intervalId);
                     console.log("ABOUT TO TOP PRESS")
                     console.log("SELECTED NODE HERE: ", $scope.selectedNode.nodeId)
-                    simulateReturnKeyPress(element, text);
+                    simulateReturnKeyPress(element, text, authorNumber);
                    }, 10);
                 } else {
                   setTimeout(function () {
                     clearInterval(intervalId);
                     console.log("ABOUT TO BOTTOM PRESS")
-                    simulateReturnKeyPress(element, text+':');
+                    simulateReturnKeyPress(element, text+':', authorNumber);
                    }, 10);
                 }
                 
@@ -9837,6 +9837,7 @@
               event.key = 'Enter';
               event.keyCode = 13;
               event.which = 13;
+              event.authorNumber = authorNumber;
               $scope.temporaryText = text;
 
             $scope.$apply(function () {

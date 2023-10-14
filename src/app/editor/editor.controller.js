@@ -9931,6 +9931,7 @@
           if (theStep.action ==='proposition'){
             console.log("It's a prop: ", theStep.text)
             if (theStep.author === $scope.userId){
+              console.log("userid prop: ", theStep.text)
               if (theStep.which === 'theBlank'){
                 for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
                   for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
@@ -10321,7 +10322,8 @@
                 
               }
             } else {
-              console.log("Reviewer prop")
+              
+              console.log("Reviewer prop: ", theStep.text)
               // reviewer propositions
               var theCode = theStep.code;
               if (theCode === '2A'){

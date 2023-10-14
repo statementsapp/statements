@@ -5799,7 +5799,12 @@
 
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
-
+          if (payload.authorNumber){
+            console.log("Payload author number: ", payload.authorNumber)
+          } else {
+            console.log("No payload author number")
+          }
+          
           for (var i = 0; i < $scope.allTheScripts.length; i++){
             if ($scope.allTheScripts[i].authorNumber === payload.authorNumber){
               $scope.allTheScripts[i].stack.push(payload)

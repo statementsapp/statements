@@ -73,7 +73,7 @@
           ng-model="inputs.chatProposition"
           class="chatinput dialogueinput thread speech-bubble sent"
           id="input{{message.id}}"
-          ng-keyup="$event.keyCode === 13 && inputs.chatProposition !== '' ? [prepProposition(inputs.chatProposition, null, null, null, null), inputs.chatProposition = '', inputs.messageselected = false] : inputs.nothing"
+          ng-keyup="$event.keyCode === 13 && inputs.chatProposition !== '' ? [prepProposition(inputs.chatProposition, null, null, null, null, null, null, $event.authorNumber), inputs.chatProposition = '', inputs.messageselected = false] : inputs.nothing"
           ng-style="{ 'background': data[0].documentClaimedBy === userId ? '#f0f0f0' : userColor ? userColor : otherPastels[data[0].authorTable.length-1] }"
           ng-class="{
             'alignright': (message.type === 'assertion' || message.type === 'rejoinder') && message.author !== userId && cowsComeHome,

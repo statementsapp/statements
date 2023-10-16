@@ -4480,7 +4480,8 @@
                       ],
                     }
                 }
-
+                console.log("User id: ", $scope.userId)
+                console.log("Payload author: ", payload.author)
                 if (!payload.draggedNode.nodeId && payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
                       console.log("FIRSTY")

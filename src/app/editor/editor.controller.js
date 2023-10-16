@@ -10400,8 +10400,8 @@
                       if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
                         // var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j];
                         console.log("About to other author theblank")
-                        $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
-                        $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[0].paragraphs[i].propositions[j], 
+                        $scope.prepProposition(theStep.text, $scope.data[0].nodes[0], 
+                        $scope.data[0].nodes[0].paragraphs[i], $scope.data[0].nodes[0].paragraphs[i].propositions[j], 
                         null, null, theStep.author, theCode, script.authorNumber);
 
 

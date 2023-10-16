@@ -10234,7 +10234,7 @@
                           // $scope.$apply(function () {
                             setTimeout(function () {
                               console.log("III")
-                              populateElementWithText($scope.preDefinedPoints[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script.authorNumber)
+                              populateElementWithText(script.sequence[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script.authorNumber)
                            
 
                             }, 2000);

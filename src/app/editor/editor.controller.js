@@ -10410,7 +10410,7 @@
                     } 
                   }
 
-                
+                }
                 }   
               }   
           } else if (theStep.action ==='proposition') {

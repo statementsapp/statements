@@ -1817,6 +1817,7 @@
       $scope.clearPropositionInput = function () {
         $timeout(function () {
           $scope.$apply(function () {
+            console.log("Clear proposition input")
             $scope.inputs = {};
             $scope.highlight.id = '';
             $scope.mark.id = '';
@@ -1972,6 +1973,7 @@
                       }
                       $scope.editing = '';
                       $scope.editingCopy = '';
+                      console.log("Clear editing clear")
                       $scope.inputs = {};
                       break;
                   //   });
@@ -1986,6 +1988,7 @@
         } else {
           $scope.editing = '';
           $scope.editingCopy = '';
+          console.log("Other clear editing clear")
           $scope.inputs = {};
         }
         
@@ -4374,7 +4377,7 @@
 
 
             apply = {};
-            if (payload.code !== '3D' && payload.code !== '3E') {
+            if (payload.author === $scope.userId && payload.code !== '3D' && payload.code !== '3E') {
               console.log("Should be clearing an input")
               console.log("That payload id: ", payload.id)
               $scope.inputs = {};
@@ -5692,6 +5695,7 @@
               (payload.type === 'assertion' || payload.type === 'rejoinder') &&
               !$scope.inputs &&
               payload.ofParagraphId === $scope.selectedParagraph.paragraphId){
+              console.log("After dialogue printer clear")
               $scope.inputs = {};
             }
 
@@ -5938,6 +5942,7 @@
         $scope.hasTopNodeFocus = {};
         $scope.hasBottomNodeFocus = '';
         // $scope.hasChatFocusId = '';
+        console.log("Clear top and bottom clear")
         $scope.inputs = {};
         $scope.tweetClicked = {};
         $scope.muteClicked = {};

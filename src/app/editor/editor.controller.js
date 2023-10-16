@@ -4445,7 +4445,7 @@
                   } else {
                     $scope.data[0].nodes[apply.parentNodeIndex+1] = angular.copy(payload.draggedNode);
                     $scope.data[0].nodes[apply.parentNodeIndex+1].sectionNumber = (apply.parentNodeIndex+1);
-                    $scope.data[0].nodes[apply.parentNodeIndex+1].sectionClaimedBy= payload.author;
+                    $scope.data[0].nodes[apply.parentNodeIndex+1].sectionClaimedBy = payload.author;
 
                   }
 
@@ -4483,6 +4483,7 @@
 
                 if (!payload.draggedNode.nodeId && payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
+                      console.log("FIRSTY")
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);
                 }
@@ -4578,6 +4579,7 @@
                 }
 
                 if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
+                  console.log("SECONDY")
                   setTimeout(function () {
                       document.getElementById('proposition' + payload.id).click();
                   }, 20);

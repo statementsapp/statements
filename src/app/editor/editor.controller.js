@@ -5829,7 +5829,7 @@
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
                   console.log("New step")
                   console.log("Which script: ", $scope.allTheScripts[whichScript])
-                  $scope.simulateUser($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length])
+                  $scope.simulateUser($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript])
                 });
               }, 35);
             } else {
@@ -5841,7 +5841,7 @@
                   console.log("New step NON AUTHOR")
                   console.log("Which script: ", $scope.allTheScripts[whichScript])
 
-                  $scope.simulateUser($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length])
+                  $scope.simulateUser($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript])
                 });
               }, 2000);
             }

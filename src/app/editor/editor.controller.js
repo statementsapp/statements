@@ -5825,6 +5825,8 @@
               setTimeout(function () {
                 $scope.$apply(function () {
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
+                  console.log("New step")
+                  console.log("Which script: ", $scope.allTheScripts[whichScript])
                   $scope.simulateUser($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].sequence.length])
                 });
               }, 35);
@@ -5834,10 +5836,9 @@
                 $scope.$apply(function () {
                   // console.log("Firing sim user fcn")
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
-                  console.log("New step")
+                  console.log("New step NON AUTHOR")
                   console.log("Which script: ", $scope.allTheScripts[whichScript])
-                  console.log("New step")
-                  console.log("New step")
+
                   $scope.simulateUser($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].sequence.length])
                 });
               }, 2000);

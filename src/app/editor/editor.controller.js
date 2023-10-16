@@ -10394,31 +10394,22 @@
                   }
                 }          
               } else {
-                // other author proposition
-                for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  
-                  for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
-                   
-                    for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                      
-                      for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
-                       
-                        if (
-                        script.sequence[theOn].text.slice(0, 11) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
-                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
-                          console.log("About to other author prop")
-                          $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
-                          $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
-                          null, null, theStep.author, theCode, script.authorNumber);
+                for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
+                  for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
+                    if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
+                      var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
+                      console.log("About to other author theblank")
+                      $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
+                      $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
+                      null, null, theStep.author, theCode, script.authorNumber);
 
 
-                          break;
-                        }
-                      }
+                      break;
                     }
                   }
-                } 
+                }
+
+
               }   
             }   
           } else if (theStep.action ==='proposition') {

@@ -10394,24 +10394,25 @@
                   }
                 }          
               } else {
-                for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
-                  for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
-                    if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
-                      var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j];
-                      console.log("About to other author theblank")
-                      $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
-                      $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
-                      null, null, theStep.author, theCode, script.authorNumber);
+                if (theStep.which === 'theBlank'){
+                  for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
+                    for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){
+                      if ($scope.data[0].nodes[0].paragraphs[i].propositions[j].type === 'blank'){
+                        // var thisHereId = $scope.data[0].nodes[0].paragraphs[i].propositions[j];
+                        console.log("About to other author theblank")
+                        $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
+                        $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[0].paragraphs[i].propositions[j], 
+                        null, null, theStep.author, theCode, script.authorNumber);
 
 
-                      break;
-                    }
+                        break;
+                      }
+                    } 
                   }
-                }
 
-
+                
+                }   
               }   
-            }   
           } else if (theStep.action ==='proposition') {
             // vestigial?
             for (var h = 0; h < $scope.data[0].nodes.length; h++){

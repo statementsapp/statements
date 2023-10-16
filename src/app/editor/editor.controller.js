@@ -5813,6 +5813,7 @@
             if ($scope.allTheScripts[i].authorNumber === payload.authorNumber){
               $scope.allTheScripts[i].stack.push(payload)
               var whichScript = angular.copy(i)
+              console.log("That stack now: ", angular.copy($scope.allTheScripts[i].stack))
               break;
             }
           }

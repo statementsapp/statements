@@ -5810,6 +5810,7 @@
           }
           
           for (var i = 0; i < $scope.allTheScripts.length; i++){
+            console.log("Step considering: ", $scope.allTheScripts[i])
             if ($scope.allTheScripts[i].authorNumber === payload.authorNumber){
               $scope.allTheScripts[i].stack.push(payload)
               var whichScript = angular.copy(i)

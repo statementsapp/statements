@@ -3593,7 +3593,7 @@
 
 
 
-          if (!$scope.hasBeenSetUp){
+          if (!automatedAuthor){
             prep.author = $scope.userId;
           } else {
             prep.author = automatedAuthor;

@@ -3587,7 +3587,22 @@
 
           prep.type = 'topic';
           prep.adjustedText = '';
-          prep.author = $scope.userId;
+          
+
+
+
+
+
+          if (!$scope.hasBeenSetUp){
+            prep.author = $scope.userId;
+          } else {
+            prep.author = automatedAuthor;
+          }
+
+
+
+
+
           if (flag !== 'top'){
             prep.afterNodeId = $scope.selectedNode.nodeId;
           } else if ($scope.selectedNode.sectionNumber === 0){

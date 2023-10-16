@@ -9700,8 +9700,8 @@
 
 
 
-            $scope.simulateUser(0, $scope.coinbase);
-            // $scope.simulateUser(0, $scope.coinbase2);
+            // $scope.simulateUser(0, $scope.coinbase);
+            $scope.simulateUser(0, $scope.coinbase2);
             // $scope.simulateUser(0, $scope.coinbase3);
           
           

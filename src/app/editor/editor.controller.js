@@ -3590,7 +3590,7 @@
           
 
 
-
+          console.log("Automated author? ", automatedAuthor)
 
 
           if (!automatedAuthor){

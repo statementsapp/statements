@@ -4030,15 +4030,18 @@
           prep.messagesSoFar = [prep.id]
           
 
-        } else if (($scope.selectedProposition.type === 'blank' &&
-          $scope.userId === $scope.data[0].documentClaimedBy) ||
-          !$scope.data[0].documentClaimedBy){
+        } else if (($scope.selectedProposition.type === 'blank')){
           console.log("4")
           prep.code = '4';
           prep.topic = $scope.selectedProposition.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
-          prep.author = $scope.userId;
+          
+          if (!automatedAuthor){
+            prep.author = $scope.userId;
+          } else {
+            prep.author = automatedAuthor;
+          }
           
           if ($scope.draggingProposition || $scope.draggingParagraph || $scope.hasBeenSetUp){
             prep.targetNodeId = node.nodeId;

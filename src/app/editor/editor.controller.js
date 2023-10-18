@@ -4030,7 +4030,7 @@
           prep.messagesSoFar = [prep.id]
           
 
-        } else if (($scope.selectedProposition.type === 'blank')){
+        } else if (($scope.selectedProposition.type === 'blank' || automatedCode === '4')){
           console.log("4")
           prep.code = '4';
           prep.topic = $scope.selectedProposition.topic;
@@ -4049,7 +4049,7 @@
             prep.targetNodeId = $scope.selectedNode.nodeId;
           }
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
-          if ($scope.draggingProposition || $scope.draggingParagraph){
+          if ($scope.draggingProposition || $scope.draggingParagraph || automatedCode){
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           } else {
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
@@ -10447,7 +10447,7 @@
                       // console.log("Got a this here id: ", thisHereId)
                       // $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged ) {
                       $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
-                      null, null, 
+                      $scope.data[0].nodes[h].paragraphs[0], null, 
                       null, null, theStep.author, '4', script.authorNumber);
                       break;
                     }

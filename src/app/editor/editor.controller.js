@@ -10440,7 +10440,8 @@
                   for (var h = 0; h < $scope.data[0].nodes.length; h++){
                     // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                     // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
-
+                    console.log("Primero: ", $scope.data[0].nodes[h].topic.slice(0, 11))
+                    console.log("Segundo: ", script.sequence[theOn].text.slice(0, 11))
                     if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11)){
                       console.log("Found")
                       var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;

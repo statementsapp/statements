@@ -5036,7 +5036,6 @@
 
              if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                setTimeout(function () {
-                   console.log("ER IS IT DOING THAT EWWWWW")
                    document.getElementById('proposition' + payload.id).click();
                }, 20);
              }
@@ -5817,6 +5816,7 @@
             if ($scope.userId === $scope.data[0].documentClaimedBy &&
               $scope.hasBeenSetUp &&
               payload.code === '3F'){
+              console.log("3F SELECTED PROP CLEAR CHECK THIS PLZ")
               $scope.selectedProposition = {};
             }
             
@@ -7619,27 +7619,27 @@
                   messaged: false
                 
               },
-              { index: 4, 
+              // { index: 4, 
                 
-                  author: '111',
-                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '111',
+              //     text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 3,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 3,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
+              // },
               // { index: 5, 
                 
               //     author: $scope.userId,

@@ -3963,7 +3963,7 @@
             }
 
 
-            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide){
+            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide && !automatedCode){
               prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             } else if (rejoinderMessaged){
               prep.afterParagraphId = paragraph.paragraphId;

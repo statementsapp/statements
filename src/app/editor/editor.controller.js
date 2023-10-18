@@ -3918,7 +3918,12 @@
             if (automatedCode !== '3B'){
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
             } else {
-              prep.afterPropositionId = angular.copy(proposition.of.id);
+              for (var i = 0; i < proposition.remarks.length; i++){
+                if (proposition.remarks[i].id === thisHereId){
+                  prep.afterPropositionId = proposition.remarks[i].of.id;
+                }
+              }
+              
             }
             
             if ($scope.hasBeenSetUp && !automatedCode){
@@ -3944,7 +3949,7 @@
               console.log("Got after prop id for C C C : ", angular.copy($scope.selectedProposition.of.text))
               console.log("The proposition: ", angular.copy(proposition))
             } else {
-              
+
             }
             if ($scope.hasBeenSetUp){
               if (!node){

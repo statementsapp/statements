@@ -3452,7 +3452,7 @@
       }
 
       $scope.hideZeeky = function () {
-        // console.log("Hiding zeeky")
+        console.log("Hiding zeeky")
         $scope.isFresh = false;
         if (document.getElementById('zeekynegation')){
           document.getElementById('zeekynegation').style.display = 'none';
@@ -3479,7 +3479,7 @@
 
 
         if (paragraph){
-          // console.log("Is paragraph")
+          console.log("Is paragraph")
           if (document.getElementById('top' + paragraph.paragraphId)){
             console.log("Clearing top innerHTML")
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
@@ -3566,7 +3566,8 @@
         }
 
 
-      
+        console.log("Later Dragging Proposition: ", angular.copy($scope.draggingProposition))
+        console.log("Later Dragged Id: ", angular.copy($scope.draggedProposition.id))
         //   Topics
 
         // If it's ended with a colon, or a dragged node
@@ -4029,7 +4030,7 @@
           prep.messagesSoFar = [prep.id]
           
 
-        } else if (($scope.selectedProposition.type === 'blank' || automatedCode === '4')){
+        } else if (($scope.selectedProposition.type === 'blank')){
           console.log("4")
           prep.code = '4';
           prep.topic = $scope.selectedProposition.topic;
@@ -9831,14 +9832,14 @@
                 if (!nodeFlag){
                   setTimeout(function () {
                     clearInterval(intervalId);
-                    // console.log("ABOUT TO TOP PRESS")
-                    // console.log("SELECTED NODE HERE: ", $scope.selectedNode.nodeId)
+                    console.log("ABOUT TO TOP PRESS")
+                    console.log("SELECTED NODE HERE: ", $scope.selectedNode.nodeId)
                     simulateReturnKeyPress(element, text, authorNumber);
                    }, 10);
                 } else {
                   setTimeout(function () {
                     clearInterval(intervalId);
-                    // console.log("ABOUT TO BOTTOM PRESS")
+                    console.log("ABOUT TO BOTTOM PRESS")
                     simulateReturnKeyPress(element, text+':', authorNumber);
                    }, 10);
                 }
@@ -9995,13 +9996,12 @@
                   // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                   // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].topic.slice(0, 11)){
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
-                    console.log("PREPPING A FOUR")
-                    $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
-                    null, null, 
-                    null, null, theStep.author, '4', script.authorNumber);
+                    setTimeout(function () {
+                      document.getElementById(thisHereId).click();
+                    }, 20);
                     break;
                   }
                 }

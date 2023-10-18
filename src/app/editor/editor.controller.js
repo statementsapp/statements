@@ -4030,7 +4030,7 @@
           prep.messagesSoFar = [prep.id]
           
 
-        } else if (($scope.selectedProposition.type === 'blank' && (!$scope.hasBeenSetUp || automatedCode === '4'))){
+        } else if (($scope.selectedProposition.type === 'blank' && !automatedAuthor) || (automatedAuthor && automatedCode === '4')){
           console.log("4")
           prep.code = '4';
           prep.topic = $scope.selectedProposition.topic;

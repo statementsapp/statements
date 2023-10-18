@@ -10501,6 +10501,7 @@
                             var thisI = angular.copy(i)
                             var thisJ = angular.copy(j)
                             var thisK = angular.copy(k)
+                            console.log("K working with: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text)
                             var thisHereId = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK].id;
                             
                             

@@ -5915,12 +5915,23 @@
               // $scope.userActions[$scope.userActions.length-1].onIndex,
               // $scope.userActions[$scope.userActions.length-1].deletionIndex);
           } else {
-            console.log("Turning off has been set up")
-            
-            $scope.hasBeenSetUp = false;
-            if ($scope.selectedProposition.textSide){
-              $scope.selectedProposition.textSide = null;
+            var turnOffYet = true;
+            for (var i = 0; i < $scope.allTheScripts.length; i++){
+              if ($scope.allTheScripts[i].stack.length >= $scope.allTheScripts[i].sequence.length){
+                turnOffYet = false;
+              }
             }
+
+            if (turnOffYet){
+              console.log("Turning off has been set up")
+              $scope.hasBeenSetUp = false;
+              if ($scope.selectedProposition.textSide){
+                $scope.selectedProposition.textSide = null;
+              }
+            }
+            
+            
+            
             console.log("Selected prop: ", angular.copy($scope.selectedProposition))
           }
         }

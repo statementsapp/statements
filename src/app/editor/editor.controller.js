@@ -9998,6 +9998,7 @@
                   if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].topic.slice(0, 11)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
+                    console.log("PREPPING A FOUR")
                     $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                     null, null, 
                     null, null, theStep.author, '4', script.authorNumber);

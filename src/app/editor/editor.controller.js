@@ -3472,7 +3472,7 @@
 
 
 
-      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber ) {
+      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged ) {
         
         console.log("Input: ", angular.copy(input))
         console.log("Authornumber: ", angular.copy(authorNumber))
@@ -3629,7 +3629,7 @@
 
           
 
-        } else if (paragraph.topAdd){
+        } else if (paragraph.topAdd || automatedCode === '3D'){
           console.log("3d")
           prep.code = '3D';
           prep.topic = $scope.selectedNode.topic;
@@ -3652,7 +3652,7 @@
           $scope.inputs['top'+paragraph.paragraphId] = '';
 
           // document.getElementById('top'+paragraph.paragraphId).innerHTML = '';
-        } else if (paragraph.bottomAdd){
+        } else if (paragraph.bottomAdd || automatedCode === '3E'){
 
           console.log("3e")
           prep.code = '3E';
@@ -3682,7 +3682,7 @@
           prep.messagesSoFar = [prep.id]
 
           paragraph.bottomAdd = false;
-        } else if (paragraph.leftAdd){
+        } else if (paragraph.leftAdd || automatedCode === '3F'){
           console.log("3f")
           prep.code = '3F';
           prep.topic = $scope.selectedProposition.topic;
@@ -3703,7 +3703,7 @@
           prep.messagesSoFar = [prep.id]
         } else if (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
                 ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId &&
-                 !paragraph.leftAdd) || automatedAuthor) {
+                 !paragraph.leftAdd) || (automatedCode === '2B' || automatedCode === '2A')) {
           console.log("Input inside negations: ", input)
 
           // switched sp negation requirements from sp === your username to just not the document author
@@ -3715,7 +3715,7 @@
           // Or if it's a continuation of another remark
           // it's a negation
 
-          if (($scope.selectedProposition.type === 'negation' || (automatedAuthor && automatedCode === '2B')) && !$scope.hasBeenSetUp) {
+          if (($scope.selectedProposition.type === 'negation' || (automatedCode === '2B')) && !$scope.hasBeenSetUp) {
             //repeated negation
             console.log("2b")
             prep.code = '2B';
@@ -3785,7 +3785,7 @@
             // prep.messagesSoFar = angular.copy(prep.previousMessages);
 
 
-          } else {
+          } else if (automatedCode === '2A'){
 
             console.log("2a")
             prep.code = '2A';
@@ -3945,7 +3945,7 @@
             }
 
 
-            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide){
+            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide ){
               prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             } else {
               prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
@@ -10434,7 +10434,290 @@
                     } 
                   }
 
+                } else {
+
+
+
+                  // complete for non author assertions and should have it
+
+
+                  for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  
+                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                  
+                      for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                       
+                        for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
+                          if (!hasAK &&
+                          script.sequence[theOn].text.slice(0, 11) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
+                            
+                            var thisH = angular.copy(h)
+                            var thisI = angular.copy(i)
+                            var thisJ = angular.copy(j)
+                            var thisK = angular.copy(k)
+                            var thisHereId = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK].id;
+                            
+                            
+                            var hasAK = true;
+                            console.log("This here id: ", thisHereId)
+                            if (hasAK){
+                              if (theStep.messaged){
+
+                                $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
+                                $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
+                                null, null, theStep.author, null, script.authorNumber, true);
+
+
+                                // console.log("Its messaged")
+                                // setTimeout(function () {
+                                //   document.getElementById('message'+thisHereId).click();
+                                //   document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
+                                // }, 20);
+
+                                // setTimeout(function () {
+                                //   $scope.selectedProposition = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK];
+                                //   populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script.authorNumber)
+                                //   console.log("The this here id: ", angular.copy(thisHereId))
+                                //   console.log("The currently selected prop: ", angular.copy($scope.selectedProposition.text))
+                                //   // break;
+                                // }, 2000);
+                              } else {
+                                console.log("NOT messaged")
+                                // for rejoinders
+                                // need to write for 2Bs
+                                setTimeout(function () {
+                                  $scope.$apply(function () {
+                                    
+                                    $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
+                                    $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
+                                    null, null, theStep.author, null, script.authorNumber, true);
+                                    
+                                  });
+                                }, 0);
+                                          
+
+                                break;
+                              }
+                              
+                            }    
+
+                          }
+                        }
+                      }
+                    }
+                  }
+                  // non-k author props
+                  if (hasAK){
+                    return;
+                  }
+
+                  for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                    console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
+                    console.log("That points on: ", script.sequence[theOn].text.slice(0, 11))
+                    console.log("That nodes blank: ", theStep.onBlank)
+                    if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11) &&
+                      theStep.onBlank){
+                      console.log("Normal blank")
+                      for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                        
+                        for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                          if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'blank'){
+                            var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                            var thisH = angular.copy(h)
+                            var thisI = angular.copy(i)
+                            var thisJ = angular.copy(j)
+                            var hasAJ = true;
+                          }
+                        }
+                      }
+                      // setTimeout(function () {
+                      //   $scope.$apply(function () {
+                         
+                      //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                      //   });
+                      // }, 0);
+                              
+                      setTimeout(function () {
+                        document.getElementById('proposition'+thisHereId).click();
+                      }, 20);
+                      setTimeout(function () {
+                        populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
+                      
+                        
+                      }, 2000);
+                      break;
+                    }
+                   
+                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                      
+                      for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                        console.log("H-I-J: ", h, " ", i, " ", j)
+                        console.log("First: ", script.sequence[theOn].text.slice(0, 11))
+                        console.log("Second ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
+                        if ( (!hasAJ &&
+                        script.sequence[theOn].text.slice(0, 11) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
+                          (!hasAJ &&
+                        script.sequence[theOn].text.slice(0, 11) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
+                          var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                          
+                          var thisH = angular.copy(h)
+                          var thisI = angular.copy(i)
+                          var thisJ = angular.copy(j)
+                          var hasAJ = true;
+                          console.log("That id id: ", thisHereId)
+                          console.log("The step its ", theStep.its)
+                          if (theStep.its === 'top'){
+                            console.log("Its top")
+                            // $scope.$apply(function () {
+                            $scope.data[0].nodes[thisH].paragraphs[thisI].topMouseOver = true;
+                            $scope.data[0].nodes[thisH].paragraphs[thisI].topAdd = true;
+                            $scope.makeTopAppear($scope.data[0].nodes[thisH].paragraphs[thisI]);
+                              setTimeout(function () {
+                                document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                                .click();
+                              }, 40);
+                            // });
+                            // setTimeout(function () {
+                            //   console.log("")
+                            //   document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                            // }, 20);
+                            
+                            // $scope.$apply(function () {
+                              setTimeout(function () {
+                                populateElementWithText(script.sequence[index].text, 
+                                  'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script)
+                               
+                              }, 2000);
+                            // });
+                            break;
+                          } else if (theStep.its === 'bottom'){
+                            console.log("Its bottom")
+                            // $scope.$apply(function () {
+                              setTimeout(function () {
+                                console.log("I")
+                                document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                                document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
+                              }, 0);
+                            // });
+                            // setTimeout(function () {
+                            //   console.log("II")
+                            //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                            // }, 1000);
+                            // $scope.$apply(function () {
+                              setTimeout(function () {
+                                console.log("III")
+                                populateElementWithText(script.sequence[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script.authorNumber)
+                             
+
+                              }, 2000);
+                              break;
+                            // });
+                            
+                          } else if (theStep.its === 'left'){
+                              // $scope.$apply(function () {
+                                $scope.data[0].nodes[thisH].paragraphs[thisI].leftAdd = true;
+                                // setTimeout(function () {
+                                //   populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id)
+                                //   console.log("Got an id")
+
+                                // }, 30);
+                                // break;
+                              // });
+                            // console.log("Before: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
+                              setTimeout(function () {
+                                $scope.data[0].nodes[thisH].paragraphs[thisI].leftAdd = true;
+                                document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id).click();
+                              }, 20);
+                            // });
+                            // setTimeout(function () {
+                            //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                            // }, 20);
+
+
+
+                            // $scope.$apply(function () {
+                              setTimeout(function () {
+                                populateElementWithText(script.sequence[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep, script.authorNumber)
+                               
+
+                              }, 2000);
+                              break;
+                            // });
+                          } else if (theStep.its === 'self') {     
+
+                            if (theStep.messaged){
+                              console.log("Its messaged")
+                              setTimeout(function () {
+                                document.getElementById('message'+thisHereId).click();
+                                document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
+                              }, 20);
+
+                              setTimeout(function () {
+                                populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script.authorNumber)
+                                
+                                // break;
+                              }, 2000);
+                              break;
+                            } else {
+                              console.log("Self")
+                              // if (!theStep.noClick){
+                              //   console.log("Not clicked")
+                              //   setTimeout(function () {
+                              //     $scope.$apply(function () {
+                                   
+                              //       $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                              //     });
+                              //   }, 0);
+                              // }
+                              
+                                      
+                              setTimeout(function () {
+                                document.getElementById('proposition'+thisHereId).click();
+                              }, 20);
+                              setTimeout(function () {
+                                populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
+                              
+                                
+                              }, 2000);
+                              break;
+                            }
+                            
+
+                            
+                            
+                          }
+                          // var hasAK = true;
+                          
+                          // setTimeout(function () {
+                          //   $scope.$apply(function () {
+                          //     console.log("H: ", thisH)
+                          //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                          //   });
+                          // }, 0);          
+                          // setTimeout(function () {
+                          //   document.getElementById('proposition'+thisHereId).click();
+                          // }, 20);
+                          // setTimeout(function () {
+                          //   populateElementWithText($scope.preDefinedPoints[index].text,thisHereId)
+                          //   console.log("Got an id")
+                          //   // hasAK = false;
+                          // }, 20);
+                          // break; 
+                        }
+                      }
+                    }
+                  }
                 }
+
+
+
+
+
+
+
                 }   
               }   
           } else if (theStep.action ==='proposition') {

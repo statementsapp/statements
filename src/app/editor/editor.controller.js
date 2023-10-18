@@ -3884,35 +3884,35 @@
           }
 
           if (prep.capacityCount < 2 && false){
-            console.log("3a")
-            prep.code = '3A';
-            prep.topic = $scope.selectedProposition.topic;
-            prep.type = 'assertion';
-            prep.adjustedText = input;
-            prep.author = $scope.userId;
+            // console.log("3a")
+            // prep.code = '3A';
+            // prep.topic = $scope.selectedProposition.topic;
+            // prep.type = 'assertion';
+            // prep.adjustedText = input;
+            // prep.author = $scope.userId;
             
-            if ($scope.hasBeenSetUp){
-              prep.afterPropositionId = angular.copy(proposition.of.id);
-            } else {
-              prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            }
-            console.log("Got after prop id for: ", angular.copy($scope.selectedProposition.of.text))
-            console.log("The proposition: ", angular.copy(proposition))
-            prep.targetNodeId = $scope.selectedNode.nodeId;
-            prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            if (!automatedCode){
-              prep.rejoins = $scope.selectedProposition.id;
-            } else {
-              prep.rejoins = onRemarkId;
-              console.log("On the onRemarkId: ", onRemarkId)
-            }
+            // if ($scope.hasBeenSetUp){
+            //   prep.afterPropositionId = angular.copy(proposition.of.id);
+            // } else {
+            //   prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+            // }
+            // console.log("Got after prop id for: ", angular.copy($scope.selectedProposition.of.text))
+            // console.log("The proposition: ", angular.copy(proposition))
+            // prep.targetNodeId = $scope.selectedNode.nodeId;
+            // prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+            // if (!automatedCode){
+            //   prep.rejoins = $scope.selectedProposition.id;
+            // } else {
+            //   prep.rejoins = onRemarkId;
+            //   console.log("On the onRemarkId: ", onRemarkId)
+            // }
             
-            prep.of = {
-              type: $scope.selectedProposition.type,
-              author: $scope.selectedProposition.author,
-              id: $scope.selectedProposition.id,
-              text: $scope.selectedProposition.text
-            }
+            // prep.of = {
+            //   type: $scope.selectedProposition.type,
+            //   author: $scope.selectedProposition.author,
+            //   id: $scope.selectedProposition.id,
+            //   text: $scope.selectedProposition.text
+            // }
           } else {
             // repeated rejoinders
             console.log("3b")
@@ -3986,8 +3986,13 @@
             // NEED TO MAKE THE .REJOINS ACCURATE FOR AUTOMATED 3Bs
             // need it to access the remark it is being written on and set the rejoins to its id
 
-            prep.rejoins = $scope.selectedProposition.id;
-
+            
+            if (!automatedCode){
+              prep.rejoins = $scope.selectedProposition.id;
+            } else {
+              prep.rejoins = onRemarkId;
+              console.log("On the onRemarkId: ", onRemarkId)
+            }
 
 
 

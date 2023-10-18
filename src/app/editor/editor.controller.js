@@ -3919,7 +3919,7 @@
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
             } else {
               for (var i = 0; i < proposition.remarks.length; i++){
-                if (proposition.remarks[i].id === thisHereId){
+                if (proposition.remarks[i].id === onRemarkId){
                   prep.afterPropositionId = proposition.remarks[i].of.id;
                 }
               }

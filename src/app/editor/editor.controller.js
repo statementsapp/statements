@@ -3904,6 +3904,7 @@
               prep.rejoins = $scope.selectedProposition.id;
             } else {
               prep.rejoins = onRemarkId;
+              console.log("On the onRemarkId: ", onRemarkId)
             }
             
             prep.of = {

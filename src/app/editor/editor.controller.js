@@ -10532,7 +10532,7 @@
                                 $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
                                 $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
                                 null, null, theStep.author, '3B', script.authorNumber, true, thisHereId);
-                                console.log("Script author number before: ", scrip.authorNumber)
+                                console.log("Script author number before: ", script.authorNumber)
                                 break;
 
                                 // console.log("Its messaged")

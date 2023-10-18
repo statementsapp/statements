@@ -3991,11 +3991,11 @@
 
             prep.sectionNumber = $scope.selectedNode.sectionNumber;
             prep.id = IdFactory.next();
-            // if (!automatedCode){
-              prep.messagesSoFar.push(prep.id)
-            // } else {
-            //   prep.messagesSoFar = [$scope.selectedProposition.of.id, $scope.selectedProposition.id, prep.id]
-            // }
+            if (!automatedCode){
+              prep.messagesSoFar = [$scope.selectedProposition.of.id, $scope.selectedProposition.id, prep.id]
+            } else {
+              prep.messagesSoFar = [proposition.id, onRemarkId, prep.id]
+            }
             
           }
         } else if ($scope.newProp){

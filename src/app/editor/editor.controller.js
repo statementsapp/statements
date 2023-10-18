@@ -3945,7 +3945,7 @@
             }
 
 
-            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide ){
+            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide || rejoinderMessaged){
               prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             } else {
               prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
@@ -7577,7 +7577,7 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  messaged: true
+                  messaged: false
                 
               },
               { index: 4, 
@@ -10503,7 +10503,7 @@
                                     
                                     $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
                                     $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
-                                    null, null, theStep.author, null, script.authorNumber, true);
+                                    null, null, theStep.author, '3B', script.authorNumber, true);
                                     
                                   });
                                 }, 0);

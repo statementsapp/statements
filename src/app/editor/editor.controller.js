@@ -10434,7 +10434,7 @@
                     } 
                   }
 
-                } else if (theStep.which === 'aBlank'){
+                } else {
                   var theNodeTopic = theOn.text;
                   for (var h = 0; h < $scope.data[0].nodes.length; h++){
                     // console.log("Topic: ", $scope.data[0].nodes[h].topic)
@@ -10450,9 +10450,6 @@
                       break;
                     }
                   }
-
-                } else {}
-
 
 
                   // complete for non author assertions and should have it

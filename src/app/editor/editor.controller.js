@@ -3900,7 +3900,12 @@
             console.log("The proposition: ", angular.copy(proposition))
             prep.targetNodeId = $scope.selectedNode.nodeId;
             prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
-            prep.rejoins = $scope.selectedProposition.id;
+            if (!automatedCode){
+              prep.rejoins = $scope.selectedProposition.id;
+            } else {
+              prep.rejoins = onRemarkId;
+            }
+            
             prep.of = {
               type: $scope.selectedProposition.type,
               author: $scope.selectedProposition.author,

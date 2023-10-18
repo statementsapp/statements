@@ -5036,6 +5036,7 @@
 
              if (payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                setTimeout(function () {
+                   console.log("ER IS IT DOING THAT EWWWWW")
                    document.getElementById('proposition' + payload.id).click();
                }, 20);
              }

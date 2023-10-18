@@ -3452,7 +3452,7 @@
       }
 
       $scope.hideZeeky = function () {
-        console.log("Hiding zeeky")
+        // console.log("Hiding zeeky")
         $scope.isFresh = false;
         if (document.getElementById('zeekynegation')){
           document.getElementById('zeekynegation').style.display = 'none';
@@ -3479,7 +3479,7 @@
 
 
         if (paragraph){
-          console.log("Is paragraph")
+          // console.log("Is paragraph")
           if (document.getElementById('top' + paragraph.paragraphId)){
             console.log("Clearing top innerHTML")
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
@@ -3566,8 +3566,7 @@
         }
 
 
-        console.log("Later Dragging Proposition: ", angular.copy($scope.draggingProposition))
-        console.log("Later Dragged Id: ", angular.copy($scope.draggedProposition.id))
+      
         //   Topics
 
         // If it's ended with a colon, or a dragged node
@@ -9832,14 +9831,14 @@
                 if (!nodeFlag){
                   setTimeout(function () {
                     clearInterval(intervalId);
-                    console.log("ABOUT TO TOP PRESS")
-                    console.log("SELECTED NODE HERE: ", $scope.selectedNode.nodeId)
+                    // console.log("ABOUT TO TOP PRESS")
+                    // console.log("SELECTED NODE HERE: ", $scope.selectedNode.nodeId)
                     simulateReturnKeyPress(element, text, authorNumber);
                    }, 10);
                 } else {
                   setTimeout(function () {
                     clearInterval(intervalId);
-                    console.log("ABOUT TO BOTTOM PRESS")
+                    // console.log("ABOUT TO BOTTOM PRESS")
                     simulateReturnKeyPress(element, text+':', authorNumber);
                    }, 10);
                 }

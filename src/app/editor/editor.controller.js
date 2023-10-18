@@ -10434,13 +10434,15 @@
                     } 
                   }
 
-                } else {
+                } else if (theStep.which === 'aBlank'){
+                  console.log("Other author ablank")
                   var theNodeTopic = theOn.text;
                   for (var h = 0; h < $scope.data[0].nodes.length; h++){
                     // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                     // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
                     if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].topic.slice(0, 11)){
+                      console.log("Found")
                       var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                       console.log("Got a this here id: ", thisHereId)
                       // $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged ) {

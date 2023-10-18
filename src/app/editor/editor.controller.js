@@ -4030,7 +4030,7 @@
           prep.messagesSoFar = [prep.id]
           
 
-        } else if (($scope.selectedProposition.type === 'blank')){
+        } else if (($scope.selectedProposition.type === 'blank' || automatedCode === '4')){
           console.log("4")
           prep.code = '4';
           prep.topic = $scope.selectedProposition.topic;
@@ -7527,7 +7527,7 @@
                                 },
                   type: 'assertion',
                   dialogueSide: true,
-                  which: 'item',
+                  which: 'aBlank',
                   on: 0,
                   its: 'self',
                   typeTime: 3000,
@@ -9996,12 +9996,12 @@
                   // console.log("Topic: ", $scope.data[0].nodes[h].topic)
                   // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11)){
+                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].topic.slice(0, 11)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
-                    setTimeout(function () {
-                      document.getElementById(thisHereId).click();
-                    }, 20);
+                    $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
+                    null, null, 
+                    null, null, theStep.author, '4', script.authorNumber);
                     break;
                   }
                 }

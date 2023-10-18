@@ -4436,6 +4436,7 @@
             if (payload.author === $scope.userId && payload.code !== '3D' && payload.code !== '3E') {
               console.log("Should be clearing an input")
               console.log("That payload id: ", payload.id)
+              console.log("That payload text: ", payload.text)
               $scope.inputs = {};
               if ($scope.selectedProposition.id){
                 if (document.getElementById($scope.selectedProposition.id)){

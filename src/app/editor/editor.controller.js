@@ -3472,7 +3472,7 @@
 
 
 
-      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged ) {
+      $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged, onRemarkId ) {
         
         console.log("Input: ", angular.copy(input))
         console.log("Authornumber: ", angular.copy(authorNumber))
@@ -3855,8 +3855,13 @@
           !$scope.draggingParagraph) ||
           automatedCode === '3B'){
           console.log("Prepping rejoinder")
+          if (!automatedCode){
+            prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+          } else {
 
-          prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);
+            prep.previousMessages = angular.copy(proposition.messagesSoFar);
+          }
+          
           prep.id = IdFactory.next();
           prep.previousMessages.push(prep.id)
           prep.messagesSoFar = angular.copy(prep.previousMessages);
@@ -10504,7 +10509,7 @@
                                     
                                     $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
                                     $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
-                                    null, null, theStep.author, '3B', script.authorNumber, true);
+                                    null, null, theStep.author, '3B', script.authorNumber, true, onRemarkId);
                                     
                                   });
                                 }, 0);

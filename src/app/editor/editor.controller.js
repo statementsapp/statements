@@ -3915,8 +3915,13 @@
             prep.type = 'assertion';
             prep.adjustedText = input;
             prep.author = $scope.userId;
-            prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
-            if ($scope.hasBeenSetUp){
+            if (automatedCode !== '3B'){
+              prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
+            } else {
+              prep.afterPropositionId = angular.copy(proposition.of.id);
+            }
+            
+            if ($scope.hasBeenSetUp && !automatedCode){
               if ($scope.selectedProposition.type === 'negation'){
                 console.log('A')
                 if (proposition) {
@@ -3934,10 +3939,12 @@
                 console.log("The proposition: ", angular.copy(proposition))
               }
               
-            } else {
+            } else if (!automatedCode){
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
               console.log("Got after prop id for C C C : ", angular.copy($scope.selectedProposition.of.text))
               console.log("The proposition: ", angular.copy(proposition))
+            } else {
+              
             }
             if ($scope.hasBeenSetUp){
               if (!node){

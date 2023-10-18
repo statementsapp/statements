@@ -3964,10 +3964,13 @@
 
 
             if (($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide) && !automatedCode){
+              console.log("Eins")
               prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
             } else if (rejoinderMessaged){
+              console.log("zwei")
               prep.afterParagraphId = paragraph.paragraphId;
             } else {
+              console.log("drei")
               prep.targetParagraphId = paragraph.paragraphId;
             }
 

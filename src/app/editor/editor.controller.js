@@ -3991,8 +3991,12 @@
 
             prep.sectionNumber = $scope.selectedNode.sectionNumber;
             prep.id = IdFactory.next();
-
-            prep.messagesSoFar = [$scope.selectedProposition.of.id, $scope.selectedProposition.id, prep.id]
+            // if (!automatedCode){
+              prep.messagesSoFar.push(prep.id)
+            // } else {
+            //   prep.messagesSoFar = [$scope.selectedProposition.of.id, $scope.selectedProposition.id, prep.id]
+            // }
+            
           }
         } else if ($scope.newProp){
           console.log("3c")

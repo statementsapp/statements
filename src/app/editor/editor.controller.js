@@ -7527,7 +7527,6 @@
                                 },
                   type: 'assertion',
                   dialogueSide: true,
-                  which: 'aBlank',
                   on: 0,
                   its: 'self',
                   typeTime: 3000,
@@ -10434,7 +10433,7 @@
                     } 
                   }
 
-                } else if (theStep.which === 'aBlank'){
+                } else if (theStep.onBlank && !theStep.which){
                   console.log("Other author ablank")
                   var theNodeTopic = theOn.text;
                   for (var h = 0; h < $scope.data[0].nodes.length; h++){
@@ -10444,8 +10443,8 @@
                     console.log("Segundo: ", script.sequence[theOn].text.slice(0, 7))
                     if ($scope.data[0].nodes[h].topic.slice(0, 7) === script.sequence[theOn].text.slice(0, 7)){
                       console.log("Found")
-                      var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
-                      console.log("Got a this here id: ", thisHereId)
+                      // var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
+                      // console.log("Got a this here id: ", thisHereId)
                       // $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged ) {
                       $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                       null, null, 

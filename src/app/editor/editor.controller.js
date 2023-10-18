@@ -3963,10 +3963,12 @@
             }
 
 
-            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide || rejoinderMessaged){
+            if ($scope.selectedProposition.dialogueSide || !$scope.selectedProposition.textSide){
               prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
+            } else if (rejoinderMessaged){
+              prep.afterParagraphId = paragraph.paragraphId;
             } else {
-              prep.targetParagraphId = $scope.selectedParagraph.paragraphId;
+              prep.targetParagraphId = paragraph.paragraphId;
             }
 
 

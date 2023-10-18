@@ -10513,7 +10513,7 @@
                                 $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
                                 $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
                                 null, null, theStep.author, null, script.authorNumber, true);
-
+                                break;
 
                                 // console.log("Its messaged")
                                 // setTimeout(function () {
@@ -10545,7 +10545,7 @@
 
                                 break;
                               }
-                              
+                              break;
                             }    
 
                           }

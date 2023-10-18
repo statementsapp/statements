@@ -3850,9 +3850,10 @@
         } else if ($scope.selectedProposition.question) {
           //won't run
 
-        } else if ($scope.selectedProposition.type === 'negation' &&
+        } else if (($scope.selectedProposition.type === 'negation' &&
           !$scope.draggingProposition &&
-          !$scope.draggingParagraph){
+          !$scope.draggingParagraph) ||
+          automatedCode === '3B'){
           console.log("Prepping rejoinder")
 
           prep.previousMessages = angular.copy($scope.selectedProposition.messagesSoFar);

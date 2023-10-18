@@ -3931,7 +3931,8 @@
               }
               
             }
-            
+            console.log("Is there an automated code or not: ", automatedCode)
+            console.log("Is there an AUTHOR NUMBER or not: ", authorNumber)
             if ($scope.hasBeenSetUp && !automatedCode){
               if ($scope.selectedProposition.type === 'negation'){
                 console.log('A')

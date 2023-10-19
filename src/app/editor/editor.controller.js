@@ -10731,7 +10731,7 @@
                               console.log("Self non messaged")
                               $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
                               $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
-                              null, null, theStep.author, '3G', null);
+                              null, null, theStep.author, '3G', script.authorNumber);
                               // if (!theStep.noClick){
                               //   console.log("Not clicked")
                               //   setTimeout(function () {

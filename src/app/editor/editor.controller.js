@@ -7631,27 +7631,27 @@
                   messaged: false
                 
               },
-              // { index: 4, 
+              { index: 4, 
                 
-              //     author: '111',
-              //     text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 3,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
+              },
               // { index: 5, 
                 
               //     author: $scope.userId,
@@ -10728,7 +10728,10 @@
                               // }, 2000);
                               // break;
                             } else {
-                              console.log("Self")
+                              console.log("Self non messaged")
+                              $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
+                              $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
+                              null, null, theStep.author, null, null);
                               // if (!theStep.noClick){
                               //   console.log("Not clicked")
                               //   setTimeout(function () {
@@ -10748,7 +10751,7 @@
                               
                                 
                               // }, 2000);
-                              // break;
+                              break;
                             }
                             
 

@@ -4139,7 +4139,7 @@
         
 
         prep.payload = {
-          authorNumber: (authorNumber || authorNumber == 0) ? authorNumber : undefined,
+          authorNumber: (authorNumber || authorNumber == 0) ? authorNumber : (event.authorNumber || event.authorNumber == 0) ? event.authorNumber : undefined,
           author: prep.author ? prep.author : $scope.userId,
           text: prep.adjustedText,
           dialogueText: angular.copy(prep.adjustedText),

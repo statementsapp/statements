@@ -3475,7 +3475,7 @@
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged, onRemarkId ) {
         
         console.log("Input: ", angular.copy(input))
-        console.log("Authornumber: ", angular.copy(authorNumber))
+        console.log("Authornumber: ", angular.copy(event.authorNumber))
 
 
         if (paragraph){

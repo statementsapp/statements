@@ -4043,13 +4043,13 @@
 
         } else if (($scope.selectedProposition.type === 'assertion' &&
           $scope.userId === $scope.data[0].documentClaimedBy) && (!$scope.draggingParagraph || proposition.type !== 'blank') && 
-        ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank')){
+        ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank') || automatedCode === '3G'){
           console.log("3g")
           prep.code = '3G';
           prep.topic = $scope.selectedProposition ? $scope.selectedProposition.topic : proposition.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
-          prep.author = $scope.userId;
+          prep.author = !automatedCode ? $scope.userId : automatedAuthor;
           prep.targetParagraphId = paragraph.paragraphId;
           prep.targetNodeId = $scope.selectedNode ? $scope.selectedNode.nodeId : node.nodeId;
           prep.sectionNumber = $scope.selectedNode ? $scope.selectedNode.nodeId : node.sectionNumber;
@@ -10731,7 +10731,7 @@
                               console.log("Self non messaged")
                               $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
                               $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
-                              null, null, theStep.author, null, null);
+                              null, null, theStep.author, '3G', null);
                               // if (!theStep.noClick){
                               //   console.log("Not clicked")
                               //   setTimeout(function () {

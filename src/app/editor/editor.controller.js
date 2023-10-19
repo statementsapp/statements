@@ -4732,8 +4732,7 @@
                 for (var j = 0; j < $scope.data[0].nodes[i].paragraphs.length; j++){
 
                   for (var k = 0; k < $scope.data[0].nodes[i].paragraphs[j].propositions.length; k++){
-                    console.log("That of id: ", angular.copy(payload.of.id))
-                    console.log("That of: ", angular.copy(($scope.data[0].nodes[i].paragraphs[j].propositions[k].id)))
+                 
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].id === payload.of.id &&
                       !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                       console.log("GOT YA!")
@@ -4848,7 +4847,7 @@
 
               if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] && apply.afterParagraphIndex){
                 
-                console.log("Went into the if")
+                
                 for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs.length-1; i > (apply.afterParagraphIndex-1); i--){
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[i + 1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[i]);
                 }
@@ -4880,7 +4879,7 @@
                 }
               } else if (apply.afterParagraphIndex){
 
-                console.log("Went into the else")
+                
                 $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,
                   paragraphId: payload.paragraphId,
@@ -5514,7 +5513,7 @@
               console.log("Pushed assertion")
             } else if (payload.type === 'negation'){
               
-              console.log("All negations")
+             
               console.log($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].of.id === payload.of.id)
                 console.log($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].type === 'negation')
               if ($scope.data[0].dialogue[$scope.data[0].dialogue.length-1].id === payload.of.id ||
@@ -9917,7 +9916,7 @@
             return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
           }
 
-          function simulateReturnKeyPress(element, text) {
+          function simulateReturnKeyPress(element, text, authorNumber) {
             console.log("That text: ", text)
             const event = new Event('keyup', { bubbles: false, cancelable: true });
               event.key = 'Enter';
@@ -9929,6 +9928,7 @@
             $scope.$apply(function () {
              setTimeout(function () {
                // console.log("User actions: ", angular.copy($scope.userActions))
+               console.log("Author number before the dispatch: ", event.authorNumber)
                element.dispatchEvent(event);
                // console.log("That event: ", event)
                $scope.temporaryText = '';

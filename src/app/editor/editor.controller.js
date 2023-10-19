@@ -3452,7 +3452,7 @@
       }
 
       $scope.hideZeeky = function () {
-        console.log("Hiding zeeky")
+        
         $scope.isFresh = false;
         if (document.getElementById('zeekynegation')){
           document.getElementById('zeekynegation').style.display = 'none';
@@ -3479,7 +3479,7 @@
 
 
         if (paragraph){
-          console.log("Is paragraph")
+          
           if (document.getElementById('top' + paragraph.paragraphId)){
             console.log("Clearing top innerHTML")
             document.getElementById('top' + paragraph.paragraphId).innerHTML = '';
@@ -3566,8 +3566,7 @@
         }
 
 
-        console.log("Later Dragging Proposition: ", angular.copy($scope.draggingProposition))
-        console.log("Later Dragged Id: ", angular.copy($scope.draggedProposition.id))
+        
         //   Topics
 
         // If it's ended with a colon, or a dragged node
@@ -4917,7 +4916,7 @@
                   }
                 }
                 if ($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[apply.afterPropTarget+1]){
-                  console.log("First one if")
+                  
                   for (var i = $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.length-1; 
                     i > (apply.afterPropTarget); i--){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i+1] = angular.copy($scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i]);
@@ -4934,7 +4933,7 @@
                       messagesSoFar: payload.messagesSoFar,
                     }
                 } else {
-                  console.log("Prop pushing")
+                  
                   // have to push
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.push(
                     {
@@ -4952,7 +4951,7 @@
               for (var i = 0; i < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions.length; i++){
                 for (var j = 0; j < $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i].remarks.length; j++){
                   console.log("3B considering: ", $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i].remarks[j])
-                  console.log("The rejoins ", payload.rejoins)
+                  
                   if (payload.rejoins === $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i].remarks[j].id){
                     $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.targetParagraphIndex].propositions[i].remarks[j].rejoined = true;
                     break;
@@ -5635,7 +5634,7 @@
                 animate: true
               })
             }
-            console.log("About to animate")
+            // console.log("About to animate")
             $timeout(function() {
               
                 $scope.data[0].dialogue[$scope.data[0].dialogue.length-1].animate = false;
@@ -5735,7 +5734,7 @@
 
 
             if ($scope.data[0].dialogue){
-              console.log("If dialogue")
+              
               for (var i = 0; i < $scope.data[0].dialogue.length; i++){
                 if ($scope.data[0].dialogue[i].author === $scope.userId){
                   $scope.onTheBoard = true;
@@ -5943,7 +5942,7 @@
           $scope.draggedProposition = {};
           //
         }
-        console.log("User actions after incoming prop: ", $scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].length])
+        // console.log("User actions after incoming prop: ", $scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].length])
         $scope.clearAnimationClass();
       });
 

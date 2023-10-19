@@ -5887,7 +5887,7 @@
           // $scope.userActions.push(payload);
           
           if (isDefinedPoint($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript].sequence)) {
-            // console.log("About to simulate user")
+            console.log("About to simulate user")
             if ($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length].author === $scope.userId){
               setTimeout(function () {
                 $scope.$apply(function () {
@@ -7631,27 +7631,27 @@
                   messaged: false
                 
               },
-              // { index: 4, 
+              { index: 4, 
                 
-              //     author: '111',
-              //     text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 3,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
+              },
               // { index: 5, 
                 
               //     author: $scope.userId,
@@ -10416,7 +10416,7 @@
               }
             } else {
               
-              console.log("Reviewer prop: ", theStep.text)
+              console.log("some other persons prop: ", theStep.text)
               // reviewer propositions
               var theCode = theStep.code;
               if (theCode === '2A'){
@@ -10582,38 +10582,38 @@
                     console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
                     console.log("That points on: ", script.sequence[theOn].text.slice(0, 11))
                     console.log("That nodes blank: ", theStep.onBlank)
-                    if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11) &&
-                      theStep.onBlank){
-                      console.log("Normal blank")
-                      for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                    // if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11) &&
+                    //   theStep.onBlank){
+                    //   console.log("Normal blank")
+                    //   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                         
-                        for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                          if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'blank'){
-                            var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
-                            var thisH = angular.copy(h)
-                            var thisI = angular.copy(i)
-                            var thisJ = angular.copy(j)
-                            var hasAJ = true;
-                          }
-                        }
-                      }
-                      // setTimeout(function () {
-                      //   $scope.$apply(function () {
+                    //     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                    //       if ($scope.data[0].nodes[h].paragraphs[i].propositions[j].type === 'blank'){
+                    //         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
+                    //         var thisH = angular.copy(h)
+                    //         var thisI = angular.copy(i)
+                    //         var thisJ = angular.copy(j)
+                    //         var hasAJ = true;
+                    //       }
+                    //     }
+                    //   }
+                    //   // setTimeout(function () {
+                    //   //   $scope.$apply(function () {
                          
-                      //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
-                      //   });
-                      // }, 0);
+                    //   //     $scope.toggleRemarksExpansion($scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ])
+                    //   //   });
+                    //   // }, 0);
                               
-                      setTimeout(function () {
-                        document.getElementById('proposition'+thisHereId).click();
-                      }, 20);
-                      setTimeout(function () {
-                        populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
+                    //   setTimeout(function () {
+                    //     document.getElementById('proposition'+thisHereId).click();
+                    //   }, 20);
+                    //   setTimeout(function () {
+                    //     populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
                       
                         
-                      }, 2000);
-                      break;
-                    }
+                    //   }, 2000);
+                    //   break;
+                    // }
                    
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                       
@@ -10638,13 +10638,13 @@
                           if (theStep.its === 'top'){
                             console.log("Its top")
                             // $scope.$apply(function () {
-                            $scope.data[0].nodes[thisH].paragraphs[thisI].topMouseOver = true;
-                            $scope.data[0].nodes[thisH].paragraphs[thisI].topAdd = true;
-                            $scope.makeTopAppear($scope.data[0].nodes[thisH].paragraphs[thisI]);
-                              setTimeout(function () {
-                                document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
-                                .click();
-                              }, 40);
+                            // $scope.data[0].nodes[thisH].paragraphs[thisI].topMouseOver = true;
+                            // $scope.data[0].nodes[thisH].paragraphs[thisI].topAdd = true;
+                            // $scope.makeTopAppear($scope.data[0].nodes[thisH].paragraphs[thisI]);
+                            //   setTimeout(function () {
+                            //     document.getElementById('top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId)
+                            //     .click();
+                            //   }, 40);
                             // });
                             // setTimeout(function () {
                             //   console.log("")
@@ -10652,39 +10652,39 @@
                             // }, 20);
                             
                             // $scope.$apply(function () {
-                              setTimeout(function () {
-                                populateElementWithText(script.sequence[index].text, 
-                                  'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script)
+                              // setTimeout(function () {
+                              //   populateElementWithText(script.sequence[index].text, 
+                              //     'top'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script)
                                
-                              }, 2000);
+                              // }, 2000);
                             // });
-                            break;
+                            // break;
                           } else if (theStep.its === 'bottom'){
                             console.log("Its bottom")
                             // $scope.$apply(function () {
-                              setTimeout(function () {
-                                console.log("I")
-                                document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                                document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
-                              }, 0);
+                              // setTimeout(function () {
+                              //   console.log("I")
+                              //   document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
+                              //   document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
+                              // }, 0);
                             // });
                             // setTimeout(function () {
                             //   console.log("II")
                             //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                             // }, 1000);
                             // $scope.$apply(function () {
-                              setTimeout(function () {
-                                console.log("III")
-                                populateElementWithText(script.sequence[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script.authorNumber)
+                              // setTimeout(function () {
+                              //   console.log("III")
+                              //   populateElementWithText(script.sequence[index].text, $scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId, null, null, theStep, script.authorNumber)
                              
 
-                              }, 2000);
-                              break;
+                              // }, 2000);
+                              // break;
                             // });
                             
                           } else if (theStep.its === 'left'){
                               // $scope.$apply(function () {
-                                $scope.data[0].nodes[thisH].paragraphs[thisI].leftAdd = true;
+                                // $scope.data[0].nodes[thisH].paragraphs[thisI].leftAdd = true;
                                 // setTimeout(function () {
                                 //   populateElementWithText($scope.preDefinedPoints[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id)
                                 //   console.log("Got an id")
@@ -10693,10 +10693,10 @@
                                 // break;
                               // });
                             // console.log("Before: ", document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId))
-                              setTimeout(function () {
-                                $scope.data[0].nodes[thisH].paragraphs[thisI].leftAdd = true;
-                                document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id).click();
-                              }, 20);
+                              // setTimeout(function () {
+                              //   $scope.data[0].nodes[thisH].paragraphs[thisI].leftAdd = true;
+                              //   document.getElementById('left'+$scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id).click();
+                              // }, 20);
                             // });
                             // setTimeout(function () {
                             //   document.getElementById($scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
@@ -10705,28 +10705,28 @@
 
 
                             // $scope.$apply(function () {
-                              setTimeout(function () {
-                                populateElementWithText(script.sequence[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep, script.authorNumber)
+                              // setTimeout(function () {
+                              //   populateElementWithText(script.sequence[index].text, 'left'+ $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].id, null, null, theStep, script.authorNumber)
                                
 
-                              }, 2000);
-                              break;
+                              // }, 2000);
+                              // break;
                             // });
                           } else if (theStep.its === 'self') {     
 
                             if (theStep.messaged){
-                              console.log("Its messaged")
-                              setTimeout(function () {
-                                document.getElementById('message'+thisHereId).click();
-                                document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
-                              }, 20);
+                              // console.log("Its messaged")
+                              // setTimeout(function () {
+                              //   document.getElementById('message'+thisHereId).click();
+                              //   document.getElementById('dialoguelist').scrollTop = document.getElementById('dialoguelist').scrollHeight;
+                              // }, 20);
 
-                              setTimeout(function () {
-                                populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script.authorNumber)
+                              // setTimeout(function () {
+                              //   populateElementWithText(script.sequence[index].text,thisHereId, true, null, theStep, script.authorNumber)
                                 
-                                // break;
-                              }, 2000);
-                              break;
+                              //   // break;
+                              // }, 2000);
+                              // break;
                             } else {
                               console.log("Self")
                               // if (!theStep.noClick){
@@ -10740,15 +10740,15 @@
                               // }
                               
                                       
-                              setTimeout(function () {
-                                document.getElementById('proposition'+thisHereId).click();
-                              }, 20);
-                              setTimeout(function () {
-                                populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
+                              // setTimeout(function () {
+                              //   document.getElementById('proposition'+thisHereId).click();
+                              // }, 20);
+                              // setTimeout(function () {
+                              //   populateElementWithText(script.sequence[index].text,thisHereId,null, null, theStep, script.authorNumber)
                               
                                 
-                              }, 2000);
-                              break;
+                              // }, 2000);
+                              // break;
                             }
                             
 

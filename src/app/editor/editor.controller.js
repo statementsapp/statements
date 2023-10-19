@@ -4537,7 +4537,7 @@
                       ],
                     }
                 }
-                console.log("User id: ", $scope.userId)
+                
                 console.log("Payload author: ", payload.author)
                 if (!payload.draggedNode.nodeId && payload.author === $scope.userId && !$scope.selectedProposition.dialogueSide){
                     setTimeout(function () {
@@ -5494,7 +5494,7 @@
               //   color: payload.color,
               //   animate: true
               // }
-              console.log("All assertions")
+              
               $scope.data[0].dialogue.push(
               {
                 isMessage: true,
@@ -5509,7 +5509,7 @@
                 color: payload.color,
                 animate: true
               })
-              console.log("Pushed assertion")
+              
             } else if (payload.type === 'negation'){
               
              
@@ -5857,9 +5857,9 @@
         }, 35);
         
         function isDefinedPoint(thisPointIndex, script) {
-          console.log("Is defined point eh")
-          console.log("This point index: ", thisPointIndex)
-          console.log("Script: ", script)
+          
+          console.log("Defined point index: ", thisPointIndex)
+          console.log("Defined point script: ", script)
 
           return script.some(point => point.index === thisPointIndex);
         }
@@ -10023,7 +10023,7 @@
           if (theStep.action ==='proposition'){
             console.log("It's a prop: ", theStep.text)
             if (theStep.author === $scope.userId){
-              console.log("userid prop: ", theStep.text)
+              console.log("userid prop")
               if (theStep.which === 'theBlank'){
                 for (var i = 0; i < $scope.data[0].nodes[0].paragraphs.length; i++){
                   for (var j = 0; i < $scope.data[0].nodes[0].paragraphs[i].propositions.length; j++){

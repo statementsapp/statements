@@ -10634,6 +10634,7 @@
                           var thisJ = angular.copy(j)
                           var hasAJ = true;
                           console.log("That id id: ", thisHereId)
+                          console.log("That id text: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
                           console.log("The step its ", theStep.its)
                           if (theStep.its === 'top'){
                             console.log("Its top")

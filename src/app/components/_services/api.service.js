@@ -249,7 +249,7 @@
       readPropositions: readPropositions,
       buyPremium,
       openBillingPortal,
-      saveEmail: saveEmail
+      saveEmail
     };
 
     return apiService;

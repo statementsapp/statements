@@ -26,6 +26,7 @@
         if ($scope.form.email.$valid) {
             apiService.saveEmail(vm.email).then(function(response) {
               console.log("Success")
+              console.log("Response: ", response)
                 // Handle success
             }, function(error) {
               console.log("Failure")

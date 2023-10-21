@@ -10010,7 +10010,6 @@
           // simulate script
           // if (index > 0 && $scope.preDefinedPoints[index-1])
           var theStep = script.sequence[index];
-          // console.log("The step: ", theStep)
           var theOn = theStep.on;
           var theOnText = theStep.text;
           if (!theStep.messaged){
@@ -10021,7 +10020,6 @@
             }, 0);
           }
           if (theStep.action ==='proposition'){
-            console.log("It's a prop: ", theStep.text)
             if (theStep.author === $scope.userId){
               console.log("userid prop")
               if (theStep.which === 'theBlank'){
@@ -10043,8 +10041,6 @@
               } else if (theStep.which === 'aBlank'){
                 var theNodeTopic = theOn.text;
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
-                  // console.log("Topic: ", $scope.data[0].nodes[h].topic)
-                  // console.log("The Node Topic: ", $scope.preDefinedPoints[theOn].text)
 
                   if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
@@ -10085,8 +10081,7 @@
                       }
                     }
                   }
-                  console.log("Bottom node adder id outside: ", $scope.bottomNodeAdderId)
-                  console.log("Element outside by bottom adder: ", document.getElementById($scope.bottomNodeAdderId))
+                  
                   // populate with text
                   setTimeout(function () {
                     console.log("Element inside: ", document.getElementById($scope.bottomNodeAdderId))

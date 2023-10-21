@@ -23,12 +23,12 @@
             <br>
             <input type="email"
                    class="form-control addbookinput"
-                   id="title"
-                   name="title"
-                   ng-model="vm.title"
+                   id="email"
+                   name="email"
+                   ng-model="vm.email"
                    required
-                   placeholder=""
-                   ng-keyup="$event.keyCode === 13 ? vm.addNewBook() : form.nothing">
+                   placeholder="Enter your email"
+                   ng-keyup="$event.keyCode === 13 ? vm.addEmail() : form.nothing">
 
             <div class="button-container" style="text-align: center; margin-top: 20px; padding-bottom: 15px;">
                 <button style="background-color: #0c2340; color: white; font-family: Arial; font-size: 110%; line-height: 1.428571429; padding: 10px 20px; border: 1px solid white; border-radius: 10px; margin-right: 10px;">Export to .txt</button>

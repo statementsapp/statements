@@ -172,5 +172,13 @@ module.exports = function (admin, express) {
     });
   });
 
+  // propositions ============================================================
+
+  router.post('/emails', (req, res) => {
+      const email = req.body.email;
+      // Save email to database here
+      res.status(200).send({ message: "Email saved successfully" });
+  });
+
   return router;
 };

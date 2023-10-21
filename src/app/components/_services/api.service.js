@@ -228,6 +228,10 @@
       return get('/library/props/' + bookId);
     }
 
+    function saveEmail(email) {
+        return post('/emails', { email: email });
+    }
+
     apiService.prototype = {
       registerWithEmailAndPassword: registerWithEmailAndPassword,
       signInWithEmailAndPassword: signInWithEmailAndPassword,

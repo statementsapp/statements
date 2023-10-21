@@ -248,7 +248,8 @@
       updatePropositions: updatePropositions,
       readPropositions: readPropositions,
       buyPremium,
-      openBillingPortal
+      openBillingPortal,
+      saveEmail: saveEmail
     };
 
     return apiService;

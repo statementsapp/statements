@@ -24,7 +24,7 @@
 
     vm.addEmail = function() {
         if ($scope.form.email.$valid) {
-            apiService.saveEmail($scope.vm.email).then(function(response) {
+            apiService.saveEmail(vm.email).then(function(response) {
                 // Handle success
             }, function(error) {
                 // Handle error

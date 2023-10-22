@@ -172,12 +172,28 @@ module.exports = function (admin, express) {
     });
   });
 
-  // propositions ============================================================
+  // emails ============================================================
+
+  // router.post('/emails', (req, res) => {
+  //     const email = req.body.email;
+  //     // Save email to database here
+  //     res.status(200).send({ message: "Email saved successfully" });
+  // });
 
   router.post('/emails', (req, res) => {
       const email = req.body.email;
-      // Save email to database here
-      res.status(200).send({ message: "Email saved successfully" });
+
+      // Generate a new key for the email
+      var newEmailKey = db.ref().child('emails').push().key;
+
+      // Save the email to the database
+      db.ref('emails/' + newEmailKey).set(email).then(() => {
+          res.status(200).send({ message: "Email saved successfully" });
+      }).catch((error) => {
+          // Handle the error here. This will send a 500 internal server error 
+          // status code, but you may want to adjust this as per your needs.
+          res.status(500).send({ message: error.message });
+      });
   });
 
   return router;

@@ -4056,8 +4056,10 @@
           prep.author = !automatedCode ? $scope.userId : automatedAuthor;
           prep.targetParagraphId = paragraph.paragraphId;
           if (!automatedAuthor && $scope.selectedNode){
+            console.log("First 3g")
             prep.targetNodeId = $scope.selectedNode.nodeId;
           } else {
+            console.log("Second 3g")
             prep.targetNodeId = node.nodeId;
           } 
 

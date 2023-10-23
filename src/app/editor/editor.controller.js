@@ -4314,7 +4314,9 @@
         }
 
         
-        
+        if ($scope.hasBeenSetUp && prep.payload.author === $scope.userId && prep.payload.type === 'topic'){
+          document.getElementById(proposition.id).innerHTML = '';
+        }
 
         prep = {};
 
@@ -4373,6 +4375,8 @@
         }
 
         console.log("What was that sp: ", angular.copy(proposition.id))
+
+
 
         
         

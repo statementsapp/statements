@@ -4060,6 +4060,7 @@
             prep.targetNodeId = $scope.selectedNode.nodeId;
           } else {
             console.log("Second 3g")
+            console.log("Node topic: ", node.topic)
             prep.targetNodeId = node.nodeId;
           } 
 

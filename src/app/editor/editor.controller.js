@@ -4058,19 +4058,23 @@
           if (!automatedAuthor && $scope.selectedNode){
             console.log("First 3g")
             prep.targetNodeId = $scope.selectedNode.nodeId;
+            prep.sectionNumber = $scope.selectedNode.sectionNumber;
           } else {
             console.log("Second 3g")
             console.log("Node topic: ", node.topic)
             prep.targetNodeId = node.nodeId;
+            prep.sectionNumber = node.sectionNumber;
           } 
 
           
           // prep.targetNodeId = $scope.selectedNode ? $scope.selectedNode.nodeId : node.nodeId;
-          prep.sectionNumber = $scope.selectedNode ? $scope.selectedNode.nodeId : node.sectionNumber;
+          // prep.sectionNumber = $scope.selectedNode ? $scope.selectedNode.nodeId : node.sectionNumber;
           if ($scope.draggingProposition || $scope.draggingParagraph){
             prep.afterPropositionId = proposition.id;
-          } else {
+          } else if (!automatedAuthor){
             prep.afterPropositionId = $scope.selectedProposition.id;
+          } else {
+            prep.afterPropositionId = proposition.id;
           }
 
           prep.id = IdFactory.next();

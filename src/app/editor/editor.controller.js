@@ -3659,7 +3659,13 @@
           prep.topic = $scope.selectedNode.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
-          prep.author = $scope.userId;
+
+          if (!automatedAuthor){
+            prep.author = $scope.userId;
+          } else {
+            prep.author = automatedAuthor;
+          }
+
           if (!$scope.draggingParagraph && !$scope.draggingProposition){
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           } else {

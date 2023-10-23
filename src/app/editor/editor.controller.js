@@ -4129,7 +4129,7 @@
 
         } else {
 
-          console.log("womp womp for payload text: ", payload.text)
+          console.log("womp womp for payload text: ", prep.payload.text)
           return;
         }
         

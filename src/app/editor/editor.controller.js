@@ -4055,7 +4055,14 @@
           prep.adjustedText = input;
           prep.author = !automatedCode ? $scope.userId : automatedAuthor;
           prep.targetParagraphId = paragraph.paragraphId;
-          prep.targetNodeId = $scope.selectedNode ? $scope.selectedNode.nodeId : node.nodeId;
+          if (!automatedAuthor && $scope.selectedNode){
+            prep.targetNodeId = $scope.selectedNode.nodeId;
+          } else {
+            prep.targetNodeId = node.nodeId;
+          } 
+
+          
+          // prep.targetNodeId = $scope.selectedNode ? $scope.selectedNode.nodeId : node.nodeId;
           prep.sectionNumber = $scope.selectedNode ? $scope.selectedNode.nodeId : node.sectionNumber;
           if ($scope.draggingProposition || $scope.draggingParagraph){
             prep.afterPropositionId = proposition.id;

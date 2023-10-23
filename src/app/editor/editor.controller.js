@@ -4372,6 +4372,8 @@
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 
+        console.log("What was that sp: ", angular.copy($scope.selectedProposition.id))
+
         
         
 
@@ -5848,10 +5850,10 @@
             $scope.saveThisForASec = '';
           }
 
-          if (payload.code === '1' && payload.author === $scope.userId && $scope.hasBeenSetUp){
-            console.log("That final clear")
-            $scope.clearTopAndBottomHasFocus();
-          }
+          // if (payload.code === '1' && payload.author === $scope.userId && $scope.hasBeenSetUp){
+          //   console.log("That final clear")
+          //   $scope.clearTopAndBottomHasFocus();
+          // }
 
         }, 30);                                             // HAS A TIMEOUT
         

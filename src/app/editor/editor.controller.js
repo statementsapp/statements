@@ -7014,23 +7014,23 @@
                   onBlank: true
                 
               },
-              // { index: 2, 
+              { index: 2, 
                 
-              //     author: $scope.userId,
-              //     text: 'As this case demonstrates, the SEC is choosing to use the blunt and unpredictable tool of enforcement proceedings, to the exclusion of all other methods, to regulate the trillion-dollar digital asset industry.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: true,
-              //     which: 'item',
-              //     on: 1,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
+                  author: $scope.userId,
+                  text: 'As this case demonstrates, the SEC is choosing to use the blunt and unpredictable tool of enforcement proceedings, to the exclusion of all other methods, to regulate the trillion-dollar digital asset industry.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
                 
-              // },
+              },
               // { index: 3, 
                 
               //     author: $scope.userId,
@@ -7682,27 +7682,27 @@
                   action: 'proposition'
                 
               },
-              // { index: 5, 
+              { index: 5, 
                 
-              //     author: $scope.userId,
-              //     text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: $scope.userId,
+                  text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 4,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
+              },
               // { index: 6, 
                 
               //     author: $scope.userId,

@@ -5847,6 +5847,12 @@
             $scope.inputs.leftProposition = $scope.saveThisForASec;
             $scope.saveThisForASec = '';
           }
+
+          if (payload.code === '1' && payload.author === $scope.userId && $scope.hasBeenSetUp){
+            console.log("That final clear")
+            $scope.clearTopAndBottomHasFocus();
+          }
+
         }, 30);                                             // HAS A TIMEOUT
         
         if ($scope.hasBeenSetUp){

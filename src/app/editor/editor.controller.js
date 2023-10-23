@@ -4372,7 +4372,7 @@
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 
-        console.log("What was that sp: ", angular.copy($scope.selectedProposition.id))
+        console.log("What was that sp: ", angular.copy(proposition.id))
 
         
         

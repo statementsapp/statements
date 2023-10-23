@@ -7703,48 +7703,48 @@
                   action: 'proposition'
                 
               },
-              // { index: 6, 
+              { index: 6, 
                 
-              //     author: $scope.userId,
-              //     text: 'But the SEC cannot arbitrarily decide whether to drive such a major industry out of the United States.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'But the SEC cannot arbitrarily decide whether to drive such a major industry out of the United States.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 5,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 5,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 7, 
+              },
+              { index: 7, 
                 
-              //     author: $scope.userId,
-              //     text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 6,
-              //     its: 'bottom',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 6,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
+              },
               // { index: 8, 
                
               //     author: 'aaa',
@@ -10051,6 +10051,13 @@
             }, 0);
           }
           if (theStep.action ==='proposition'){
+
+
+
+
+
+
+
             if (theStep.author === $scope.userId){
               console.log("userid prop")
               if (theStep.which === 'theBlank'){
@@ -10439,8 +10446,14 @@
                 // props by the author that aren't on remarks by virtue of not getting a k
                 
               }
+
+
+
+
+
+
+
             } else {
-              
               console.log("some other persons prop: ", theStep.text)
               // reviewer propositions
               var theCode = theStep.code;
@@ -10687,6 +10700,9 @@
                             // break;
                           } else if (theStep.its === 'bottom'){
                             console.log("Its bottom")
+                            $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
+                            $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
+                            null, null, theStep.author, '3E', script.authorNumber);
                             // $scope.$apply(function () {
                               // setTimeout(function () {
                               //   console.log("I")

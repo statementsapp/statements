@@ -7010,23 +7010,23 @@
                   onBlank: true
                 
               },
-              { index: 2, 
+              // { index: 2, 
                 
-                  author: $scope.userId,
-                  text: 'As this case demonstrates, the SEC is choosing to use the blunt and unpredictable tool of enforcement proceedings, to the exclusion of all other methods, to regulate the trillion-dollar digital asset industry.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: true,
-                  which: 'item',
-                  on: 1,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
+              //     author: $scope.userId,
+              //     text: 'As this case demonstrates, the SEC is choosing to use the blunt and unpredictable tool of enforcement proceedings, to the exclusion of all other methods, to regulate the trillion-dollar digital asset industry.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: true,
+              //     which: 'item',
+              //     on: 1,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
                 
-              },
+              // },
               // { index: 3, 
                 
               //     author: $scope.userId,

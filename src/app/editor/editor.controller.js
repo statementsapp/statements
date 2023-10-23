@@ -3919,7 +3919,12 @@
             prep.topic = $scope.selectedProposition.topic;
             prep.type = 'assertion';
             prep.adjustedText = input;
-            prep.author = $scope.userId;
+            if (automatedAuthor){
+              prep.author = automatedAuthor;
+            } else {
+              prep.author = $scope.userId;
+            }
+            
             if (automatedCode !== '3B'){
               prep.afterPropositionId = angular.copy($scope.selectedProposition.of.id);
             } else {

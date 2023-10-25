@@ -3476,6 +3476,7 @@
         
         console.log("Input: ", angular.copy(input))
         console.log("Event: ", angular.copy(event))
+        console.log("Automated code: ", angular.copy(automatedCode))
 
 
         if (paragraph){
@@ -10778,7 +10779,7 @@
                               // }, 2000);
                               // break;
                             } else {
-                              console.log("Self non messaged")
+                              console.log("Self non messaged 3G")
                               $scope.prepProposition(theStep.text, $scope.data[0].nodes[thisH], 
                               $scope.data[0].nodes[thisH].paragraphs[thisI], $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ], 
                               null, null, theStep.author, '3G', script.authorNumber);

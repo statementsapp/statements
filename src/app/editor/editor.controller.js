@@ -4054,9 +4054,9 @@
           prep.id = IdFactory.next();
           prep.messagesSoFar = [prep.id]
 
-        } else if (($scope.selectedProposition.type === 'assertion' &&
+        } else if ((($scope.selectedProposition.type === 'assertion' &&
           $scope.userId === $scope.data[0].documentClaimedBy) && (!$scope.draggingParagraph || proposition.type !== 'blank') && 
-        ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank') || automatedCode === '3G'){
+        ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank')) || automatedCode === '3G'){
           console.log("3g")
           prep.code = '3G';
           prep.topic = $scope.selectedProposition ? $scope.selectedProposition.topic : proposition.topic;

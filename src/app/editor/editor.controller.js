@@ -3656,27 +3656,29 @@
           console.log("3e")
           prep.code = '3E';
           $scope.selectedProposition = {};
-          prep.topic = $scope.selectedNode.topic;
           prep.type = 'assertion';
           prep.adjustedText = input;
 
           if (!automatedAuthor){
             prep.author = $scope.userId;
+            prep.topic = $scope.selectedNode.topic;
+            prep.sectionNumber = $scope.selectedNode.sectionNumber;
           } else {
             prep.author = automatedAuthor;
+            prep.topic = node.topic;
+            prep.sectionNumber = node.sectionNumber;
           }
 
-          if (!$scope.draggingParagraph && !$scope.draggingProposition){
+          if (!$scope.draggingParagraph && !$scope.draggingProposition && !automatedAuthor){
             prep.afterParagraphId = $scope.selectedParagraph.paragraphId;
           } else {
             prep.afterParagraphId = angular.copy(paragraph.paragraphId);
           }
-          if (!$scope.draggingParagraph && !$scope.draggingProposition){
+          if (!$scope.draggingParagraph && !$scope.draggingProposition && !automatedAuthor){
             prep.targetNodeId = node.nodeId;
           } else {
             prep.targetNodeId = angular.copy(node.nodeId);
           }
-          prep.sectionNumber = $scope.selectedNode.sectionNumber;
           prep.id = IdFactory.next();
           prep.of = {
             type: 'itsown',

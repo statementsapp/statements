@@ -10096,7 +10096,7 @@
                 var theNodeTopic = theOn.text;
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
 
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11)){
+                  if ($scope.data[0].nodes[h].topic.slice(0, 15) === script.sequence[theOn].text.slice(0, 15)){
                     var thisHereId = $scope.data[0].nodes[h].paragraphs[0].propositions[0].id;
                     console.log("Got a this here id: ", thisHereId)
                     setTimeout(function () {
@@ -10116,11 +10116,11 @@
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         console.log("H-I-J: ", h, " ", i, " ", j)
                         if ( (!hasAJ &&
-                          script.sequence[theOn].text.slice(0,11) === 
-                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
+                          script.sequence[theOn].text.slice(0, 15) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15)) ||
                            (!hasAJ &&
-                          script.sequence[theOn].text.slice(0, 11) === 
-                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
+                          script.sequence[theOn].text.slice(0, 15) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15))){
                             var thisH = angular.copy(h)
                             var thisI = angular.copy(i)
                             var thisJ = angular.copy(j)
@@ -10149,11 +10149,11 @@
                         for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                           console.log("H-I-J: ", h, " ", i, " ", j)
                           if ( (!hasAJ &&
-                            script.sequence[theOn].text.slice(0,11) === 
-                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
+                            script.sequence[theOn].text.slice(0, 15) === 
+                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15)) ||
                              (!hasAJ &&
-                            script.sequence[theOn].text.slice(0, 11) === 
-                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
+                            script.sequence[theOn].text.slice(0, 15) === 
+                            $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15))){
                               var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;    
                               var thisH = angular.copy(h)
                               var thisI = angular.copy(i)
@@ -10183,8 +10183,8 @@
                      
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                         if (!hasAK &&
-                        script.sequence[theOn].text.slice(0, 11) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
+                        script.sequence[theOn].text.slice(0, 15) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0, 15)){
                           
                           var thisH = angular.copy(h)
                           var thisI = angular.copy(i)
@@ -10262,9 +10262,9 @@
                 console.log("Non k")
                 for (var h = 0; h < $scope.data[0].nodes.length; h++){
                   console.log("That nodes topic USERID: ", $scope.data[0].nodes[h].topic)
-                  console.log("That points on USERID: ", script.sequence[theOn].text.slice(0, 11))
+                  console.log("That points on USERID: ", script.sequence[theOn].text.slice(0, 15))
                   console.log("That nodes blank USERID: ", theStep.onBlank)
-                  if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11) &&
+                  if ($scope.data[0].nodes[h].topic.slice(0, 15) === script.sequence[theOn].text.slice(0, 15) &&
                     theStep.onBlank){
                     console.log("Normal blank")
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -10301,14 +10301,14 @@
                     
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                       console.log("H-I-J: ", h, " ", i, " ", j)
-                      console.log("First: ", script.sequence[theOn].text.slice(0, 11))
+                      console.log("First: ", script.sequence[theOn].text.slice(0, 15))
                       console.log("Second ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
                       if ( (!hasAJ &&
-                      script.sequence[theOn].text.slice(0, 11) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
+                      script.sequence[theOn].text.slice(0, 15) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15)) ||
                         (!hasAJ &&
-                      script.sequence[theOn].text.slice(0, 11) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
+                      script.sequence[theOn].text.slice(0, 15) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15))){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         
                         var thisH = angular.copy(h)
@@ -10482,8 +10482,8 @@
                     for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                    
                       if (
-                      script.sequence[theOn].text.slice(0, 11) === 
-                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)){
+                      script.sequence[theOn].text.slice(0, 15) === 
+                      $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15)){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         console.log("About to reviewer prop")
                         $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
@@ -10507,8 +10507,8 @@
                       for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                        
                         if (
-                        script.sequence[theOn].text.slice(0, 11) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
+                        script.sequence[theOn].text.slice(0, 15) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0, 15)){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
                           console.log("About to 2b prop")
                           $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
@@ -10567,8 +10567,8 @@
                        
                         for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                           if (!hasAK &&
-                          script.sequence[theOn].text.slice(0, 11) === 
-                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
+                          script.sequence[theOn].text.slice(0, 15) === 
+                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0, 15)){
                             
                             var thisH = angular.copy(h)
                             var thisI = angular.copy(i)
@@ -10634,9 +10634,9 @@
 
                   for (var h = 0; h < $scope.data[0].nodes.length; h++){
                     console.log("That nodes topic: ", $scope.data[0].nodes[h].topic)
-                    console.log("That points on: ", script.sequence[theOn].text.slice(0, 11))
+                    console.log("That points on: ", script.sequence[theOn].text.slice(0, 15))
                     console.log("That nodes blank: ", theStep.onBlank)
-                    // if ($scope.data[0].nodes[h].topic.slice(0, 11) === script.sequence[theOn].text.slice(0, 11) &&
+                    // if ($scope.data[0].nodes[h].topic.slice(0, 15) === script.sequence[theOn].text.slice(0, 15) &&
                     //   theStep.onBlank){
                     //   console.log("Normal blank")
                     //   for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
@@ -10673,14 +10673,14 @@
                       
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
                         console.log("H-I-J: ", h, " ", i, " ", j)
-                        console.log("First: ", script.sequence[theOn].text.slice(0, 11))
+                        console.log("First: ", script.sequence[theOn].text.slice(0, 15))
                         console.log("Second ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
                         if ( (!hasAJ &&
-                        script.sequence[theOn].text.slice(0, 11) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11)) ||
+                        script.sequence[theOn].text.slice(0, 15) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15)) ||
                           (!hasAJ &&
-                        script.sequence[theOn].text.slice(0, 11) === 
-                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0,11))){
+                        script.sequence[theOn].text.slice(0, 15) === 
+                        $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15))){
                           var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                           
                           var thisH = angular.copy(h)
@@ -10864,8 +10864,8 @@
                   for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                    
                     if (
-                    script.sequence[theOn].text.slice(0, 11) === 
-                    $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0,11)){
+                    script.sequence[theOn].text.slice(0, 15) === 
+                    $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0, 15)){
                       var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].id;
                       console.log("About to other author prop")
                       $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 

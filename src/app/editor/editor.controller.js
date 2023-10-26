@@ -4089,6 +4089,7 @@
             prep.afterPropositionId = $scope.selectedProposition.id;
           } else {
             console.log("trois")
+            console.log("prop text: ", proposition.text)
             prep.afterPropositionId = proposition.id;
           }
 

@@ -3473,8 +3473,18 @@
 
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged, onRemarkId ) {
+        if ($scope.selectedProposition){
+          console.log("SP: ", angular.copy($scope.selectedProposition))
+        } else {
+          console.log("No selected prop")
+        }
+
+        if (node){
+          console.log("Section claimed by: ", angular.copy(node.sectionClaimedBy))
+        } else {
+          console.log("no node claimed by")
+        }
         
-        console.log("Input: ", angular.copy(input))
         console.log("Event: ", angular.copy(event))
         console.log("Automated code: ", angular.copy(automatedCode))
 

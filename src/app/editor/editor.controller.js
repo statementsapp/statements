@@ -4082,10 +4082,13 @@
           // prep.targetNodeId = $scope.selectedNode ? $scope.selectedNode.nodeId : node.nodeId;
           // prep.sectionNumber = $scope.selectedNode ? $scope.selectedNode.nodeId : node.sectionNumber;
           if (($scope.draggingProposition || $scope.draggingParagraph) && !automatedAuthor){
+            console.log("un")
             prep.afterPropositionId = proposition.id;
           } else if (!automatedAuthor){
+            console.log("deux")
             prep.afterPropositionId = $scope.selectedProposition.id;
           } else {
+            console.log("trois")
             prep.afterPropositionId = proposition.id;
           }
 

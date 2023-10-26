@@ -4139,7 +4139,7 @@
 
         } else {
 
-          console.log("womp womp for payload text: ", prep.payload.text)
+          console.log("womp womp")
           return;
         }
         
@@ -7038,7 +7038,7 @@
                                   return this.text;
                                 },
                   type: 'assertion',
-                  dialogueSide: true,
+                  dialogueSide: false,
                   which: 'item',
                   on: 1,
                   its: 'self',

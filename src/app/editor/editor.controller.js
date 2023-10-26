@@ -4058,6 +4058,7 @@
           $scope.userId === $scope.data[0].documentClaimedBy) && (!$scope.draggingParagraph || proposition.type !== 'blank') && 
         ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank')) || automatedCode === '3G'){
           console.log("3g")
+          console.log("Oh right and that automated author: ", automatedAuthor)
           prep.code = '3G';
           prep.topic = $scope.selectedProposition ? $scope.selectedProposition.topic : proposition.topic;
           prep.type = 'assertion';
@@ -4068,17 +4069,19 @@
             console.log("First 3g")
             prep.targetNodeId = $scope.selectedNode.nodeId;
             prep.sectionNumber = $scope.selectedNode.sectionNumber;
+            prep.topic = $scope.selectedProposition.topic;
           } else {
             console.log("Second 3g")
             console.log("Node topic: ", node.topic)
             prep.targetNodeId = node.nodeId;
             prep.sectionNumber = node.sectionNumber;
+            prep.topic = proposition.topic;
           } 
 
           
           // prep.targetNodeId = $scope.selectedNode ? $scope.selectedNode.nodeId : node.nodeId;
           // prep.sectionNumber = $scope.selectedNode ? $scope.selectedNode.nodeId : node.sectionNumber;
-          if ($scope.draggingProposition || $scope.draggingParagraph){
+          if (($scope.draggingProposition || $scope.draggingParagraph) && !automatedAuthor){
             prep.afterPropositionId = proposition.id;
           } else if (!automatedAuthor){
             prep.afterPropositionId = $scope.selectedProposition.id;

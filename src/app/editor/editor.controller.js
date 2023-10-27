@@ -3524,7 +3524,6 @@
             if ($scope.data[0].dialogue[i].author === $scope.userId){
               $scope.onTheBoard = true;
               $scope.thisMoveCounter++;
-              console.log("On the board payload counted")
               break;
             }
           }
@@ -9940,7 +9939,8 @@
                 if (!nodeFlag){
                   setTimeout(function () {
                     clearInterval(intervalId);
-                    console.log("ABOUT TO TOP PRESS")
+                    console.log("ABOUT TO TOP PRESS with text: ", text)
+                    console.log("ABOUT TO TOP PRESS author number: ", authorNumber)
                     console.log("SELECTED NODE HERE: ", $scope.selectedNode.nodeId)
                     simulateReturnKeyPress(element, text, authorNumber);
                    }, 10);

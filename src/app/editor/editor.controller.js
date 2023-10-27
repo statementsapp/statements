@@ -3478,7 +3478,7 @@
 
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged, onRemarkId ) {
-        console.log("Prepping prop")
+        console.log("Prepping prop: ", input)
         if ($scope.selectedProposition){
           console.log("SP: ", angular.copy($scope.selectedProposition))
         } else {
@@ -3534,7 +3534,7 @@
           }
         }
 
-        console.log("Prepping prop: ", input)
+        
 
         $scope.theseInputs.push(angular.copy(input));
 
@@ -7727,7 +7727,7 @@
               { index: 5, 
                 
                   author: '111',
-                  text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
+                  text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7748,7 +7748,7 @@
               { index: 6, 
                 
                   author: '111',
-                  text: 'But the SEC cannot arbitrarily decide whether to drive such a major industry out of the United States.',
+                  text: 'The first digital asset emerged just 14 years ago.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7769,7 +7769,7 @@
               { index: 7, 
                 
                   author: '111',
-                  text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
+                  text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -7781,35 +7781,35 @@
 
                   which: 'item',
                   on: 6,
-                  its: 'bottom',
+                  its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
                 
               },
-              { index: 8, 
+              // { index: 8, 
                
-                  author: 'aaa',
-                  text: "Can we provide an initial reason to move for judgment, perhaps related to secondary contracts being misclassified?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'aaa',
+              //     text: "Can we provide an initial reason to move for judgment, perhaps related to secondary contracts being misclassified?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 7,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
+              // },
               // { index: 9, 
                 
               //     author: $scope.userId,

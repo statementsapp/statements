@@ -10497,6 +10497,7 @@
                       $scope.data[0].nodes[h].paragraphs[i].propositions[j].text.slice(0, 15)){
                         var thisHereId = $scope.data[0].nodes[h].paragraphs[i].propositions[j].id;
                         console.log("About to reviewer prop")
+                        console.log("With 2a script: ", angular.copy(script.authorNumber))
                         $scope.prepProposition(theStep.text, $scope.data[0].nodes[h], 
                         $scope.data[0].nodes[h].paragraphs[i], $scope.data[0].nodes[h].paragraphs[i].propositions[j], 
                         null, null, theStep.author, theCode, script.authorNumber);

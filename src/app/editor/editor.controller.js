@@ -9878,6 +9878,7 @@
           }
           let index = 0;
           element.textContent = '';
+          console.log ("BEFORE THE INTERVAL")
           const intervalId = setInterval(() => {
             
             

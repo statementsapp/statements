@@ -5980,7 +5980,7 @@
 
                   $scope.simulateUser($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript])
                 });
-              }, 2000);
+              }, 12000);
             }
             
             

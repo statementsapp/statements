@@ -9880,9 +9880,10 @@
           const intervalId = setInterval(() => {
             
             
-            // console.log("Well the element: ", element)
+            console.log("Well the text: ", text)
             $scope.$apply(function () {
              setTimeout(function () {
+
               if (Math.random() < 0.001 && index > 0 && false) {
                 // Simulate a backspace by removing the last character
                 element.textContent = element.textContent.slice(0, -1);

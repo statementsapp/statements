@@ -3087,6 +3087,7 @@
 
           if ($scope.userId !== payload.author &&
             $scope.selectedNode.nodeId === payload.nodeId){
+            console.log("Clearing EVERYTHING")
             $scope.selectedNode = {};
             $scope.selectedParagraph = {};
             $scope.selectedProposition = {};
@@ -3146,6 +3147,7 @@
 
           if ($scope.userId !== payload.author &&
             $scope.selectedParagraph.paragraphId === payload.paragraphId){
+            console.log("Clearing EVERYTHING PARAGRAPH")
             $scope.selectedNode = {};
             $scope.selectedParagraph = {};
             $scope.selectedProposition = {};
@@ -3265,6 +3267,7 @@
             if ($scope.selectedProposition){
               if ($scope.userId !== payload.author &&
                 $scope.selectedProposition.id === payload.id){
+                  console.log("Clearing EVERYTHING remark")
                   $scope.selectedNode = {};
                   $scope.selectedParagraph = {};
                   $scope.selectedProposition = {};
@@ -3316,6 +3319,7 @@
 
           if ($scope.userId !== payload.author &&
             $scope.selectedRemark.id === payload.remarkId){
+            console.log("Clearing EVERYTHING deletion")
             $scope.selectedNode = {};
             $scope.selectedParagraph = {};
             $scope.selectedProposition = {};
@@ -3350,6 +3354,7 @@
 
 
       $scope.setNewProp = function () {
+        console.log("Clearing EVERYTHING set new prop")
         $scope.newProp = true;
         $scope.selectedProposition = {};
         $scope.selectedParagraph = {};
@@ -3649,7 +3654,10 @@
           prep.beforeParagraphId = paragraph.paragraphId;
           prep.targetNodeId = $scope.selectedNode.nodeId;
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
-          $scope.selectedProposition = {};
+          if (!$scope.hasBeenSetUp){
+            $scope.selectedProposition = {};
+          }
+          
           prep.id = IdFactory.next();
           prep.of = {
             type: 'itsown',
@@ -3666,7 +3674,9 @@
 
           console.log("3e")
           prep.code = '3E';
-          $scope.selectedProposition = {};
+          if (!$scope.hasBeenSetUp){
+            $scope.selectedProposition = {};
+          }
           prep.type = 'assertion';
           prep.adjustedText = input;
 
@@ -3719,9 +3729,11 @@
             text: 'itsown'
           }
           prep.messagesSoFar = [prep.id]
-        } else if (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
-                ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId &&
-                 !paragraph.leftAdd) || (automatedCode === '2B' || automatedCode === '2A')) {
+        } else if (
+          ($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
+                ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId && !paragraph.leftAdd) || 
+                (automatedCode === '2B' || automatedCode === '2A')
+          ) {
           console.log("Input inside negations: ", input)
 
           // switched sp negation requirements from sp === your username to just not the document author
@@ -4064,9 +4076,12 @@
           prep.id = IdFactory.next();
           prep.messagesSoFar = [prep.id]
 
-        } else if (($scope.selectedProposition.type === 'assertion' &&
-          $scope.userId === node.sectionClaimedBy) && (!$scope.draggingParagraph || proposition.type !== 'blank') && 
-        ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank') || automatedCode === '3G'){
+        } else if (
+          ($scope.selectedProposition.type === 'assertion' && $scope.userId === node.sectionClaimedBy) && 
+          (!$scope.draggingParagraph || proposition.type !== 'blank') && 
+          ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank') || 
+          automatedCode === '3G'
+          ){
           console.log("3g")
           console.log("Oh right and that automated author: ", automatedAuthor)
           prep.code = '3G';

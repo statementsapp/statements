@@ -9854,6 +9854,7 @@
 
         function populateElementWithText(text, id, messageFlag, nodeFlag, theStep, authorNumber) {
           console.log("Id populating: ", id)
+          console.log("Well the text: ", text)
           if (!messageFlag){
             var element = document.getElementById(id);
           } else {
@@ -9880,7 +9881,7 @@
           const intervalId = setInterval(() => {
             
             
-            console.log("Well the text: ", text)
+            
             $scope.$apply(function () {
              setTimeout(function () {
 

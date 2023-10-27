@@ -5975,7 +5975,7 @@
           } else {
             var turnOffYet = true;
             for (var i = 0; i < $scope.allTheScripts.length; i++){
-              if ($scope.allTheScripts[i].stack.length =< $scope.allTheScripts[i].sequence.length){
+              if ($scope.allTheScripts[i].stack.length <= $scope.allTheScripts[i].sequence.length){
                 turnOffYet = false;
               }
             }

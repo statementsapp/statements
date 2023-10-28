@@ -10208,22 +10208,22 @@
 
                 } else if (theStep.which === 'item'){
                   console.log("An item")
-                  for (var h = 0; h < $scope.data[0].nodes.length; h++){
+                  for (var yourItemH = 0; yourItemH < $scope.data[0].nodes.length; yourItemH++){
                  
-                    for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
+                    for (var yourItemI = 0; yourItemI < $scope.data[0].nodes[yourItemH].paragraphs.length; yourItemI++){
                 
-                      for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
+                      for (var yourItemJ = 0; yourItemJ < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions.length; yourItemJ++){
                         console.log("That j: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
                         console.log("That js remarks: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks)
-                        for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
+                        for (var yourItemK = 0; yourItemK < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks.length; yourItemK++){
                           if (!hasAK &&
                           script.sequence[theOn].text.slice(0, 15) === 
-                          $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks[k].text.slice(0, 15)){
+                          $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks[yourItemK].text.slice(0, 15)){
                             
-                            var thisH = angular.copy(h)
-                            var thisI = angular.copy(i)
-                            var thisJ = angular.copy(j)
-                            var thisK = angular.copy(k)
+                            var thisH = angular.copy(yourItemH)
+                            var thisI = angular.copy(yourItemI)
+                            var thisJ = angular.copy(yourItemJ)
+                            var thisK = angular.copy(yourItemK)
                             var thisHereId = $scope.data[0].nodes[thisH].paragraphs[thisI].propositions[thisJ].remarks[thisK].id;
                             
                             

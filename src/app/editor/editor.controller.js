@@ -5513,10 +5513,12 @@
                     }
                   ]
                 }
-
-                setTimeout(function () {
-                    document.getElementById('proposition' + payload.id).click();
-                }, 20);
+                if (payload.author === $scope.userId){
+                  setTimeout(function () {
+                      document.getElementById('proposition' + payload.id).click();
+                  }, 20);
+                }
+                
               } else {
                   $scope.data[0].nodes[apply.nodeIndex].paragraphs[apply.afterParagraphIndex + 1] = {
                   first: true,

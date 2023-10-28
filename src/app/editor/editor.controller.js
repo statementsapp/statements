@@ -10215,7 +10215,7 @@
 
                       console.log("I: ", angular.copy(yourItemI))
                       console.log("The I paragraph: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI])
-
+                      console.log("That j but on the paragraph: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[0])
                       for (var yourItemJ = 0; yourItemJ < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions.length; yourItemJ++){
 
                         console.log("J is: ", angular.copy(yourItemJ))
@@ -10662,7 +10662,7 @@
 
                                   break;
                                 }
-                                break;
+                                
                               }    
 
                             }

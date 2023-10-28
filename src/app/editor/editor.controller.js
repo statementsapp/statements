@@ -1951,7 +1951,7 @@
                   !$scope.data[0].nodes[i].paragraphs[j].propositions[k].hiddenForAll){
                   // setTimeout(function () {
                   //   $scope.$apply(function () {
-                      if ($scope.editingCopy){
+                      if (!$scope.hasBeenSetUp && $scope.editingCopy){
                         $scope.thisI = angular.copy(i)
                         $scope.thisJ = angular.copy(j)
                         $scope.thisK = angular.copy(k)

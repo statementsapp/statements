@@ -10209,9 +10209,9 @@
                 } else if (theStep.which === 'item'){
                   console.log("An item")
                   for (var yourItemH = 0; yourItemH < $scope.data[0].nodes.length; yourItemH++){
-                 
+                    console.log("The H node: ", $scope.data[0].nodes[yourItemH])
                     for (var yourItemI = 0; yourItemI < $scope.data[0].nodes[yourItemH].paragraphs.length; yourItemI++){
-                      console.log("The I paragraphid: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].paragraphId)
+                      console.log("The I paragraph: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI])
                       for (var yourItemJ = 0; yourItemJ < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions.length; yourItemJ++){
                         console.log("That j: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ])
                         console.log("That js remarks: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks)

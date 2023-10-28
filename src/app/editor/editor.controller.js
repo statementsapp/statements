@@ -10082,7 +10082,7 @@
 
 
         // Simulating a user
-        $scope.simulateUser = function(index, script, delay) {
+        $scope.simulateUser = function(index, script, initialDelay) {
 
 
           setTimeout(function() {
@@ -10213,7 +10213,8 @@
                     for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){
                 
                       for (var j = 0; j < $scope.data[0].nodes[h].paragraphs[i].propositions.length; j++){
-                       
+                        console.log("That j: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
+                        console.log("That js remarks: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks)
                         for (var k = 0; k < $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks.length; k++){
                           if (!hasAK &&
                           script.sequence[theOn].text.slice(0, 15) === 
@@ -10916,7 +10917,7 @@
               //
             }
 
-          }, delay);
+          }, initialDelay);
 
 
 

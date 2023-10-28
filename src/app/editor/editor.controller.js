@@ -10213,8 +10213,8 @@
                     for (var yourItemI = 0; yourItemI < $scope.data[0].nodes[yourItemH].paragraphs.length; yourItemI++){
                 
                       for (var yourItemJ = 0; yourItemJ < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions.length; yourItemJ++){
-                        console.log("That j: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].text)
-                        console.log("That js remarks: ", $scope.data[0].nodes[h].paragraphs[i].propositions[j].remarks)
+                        console.log("That j: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].text)
+                        console.log("That js remarks: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks)
                         for (var yourItemK = 0; yourItemK < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks.length; yourItemK++){
                           if (!hasAK &&
                           script.sequence[theOn].text.slice(0, 15) === 

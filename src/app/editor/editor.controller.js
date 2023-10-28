@@ -1611,7 +1611,7 @@
         $scope.unHighlightNode();
         $timeout(function () {
           $scope.$apply(function () {
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.selectedProposition.textSide = true;
             $scope.hasTopFocus = paragraph.paragraphId;
             paragraph.topAdd = true;
@@ -1627,7 +1627,7 @@
           $scope.$apply(function () {
             node.topNodeAdd = true;
             $scope.selectedNode = node;
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.selectedProposition.textSide = true;
             $scope.topNodeAdderId = IdFactory.next();
             $scope.hasTopNodeFocus = node.nodeId;
@@ -1643,7 +1643,7 @@
         //   $scope.$apply(function () {
         //     node.bottomNodeAdd = true;
         //     $scope.selectedNode = node;
-        //     $scope.selectedProposition = {};
+        //     $scope.selectedProposition = angular.copy({});
         //     $scope.selectedProposition.textSide = true;
         //     // focusFactory($scope.bottomNodeAdderId);
         //   });
@@ -1656,7 +1656,7 @@
             node.bottomNodeAdd = true;
             node.bottomDropzoneMouseOver = true;
             $scope.selectedNode = node;
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.selectedProposition.textSide = true;
             focusFactory($scope.bottomNodeAdderId);
             
@@ -1681,7 +1681,7 @@
             paragraph.bottomAdd = true;
             $scope.hasBottomFocus.id = paragraph.paragraphId;
             $scope.hasTopFocus = '';
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.selectedProposition.textSide = true;
             if (document.getElementById(paragraph.paragraphId)){
               document.getElementById(paragraph.paragraphId).innerHTML = '';
@@ -1746,7 +1746,7 @@
                   document.getElementById($scope.selectedProposition.id).innerText = '';
                 }
                 
-                $scope.selectedProposition = {};
+                $scope.selectedProposition = angular.copy({});
                 var query = paragraph.paragraphId;
                 $timeout(function () {
                   $('#bottomadder' + query).trigger('click');
@@ -2322,7 +2322,7 @@
               }
             }
             $scope.cancelListenForDoubleClick = false;
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.draggedNode = {};
             $scope.draggedParagraph = {};
             $scope.draggedProposition = {};
@@ -3090,7 +3090,7 @@
             console.log("Clearing EVERYTHING")
             $scope.selectedNode = {};
             $scope.selectedParagraph = {};
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.selectedRemark = {};
           }
         } else if (payload.modifier === 'paragraph'){
@@ -3150,7 +3150,7 @@
             console.log("Clearing EVERYTHING PARAGRAPH")
             $scope.selectedNode = {};
             $scope.selectedParagraph = {};
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.selectedRemark = {};
           }
 
@@ -3270,7 +3270,7 @@
                   console.log("Clearing EVERYTHING remark")
                   $scope.selectedNode = {};
                   $scope.selectedParagraph = {};
-                  $scope.selectedProposition = {};
+                  $scope.selectedProposition = angular.copy({});
                   $scope.selectedRemark = {};
               }
             }
@@ -3322,7 +3322,7 @@
             console.log("Clearing EVERYTHING deletion")
             $scope.selectedNode = {};
             $scope.selectedParagraph = {};
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
             $scope.selectedRemark = {};
           }
 
@@ -3356,7 +3356,7 @@
       $scope.setNewProp = function () {
         console.log("Clearing EVERYTHING set new prop")
         $scope.newProp = true;
-        $scope.selectedProposition = {};
+        $scope.selectedProposition = angular.copy({});
         $scope.selectedParagraph = {};
       };
 
@@ -3655,7 +3655,7 @@
           prep.targetNodeId = $scope.selectedNode.nodeId;
           prep.sectionNumber = $scope.selectedNode.sectionNumber;
           if (!$scope.hasBeenSetUp){
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
           }
           
           prep.id = IdFactory.next();
@@ -3675,7 +3675,7 @@
           console.log("3e")
           prep.code = '3E';
           if (!$scope.hasBeenSetUp){
-            $scope.selectedProposition = {};
+            $scope.selectedProposition = angular.copy({});
           }
           prep.type = 'assertion';
           prep.adjustedText = input;
@@ -5883,7 +5883,7 @@
               $scope.hasBeenSetUp &&
               payload.code === '3F'){
               console.log("3F SELECTED PROP CLEAR CHECK THIS PLZ")
-              $scope.selectedProposition = {};
+              $scope.selectedProposition = angular.copy({});
             }
             
             apiService.updateBook($scope.bookId, JSON.parse(angular.toJson($scope.data[0])));
@@ -6424,25 +6424,25 @@
       }
 
       $scope.textareaBlur = function (message) {
-        return;
-        if (message['collision'+$scope.userId] == true){
+        // return;
+        // if (message['collision'+$scope.userId] == true){
           
-          setTimeout(function () {
-            $scope.$apply(function () {
-              for (var i = 0; i < $scope.data[0].dialogue.length; i++){
-                if($scope.data[0].dialogue[i]['notyetseen'+$scope.userId]){
-                  $scope.data[0].dialogue[i]['notyetseen'+$scope.userId] = false;
-                } else if ($scope.data[0].dialogue[i]['collision'+$scope.userId]){
-                  $scope.data[0].dialogue[i]['collision'+$scope.userId] = false;
-                }
-              }
-              // message['collision'+$scope.userId] = false;
-            });
+        //   setTimeout(function () {
+        //     $scope.$apply(function () {
+        //       for (var i = 0; i < $scope.data[0].dialogue.length; i++){
+        //         if($scope.data[0].dialogue[i]['notyetseen'+$scope.userId]){
+        //           $scope.data[0].dialogue[i]['notyetseen'+$scope.userId] = false;
+        //         } else if ($scope.data[0].dialogue[i]['collision'+$scope.userId]){
+        //           $scope.data[0].dialogue[i]['collision'+$scope.userId] = false;
+        //         }
+        //       }
+        //       // message['collision'+$scope.userId] = false;
+        //     });
 
-          }, 20);
-        }
-        // $scope.hasChatFocusId = '';
-        console.log("Blurred a textarea: ", message.dialogueText)
+        //   }, 20);
+        // }
+        // // $scope.hasChatFocusId = '';
+        // console.log("Blurred a textarea: ", message.dialogueText)
       }
 
       $scope.theresSomething = function () {

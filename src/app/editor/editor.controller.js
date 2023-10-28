@@ -1956,7 +1956,7 @@
                         $scope.thisJ = angular.copy(j)
                         $scope.thisK = angular.copy(k)
                         $scope.thisIsACopy = angular.copy($scope.data[0].nodes[i].paragraphs[j].propositions[k])
-                        $scope.data[0].nodes[i].paragraphs[j].propositions[k] = {};
+                        $scope.data[0].nodes[i].paragraphs[j].propositions[k] = angular.copy({});
                         setTimeout(function () {
                           $scope.$apply(function () {
                             $scope.data[0].nodes[$scope.thisI].paragraphs[$scope.thisJ].propositions[$scope.thisK] = $scope.thisIsACopy;

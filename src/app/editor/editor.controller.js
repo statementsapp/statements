@@ -9843,7 +9843,7 @@
 
 
 
-            $scope.simulateUser(0, $scope.coinbase, 15000);
+            $scope.simulateUser(0, $scope.coinbase, 3000);
             $scope.simulateUser(0, $scope.coinbase2);
             // $scope.simulateUser(0, $scope.coinbase3);
           
@@ -10223,6 +10223,7 @@
 
                         console.log("That js remarks: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks)
                         for (var yourItemK = 0; yourItemK < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks.length; yourItemK++){
+                          console.log("Will not trigger this")
                           if (!hasAK &&
                           script.sequence[theOn].text.slice(0, 15) === 
                           $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks[yourItemK].text.slice(0, 15)){

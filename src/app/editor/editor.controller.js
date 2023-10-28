@@ -10211,7 +10211,7 @@
                   for (var yourItemH = 0; yourItemH < $scope.data[0].nodes.length; yourItemH++){
                  
                     for (var yourItemI = 0; yourItemI < $scope.data[0].nodes[yourItemH].paragraphs.length; yourItemI++){
-                      console.log("The I: ", yourItemI)
+                      console.log("The I paragraphid: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].paragraphId)
                       for (var yourItemJ = 0; yourItemJ < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions.length; yourItemJ++){
                         console.log("That j: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ])
                         console.log("That js remarks: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks)

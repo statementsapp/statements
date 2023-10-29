@@ -5965,8 +5965,8 @@
           // $scope.userActions.push(payload);
           
           console.log("About to simulate user: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
-          console.log("On script: ", angular.copy($scope.allTheScripts[whichScript].sequence))
-          
+          console.log("The item: ", angular.copy($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length]))
+
           if (isDefinedPoint($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript].sequence)) {
             
             if ($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length].author === $scope.userId){

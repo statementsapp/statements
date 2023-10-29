@@ -9938,7 +9938,10 @@
           range.setStart(lastChild, lastChild.length);
           range.collapse(true);
           selection.removeAllRanges();
-          selection.addRange(range);
+          if (selection){
+            selection.addRange(range);
+          }
+          
         }
 
 

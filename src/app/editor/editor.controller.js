@@ -5998,6 +5998,21 @@
               }, 35);
             } else {
               console.log("Elsing")
+
+
+
+              var baseTimeout = 10000; // 10 seconds as the base timeout
+
+
+
+              var variation = 0.2 * baseTimeout; // 20% of the base timeout
+
+              // Generate a random number between -variation and +variation
+              var randomVariation = (Math.random() * (variation * 2)) - variation;
+
+              // Calculate the actual timeout
+              var actualTimeout = baseTimeout + randomVariation;
+
               setTimeout(function () {
                 $scope.$apply(function () {
                   // console.log("Firing sim user fcn")
@@ -6007,7 +6022,7 @@
 
                   $scope.simulateUser($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript])
                 });
-              }, 10000);
+              }, actualTimeout);
             }
             
             

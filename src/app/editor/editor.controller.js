@@ -4195,10 +4195,10 @@
         //   itsFound = false;
         // }
 
-        if (prep.adjustedText == 'Source?'){
-          console.log("Caught the source going out")
-          return;
-        }
+        // if (prep.adjustedText == 'Source?'){
+        //   console.log("Caught the source going out")
+        //   return;
+        // }
 
 
 

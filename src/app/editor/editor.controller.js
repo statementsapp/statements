@@ -4871,13 +4871,13 @@
                 }
               }
 
-              if (payload.author === $scope.userId && !payload.dialogueSide && !$scope.selectedProposition.id){
+              if (payload.author === $scope.userId && !payload.dialogueSide && !$scope.selectedProposition.id && !$scope.hasBeenSetUp){
                 console.log("2A click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
                   document.getElementById(payload.id).style.borderBottomColor = "#0C2340";
                 }, 20);
-              } else if (apply.reselectTarget){
+              } else if (apply.reselectTarget && !$scope.hasBeenSetUp){
                 console.log("2A Collision click")
                 console.log("About to click: ", angular.copy(document.getElementById('proposition' + apply.reselectTarget)))
                 var copyThis = angular.copy(apply.reselectTarget);
@@ -6007,7 +6007,7 @@
 
                   $scope.simulateUser($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript])
                 });
-              }, 8000);
+              }, 12000);
             }
             
             
@@ -9481,7 +9481,7 @@
               }, 0);
             });
             
-          }, getRandomInterval(30)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(250)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;

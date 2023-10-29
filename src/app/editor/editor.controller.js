@@ -9985,23 +9985,23 @@
 
               if (Math.random() < 0.001 && index > 0 && false) {
                 // Simulate a backspace by removing the last character
-                element.textContent = element.textContent.slice(0, -1);
-                index--;
-                if (theStep.its){
-                  if (theStep.its === 'left'){
-                    $scope.inputs['left'+id] = element.textContent;
-                  }
-                }
+                // element.textContent = element.textContent.slice(0, -1);
+                // index--;
+                // if (theStep.its){
+                //   if (theStep.its === 'left'){
+                //     $scope.inputs['left'+id] = element.textContent;
+                //   }
+                // }
                 
-                $scope.inputs['remark'+id] = element.textContent;
-                $scope.inputs['top'+id] = element.textContent;
-                $scope.inputs['bottom'+id] = element.textContent;
+                // $scope.inputs['remark'+id] = element.textContent;
+                // $scope.inputs['top'+id] = element.textContent;
+                // $scope.inputs['bottom'+id] = element.textContent;
                 
-                if (messageFlag){
-                  $scope.inputs.chatProposition = element.textContent;
-                } else {
-                  $scope.inputs[id] = element.textContent;
-                }
+                // if (messageFlag){
+                //   $scope.inputs.chatProposition = element.textContent;
+                // } else {
+                //   $scope.inputs[id] = element.textContent;
+                // }
               } else {
                 element.textContent += text[index];
                 index++;
@@ -10081,7 +10081,7 @@
               event.keyCode = 13;
               event.which = 13;
               event.authorNumber = authorNumber;
-              $scope.temporaryText = text;
+              $scope.temporaryText = angular.copy(text);
 
             $scope.$apply(function () {
              setTimeout(function () {

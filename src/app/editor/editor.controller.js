@@ -4202,14 +4202,14 @@
 
 
 
-        const comparatorText = "Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.";
+        // const comparatorText = "Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.";
 
-        if (comparatorText.substring(0, 8) === prep.adjustedText.substring(0, 8)) {
-            // Add your code here for the matching case
-          return;
-        } else {
-            console.log("Carry on");
-        }
+        // if (comparatorText.substring(0, 8) === prep.adjustedText.substring(0, 8)) {
+        //     // Add your code here for the matching case
+        //   return;
+        // } else {
+        //     console.log("Carry on");
+        // }
 
 
 
@@ -4435,7 +4435,7 @@
         $scope.dragProps = [];
 
         $scope.inputs.leftProposition = '';
-        if (paragraph){
+        if (paragraph && !$scope.hasBeenSetUp){
           $scope.inputs['bottom'+ paragraph.paragraphId] = '';
           $scope.inputs['top'+ paragraph.paragraphId] = '';
         }

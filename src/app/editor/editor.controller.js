@@ -4195,7 +4195,10 @@
         //   itsFound = false;
         // }
 
-        
+        if (prep.adjustedText == 'Source?'){
+          console.log("Caught the source going out")
+          return;
+        }
 
         prep.payload = {
           authorNumber: (authorNumber || authorNumber == 0) ? authorNumber : (event.authorNumber || event.authorNumber == 0) ? event.authorNumber : undefined,

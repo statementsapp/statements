@@ -4429,7 +4429,11 @@
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }
 
-        console.log("What was that sp: ", angular.copy(proposition.id))
+
+        if (proposition){
+          console.log("What was that sp: ", angular.copy(proposition.id))
+        }
+        
 
 
 
@@ -9936,7 +9940,10 @@
             });
           }
           let index = 0;
-          element.textContent = '';
+          if (element){
+            element.textContent = '';
+          }
+          
           console.log ("BEFORE THE INTERVAL")
           const intervalId = setInterval(() => {
             

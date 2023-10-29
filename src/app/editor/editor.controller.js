@@ -6007,7 +6007,7 @@
 
                   $scope.simulateUser($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript])
                 });
-              }, 12000);
+              }, 10000);
             }
             
             
@@ -9481,7 +9481,7 @@
               }, 0);
             });
             
-          }, getRandomInterval(60)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(50)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;

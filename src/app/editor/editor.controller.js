@@ -5995,12 +5995,15 @@
               // $scope.userActions[$scope.userActions.length-1].onIndex,
               // $scope.userActions[$scope.userActions.length-1].deletionIndex);
           } else {
+            console.log("Trying to turn off")
             var turnOffYet = true;
             for (var i = 0; i < $scope.allTheScripts.length; i++){
               if ($scope.allTheScripts[i].stack.length <= $scope.allTheScripts[i].sequence.length){
+                console.log("Turn off yet false")
                 turnOffYet = false;
               }
             }
+            console.log("Past the first turn off for")
 
             if (turnOffYet){
               console.log("Turning off has been set up")
@@ -6012,7 +6015,7 @@
             
             
             
-            console.log("Selected prop: ", angular.copy($scope.selectedProposition))
+            
           }
         }
         // Check if it's time to simulate the second user's action

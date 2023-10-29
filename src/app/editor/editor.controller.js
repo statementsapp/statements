@@ -5965,7 +5965,8 @@
           // $scope.userActions.push(payload);
           
           if (isDefinedPoint($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript].sequence)) {
-            console.log("About to simulate user")
+            console.log("About to simulate user: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
+            console.log("On script: ", angular.copy($scope.allTheScripts[whichScript].sequence))
             if ($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length].author === $scope.userId){
               setTimeout(function () {
                 $scope.$apply(function () {
@@ -10260,21 +10261,21 @@
                 } else if (theStep.which === 'item'){
                   console.log("An item")
                   for (var yourItemH = 0; yourItemH < $scope.data[0].nodes.length; yourItemH++){
-                    console.log("H: ", angular.copy(yourItemH))
-                    console.log("The H node: ", $scope.data[0].nodes[yourItemH])
+                    // console.log("H: ", angular.copy(yourItemH))
+                    // console.log("The H node: ", $scope.data[0].nodes[yourItemH])
                     for (var yourItemI = 0; yourItemI < $scope.data[0].nodes[yourItemH].paragraphs.length; yourItemI++){
 
-                      console.log("I: ", angular.copy(yourItemI))
-                      console.log("The I paragraph: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI])
-                      console.log("That j but on the paragraph: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[0])
+                      // console.log("I: ", angular.copy(yourItemI))
+                      // console.log("The I paragraph: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI])
+                      // console.log("That j but on the paragraph: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[0])
                       for (var yourItemJ = 0; yourItemJ < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions.length; yourItemJ++){
 
-                        console.log("J is: ", angular.copy(yourItemJ))
-                        console.log("That j: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ])
+                        // console.log("J is: ", angular.copy(yourItemJ))
+                        // console.log("That j: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ])
 
-                        console.log("That js remarks: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks)
+                        // console.log("That js remarks: ", $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks)
                         for (var yourItemK = 0; yourItemK < $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks.length; yourItemK++){
-                          console.log("Will not trigger this")
+                          // console.log("Will not trigger this")
                           if (!hasAK &&
                           script.sequence[theOn].text.slice(0, 15) === 
                           $scope.data[0].nodes[yourItemH].paragraphs[yourItemI].propositions[yourItemJ].remarks[yourItemK].text.slice(0, 15)){

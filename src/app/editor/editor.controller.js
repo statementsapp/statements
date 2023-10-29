@@ -4392,7 +4392,7 @@
         prep = {};
 
 
-        if (paragraph) {
+        if (paragraph && !$scope,hasBeenSetUp) {
 
           $timeout(function () {
             $scope.$apply(function () {

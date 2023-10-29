@@ -7953,7 +7953,311 @@
             ]
             };
 
-            $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2]
+            $scope.coinbase3 = { authorNumber: 2, stack: [], sequence: [
+              { index: 0, 
+                
+                  author: '222',
+                  text: 'CONCLUSION:',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'theBlank',
+                  on: undefined,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 1, 
+                
+                  author: '222',
+                  text: 'The SEC’s enforcement action here—and its attitude towards enforcement against digital assets generally—rests on the fatally flawed premise that digital assets, on their own, are securities.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: true,
+                  on: 0,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  onBlank: true
+                
+              },
+              { index: 2, 
+               
+                  author: 'ddd',
+                  text: "How fundamental is their error?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 1,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 3, 
+                
+                  author: '222',
+                  text: 'That is simply not correct; not as a matter of doctrine, and not as digital assets are commonly used.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 2,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              },
+              { index: 4, 
+                
+                  author: '111',
+                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 5, 
+                
+                  author: '111',
+                  text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 6, 
+                
+                  author: '111',
+                  text: 'The first digital asset emerged just 14 years ago.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 5,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 7, 
+                
+                  author: '111',
+                  text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 6,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 8, 
+                
+                  author: '111',
+                  text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 7,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 9, 
+               
+                  author: 'aaa',
+                  text: "Source?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 8,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 10, 
+                
+                  author: '111',
+                  text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Aug. 8, 2023).',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 9,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, // 
+              { index: 11, 
+                
+                  author: $scope.userId,
+                  text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 10,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 12, 
+               
+                  author: 'bbb',
+                  text: "Please provide an example.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 11,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 13, 
+                
+                  author: '111',
+                  text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 12,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, // 
+
+            ]
+            };
+
+            $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]
 
 
 

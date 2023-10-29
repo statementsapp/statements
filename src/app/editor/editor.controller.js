@@ -4200,6 +4200,19 @@
           return;
         }
 
+
+
+        const comparatorText = "Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.";
+
+        if (comparatorText.substring(0, 8) === prep.adjustedText.substring(0, 8)) {
+            // Add your code here for the matching case
+          return;
+        } else {
+            console.log("Carry on");
+        }
+
+
+
         prep.payload = {
           authorNumber: (authorNumber || authorNumber == 0) ? authorNumber : (event.authorNumber || event.authorNumber == 0) ? event.authorNumber : undefined,
           author: prep.author ? prep.author : $scope.userId,

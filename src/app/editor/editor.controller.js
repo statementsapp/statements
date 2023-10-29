@@ -7964,6 +7964,28 @@
                   messaged: false
                 
               }, // 
+              { index: 14, 
+                
+                  author: '111',
+                  text: 'Another report found that mer- chants often cite a regulatory environment that undermines trust in digital assets as the basis for refusing them as payment.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 13,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, //
 
             ]
             };
@@ -8052,6 +8074,72 @@
                   messaged: false
                 
               },
+              { index: 4, 
+                
+                  author: '222',
+                  text: 'The Commission’s insistence that it may treat all digital assets as securities notwithstanding gov- erning law, and with no regard for the enormous economic consequences of such a conclusion, is an audacious claim to authority that the constitutional separation of powers cannot abide.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, // 
+              { index: 5, 
+                
+                  author: '222',
+                  text: 'And the Commission’s refusal to supply industry any indication on how it will wield that doubtable au- thority offends due process.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, // 
+              { index: 6, 
+                
+                  author: '222',
+                  text: 'The Chamber respectfully asks the Court to grant Coinbase’s motion.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 5,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, // 
               // { index: 4, 
                 
               //     author: '111',

@@ -7864,7 +7864,73 @@
                   action: 'proposition',
                   messaged: false
                 
+              }, // 
+              { index: 11, 
+                
+                  author: $scope.userId,
+                  text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 10,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
               },
+              { index: 12, 
+               
+                  author: 'bbb',
+                  text: "Please provide an example.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 11,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 13, 
+                
+                  author: '111',
+                  text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 12,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, // 
               // { index: 9, 
                 
               //     author: '111',

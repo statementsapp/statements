@@ -9869,20 +9869,12 @@
                                 setTimeout(function () {
                                   console.log("STILL THIS HERE ID: ", thisHereId)
                                   document.getElementById('proposition'+thisHereId).click();
+                                  const thetext = document.getElementById('thetext');
+                                  const elementRect = clickedElement.getBoundingClientRect();
+                                  const containerRect = thetext.getBoundingClientRect();
 
-                                  // document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
-                                  const element = document.getElementById('thetext');
-
-                                  // Calculate the position to scroll to
-                                  const elementPosition = element.offsetTop;
-                                  const elementHeight = element.offsetHeight;
-                                  const viewportHeight = window.innerHeight;
-
-                                  // Calculate the position so the element is in the middle of the viewport
-                                  const scrollToPosition = elementPosition + elementHeight / 2 - viewportHeight / 2;
-
-                                  // Scroll to the calculated position
-                                  window.scrollTo(0, scrollToPosition);
+                                  const scrollToPosition = (elementRect.top - containerRect.top) + thetext.scrollTop - (containerRect.height / 2) + (elementRect.height / 2);
+                                  thetext.scrollTop = scrollToPosition;
 
                                 }, 20);
                                 setTimeout(function () {
@@ -10002,19 +9994,12 @@
                               setTimeout(function () {
                                 console.log("I")
                                 document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                                // document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
-                                const element = document.getElementById('thetext');
+                                const thetext = document.getElementById('thetext');
+                                const elementRect = clickedElement.getBoundingClientRect();
+                                const containerRect = thetext.getBoundingClientRect();
 
-                                // Calculate the position to scroll to
-                                const elementPosition = element.offsetTop;
-                                const elementHeight = element.offsetHeight;
-                                const viewportHeight = window.innerHeight;
-
-                                // Calculate the position so the element is in the middle of the viewport
-                                const scrollToPosition = elementPosition + elementHeight / 2 - viewportHeight / 2;
-
-                                // Scroll to the calculated position
-                                window.scrollTo(0, scrollToPosition);
+                                const scrollToPosition = (elementRect.top - containerRect.top) + thetext.scrollTop - (containerRect.height / 2) + (elementRect.height / 2);
+                                thetext.scrollTop = scrollToPosition;
                               }, 0);
                             // });
                             // setTimeout(function () {

@@ -9873,8 +9873,13 @@
                                   const elementRect = clickedElement.getBoundingClientRect();
                                   const containerRect = thetext.getBoundingClientRect();
 
-                                  const scrollToPosition = (elementRect.top - containerRect.top) + thetext.scrollTop - (containerRect.height / 2) + (elementRect.height / 2);
-                                  thetext.scrollTop = scrollToPosition;
+                                  // Calculate the new scroll position to center the element
+                                  const elementCenter = elementRect.top + (elementRect.height / 2);
+                                  const containerCenter = containerRect.top + (containerRect.height / 2);
+                                  const newScrollTop = thetext.scrollTop + (elementCenter - containerCenter);
+
+                                  // Apply the new scroll position
+                                  thetext.scrollTop = newScrollTop;
 
                                 }, 20);
                                 setTimeout(function () {
@@ -9998,8 +10003,13 @@
                                 const elementRect = clickedElement.getBoundingClientRect();
                                 const containerRect = thetext.getBoundingClientRect();
 
-                                const scrollToPosition = (elementRect.top - containerRect.top) + thetext.scrollTop - (containerRect.height / 2) + (elementRect.height / 2);
-                                thetext.scrollTop = scrollToPosition;
+                                // Calculate the new scroll position to center the element
+                                const elementCenter = elementRect.top + (elementRect.height / 2);
+                                const containerCenter = containerRect.top + (containerRect.height / 2);
+                                const newScrollTop = thetext.scrollTop + (elementCenter - containerCenter);
+
+                                // Apply the new scroll position
+                                thetext.scrollTop = newScrollTop;
                               }, 0);
                             // });
                             // setTimeout(function () {

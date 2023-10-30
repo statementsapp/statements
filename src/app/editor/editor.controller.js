@@ -9869,7 +9869,10 @@
                                 setTimeout(function () {
                                   console.log("STILL THIS HERE ID: ", thisHereId)
                                   document.getElementById('proposition'+thisHereId).click();
-                                  document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
+
+                                  // document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
+                                  var element = document.getElementById('thetext');
+                                  element.scrollTop = (element.scrollHeight - element.clientHeight) / 2;
 
                                 }, 20);
                                 setTimeout(function () {
@@ -9989,7 +9992,9 @@
                               setTimeout(function () {
                                 console.log("I")
                                 document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
-                                document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
+                                // document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
+                                var element = document.getElementById('thetext');
+                                element.scrollTop = (element.scrollHeight - element.clientHeight) / 2;
                               }, 0);
                             // });
                             // setTimeout(function () {

@@ -9871,8 +9871,18 @@
                                   document.getElementById('proposition'+thisHereId).click();
 
                                   // document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
-                                  var element = document.getElementById('thetext');
-                                  element.scrollTop = (element.scrollHeight - element.clientHeight) / 2;
+                                  const element = document.getElementById('thetext');
+
+                                  // Calculate the position to scroll to
+                                  const elementPosition = element.offsetTop;
+                                  const elementHeight = element.offsetHeight;
+                                  const viewportHeight = window.innerHeight;
+
+                                  // Calculate the position so the element is in the middle of the viewport
+                                  const scrollToPosition = elementPosition + elementHeight / 2 - viewportHeight / 2;
+
+                                  // Scroll to the calculated position
+                                  window.scrollTo(0, scrollToPosition);
 
                                 }, 20);
                                 setTimeout(function () {
@@ -9993,8 +10003,18 @@
                                 console.log("I")
                                 document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                                 // document.getElementById('thetext').scrollTop = document.getElementById('thetext').scrollHeight;
-                                var element = document.getElementById('thetext');
-                                element.scrollTop = (element.scrollHeight - element.clientHeight) / 2;
+                                const element = document.getElementById('thetext');
+
+                                // Calculate the position to scroll to
+                                const elementPosition = element.offsetTop;
+                                const elementHeight = element.offsetHeight;
+                                const viewportHeight = window.innerHeight;
+
+                                // Calculate the position so the element is in the middle of the viewport
+                                const scrollToPosition = elementPosition + elementHeight / 2 - viewportHeight / 2;
+
+                                // Scroll to the calculated position
+                                window.scrollTo(0, scrollToPosition);
                               }, 0);
                             // });
                             // setTimeout(function () {

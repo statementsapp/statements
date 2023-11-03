@@ -6000,7 +6000,7 @@
               console.log("Elsing")
 
 
-
+              console.log("Which script: ", whichScript)
               var baseTimeout = 10000; // 10 seconds as the base timeout
 
 
@@ -6015,6 +6015,7 @@
 
               setTimeout(function () {
                 $scope.$apply(function () {
+
                   // console.log("Firing sim user fcn")
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
                   console.log("New step NON AUTHOR")
@@ -11103,7 +11104,9 @@
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
                       if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
-                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId){
+                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
+                        $scope.data[0].nodes[nodeIndex].isTitle){
+                        console.log("Last book else select")
                         // console.log(nodeIndex," ", paragraphIndex, " ", index)
                         $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
                         setTimeout(function () {

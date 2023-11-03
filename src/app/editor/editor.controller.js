@@ -4077,7 +4077,7 @@
           prep.messagesSoFar = [prep.id]
 
         } else if (
-          ($scope.selectedProposition.type === 'assertion' && ($scope.userId === node.sectionClaimedBy || node.isTitle)) && 
+          ($scope.selectedProposition.type === 'assertion' && ($scope.userId === node.sectionClaimedBy || (node.isTitle && $scope.data[0].documentClaimedBy === $scope.userId))) && 
           (!$scope.draggingParagraph || proposition.type !== 'blank') && 
           ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank') || 
           automatedCode === '3G'

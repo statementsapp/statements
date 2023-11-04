@@ -19,8 +19,12 @@
     
       // Remove the animation class
       if (viewContainer) {
-      console.log("Removing fadein")
-      viewContainer.classList.remove('fadeInAnimation');
+
+        setTimeout(function() {
+          console.log("Removing fadein")
+          viewContainer.classList.remove('fadeInAnimation');
+        }, 50);
+      
       }
 
       if ($rootScope.firstEntry) {
@@ -44,7 +48,7 @@
           setTimeout(function() {
               console.log("Adding fadein")
               viewContainer.classList.add('fadeInAnimation');
-          });
+          }, 50);
         }
       });
 

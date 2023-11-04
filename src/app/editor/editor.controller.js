@@ -11045,6 +11045,7 @@
       $scope.getLastVisiblePropositionInBook = function (book, event) {
 
        
+
        $scope.unHighlightParagraph();
        // if (event.target.classList[0] == 'sectiontitle'){
        // }
@@ -11061,7 +11062,7 @@
                     console.log("K hit: ", angular.copy(k))
                     if ($scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[0] && !index &&
                       $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarksExpanded){
-                    
+                      console.log("Finds a remark")
                       var nodeIndex = angular.copy(i)
                       var paragraphIndex = angular.copy(j)
                       var index = angular.copy(k)
@@ -11074,7 +11075,7 @@
                           break;
                         }
                       }
-                      if (remarkIndex || remarkIndex === 0){
+                      if ((remarkIndex || remarkIndex === 0) && $scope.data[0].nodes[i].paragraphs[j].propositions[k].remarks[remarkIndex].of.author === $scope.userId){
                             $scope.holdOnToThis = angular.copy(
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].remarks[remarkIndex].id);
                         setTimeout(function () {
@@ -11088,7 +11089,8 @@
                         
                         }, 20);
                       } else if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
-                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId){
+                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
+                        nodeIndex === 0 && $scope.data[0].documentClaimedBy === $scope.userId ){
                         setTimeout(function () {
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
@@ -11098,28 +11100,29 @@
                       }
                       return;
 
-                    } else if (!index) {
-                      console.log("Else get last")
-                      var nodeIndex = angular.copy(i)
-                      var paragraphIndex = angular.copy(j)
-                      var index = angular.copy(k)
-                      if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
-                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
-                        $scope.data[0].nodes[nodeIndex].isTitle){
-                        console.log("Last book else select")
-                        // console.log(nodeIndex," ", paragraphIndex, " ", index)
-                        $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
-                        setTimeout(function () {
-                          // $scope.$apply(function () {
-                            document.getElementById('proposition' +
-                              $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
-                          // });
+                    } 
+                    // else if (!index) {
+                    //   console.log("Else get last")
+                    //   var nodeIndex = angular.copy(i)
+                    //   var paragraphIndex = angular.copy(j)
+                    //   var index = angular.copy(k)
+                    //   if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
+                    //     $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
+                    //     $scope.data[0].nodes[nodeIndex].isTitle){
+                    //     console.log("Last book else select")
+                    //     // console.log(nodeIndex," ", paragraphIndex, " ", index)
+                    //     $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                    //     setTimeout(function () {
+                    //       // $scope.$apply(function () {
+                    //         document.getElementById('proposition' +
+                    //           $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                    //       // });
 
-                        }, 20);
-                        return;
-                      }
+                    //     }, 20);
+                    //     return;
+                    //   }
                       
-                    }
+                    // }
                   }
                 }
               }

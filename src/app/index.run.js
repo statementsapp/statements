@@ -40,8 +40,8 @@
         
         // Re-add the animation class after a delay
         if (viewContainer) {
-          $timeout(function() {
-            viewContainer.classList.add('fadeInAnimation');
+          setTimeout(function() {
+              viewContainer.classList.add('fadeInAnimation');
           });
         }
       });

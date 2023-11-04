@@ -19,6 +19,7 @@
     
       // Remove the animation class
       if (viewContainer) {
+      console.log("Removing fadein")
       viewContainer.classList.remove('fadeInAnimation');
       }
 
@@ -41,6 +42,7 @@
         // Re-add the animation class after a delay
         if (viewContainer) {
           setTimeout(function() {
+              console.log("Adding fadein")
               viewContainer.classList.add('fadeInAnimation');
           });
         }

@@ -11090,7 +11090,8 @@
                         }, 20);
                       } else if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
                         $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
-                        nodeIndex === 0 && $scope.data[0].documentClaimedBy === $scope.userId ){
+                        $scope.data[0].nodes[nodeIndex].isTitle
+                         ){
                         setTimeout(function () {
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();

@@ -1502,30 +1502,22 @@ h2.typewriter {
   //color: white;
 }
 
-/* Define your transition */
-.transition-class {
-  transition: 0.5s linear all; /* Smooth transition for all changes */
+/* This ensures that every time the page (or view container) is loaded, it will fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Start state for entering element */
-.transition-class.ng-enter {
-  opacity: 0;
+/* Apply the animation to your main container, for example, the <body> or a div with ng-view */
+body, /* or .view-container if you have a specific container for your views */
+.ng-view, /* if you want to apply the animation directly to the view */
+.some-main-container-class { /* or any main container class */
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
 }
 
-/* End state for entering element */
-.transition-class.ng-enter.ng-enter-active {
-  opacity: 1;
-}
 
-/* Start state for leaving element */
-.transition-class.ng-leave {
-  opacity: 1;
-}
-
-/* End state for leaving element */
-.transition-class.ng-leave.ng-leave-active {
-  opacity: 0;
-}
 
 
 

@@ -1502,5 +1502,31 @@ h2.typewriter {
   //color: white;
 }
 
+/* Define your transition */
+.transition-class {
+  transition: 0.5s linear all; /* Smooth transition for all changes */
+}
+
+/* Start state for entering element */
+.transition-class.ng-enter {
+  opacity: 0;
+}
+
+/* End state for entering element */
+.transition-class.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+/* Start state for leaving element */
+.transition-class.ng-leave {
+  opacity: 1;
+}
+
+/* End state for leaving element */
+.transition-class.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+
 
 

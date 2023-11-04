@@ -1502,20 +1502,10 @@ h2.typewriter {
   //color: white;
 }
 
-/* This ensures that every time the page (or view container) is loaded, it will fade in */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.fadeInAnimation {
+  animation: fadeIn 0.5s both;
 }
 
-/* Apply the animation to your main container, for example, the <body> or a div with ng-view */
-body, /* or .view-container if you have a specific container for your views */
-.ng-view, /* if you want to apply the animation directly to the view */
-.some-main-container-class { /* or any main container class */
-  animation-name: fadeIn;
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-}
 
 
 

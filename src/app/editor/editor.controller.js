@@ -3819,7 +3819,7 @@
             // prep.messagesSoFar = angular.copy(prep.previousMessages);
 
 
-          } else if (automatedCode === '2A'){
+          } else {
 
             console.log("2a")
             prep.code = '2A';

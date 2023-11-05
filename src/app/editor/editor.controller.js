@@ -3479,7 +3479,7 @@
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged, onRemarkId ) {
         console.log("Prepping prop: ", input)
-        console.log("Node: ", node)
+        console.log("Node: ", $scope.selectedNode.topic)
         // if ($scope.selectedProposition){
         //   console.log("SP: ", angular.copy($scope.selectedProposition))
         // } else {
@@ -3591,7 +3591,7 @@
 
         if (((prep.lastChar === ':' || $scope.draggingNode || $scope.inputs.newSectionTitle) && 
           ($scope.data[0].multiAuthor || $scope.data[0].documentClaimedBy === $scope.userId)) ||
-          (node?.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph)) {
+          (node.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph)) {
           console.log("One")
           prep.code = '1';
           if (prep.lastChar === ':'){

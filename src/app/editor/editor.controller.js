@@ -4178,8 +4178,11 @@
         }
         console.log("That adjusted text: ", prep.adjustedText)
 
-        prep.adjustedText = prep.adjustedText.replace(/&nbsp;/g, ' ');
-        prep.adjustedText = angular.copy(prep.adjustedText).replace(/(&lt;br&gt;&lt;br&gt;\.|<br><br>\.)/g, '');
+        if (adjustedText){
+          prep.adjustedText = prep.adjustedText.replace(/&nbsp;/g, ' ');
+          prep.adjustedText = angular.copy(prep.adjustedText).replace(/(&lt;br&gt;&lt;br&gt;\.|<br><br>\.)/g, '');
+        }
+        
 
         if (!$scope.data[0].documentClaimedBy){
           prep.documentClaimedBy = $scope.userId;

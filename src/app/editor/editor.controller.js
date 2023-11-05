@@ -3591,7 +3591,7 @@
 
         if (((prep.lastChar === ':' || $scope.draggingNode || $scope.inputs.newSectionTitle) && 
           ($scope.data[0].multiAuthor || $scope.data[0].documentClaimedBy === $scope.userId)) ||
-          (node.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph)) {
+          (node?.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph)) {
           console.log("One")
           prep.code = '1';
           if (prep.lastChar === ':'){

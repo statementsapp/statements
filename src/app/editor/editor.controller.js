@@ -4178,7 +4178,7 @@
         }
         console.log("That adjusted text: ", prep.adjustedText)
 
-        if (adjustedText){
+        if (prep.adjustedText){
           prep.adjustedText = prep.adjustedText.replace(/&nbsp;/g, ' ');
           prep.adjustedText = angular.copy(prep.adjustedText).replace(/(&lt;br&gt;&lt;br&gt;\.|<br><br>\.)/g, '');
         }

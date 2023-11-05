@@ -11092,7 +11092,7 @@
                         $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
                         $scope.data[0].nodes[nodeIndex].isTitle
                          ){
-                        console.log("Else get last")
+                        console.log("Else last click")
                         setTimeout(function () {
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
@@ -11103,28 +11103,28 @@
                       return;
 
                     } 
-                    // else if (!index) {
-                    //   console.log("Else get last")
-                    //   var nodeIndex = angular.copy(i)
-                    //   var paragraphIndex = angular.copy(j)
-                    //   var index = angular.copy(k)
-                    //   if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
-                    //     $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
-                    //     $scope.data[0].nodes[nodeIndex].isTitle){
-                    //     console.log("Last book else select")
-                    //     // console.log(nodeIndex," ", paragraphIndex, " ", index)
-                    //     $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
-                    //     setTimeout(function () {
-                    //       // $scope.$apply(function () {
-                    //         document.getElementById('proposition' +
-                    //           $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
-                    //       // });
+                    else if (!index) {
+                      console.log("Else get last")
+                      var nodeIndex = angular.copy(i)
+                      var paragraphIndex = angular.copy(j)
+                      var index = angular.copy(k)
+                      if ($scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].type !== "blank" ||
+                        $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
+                        $scope.data[0].nodes[nodeIndex].isTitle){
+                        console.log("Last book else select")
+                        // console.log(nodeIndex," ", paragraphIndex, " ", index)
+                        $scope.selectedParagraph = $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex];
+                        setTimeout(function () {
+                          // $scope.$apply(function () {
+                            document.getElementById('proposition' +
+                              $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();
+                          // });
 
-                    //     }, 20);
-                    //     return;
-                    //   }
+                        }, 20);
+                        return;
+                      }
                       
-                    // }
+                    }
                   }
                 }
               }

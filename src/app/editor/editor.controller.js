@@ -3479,7 +3479,7 @@
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged, onRemarkId ) {
         console.log("Prepping prop: ", input)
-        console.log("Node: ", $scope.selectedNode.topic)
+        // console.log("Node: ", $scope.selectedNode.topic)
         // if ($scope.selectedProposition){
         //   console.log("SP: ", angular.copy($scope.selectedProposition))
         // } else {
@@ -3591,7 +3591,7 @@
 
         if (((prep.lastChar === ':' || $scope.draggingNode || $scope.inputs.newSectionTitle) && 
           ($scope.data[0].multiAuthor || $scope.data[0].documentClaimedBy === $scope.userId)) ||
-          (node.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph)) {
+          ($scope.selectedNode.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph)) {
           console.log("One")
           prep.code = '1';
           if (prep.lastChar === ':'){
@@ -3600,7 +3600,7 @@
             prep.topic = $scope.draggedNode.topic;
           } else if ($scope.inputs.newSectionTitle){
             prep.topic = $scope.inputs.newSectionTitle;
-          } else if (node.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph && prep.lastChar === '.'){
+          } else if ($scope.selectedNode.isTitle && $scope.userId !== $scope.data[0].documentClaimedBy && paragraph.theBlankParagraph && prep.lastChar === '.'){
             console.log("Non claimed author typing a sentence we are making into a section heading")
             prep.topic = input.substring(0, input.length - 1);
           }

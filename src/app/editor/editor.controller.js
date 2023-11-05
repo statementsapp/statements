@@ -3479,6 +3479,7 @@
 
       $scope.prepProposition = function (input, node, paragraph, proposition, event, flag, automatedAuthor, automatedCode, authorNumber, rejoinderMessaged, onRemarkId ) {
         console.log("Prepping prop: ", input)
+        console.log("Node: ", node)
         // if ($scope.selectedProposition){
         //   console.log("SP: ", angular.copy($scope.selectedProposition))
         // } else {

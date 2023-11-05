@@ -11092,6 +11092,7 @@
                         $scope.data[0].nodes[nodeIndex].sectionClaimedBy === $scope.userId ||
                         $scope.data[0].nodes[nodeIndex].isTitle
                          ){
+                        console.log("Else get last")
                         setTimeout(function () {
                           document.getElementById('proposition' +
                             $scope.data[0].nodes[nodeIndex].paragraphs[paragraphIndex].propositions[index].id).click();

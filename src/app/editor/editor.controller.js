@@ -865,7 +865,7 @@
         $('[ui-view]').attr('id', 'wholedamneditor');
       });
 
-      document.getElementById('wholedamneditor').style.backgroundColor = '#0C2340';
+      document.getElementById('wholedamneditor').style.backgroundColor = '#2B2E36';
 
       $scope.userColorTable = [];
       //initializes as number of colors in the palette
@@ -4808,7 +4808,7 @@
                 console.log("2B click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
-                  document.getElementById(payload.id).style.borderBottomColor = "#0C2340";
+                  document.getElementById(payload.id).style.borderBottomColor = "#2B2E36";
                 }, 20);
               } else if (apply.reselectTarget){
                 console.log("2B Collision click")
@@ -4817,7 +4817,7 @@
                 console.log("Copy this: ", copyThis)
                 setTimeout(function () {
                   document.getElementById('proposition' + copyThis).click();
-                  document.getElementById(copyThis).style.borderBottomColor = "#0C2340";
+                  document.getElementById(copyThis).style.borderBottomColor = "#2B2E36";
                 }, 100);
               }
 
@@ -4885,7 +4885,7 @@
                 console.log("2A click")
                 setTimeout(function () {
                   document.getElementById('proposition' + payload.id).click();
-                  document.getElementById(payload.id).style.borderBottomColor = "#0C2340";
+                  document.getElementById(payload.id).style.borderBottomColor = "#2B2E36";
                 }, 20);
               } else if (apply.reselectTarget && !$scope.hasBeenSetUp){
                 console.log("2A Collision click")
@@ -4899,7 +4899,7 @@
                 setTimeout(function () {
                   console.log("Else element clicking two ay: ", document.getElementById(payload.of.id))
                   console.log("Value", angular.copy($scope.inputs[payload.of.id]))
-                  // document.getElementById(payload.of.id).style.borderBottomColor = "#0C2340";
+                  // document.getElementById(payload.of.id).style.borderBottomColor = "#2B2E36";
                 }, 40);
                 
               }
@@ -11750,7 +11750,7 @@
       $('[ui-view]').attr('id', 'wholedamneditor');
     });
 
-    document.getElementById('wholedamneditor').style.backgroundColor = '#0C2340';
+    document.getElementById('wholedamneditor').style.backgroundColor = '#2B2E36';
     document.getElementById('wholedamneditor').style.height = '100vh';
     
     if ($rootScope.guest && !$scope.bookId) {

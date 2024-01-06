@@ -147,7 +147,7 @@
                                         selectedProposition.dialogueSide != true ? [selectedProposition.textSide = true, $event.preventDefault(), proposition.propositionPreSelected = false, whatsGoingOn(paragraph), prepProposition(inputs['top'+paragraph.paragraphId], node, paragraph, null, proposition, $event, 'top')] : inputs.nothing;
                                         (inputs['top'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), paragraph.topAdd = false] : inputs.nothing;"
                       spellcheck="false"
-                      style="color: #f0f0f0; left: 50px; background-color: #0C2340; display: inline"
+                      style="color: #f0f0f0; left: 50px; background-color: #2B2E36; display: inline"
                     >
                 </div>
                 <div class="topparagraphadder"
@@ -438,7 +438,7 @@
                         id="m{{proposition.id}}"
                         class="right-text right-textarea maininput"
                         style="padding-right: 8px;"
-                        ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #0c2340' : inputs[proposition.id] != undefined && inputs[proposition.id] != null && inputs[proposition.id] ? remarkInputString : '3px solid #0c2340' }"
+                        ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #2B2E36' : inputs[proposition.id] != undefined && inputs[proposition.id] != null && inputs[proposition.id] ? remarkInputString : '3px solid #2B2E36' }"
                         ng-class="{
                                   'maininputactive': inputs[proposition.id] !== '',
                                   'visible-cursor': !aRemarkIsMousedOver && (proposition.preSelected && !paragraph.leftMouseOver && !paragraph.disableRightCursor && hasRightFocus.id !== proposition.id && ((!draggingNode && !draggingParagraph && !draggingProposition) || checkIfDropValid(node, paragraph, proposition, 'right'))),
@@ -667,7 +667,7 @@
                       ng-keyup="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs['bottom'+paragraph.paragraphId] != '' ? [$event.preventDefault(), selectedProposition.textSide = true, proposition.propositionPreSelected = false, prepProposition(inputs['bottom'+paragraph.paragraphId], node, paragraph, proposition, $event, 'bottom')] : inputs.nothing;  (inputs['bottom'+paragraph.paragraphId] === '' && $event.keyCode === 8) ? [$event.preventDefault(), reverseCarriageReturn(node, paragraph), paragraph.topAdd = false] : inputs.nothing;"
                       class="texttopic"
                       spellcheck="false"
-                      style="color: #f0f0f0; position: relative; display: inline; background-color: #0C2340; margin-left: -10px; ">
+                      style="color: #f0f0f0; position: relative; display: inline; background-color: #2B2E36; margin-left: -10px; ">
                 </div>
                
                 <div
@@ -701,7 +701,7 @@
                 editable-span-ng-model
                 ng-model="inputs.newSectionTitle"
                 ng-class="{'topicgreyed': draggedNode.nodeId === node.nodeId}"
-                style="text-indent: 25px; background-color: #0C2340; text-indent:100px; color: white;"
+                style="text-indent: 25px; background-color: #2B2E36; text-indent:100px; color: white;"
                 class="right-textarea texttopic"
                 id="m{{bottomNodeAdderId}}"
                 ></span>

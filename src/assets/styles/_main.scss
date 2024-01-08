@@ -490,7 +490,7 @@ textarea {
 
 .zeekyboogydoog {
   color: #f0f0f0 !important;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-name: zeekyboogydoog;
 }
 
@@ -506,13 +506,15 @@ textarea {
 }
 
 @keyframes zeekyboogydoog {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
 }
 
 @keyframes bobopeskedeedledottin {

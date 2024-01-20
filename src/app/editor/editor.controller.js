@@ -4219,7 +4219,7 @@
         
         if (!event){
           var event.ish = null;
-          event.authorNumber = null;
+          event.authorNumber = undefined;
         }
 
         prep.payload = {

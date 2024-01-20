@@ -4217,10 +4217,13 @@
           console.log("Falsy authorNumber: ", authorNumber)
         }
         
-
+        if (!event){
+          var event.ish = null;
+          event.authorNumber = null;
+        }
 
         prep.payload = {
-          authorNumber: (authorNumber) ? authorNumber : (event.authorNumber) ? event.authorNumber : (event.authorNumber  || event.authorNumber !== undefined) ? event.authorNumber : authorNumber !== undefined ? authorNumber : undefined,
+          authorNumber: (authorNumber) ? authorNumber : event ? (event.authorNumber) ? event.authorNumber : (event.authorNumber  || event.authorNumber !== undefined) ? event.authorNumber : authorNumber !== undefined ? authorNumber : undefined,
           author: prep.author ? prep.author : $scope.userId,
           text: prep.adjustedText,
           dialogueText: angular.copy(prep.adjustedText),

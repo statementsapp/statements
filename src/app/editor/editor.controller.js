@@ -4218,7 +4218,7 @@
         }
         
         if (!event){
-          var event.ish = null;
+          var event = {ish: null}
           event.authorNumber = undefined;
         }
 

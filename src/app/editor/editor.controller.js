@@ -4210,8 +4210,13 @@
 
 
 
-        
+        if (authorNumber){
+          console.log("The author number before payload: ", authorNumber)
 
+        } else {
+          console.log("Falsy authorNumber: ", authorNumber)
+        }
+        
 
 
         prep.payload = {

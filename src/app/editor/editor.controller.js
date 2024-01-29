@@ -6000,6 +6000,7 @@
 
           // $scope.userActions.push(payload);
           
+          console.log("Which script hmm ", angular.copy($scope.allTheScripts[whichScript]))
           console.log("About to simulate user: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
           console.log("The item: ", angular.copy($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length]))
 

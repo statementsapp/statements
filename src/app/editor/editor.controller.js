@@ -7987,7 +7987,7 @@
               { index: 14, 
                 
                   author: '111',
-                  text: 'Another report found that mer- chants often cite a regulatory environment that undermines trust in digital assets as the basis for refusing them as payment.',
+                  text: 'Another report found that merchants often cite a regulatory environment that undermines trust in digital assets as the basis for refusing them as payment.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8160,222 +8160,222 @@
                   messaged: false
                 
               }, // 
-              // { index: 4, 
+              { index: 4, 
                 
-              //     author: '111',
-              //     text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 3,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 3,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 5, 
+              },
+              { index: 5, 
                 
-              //     author: '111',
-              //     text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 4,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 4,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 6, 
+              },
+              { index: 6, 
                 
-              //     author: '111',
-              //     text: 'The first digital asset emerged just 14 years ago.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'The first digital asset emerged just 14 years ago.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 5,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 5,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 7, 
+              },
+              { index: 7, 
                 
-              //     author: '111',
-              //     text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 6,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 6,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 8, 
+              },
+              { index: 8, 
                 
-              //     author: '111',
-              //     text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 7,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 7,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 9, 
+              },
+              { index: 9, 
                
-              //     author: 'aaa',
-              //     text: "Source?",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'aaa',
+                  text: "Source?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 8,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 8,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },
-              // { index: 10, 
+              },
+              { index: 10, 
                 
-              //     author: '111',
-              //     text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Aug. 8, 2023).',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Aug. 8, 2023).',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 9,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: false
+                  which: 'item',
+                  on: 9,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
                 
-              // }, // 
-              // { index: 11, 
+              }, // 
+              { index: 11, 
                 
-              //     author: $scope.userId,
-              //     text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: $scope.userId,
+                  text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 10,
-              //     its: 'bottom',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition'
+                  which: 'item',
+                  on: 10,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
                 
-              // },
-              // { index: 12, 
+              },
+              { index: 12, 
                
-              //     author: 'bbb',
-              //     text: "Please provide an example.",
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'negation',
-              //     code: '2A',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: 'bbb',
+                  text: "Please provide an example.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
                   
-              //     which: 'item',
-              //     on: 11,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: true
+                  which: 'item',
+                  on: 11,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
               
-              // },
-              // { index: 13, 
+              },
+              { index: 13, 
                 
-              //     author: '111',
-              //     text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 12,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: false
+                  which: 'item',
+                  on: 12,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
                 
-              // }, // 
+              }, // 
 
             ]
             };

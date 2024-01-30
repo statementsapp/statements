@@ -7526,7 +7526,7 @@
               { index: 21, 
                
                   author: 'bbb',
-                  text: "Would the size of the cryptocurrency industry be a legal for the SEC not to regulate it?",
+                  text: "Would the size of the cryptocurrency industry be a legal reason for the SEC not to regulate it?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9890,6 +9890,9 @@
                                   console.log("STILL THIS HERE ID: ", thisHereId)
                                   document.getElementById('proposition'+thisHereId).click();
                                   const thetext = document.getElementById('thetext');
+
+                                  const clickedElement = document.getElementById('proposition'+thisHereId);
+
                                   const elementRect = clickedElement.getBoundingClientRect();
                                   const containerRect = thetext.getBoundingClientRect();
 
@@ -10020,6 +10023,9 @@
                                 console.log("I")
                                 document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId).click();
                                 const thetext = document.getElementById('thetext');
+
+                                const clickedElement = document.getElementById('bottomadder'+$scope.data[0].nodes[thisH].paragraphs[thisI].paragraphId);
+
                                 const elementRect = clickedElement.getBoundingClientRect();
                                 const containerRect = thetext.getBoundingClientRect();
 

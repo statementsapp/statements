@@ -8,3 +8,4 @@ dist/
 .DS_Store
 .env.local
 .env
+/src/app/index.config.js

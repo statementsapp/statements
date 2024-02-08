@@ -1494,13 +1494,13 @@
                 $scope.data[0].authorTable = [
                   {
                         authorId: angular.copy(payload.author),
-                        color: 'white'
+                        color: $scope.otherPastels[($scope.authorTableLength - 1)]
                   }
                 ]
-                if (payload.author === $scope.userId){
-                  $scope.userColor = 'white';
-                }
-                var payloadColor = 'white';
+                // if (payload.author === $scope.userId){
+                //   $scope.userColor = 'white';
+                // }
+                var payloadColor = angular.copy($scope.data[0].authorTable[0].color)
 
                 // if the author table is presently blank, assign yourself light grey 
                 // as you are now author

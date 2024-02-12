@@ -1442,19 +1442,20 @@
       }
 
       $scope.getColors = function (payload) {
-              if ($scope.data[0].authorTable.length == 0){
+              // if ($scope.data[0].authorTable.length == 0){
 
-                $scope.data[0].authorTable = [
-                  {
-                        authorId: angular.copy(payload.author),
-                        color: 'white'
-                  }
-                ]
-                if (payload.author === $scope.userId){
-                  $scope.userColor = 'white';
-                }
-                var payloadColor = 'white';
-              } else {
+              //   $scope.data[0].authorTable = [
+              //     {
+              //           authorId: angular.copy(payload.author),
+              //           color: 'white'
+              //     }
+              //   ]
+              //   if (payload.author === $scope.userId){
+              //     $scope.userColor = 'white';
+              //   }
+              //   var payloadColor = 'white';
+              // } 
+              // else {
                 // loop through author table
 
 
@@ -1482,7 +1483,7 @@
                     $scope.userColor = payloadColor;
                   }
                 }
-              }
+              // }
               return payloadColor;
       }
 

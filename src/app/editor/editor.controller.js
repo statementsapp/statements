@@ -1496,7 +1496,7 @@
                 $scope.data[0].authorTable = [
                   {
                         authorId: angular.copy(payload.author),
-                        color: $scope.otherPastels[($scope.authorTableLength - 1)]
+                        color: $scope.otherPastels[0]
                   }
                 ]
                 // if (payload.author === $scope.userId){

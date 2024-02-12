@@ -5785,22 +5785,21 @@
             console.log("Before already there")
 
             for (var i = 0; i < $scope.userColorTable.length; i++) {
-              if ($scope.userColorTable[i].author === payload.author &&
-                payload.author !== $scope.userId) {
+              if ($scope.userColorTable[i].author === payload.author) {
                 var alreadyThere = true;
                 var place = i;
                 break;
               }
             }
             if (!alreadyThere && payload.type !== 'topic') {
-              if (payload.author !== $scope.userId) {
+              // if (payload.author !== $scope.userId) {
                 $scope.userColorTable.push(
                   {
                     author: payload.author,
                     color: $scope.generateNewColor()
                   }
                 );
-              }
+              // }
             } else if (payload.author !== $scope.userId &&
               payload.type !== 'topic') {
               if (payload.type !== 'negation') {

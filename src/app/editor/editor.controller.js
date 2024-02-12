@@ -1531,41 +1531,41 @@
                   // if it's not in the table,
                   // make the color the first unused one in the pastels array
 
-                  var payloadColor = $scope.otherPastels[$scope.data[0].authorTable.length -1];
-                  if (payload.author !== $scope.userId){
-                    $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
+                  var payloadColor = $scope.otherPastels[$scope.data[0].authorTable.length];
+                  // if (payload.author !== $scope.userId){
+                    $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength)];
                     $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
-                  }
+                  // }
 
 
                   $scope.data[0].authorTable.push({
                     authorId: payload.author,
                     color: angular.copy(payloadColor)
                   })
-                  if (payload.author === $scope.userId){
-                    $scope.userColor = payloadColor;
-                  } else {
-                    for (var i = 0; i < $scope.data[0].authorTable.length; i++){
-                      if ($scope.data[0].authorTable[i].authorId === $scope.userId){
-                        var colorYetAssigned = true;
-                        break;
-                      }
+                  // if (payload.author === $scope.userId){
+                  //   $scope.userColor = payloadColor;
+                  // } else {
+                    // for (var i = 0; i < $scope.data[0].authorTable.length; i++){
+                    //   if ($scope.data[0].authorTable[i].authorId === $scope.userId){
+                    //     var colorYetAssigned = true;
+                    //     break;
+                    //   }
 
 
                       // look up the color already assigned to the payload author
                       // if there, the payload will have that color
 
 
-                    }
-                    if (!$scope.colorYetAssigned){
-                      $scope.authorTableLength = angular.copy($scope.data[0].authorTable.length); 
-                      $scope.pastelsLength = angular.copy($scope.otherPastels.length); 
-                      $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
-                      $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
-                    }
+                    // }
+                    // if (!$scope.colorYetAssigned){
+                    //   $scope.authorTableLength = angular.copy($scope.data[0].authorTable.length); 
+                    //   $scope.pastelsLength = angular.copy($scope.otherPastels.length); 
+                    //   $scope.remarkInputColor = $scope.otherPastels[($scope.authorTableLength - 1)];
+                    //   $scope.remarkInputString = '3px solid ' + $scope.remarkInputColor;
+                    // }
                     
-                  }
-                  $scope.colorYetAssigned = false;
+                  // }
+                  // $scope.colorYetAssigned = false;
                 }
               }
 

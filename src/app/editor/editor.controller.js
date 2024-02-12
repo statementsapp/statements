@@ -982,20 +982,21 @@
           } else {
             if (key === 'isMessage') {
               for (var i = 0; i < $scope.userColorTable.length; i++) {
-                if (x === $scope.userColorTable[i].author && x !== $scope.userId) {
+                if (x === $scope.userColorTable[i].author ) {
+                  // && x !== $scope.userId
                   var alreadyThere = true;
                   var index = i;
                   break;
                 }
               }
 
-              if (x !== $scope.userId && x !== '' && obj.type !== 'topic' && alreadyThere) {
+              if (x !== '' && obj.type !== 'topic' && alreadyThere) {
                 
-                if (obj.author == $scope.userId){
+                // if (obj.author == $scope.userId){
                   obj.color = $scope.userColorTable[index].color;
-                } else {
-                  obj.color = 'white';
-                }
+                // } else {
+                //   obj.color = 'white';
+                // }
 
               }
 
@@ -1007,11 +1008,11 @@
                     color: $scope.generateNewColor()
                   }
                 )
-                if (obj.author == $scope.userId){
+                // if (obj.author == $scope.userId){
                   obj.color = $scope.userColorTable[$scope.userColorTable.length-1].color;
-                } else {
-                  obj.color = 'white';
-                }
+                // } else {
+                //   obj.color = 'white';
+                // }
 
               }
             }

@@ -1492,7 +1492,7 @@
 
         // calculates colors for a new payload
               if ($scope.data[0].authorTable.length == 0){
-
+                console.log("Length is zero")
                 $scope.data[0].authorTable = [
                   {
                         authorId: angular.copy(payload.author),
@@ -1506,7 +1506,7 @@
 
                 // if the author table is presently blank, assign yourself light grey 
                 // as you are now author
-
+                console.log("Assigns for zero: ", payloadColor)
 
               } else {
                 // loop through author table

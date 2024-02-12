@@ -35,7 +35,7 @@
 
         }"
         class="tree-node tree-node-content remark remarkparagraph speech-bubble"
-        style="background-color: {{ message.color }}"
+        style="background-color: {{ message.author === userId ? 'white' : message.color }}"
         ng-click="[
           (!message.deleted) ? [selectedProposition.dialogueSide = true, didItRun(message.id), clearTopAndBottomHasFocus(), selectPropositionById(message.id, selectedProposition), selectedProposition.textSide = false] : inputs.nothing]
         "

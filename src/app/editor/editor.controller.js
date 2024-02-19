@@ -8283,7 +8283,7 @@
               { index: 9, 
                
                   author: 'aaa',
-                  text: "Source?",
+                  text: "Is this documented?",
                   dialogueText: function() {
                                   return this.text;
                                 },

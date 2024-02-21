@@ -4329,6 +4329,7 @@
 
         
         //      CLEARS THINGS AND EMITS THE PAYLOAD
+        console.log("REGULAR PAYLOAD EMISSION")
         chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId);
 
         // when its a rejoinder
@@ -4417,6 +4418,7 @@
                     }
                   };
 
+          console.log("REMARK PAYLOAD EMISSION")
           chatSocket.emit('proposition', $scope.userId, prep.remarkPayload, $scope.bookId);
         }
 
@@ -10682,6 +10684,7 @@
         function sendAutomatedPayload(automatedPayload) {
           console.log('Sending automated payload')
           setTimeout(function () {
+            console.log("AUTOMATED PAYLOAD EMISSION")
             chatSocket.emit('proposition', automatedPayload.author, automatedPayload, $scope.bookId);
           }, automatedPayload.delay);
         }

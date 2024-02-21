@@ -6054,6 +6054,7 @@
                   // console.log("Inputs at the end of the broadcast: ", $scope.inputs)
                   console.log("New step NON AUTHOR")
                   console.log("Which script: ", $scope.allTheScripts[whichScript])
+                  console.log("Which script script length: ", $scope.allTheScripts[whichScript].stack.length)
 
                   $scope.simulateUser($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript])
                 });

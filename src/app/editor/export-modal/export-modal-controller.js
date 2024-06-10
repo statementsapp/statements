@@ -19,8 +19,8 @@
     // $('#addbookmodal').modal({backdrop: 'static', keyboard: false})  
 
     $timeout(function() {
-      document.getElementById('title').focus();
-    });
+      document.getElementById('email').focus();
+    }, 40);
 
     vm.addEmail = function() {
         if ($scope.form.email.$valid) {

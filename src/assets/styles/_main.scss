@@ -1257,6 +1257,29 @@ li.paragraph .child-div:not(.exclude) {
       
 }
 
+/* Customize the background color of all toastr notifications */
+.toast {
+  background-color: #2B2E36 !important; /* Replace with your desired color */
+}
+
+
+#directLinkInput::selection {
+  background: #55575e; /* Background color of selection */
+  color: white; /* Text color of selection */
+}
+
+/* For webkit browsers (e.g., Chrome, Safari) */
+#directLinkInput::-webkit-selection {
+  background: #55575e; /* Background color of selection */
+  color: white; /* Text color of selection */
+}
+
+/* For Mozilla browsers (e.g., Firefox) */
+#directLinkInput::-moz-selection {
+  background: #55575e; /* Background color of selection */
+  color: white; /* Text color of selection */
+}
+
 .singleauthorbutton:active {
     background-color: white;
     color: #2B2E36;

@@ -8399,172 +8399,173 @@
             ]
             };
 
+              $scope.gamesone = { authorNumber: 0, stack: [], sequence: [
+                { index: 0, 
+                  
+                    author: $scope.userId,
+                    text: 'Games are a clash of strategies, and the challenge for a player is to execute on the best strategy.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+
+                    which: 'theBlank',
+                    on: undefined,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition'
+                  
+                },
+                { index: 1, 
+                  
+                    author: $scope.userId,
+                    text: 'Players calculate something that looks like a probability and make the best move.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: true,
+                    which: 'item',
+                    on: 0,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                  
+                },
+                { index: 2, 
+                  
+                    author: $scope.userId,
+                    text: 'Players are looking for respect and self-respect and this is going to hinge on performance during the game, which is a calculation.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    which: 'item',
+                    on: 1,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                  
+                },
+                { index: 3, 
+                  
+                    author: $scope.userId,
+                    text: 'For years, digital asset industry members have asked the SEC to provide clarity about the precise question now at issue: which digital assets are securities, and when is registration required for companies like Coinbase that facilitate trading in a range of digital assets.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+
+                    which: 'item',
+                    on: 2,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition'
+                  
+                },
+                { index: 4, 
+                  
+                    author: $scope.userId,
+                    text: 'Rather than transparently working with an innovative, nascent industry in which millions of Americans hold valuable assets, the SEC has resorted to increasingly arbitrary and aggressive enforcement tactics that leave industry players confused about how to avoid becoming the subject of the next enforcement proceeding.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+
+                    which: 'item',
+                    on: 3,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition'
+                  
+                },
+                { index: 5, 
+                  
+                    author: $scope.userId,
+                    text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+
+                    which: 'item',
+                    on: 4,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition'
+                  
+                },
+                { index: 6, 
+                  
+                    author: $scope.userId,
+                    text: 'But the SEC cannot arbitrarily decide whether to drive such a major industry out of the United States.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+
+                    which: 'item',
+                    on: 5,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition'
+                  
+                },
+                { index: 7, 
+                  
+                    author: $scope.userId,
+                    text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+
+                    which: 'item',
+                    on: 6,
+                    its: 'bottom',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition'
+                  
+                },
+              ]
+            }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]
             $scope.allTheScripts = [$scope.gamesone]
 
-            $scope.gamesone = { authorNumber: 0, stack: [], sequence: [
-              { index: 0, 
-                
-                  author: $scope.userId,
-                  text: 'Games are a clash of strategies, and the challenge for a player is to execute on the best strategy.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'theBlank',
-                  on: undefined,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-              { index: 1, 
-                
-                  author: $scope.userId,
-                  text: 'Players calculate something that looks like a probability and make the best move.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: true,
-                  which: 'item',
-                  on: 0,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                
-              },
-              { index: 2, 
-                
-                  author: $scope.userId,
-                  text: 'Players are looking for respect and self-respect and this is going to hinge on performance during the game, which is a calculation.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  which: 'item',
-                  on: 1,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                
-              },
-              { index: 3, 
-                
-                  author: $scope.userId,
-                  text: 'For years, digital asset industry members have asked the SEC to provide clarity about the precise question now at issue: which digital assets are securities, and when is registration required for companies like Coinbase that facilitate trading in a range of digital assets.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 2,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-              { index: 4, 
-                
-                  author: $scope.userId,
-                  text: 'Rather than transparently working with an innovative, nascent industry in which millions of Americans hold valuable assets, the SEC has resorted to increasingly arbitrary and aggressive enforcement tactics that leave industry players confused about how to avoid becoming the subject of the next enforcement proceeding.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 3,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-              { index: 5, 
-                
-                  author: $scope.userId,
-                  text: 'In public statements and media campaigns, this SEC appears to be boasting about its efforts. See Gary Gensler, Op-Ed: The SEC Treats Crypto Like the Rest of the Capital Markets, SEC (Aug. 19, 2022), perma.cc/YQ5K-VLG9 (Chair Gensler touting that “the SEC will serve as the cop on the beat” with respect to digital assets).',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 4,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-              { index: 6, 
-                
-                  author: $scope.userId,
-                  text: 'But the SEC cannot arbitrarily decide whether to drive such a major industry out of the United States.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-              { index: 7, 
-                
-                  author: $scope.userId,
-                  text: 'Coinbase—the latest digital asset exchange to come up on the SEC’s roulette wheel—has rightly taken decisive action by moving for judgment on the pleadings.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 6,
-                  its: 'bottom',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-            ]
-          }
+            
 
 
 

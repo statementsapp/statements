@@ -8438,7 +8438,6 @@
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
-                  onBlank: true
                 
               },
               { index: 2, 

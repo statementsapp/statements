@@ -2062,8 +2062,29 @@
         }
       };
 
+      $scope.flash = function () {
+          // Get the elements
+          var upperDragScroller = document.getElementById('upperdragscroller');
+          var theText = document.getElementById('thetext');
+
+          // Store the original styles
+          var originalBackgroundColor = upperDragScroller.style.backgroundColor;
+          var originalBorderRightColor = theText.style.borderRightColor;
+
+          // Apply the new styles
+          upperDragScroller.style.backgroundColor = '#303030';
+          theText.style.borderRightColor = '#303030';
+
+          // Set a timeout to revert the styles after 60 milliseconds
+          setTimeout(function() {
+              upperDragScroller.style.backgroundColor = originalBackgroundColor;
+              theText.style.borderRightColor = originalBorderRightColor;
+          }, 60);
+      };
+
       // Listener for updates
       $scope.$on('socket:broadcastUpdate', function (event, payload) {
+        $scope.flash();
         console.log("received update")
         if (payload.bookId !== $scope.bookId) {
           return;
@@ -3050,7 +3071,7 @@
 
       $scope.$on('socket:broadcastDeletion', function (event, payload) {
         console.log("Received deletion: ", payload)
-
+        $scope.flash();
         apply = {};
 
         if (payload.bookId !== $scope.bookId) {
@@ -3406,6 +3427,7 @@
       }
 
       $scope.$on('socket:broadcastNodeUpdate', function (event, payload) {
+        $scope.flash();
         console.log("Received node update")
         if (payload.bookId !== $scope.bookId) {
           return;
@@ -4498,7 +4520,7 @@
 
       $scope.$on('socket:broadcastDeletion', function (event, payload) {
 
-
+        $scope.flash();
         $timeout(function () {
           $scope.$apply(function () {
             $scope.propToDeleteAnimate.id = payload.id;
@@ -4509,7 +4531,7 @@
 
       $scope.$on('socket:broadcastProposition', function (event, payload) {
 
-
+        $scope.flash();
         console.log("Received proposition: ", payload)
 
         if (payload.author === $scope.userId && $scope.inputs.leftProposition) {

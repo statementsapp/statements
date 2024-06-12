@@ -2087,7 +2087,7 @@
               theText.style.borderRightColor = originalBorderRightColor;
               // appTitle.style.fontWeight = originalFontWeight;
               mainPen.style.opacity = originalOpacity;
-          }, 60);
+          }, 100);
       };
 
 
@@ -6080,7 +6080,7 @@
 
 
               console.log("Which script: ", whichScript)
-              var baseTimeout = 10000; // 10 seconds as the base timeout
+              var baseTimeout = 5000; // 10 seconds as the base timeout
 
 
 

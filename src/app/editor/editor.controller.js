@@ -5998,6 +5998,7 @@
 
         // SCRIPT STEP
         if ($scope.hasBeenSetUp) {
+          console.log("All the scripts: ", angular.copy($scope.allTheScripts))
           if (payload.authorNumber || payload.authorNumber == 0){
             console.log("Payload author number: ", payload.authorNumber)
           } else {

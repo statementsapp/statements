@@ -6005,7 +6005,7 @@
           }
           
           for (var i = 0; i < $scope.allTheScripts.length; i++){
-            console.log("Step considering: ", $scope.allTheScripts[i])
+            console.log("Step considering: ", $scope.allTheScripts[i]," i of: ", angular.copy(i))
             if ($scope.allTheScripts[i].authorNumber === payload.authorNumber){
               $scope.allTheScripts[i].stack.push(payload)
               var whichScript = angular.copy(i)
@@ -8398,7 +8398,7 @@
             ]
             };
 
-            $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]
+            // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]
             $scope.allTheScripts = [$scope.gamesone]
 
             $scope.gamesone = { authorNumber: 0, stack: [], sequence: [

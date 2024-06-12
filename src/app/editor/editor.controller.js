@@ -2066,19 +2066,23 @@
           // Get the elements
           var upperDragScroller = document.getElementById('upperdragscroller');
           var theText = document.getElementById('thetext');
+          var appTitle = document.getElementById('apptitle');
 
           // Store the original styles
           var originalBackgroundColor = upperDragScroller.style.backgroundColor;
           var originalBorderRightColor = theText.style.borderRightColor;
+          var originalFontWeight = appTitle.style.fontWeight;
 
           // Apply the new styles
           upperDragScroller.style.backgroundColor = '#303030';
           theText.style.borderRightColor = '#303030';
+          appTitle.style.fontWeight = 'bold';
 
           // Set a timeout to revert the styles after 60 milliseconds
           setTimeout(function() {
               upperDragScroller.style.backgroundColor = originalBackgroundColor;
               theText.style.borderRightColor = originalBorderRightColor;
+              appTitle.style.fontWeight = originalFontWeight;
           }, 60);
       };
 

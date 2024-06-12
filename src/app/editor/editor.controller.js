@@ -8493,7 +8493,7 @@
                     which: 'item',
                     on: 3,
                     its: 'self',
-                    typeTime: 3000,
+                    typeTime: 1000,
                     noClick: false, 
                     action: 'proposition',
                     messaged: true
@@ -8502,7 +8502,7 @@
                 { index: 5, 
                   
                     author: $scope.userId,
-                    text: 'You can calculate the “optimal” move and still lose at blackjack, and that makes it an inferior game - some form of entertainment, but not an honest game.',
+                    text: 'You can calculate the “optimal” move and still lose at blackjack, and that makes it an inferior game - some form of entertainment, but something less honest than a proper game.',
                     dialogueText: function() {
                                     return this.text;
                                   },
@@ -8533,7 +8533,7 @@
                     which: 'item',
                     on: 5,
                     its: 'self',
-                    typeTime: 3000,
+                    typeTime: 1000,
                     noClick: false, 
                     action: 'proposition',
                     messaged: false

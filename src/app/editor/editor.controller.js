@@ -8516,6 +8516,48 @@
                     action: 'proposition',
                   
                 },
+                { index: 6, 
+                 
+                    author: 'aaa',
+                    text: 'You can always fold in hold ‘em and this option makes it an honest game by punishing you only a little for falling victim to randomness. We play lots of hands to sort out the superior player.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'negation',
+                    code: '2A',
+                    dialogueSide: true,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+                    
+                    which: 'item',
+                    on: 5,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                
+                },
+                { index: 7, 
+                  
+                    author: $scope.userId,
+                    text: 'Some of us never want to lose a game.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    which: 'item',
+                    on: 6,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: true
+                  
+                },
+
               ]
             }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]

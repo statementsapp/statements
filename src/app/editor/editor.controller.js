@@ -8499,6 +8499,23 @@
                     messaged: true
                 
                 },
+                { index: 5, 
+                  
+                    author: $scope.userId,
+                    text: 'You can calculate the “optimal” move and still lose at blackjack, and that makes it an inferior game - some form of entertainment, but not an honest game.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    which: 'item',
+                    on: 4,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                  
+                },
               ]
             }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]

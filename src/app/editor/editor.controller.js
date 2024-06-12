@@ -2066,25 +2066,30 @@
           // Get the elements
           var upperDragScroller = document.getElementById('upperdragscroller');
           var theText = document.getElementById('thetext');
+          // var appTitle = document.getElementById('apptitle');
           var mainPen = document.getElementById('mainpen');
 
           // Store the original styles
           var originalBackgroundColor = upperDragScroller.style.backgroundColor;
           var originalBorderRightColor = theText.style.borderRightColor;
-          var originalFontWeight = mainPen.style.fontWeight;
+          // var originalFontWeight = appTitle.style.fontWeight;
+          var originalOpacity = mainPen.style.opacity;
 
           // Apply the new styles
           upperDragScroller.style.backgroundColor = '#303030';
           theText.style.borderRightColor = '#303030';
-          mainPen.style.fontWeight = 'bold';
+          // appTitle.style.fontWeight = 'bold';
+          mainPen.style.opacity = '0.5'; // Dim the element
 
           // Set a timeout to revert the styles after 60 milliseconds
           setTimeout(function() {
               upperDragScroller.style.backgroundColor = originalBackgroundColor;
               theText.style.borderRightColor = originalBorderRightColor;
-              mainPen.style.fontWeight = originalFontWeight;
+              // appTitle.style.fontWeight = originalFontWeight;
+              mainPen.style.opacity = originalOpacity;
           }, 60);
       };
+
 
       // Listener for updates
       $scope.$on('socket:broadcastUpdate', function (event, payload) {

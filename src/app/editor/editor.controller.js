@@ -9638,9 +9638,9 @@
 
 
 
-            $scope.simulateUser(0, $scope.coinbase, 3000);
-            $scope.simulateUser(0, $scope.coinbase3);
-            $scope.simulateUser(0, $scope.coinbase2, 1000);
+            $scope.simulateUser(0, $scope.gamesone, 3000);
+            // $scope.simulateUser(0, $scope.coinbase3);
+            // $scope.simulateUser(0, $scope.coinbase2, 1000);
             
             // $scope.simulateUser(0, $scope.coinbase3);
           

@@ -2066,29 +2066,32 @@
           // Get the elements
           var upperDragScroller = document.getElementById('upperdragscroller');
           var theText = document.getElementById('thetext');
-          var appTitle = document.getElementById('apptitle');
+          var mainPen = document.getElementById('mainpen');
 
           // Store the original styles
           var originalBackgroundColor = upperDragScroller.style.backgroundColor;
           var originalBorderRightColor = theText.style.borderRightColor;
-          var originalFontWeight = appTitle.style.fontWeight;
+          var originalFontWeight = mainPen.style.fontWeight;
 
           // Apply the new styles
           upperDragScroller.style.backgroundColor = '#303030';
           theText.style.borderRightColor = '#303030';
-          appTitle.style.fontWeight = 'bold';
+          mainPen.style.fontWeight = 'bold';
 
           // Set a timeout to revert the styles after 60 milliseconds
           setTimeout(function() {
               upperDragScroller.style.backgroundColor = originalBackgroundColor;
               theText.style.borderRightColor = originalBorderRightColor;
-              appTitle.style.fontWeight = originalFontWeight;
+              mainPen.style.fontWeight = originalFontWeight;
           }, 60);
       };
 
       // Listener for updates
       $scope.$on('socket:broadcastUpdate', function (event, payload) {
-        $scope.flash();
+        if (payload.author === $scope.userId){
+          $scope.flash();
+        }
+        
         console.log("received update")
         if (payload.bookId !== $scope.bookId) {
           return;
@@ -3075,7 +3078,9 @@
 
       $scope.$on('socket:broadcastDeletion', function (event, payload) {
         console.log("Received deletion: ", payload)
-        $scope.flash();
+        if (payload.author === $scope.userId){
+          $scope.flash();
+        }
         apply = {};
 
         if (payload.bookId !== $scope.bookId) {
@@ -3431,7 +3436,9 @@
       }
 
       $scope.$on('socket:broadcastNodeUpdate', function (event, payload) {
-        $scope.flash();
+        if (payload.author === $scope.userId){
+          $scope.flash();
+        }
         console.log("Received node update")
         if (payload.bookId !== $scope.bookId) {
           return;
@@ -4524,7 +4531,9 @@
 
       $scope.$on('socket:broadcastDeletion', function (event, payload) {
 
-        $scope.flash();
+        if (payload.author === $scope.userId){
+          $scope.flash();
+        }
         $timeout(function () {
           $scope.$apply(function () {
             $scope.propToDeleteAnimate.id = payload.id;
@@ -4535,7 +4544,9 @@
 
       $scope.$on('socket:broadcastProposition', function (event, payload) {
 
-        $scope.flash();
+        if (payload.author === $scope.userId){
+          $scope.flash();
+        }
         console.log("Received proposition: ", payload)
 
         if (payload.author === $scope.userId && $scope.inputs.leftProposition) {

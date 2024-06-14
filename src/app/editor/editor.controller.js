@@ -8712,7 +8712,7 @@
                 { index: 13, 
                   
                     author: $scope.userId,
-                    text: 'Imperfect information games introduce hidden elements that make otherwise superior calculators lose.',
+                    text: 'Imperfect-information games can hinder the learning and improvement process for players: in games where outcomes hinge on hidden elements and chance, it becomes difficult for players to accurately assess their performance and identify areas for improvement.',
                     dialogueText: function() {
                                     return this.text;
                                   },
@@ -8730,7 +8730,42 @@
                     action: 'proposition'
                   
                 },
-
+                { index: 14, 
+                  
+                    author: $scope.userId,
+                    text: 'Mistakes and losses may be attributed to bad luck rather than poor strategy, obscuring the feedback loop that is essential for growth.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    which: 'item',
+                    on: 13,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                  
+                },
+                { index: 15, 
+                  
+                    author: $scope.userId,
+                    text: 'The potential for skill development and mastery in such games is greatly reduced, leading to a less rewarding experience.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    which: 'item',
+                    on: 14,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                  
+                },
               ]
             }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]

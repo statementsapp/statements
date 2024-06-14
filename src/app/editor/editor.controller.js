@@ -8712,7 +8712,7 @@
                 { index: 13, 
                   
                     author: $scope.userId,
-                    text: 'Imperfect-information games can hinder the learning and improvement process for players: in games where outcomes hinge on hidden elements and chance, it becomes difficult for players to accurately assess their performance and identify areas for improvement.',
+                    text: 'Imperfect-information games hinder the learning and improvement process for players: in games where outcomes hinge on hidden elements, it becomes difficult for players to identify areas for improvement.',
                     dialogueText: function() {
                                     return this.text;
                                   },

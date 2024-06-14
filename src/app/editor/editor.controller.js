@@ -8766,6 +8766,29 @@
                     messaged: false
                   
                 },
+                { index: 16, 
+                 
+                    author: 'ddd',
+                    text: 'Is failure a teacher?',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'negation',
+                    code: '2A',
+                    dialogueSide: true,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+                    
+                    which: 'item',
+                    on: 5,
+                    its: 'self',
+                    typeTime: 1000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                
+                },
               ]
             }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]

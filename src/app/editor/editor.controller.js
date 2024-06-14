@@ -8483,7 +8483,7 @@
                 { index: 2, 
                   
                     author: $scope.userId,
-                    text: 'Players are looking for respect and self-respect and this is going to hinge on performance during the game, which is a calculation.',
+                    text: 'They are looking for respect and self-respect, and this is going to hinge on performance during the game, which is a calculation.',
                     dialogueText: function() {
                                     return this.text;
                                   },
@@ -8709,7 +8709,27 @@
                     messaged: false
                 
                 },
+                { index: 13, 
+                  
+                    author: $scope.userId,
+                    text: 'Imperfect information games introduce hidden elements that make otherwise superior calculators lose.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
 
+                    which: 'item',
+                    on: 9,
+                    its: 'bottom',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition'
+                  
+                },
 
               ]
             }

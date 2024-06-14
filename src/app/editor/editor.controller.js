@@ -8686,6 +8686,29 @@
                     messaged: false
                 
                 },
+                { index: 12, 
+                 
+                    author: 'aaa',
+                    text: 'Should we stop playing checkers since it has now been "solved"?',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'negation',
+                    code: '2A',
+                    dialogueSide: true,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+                    
+                    which: 'item',
+                    on: 9,
+                    its: 'self',
+                    typeTime: 1000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                
+                },
 
 
               ]

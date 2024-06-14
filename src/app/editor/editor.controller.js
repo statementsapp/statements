@@ -8584,7 +8584,7 @@
                 { index: 7, 
                   
                     author: $scope.userId,
-                    text: 'Some of us never want to lose a game.',
+                    text: 'Some of us never want to lose a game despite perfect play.',
                     dialogueText: function() {
                                     return this.text;
                                   },
@@ -8599,6 +8599,94 @@
                     messaged: true
                   
                 },
+                { index: 8, 
+                 
+                    author: 'aaa',
+                    text: 'It’s not really losing if you’ve lost the least you possibly can due solely to bad luck.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'negation',
+                    code: '2A',
+                    dialogueSide: true,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+                    
+                    which: 'item',
+                    on: 7,
+                    its: 'self',
+                    typeTime: 1000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                
+                },
+                { index: 9, 
+                  
+                    author: $scope.userId,
+                    text: 'We should not want someone to lose anything at all due to luck, because luck is opposite to skill, which is the real thing a competitive game is meant to test.',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'assertion',
+                    dialogueSide: false,
+                    which: 'item',
+                    on: 8,
+                    its: 'self',
+                    typeTime: 3000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                  
+                },
+                { index: 10, 
+                 
+                    author: 'aaa',
+                    text: 'Should a batter not play baseball because some pitches end up physically impossible to hit?',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'negation',
+                    code: '2A',
+                    dialogueSide: true,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+                    
+                    which: 'item',
+                    on: 9,
+                    its: 'self',
+                    typeTime: 1000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                
+                },
+                { index: 11, 
+                 
+                    author: 'aaa',
+                    text: 'Are there some games where it ends up being a skill to detect and defend against elements that look "lucky"?',
+                    dialogueText: function() {
+                                    return this.text;
+                                  },
+                    type: 'negation',
+                    code: '2A',
+                    dialogueSide: true,
+                    // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                    // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                    // of: (prep.of ? prep.of : undefined),
+                    
+                    which: 'item',
+                    on: 9,
+                    its: 'self',
+                    typeTime: 1000,
+                    noClick: false, 
+                    action: 'proposition',
+                    messaged: false
+                
+                },
+
 
               ]
             }

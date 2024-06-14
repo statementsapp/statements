@@ -8601,7 +8601,7 @@
                 },
                 { index: 8, 
                  
-                    author: 'aaa',
+                    author: 'bbb',
                     text: 'It’s not really losing if you’ve lost the least you possibly can due solely to bad luck.',
                     dialogueText: function() {
                                     return this.text;
@@ -8642,7 +8642,7 @@
                 },
                 { index: 10, 
                  
-                    author: 'aaa',
+                    author: 'bbb',
                     text: 'Should a batter not play baseball because some pitches end up physically impossible to hit?',
                     dialogueText: function() {
                                     return this.text;
@@ -8665,7 +8665,7 @@
                 },
                 { index: 11, 
                  
-                    author: 'aaa',
+                    author: 'ccc',
                     text: 'Are there some games where it ends up being a skill to detect and defend against elements that look "lucky"?',
                     dialogueText: function() {
                                     return this.text;

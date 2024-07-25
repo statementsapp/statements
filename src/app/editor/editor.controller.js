@@ -3541,6 +3541,9 @@
         
         console.log("Event: ", angular.copy(event))
         console.log("Automated code: ", angular.copy(automatedCode))
+        if ($scope.selectedProposition){
+          console.log("Selected prop dialogue side: ", $scope.selectedProposition.dialogueSide)
+        }
 
 
         if (paragraph && !automatedAuthor && !automatedCode){
@@ -4129,7 +4132,7 @@
           prep.messagesSoFar = [prep.id]
 
         } else if (
-                  ($scope.selectedProposition.type === 'assertion' && (node && ($scope.userId === node.sectionClaimedBy || (node.isTitle && $scope.data[0].documentClaimedBy === $scope.userId)))) && 
+                  ($scope.selectedProposition.type === 'assertion' && (node && ($scope.userId === node.sectionClaimedBy || $scope.selectedProposition.dialogueSide || (node.isTitle && $scope.data[0].documentClaimedBy === $scope.userId)))) && 
                   (!$scope.draggingParagraph || proposition.type !== 'blank') && 
                   ($scope.draggedProposition.id || $scope.selectedProposition.type !== 'blank') || 
                   automatedCode === '3G'

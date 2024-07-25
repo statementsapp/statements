@@ -2073,20 +2073,27 @@
           var originalBackgroundColor = upperDragScroller.style.backgroundColor;
           var originalBorderRightColor = theText.style.borderRightColor;
           // var originalFontWeight = appTitle.style.fontWeight;
-          var originalOpacity = mainPen.style.opacity;
+          if (mainPen){
+            var originalOpacity = mainPen.style.opacity;
+            mainPen.style.opacity = '0.5'; // Dim the element
+          }
+          
 
           // Apply the new styles
           upperDragScroller.style.backgroundColor = '#303030';
           theText.style.borderRightColor = '#303030';
           // appTitle.style.fontWeight = 'bold';
-          mainPen.style.opacity = '0.5'; // Dim the element
+          
 
           // Set a timeout to revert the styles after 60 milliseconds
           setTimeout(function() {
               upperDragScroller.style.backgroundColor = originalBackgroundColor;
               theText.style.borderRightColor = originalBorderRightColor;
               // appTitle.style.fontWeight = originalFontWeight;
-              mainPen.style.opacity = originalOpacity;
+              if (mainPen){
+                mainPen.style.opacity = originalOpacity;
+              }
+              
           }, 100);
       };
 

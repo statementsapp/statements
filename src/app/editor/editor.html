@@ -140,7 +140,7 @@
                       id="mtop{{paragraph.paragraphId}}"
                       class="right-textarea"
                       placeholder="textarea authorprop"
-                      ng-model="inputs['top'+paragraph.paragraphId]"
+                      ng-model="inputs['top'+paragraph.paragraphId]" 
                       ng-mouseover="handling ? removeTopClickHandler(paragraph) : inputs.nothing"
                       ng-keydown="$event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['top'+paragraph.paragraphId] != '' ? $event.preventDefault() : inputs.nothing"
                       ng-keyup="$event.keyCode === 13 &&

@@ -4378,97 +4378,34 @@
         
         //      CLEARS THINGS AND EMITS THE PAYLOAD
         console.log("REGULAR PAYLOAD EMISSION")
-        chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId);
+
+        try {
+          chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId, function(error) {
+            if (error) {
+              console.error('Error emitting proposition:', error);
+              // Handle the error, e.g., show a notification to the user
+              $scope.$apply(function() {
+                $scope.emitError = 'Failed to send proposition. Please try again.';
+              });
+            } else {
+              // Emission successful
+              $scope.$apply(function() {
+                $scope.emitError = null;
+              });
+            }
+          });
+        } catch (e) {
+          console.error('Exception while emitting proposition:', e);
+          // Handle the exception, e.g., show a notification to the user
+          $scope.$apply(function() {
+            $scope.emitError = 'An error occurred while sending the proposition. Please try again.';
+          });
+        }
+
+        // chatSocket.emit('proposition', $scope.userId, prep.payload, $scope.bookId);
 
         // when its a rejoinder
-        // when there's no dragged proposition
-        // when recycleRemarks is true
-        if (prep.payload.type === 'negation' &&
-          prep.payload.author === $scope.userId &&
-          $scope.recycleRemarks &&
-          !$scope.draggedProposition.id &&
-          $scope.snowballSurvivesHell){
-          prep.nodeDestination = eval(prep.nodePath)
-          prep.remarkPayload = {};
 
-          for (var i = 0; i < prep.nodeDestination.paragraphs.length; i++) {
-
-            if (prep.nodeDestination.paragraphs[i].owner === $scope.userId) {
-
-              for (var j = i + 1; j < prep.nodeDestination.paragraphs.length; j++) {
-
-                if (prep.nodeDestination.paragraphs[j]) {
-                  if (prep.nodeDestination.paragraphs[j].owner !== $scope.userId && !prep.insertsBelow) {
-
-                    prep.remarkPayload.paragraphPosition = j;
-                    prep.remarkPayload.position = 0;
-                    break;
-                  }
-
-
-                } else {
-                  prep.remarkPayload.paragraphPosition = i;
-                  prep.remarkPayload.position = 0;
-                  prep.remarkPayload.insertsBelow = true;
-                  break;
-                }
-              }
-            }
-          }
-
-          prep.remarkPayload = {
-                    topic: prep.topic,
-                    address: prep.address,
-                    paragraphPosition: prep.remarkPayload.position,
-                    // ofParagraphPosition: (prep.ofParagraphPosition !== undefined ? prep.ofParagraphPosition : undefined),
-                    blankId: IdFactory.next(),
-                    textSide: $scope.selectedProposition.textSide ? $scope.selectedProposition.textSide : apply.textSide,
-                    dialogueSide: $scope.selectedProposition.dialogueSide ? $scope.selectedProposition.dialogueSide : apply.dialogueSide,
-                    class: (prep.newClass ? prep.newClass : prep.class),
-                    nodePath: (prep.nodePath ? prep.nodePath : undefined),
-                    nodeId: IdFactory.next(),
-                    oldNodePath: (prep.oldNodePath ? prep.oldNodePath : undefined),                          //    COMPOSITION OF THE PAYLOAD
-                    question: (prep.question ? prep.question : undefined),
-                    paragraphId: IdFactory.next(),
-                    selectedParagraphId: $scope.selectedParagraph.paragraphId,
-                    bookId: $scope.bookId,
-                    dropflag: $scope.draggedProposition.id ? true : undefined,
-                    // draggedProps: draggedProps ? draggedProps : undefined,
-                    proposition: {
-                      id: IdFactory.next(),
-                      address: prep.address,
-                      nodePath: (prep.nodePath ? prep.nodePath : undefined),
-                      question: (prep.question ? prep.question : undefined),
-                      answeredQuestion: (prep.answeredQuestion ? prep.answeredQuestion : undefined),
-                      getsOwnNode: (prep.getsOwnNode === true ? prep.getsOwnNode : undefined),
-                      getsOwnParagraph: (prep.getsOwnParagraph === true ? prep.getsOwnParagraph : undefined),
-                      newProp: true,
-                      insertsAbove: (prep.insertsAbove === true ? prep.insertsAbove : undefined),
-                      insertsBelow: (prep.remarkPayload.insertsBelow === true ? prep.remarkPayload.insertsBelow : undefined),
-                      insertsLeft: (prep.insertsLeft === true ? prep.insertsLeft : undefined),
-                      assertionPath: (prep.assertionPath ? prep.assertionPath : undefined),
-                      assertionId: IdFactory.next(),
-                      remarkAddress: undefined,
-                      remarkPath: undefined,
-                      isAntecedent: (prep.isAntecedent ? prep.isAntecedent : undefined),
-                      isConsequent: (prep.isConsequent ? prep.isConsequent : undefined),
-                      isPlaceholder: (prep.isPlaceholder ? prep.isPlaceholder : undefined),
-                      propositionToSetLaterPosition: propositionToSetLaterPosition !== undefined ? propositionToSetLaterPosition : undefined,
-                      author: angular.copy(prep.of.author),
-                      text: angular.copy(prep.of.text),
-                      dialogueText: angular.copy(prep.of.text),
-                      // above needs to be fixed for text that changes
-                      type: 'assertion',
-                      of: undefined,
-                      position: prep.remarkPayload.position,
-                      remarks: []
-
-                    }
-                  };
-
-          console.log("REMARK PAYLOAD EMISSION")
-          chatSocket.emit('proposition', $scope.userId, prep.remarkPayload, $scope.bookId);
-        }
 
         
         if ($scope.hasBeenSetUp && prep.payload.author === $scope.userId && prep.payload.type === 'topic'){

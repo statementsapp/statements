@@ -8780,7 +8780,7 @@
               { index: 19, 
                
                   author: 'aaa',
-                  text: "In what way? Or should we address this in another section?",
+                  text: "In what are we on the right track? Or should we address this in another section?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9045,7 +9045,7 @@
               { index: 2, 
                
                   author: 'ccc',
-                  text: "Is this especially important for AI, or is it an equally hazardous danger for other technologies?",
+                  text: "Are unclear safety objectives dangerous for AI, or is it an equally hazardous danger for other technologies?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -11305,7 +11305,7 @@
               }, 0);
             });
             
-          }, getRandomInterval(25)); // Adjust the base interval duration (in milliseconds)
+          }, getRandomInterval(30)); // Adjust the base interval duration (in milliseconds)
 
           function getRandomInterval(baseInterval) {
             const minInterval = baseInterval * 0.75;

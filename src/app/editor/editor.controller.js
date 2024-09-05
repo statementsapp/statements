@@ -4392,6 +4392,7 @@
 
         
         if ($scope.hasBeenSetUp && prep.payload.author === $scope.userId && prep.payload.type === 'topic'){
+          console.log ("Warning clearing that innerhtml!!")
           document.getElementById(proposition.id).innerHTML = '';
         }
 
@@ -4442,11 +4443,13 @@
 
         $scope.inputs.leftProposition = '';
         if (paragraph && !$scope.hasBeenSetUp){
+          console.log ("Warning clearing stuff!!")
           $scope.inputs['bottom'+ paragraph.paragraphId] = '';
           $scope.inputs['top'+ paragraph.paragraphId] = '';
         }
         
         if (document.getElementById('left' + $scope.selectedProposition.id)){
+          console.log ("Warning clearing that left stuff!!")
           console.log("Clearing with innerHTML")
           document.getElementById('left' + $scope.selectedProposition.id).innerHTML = '';
         }

@@ -8449,7 +8449,7 @@
 
                   which: 'item',
                   on: 2,
-                  its: 'bottom',
+                  its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'

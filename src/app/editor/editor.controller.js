@@ -9172,6 +9172,29 @@
                 
               },
               { index: 8, 
+               
+                  author: 'aaa',
+                  text: "Are there other dangers relating to resource limitations for evaluating objective functions?",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 7,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 9, 
                 
                   author: '111',
                   text: 'Second, the designer may know the correct objective function, or at least have a method of evaluating it (for example explicitly consulting a human on a given situation), but it is too expensive to do so frequently, leading to possible harmful behavior caused by bad extrapolations from limited samples.',
@@ -9185,14 +9208,14 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 7,
-                  its: 'bottom',
+                  on: 8,
+                  its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
                 
               },
-              { index: 9, 
+              { index: 10, 
                
                   author: 'aaa',
                   text: "How can scalable oversight be possible without certainty about the objective function?",
@@ -9207,7 +9230,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 8,
+                  on: 9,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -9215,7 +9238,7 @@
                   messaged: true
               
               },
-              { index: 10, 
+              { index: 11, 
                 
                   author: '111',
                   text: '“Scalable oversight” (Section 5) discusses ideas for how to ensure safe behavior even given limited access to the true objective function.',
@@ -9229,7 +9252,7 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 9,
+                  on: 10,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -9237,7 +9260,7 @@
                   messaged: false
                 
               }, 
-              { index: 11, 
+              { index: 12, 
                 
                   author: $scope.userId,
                   text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
@@ -9251,14 +9274,14 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 10,
+                  on: 11,
                   its: 'bottom',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
                 
               },
-              { index: 12, 
+              { index: 13, 
                
                   author: 'bbb',
                   text: "Please provide an example.",
@@ -9273,7 +9296,7 @@
                   // of: (prep.of ? prep.of : undefined),
                   
                   which: 'item',
-                  on: 11,
+                  on: 12,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -9281,7 +9304,7 @@
                   messaged: true
               
               },
-              { index: 13, 
+              { index: 14, 
                 
                   author: '111',
                   text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
@@ -9295,7 +9318,7 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 12,
+                  on: 13,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
@@ -9303,7 +9326,7 @@
                   messaged: false
                 
               }, // 
-              { index: 14, 
+              { index: 15, 
                 
                   author: '111',
                   text: 'Another report found that merchants often cite a regulatory environment that undermines trust in digital assets as the basis for refusing them as payment.',
@@ -9317,7 +9340,7 @@
                   // of: (prep.of ? prep.of : undefined),
 
                   which: 'item',
-                  on: 13,
+                  on: 14,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 

@@ -5995,23 +5995,23 @@
           }
           
           for (var i = 0; i < $scope.allTheScripts.length; i++){
-            console.log("Step considering: ", $scope.allTheScripts[i]," i of: ", angular.copy(i))
+            // console.log("Step considering: ", $scope.allTheScripts[i]," i of: ", angular.copy(i))
             if ($scope.allTheScripts[i].authorNumber === payload.authorNumber){
               $scope.allTheScripts[i].stack.push(payload)
               var whichScript = angular.copy(i)
-              console.log("So which script: ", whichScript)
-              console.log("That stack now: ", angular.copy($scope.allTheScripts[i].stack))
+              // console.log("So which script: ", whichScript)
+              // console.log("That stack now: ", angular.copy($scope.allTheScripts[i].stack))
               break;
             }
           }
 
           // $scope.userActions.push(payload);
-          console.log("Ok oklahoma")
-          console.log("Which script hmm ", angular.copy($scope.allTheScripts[whichScript]))
-          console.log("About to simulate user: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
-          console.log("The item: ", angular.copy($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length]))
-          console.log("Which script stack length: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
-          console.log("Versus the sequence: ", angular.copy($scope.allTheScripts[whichScript].sequence))
+          // console.log("Ok oklahoma")
+          // console.log("Which script hmm ", angular.copy($scope.allTheScripts[whichScript]))
+          // console.log("About to simulate user: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
+          // console.log("The item: ", angular.copy($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length]))
+          // console.log("Which script stack length: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
+          // console.log("Versus the sequence: ", angular.copy($scope.allTheScripts[whichScript].sequence))
           if (isDefinedPoint($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript].sequence)) {
             
             if ($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length].author === $scope.userId){
@@ -6148,6 +6148,7 @@
       }
 
       $scope.clearTopAndBottomHasFocus = function (proposition) {
+        console.log("Clear tbhf")
         // console.log('clear top and bottom focus')
 
         // if ($scope.selectedParagraph.topAdd){
@@ -11229,7 +11230,7 @@
                 //   $scope.inputs[id] = element.textContent;
                 // }
               } else {
-                console.log("About to textcontent. Element: ", angular.copy(element))
+                // console.log("About to textcontent. Element: ", angular.copy(element))
                 element.textContent += text[index];
                 index++;
                 

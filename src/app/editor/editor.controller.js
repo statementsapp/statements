@@ -8169,73 +8169,10 @@
                   messaged: false
                 
               }, // 
-              { index: 4, 
-                
-                  author: '222',
-                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 3,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-              { index: 5, 
-                
-                  author: '222',
-                  text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 4,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
-              { index: 6, 
-                
-                  author: '222',
-                  text: 'The first digital asset emerged just 14 years ago.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
-
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
-                
-              },
               { index: 7, 
                 
                   author: '222',
-                  text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
+                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8256,7 +8193,7 @@
               { index: 8, 
                 
                   author: '222',
-                  text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
+                  text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8275,32 +8212,30 @@
                 
               },
               { index: 9, 
-               
-                  author: 'aaa',
-                  text: "Is this documented?",
+                
+                  author: '222',
+                  text: 'The first digital asset emerged just 14 years ago.',
                   dialogueText: function() {
                                   return this.text;
                                 },
-                  type: 'negation',
-                  code: '2A',
+                  type: 'assertion',
                   dialogueSide: false,
                   // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
                   // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
                   // of: (prep.of ? prep.of : undefined),
-                  
+
                   which: 'item',
                   on: 8,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
-                  action: 'proposition',
-                  messaged: true
-              
+                  action: 'proposition'
+                
               },
               { index: 10, 
                 
                   author: '222',
-                  text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Aug. 8, 2023).',
+                  text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8315,14 +8250,13 @@
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+                  action: 'proposition'
                 
-              }, // 
+              },
               { index: 11, 
                 
                   author: '222',
-                  text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
+                  text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8334,7 +8268,7 @@
 
                   which: 'item',
                   on: 10,
-                  its: 'bottom',
+                  its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
@@ -8342,8 +8276,8 @@
               },
               { index: 12, 
                
-                  author: 'bbb',
-                  text: "Please provide an example.",
+                  author: 'aaa',
+                  text: "Is this documented?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8366,7 +8300,7 @@
               { index: 13, 
                 
                   author: '222',
-                  text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
+                  text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Sep. 4, 2024).',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -8378,6 +8312,72 @@
 
                   which: 'item',
                   on: 12,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
+                
+              }, // 
+              { index: 14, 
+                
+                  author: '222',
+                  text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 13,
+                  its: 'bottom',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition'
+                
+              },
+              { index: 15, 
+               
+                  author: 'bbb',
+                  text: "Please provide an example.",
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'negation',
+                  code: '2A',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+                  
+                  which: 'item',
+                  on: 14,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: true
+              
+              },
+              { index: 16, 
+                
+                  author: '222',
+                  text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
+
+                  which: 'item',
+                  on: 15,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 

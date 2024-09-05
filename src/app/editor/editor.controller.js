@@ -9904,7 +9904,7 @@
                 //   $scope.inputs[id] = element.textContent;
                 // }
               } else {
-                console.log("About to textcontent")
+                console.log("About to textcontent. Element: ", angular.copy(element))
                 element.textContent += text[index];
                 index++;
                 

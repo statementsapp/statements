@@ -9103,27 +9103,27 @@
                   action: 'proposition'
                 
               },
-              { index: 5, 
+              // { index: 5, 
                 
-                  author: '111',
-                  text: 'Negative side effects (Section 3) and reward hacking (Section 4) describe two broad mechanisms that make it easy to produce wrong objective functions.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '111',
+              //     text: 'Negative side effects (Section 3) and reward hacking (Section 4) describe two broad mechanisms that make it easy to produce wrong objective functions.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 4,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
+              // },
               // { index: 6, 
                 
               //     author: '111',
@@ -9452,49 +9452,49 @@
                   messaged: false
                 
               }, // 
-              { index: 6, 
+              // { index: 6, 
                 
-                  author: '222',
-                  text: 'But what if there are many different kinds of “vase”—many disruptive things the agent could do to the environment, like shorting out an electrical socket or damaging the walls of the room?',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'But what if there are many different kinds of “vase”—many disruptive things the agent could do to the environment, like shorting out an electrical socket or damaging the walls of the room?',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
                 
-              }, // 
-              { index: 7, 
+              // }, 
+              // { index: 7, 
                 
-                  author: '222',
-                  text: 'It may not be feasible to identify and penalize every possible disruption.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'It may not be feasible to identify and penalize every possible disruption.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 6,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
+              // },
               // { index: 8, 
                 
               //     author: '222',

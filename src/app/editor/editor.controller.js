@@ -4358,23 +4358,6 @@
 
 
 
-        const comparatorText = "Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.";
-        if (prep.adjustedText){
-          if (comparatorText.substring(0, 8) === prep.adjustedText.substring(0, 8)) {
-              // Add your code here for the matching case
-            console.log("Return for some reason")
-            // return;
-          } else {
-              console.log("Carry on");
-          }
-        }
-
-
-
-
-
-
-
         
         //      CLEARS THINGS AND EMITS THE PAYLOAD
         console.log("REGULAR PAYLOAD EMISSION")
@@ -9141,114 +9124,114 @@
                   action: 'proposition'
                 
               },
-              { index: 6, 
+              // { index: 6, 
                 
-                  author: '111',
-                  text: 'In “negative side effects”, the designer specifies an objective function that focuses on accomplishing some specific task in the environment, but ignores other aspects of the (potentially very large) environment, and thus implicitly expresses indifference over environmental variables that might actually be harmful to change.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '111',
+              //     text: 'In “negative side effects”, the designer specifies an objective function that focuses on accomplishing some specific task in the environment, but ignores other aspects of the (potentially very large) environment, and thus implicitly expresses indifference over environmental variables that might actually be harmful to change.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 5,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 5,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 7, 
+              // },
+              // { index: 7, 
                 
-                  author: '111',
-                  text: 'In “reward hacking”, the objective function that the designer writes down admits of some clever “easy” solution that formally maximizes it but perverts the spirit of the designer’s intent (i.e. the objective function can be “gamed”), a generalization of the wireheading problem.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '111',
+              //     text: 'In “reward hacking”, the objective function that the designer writes down admits of some clever “easy” solution that formally maximizes it but perverts the spirit of the designer’s intent (i.e. the objective function can be “gamed”), a generalization of the wireheading problem.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 6,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 6,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 8, 
+              // },
+              // { index: 8, 
                 
-                  author: '111',
-                  text: 'Second, the designer may know the correct objective function, or at least have a method of evaluating it (for example explicitly consulting a human on a given situation), but it is too expensive to do so frequently, leading to possible harmful behavior caused by bad extrapolations from limited samples.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '111',
+              //     text: 'Second, the designer may know the correct objective function, or at least have a method of evaluating it (for example explicitly consulting a human on a given situation), but it is too expensive to do so frequently, leading to possible harmful behavior caused by bad extrapolations from limited samples.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 7,
-                  its: 'bottom',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 9, 
+              // },
+              // { index: 9, 
                
-                  author: 'aaa',
-                  text: "How can scalable oversight be possible without certainty about the objective function?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'aaa',
+              //     text: "How can scalable oversight be possible without certainty about the objective function?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 8,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
-              { index: 10, 
+              // },
+              // { index: 10, 
                 
-                  author: '111',
-                  text: '“Scalable oversight” (Section 5) discusses ideas for how to ensure safe behavior even given limited access to the true objective function.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '111',
+              //     text: '“Scalable oversight” (Section 5) discusses ideas for how to ensure safe behavior even given limited access to the true objective function.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 9,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
                 
-              }, // 
+              // }, 
               // { index: 11, 
                 
               //     author: $scope.userId,
@@ -9512,201 +9495,201 @@
                   action: 'proposition'
                 
               },
-              { index: 8, 
+              // { index: 8, 
                 
-                  author: '222',
-                  text: 'More broadly, for an agent operating in a large, multifaceted environment, an objective function that focuses on only one aspect of the environment may implicitly express indifference over other aspects of the environment.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'More broadly, for an agent operating in a large, multifaceted environment, an objective function that focuses on only one aspect of the environment may implicitly express indifference over other aspects of the environment.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 7,
-                  its: 'bottom',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 7,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 9, 
+              // },
+              // { index: 9, 
                 
-                  author: '222',
-                  text: 'An agent optimizing this objective function might thus engage in major disruptions of the broader environment if doing so provides even a tiny advantage for the task at hand.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'An agent optimizing this objective function might thus engage in major disruptions of the broader environment if doing so provides even a tiny advantage for the task at hand.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 8,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 8,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 10, 
+              // },
+              // { index: 10, 
                 
-                  author: '222',
-                  text: 'Put differently, objective functions that formalize “perform task X” may frequently give undesired results, because what the designer really should have formalized is closer to “perform task X subject to common-sense constraints on the environment,” or perhaps “perform task X but avoid side effects to the extent possible.”',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'Put differently, objective functions that formalize “perform task X” may frequently give undesired results, because what the designer really should have formalized is closer to “perform task X subject to common-sense constraints on the environment,” or perhaps “perform task X but avoid side effects to the extent possible.”',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 9,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 9,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 11, 
+              // },
+              // { index: 11, 
                 
-                  author: '222',
-                  text: 'Furthermore, there is reason to expect side effects to be negative on average, since they tend to disrupt the wider environment away from a status quo state that may reflect human preferences.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'Furthermore, there is reason to expect side effects to be negative on average, since they tend to disrupt the wider environment away from a status quo state that may reflect human preferences.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 10,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 10,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 12, 
+              // },
+              // { index: 12, 
                
-                  author: 'aaa',
-                  text: "We should discuss this further.",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'aaa',
+              //     text: "We should discuss this further.",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 11,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 11,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
-              { index: 13, 
+              // },
+              // { index: 13, 
                 
-                  author: '222',
-                  text: 'A version of this problem has been discussed informally by [13] under the heading of “low impact agents.”',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'A version of this problem has been discussed informally by [13] under the heading of “low impact agents.”',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 12,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+              //     which: 'item',
+              //     on: 12,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
                 
-              }, // 
-              { index: 14, 
+              // }, // 
+              // { index: 14, 
                 
-                  author: '222',
-                  text: 'As with the other sources of mis-specified objective functions discussed later in this paper, we could choose to view side effects as idiosyncratic to each individual task—as the responsibility of each individual designer to capture as part of designing the correct objective function.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'As with the other sources of mis-specified objective functions discussed later in this paper, we could choose to view side effects as idiosyncratic to each individual task—as the responsibility of each individual designer to capture as part of designing the correct objective function.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 13,
-                  its: 'bottom',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 13,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 15, 
+              // },
+              // { index: 15, 
                
-                  author: 'bbb',
-                  text: "But is there a uniting theme to side effects?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'bbb',
+              //     text: "But is there a uniting theme to side effects?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 14,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 14,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
-              { index: 16, 
+              // },
+              // { index: 16, 
                 
-                  author: '222',
-                  text: 'However, side effects can be conceptually quite similar even across highly diverse tasks (knocking over furniture is probably bad for a wide variety of tasks), so it seems worth trying to attack the problem in generality.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'However, side effects can be conceptually quite similar even across highly diverse tasks (knocking over furniture is probably bad for a wide variety of tasks), so it seems worth trying to attack the problem in generality.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 15,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+              //     which: 'item',
+              //     on: 15,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
                 
-              }, // 
+              // }, 
 
             ]
             };

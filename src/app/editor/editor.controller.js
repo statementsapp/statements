@@ -6010,7 +6010,8 @@
           console.log("Which script hmm ", angular.copy($scope.allTheScripts[whichScript]))
           console.log("About to simulate user: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
           console.log("The item: ", angular.copy($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length]))
-
+          console.log("Which script stack length: ", angular.copy($scope.allTheScripts[whichScript].stack.length))
+          console.log("Versus the sequence: ", angular.copy($scope.allTheScripts[whichScript].sequence))
           if (isDefinedPoint($scope.allTheScripts[whichScript].stack.length, $scope.allTheScripts[whichScript].sequence)) {
             
             if ($scope.allTheScripts[whichScript].sequence[$scope.allTheScripts[whichScript].stack.length].author === $scope.userId){

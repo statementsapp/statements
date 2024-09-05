@@ -8394,7 +8394,7 @@
               { index: 0, 
                 
                   author: $scope.userId,
-                  text: 'Introduction',
+                  text: 'Introduction:',
                   dialogueText: function() {
                                   return this.text;
                                 },

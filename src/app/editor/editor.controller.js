@@ -9430,28 +9430,28 @@
                   messaged: false
                 
               }, // 
-              { index: 5, 
+              // { index: 5, 
                 
-                  author: '222',
-                  text: 'If we’re worried in advance about the vase, we can always give the agent negative reward for knocking it over.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'If we’re worried in advance about the vase, we can always give the agent negative reward for knocking it over.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 4,
-                  its: 'bottom',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+              //     which: 'item',
+              //     on: 4,
+              //     its: 'bottom',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
                 
-              }, // 
+              // }, 
               // { index: 6, 
                 
               //     author: '222',

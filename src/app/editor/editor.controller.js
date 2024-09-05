@@ -8170,7 +8170,7 @@
               }, // 
               { index: 4, 
                 
-                  author: '111',
+                  author: '222',
                   text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
                   dialogueText: function() {
                                   return this.text;
@@ -8191,7 +8191,7 @@
               },
               { index: 5, 
                 
-                  author: '111',
+                  author: '222',
                   text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
                   dialogueText: function() {
                                   return this.text;
@@ -8212,7 +8212,7 @@
               },
               { index: 6, 
                 
-                  author: '111',
+                  author: '222',
                   text: 'The first digital asset emerged just 14 years ago.',
                   dialogueText: function() {
                                   return this.text;
@@ -8233,7 +8233,7 @@
               },
               { index: 7, 
                 
-                  author: '111',
+                  author: '222',
                   text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
                   dialogueText: function() {
                                   return this.text;
@@ -8254,7 +8254,7 @@
               },
               { index: 8, 
                 
-                  author: '111',
+                  author: '222',
                   text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
                   dialogueText: function() {
                                   return this.text;
@@ -8298,7 +8298,7 @@
               },
               { index: 10, 
                 
-                  author: '111',
+                  author: '222',
                   text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Aug. 8, 2023).',
                   dialogueText: function() {
                                   return this.text;
@@ -8320,7 +8320,7 @@
               }, // 
               { index: 11, 
                 
-                  author: $scope.userId,
+                  author: '222',
                   text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
                   dialogueText: function() {
                                   return this.text;
@@ -8364,7 +8364,7 @@
               },
               { index: 13, 
                 
-                  author: '111',
+                  author: '222',
                   text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
                   dialogueText: function() {
                                   return this.text;

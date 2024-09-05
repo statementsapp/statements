@@ -9903,6 +9903,7 @@
                 //   $scope.inputs[id] = element.textContent;
                 // }
               } else {
+                console.log("About to textcontent")
                 element.textContent += text[index];
                 index++;
                 

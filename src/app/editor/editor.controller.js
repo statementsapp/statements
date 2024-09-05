@@ -9394,7 +9394,7 @@
               { index: 2, 
                
                   author: 'ddd',
-                  text: "Where's this going?",
+                  text: "Where is this point heading?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9667,7 +9667,7 @@
 
                   which: 'item',
                   on: 13,
-                  its: 'bottom',
+                  its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'

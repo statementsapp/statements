@@ -9018,7 +9018,7 @@
               { index: 0, 
                 
                   author: '111',
-                  text: 'ARGUMENT:',
+                  text: 'Overview of Research Problems:',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9039,7 +9039,7 @@
               { index: 1, 
                 
                   author: '111',
-                  text: 'The SEC’s shoot-first-and-provide-guidance-never approach threatens the U.S. digital asset industry.',
+                  text: 'Very broadly, an accident can be described as a situation where a human designer had in mind a certain (perhaps informally specified) objective or task, but the system that was designed and deployed for that task produced harmful and unexpected results.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9056,7 +9056,7 @@
               { index: 2, 
                
                   author: 'ccc',
-                  text: "Spell it out for us.",
+                  text: "Is this especially important for AI, or is it an equally hazardous danger for other technologies?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9079,7 +9079,7 @@
               { index: 3, 
                 
                   author: '111',
-                  text: 'The SEC’s decision to regulate digital assets through one-off enforcement actions rather than the ordinary tools of economic regulation is destructive to the digital asset industry and the livelihoods of the millions of people and businesses who rely on digital assets and exchanges.',
+                  text: 'This issue arises in almost any engineering discipline, but may be particularly important to address when building AI systems [146]. We can categorize safety problems according to where in the process things went wrong.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9101,7 +9101,7 @@
               { index: 4, 
                 
                   author: '111',
-                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+                  text: 'First, the designer may have specified the wrong formal objective function, such that maximizing that objective function leads to harmful results, even in the limit of perfect learning and infinite data.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9113,7 +9113,7 @@
 
                   which: 'item',
                   on: 3,
-                  its: 'self',
+                  its: 'bottom',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
@@ -9122,7 +9122,7 @@
               { index: 5, 
                 
                   author: '111',
-                  text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
+                  text: 'Negative side effects (Section 3) and reward hacking (Section 4) describe two broad mechanisms that make it easy to produce wrong objective functions.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9143,7 +9143,7 @@
               { index: 6, 
                 
                   author: '111',
-                  text: 'The first digital asset emerged just 14 years ago.',
+                  text: 'In “negative side effects”, the designer specifies an objective function that focuses on accomplishing some specific task in the environment, but ignores other aspects of the (potentially very large) environment, and thus implicitly expresses indifference over environmental variables that might actually be harmful to change.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9164,7 +9164,7 @@
               { index: 7, 
                 
                   author: '111',
-                  text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
+                  text: 'In “reward hacking”, the objective function that the designer writes down admits of some clever “easy” solution that formally maximizes it but perverts the spirit of the designer’s intent (i.e. the objective function can be “gamed”), a generalization of the wireheading problem.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9185,7 +9185,7 @@
               { index: 8, 
                 
                   author: '111',
-                  text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
+                  text: 'Second, the designer may know the correct objective function, or at least have a method of evaluating it (for example explicitly consulting a human on a given situation), but it is too expensive to do so frequently, leading to possible harmful behavior caused by bad extrapolations from limited samples.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9197,7 +9197,7 @@
 
                   which: 'item',
                   on: 7,
-                  its: 'self',
+                  its: 'bottom',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
@@ -9206,7 +9206,7 @@
               { index: 9, 
                
                   author: 'aaa',
-                  text: "Source?",
+                  text: "How can scalable oversight be possible without certainty about the objective function?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9226,28 +9226,28 @@
                   messaged: true
               
               },
-              // { index: 10, 
+              { index: 10, 
                 
-              //     author: '111',
-              //     text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Aug. 8, 2023).',
-              //     dialogueText: function() {
-              //                     return this.text;
-              //                   },
-              //     type: 'assertion',
-              //     dialogueSide: false,
-              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-              //     // of: (prep.of ? prep.of : undefined),
+                  author: '111',
+                  text: '“Scalable oversight” (Section 5) discusses ideas for how to ensure safe behavior even given limited access to the true objective function.',
+                  dialogueText: function() {
+                                  return this.text;
+                                },
+                  type: 'assertion',
+                  dialogueSide: false,
+                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+                  // of: (prep.of ? prep.of : undefined),
 
-              //     which: 'item',
-              //     on: 9,
-              //     its: 'self',
-              //     typeTime: 3000,
-              //     noClick: false, 
-              //     action: 'proposition',
-              //     messaged: false
+                  which: 'item',
+                  on: 9,
+                  its: 'self',
+                  typeTime: 3000,
+                  noClick: false, 
+                  action: 'proposition',
+                  messaged: false
                 
-              // }, // 
+              }, // 
               // { index: 11, 
                 
               //     author: $scope.userId,
@@ -9344,7 +9344,7 @@
               { index: 0, 
                 
                   author: '222',
-                  text: 'CONCLUSION:',
+                  text: 'Avoiding Negative Side Effects:',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9365,7 +9365,7 @@
               { index: 1, 
                 
                   author: '222',
-                  text: 'The SEC’s enforcement action here—and its attitude towards enforcement against digital assets generally—rests on the fatally flawed premise that digital assets, on their own, are securities.',
+                  text: 'Suppose a designer wants an RL agent (for example our cleaning robot) to achieve some goal, like moving a box from one side of a room to the other.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9382,7 +9382,7 @@
               { index: 2, 
                
                   author: 'ddd',
-                  text: "How fundamental is their error?",
+                  text: "Where's this going?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9405,7 +9405,7 @@
               { index: 3, 
                 
                   author: '222',
-                  text: 'That is simply not correct; not as a matter of doctrine, and not as digital assets are commonly used.',
+                  text: 'Sometimes the most effective way to achieve the goal involves doing something unrelated and destructive to the rest of the environment, like knocking over a vase of water that is in its path.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9427,7 +9427,7 @@
               { index: 4, 
                 
                   author: '222',
-                  text: 'The Commission’s insistence that it may treat all digital assets as securities notwithstanding gov- erning law, and with no regard for the enormous economic consequences of such a conclusion, is an audacious claim to authority that the constitutional separation of powers cannot abide.',
+                  text: 'If the agent is given reward only for moving the box, it will probably knock over the vase.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9449,7 +9449,7 @@
               { index: 5, 
                 
                   author: '222',
-                  text: 'And the Commission’s refusal to supply industry any indication on how it will wield that doubtable au- thority offends due process.',
+                  text: 'If we’re worried in advance about the vase, we can always give the agent negative reward for knocking it over.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9461,7 +9461,7 @@
 
                   which: 'item',
                   on: 4,
-                  its: 'self',
+                  its: 'bottom',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition',
@@ -9471,7 +9471,7 @@
               { index: 6, 
                 
                   author: '222',
-                  text: 'The Chamber respectfully asks the Court to grant Coinbase’s motion.',
+                  text: 'But what if there are many different kinds of “vase”—many disruptive things the agent could do to the environment, like shorting out an electrical socket or damaging the walls of the room?',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9493,7 +9493,7 @@
               { index: 7, 
                 
                   author: '222',
-                  text: 'The SEC’s sole suggestion—that digital assets and exchanges simply “come in and register” under the securities laws—is a hollow promise that has failed in practice and elides reality.',
+                  text: 'It may not be feasible to identify and penalize every possible disruption.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9514,7 +9514,7 @@
               { index: 8, 
                 
                   author: '222',
-                  text: 'Though it has already left an indelible mark on the global economy, the digital asset industry is still in its infancy.',
+                  text: 'More broadly, for an agent operating in a large, multifaceted environment, an objective function that focuses on only one aspect of the environment may implicitly express indifference over other aspects of the environment.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9526,7 +9526,7 @@
 
                   which: 'item',
                   on: 7,
-                  its: 'self',
+                  its: 'bottom',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'
@@ -9535,7 +9535,7 @@
               { index: 9, 
                 
                   author: '222',
-                  text: 'The first digital asset emerged just 14 years ago.',
+                  text: 'An agent optimizing this objective function might thus engage in major disruptions of the broader environment if doing so provides even a tiny advantage for the task at hand.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9556,7 +9556,7 @@
               { index: 10, 
                 
                   author: '222',
-                  text: 'Those 14 years have been marked by unending innovations in technology and constant, rapid evolution.',
+                  text: 'Put differently, objective functions that formalize “perform task X” may frequently give undesired results, because what the designer really should have formalized is closer to “perform task X subject to common-sense constraints on the environment,” or perhaps “perform task X but avoid side effects to the extent possible.”',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9577,7 +9577,7 @@
               { index: 11, 
                 
                   author: '222',
-                  text: 'Today, there are tens of thousands of unique digital assets on the market, available on hundreds of exchanges worldwide, representing a total market capitalization of approximately $1.2 trillion.',
+                  text: 'Furthermore, there is reason to expect side effects to be negative on average, since they tend to disrupt the wider environment away from a status quo state that may reflect human preferences.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9598,7 +9598,7 @@
               { index: 12, 
                
                   author: 'aaa',
-                  text: "Is this documented?",
+                  text: "We should discuss this further.",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9621,7 +9621,7 @@
               { index: 13, 
                 
                   author: '222',
-                  text: 'See Total Cryptocurrency Market Cap, CoinMarketCap, perma.cc/Y8LR-CZNL (last visited Sep. 4, 2024).',
+                  text: 'A version of this problem has been discussed informally by [13] under the heading of “low impact agents.”',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9643,7 +9643,7 @@
               { index: 14, 
                 
                   author: '222',
-                  text: 'The SEC’s ongoing practice of arbitrary enforcement actions is hampering the development of digital assets in the United States.',
+                  text: 'As with the other sources of mis-specified objective functions discussed later in this paper, we could choose to view side effects as idiosyncratic to each individual task—as the responsibility of each individual designer to capture as part of designing the correct objective function.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9664,7 +9664,7 @@
               { index: 15, 
                
                   author: 'bbb',
-                  text: "Please provide an example.",
+                  text: "But is there a uniting theme to side effects?",
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -9687,7 +9687,7 @@
               { index: 16, 
                 
                   author: '222',
-                  text: 'One recent study showed that regulatory uncertainty was the predominant explanation among traditional asset managers who are hesitant to engage with digital assets.',
+                  text: 'However, side effects can be conceptually quite similar even across highly diverse tasks (knocking over furniture is probably bad for a wide variety of tasks), so it seems worth trying to attack the problem in generality.',
                   dialogueText: function() {
                                   return this.text;
                                 },
@@ -10061,7 +10061,7 @@
               ]
             }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]
-            $scope.allTheScripts = [$scope.safety]
+            $scope.allTheScripts = [$scope.safety, $scope.safety2, $scope.safety3]
             // $scope.allTheScripts = [$scope.gamesone]
 
             
@@ -11141,13 +11141,13 @@
             
             // $scope.simulateUser(0, $scope.gamesone, 3000);
 
-            // $scope.simulateUser(0, $scope.safety3);
-            // $scope.simulateUser(0, $scope.safety2, 1000);
-            // $scope.simulateUser(0, $scope.safety);
+            $scope.simulateUser(0, $scope.safety3);
+            $scope.simulateUser(0, $scope.safety2, 1000);
+            $scope.simulateUser(0, $scope.safety);
 
             // $scope.simulateUser(0, $scope.coinbase3);
             // $scope.simulateUser(0, $scope.coinbase2, 1000);
-            $scope.simulateUser(0, $scope.safety);
+            // $scope.simulateUser(0, $scope.coinbase);
           
           
         }, 5000);

@@ -10061,7 +10061,7 @@
               ]
             }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]
-            $scope.allTheScripts = [$scope.coinbase]
+            $scope.allTheScripts = [$scope.safety]
             // $scope.allTheScripts = [$scope.gamesone]
 
             
@@ -11147,7 +11147,7 @@
 
             // $scope.simulateUser(0, $scope.coinbase3);
             // $scope.simulateUser(0, $scope.coinbase2, 1000);
-            $scope.simulateUser(0, $scope.coinbase);
+            $scope.simulateUser(0, $scope.safety);
           
           
         }, 5000);
@@ -11628,7 +11628,7 @@
                     console.log("That nodes topic USERID: ", $scope.data[0].nodes[h].topic)
                     console.log("That points on USERID: ", script.sequence[theOn].text.slice(0, 15))
                     console.log("That nodes blank USERID: ", theStep.onBlank)
-                    if ($scope.data[0].nodes[h].topic.slice(0, 15) === script.sequence[theOn].text.slice(0, 15) &&
+                    if ($scope.data[0].nodes[h].topic.slice(0, 9) === script.sequence[theOn].text.slice(0, 9) &&
                       theStep.onBlank){
                       console.log("Normal blank")
                       for (var i = 0; i < $scope.data[0].nodes[h].paragraphs.length; i++){

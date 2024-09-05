@@ -10061,7 +10061,7 @@
               ]
             }
             // $scope.allTheScripts = [$scope.coinbase, $scope.coinbase2, $scope.coinbase3]
-            $scope.allTheScripts = [$scope.safety, $scope.coinbase2, $scope.coinbase3]
+            $scope.allTheScripts = [$scope.safety]
             // $scope.allTheScripts = [$scope.gamesone]
 
             
@@ -11145,8 +11145,8 @@
             // $scope.simulateUser(0, $scope.safety2, 1000);
             // $scope.simulateUser(0, $scope.safety);
 
-            $scope.simulateUser(0, $scope.coinbase3);
-            $scope.simulateUser(0, $scope.coinbase2, 1000);
+            // $scope.simulateUser(0, $scope.coinbase3);
+            // $scope.simulateUser(0, $scope.coinbase2, 1000);
             $scope.simulateUser(0, $scope.safety);
           
           

@@ -8478,24 +8478,26 @@
               },
               { index: 5, 
                 
-                  author: $scope.userId,
-                  text: 'We define accidents as unintended and harmful behavior that may emerge from machine learning systems when we specify the wrong objective function, are not careful about the learning process, or commit other machine learning-related implementation errors.',
+                  
+                  author: 'aaa',
+                  text: "What can be said about accidents?",
                   dialogueText: function() {
                                   return this.text;
                                 },
-                  type: 'assertion',
+                  type: 'negation',
+                  code: '2A',
                   dialogueSide: false,
                   // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
                   // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
                   // of: (prep.of ? prep.of : undefined),
-
+                  
                   which: 'item',
                   on: 4,
                   its: 'self',
                   typeTime: 3000,
                   noClick: false, 
-                  action: 'proposition'
-                
+                  action: 'proposition',
+                  messaged: true
               },
               { index: 6, 
                 
@@ -8512,7 +8514,7 @@
 
                   which: 'item',
                   on: 5,
-                  its: 'bottom',
+                  its: 'self',
                   typeTime: 3000,
                   noClick: false, 
                   action: 'proposition'

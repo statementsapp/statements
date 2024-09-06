@@ -1292,8 +1292,9 @@ li.paragraph .child-div:not(.exclude) {
 
 .minimap-container {
     position: fixed;
-    padding-left: 3%;
+    padding-left: 4%;
     padding-top: 18%;
+    margin-left: 50px;
     overflow: hidden;
     /* Set a defined size for the minimap container */
     width: 827px;

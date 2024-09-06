@@ -9238,49 +9238,49 @@
                   messaged: true
               
               },
-              { index: 11, 
+              // { index: 11, 
                 
-                  author: '111',
-                  text: '“Scalable oversight” (Section 5) discusses ideas for how to ensure safe behavior even given limited access to the true objective function.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '111',
+              //     text: '“Scalable oversight” (Section 5) discusses ideas for how to ensure safe behavior even given limited access to the true objective function.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 10,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+              //     which: 'item',
+              //     on: 10,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
                 
-              }, 
-              { index: 12, 
+              // }, 
+              // { index: 12, 
                 
-                  author: $scope.userId,
-                  text: 'Third, the designer may have specified the correct formal objective, such that we would get the correct behavior were the system to have perfect beliefs, but something bad occurs due to making decisions from insufficient or poorly curated training data or an insufficiently expressive model.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: $scope.userId,
+              //     text: 'Third, the designer may have specified the correct formal objective, such that we would get the correct behavior were the system to have perfect beliefs, but something bad occurs due to making decisions from insufficient or poorly curated training data or an insufficiently expressive model.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 11,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 11,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
+              // },
               // { index: 13, 
                
               //     author: 'bbb',
@@ -9652,72 +9652,72 @@
                   messaged: false
                 
               }, // 
-              { index: 14, 
+              // { index: 14, 
                 
-                  author: '222',
-                  text: 'As with the other sources of mis-specified objective functions discussed later in this paper, we could choose to view side effects as idiosyncratic to each individual task—as the responsibility of each individual designer to capture as part of designing the correct objective function.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'As with the other sources of mis-specified objective functions discussed later in this paper, we could choose to view side effects as idiosyncratic to each individual task—as the responsibility of each individual designer to capture as part of designing the correct objective function.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 13,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition'
+              //     which: 'item',
+              //     on: 13,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition'
                 
-              },
-              { index: 15, 
+              // },
+              // { index: 15, 
                
-                  author: 'bbb',
-                  text: "But is there a uniting theme to side effects?",
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'negation',
-                  code: '2A',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: 'bbb',
+              //     text: "But is there a uniting theme to side effects?",
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'negation',
+              //     code: '2A',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
                   
-                  which: 'item',
-                  on: 14,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: true
+              //     which: 'item',
+              //     on: 14,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: true
               
-              },
-              { index: 16, 
+              // },
+              // { index: 16, 
                 
-                  author: '222',
-                  text: 'However, side effects can be conceptually quite similar even across highly diverse tasks (knocking over furniture is probably bad for a wide variety of tasks), so it seems worth trying to attack the problem in generality.',
-                  dialogueText: function() {
-                                  return this.text;
-                                },
-                  type: 'assertion',
-                  dialogueSide: false,
-                  // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
-                  // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
-                  // of: (prep.of ? prep.of : undefined),
+              //     author: '222',
+              //     text: 'However, side effects can be conceptually quite similar even across highly diverse tasks (knocking over furniture is probably bad for a wide variety of tasks), so it seems worth trying to attack the problem in generality.',
+              //     dialogueText: function() {
+              //                     return this.text;
+              //                   },
+              //     type: 'assertion',
+              //     dialogueSide: false,
+              //     // ofNodeId: (prep.ofNodeId ? prep.ofNodeId : undefined),
+              //     // ofParagraphId: (prep.ofParagraphId ? prep.ofParagraphId : undefined),
+              //     // of: (prep.of ? prep.of : undefined),
 
-                  which: 'item',
-                  on: 15,
-                  its: 'self',
-                  typeTime: 3000,
-                  noClick: false, 
-                  action: 'proposition',
-                  messaged: false
+              //     which: 'item',
+              //     on: 15,
+              //     its: 'self',
+              //     typeTime: 3000,
+              //     noClick: false, 
+              //     action: 'proposition',
+              //     messaged: false
                 
-              }, 
+              // }, 
 
             ]
             };

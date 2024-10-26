@@ -204,6 +204,8 @@
   color: black !important;
   height: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar {
@@ -938,4 +940,10 @@ div.slider {
       box-shadow: 4px 4px 10px rgba(0,0,0,0.8);
     }
   }
+}
+
+.dilligaf-text {
+  margin-left: auto;
+  margin-right: 20px;
+  white-space: nowrap;
 }

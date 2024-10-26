@@ -943,7 +943,16 @@ div.slider {
 }
 
 .dilligaf-text {
-  margin-left: auto;
-  margin-right: 20px;
+  flex-grow: 1;
+  text-align: center;
   white-space: nowrap;
+}
+
+.thatpadding {
+  width: 40vw;
+  flex-shrink: 0;
+}
+
+.wrappyboi.rightytightyboi {
+  flex-shrink: 0;
 }

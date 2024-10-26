@@ -3,21 +3,23 @@
 
   angular.module('statements', [
     'ngAnimate',
-    'ng.deviceDetector',
     'ngCookies',
     'ngTouch',
     'ngSanitize',
     'ngMessages',
-    'ngDragDrop',
-    'ui.tree',
     'ngAria',
     'ngResource',
     'ui.router',
-    'ui-notification',
     'ui.bootstrap',
-    'btford.socket-io',
-    'duScroll',
     'toastr'
   ]);
+
+  // Lazy load these modules
+  angular.module('statements').requires.push('ng.deviceDetector');
+  angular.module('statements').requires.push('ngDragDrop');
+  angular.module('statements').requires.push('ui.tree');
+  angular.module('statements').requires.push('ui-notification');
+  angular.module('statements').requires.push('btford.socket-io');
+  angular.module('statements').requires.push('duScroll');
 
 })();

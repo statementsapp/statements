@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function runBlock($rootScope, $log) {
+  function runBlock($rootScope, $log, $timeout) {
     $log.debug('runBlock end');
     console.log("Block running")
     $rootScope.firstEntry = true;
@@ -40,17 +40,23 @@
     });
 
     $rootScope.$on('$stateChangeSuccess', function() {
-        // Find the main view container again
-        var viewContainer = document.querySelector('[ui-view]') || document.querySelector('.your-main-container-class');
-        
-        // Re-add the animation class after a delay
-        if (viewContainer) {
-          setTimeout(function() {
-              console.log("Adding fadein")
-              viewContainer.classList.add('fadeInAnimation');
-          }, 50);
+      var viewContainer = document.querySelector('[ui-view]') || document.querySelector('.your-main-container-class');
+      
+      if (viewContainer) {
+        $timeout(function() {
+          viewContainer.classList.add('fadeInAnimation');
+        }, 0);
+      }
+
+      // Lazy load the video
+      $timeout(function() {
+        var video = document.getElementById('exampleAuthor');
+        if (video) {
+          video.preload = 'auto';
+          video.load();
         }
-      });
+      }, 1000);
+    });
 
     $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
       $log.debug(error);

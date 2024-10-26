@@ -583,7 +583,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
                 ng-mouseover="paragraph.disableRightCursor = false"
                 ng-model="inputs['remark'+remark.id]"
                 ng-keydown="$event.keyCode === 13 && selectedProposition.dialogueSide != true && inputs[remark.id] != '' ? $event.preventDefault() : inputs.nothing;"
-                ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId && !inputs['remark'+remark.id] ? remarkInputString : 'none'}"
+                ng-style="{ 'border-bottom': data[0].documentClaimedBy !== userId && !inputs['remark'+remark.id] ? '1px solid #f0f0f0' : '1px solid #f0f0f0'}"
                 ng-keyup="
 
                     $event.keyCode === 13 && !selectedProposition.dialogueSide && inputs['remark'+remark.id] != '' ? [ $event.preventDefault(), hideZeeky(), prepProposition(inputs['remark'+remark.id], node, paragraph, proposition, $event, 'right', null, null, $event.authorNumber)] : inputs.nothing;

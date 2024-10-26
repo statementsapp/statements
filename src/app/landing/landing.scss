@@ -873,32 +873,34 @@ div.slider {
   animation: fadeIn 1s both;
 }
 
-// Add these styles to maintain the video container size
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; // 16:9 aspect ratio
-  overflow: hidden;
-}
 
-video {
+
+// Add these styles at the end of the file
+
+.video-placeholder {
+  background-color: #2B2E36; // Adjust this color to match your background
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-// Adjust the existing video styles
-video {
-  pointer-events: none;
-  // Remove width: 90%;
-  // Remove padding-top: 20px;
+.video-placeholder.hidden {
+  display: none;
 }
 
-// If you want to keep some padding around the video, add it to the container instead
 .video-wrapper {
-  padding: 20px 5%;
+  position: relative;
+  width: 90%;
+  padding-top: 20px;
+}
+
+#exampleAuthor {
+  width: 100%;
+  height: auto;
 }

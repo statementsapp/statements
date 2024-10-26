@@ -880,19 +880,19 @@ div.slider {
 
 #forkongithub a {
   background: #000;
-  color: #fff;
+  color: #2B2E36;
   text-decoration: none;
   font-family: arial, sans-serif;
   text-align: center;
   font-weight: bold;
-  padding: 5px 40px;
+  padding: 5px 10px;
   font-size: 1rem;
   line-height: 2rem;
   position: relative;
   transition: 0.5s;
 
   &:hover {
-    background: #c11;
+    background: #grey;
     color: #fff;
   }
 
@@ -919,7 +919,7 @@ div.slider {
     position: fixed;
     display: block;
     top: 0;
-    right: 0;
+    right: -10;
     width: 200px;
     overflow: hidden;
     height: 200px;

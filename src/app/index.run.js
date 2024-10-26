@@ -48,12 +48,13 @@
         }, 0);
       }
 
-      // Lazy load the video
+      // Lazy load the video and set playback rate
       $timeout(function() {
         var video = document.getElementById('exampleAuthor');
         if (video) {
           video.preload = 'auto';
           video.load();
+          video.playbackRate = 0.85; // Set playback rate to 85%
         }
       }, 1000);
     });

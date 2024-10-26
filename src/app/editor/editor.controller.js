@@ -3785,10 +3785,11 @@
           }
           prep.messagesSoFar = [prep.id]
         } else if (
-          ($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
-                ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId && !paragraph.leftAdd) || 
-                (automatedCode === '2B' || automatedCode === '2A')
-          ) {
+          ($scope.selectedProposition && 
+           (($scope.selectedProposition.type === 'assertion' && $scope.data[0].documentClaimedBy !== $scope.userId) ||
+            ($scope.selectedProposition.type === 'negation' && $scope.data[0].documentClaimedBy !== $scope.userId && !paragraph.leftAdd))) ||
+          (automatedCode === '2B' || automatedCode === '2A')
+        ) {
           console.log("Input inside negations: ", input)
 
           // switched sp negation requirements from sp === your username to just not the document author

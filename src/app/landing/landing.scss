@@ -942,10 +942,31 @@ div.slider {
   }
 }
 
-.dilligaf-text {
+.stacked-text {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dilligaf-text,
+.idgaf-text {
   text-align: center;
   white-space: nowrap;
+}
+
+.dilligaf-text {
+  margin-bottom: 0.5em; // Add some space between DILLIGAF and IDGAF
+}
+
+.titleboi {
+  font-size: 2.3em;
+  color: black !important;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .thatpadding {

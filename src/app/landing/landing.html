@@ -31,10 +31,14 @@
                 </div>
               </div>
             </div>
-            <video id="exampleAuthor" autoplay muted loop preload="none" poster="/assets/images/video-poster.jpg" style="padding-bottom: 10px;">
-                <source src="/assets/movies/AISafety.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <div class="video-wrapper">
+              <div class="video-container">
+                <video id="exampleAuthor" autoplay muted loop preload="none" poster="/assets/images/video-poster.jpg">
+                  <source src="/assets/movies/AISafety.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
             <button onclick="document.getElementById('exampleAuthor').play();">Play</button>
             <div class="disclaimer" style="color: white !important;">
               <div>(Designed for Desktop)</div>
@@ -129,10 +133,14 @@
 
 
             <div class="row" ng-class="osClass" style="margin-top: -40px; width: 75%">
-              <video id="exampleAuthor" autoplay muted loop preload="metadata" poster="/assets/images/video-poster.jpg" style="padding-bottom: 10px;">
-                <source src="/assets/movies/AISafety.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <video id="exampleAuthor" autoplay muted loop preload="metadata" poster="/assets/images/video-poster.jpg">
+                    <source src="/assets/movies/AISafety.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
               <!-- <span>reviewer</span> -->
 
 <!--               Triptych below

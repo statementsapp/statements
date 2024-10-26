@@ -879,8 +879,8 @@ div.slider {
 // Add this at the end of the file
 
 #forkongithub a {
-  background: #000;
-  color: #2B2E36;
+  background: #2B2E36;
+  color: white;
   text-decoration: none;
   font-family: arial, sans-serif;
   text-align: center;
@@ -919,7 +919,7 @@ div.slider {
     position: fixed;
     display: block;
     top: 0;
-    right: -10;
+    right: -10px;
     width: 200px;
     overflow: hidden;
     height: 200px;

@@ -434,6 +434,7 @@ ng-mouseleave="[blurLightUpLastVisiblePropositionInNode(node, $event), $event.st
             
             editable-span-ng-model 
             id="{{proposition.id}}"
+            ng-if="proposition.author === data[0].documentClaimedBy || !data[0].isFresh"
             class="right-text right-textarea maininput"
             style="padding-right: 8px;"
             ng-style="{ 'border-bottom': data[0].documentClaimedBy == userId ? '3px solid #2B2E36' : inputs[proposition.id] != undefined && inputs[proposition.id] != null && inputs[proposition.id] ? remarkInputString : '3px solid #2B2E36' }"

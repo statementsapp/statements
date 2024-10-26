@@ -400,9 +400,9 @@ div.sliderContainer {
 video {
   pointer-events: none;
   width: 90%;
-  border-bottom: 1px solid #2b2e36;
-  box-sizing: border-box;
-  margin-bottom: 10px; // Add this line to create some space below the video
+  // height: 100%;
+  // padding-left: 10%;
+  padding-top: 20px;
 }
 
 .nologin {
@@ -872,8 +872,6 @@ div.slider {
 .fadeInAnimation {
   animation: fadeIn 1s both;
 }
-
-
 
 
 

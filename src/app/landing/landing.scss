@@ -400,9 +400,8 @@ div.sliderContainer {
 video {
   pointer-events: none;
   width: 90%;
-  // height: 100%;
-  // padding-left: 10%;
   padding-top: 20px;
+  border: 1px solid #f0f0f0; // Light gray border
 }
 
 .nologin {
@@ -872,6 +871,8 @@ div.slider {
 .fadeInAnimation {
   animation: fadeIn 1s both;
 }
+
+
 
 
 

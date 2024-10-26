@@ -401,7 +401,7 @@ video {
   pointer-events: none;
   width: 90%;
   padding-top: 20px;
-  border: 1px solid #f0f0f0; // Light gray border
+  box-shadow: inset 0 0 0 1px #f0f0f0; // Light gray inset border
 }
 
 .nologin {
@@ -871,6 +871,7 @@ div.slider {
 .fadeInAnimation {
   animation: fadeIn 1s both;
 }
+
 
 
 

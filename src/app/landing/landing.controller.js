@@ -380,23 +380,6 @@
         $state.go('main.editor');
       });
     };
-
-    // Add this function to your controller
-    $scope.initVideoPlaceholder = function() {
-      var video = document.getElementById('exampleAuthor');
-      var placeholder = document.querySelector('.video-placeholder');
-
-      video.addEventListener('loadeddata', function() {
-        placeholder.classList.add('hidden');
-      });
-
-      video.addEventListener('error', function() {
-        placeholder.textContent = 'Error loading video';
-      });
-    };
-
-    // Call this function when the controller initializes
-    $scope.initVideoPlaceholder();
   }
 
   angular.module('statements')

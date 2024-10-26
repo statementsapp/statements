@@ -1,50 +1,244 @@
 <div class="landing-wrapper" id="widthtograb" ng-cloak>
+  <!-- <stmnts-landing-navbar></stmnts-landing-navbar> -->
   <div ng-class="{ 'debug-on': debugMode }">
     <div class="parallax" du-scroll-container>
       <div class="parallax-group" id="group1">
         <div class="parallax-layer parallax-layer--fore">
-          <div class="landing-content">
-            <div class="navboi" role="navigation">
-              <div class="flexyboi titleboi" ng-class="{'stack': screenWidth < 500}">
-                <div style="display:flex; align-items: center" ng-class="{'stack': screenWidth < 500}">
+
+          
+
+          
+
+          <div class="col" ng-if="screenWidth < 500" style="color: black; " >
+            <div class="navboi" role="navigation" ng-if="screenWidth < 500" style="">
+              <div class="flexyboi titleboi stack">
+                <div style="display:flex; align-items: center" class="stack">
+                  <!-- <span class="logoboi largerlogo" style="padding-right: 12px;"></span> -->
                   <span class="nonethatpadding">
-                    <a class="thisname" href="#" style="color: white !important; text-decoration: none; display: flex;">Statements</a>
+                    <a class="thisname largerapptitle" href="#" style="color: white !important; text-decoration: none;  display: flex;">Statements
+                    </a>
                     <div>
-                      <a href="#" style="color: white !important; text-decoration: none; display: flex;" class="valueprop nonethatpositioning">
-                        <div ng-class="{'largervalueprop': screenWidth < 500}" style="text-align: center">Write by Chat</div>
+                      <a href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop nonethatpositioning">
+                          <div class="largervalueprop" style="text-align: center"> Write by Chat</div>
                       </a>
                     </div>
                   </span>
+                  <a href="#" style="color: black !important; text-decoration: none; display: flex;">
+                  </a>
+                </div>
+                <div class="wrappyboi rightytightyboi" ng-if="cowsComeHome">
+                 
+                </div>
+              </div>
+            </div>
+            <video id="exampleAuthor" autoplay muted loop preload="none" poster="/assets/images/video-poster.jpg" style="padding-bottom: 10px;">
+                <source src="/assets/movies/AISafety.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <button onclick="document.getElementById('exampleAuthor').play();">Play</button>
+            <div class="disclaimer" style="color: white !important;">
+              <div>(Designed for Desktop)</div>
+              <span>Rapid Word Processing for Smartphone Coming Soon</span>
+            </div>
+            <div ng-if="cowsComeHome">
+              
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="col" ng-if="screenWidth > 500" style="color: black;">
+            <div class="navboi" role="navigation" ng-if="screenWidth > 500 || screenWidth === 500">
+              
+              <div class="link-box" style="position:absolute; right:10px; top:10px; padding-top: 3%">
+              <div class="landingbuttonscontainer">
+<!--                 <input type="text"
+                       class="form-control"
+                       id="title"
+                       name="bookId"
+                       ng-model="vm.bookId"
+                       placeholder="Enter book id"
+                       ng-keyup="$event.keyCode === 13 ? vm.openBook() : form.nothing">
+                <span ng-show="vm.errors.noBookFound" class="help-block"></span> -->
+<!--                 <button class="btn menubutton"
+                        type="button"
+                        uib-tooltip="Register"
+                        ng-click="openRegisterModal()"
+                        >
+                  <span style="color: black" id="exporttext">Get Statements</span>
+                </button> -->
+
+
+
+
+                <button class="btn menubutton"
+                        type="button"
+                        ng-click="openLoginModal()"
+                        style="color: white !important;background-color: #2B2E36;border: 1px solid white; "
+                        ng-if="false"
+                        >
+                  <span  id="exporttext">Log In</span>
+                </button>
+
+
+
+                
+<!--                     <a class='btn btn-info disabled'><i class="fa-brands fa-twitter" style="width:16px; height:20px"></i></a>
+                    <a class='btn btn-info ' href='' style="width:12em"> Sign in with Twitter</a> -->
+
+
+
+
+                  
+              </div>
+            </div>
+              <div class="flexyboi titleboi">
+
+                <div style="display:flex; align-items: center">
+
+                  <!-- <span class="logoboi" style="margin-left: 60px;"></span> -->
+                  <span class="thatpadding">
+                    <a class="thisname" href="#" style="color: white !important; text-decoration: none;  display: flex;">Statements
+                    </a>
+                    <div>
+                      <div href="#" style="color: white !important; text-decoration: none; display: flex; " class="valueprop">
+                          <div style="text-align: center"> Write super fast in teams by Chat</div>
+                      </div>
+                    </div>
+                  </span>
+
+                </div>
+                
+
+                
+<!--                 <div style="padding-right: 250px; color: white !important;">
+                  <div style="width:650px; padding-right: 80px; font-size: 28px; text-align: center" ><strong>Draft documents:</strong></div>
+                  <marquee style="width:600px; font-size: 24px; display: block" behavior="scroll" direction="left" scrollamount="8">At the speed of conversation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Without editing conflicts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With or without agreement&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Without needing the document in view&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amongst an unlimited number of collaborators&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile version forthcoming</marquee> 
+                </div> -->
+
+
+                <div class="wrappyboi rightytightyboi" ng-if="cowsComeHome">
+                 
                 </div>
               </div>
             </div>
 
-            <video id="exampleAuthor" autoplay muted loop preload="none" poster="/assets/images/video-poster.jpg">
-              <source src="/assets/movies/AISafety.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
 
-            <div class="disclaimer" style="color: white !important;" ng-if="screenWidth < 500">
-              <div>(Designed for Desktop)</div>
-              <span>Rapid Word Processing for Smartphone Coming Soon</span>
-            </div>
 
-            <div id="chromeOnlyElement" style="display: flex; align-items: center; justify-content: center; margin-top: 20px;">
-              <div class="icon">
-                <div class="arrow"></div>
+            <div class="row" ng-class="osClass" style="margin-top: -40px; width: 75%">
+              <video id="exampleAuthor" autoplay muted loop preload="metadata" poster="/assets/images/video-poster.jpg" style="padding-bottom: 10px;">
+                <source src="/assets/movies/AISafety.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <!-- <span>reviewer</span> -->
+
+<!--               Triptych below
+              <div>
+              <div>Reviewer</div>
+              <div class="browser-wrapper" style="margin-top: 0px">
+                <div class="browser-bar">
+                  <div class="browser-button-wrapper">
+                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
+                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
+                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
+                  </div>
+                </div>
+                <div class="video-container">
+                  <video id="exampleAuthor" autoplay="autoplay" muted="muted" loop video-src="criticVideoSources">
+                  </video>
+                </div>
               </div>
+              </div>
+
+              <div>
+              <div class="browser-wrapper">
+                <div class="browser-bar">
+                  <div class="browser-button-wrapper">
+                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
+                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
+                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
+                  </div>
+                </div>
+                <div class="video-container">
+                  <video id="exampleCritic" style="width: 100%; padding-left: 0px; padding-right: 0px;" autoplay="autoplay" muted="muted" loop video-src="authorVideoSources">
+                  </video>
+                </div>
+              </div>
+              </div>
+
+             <div>
+              <div>Author</div>
+              <div class="browser-wrapper" style="margin-top: 0px">
+                <div class="browser-bar">
+                  <div class="browser-button-wrapper">
+                    <div class="browser-button left"><i ng-if="osClass === 'windows'" class="fa fa-times"></i></div>
+                    <div class="browser-button middle"><i ng-if="osClass === 'windows'" class="fa fa-window-maximize"></i></div>
+                    <div class="browser-button right"><i ng-if="osClass === 'windows'" class="fa fa-window-minimize"></i></div>
+                  </div>
+                </div>
+                <div class="video-container">
+                  <video id="other"  autoplay="autoplay" muted="muted" loop video-src="otherVideoSources">
+                  </video>
+                </div>
+              </div>
+              </div>
+
+            </div> -->
+
+
+
+          </div>
+
+
+
+          <div id="chromeOnlyElement" style="display: flex; align-items: flex-start; margin-right: 70px;"> 
+          
+          <div class="icon">
+                  <div class="arrow"></div>
+              </div>
+          
+
+
+
+<!--             <button class="btn menubutton"
+                    type="button"
+                    ng-click=""
+                    style="color: white !important;background-color: #06111f;border: 1px solid white; position: relative; bottom: 3%"
+                    >
+              <span  id="exporttext">Want to join us? Contact statementsapp@gmail.com</span>
+            </button> -->
+
+
+
+            
+              
+              <br>
 
               <button class="guest-button-wrapper btn btn-lg btn-default btn-block"
                       ng-if="screenWidth > 500"
                       ng-click="screenWidth > 500 ? [joinAsGuest($event), safety = true] : inputs.nothing"
+                      style="border: 1px solid white; width: auto; font-size: .95em !important"
                       type="button">
-                <span ng-if="!loggingIn && screenWidth > 500">Start Writing (beta)</span>
-                <span ng-if="loggingIn && screenWidth > 500"><i class="fa fa-spinner fa-spin"></i>&nbsp;(Loading)</span>
+                <span style="">
+
+                  <span ng-if="!loggingIn && screenWidth > 500">Start Writing (beta)</span>
+                  <span ng-if="loggingIn && screenWidth > 500"><i class="fa fa-spinner fa-spin"></i>&nbsp;</span>
+                  <span ng-if="loggingIn && screenWidth > 500">(Loading)</span>
+                </span>
               </button>
-            </div>
+              
+            
+          
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+

@@ -154,12 +154,12 @@
 }
 
 .thisname {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: 4vw;
   padding-left: 5%;
 }
 
 .valueprop {
-  font-size: clamp(1rem, 2.3vw, 2.3rem);
+  font-size:2.3vw;
   padding-left: 10%;
   margin-top: -20px;
 }
@@ -173,11 +173,11 @@
 }
 
 .largerapptitle {
-  font-size: clamp(3rem, 17vw, 17rem);
+  font-size: 17vw;
 }
 
 .largervalueprop {
-  font-size: clamp(2rem, 10vw, 10rem);
+  font-size: 10vw;
 }
 
 .largerlogo {
@@ -399,9 +399,9 @@ div.sliderContainer {
 
 video {
   pointer-events: none;
-  width: 100%;
-  max-width: 90%;
-  height: auto;
+  width: 90%;
+  // height: 100%;
+  // padding-left: 10%;
   padding-top: 20px;
 }
 
@@ -824,9 +824,7 @@ div.slider {
 
 
 @media screen and (max-width: 100em) {
-  .landing-wrapper {
-    font-size: 16px; // Base font size
-  }
+  zoom: 50%;
 }
 
 .regularcursor {
@@ -850,11 +848,6 @@ div.slider {
   border: 1px solid white;
   background-color: #2B2E36;
   color: white;
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
-  padding: 10px 20px;
-  width: auto;
-  max-width: 300px;
-  margin: 0 auto;
 }
 
 
@@ -879,7 +872,6 @@ div.slider {
 .fadeInAnimation {
   animation: fadeIn 1s both;
 }
-
 
 
 

@@ -12,7 +12,7 @@ module.exports = function (admin, express) {
   var db = admin.database();
 
   function errorHandler(err, req, res, next) {
-    console.error(err.message);
+    console.error(err.message); 
     res.status(500).end(err.message);
   }
 

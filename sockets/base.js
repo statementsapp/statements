@@ -65,7 +65,7 @@ var ioRoutes = function(io) {
     });
     
     socket.on('proposition', function(from, obj) {
-      io.sockets.emit('broadcastProposition', obj);
+      io.sockets.emit('broadcastProposition', obj); 
     });
 
     socket.on('deletion', function(from, obj) {
